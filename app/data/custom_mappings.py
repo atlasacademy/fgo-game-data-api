@@ -21,6 +21,7 @@ class Translation(StrEnum):
     QUEST = "quest_names"
     BUFF = "buff_names"
     SPOT = "spot_names"
+    BLANK_EARTH_SPOT_NAMES = "blank_earth_spot_names"
     ENEMY = "enemy_names"
     SKILL = "skill_names"
     NP = "np_names"

@@ -21,6 +21,7 @@ TRANSLATION_FILES = (
     "quest_names",
     "buff_names",
     "spot_names",
+    "blank_earth_spot_names",
     "enemy_names",
     "skill_names",
     "np_names",
@@ -295,8 +296,12 @@ def update_translation(
 ) -> None:
     with open(jp_master / f"{master_file}.json", "r", encoding="utf-8") as fp:
         jp_svt = json.load(fp)
-    with open(na_master / f"{master_file}.json", "r", encoding="utf-8") as fp:
-        na_svt = json.load(fp)
+    na_path = na_master / f"{master_file}.json"
+    if na_path.exists():
+        with open(na_master / f"{master_file}.json", "r", encoding="utf-8") as fp:
+            na_svt = json.load(fp)
+    else:
+        na_svt = []
 
     mapping_path = MAPPING_PATH / f"{mapping}.json"
     if mapping_path.exists():
@@ -406,6 +411,9 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("voice_names", jp_master, na_master, "mstVoice", get_voice_names)
     update_translation("quest_names", jp_master, na_master, "mstQuest", get_names)
     update_translation("spot_names", jp_master, na_master, "mstSpot", get_names)
+    update_translation(
+        "blank_earth_spot_names", jp_master, na_master, "mstBlankEarthSpot", get_names
+    )
     update_translation(
         "illustrator_names", jp_master, na_master, "mstIllustrator", get_names
     )
