@@ -352,6 +352,7 @@ async def search_buff(
             for buff in matches
             if match_name(search_param.name, buff.name)
             or match_name(search_param.name, buff.detail)
+            or match_name(search_param.name, get_translation(Language.en, buff.name))
         ]
 
     if len(matches) > limit:
