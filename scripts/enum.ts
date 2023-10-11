@@ -936,6 +936,11 @@ export enum NiceCondType {
     COMPLETE_HEEL_PORTRAIT = "completeHeelPortrait",
     NOT_COMPLETE_HEEL_PORTRAIT = "notCompleteHeelPortrait",
     CLASS_BOARD_SQUARE_RELEASED = "classBoardSquareReleased",
+    SVT_LEVEL_EXCHANGE_SVT = "svtLevelExchangeSvt",
+    SVT_LIMIT_EXCHANGE_SVT = "svtLimitExchangeSvt",
+    SKILL_LV_EXCHANGE_SVT = "skillLvExchangeSvt",
+    SVT_FRIENDSHIP_EXCHANGE_SVT = "svtFriendshipExchangeSvt",
+    EXCHANGE_SVT = "exchangeSvt",
 }
 
 export enum NiceVoiceCondType {
@@ -1617,6 +1622,7 @@ export enum NiceCombineAdjustTarget {
     QUEST_FRIENDSHIP = "questFriendship",
     LARGE_SUCCESS_BY_CLASS = "largeSuccessByClass",
     SUPER_SUCCESS_BY_CLASS = "superSuccessByClass",
+    EXCHANGE_SVT = "exchangeSvt",
 }
 
 export enum NiceEventCombineCalc {

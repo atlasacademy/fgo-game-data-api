@@ -2200,6 +2200,11 @@ class CondType(IntEnum):
     COMPLETE_HEEL_PORTRAIT = 185
     NOT_COMPLETE_HEEL_PORTRAIT = 186
     CLASS_BOARD_SQUARE_RELEASED = 187
+    SVT_LEVEL_EXCHANGE_SVT = 188
+    SVT_LIMIT_EXCHANGE_SVT = 189
+    SKILL_LV_EXCHANGE_SVT = 190
+    SVT_FRIENDSHIP_EXCHANGE_SVT = 191
+    EXCHANGE_SVT = 192
 
 
 class NiceCondType(StrEnum):
@@ -2390,6 +2395,11 @@ class NiceCondType(StrEnum):
     completeHeelPortrait = "completeHeelPortrait"
     notCompleteHeelPortrait = "notCompleteHeelPortrait"
     classBoardSquareReleased = "classBoardSquareReleased"
+    svtLevelExchangeSvt = "svtLevelExchangeSvt"
+    svtLimitExchangeSvt = "svtLimitExchangeSvt"
+    skillLvExchangeSvt = "skillLvExchangeSvt"
+    svtFriendshipExchangeSvt = "svtFriendshipExchangeSvt"
+    exchangeSvt = "exchangeSvt"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2578,6 +2588,11 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     185: NiceCondType.completeHeelPortrait,
     186: NiceCondType.notCompleteHeelPortrait,
     187: NiceCondType.classBoardSquareReleased,
+    188: NiceCondType.svtLevelExchangeSvt,
+    189: NiceCondType.svtLimitExchangeSvt,
+    190: NiceCondType.skillLvExchangeSvt,
+    191: NiceCondType.svtFriendshipExchangeSvt,
+    192: NiceCondType.exchangeSvt,
 }
 
 
@@ -4643,6 +4658,7 @@ class CombineAdjustTargetType(IntEnum):
     QUEST_FRIENDSHIP = 31
     LARGE_SUCCESS_BY_CLASS = 32
     SUPER_SUCCESS_BY_CLASS = 33
+    EXCHANGE_SVT = 34
 
 
 class NiceCombineAdjustTarget(StrEnum):
@@ -4681,6 +4697,7 @@ class NiceCombineAdjustTarget(StrEnum):
     questFriendship = "questFriendship"
     largeSuccessByClass = "largeSuccessByClass"
     superSuccessByClass = "superSuccessByClass"
+    exchangeSvt = "exchangeSvt"
 
 
 COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
@@ -4717,6 +4734,7 @@ COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
     31: NiceCombineAdjustTarget.questFriendship,
     32: NiceCombineAdjustTarget.largeSuccessByClass,
     33: NiceCombineAdjustTarget.superSuccessByClass,
+    34: NiceCombineAdjustTarget.exchangeSvt,
 }
 
 
