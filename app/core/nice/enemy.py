@@ -330,11 +330,12 @@ def get_enemies_in_stage(
     mstStage: MstStage,
     enemy_deck_svts: list[EnemyDeckInfo],
     npc_id_map: dict[DeckType, dict[int, DeckSvt]],
+    include_spawn_bonus_enemy=False,
 ) -> list[EnemyDeckInfo]:
     stage_enemies = [
         deck_info
         for deck_info in enemy_deck_svts
-        if not is_spawn_bonus_enemy(deck_info.deck)
+        if include_spawn_bonus_enemy or not is_spawn_bonus_enemy(deck_info.deck)
     ]
 
     # For faster added checks. A quest can have hundreds of enemies but only at most 5 break bars
@@ -369,6 +370,7 @@ async def get_quest_enemies(
     quest_detail: QuestDetail,
     quest_drop: list[QuestDrop],
     lang: Language = Language.jp,
+    include_spawn_bonus_enemy=False,
 ) -> QuestEnemies:
     npc_id_map: dict[DeckType, dict[int, DeckSvt]] = {}
     DECK_LIST: list[tuple[list[Deck], DeckType]] = [
@@ -437,7 +439,7 @@ async def get_quest_enemies(
 
         stage_nice_enemies: list[QuestEnemy] = []
         for deck_svt_info in get_enemies_in_stage(
-            mstStages[stage], enemy_decks, npc_id_map
+            mstStages[stage], enemy_decks, npc_id_map, include_spawn_bonus_enemy
         ):
             drops = [
                 drop
