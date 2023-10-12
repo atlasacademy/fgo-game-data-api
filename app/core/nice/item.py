@@ -75,6 +75,8 @@ def get_nice_item_from_raw(
         background=ITEM_BG_TYPE_NAME.get(raw_item.bgImageId, NiceItemBGType.unknown),
         priority=raw_item.priority,
         dropPriority=raw_item.dropPriority,
+        startedAt=raw_item.startedAt,
+        endedAt=raw_item.endedAt,
         itemSelects=[
             get_nice_item_select_from_raw(region, item_select, gift_data)
             for item_select in raw_item.mstItemSelect

@@ -46,8 +46,15 @@ from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
-from .schemas.gameenums import SvtType
-from .schemas.nice import NiceEquip, NiceServant
+from .schemas.gameenums import NiceItemType, SvtType
+from .schemas.nice import (
+    NiceEquip,
+    NiceEvent,
+    NiceItem,
+    NiceMasterMission,
+    NiceServant,
+    NiceShop,
+)
 from .schemas.raw import (
     AssetStorageLine,
     BgmEntity,
@@ -57,6 +64,7 @@ from .schemas.raw import (
     MstEnemyMaster,
     MstEquip,
     MstEvent,
+    MstGacha,
     MstIllustrator,
     MstItem,
     MstMasterMission,
@@ -103,6 +111,16 @@ class ExportUtil:
         self, file_name: str, data: Iterable[BaseModelORJson]
     ) -> None:  # pragma: no cover
         await dump_orjson(self.export_path, self.append_file_name(file_name), data)
+
+    async def dump_orjson_object(
+        self, file_name: str, data: BaseModelORJson
+    ) -> None:  # pragma: no cover
+        async with aiofiles.open(
+            self.export_path / f"{self.append_file_name(file_name)}.json",
+            "w",
+            encoding="utf-8",
+        ) as fp:
+            await fp.write(data.json())
 
 
 async def get_nice_svt(
@@ -182,10 +200,15 @@ async def dump_svt(
             await fp.write("[" + ",".join(without_lore_en) + "]")
 
 
-async def dump_nice_items(
+def get_nice_items_from_raw(
     util: ExportUtil, items: list[MstItem]
+) -> list[NiceItem]:  # pragma: no cover
+    return get_all_nice_items(util.region, util.lang, items)
+
+
+async def dump_nice_items(
+    util: ExportUtil, all_item_data: list[NiceItem]
 ) -> None:  # pragma: no cover
-    all_item_data = get_all_nice_items(util.region, util.lang, items)
     await util.dump_orjson("nice_item", all_item_data)
 
 
@@ -228,10 +251,15 @@ async def dump_nice_bgms(
     await util.dump_orjson("nice_bgm", all_bgm_data)
 
 
-async def dump_nice_mms(
+async def get_nice_mms_from_raw(
     util: ExportUtil, mms: list[MstMasterMission]
+) -> list[NiceMasterMission]:  # pragma: no cover
+    return await get_all_nice_mms(util.conn, util.region, mms, util.lang)
+
+
+async def dump_nice_mms(
+    util: ExportUtil, all_mm_data: list[NiceMasterMission]
 ) -> None:  # pragma: no cover
-    all_mm_data = await get_all_nice_mms(util.conn, util.region, mms, util.lang)
     await util.dump_orjson("nice_master_mission", all_mm_data)
 
 
@@ -244,22 +272,30 @@ async def dump_nice_wars(
     await util.dump_orjson("nice_war", all_war_data)
 
 
-async def dump_nice_events(
+async def get_nice_events_from_raw(
     util: ExportUtil, events: list[MstEvent]
-) -> None:  # pragma: no cover
-    all_event_data = [
+) -> list[NiceEvent]:  # pragma: no cover
+    return [
         await get_nice_event(util.conn, util.region, event.id, util.lang)
         for event in events
     ]
+
+
+async def dump_nice_events(
+    util: ExportUtil, all_event_data: list[NiceEvent]
+) -> None:  # pragma: no cover
     await util.dump_orjson("nice_event", all_event_data)
 
 
-async def dump_nice_shops(
+async def util_get_nice_shops_from_raw(
     util: ExportUtil, shops: list[MstShop]
+) -> list[NiceShop]:  # pragma: no cover
+    return await get_nice_shops_from_raw(util.conn, util.region, shops, util.lang)
+
+
+async def dump_nice_shops(
+    util: ExportUtil, all_shop_data: list[NiceShop]
 ) -> None:  # pragma: no cover
-    all_shop_data = await get_nice_shops_from_raw(
-        util.conn, util.region, shops, util.lang
-    )
     await util.dump_orjson("nice_shop", all_shop_data)
 
 
@@ -339,6 +375,82 @@ async def dump_basic_wars(
     await util.dump_orjson("basic_war", all_basic_war_data)
 
 
+SECS_PER_DAY = 3600 * 24
+
+
+def is_recent(
+    now: int, startedAt: int, endedAt: int, finishedAt: int | None, pre: int, delay: int
+) -> bool:
+    if finishedAt and finishedAt < endedAt:
+        finishedAt = None
+    if startedAt > now + pre * SECS_PER_DAY:
+        return False
+    if (finishedAt or endedAt) > now + 360 * SECS_PER_DAY:
+        return False
+    if finishedAt and finishedAt > endedAt and finishedAt < endedAt + 30 * SECS_PER_DAY:
+        return now <= finishedAt
+    else:
+        return now < endedAt + delay * SECS_PER_DAY
+
+
+class TimerData(BaseModelORJson):
+    events: list[NiceEvent]
+    gachas: list[MstGacha]
+    masterMissions: list[NiceMasterMission]
+    shops: list[NiceShop]
+    items: list[NiceItem]
+
+
+async def dump_current_events(
+    util: ExportUtil,
+    nice_events: list[NiceEvent],
+    raw_gachas: list[MstGacha],
+    nice_mms: list[NiceMasterMission],
+    nice_shops: list[NiceShop],
+    nice_items: list[NiceItem],
+) -> None:  # pragma: no cover
+    now = int(time.time())
+
+    events = [
+        event
+        for event in nice_events
+        if is_recent(now, event.startedAt, event.endedAt, event.finishedAt, 7, 3)
+    ]
+    gachas = [
+        gacha
+        for gacha in raw_gachas
+        if is_recent(now, gacha.openedAt, gacha.closedAt, None, 7, 3)
+    ]
+    masterMissions = [
+        mm
+        for mm in nice_mms
+        if is_recent(now, mm.startedAt, mm.endedAt, None, 7, 0)
+        and mm.id // 100000 != 3
+        and mm.endedAt < now + 360 * SECS_PER_DAY
+    ]
+    shops = [
+        shop
+        for shop in nice_shops
+        if is_recent(now, shop.openedAt, shop.closedAt, None, 7, 0)
+    ]
+    items = [
+        item
+        for item in nice_items
+        if item.type in (NiceItemType.continueItem, NiceItemType.friendshipUpItem)
+        and is_recent(now, item.startedAt, item.endedAt, None, 7, 0)
+    ]
+
+    timer_data = TimerData(
+        events=events,
+        gachas=gachas,
+        masterMissions=masterMissions,
+        shops=shops,
+        items=items,
+    )
+
+    await util.dump_orjson_object("timer_data", timer_data)
+
+
 async def generate_exports(
     redis: Redis,
     region_path: dict[Region, DirectoryPath],
@@ -396,16 +508,20 @@ async def generate_exports(
 
                 await dump_basic_servants(util, "basic_svt", all_svts)
 
-                await dump_nice_items(util, mstItems)
+                nice_items = get_nice_items_from_raw(util, mstItems)
+                await dump_nice_items(util, nice_items)
                 await dump_nice_mcs(util, mstEquips)
                 await dump_nice_ccs(util, mstCcs)
-                await dump_nice_mms(util, mstMasterMissions)
+                nice_mms = await get_nice_mms_from_raw(util, mstMasterMissions)
+                await dump_nice_mms(util, nice_mms)
                 await dump_nice_bgms(util, bgms)
-                await dump_nice_shops(util, mstShops)
+                nice_shops = await util_get_nice_shops_from_raw(util, mstShops)
+                await dump_nice_shops(util, nice_shops)
                 await dump_nice_enemy_masters(util, mstEnemyMasters)
                 await dump_nice_class_boards(util, mstClassBoardBases)
 
                 util_en = ExportUtil(conn, redis, region, export_path, Language.en)
+                nice_items_lang_en: list[NiceItem] = []
                 if region == Region.JP:
                     await dump_basic_servants(util_en, "basic_servant", all_servants)
                     await dump_basic_equips(util_en, all_equips)
@@ -418,7 +534,8 @@ async def generate_exports(
                     await dump_cvs(util_en, mstCvs)
 
                     await dump_basic_servants(util_en, "basic_svt", all_svts)
-                    await dump_nice_items(util_en, mstItems)
+                    nice_items_lang_en = get_nice_items_from_raw(util_en, mstItems)
+                    await dump_nice_items(util_en, nice_items_lang_en)
                     await dump_nice_mcs(util_en, mstEquips)
                     await dump_nice_ccs(util_en, mstCcs)
                     await dump_nice_bgms(util_en, bgms)
@@ -427,11 +544,30 @@ async def generate_exports(
                 await dump_svt(util, "nice_equip", all_equips)
 
                 await dump_nice_wars(util, mstWars)
-                await dump_nice_events(util, mstEvents)
+                nice_events = await get_nice_events_from_raw(util, mstEvents)
+                await dump_nice_events(util, nice_events)
+
+                raw_gachas = await fetch.get_everything(conn, MstGacha)
+
+                await dump_current_events(
+                    util, nice_events, raw_gachas, nice_mms, nice_shops, nice_items
+                )
 
                 if region == Region.JP:
                     await dump_nice_wars(util_en, mstWars)
-                    await dump_nice_events(util_en, mstEvents)
+                    nice_events_lang_en = await get_nice_events_from_raw(
+                        util_en, mstEvents
+                    )
+                    await dump_nice_events(util_en, nice_events_lang_en)
+
+                    await dump_current_events(
+                        util_en,
+                        nice_events_lang_en,
+                        raw_gachas,
+                        nice_mms,
+                        nice_shops,
+                        nice_items_lang_en,
+                    )
 
             repo_info = await get_repo_version(redis, region)
             if repo_info is None:

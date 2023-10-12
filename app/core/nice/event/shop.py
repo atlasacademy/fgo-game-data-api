@@ -109,6 +109,8 @@ def get_nice_shop(
                 background=NiceItemBGType.zero,
                 priority=0,
                 dropPriority=0,
+                startedAt=0,
+                endedAt=0,
                 itemSelects=[],
             ),
             amount=0,

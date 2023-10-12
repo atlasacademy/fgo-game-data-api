@@ -975,6 +975,42 @@ class MstShopRelease(BaseModelORJson):
     closedItemName: str
 
 
+class MstGacha(BaseModelORJson):
+    id: int
+    name: str
+    imageId: int
+    priority: int
+    warId: int
+    gachaSlot: int
+    type: int
+    shopId1: int
+    shopId2: int
+    rarityId: int
+    baseId: int
+    adjustId: int
+    pickupId: int
+    ticketItemId: int
+    gachaGroupId: int
+    drawNum1: int
+    drawNum2: int
+    extraGroupId1: int
+    extraGroupId2: int
+    extraAddCount1: int
+    extraAddCount2: int
+    freeDrawFlag: int
+    maxDrawNum: int
+    beforeGachaId: int
+    beforeDrawNum: int
+    openedAt: int
+    closedAt: int
+    condQuestId: int
+    condQuestPhase: int
+    detailUrl: str
+    bannerQuestId: int
+    bannerQuestPhase: int
+    flag: int
+
+
 class MstEventReward(BaseModelORJson):
     eventId: int  # 80305
     groupId: int  # 0

@@ -1111,6 +1111,45 @@ mstShopScript = Table(
 )
 
 
+mstGacha = Table(
+    "mstGacha",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("name", String),
+    Column("imageId", Integer),
+    Column("priority", Integer),
+    Column("warId", Integer),
+    Column("gachaSlot", Integer),
+    Column("type", Integer),
+    Column("shopId1", Integer),
+    Column("shopId2", Integer),
+    Column("rarityId", Integer),
+    Column("baseId", Integer),
+    Column("adjustId", Integer),
+    Column("pickupId", Integer),
+    Column("ticketItemId", Integer),
+    Column("gachaGroupId", Integer),
+    Column("drawNum1", Integer),
+    Column("drawNum2", Integer),
+    Column("extraGroupId1", Integer),
+    Column("extraGroupId2", Integer),
+    Column("extraAddCount1", Integer),
+    Column("extraAddCount2", Integer),
+    Column("freeDrawFlag", Integer),
+    Column("maxDrawNum", Integer),
+    Column("beforeGachaId", Integer),
+    Column("beforeDrawNum", Integer),
+    Column("openedAt", Integer),
+    Column("closedAt", Integer),
+    Column("condQuestId", Integer),
+    Column("condQuestPhase", Integer),
+    Column("detailUrl", String),
+    Column("bannerQuestId", Integer),
+    Column("bannerQuestPhase", Integer),
+    Column("flag", Integer),
+)
+
+
 mstEvent = Table(
     "mstEvent",
     metadata,
@@ -2507,4 +2546,5 @@ TABLES_TO_BE_LOADED = [
     [mstClassBoardBase, mstClassBoardClass, mstClassBoardLine, mstFuncDisp],
     [mstClassBoardLock, mstClassBoardSquare],
     [mstFuncTypeDetail, mstBuffTypeDetail],
+    [mstGacha],
 ]

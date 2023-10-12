@@ -73,6 +73,7 @@ from ...models.raw import (
     mstFriendship,
     mstFunc,
     mstFuncGroup,
+    mstGacha,
     mstGift,
     mstGiftAdd,
     mstHeelPortrait,
@@ -186,6 +187,7 @@ from ...schemas.raw import (
     MstFriendship,
     MstFunc,
     MstFuncGroup,
+    MstGacha,
     MstGift,
     MstGiftAdd,
     MstHeelPortrait,
@@ -259,6 +261,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstSvtAdd: (mstSvtAdd, mstSvtAdd.c.svtId),
     MstEventDigging: (mstEventDigging, mstEventDigging.c.eventId),
     MstClassBoardBase: (mstClassBoardBase, mstClassBoardBase.c.id),
+    MstGacha: (mstGacha, mstGacha.c.id),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
@@ -658,6 +661,7 @@ schema_map_fetch_everything: dict[  # type:ignore
     AssetStorageLine: (AssetStorage, AssetStorage.c.path),
     MstSvt: (mstSvt, mstSvt.c.id),
     MstClassBoardBase: (mstClassBoardBase, mstClassBoardBase.c.id),
+    MstGacha: (mstGacha, mstGacha.c.id),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

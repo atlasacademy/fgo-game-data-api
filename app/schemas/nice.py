@@ -221,6 +221,8 @@ class NiceItem(BaseModelORJson):
     background: NiceItemBGType
     priority: int
     dropPriority: int
+    startedAt: int
+    endedAt: int
     itemSelects: list[NiceItemSelect]
 
 
