@@ -16,12 +16,14 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment: Default
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: "3.x"
+          python-version: "3.11"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip wheel setuptools
@@ -38,10 +40,10 @@ jobs:
         with:
           name: wheels
           path: fgo_api_types/dist/*.whl
-      - name: Upload to PyPI
-        env:
-          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
-        working-directory: ./fgo_api_types
-        run: |
-          poetry config http-basic.pypi "__token__" "$POETRY_PYPI_TOKEN_PYPI"
-          poetry publish
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: fgo_api_types/dist/
+          skip-existing: true
+          verbose: true
+          print-hash: true
