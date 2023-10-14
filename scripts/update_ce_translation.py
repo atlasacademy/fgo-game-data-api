@@ -13,6 +13,7 @@ CONFIG_JSON_PATH = Path(__file__).resolve().parents[1] / "config.json"
 TRANSLATIONS: dict[str, str] = {}
 ENTITY_TRANSLATIONS: dict[str, str] = {}
 TRANSLATION_FILES = (
+    "class_board_names",
     "voice_names",
     "overwrite_voice_names",
     "bgm_names",
@@ -413,6 +414,9 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("spot_names", jp_master, na_master, "mstSpot", get_names)
     update_translation(
         "blank_earth_spot_names", jp_master, na_master, "mstBlankEarthSpot", get_names
+    )
+    update_translation(
+        "class_board_names", jp_master, na_master, "mstClassBoardBase", get_names
     )
     update_translation(
         "illustrator_names", jp_master, na_master, "mstIllustrator", get_names

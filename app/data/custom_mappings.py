@@ -13,6 +13,7 @@ TRANSLATIONS: dict[str, str] = {}
 
 
 class Translation(StrEnum):
+    CLASS_BOARD = "class_board_names"
     VOICE = "voice_names"
     OVERWRITE_VOICE = "overwrite_voice_names"
     BGM = "bgm_names"

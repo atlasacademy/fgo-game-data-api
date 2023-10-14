@@ -541,6 +541,7 @@ async def generate_exports(
                     await dump_nice_mcs(util_en, mstEquips)
                     await dump_nice_ccs(util_en, mstCcs)
                     await dump_nice_bgms(util_en, bgms)
+                    await dump_nice_class_boards(util_en, mstClassBoardBases)
 
                 await dump_svt(util, "nice_servant", all_servants)
                 await dump_svt(util, "nice_equip", all_equips)

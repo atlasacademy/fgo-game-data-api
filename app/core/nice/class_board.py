@@ -31,7 +31,7 @@ from ...schemas.raw import (
     SkillEntityNoReverse,
 )
 from .. import raw
-from ..utils import fmt_url, get_flags
+from ..utils import fmt_url, get_flags, get_translation
 from .func import get_nice_function
 from .item import get_nice_item_amount, get_nice_item_from_raw
 from .skill import get_nice_skill_from_raw
@@ -199,7 +199,7 @@ async def get_nice_class_board(
     skills_map = {skill.mstSkill.id: skill for skill in raw_class_board.mstSkill}
     return NiceClassBoard(
         id=mstClassBoardBase.id,
-        name=mstClassBoardBase.name,
+        name=get_translation(lang, mstClassBoardBase.name),
         icon=fmt_url(
             AssetURL.classBoardBg,
             **base_settings,
