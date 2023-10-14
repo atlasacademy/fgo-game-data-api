@@ -38,6 +38,7 @@ from .db.engine import engines
 from .db.helpers import fetch
 from .db.helpers.svt import get_all_equips
 from .db.load import load_pydantic_to_db, update_db
+from .export.constants import export_constants
 from .models.raw import mstSvtExtra
 from .redis import Redis
 from .redis.helpers.repo_version import get_repo_version, set_repo_version
@@ -457,6 +458,7 @@ async def generate_exports(
     async_engines: dict[Region, AsyncEngine],
 ) -> None:  # pragma: no cover
     if settings.export_all_nice:
+        await export_constants(region_path)
         for region in region_path:
             start_time = time.perf_counter()
             export_path = project_root / "export" / region.value
