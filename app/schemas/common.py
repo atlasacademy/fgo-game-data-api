@@ -21,8 +21,8 @@ class RepoInfo(BaseModelORJson):
 class Region(StrEnum):
     """Region Enum"""
 
-    NA = "NA"
     JP = "JP"
+    NA = "NA"
     CN = "CN"
     KR = "KR"
     TW = "TW"
@@ -31,8 +31,8 @@ class Region(StrEnum):
 class Language(StrEnum):
     """Language Enum"""
 
-    en = "en"
     jp = "jp"
+    en = "en"
 
 
 class ReverseData(StrEnum):
