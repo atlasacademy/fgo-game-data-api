@@ -73,6 +73,7 @@ def get_nice_item_from_raw(
         individuality=get_traits_list(raw_item.individuality),
         icon=icon_url,
         background=ITEM_BG_TYPE_NAME.get(raw_item.bgImageId, NiceItemBGType.unknown),
+        value=raw_item.value,
         priority=raw_item.priority,
         dropPriority=raw_item.dropPriority,
         startedAt=raw_item.startedAt,

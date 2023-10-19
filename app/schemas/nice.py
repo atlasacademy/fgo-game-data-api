@@ -219,6 +219,7 @@ class NiceItem(BaseModelORJson):
     individuality: list[NiceTrait]
     icon: HttpUrl
     background: NiceItemBGType
+    value: int
     priority: int
     dropPriority: int
     startedAt: int
