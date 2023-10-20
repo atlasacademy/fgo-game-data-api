@@ -832,11 +832,23 @@ async def get_master_mission_entity(
 ) -> MasterMissionEntity:
     if not mstMasterMission:
         mstMasterMission = await fetch.get_one(conn, MstMasterMission, mm_id)
-    if not mstMasterMission:
-        raise HTTPException(status_code=404, detail="Master mission not found")
 
     missions = await fetch.get_all(conn, MstEventMission, mm_id)
     mission_ids = [mission.id for mission in missions]
+
+    if not mstMasterMission:
+        if not missions:
+            raise HTTPException(status_code=404, detail="Master mission not found")
+        mission = missions[0]
+        mstMasterMission = MstMasterMission(
+            id=mm_id,
+            priority=0,
+            startedAt=mission.startedAt,
+            endedAt=mission.endedAt,
+            closedAt=mission.closedAt,
+            imageId=0,
+            name="",
+        )
 
     conds = await fetch.get_all_multiple(conn, MstEventMissionCondition, mission_ids)
     cond_detail_ids = [
