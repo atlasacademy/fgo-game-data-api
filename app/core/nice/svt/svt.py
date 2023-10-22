@@ -339,7 +339,13 @@ async def get_nice_servant(
         skill
         for skillEntity in raw_svt.expandedExtraPassive
         for skill in await get_nice_skill_with_svt(
-            conn, skillEntity, svt_id, region, lang, raw_svt.mstSvtPassiveSkill
+            conn,
+            skillEntity,
+            svt_id,
+            region,
+            lang,
+            raw_svt.mstSvtPassiveSkill,
+            raw_svt.mstCommonRelease,
         )
     ]
 

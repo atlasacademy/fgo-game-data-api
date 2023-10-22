@@ -485,7 +485,11 @@ async def get_servant_entity(
 
     mstItem = await get_multiple_items(conn, item_ids)
 
-    common_release_ids: set[int] = set()
+    common_release_ids = {
+        skill.commonReleaseId
+        for skill in mstSvtPassiveSkill
+        if skill.commonReleaseId is not None
+    }
     for limit in mstSvtLimit:
         try:
             strParam = orjson.loads(limit.strParam)

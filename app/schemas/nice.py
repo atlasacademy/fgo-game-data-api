@@ -574,6 +574,7 @@ class ExtraPassive(BaseModel):
     condFriendshipRank: int
     eventId: int
     flag: int
+    releaseConditions: list[NiceCommonRelease] = []
     startedAt: int
     endedAt: int
 

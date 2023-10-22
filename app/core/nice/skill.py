@@ -58,7 +58,9 @@ def get_nice_skill_svt(
     )
 
 
-def get_extra_passive(svt_passive: MstSvtPassiveSkill) -> ExtraPassive:
+def get_extra_passive(
+    svt_passive: MstSvtPassiveSkill, releases: list[MstCommonRelease]
+) -> ExtraPassive:
     return ExtraPassive(
         num=svt_passive.num,
         priority=svt_passive.priority,
@@ -69,6 +71,11 @@ def get_extra_passive(svt_passive: MstSvtPassiveSkill) -> ExtraPassive:
         condFriendshipRank=svt_passive.condFriendshipRank,
         eventId=svt_passive.eventId,
         flag=svt_passive.flag,
+        releaseConditions=[
+            get_nice_common_release(release)
+            for release in releases
+            if release.id == svt_passive.commonReleaseId
+        ],
         startedAt=svt_passive.startedAt,
         endedAt=svt_passive.endedAt,
     )
@@ -131,6 +138,7 @@ async def get_nice_skill_with_svt(
     region: Region,
     lang: Language,
     mstSvtPassiveSkills: Optional[list[MstSvtPassiveSkill]] = None,
+    mstCommonRelease: list[MstCommonRelease] | None = None,
 ) -> list[dict[str, Any]]:
     sorted_svtSkill = sorted(
         skillEntity.mstSvtSkill, key=lambda x: (x.svtId, x.num, -x.priority)
@@ -154,7 +162,7 @@ async def get_nice_skill_with_svt(
 
     if mstSvtPassiveSkills:
         nice_skill["extraPassive"] = [
-            get_extra_passive(svt_skill)
+            get_extra_passive(svt_skill, mstCommonRelease if mstCommonRelease else [])
             for svt_skill in mstSvtPassiveSkills
             if svt_skill.skillId == skillEntity.mstSkill.id
         ]
