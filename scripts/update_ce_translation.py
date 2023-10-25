@@ -374,7 +374,11 @@ def update_translation(
                 updated_translation[jp_name] = na_name
                 continue
 
-        if colNo in na_names and na_names[colNo] != "" and jp_name not in DONT_USE_NA_TRANSLATION:  # type: ignore
+        if (
+            colNo in na_names
+            and na_names[colNo] != ""  # type: ignore
+            and jp_name not in DONT_USE_NA_TRANSLATION
+        ):
             updated_translation[jp_name] = na_names[colNo]  # type: ignore
         elif jp_name not in updated_translation:
             updated_translation[jp_name] = current_translations.get(

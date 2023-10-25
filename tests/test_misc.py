@@ -99,7 +99,11 @@ def test_list_exclude() -> None:
 
 def test_voice_lang_en() -> None:
     assert (
-        get_voice_name("レベルアップ エスタブリッシュメント", Language.en, Translation.OVERWRITE_VOICE)
+        get_voice_name(
+            "レベルアップ エスタブリッシュメント",
+            Language.en,
+            Translation.OVERWRITE_VOICE,
+        )
         == "Level Up Establishment"
     )
     assert (

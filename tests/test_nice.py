@@ -459,7 +459,10 @@ class TestServantSpecial:
     async def test_buff_DamageRelease(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/buff/2935")
         assert response.status_code == 200
-        assert response.json()["script"] == {"ReleaseText": "睡眠解除", "DamageRelease": 1}
+        assert response.json()["script"] == {
+            "ReleaseText": "睡眠解除",
+            "DamageRelease": 1,
+        }
 
     async def test_buff_checkIndvType(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/buff/1831")
