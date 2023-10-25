@@ -7,7 +7,7 @@ import aiofiles
 import httpx
 import orjson
 from fastapi.concurrency import run_in_threadpool
-from git import Repo  # type: ignore
+from git import Repo
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 

@@ -330,7 +330,7 @@ def get_enemies_in_stage(
     mstStage: MstStage,
     enemy_deck_svts: list[EnemyDeckInfo],
     npc_id_map: dict[DeckType, dict[int, DeckSvt]],
-    include_spawn_bonus_enemy=False,
+    include_spawn_bonus_enemy: bool = False,
 ) -> list[EnemyDeckInfo]:
     stage_enemies = [
         deck_info
@@ -370,7 +370,7 @@ async def get_quest_enemies(
     quest_detail: QuestDetail,
     quest_drop: list[QuestDrop],
     lang: Language = Language.jp,
-    include_spawn_bonus_enemy=False,
+    include_spawn_bonus_enemy: bool = False,
 ) -> QuestEnemies:
     npc_id_map: dict[DeckType, dict[int, DeckSvt]] = {}
     DECK_LIST: list[tuple[list[Deck], DeckType]] = [

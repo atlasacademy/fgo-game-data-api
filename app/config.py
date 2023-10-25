@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import orjson
-from git import Repo  # type: ignore
+from git import Repo
 from pydantic import (
     BaseSettings,
     DirectoryPath,

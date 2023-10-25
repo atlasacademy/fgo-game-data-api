@@ -11774,7 +11774,7 @@
           "priority": 105,
           "damage": [
             100
-              ],
+          ],
           "strengthStatus": 2,
           "flag": 2,
           "imageIndex": 4,
@@ -11784,19 +11784,19 @@
           "condFriendshipRank": 0,
           "motion": 50,
           "card": "arts"
-    },
-    {
+        },
+        {
           "svtId": 800100,
-      "num": 1,
+          "num": 1,
           "priority": 106,
           "damage": [
-        100
-      ],
-      "strengthStatus": 2,
+            100
+          ],
+          "strengthStatus": 2,
           "flag": 2,
           "imageIndex": 4,
-      "condQuestId": 3000124,
-      "condQuestPhase": 3,
+          "condQuestId": 3000124,
+          "condQuestPhase": 3,
           "condLv": 0,
           "condFriendshipRank": 0,
           "motion": 50,
