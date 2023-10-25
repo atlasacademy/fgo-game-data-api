@@ -1740,6 +1740,64 @@ mstHeelPortrait = Table(
 )
 
 
+mstWarBoard = Table(
+    "mstWarBoard",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("backGroundId", Integer),
+    Column("imageSetId", Integer),
+    Column("eventId", Integer),
+)
+
+
+mstWarBoardStage = Table(
+    "mstWarBoardStage",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("warBoardId", Integer, index=True),
+    Column("name", String),
+    Column("boardMessage", String),
+    Column("editBgmId", Integer),
+    Column("playBgmId", Integer),
+    Column("formationCost", Integer),
+    Column("hasTitleAction", Integer),
+    Column("partySkillId", Integer),
+)
+
+
+mstWarBoardStageLayout = Table(
+    "mstWarBoardStageLayout",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("stageId", Integer, index=True),
+    Column("squareIndex", Integer),
+    Column("type", Integer),
+    Column("effectId", Integer),
+    Column("isPiecePut", Boolean),
+    Column("breakPoint", Integer),
+    Column("limitActionPoint", Integer),
+    Column("forceId", Integer),
+    Column("groupId", Integer),
+    Column("followerType", Integer),
+    Column("pieceIndex", Integer),
+    Column("restrictionId", Integer),
+    Column("evalValue", Integer),
+    Column("imageId", Integer),
+    Column("actionType", Integer),
+    Column("throughCondId", Integer),
+)
+
+
+mstWarBoardTreasure = Table(
+    "mstWarBoardTreasure",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("type", Integer),
+    Column("giftId", Integer),
+    Column("rarity", Integer),
+)
+
+
 mstBgm = Table(
     "mstBgm",
     metadata,
@@ -2481,6 +2539,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventCommandAssist],
     [mstHeelPortrait],
     [mstEventMural],
+    [mstWarBoard, mstWarBoardStage, mstWarBoardStageLayout, mstWarBoardTreasure],
     [mstFriendship],
     [mstGiftAdd],
     [mstIllustrator],

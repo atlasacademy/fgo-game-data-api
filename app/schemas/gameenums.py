@@ -5160,3 +5160,78 @@ CLASS_BOARD_SKILL_TYPE_NAME: dict[int, NiceClassBoardSkillType] = {
     1: NiceClassBoardSkillType.passive,
     2: NiceClassBoardSkillType.commandSpell,
 }
+
+
+class WarBoardStageLayoutType(IntEnum):
+    NORMAL = 1
+    ITEM = 2
+    EFFECT = 3
+    TREASURE = 4
+    WALL = 5
+
+
+class NiceWarBoardStageSquareType(StrEnum):
+    """War Board Stage Square Type"""
+
+    normal = "normal"
+    item = "item"
+    effect = "effect"
+    treasure = "treasure"
+    wall = "wall"
+
+
+WAR_BOARD_STAGE_SQUARE_TYPE_NAME: dict[int, NiceWarBoardStageSquareType] = {
+    1: NiceWarBoardStageSquareType.normal,
+    2: NiceWarBoardStageSquareType.item,
+    3: NiceWarBoardStageSquareType.effect,
+    4: NiceWarBoardStageSquareType.treasure,
+    5: NiceWarBoardStageSquareType.wall,
+}
+
+
+class WarBoardTreasureRarity(IntEnum):
+    COMMON = 0
+    RARE = 1
+    SRARE = 2
+    COMMON_PLUS = 3
+    RARE_PLUS = 4
+    SRARE_PLUS = 5
+    COMMON_PLUS2 = 6
+    RARE_PLUS2 = 7
+    SRARE_PLUS2 = 8
+    ITEM_ICON = 9
+    ITEM_ICON_PLUS = 10
+    ITEM_ICON_PLUS2 = 11
+
+
+class NiceWarBoardTreasureRarity(StrEnum):
+    """War Board Treasure Rarity"""
+
+    common = "common"
+    rare = "rare"
+    srare = "srare"
+    commonPlus = "commonPlus"
+    rarePlus = "rarePlus"
+    srarePlus = "srarePlus"
+    commonPlus2 = "commonPlus2"
+    rarePlus2 = "rarePlus2"
+    srarePlus2 = "srarePlus2"
+    itemIcon = "itemIcon"
+    itemIconPlus = "itemIconPlus"
+    itemIconPlus2 = "itemIconPlus2"
+
+
+WAR_BOARD_TREASURE_RARITY_NAME: dict[int, NiceWarBoardTreasureRarity] = {
+    0: NiceWarBoardTreasureRarity.common,
+    1: NiceWarBoardTreasureRarity.rare,
+    2: NiceWarBoardTreasureRarity.srare,
+    3: NiceWarBoardTreasureRarity.commonPlus,
+    4: NiceWarBoardTreasureRarity.rarePlus,
+    5: NiceWarBoardTreasureRarity.srarePlus,
+    6: NiceWarBoardTreasureRarity.commonPlus2,
+    7: NiceWarBoardTreasureRarity.rarePlus2,
+    8: NiceWarBoardTreasureRarity.srarePlus2,
+    9: NiceWarBoardTreasureRarity.itemIcon,
+    10: NiceWarBoardTreasureRarity.itemIconPlus,
+    11: NiceWarBoardTreasureRarity.itemIconPlus2,
+}

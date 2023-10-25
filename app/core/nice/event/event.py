@@ -47,6 +47,7 @@ from .shop import get_nice_shop
 from .tower import get_nice_event_tower
 from .treasure_box import get_nice_treasure_box
 from .voice_play import get_nice_event_voice_play
+from .warboard import get_nice_war_board
 
 
 settings = Settings()
@@ -289,6 +290,17 @@ async def get_nice_event(
                 voice_groups,
             )
             for lottery in raw_event.mstBoxGacha
+        ],
+        warBoards=[
+            get_nice_war_board(
+                region,
+                wb,
+                raw_event.mstWarBoardStage,
+                raw_event.mstWarBoardStageLayout,
+                raw_event.mstWarBoardTreasure,
+                gift_data,
+            )
+            for wb in raw_event.mstWarBoard
         ],
         treasureBoxes=[
             get_nice_treasure_box(

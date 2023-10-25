@@ -1755,3 +1755,26 @@ export enum NiceClassBoardSkillType {
     PASSIVE = "passive",
     COMMAND_SPELL = "commandSpell",
 }
+
+export enum NiceWarBoardStageSquareType {
+    NORMAL = "normal",
+    ITEM = "item",
+    EFFECT = "effect",
+    TREASURE = "treasure",
+    WALL = "wall",
+}
+
+export enum NiceWarBoardTreasureRarity {
+    COMMON = "common",
+    RARE = "rare",
+    SRARE = "srare",
+    COMMON_PLUS = "commonPlus",
+    RARE_PLUS = "rarePlus",
+    SRARE_PLUS = "srarePlus",
+    COMMON_PLUS2 = "commonPlus2",
+    RARE_PLUS2 = "rarePlus2",
+    SRARE_PLUS2 = "srarePlus2",
+    ITEM_ICON = "itemIcon",
+    ITEM_ICON_PLUS = "itemIconPlus",
+    ITEM_ICON_PLUS2 = "itemIconPlus2",
+}

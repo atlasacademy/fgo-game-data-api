@@ -558,10 +558,26 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Class Board Skill Type",
         "CLASS_BOARD_SKILL_TYPE_NAME",
     ),
+    (
+        "WarBoardStageLayoutEntity.Type",
+        "WarBoardStageLayoutType",
+        "NiceWarBoardStageSquareType",
+        "War Board Stage Square Type",
+        "WAR_BOARD_STAGE_SQUARE_TYPE_NAME",
+    ),
+    (
+        "WarBoardTreasureComponent.Rarity",
+        "WarBoardTreasureRarity",
+        "NiceWarBoardTreasureRarity",
+        "War Board Treasure Rarity",
+        "WAR_BOARD_TREASURE_RARITY_NAME",
+    ),
 ]
 
 
-cs_signatures: dict[str, str] = {f"public enum {enum[0]}": enum[0] for enum in ENUMS}
+cs_signatures: dict[str, str] = {
+    f"public enum {enum[0]}": enum[0] for enum in ENUMS
+} | {f"private enum {enum[0]}": enum[0] for enum in ENUMS}
 
 
 def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None:

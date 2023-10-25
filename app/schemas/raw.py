@@ -1454,6 +1454,52 @@ class MstEventAdd(BaseModelORJson):
     endedAt: int
 
 
+class MstWarBoard(BaseModelORJson):
+    id: int
+    backGroundId: int
+    imageSetId: int
+    eventId: int
+
+
+class MstWarBoardStage(BaseModelORJson):
+    id: int
+    warBoardId: int
+    name: str
+    boardMessage: str
+    editBgmId: int
+    playBgmId: int
+    formationCost: int
+    hasTitleAction: int
+    partySkillId: int
+
+
+class MstWarBoardStageLayout(BaseModelORJson):
+    individuality: list[int]
+    stageId: int
+    squareIndex: int
+    type: int
+    effectId: int
+    isPiecePut: bool
+    breakPoint: int
+    limitActionPoint: int
+    forceId: int
+    groupId: int
+    followerType: int
+    pieceIndex: int
+    restrictionId: int
+    evalValue: int
+    imageId: int
+    actionType: int
+    throughCondId: int
+
+
+class MstWarBoardTreasure(BaseModelORJson):
+    id: int
+    type: int
+    giftId: int
+    rarity: int
+
+
 class MstEvent(BaseModelORJson):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -2113,6 +2159,10 @@ class EventEntity(BaseModelORJson):
     mstHeelPortrait: list[MstHeelPortrait]
     mstEventMural: list[MstEventMural]
     mstEventPointActivity: list[MstEventPointActivity]
+    mstWarBoard: list[MstWarBoard]
+    mstWarBoardStage: list[MstWarBoardStage]
+    mstWarBoardStageLayout: list[MstWarBoardStageLayout]
+    mstWarBoardTreasure: list[MstWarBoardTreasure]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]

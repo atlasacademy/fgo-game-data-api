@@ -116,6 +116,10 @@ from ...models.raw import (
     mstVoice,
     mstWar,
     mstWarAdd,
+    mstWarBoard,
+    mstWarBoardStage,
+    mstWarBoardStageLayout,
+    mstWarBoardTreasure,
     mstWarQuestSelection,
 )
 from ...schemas.base import BaseModelORJson
@@ -230,6 +234,10 @@ from ...schemas.raw import (
     MstVoice,
     MstWar,
     MstWarAdd,
+    MstWarBoard,
+    MstWarBoardStage,
+    MstWarBoardStageLayout,
+    MstWarBoardTreasure,
     MstWarQuestSelection,
 )
 from .utils import fetch_one
@@ -514,6 +522,7 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventPointActivity.c.eventId,
         mstEventPointActivity.c.groupId,
     ),
+    MstWarBoard: (mstWarBoard, mstWarBoard.c.eventId, mstWarBoard.c.id),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -625,6 +634,21 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
             mstClassBoardCommandSpell.c.commandSpellId,
             mstClassBoardCommandSpell.c.lv,
         ],
+    ),
+    MstWarBoardStage: (
+        mstWarBoardStage,
+        mstWarBoardStage.c.warBoardId,
+        [mstWarBoardStage.c.warBoardId, mstWarBoardStage.c.id],
+    ),
+    MstWarBoardStageLayout: (
+        mstWarBoardStageLayout,
+        mstWarBoardStageLayout.c.stageId,
+        [mstWarBoardStageLayout.c.stageId, mstWarBoardStageLayout.c.squareIndex],
+    ),
+    MstWarBoardTreasure: (
+        mstWarBoardTreasure,
+        mstWarBoardTreasure.c.id,
+        [mstWarBoardTreasure.c.id],
     ),
 }
 
