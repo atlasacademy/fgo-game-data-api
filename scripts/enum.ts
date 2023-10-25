@@ -131,6 +131,7 @@ export enum NiceFuncType {
     SET_QUEST_ROUTE_FLAG = "setQuestRouteFlag",
     LAST_USE_PLAYER_SKILL_COPY = "lastUsePlayerSkillCopy",
     CHANGE_ENEMY_MASTER_FACE = "changeEnemyMasterFace",
+    DAMAGE_VALUE_SAFE_ONCE = "damageValueSafeOnce",
 }
 
 export enum NiceFuncTargetType {
@@ -335,6 +336,8 @@ export enum NiceBuffType {
     COMMANDATTACK_AFTER_FUNCTION_MAIN_ONLY = "commandattackAfterFunctionMainOnly",
     ATTACK_BEFORE_FUNCTION_MAIN_ONLY = "attackBeforeFunctionMainOnly",
     ATTACK_AFTER_FUNCTION_MAIN_ONLY = "attackAfterFunctionMainOnly",
+    WAR_BOARD_NOT_ATTACKED = "warBoardNotAttacked",
+    WAR_BOARD_IGNORE_DEFEATPOINT = "warBoardIgnoreDefeatpoint",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -614,6 +617,11 @@ export enum NiceDataValsType {
     TriggeredTargetHpRange = "triggeredtargethprange",
     TriggeredTargetHpRateRange = "triggeredtargethpraterange",
     ExcludeUnSubStateIndiv = "excludeunsubstateindiv",
+    ProgressTurnOnBoard = "progressturnonboard",
+    CheckTargetResurrectable = "checktargetresurrectable",
+    CancelTransform = "canceltransform",
+    UnSubStateWhenContinue = "unsubstatewhencontinue",
+    CheckTargetHaveDefeatPoint = "checktargethavedefeatpoint",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1376,6 +1384,7 @@ export enum NiceAiCond {
     TOTAL_TURN_HIGHER = "totalTurnHigher",
     TOTAL_TURN_LOWER = "totalTurnLower",
     TOTAL_TURN_EQUAL = "totalTurnEqual",
+    CHECK_WAR_BOARD_SQUARE_INDIVIDUALITY = "checkWarBoardSquareIndividuality",
 }
 
 export enum NiceAiActType {
@@ -1562,6 +1571,7 @@ export enum NiceAiCondParameter {
     COUNT_PLAYER_SKILL = "countPlayerSkill",
     COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = "countPlayerSkillIncludeMasterSkill",
     TOTAL_TURN = "totalTurn",
+    WAR_BOARD_SQUARE_INDIVIDUALITY = "warBoardSquareIndividuality",
 }
 
 export enum NiceAiCondRefine {

@@ -208,6 +208,7 @@ class FuncType(IntEnum):
     SET_QUEST_ROUTE_FLAG = 134
     LAST_USE_PLAYER_SKILL_COPY = 135
     CHANGE_ENEMY_MASTER_FACE = 136
+    DAMAGE_VALUE_SAFE_ONCE = 137
 
 
 class NiceFuncType(StrEnum):
@@ -313,6 +314,7 @@ class NiceFuncType(StrEnum):
     setQuestRouteFlag = "setQuestRouteFlag"
     lastUsePlayerSkillCopy = "lastUsePlayerSkillCopy"
     changeEnemyMasterFace = "changeEnemyMasterFace"
+    damageValueSafeOnce = "damageValueSafeOnce"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -416,6 +418,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     134: NiceFuncType.setQuestRouteFlag,
     135: NiceFuncType.lastUsePlayerSkillCopy,
     136: NiceFuncType.changeEnemyMasterFace,
+    137: NiceFuncType.damageValueSafeOnce,
 }
 
 
@@ -692,6 +695,8 @@ class BuffType(IntEnum):
     COMMANDATTACK_AFTER_FUNCTION_MAIN_ONLY = 180
     ATTACK_BEFORE_FUNCTION_MAIN_ONLY = 181
     ATTACK_AFTER_FUNCTION_MAIN_ONLY = 182
+    WAR_BOARD_NOT_ATTACKED = 183
+    WAR_BOARD_IGNORE_DEFEATPOINT = 184
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -867,6 +872,8 @@ class NiceBuffType(StrEnum):
     commandattackAfterFunctionMainOnly = "commandattackAfterFunctionMainOnly"
     attackBeforeFunctionMainOnly = "attackBeforeFunctionMainOnly"
     attackAfterFunctionMainOnly = "attackAfterFunctionMainOnly"
+    warBoardNotAttacked = "warBoardNotAttacked"
+    warBoardIgnoreDefeatpoint = "warBoardIgnoreDefeatpoint"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1040,6 +1047,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     180: NiceBuffType.commandattackAfterFunctionMainOnly,
     181: NiceBuffType.attackBeforeFunctionMainOnly,
     182: NiceBuffType.attackAfterFunctionMainOnly,
+    183: NiceBuffType.warBoardNotAttacked,
+    184: NiceBuffType.warBoardIgnoreDefeatpoint,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1590,6 +1599,11 @@ class DataValsType(IntEnum):
     TriggeredTargetHpRange = 138
     TriggeredTargetHpRateRange = 139
     ExcludeUnSubStateIndiv = 140
+    ProgressTurnOnBoard = 141
+    CheckTargetResurrectable = 142
+    CancelTransform = 143
+    UnSubStateWhenContinue = 144
+    CheckTargetHaveDefeatPoint = 145
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3612,6 +3626,7 @@ class AiCond(IntEnum):
     TOTAL_TURN_HIGHER = 191
     TOTAL_TURN_LOWER = 192
     TOTAL_TURN_EQUAL = 193
+    CHECK_WAR_BOARD_SQUARE_INDIVIDUALITY = 194
 
 
 class NiceAiCond(StrEnum):
@@ -3787,6 +3802,7 @@ class NiceAiCond(StrEnum):
     totalTurnHigher = "totalTurnHigher"
     totalTurnLower = "totalTurnLower"
     totalTurnEqual = "totalTurnEqual"
+    checkWarBoardSquareIndividuality = "checkWarBoardSquareIndividuality"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3944,6 +3960,7 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     191: NiceAiCond.totalTurnHigher,
     192: NiceAiCond.totalTurnLower,
     193: NiceAiCond.totalTurnEqual,
+    194: NiceAiCond.checkWarBoardSquareIndividuality,
 }
 
 
@@ -4452,6 +4469,7 @@ class AiCondParameter(IntEnum):
     COUNT_PLAYER_SKILL = 37
     COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = 38
     TOTAL_TURN = 39
+    WAR_BOARD_SQUARE_INDIVIDUALITY = 40
 
 
 class NiceAiCondParameter(StrEnum):
@@ -4497,6 +4515,7 @@ class NiceAiCondParameter(StrEnum):
     countPlayerSkill = "countPlayerSkill"
     countPlayerSkillIncludeMasterSkill = "countPlayerSkillIncludeMasterSkill"
     totalTurn = "totalTurn"
+    warBoardSquareIndividuality = "warBoardSquareIndividuality"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -4540,6 +4559,7 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     37: NiceAiCondParameter.countPlayerSkill,
     38: NiceAiCondParameter.countPlayerSkillIncludeMasterSkill,
     39: NiceAiCondParameter.totalTurn,
+    40: NiceAiCondParameter.warBoardSquareIndividuality,
 }
 
 
