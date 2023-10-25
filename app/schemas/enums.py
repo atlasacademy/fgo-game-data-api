@@ -1015,6 +1015,7 @@ class Trait(StrEnum):
     murasamaAscension0 = "murasamaAscension0"
     classUOlgaMarieFlare = "classUOlgaMarieFlare"
     elementalsWrath = "elementalsWrath"
+    buffBuffSuccessRateUp = "buffBuffSuccessRateUp"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1280,6 +1281,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3087: Trait.buffBound,
     3088: Trait.marking,
     3089: Trait.burnEffectivenessUp,
+    3090: Trait.buffBuffSuccessRateUp,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
