@@ -296,6 +296,7 @@ async def get_nice_event(
                 region,
                 wb,
                 raw_event.mstWarBoardStage,
+                raw_event.mstWarBoardQuest,
                 raw_event.mstWarBoardStageLayout,
                 raw_event.mstWarBoardTreasure,
                 gift_data,

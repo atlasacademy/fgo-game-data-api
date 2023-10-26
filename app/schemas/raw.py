@@ -1474,7 +1474,7 @@ class MstWarBoardStage(BaseModelORJson):
 
 
 class MstWarBoardStageLayout(BaseModelORJson):
-    individuality: list[int]
+    individuality: list[int] | None = None
     stageId: int
     squareIndex: int
     type: int
@@ -1490,7 +1490,14 @@ class MstWarBoardStageLayout(BaseModelORJson):
     evalValue: int
     imageId: int
     actionType: int
-    throughCondId: int
+    throughCondId: int | None = None
+
+
+class MstWarBoardQuest(BaseModelORJson):
+    stageId: int
+    questId: int
+    questPhase: int
+    script: dict[str, Any]
 
 
 class MstWarBoardTreasure(BaseModelORJson):
@@ -2161,6 +2168,7 @@ class EventEntity(BaseModelORJson):
     mstEventPointActivity: list[MstEventPointActivity]
     mstWarBoard: list[MstWarBoard]
     mstWarBoardStage: list[MstWarBoardStage]
+    mstWarBoardQuest: list[MstWarBoardQuest]
     mstWarBoardStageLayout: list[MstWarBoardStageLayout]
     mstWarBoardTreasure: list[MstWarBoardTreasure]
     mstItem: list[MstItem]

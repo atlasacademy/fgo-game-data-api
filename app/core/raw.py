@@ -145,6 +145,7 @@ from ..schemas.raw import (
     MstWar,
     MstWarAdd,
     MstWarBoard,
+    MstWarBoardQuest,
     MstWarBoardStage,
     MstWarBoardStageLayout,
     MstWarBoardTreasure,
@@ -1037,6 +1038,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     warboard_stage_layouts = await fetch.get_all_multiple(
         conn, MstWarBoardStageLayout, {w.id for w in warboard_stages}
     )
+    warboard_quests = await fetch.get_all_multiple(
+        conn, MstWarBoardQuest, {w.id for w in warboard_stages}
+    )
     warboard_treasures = await fetch.get_all_multiple(
         conn,
         MstWarBoardTreasure,
@@ -1160,6 +1164,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         ),
         mstWarBoard=warboards,
         mstWarBoardStage=warboard_stages,
+        mstWarBoardQuest=warboard_quests,
         mstWarBoardStageLayout=warboard_stage_layouts,
         mstWarBoardTreasure=warboard_treasures,
         mstItem=mstItem,

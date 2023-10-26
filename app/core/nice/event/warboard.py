@@ -12,6 +12,7 @@ from ....schemas.nice import (
 )
 from ....schemas.raw import (
     MstWarBoard,
+    MstWarBoardQuest,
     MstWarBoardStage,
     MstWarBoardStageLayout,
     MstWarBoardTreasure,
@@ -51,14 +52,24 @@ def get_nice_war_board_stage_square(
 def get_nice_war_board_stage(
     region: Region,
     wb_stage: MstWarBoardStage,
+    wb_quests: list[MstWarBoardQuest],
     wb_stage_squares: list[MstWarBoardStageLayout],
     wb_treasures: list[MstWarBoardTreasure],
     gift_data: GiftData,
 ) -> NiceWarBoardStage:
+    try:
+        wb_quest = next(q for q in wb_quests if q.stageId == wb_stage.id)
+        questId = wb_quest.questId
+        questPhase = wb_quest.questPhase
+    except StopIteration:
+        questId = 0
+        questPhase = 0
     return NiceWarBoardStage(
         warBoardStageId=wb_stage.id,
         boardMessage=wb_stage.boardMessage,
         formationCost=wb_stage.formationCost,
+        questId=questId,
+        questPhase=questPhase,
         squares=[
             get_nice_war_board_stage_square(
                 region, wb_stage_square, wb_treasures, gift_data
@@ -73,6 +84,7 @@ def get_nice_war_board(
     region: Region,
     wb: MstWarBoard,
     wb_stages: list[MstWarBoardStage],
+    wb_quests: list[MstWarBoardQuest],
     wb_stage_squares: list[MstWarBoardStageLayout],
     wb_treasures: list[MstWarBoardTreasure],
     gift_data: GiftData,
@@ -81,7 +93,7 @@ def get_nice_war_board(
         warBoardId=wb.id,
         stages=[
             get_nice_war_board_stage(
-                region, wb_stage, wb_stage_squares, wb_treasures, gift_data
+                region, wb_stage, wb_quests, wb_stage_squares, wb_treasures, gift_data
             )
             for wb_stage in wb_stages
             if wb_stage.warBoardId == wb.id

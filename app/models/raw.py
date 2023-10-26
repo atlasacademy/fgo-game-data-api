@@ -1765,6 +1765,16 @@ mstWarBoardStage = Table(
 )
 
 
+mstWarBoardQuest = Table(
+    "mstWarBoardQuest",
+    metadata,
+    Column("script", JSONB),
+    Column("questId", Integer),
+    Column("questPhase", Integer),
+    Column("stageId", Integer, index=True),
+)
+
+
 mstWarBoardStageLayout = Table(
     "mstWarBoardStageLayout",
     metadata,
@@ -2539,7 +2549,13 @@ TABLES_TO_BE_LOADED = [
     [mstEventCommandAssist],
     [mstHeelPortrait],
     [mstEventMural],
-    [mstWarBoard, mstWarBoardStage, mstWarBoardStageLayout, mstWarBoardTreasure],
+    [
+        mstWarBoard,
+        mstWarBoardStage,
+        mstWarBoardStageLayout,
+        mstWarBoardTreasure,
+        mstWarBoardQuest,
+    ],
     [mstFriendship],
     [mstGiftAdd],
     [mstIllustrator],

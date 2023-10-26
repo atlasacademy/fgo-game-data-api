@@ -2032,6 +2032,8 @@ class NiceWarBoardStage(BaseModelORJson):
     warBoardStageId: int
     boardMessage: str
     formationCost: int
+    questId: int
+    questPhase: int
     squares: list[NiceWarBoardStageSquare]
 
 

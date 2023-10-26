@@ -117,6 +117,7 @@ from ...models.raw import (
     mstWar,
     mstWarAdd,
     mstWarBoard,
+    mstWarBoardQuest,
     mstWarBoardStage,
     mstWarBoardStageLayout,
     mstWarBoardTreasure,
@@ -235,6 +236,7 @@ from ...schemas.raw import (
     MstWar,
     MstWarAdd,
     MstWarBoard,
+    MstWarBoardQuest,
     MstWarBoardStage,
     MstWarBoardStageLayout,
     MstWarBoardTreasure,
@@ -523,6 +525,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventPointActivity.c.groupId,
     ),
     MstWarBoard: (mstWarBoard, mstWarBoard.c.eventId, mstWarBoard.c.id),
+    MstWarBoardQuest: (
+        mstWarBoardQuest,
+        mstWarBoardQuest.c.stageId,
+        mstWarBoardQuest.c.stageId,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
