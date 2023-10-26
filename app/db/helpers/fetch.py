@@ -525,11 +525,6 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventPointActivity.c.groupId,
     ),
     MstWarBoard: (mstWarBoard, mstWarBoard.c.eventId, mstWarBoard.c.id),
-    MstWarBoardQuest: (
-        mstWarBoardQuest,
-        mstWarBoardQuest.c.stageId,
-        mstWarBoardQuest.c.stageId,
-    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -656,6 +651,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstWarBoardTreasure,
         mstWarBoardTreasure.c.id,
         [mstWarBoardTreasure.c.id],
+    ),
+    MstWarBoardQuest: (
+        mstWarBoardQuest,
+        mstWarBoardQuest.c.stageId,
+        [mstWarBoardQuest.c.stageId],
     ),
 }
 
