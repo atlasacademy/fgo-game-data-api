@@ -406,6 +406,7 @@ async def get_basic_svt(
     svt_id: int,
     svt_limit: Optional[int] = None,
     disp_limit: int | None = None,
+    image_svt_id: int | None = None,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
@@ -470,7 +471,10 @@ async def get_basic_svt(
 
     face_limit = disp_limit or mstSvtLimit.limitCount
 
-    if mstSvt.type == SvtType.SERVANT_EQUIP:
+    if image_svt_id:
+        base_settings["item_id"] = image_svt_id
+        basic_servant["face"] = AssetURL.face.format(**base_settings, i="")
+    elif mstSvt.type == SvtType.SERVANT_EQUIP:
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
     elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
         if svtExtra and face_limit in svtExtra.costumeLimitSvtIdMap:
@@ -516,11 +520,14 @@ async def get_basic_servant(
     item_id: int,
     svt_limit: Optional[int] = None,
     disp_limit: int | None = None,
+    image_svt_id: int | None = None,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> BasicServant:
     return BasicServant.parse_obj(
-        await get_basic_svt(redis, region, item_id, svt_limit, disp_limit, lang, mstSvt)
+        await get_basic_svt(
+            redis, region, item_id, svt_limit, disp_limit, image_svt_id, lang, mstSvt
+        )
     )
 
 
@@ -529,6 +536,7 @@ class BasicServantGet:
     svt_id: int
     svt_limit: int
     disp_limit: int
+    image_svt_id: int | None
 
 
 async def get_multiple_basic_servants(
@@ -540,7 +548,13 @@ async def get_multiple_basic_servants(
     return await asyncio.gather(
         *[
             get_basic_servant(
-                redis, region, detail.svt_id, detail.svt_limit, detail.disp_limit, lang
+                redis,
+                region,
+                detail.svt_id,
+                detail.svt_limit,
+                detail.disp_limit,
+                detail.image_svt_id,
+                lang,
             )
             for detail in svt_details
         ]

@@ -225,6 +225,7 @@ async def get_nice_support_servants(
             svt_follower_map[npc.leaderSvtId].svtId,
             svt_follower_map[npc.leaderSvtId].limitCount,
             get_npc_disp_limit(npc, svt_follower_map[npc.leaderSvtId]),
+            None,
         )
         for npc in npcFollower
     ]
