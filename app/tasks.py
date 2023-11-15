@@ -395,6 +395,7 @@ def is_recent(
 
 
 class TimerData(BaseModelORJson):
+    updatedAt: int
     events: list[NiceEvent]
     gachas: list[MstGacha]
     masterMissions: list[NiceMasterMission]
@@ -442,6 +443,7 @@ async def dump_current_events(
     ]
 
     timer_data = TimerData(
+        updatedAt=now,
         events=events,
         gachas=gachas,
         masterMissions=masterMissions,
