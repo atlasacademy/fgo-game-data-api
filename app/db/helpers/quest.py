@@ -695,6 +695,7 @@ async def get_quest_phase_entity(
     select_quest_phase = [
         func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
         sql_jsonb_agg(mstQuestConsumeItem),
+        sql_jsonb_agg(mstItem),
         sql_jsonb_agg(mstQuestRelease),
         sql_jsonb_agg(mstQuestReleaseOverwrite),
         sql_jsonb_agg(mstClosedMessage),

@@ -555,7 +555,12 @@ async def get_nice_quest_phase(
         ) = await asyncio.gather(
             quest_enemy_coro,
             get_rayshift_drops(
-                conn, rayshift_quest_id, phase, questSelect, questHash, min_query_id
+                conn,
+                rayshift_quest_id,
+                phase,
+                questSelect,
+                None if db_data.raw.mstQuest.type == QuestType.WAR_BOARD else questHash,
+                min_query_id,
             ),
             get_all_quest_hashes(conn, rayshift_quest_id, phase, questSelect),
         )
