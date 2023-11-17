@@ -1815,6 +1815,7 @@ class ShopType(IntEnum):
     SHOP13 = 13
     TRADE_AP = 14
     SHOP15 = 15
+    EVENT_SVT_EQUIP = 16
 
 
 class NiceShopType(StrEnum):
@@ -1836,6 +1837,7 @@ class NiceShopType(StrEnum):
     shop13 = "shop13"
     tradeAp = "tradeAp"
     shop15 = "shop15"
+    eventSvtEquip = "eventSvtEquip"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -1855,6 +1857,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     13: NiceShopType.shop13,
     14: NiceShopType.tradeAp,
     15: NiceShopType.shop15,
+    16: NiceShopType.eventSvtEquip,
 }
 
 

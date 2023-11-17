@@ -702,6 +702,7 @@ export enum NiceShopType {
     SHOP13 = "shop13",
     TRADE_AP = "tradeAp",
     SHOP15 = "shop15",
+    EVENT_SVT_EQUIP = "eventSvtEquip",
 }
 
 export enum NicePayType {
