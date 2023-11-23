@@ -247,24 +247,23 @@ def get_svt_extraAssets(
                 except orjson.JSONDecodeError:  # pragma: no cover
                     pass
 
-        if raw_svt.mstSvtAdd:
-            if "additionExpandImage" in raw_svt.mstSvtAdd.script:
-                for i in raw_svt.mstSvtAdd.script["additionExpandImage"]:
-                    if i not in costume_ids:
-                        if charaGraphEx.ascension is None:
-                            charaGraphEx.ascension = {}
-                        charaGraphEx.ascension[i + 1] = fmt_url(
-                            AssetURL.charaGraphEx[i + 1], **base_settings_id
-                        )
+        if raw_svt.mstSvtAdd and "additionExpandImage" in raw_svt.mstSvtAdd.script:
+            for i in raw_svt.mstSvtAdd.script["additionExpandImage"]:
+                if i not in costume_ids:
+                    if charaGraphEx.ascension is None:
+                        charaGraphEx.ascension = {}
+                    charaGraphEx.ascension[i + 1] = fmt_url(
+                        AssetURL.charaGraphEx[i + 1], **base_settings_id
+                    )
 
-                    else:
-                        if charaGraphEx.costume is None:
-                            charaGraphEx.costume = {}
-                        charaGraphEx.costume[costume_ids[i]] = fmt_url(
-                            AssetURL.charaGraphExCostume,
-                            item_id=costume_ids[i],
-                            **base_settings,
-                        )
+                else:
+                    if charaGraphEx.costume is None:
+                        charaGraphEx.costume = {}
+                    charaGraphEx.costume[costume_ids[i]] = fmt_url(
+                        AssetURL.charaGraphExCostume,
+                        item_id=costume_ids[i],
+                        **base_settings,
+                    )
 
     elif raw_svt.mstSvt.isEquip():
         charaGraph.equip = {
@@ -272,6 +271,11 @@ def get_svt_extraAssets(
         }
         faces.equip = {svt_id: fmt_url(AssetURL.face, **base_settings_id, i=0)}
         equipFace.equip = {svt_id: fmt_url(AssetURL.equipFace, **base_settings_id, i=0)}
+
+        if raw_svt.mstSvtAdd and "additionExpandImage" in raw_svt.mstSvtAdd.script:
+            charaGraphEx.equip = {
+                svt_id: fmt_url(AssetURL.charaGraphExEquip, **base_settings_id)
+            }
 
     for limit_add in raw_svt.mstSvtLimitAdd:
         model_url = fmt_url(
