@@ -22,6 +22,7 @@ def get_nice_buff(
         "detail": buffEntity.mstBuff.detail,
         "type": BUFF_TYPE_NAME[buffEntity.mstBuff.type],
         "buffGroup": buffEntity.mstBuff.buffGroup,
+        "originalScript": buffEntity.mstBuff.script,
         "vals": get_traits_list(buffEntity.mstBuff.vals),
         "tvals": get_traits_list(buffEntity.mstBuff.tvals),
         "ckSelfIndv": get_traits_list(buffEntity.mstBuff.ckSelfIndv),

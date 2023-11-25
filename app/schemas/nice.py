@@ -443,6 +443,7 @@ class NiceBuff(BaseModelORJson):
         description="Random stuffs that get added to the buff entry. "
         "See each field description for more details.",
     )
+    originalScript: dict[str, Any] = Field({}, title="Original Buff script")
     vals: list[NiceTrait] = Field(
         ...,
         title="Buff individualities",
