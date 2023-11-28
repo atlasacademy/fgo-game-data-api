@@ -387,9 +387,9 @@ def is_recent(
     if startedAt > now + pre * SECS_PER_DAY:
         return False
     if (finishedAt or endedAt) > now + 360 * SECS_PER_DAY:
-        return False
+        return now < startedAt + 7 * SECS_PER_DAY
     if finishedAt and finishedAt > endedAt and finishedAt < endedAt + 30 * SECS_PER_DAY:
-        return now <= finishedAt
+        return now < finishedAt
     else:
         return now < endedAt + delay * SECS_PER_DAY
 
@@ -416,30 +416,30 @@ async def dump_current_events(
     events = [
         event
         for event in nice_events
-        if is_recent(now, event.startedAt, event.endedAt, event.finishedAt, 7, 3)
+        if is_recent(now, event.startedAt, event.endedAt, event.finishedAt, 14, 3)
     ]
     gachas = [
         gacha
         for gacha in raw_gachas
-        if is_recent(now, gacha.openedAt, gacha.closedAt, None, 7, 3)
+        if is_recent(now, gacha.openedAt, gacha.closedAt, None, 14, 3)
     ]
     masterMissions = [
         mm
         for mm in nice_mms
-        if is_recent(now, mm.startedAt, mm.endedAt, None, 7, 0)
+        if is_recent(now, mm.startedAt, mm.endedAt, None, 14, 0)
         and mm.id // 100000 != 3
         and mm.endedAt < now + 360 * SECS_PER_DAY
     ]
     shops = [
         shop
         for shop in nice_shops
-        if is_recent(now, shop.openedAt, shop.closedAt, None, 7, 0)
+        if is_recent(now, shop.openedAt, shop.closedAt, None, 14, 0)
     ]
     items = [
         item
         for item in nice_items
         if item.type in (NiceItemType.continueItem, NiceItemType.friendshipUpItem)
-        and is_recent(now, item.startedAt, item.endedAt, None, 7, 0)
+        and is_recent(now, item.startedAt, item.endedAt, None, 14, 0)
     ]
 
     timer_data = TimerData(
