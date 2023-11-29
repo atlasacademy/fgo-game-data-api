@@ -36,7 +36,6 @@ from .core.utils import get_translation
 from .data.extra import get_extra_svt_data
 from .db.engine import engines
 from .db.helpers import fetch
-from .db.helpers.svt import get_all_equips
 from .db.load import load_pydantic_to_db, update_db
 from .export.constants import export_constants
 from .models.raw import mstSvtExtra
@@ -476,7 +475,9 @@ async def generate_exports(
                 ]
                 await dump_basic_servants(util, "basic_servant", all_servants)
 
-                all_equips = await get_all_equips(conn)
+                all_equips = [
+                    svt for svt in all_svts if svt.collectionNo != 0 and svt.isEquip()
+                ]
                 await dump_basic_equips(util, all_equips)
 
                 mstCcs = await fetch.get_everything(conn, MstCommandCode)

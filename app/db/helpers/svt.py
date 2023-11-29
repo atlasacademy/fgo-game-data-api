@@ -32,13 +32,6 @@ from ...schemas.raw import (
 )
 
 
-async def get_all_equips(conn: AsyncConnection) -> list[MstSvt]:  # pragma: no cover
-    stmt = select(mstSvt).where(
-        and_(mstSvt.c.collectionNo != 0, mstSvt.c.type == SvtType.SERVANT_EQUIP)
-    )
-    return [MstSvt.from_orm(svt) for svt in (await conn.execute(stmt)).fetchall()]
-
-
 async def get_svt_id(conn: AsyncConnection, col_no: int) -> int:
     if col_no == 0:
         return 0
