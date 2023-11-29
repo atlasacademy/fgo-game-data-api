@@ -1,4 +1,5 @@
 from typing import Any, Optional
+from fastapi import HTTPException
 
 import orjson
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -146,6 +147,9 @@ async def get_nice_servant(
         raw_svt = await raw.get_servant_entity(
             conn, svt_id, expand=True, lore=lore, mstSvt=mstSvt
         )
+
+    if not raw_svt.mstSvtLimit:
+        raise HTTPException(status_code=404, detail="Svt not found")
     last_svt_limit = raw_svt.mstSvtLimit[-1]
 
     nice_data: dict[str, Any] = {
