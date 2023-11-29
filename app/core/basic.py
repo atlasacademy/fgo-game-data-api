@@ -6,7 +6,7 @@ from typing import Any, Callable, Generator, Iterable, Optional, Sequence
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from ..config import Settings
+from ..config import Settings, logger
 from ..db.helpers import fetch, quest
 from ..redis import Redis
 from ..redis.helpers import pydantic_object
@@ -564,12 +564,17 @@ async def get_multiple_basic_servants(
 async def get_all_basic_servants(
     redis: Redis, region: Region, lang: Language, all_servants: list[MstSvt]
 ) -> list[BasicServant]:  # pragma: no cover
-    return [
-        await get_basic_servant(
-            redis, region, svt.id, svt_limit=0, lang=lang, mstSvt=svt
-        )
-        for svt in all_servants
-    ]
+    out: list[BasicServant] = []
+    for svt in all_servants:
+        try:
+            svt_out = await get_basic_servant(
+                redis, region, svt.id, svt_limit=0, lang=lang, mstSvt=svt
+            )
+            out.append(svt_out)
+        except Exception:
+            logger.warning(f"Failed to get basic servant of {svt}")
+
+    return out
 
 
 async def get_basic_equip(
