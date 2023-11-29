@@ -129,6 +129,14 @@ class UserSvt(BaseModelORJson):
     createdAt: int
 
 
+class StageCutinInfo(BaseModelORJson):
+    wave: int
+    skillId: int
+    dropInfos: list[DropInfo]
+    voiceSvtId: int
+    voiceId: str
+
+
 class QuestDetail(BaseModelORJson):
     battleId: int
     addedTime: datetime
@@ -148,6 +156,7 @@ class QuestDetail(BaseModelORJson):
     startRaidInfo: list[RaidInfo]
     superBossInfo: list[SuperBossInfo]
     userSvt: list[UserSvt]
+    stageCutins: list[StageCutinInfo] | None = None
 
 
 class QuestResponse(BaseModelORJson):
