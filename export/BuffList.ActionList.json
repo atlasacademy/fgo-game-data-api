@@ -1412,5 +1412,49 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "FUNCTION_SKILL_AFTER": {
+    "limit": 0,
+    "plusTypes": [
+      185
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_SKILL_AFTER_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      187
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_TREASURE_DEVICE_AFTER": {
+    "limit": 0,
+    "plusTypes": [
+      186
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      188
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
