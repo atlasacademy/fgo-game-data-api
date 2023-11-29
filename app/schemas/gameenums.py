@@ -697,6 +697,10 @@ class BuffType(IntEnum):
     ATTACK_AFTER_FUNCTION_MAIN_ONLY = 182
     WAR_BOARD_NOT_ATTACKED = 183
     WAR_BOARD_IGNORE_DEFEATPOINT = 184
+    SKILL_AFTER_FUNCTION = 185
+    TREASURE_DEVICE_AFTER_FUNCTION = 186
+    SKILL_AFTER_FUNCTION_MAIN_ONLY = 187
+    TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = 188
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -874,6 +878,10 @@ class NiceBuffType(StrEnum):
     attackAfterFunctionMainOnly = "attackAfterFunctionMainOnly"
     warBoardNotAttacked = "warBoardNotAttacked"
     warBoardIgnoreDefeatpoint = "warBoardIgnoreDefeatpoint"
+    skillAfterFunction = "skillAfterFunction"
+    treasureDeviceAfterFunction = "treasureDeviceAfterFunction"
+    skillAfterFunctionMainOnly = "skillAfterFunctionMainOnly"
+    treasureDeviceAfterFunctionMainOnly = "treasureDeviceAfterFunctionMainOnly"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1049,6 +1057,10 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     182: NiceBuffType.attackAfterFunctionMainOnly,
     183: NiceBuffType.warBoardNotAttacked,
     184: NiceBuffType.warBoardIgnoreDefeatpoint,
+    185: NiceBuffType.skillAfterFunction,
+    186: NiceBuffType.treasureDeviceAfterFunction,
+    187: NiceBuffType.skillAfterFunctionMainOnly,
+    188: NiceBuffType.treasureDeviceAfterFunctionMainOnly,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1178,6 +1190,10 @@ class BuffAction(IntEnum):
     FUNCTION_COMMANDATTACK_AFTER_MAIN_ONLY = 119
     FUNCTION_ATTACK_BEFORE_MAIN_ONLY = 120
     FUNCTION_ATTACK_AFTER_MAIN_ONLY = 121
+    FUNCTION_SKILL_AFTER = 122
+    FUNCTION_SKILL_AFTER_MAIN_ONLY = 123
+    FUNCTION_TREASURE_DEVICE_AFTER = 124
+    FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = 125
 
 
 class NiceBuffAction(StrEnum):
@@ -1305,6 +1321,10 @@ class NiceBuffAction(StrEnum):
     functionCommandattackAfterMainOnly = "functionCommandattackAfterMainOnly"
     functionAttackBeforeMainOnly = "functionAttackBeforeMainOnly"
     functionAttackAfterMainOnly = "functionAttackAfterMainOnly"
+    functionSkillAfter = "functionSkillAfter"
+    functionSkillAfterMainOnly = "functionSkillAfterMainOnly"
+    functionTreasureDeviceAfter = "functionTreasureDeviceAfter"
+    functionTreasureDeviceAfterMainOnly = "functionTreasureDeviceAfterMainOnly"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1430,6 +1450,10 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     119: NiceBuffAction.functionCommandattackAfterMainOnly,
     120: NiceBuffAction.functionAttackBeforeMainOnly,
     121: NiceBuffAction.functionAttackAfterMainOnly,
+    122: NiceBuffAction.functionSkillAfter,
+    123: NiceBuffAction.functionSkillAfterMainOnly,
+    124: NiceBuffAction.functionTreasureDeviceAfter,
+    125: NiceBuffAction.functionTreasureDeviceAfterMainOnly,
 }
 
 
@@ -2222,6 +2246,21 @@ class CondType(IntEnum):
     SKILL_LV_EXCHANGE_SVT = 190
     SVT_FRIENDSHIP_EXCHANGE_SVT = 191
     EXCHANGE_SVT = 192
+    RAID_DAMAGE_ABOVE = 193
+    RAID_DAMAGE_BELOW = 194
+    RAID_GROUP_DAMAGE_ABOVE = 195
+    RAID_GROUP_DAMAGE_BELOW = 196
+    RAID_DAMAGE_RATE_ABOVE = 197
+    RAID_DAMAGE_RATE_BELOW = 198
+    RAID_DAMAGE_RATE_NOT_ABOVE = 199
+    RAID_DAMAGE_RATE_NOT_BELOW = 200
+    RAID_GROUP_DAMAGE_RATE_ABOVE = 201
+    RAID_GROUP_DAMAGE_RATE_BELOW = 202
+    RAID_GROUP_DAMAGE_RATE_NOT_ABOVE = 203
+    RAID_GROUP_DAMAGE_RATE_NOT_BELOW = 204
+    NOT_QUEST_GROUP_CLEAR_NUM = 205
+    RAID_GROUP_OPEN_ABOVE = 206
+    RAID_GROUP_OPEN_BELOW = 207
 
 
 class NiceCondType(StrEnum):
@@ -2417,6 +2456,21 @@ class NiceCondType(StrEnum):
     skillLvExchangeSvt = "skillLvExchangeSvt"
     svtFriendshipExchangeSvt = "svtFriendshipExchangeSvt"
     exchangeSvt = "exchangeSvt"
+    raidDamageAbove = "raidDamageAbove"
+    raidDamageBelow = "raidDamageBelow"
+    raidGroupDamageAbove = "raidGroupDamageAbove"
+    raidGroupDamageBelow = "raidGroupDamageBelow"
+    raidDamageRateAbove = "raidDamageRateAbove"
+    raidDamageRateBelow = "raidDamageRateBelow"
+    raidDamageRateNotAbove = "raidDamageRateNotAbove"
+    raidDamageRateNotBelow = "raidDamageRateNotBelow"
+    raidGroupDamageRateAbove = "raidGroupDamageRateAbove"
+    raidGroupDamageRateBelow = "raidGroupDamageRateBelow"
+    raidGroupDamageRateNotAbove = "raidGroupDamageRateNotAbove"
+    raidGroupDamageRateNotBelow = "raidGroupDamageRateNotBelow"
+    notQuestGroupClearNum = "notQuestGroupClearNum"
+    raidGroupOpenAbove = "raidGroupOpenAbove"
+    raidGroupOpenBelow = "raidGroupOpenBelow"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2610,6 +2664,21 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     190: NiceCondType.skillLvExchangeSvt,
     191: NiceCondType.svtFriendshipExchangeSvt,
     192: NiceCondType.exchangeSvt,
+    193: NiceCondType.raidDamageAbove,
+    194: NiceCondType.raidDamageBelow,
+    195: NiceCondType.raidGroupDamageAbove,
+    196: NiceCondType.raidGroupDamageBelow,
+    197: NiceCondType.raidDamageRateAbove,
+    198: NiceCondType.raidDamageRateBelow,
+    199: NiceCondType.raidDamageRateNotAbove,
+    200: NiceCondType.raidDamageRateNotBelow,
+    201: NiceCondType.raidGroupDamageRateAbove,
+    202: NiceCondType.raidGroupDamageRateBelow,
+    203: NiceCondType.raidGroupDamageRateNotAbove,
+    204: NiceCondType.raidGroupDamageRateNotBelow,
+    205: NiceCondType.notQuestGroupClearNum,
+    206: NiceCondType.raidGroupOpenAbove,
+    207: NiceCondType.raidGroupOpenBelow,
 }
 
 
