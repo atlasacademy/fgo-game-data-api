@@ -1,7 +1,7 @@
 from typing import Any, Optional
-from fastapi import HTTPException
 
 import orjson
+from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings

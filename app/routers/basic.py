@@ -197,12 +197,9 @@ async def find_svt(
     async with get_db(search_param.region) as conn:
         matches = await search.search_servant(conn, search_param, limit=10000)
         return list_response(
-            [
-                await basic.get_basic_servant(
-                    redis, search_param.region, mstSvt.id, 0, lang=lang, mstSvt=mstSvt
-                )
-                for mstSvt in matches
-            ]
+            await basic.get_all_basic_servants(
+                redis, search_param.region, lang if lang else Language.jp, matches
+            )
         )
 
 

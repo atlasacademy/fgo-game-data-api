@@ -1,7 +1,7 @@
-from fastapi import APIRouter, Depends, Response
+from fastapi import APIRouter, Depends, HTTPException, Response
 from fastapi_cache.decorator import cache
 
-from ..config import Settings
+from ..config import Settings, logger
 from ..core import search
 from ..core.nice import (
     ai,
@@ -240,14 +240,17 @@ async def find_svt(
 ) -> Response:
     async with get_db(search_param.region) as conn:
         matches = await search.search_servant(conn, search_param)
-        return list_response(
-            [
-                await nice.get_nice_servant_model(
-                    conn, search_param.region, mstSvt.id, lang, lore, mstSvt
+        out: list[NiceServant] = []
+        for mstSvt in matches:
+            try:
+                out.append(
+                    await nice.get_nice_servant_model(
+                        conn, search_param.region, mstSvt.id, lang, lore, mstSvt
+                    )
                 )
-                for mstSvt in matches
-            ]
-        )
+            except HTTPException:
+                logger.warning(f"Failed to get basic servant of {mstSvt}")
+        return list_response(out)
 
 
 @router.get(

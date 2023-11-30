@@ -571,7 +571,7 @@ async def get_all_basic_servants(
                 redis, region, svt.id, svt_limit=0, lang=lang, mstSvt=svt
             )
             out.append(svt_out)
-        except Exception:
+        except HTTPException:
             logger.warning(f"Failed to get basic servant of {svt}")
 
     return out
