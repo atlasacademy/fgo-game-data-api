@@ -377,7 +377,8 @@ async def quest_has_cutins(
             and_(
                 *select_detail.where_conds,
                 rayshiftQuest.c.questDetail["stageCutins"].is_not(None),
-                rayshiftQuest.c.questDetail["stageCutins"] != cast("null", JSONB),
+                rayshiftQuest.c.questDetail["stageCutins"]
+                != literal_column("'null'::jsonb"),
                 func.jsonb_array_length(rayshiftQuest.c.questDetail["stageCutins"]) > 0,
             )
         )
