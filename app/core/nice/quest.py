@@ -13,8 +13,11 @@ from ...db.helpers import war
 from ...db.helpers.quest import get_questSelect_container
 from ...db.helpers.rayshift import (
     get_all_quest_hashes,
+    get_cutin_drops,
+    get_cutin_skills,
     get_rayshift_drops,
     get_war_board_quest_details,
+    quest_has_cutins,
 )
 from ...rayshift.quest import get_quest_detail
 from ...redis import Redis
@@ -47,6 +50,7 @@ from ...schemas.nice import (
     NiceQuestReleaseOverwrite,
     NiceRestriction,
     NiceStage,
+    NiceStageCutIn,
     NiceStageStartMovie,
     QuestEnemy,
     SupportServant,
@@ -78,6 +82,7 @@ from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies, get_war_board
 from .follower import get_nice_support_servants
 from .gift import get_nice_gift
 from .item import get_nice_item_amount, get_nice_item_from_raw
+from .stage_cutin import get_quest_stage_cutins
 
 
 settings = Settings()
@@ -169,6 +174,7 @@ def get_nice_stage(
     enemies: list[QuestEnemy],
     bgms: list[MstBgm],
     waveStartMovies: dict[int, list[NiceStageStartMovie]],
+    stage_cutins: dict[int, NiceStageCutIn],
     lang: Language,
 ) -> NiceStage:
     filtered_bgms = [bgm for bgm in bgms if bgm.id == raw_stage.bgmId]
@@ -190,6 +196,7 @@ def get_nice_stage(
         else None,
         NoEntryIds=raw_stage.script.get("NoEntryIds"),
         waveStartMovies=waveStartMovies.get(raw_stage.wave, []),
+        cutin=stage_cutins.get(raw_stage.wave, None),
         originalScript=raw_stage.script or {},
         enemies=enemies,
     )
@@ -509,6 +516,7 @@ async def get_nice_quest_phase(
     nice_quest_drops: list[EnemyDrop] = []
     quest_enemies = QuestEnemies(enemy_waves=[[]] * len(db_data.raw.mstStage))
     all_rayshift_hashes: list[str] = []
+    stage_cutins: dict[int, NiceStageCutIn] = {}
 
     if stages:
         rayshift_quest_id = quest_id
@@ -535,6 +543,30 @@ async def get_nice_quest_phase(
             elif region == Region.NA:
                 min_query_id = 1062363  # 2022-07-04 09:00:00 UTC
 
+        rayshift_query_questHash = (
+            None if db_data.raw.mstQuest.type == QuestType.WAR_BOARD else questHash
+        )
+
+        rayshift_kwargs = {
+            "conn": conn,
+            "quest_id": rayshift_quest_id,
+            "phase": phase,
+            "questSelect": questSelect,
+            "questHash": rayshift_query_questHash,
+            "min_query_id": min_query_id,
+        }
+
+        runs_with_cutin = await quest_has_cutins(**rayshift_kwargs)  # type:ignore
+
+        if runs_with_cutin:
+            cutin_skills, cutin_drops = await asyncio.gather(
+                get_cutin_skills(**rayshift_kwargs),  # type:ignore
+                get_cutin_drops(**rayshift_kwargs, runs=runs_with_cutin),  # type:ignore
+            )
+            stage_cutins = await get_quest_stage_cutins(
+                conn, region, runs_with_cutin, cutin_drops, cutin_skills, lang
+            )
+
         if db_data.raw.mstQuest.type == QuestType.WAR_BOARD:
             quest_enemy_coro = get_war_board_quest_details(conn, quest_id, phase)
         else:
@@ -554,14 +586,7 @@ async def get_nice_quest_phase(
             all_rayshift_hashes,
         ) = await asyncio.gather(
             quest_enemy_coro,
-            get_rayshift_drops(
-                conn,
-                rayshift_quest_id,
-                phase,
-                questSelect,
-                None if db_data.raw.mstQuest.type == QuestType.WAR_BOARD else questHash,
-                min_query_id,
-            ),
+            get_rayshift_drops(**rayshift_kwargs),  # type:ignore
             get_all_quest_hashes(conn, rayshift_quest_id, phase, questSelect),
         )
 
@@ -625,7 +650,13 @@ async def get_nice_quest_phase(
 
     new_nice_stages = [
         get_nice_stage(
-            region, stage, enemies, db_data.raw.mstBgm, waveStartMovies, lang
+            region,
+            stage,
+            enemies,
+            db_data.raw.mstBgm,
+            waveStartMovies,
+            stage_cutins,
+            lang,
         )
         for stage, enemies in zip(stages, quest_enemies.enemy_waves, strict=False)
     ]

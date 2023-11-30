@@ -194,3 +194,9 @@ class QuestDrop(BaseModelORJson):
     runs: int
     dropCount: int
     sumDropCountSquared: int
+
+
+class CutInSkill(BaseModelORJson):
+    stage: int
+    skill_id: int
+    appear_count: int

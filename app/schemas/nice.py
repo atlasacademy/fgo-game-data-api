@@ -2356,6 +2356,17 @@ class NiceStageStartMovie(BaseModelORJson):
     waveStartMovie: HttpUrl
 
 
+class NiceStageCutInSkill(BaseModelORJson):
+    skill: NiceSkill
+    appearCount: int
+
+
+class NiceStageCutIn(BaseModelORJson):
+    runs: int
+    skills: list[NiceStageCutInSkill]
+    drops: list[EnemyDrop]
+
+
 class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
@@ -2369,6 +2380,7 @@ class NiceStage(BaseModelORJson):
     )
     NoEntryIds: list[int] | None = None
     waveStartMovies: list[NiceStageStartMovie] = []
+    cutin: NiceStageCutIn | None = None
     originalScript: dict[str, Any]
     enemies: list[QuestEnemy] = []
 
