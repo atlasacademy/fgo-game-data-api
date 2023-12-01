@@ -338,6 +338,10 @@ export enum NiceBuffType {
     ATTACK_AFTER_FUNCTION_MAIN_ONLY = "attackAfterFunctionMainOnly",
     WAR_BOARD_NOT_ATTACKED = "warBoardNotAttacked",
     WAR_BOARD_IGNORE_DEFEATPOINT = "warBoardIgnoreDefeatpoint",
+    SKILL_AFTER_FUNCTION = "skillAfterFunction",
+    TREASURE_DEVICE_AFTER_FUNCTION = "treasureDeviceAfterFunction",
+    SKILL_AFTER_FUNCTION_MAIN_ONLY = "skillAfterFunctionMainOnly",
+    TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = "treasureDeviceAfterFunctionMainOnly",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -466,6 +470,10 @@ export enum NiceBuffAction {
     FUNCTION_COMMANDATTACK_AFTER_MAIN_ONLY = "functionCommandattackAfterMainOnly",
     FUNCTION_ATTACK_BEFORE_MAIN_ONLY = "functionAttackBeforeMainOnly",
     FUNCTION_ATTACK_AFTER_MAIN_ONLY = "functionAttackAfterMainOnly",
+    FUNCTION_SKILL_AFTER = "functionSkillAfter",
+    FUNCTION_SKILL_AFTER_MAIN_ONLY = "functionSkillAfterMainOnly",
+    FUNCTION_TREASURE_DEVICE_AFTER = "functionTreasureDeviceAfter",
+    FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = "functionTreasureDeviceAfterMainOnly",
 }
 
 export enum NiceBuffLimit {
@@ -950,6 +958,21 @@ export enum NiceCondType {
     SKILL_LV_EXCHANGE_SVT = "skillLvExchangeSvt",
     SVT_FRIENDSHIP_EXCHANGE_SVT = "svtFriendshipExchangeSvt",
     EXCHANGE_SVT = "exchangeSvt",
+    RAID_DAMAGE_ABOVE = "raidDamageAbove",
+    RAID_DAMAGE_BELOW = "raidDamageBelow",
+    RAID_GROUP_DAMAGE_ABOVE = "raidGroupDamageAbove",
+    RAID_GROUP_DAMAGE_BELOW = "raidGroupDamageBelow",
+    RAID_DAMAGE_RATE_ABOVE = "raidDamageRateAbove",
+    RAID_DAMAGE_RATE_BELOW = "raidDamageRateBelow",
+    RAID_DAMAGE_RATE_NOT_ABOVE = "raidDamageRateNotAbove",
+    RAID_DAMAGE_RATE_NOT_BELOW = "raidDamageRateNotBelow",
+    RAID_GROUP_DAMAGE_RATE_ABOVE = "raidGroupDamageRateAbove",
+    RAID_GROUP_DAMAGE_RATE_BELOW = "raidGroupDamageRateBelow",
+    RAID_GROUP_DAMAGE_RATE_NOT_ABOVE = "raidGroupDamageRateNotAbove",
+    RAID_GROUP_DAMAGE_RATE_NOT_BELOW = "raidGroupDamageRateNotBelow",
+    NOT_QUEST_GROUP_CLEAR_NUM = "notQuestGroupClearNum",
+    RAID_GROUP_OPEN_ABOVE = "raidGroupOpenAbove",
+    RAID_GROUP_OPEN_BELOW = "raidGroupOpenBelow",
 }
 
 export enum NiceVoiceCondType {
