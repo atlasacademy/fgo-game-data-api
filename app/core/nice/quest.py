@@ -580,12 +580,12 @@ async def get_nice_quest_phase(
                 rayshift_fallback=not quest_already_closed,
             )
 
+        rayshift_quest_details = await quest_enemy_coro
+
         (
-            rayshift_quest_details,
             rayshift_quest_drops,
             all_rayshift_hashes,
         ) = await asyncio.gather(
-            quest_enemy_coro,
             get_rayshift_drops(**rayshift_kwargs),  # type:ignore
             get_all_quest_hashes(conn, rayshift_quest_id, phase, questSelect),
         )
