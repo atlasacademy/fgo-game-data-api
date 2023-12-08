@@ -12,6 +12,7 @@ from ...schemas.gameenums import (
     WAR_OVERWRITE_TYPE_NAME,
     WAR_START_TYPE_NAME,
     WarEntityFlag,
+    WarEntityStartType,
     WarOverwriteType,
 )
 from ...schemas.nice import (
@@ -364,6 +365,14 @@ async def get_nice_war(
 
     raw_quest_map = {quest.mstQuest.id: quest for quest in raw_war.mstQuest}
 
+    if (
+        raw_war.mstWar.startType == WarEntityStartType.SCRIPT
+        and raw_war.mstWar.targetId > 0
+    ):
+        script_id = "{:0>10d}".format(raw_war.mstWar.targetId)
+    else:
+        script_id = raw_war.mstWar.scriptId
+
     return NiceWar(
         id=raw_war.mstWar.id,
         coordinates=raw_war.mstWar.coordinates,
@@ -389,8 +398,8 @@ async def get_nice_war(
         parentBlankEarthSpotId=raw_war.mstWar.parentBlankEarthSpotId,
         emptyMessage=raw_war.mstWar.emptyMessage,
         bgm=bgm,
-        scriptId=raw_war.mstWar.scriptId,
-        script=get_script_url(region, raw_war.mstWar.scriptId),
+        scriptId=script_id,
+        script=get_script_url(region, script_id),
         startType=WAR_START_TYPE_NAME[raw_war.mstWar.startType],
         targetId=raw_war.mstWar.targetId,
         eventId=raw_war.mstWar.eventId,
