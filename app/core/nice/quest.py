@@ -186,6 +186,7 @@ def get_nice_stage(
     return NiceStage(
         wave=raw_stage.wave,
         bgm=bgm,
+        startEffectId=raw_stage.startEffectId,
         fieldAis=raw_stage.script.get("aiFieldIds", []),
         call=raw_stage.script.get("call", []),
         enemyFieldPosCount=raw_stage.script.get("enemyFieldPosCount"),

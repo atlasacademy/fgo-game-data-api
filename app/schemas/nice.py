@@ -2370,6 +2370,7 @@ class NiceStageCutIn(BaseModelORJson):
 class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
+    startEffectId: int
     fieldAis: list[FieldAi] = []
     call: list[int] = Field([], title="Summon these NPC IDs")
     enemyFieldPosCount: int | None = None
