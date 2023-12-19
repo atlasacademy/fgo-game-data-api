@@ -1456,5 +1456,17 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "GUTS": {
+    "limit": 0,
+    "plusTypes": [
+      37,
+      104
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
