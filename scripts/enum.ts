@@ -474,6 +474,7 @@ export enum NiceBuffAction {
     FUNCTION_SKILL_AFTER_MAIN_ONLY = "functionSkillAfterMainOnly",
     FUNCTION_TREASURE_DEVICE_AFTER = "functionTreasureDeviceAfter",
     FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = "functionTreasureDeviceAfterMainOnly",
+    GUTS = "guts",
 }
 
 export enum NiceBuffLimit {
@@ -630,6 +631,7 @@ export enum NiceDataValsType {
     CancelTransform = "canceltransform",
     UnSubStateWhenContinue = "unsubstatewhencontinue",
     CheckTargetHaveDefeatPoint = "checktargethavedefeatpoint",
+    NPFixedDamageValue = "npfixeddamagevalue",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -973,6 +975,7 @@ export enum NiceCondType {
     NOT_QUEST_GROUP_CLEAR_NUM = "notQuestGroupClearNum",
     RAID_GROUP_OPEN_ABOVE = "raidGroupOpenAbove",
     RAID_GROUP_OPEN_BELOW = "raidGroupOpenBelow",
+    TREASURE_DEVICE_ACCELERATE = "treasureDeviceAccelerate",
 }
 
 export enum NiceVoiceCondType {
@@ -1134,26 +1137,31 @@ export enum NiceStatusRank {
     A_PLUS2 = "A++",
     A_MINUS = "A-",
     A_PLUS3 = "A+++",
+    A_QUESTION = "A?",
     B = "B",
     B_PLUS = "B+",
     B_PLUS2 = "B++",
     B_MINUS = "B-",
     B_PLUS3 = "B+++",
+    B_QUESTION = "B?",
     C = "C",
     C_PLUS = "C+",
     C_PLUS2 = "C++",
     C_MINUS = "C-",
     C_PLUS3 = "C+++",
+    C_QUESTION = "C?",
     D = "D",
     D_PLUS = "D+",
     D_PLUS2 = "D++",
     D_MINUS = "D-",
     D_PLUS3 = "D+++",
+    D_QUESTION = "D?",
     E = "E",
     E_PLUS = "E+",
     E_PLUS2 = "E++",
     E_MINUS = "E-",
     E_PLUS3 = "E+++",
+    E_QUESTION = "E?",
     EX = "EX",
     QUESTION = "?",
     NONE = "None",

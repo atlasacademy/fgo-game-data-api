@@ -1194,6 +1194,7 @@ class BuffAction(IntEnum):
     FUNCTION_SKILL_AFTER_MAIN_ONLY = 123
     FUNCTION_TREASURE_DEVICE_AFTER = 124
     FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = 125
+    GUTS = 126
 
 
 class NiceBuffAction(StrEnum):
@@ -1325,6 +1326,7 @@ class NiceBuffAction(StrEnum):
     functionSkillAfterMainOnly = "functionSkillAfterMainOnly"
     functionTreasureDeviceAfter = "functionTreasureDeviceAfter"
     functionTreasureDeviceAfterMainOnly = "functionTreasureDeviceAfterMainOnly"
+    guts = "guts"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1454,6 +1456,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     123: NiceBuffAction.functionSkillAfterMainOnly,
     124: NiceBuffAction.functionTreasureDeviceAfter,
     125: NiceBuffAction.functionTreasureDeviceAfterMainOnly,
+    126: NiceBuffAction.guts,
 }
 
 
@@ -1628,6 +1631,7 @@ class DataValsType(IntEnum):
     CancelTransform = 143
     UnSubStateWhenContinue = 144
     CheckTargetHaveDefeatPoint = 145
+    NPFixedDamageValue = 146
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2261,6 +2265,7 @@ class CondType(IntEnum):
     NOT_QUEST_GROUP_CLEAR_NUM = 205
     RAID_GROUP_OPEN_ABOVE = 206
     RAID_GROUP_OPEN_BELOW = 207
+    TREASURE_DEVICE_ACCELERATE = 208
 
 
 class NiceCondType(StrEnum):
@@ -2471,6 +2476,7 @@ class NiceCondType(StrEnum):
     notQuestGroupClearNum = "notQuestGroupClearNum"
     raidGroupOpenAbove = "raidGroupOpenAbove"
     raidGroupOpenBelow = "raidGroupOpenBelow"
+    treasureDeviceAccelerate = "treasureDeviceAccelerate"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2679,6 +2685,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     205: NiceCondType.notQuestGroupClearNum,
     206: NiceCondType.raidGroupOpenAbove,
     207: NiceCondType.raidGroupOpenBelow,
+    208: NiceCondType.treasureDeviceAccelerate,
 }
 
 
@@ -3156,26 +3163,31 @@ class StatusRank(IntEnum):
     A_PLUS2 = 13
     A_MINUS = 14
     A_PLUS3 = 15
+    A_QUESTION = 16
     B = 21
     B_PLUS = 22
     B_PLUS2 = 23
     B_MINUS = 24
     B_PLUS3 = 25
+    B_QUESTION = 26
     C = 31
     C_PLUS = 32
     C_PLUS2 = 33
     C_MINUS = 34
     C_PLUS3 = 35
+    C_QUESTION = 36
     D = 41
     D_PLUS = 42
     D_PLUS2 = 43
     D_MINUS = 44
     D_PLUS3 = 45
+    D_QUESTION = 46
     E = 51
     E_PLUS = 52
     E_PLUS2 = 53
     E_MINUS = 54
     E_PLUS3 = 55
+    E_QUESTION = 56
     EX = 61
     QUESTION = 98
     NONE = 99
@@ -3189,26 +3201,31 @@ class NiceStatusRank(StrEnum):
     aPlus2 = "A++"
     aMinus = "A-"
     aPlus3 = "A+++"
+    aQuestion = "A?"
     b = "B"
     bPlus = "B+"
     bPlus2 = "B++"
     bMinus = "B-"
     bPlus3 = "B+++"
+    bQuestion = "B?"
     c = "C"
     cPlus = "C+"
     cPlus2 = "C++"
     cMinus = "C-"
     cPlus3 = "C+++"
+    cQuestion = "C?"
     d = "D"
     dPlus = "D+"
     dPlus2 = "D++"
     dMinus = "D-"
     dPlus3 = "D+++"
+    dQuestion = "D?"
     e = "E"
     ePlus = "E+"
     ePlus2 = "E++"
     eMinus = "E-"
     ePlus3 = "E+++"
+    eQuestion = "E?"
     ex = "EX"
     question = "?"
     none = "None"
@@ -3221,26 +3238,31 @@ STATUS_RANK_NAME: dict[int, NiceStatusRank] = {
     13: NiceStatusRank.aPlus2,
     14: NiceStatusRank.aMinus,
     15: NiceStatusRank.aPlus3,
+    16: NiceStatusRank.aQuestion,
     21: NiceStatusRank.b,
     22: NiceStatusRank.bPlus,
     23: NiceStatusRank.bPlus2,
     24: NiceStatusRank.bMinus,
     25: NiceStatusRank.bPlus3,
+    26: NiceStatusRank.bQuestion,
     31: NiceStatusRank.c,
     32: NiceStatusRank.cPlus,
     33: NiceStatusRank.cPlus2,
     34: NiceStatusRank.cMinus,
     35: NiceStatusRank.cPlus3,
+    36: NiceStatusRank.cQuestion,
     41: NiceStatusRank.d,
     42: NiceStatusRank.dPlus,
     43: NiceStatusRank.dPlus2,
     44: NiceStatusRank.dMinus,
     45: NiceStatusRank.dPlus3,
+    46: NiceStatusRank.dQuestion,
     51: NiceStatusRank.e,
     52: NiceStatusRank.ePlus,
     53: NiceStatusRank.ePlus2,
     54: NiceStatusRank.eMinus,
     55: NiceStatusRank.ePlus3,
+    56: NiceStatusRank.eQuestion,
     61: NiceStatusRank.ex,
     98: NiceStatusRank.question,
     99: NiceStatusRank.none,
