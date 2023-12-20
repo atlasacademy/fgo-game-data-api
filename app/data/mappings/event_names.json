@@ -85,6 +85,7 @@
   "交換した★4(SR)サーヴァント 獲得経験値2倍！": "Exchanged ★4 (SR) Servant 2X EXP!",
   "「巡霊の祝祭 第6弾」関連サーヴァント 獲得経験値2倍！": "\"Evocation Vestival Part 6\" Related Servants 2X EXP!",
   "雑賀孫一 獲得経験値2倍！": "Saika Magoichi 2X EXP!",
+  "ネモ〔サンタ〕 獲得経験値2倍！": "ネモ〔サンタ〕 獲得経験値2倍！",
   "消費AP 50%DOWN": "AP Cost 1/2",
   "獲得FP2倍キャンペーン": "2X Friend Point Campaign",
   "消費AP 75%DOWN": "AP Cost 1/4",
@@ -103,8 +104,8 @@
   "マシュサポート時 獲得FP2倍！": "Mash FP x2!",
   "初回クリアまで 消費AP 50%DOWN": "AP Cost 1/2 Until First Clear",
   "コンティニューアイテム使用可能！": "A Continue Item is available!",
-  "絆獲得量アップ": "Bond Gain Increased",
-  "消費AP0！": "Zero AP Consumption!",
+  "絆獲得量アップ": "Bond Gained Up",
+  "消費AP0！": "0 AP Cost!",
   "ホワイトデー・スペクタクルズ": "White Day Spectacles",
   "「Lostbelt No.1」関連サーヴァントサポート時 獲得FP2倍！": "\"Lostbelt No. 1\" Related Servants 2X FP!",
   "「Lostbelt No.2」関連サーヴァントサポート時 獲得FP2倍！": "\"Lostbelt No. 2\" Related Servants 2X FP!",
@@ -375,5 +376,6 @@
   "リリース3000日突破キャンペーン": "3000 Days Anniversary Campaign",
   "激走！川中島24時 ぐだぐだ超五稜郭\n殺しのサインはM51": "Full Speed Ahead! Kawanakajima in 24 Hours: GUDAGUDA Super Goryokaku\n- The Killer Sign is M51",
   "復刻:浅上藤乃体験クエスト": "Revival: Asagami Fujino Trial Quest",
-  "期間限定で交換した★4(SR)サーヴァントはすべてのクエストで攻撃威力50%アップ！": "50% ATK Strength Up on the Exchanged ★4 (SR) Servant for a Limited Time!"
+  "期間限定で交換した★4(SR)サーヴァントはすべてのクエストで攻撃威力50%アップ！": "50% ATK Strength Up on the Exchanged ★4 (SR) Servant for a Limited Time!",
+  "雪原のメリー・クリスマス2023\n～7days / 8years Snow Carol～": "雪原のメリー・クリスマス2023\n～7days / 8years Snow Carol～"
 }
