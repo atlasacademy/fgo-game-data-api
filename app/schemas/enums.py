@@ -1016,6 +1016,7 @@ class Trait(StrEnum):
     classUOlgaMarieFlare = "classUOlgaMarieFlare"
     elementalsWrath = "elementalsWrath"
     buffBuffSuccessRateUp = "buffBuffSuccessRateUp"
+    groupServant = "groupServant"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1207,6 +1208,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2878: Trait.fieldAir,
     2879: Trait.caitCuCerpriestessOnTheField,
     2880: Trait.elementalsWrath,
+    2881: Trait.groupServant,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
