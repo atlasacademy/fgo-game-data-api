@@ -1017,6 +1017,7 @@ class Trait(StrEnum):
     elementalsWrath = "elementalsWrath"
     buffBuffSuccessRateUp = "buffBuffSuccessRateUp"
     groupServant = "groupServant"
+    takeruDummyTrait = "takeruDummyTrait"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1284,6 +1285,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3088: Trait.marking,
     3089: Trait.burnEffectivenessUp,
     3090: Trait.buffBuffSuccessRateUp,
+    3091: Trait.takeruDummyTrait,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail

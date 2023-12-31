@@ -1195,6 +1195,7 @@ export enum NiceEventType {
     MYROOM_MULTIPLE_VIEW_CAMPAIGN = "myroomMultipleViewCampaign",
     INTERLUDE_CAMPAIGN = "interludeCampaign",
     MYROOM_PHOTO_CAMPAIGN = "myroomPhotoCampaign",
+    FORTUNE_CAMPAIGN = "fortuneCampaign",
 }
 
 export enum NiceEventOverwriteType {

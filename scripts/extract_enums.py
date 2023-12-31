@@ -74,6 +74,7 @@ EXTRA_STR_NAME = {
         -1: "UNKNOWN",
     },
     "NiceFrequencyType": {0: "NONE"},
+    "NiceEventType": {27: "FORTUNE_CAMPAIGN"},
 }
 
 

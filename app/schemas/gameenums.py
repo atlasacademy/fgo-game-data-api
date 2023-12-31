@@ -3328,6 +3328,7 @@ class NiceEventType(StrEnum):
     myroomMultipleViewCampaign = "myroomMultipleViewCampaign"
     interludeCampaign = "interludeCampaign"
     myroomPhotoCampaign = "myroomPhotoCampaign"
+    fortuneCampaign = "fortuneCampaign"
 
 
 EVENT_TYPE_NAME: dict[int, NiceEventType] = {
@@ -3357,6 +3358,7 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     24: NiceEventType.myroomMultipleViewCampaign,
     25: NiceEventType.interludeCampaign,
     26: NiceEventType.myroomPhotoCampaign,
+    27: NiceEventType.fortuneCampaign,
     21: NiceEventType.comebackCampaign,
 }
 
