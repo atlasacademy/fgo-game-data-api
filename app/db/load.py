@@ -52,13 +52,8 @@ from .helpers.rayshift import (
 
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
     logger.debug(f"Recreating table {table.name}")
-    db_columns_is_different = True
-    if db_columns_is_different:
-        table.drop(conn, checkfirst=True)
-        table.create(conn, checkfirst=True)
-    else:
-        table.create(conn, checkfirst=True)
-        conn.execute(table.delete())
+    table.drop(conn, checkfirst=True)
+    table.create(conn, checkfirst=True)
 
 
 def insert_db(conn: Connection, table: Table, db_data: Any) -> None:  # pragma: no cover
@@ -484,8 +479,8 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
             logger.info("Updated AssetStorage …")
             load_asset_storage(conn, repo_folder)
 
-        # logger.info("Updating script list …")
-        # load_script_list(engine, region, repo_folder)
+        logger.info("Updating script list …")
+        load_script_list(engine, region, repo_folder)
 
         with engine.begin() as conn:
             rayshiftQuest.create(conn, checkfirst=True)
