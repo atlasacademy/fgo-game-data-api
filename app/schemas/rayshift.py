@@ -35,7 +35,7 @@ class DeckSvt(BaseModelORJson):
     index: int
     id: int
     userSvtId: int
-    userSvtEquipIds: list[int]
+    userSvtEquipIds: list[int] | None = None
     isFollowerSvt: bool
     npcFollowerSvtId: int
     followerType: int | None = None
@@ -126,7 +126,7 @@ class UserSvt(BaseModelORJson):
     enemyScript: dict[str, Any] | None = None
     hpGaugeType: int | None = None
     imageSvtId: int | None = None
-    createdAt: int
+    createdAt: int | None = None
 
 
 class StageCutinInfo(BaseModelORJson):
