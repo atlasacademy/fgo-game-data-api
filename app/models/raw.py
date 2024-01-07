@@ -2223,6 +2223,18 @@ mstStage = Table(
 )
 
 
+mstBattleBg = Table(
+    "mstBattleBg",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("id", Integer),
+    Column("type", Integer),
+    Column("imageId", Integer),
+    Column("priority", Integer),
+)
+
+
 mstStageRemap = Table(
     "mstStageRemap",
     metadata,
@@ -2569,6 +2581,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuestRestriction, mstQuestRestrictionInfo, mstRestriction],
     [mstStage],
     [mstStageRemap],
+    [mstBattleBg],
     [npcFollower],
     [npcFollowerRelease],
     [npcSvtEquip],

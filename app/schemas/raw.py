@@ -1877,6 +1877,15 @@ class MstStageRemap(BaseModelORJson):
     remapWave: int
 
 
+class MstBattleBg(BaseModelORJson):
+    individuality: list[int]
+    script: dict[str, Any]
+    id: int
+    type: int
+    imageId: int
+    priority: int
+
+
 class NpcFollower(BaseModelORJson):
     id: int
     questId: int
@@ -2095,6 +2104,7 @@ class QuestPhaseEntity(QuestEntity):
     mstQuestMessage: list[MstQuestMessage] = []
     scripts: list[str]
     mstStage: list[MstStage]
+    mstBattleBg: list[MstBattleBg]
     mstBgm: list[MstBgm]
     npcFollower: list[NpcFollower]
     npcFollowerRelease: list[NpcFollowerRelease]

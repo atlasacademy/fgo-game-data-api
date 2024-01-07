@@ -13,6 +13,7 @@ from sqlalchemy.sql import (
     and_,
     any_,
     case,
+    cast,
     false,
     func,
     literal_column,
@@ -24,6 +25,7 @@ from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import (
     ScriptFileList,
+    mstBattleBg,
     mstBgm,
     mstClosedMessage,
     mstGift,
@@ -630,6 +632,20 @@ async def get_quest_phase_entity(
         )
         .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
+        .outerjoin(
+            mstBattleBg,
+            or_(
+                and_(
+                    mstBattleBg.c.id == mstQuestPhase.c.battleBgId,
+                    mstBattleBg.c.type == mstQuestPhase.c.battleBgType,
+                ),
+                and_(
+                    mstBattleBg.c.id == cast(mstStage.c.script["changeBgId"], Integer),
+                    mstBattleBg.c.type
+                    == cast(mstStage.c.script["changeBgType"], Integer),
+                ),
+            ),
+        )
     )
 
     phases_select = (
@@ -699,6 +715,7 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstQuestRelease),
         sql_jsonb_agg(mstQuestReleaseOverwrite),
         sql_jsonb_agg(mstClosedMessage),
+        sql_jsonb_agg(mstBattleBg),
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
         phases_select,

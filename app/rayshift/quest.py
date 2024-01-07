@@ -117,10 +117,10 @@ def get_multiple_quests(
         time.sleep(sleep_time)
         r = client.get(f"{QUEST_ENDPOINT}/get", params=params)
 
-    try:
-        return QuestRayshiftResponse.parse_raw(r.content).response.questDetails
-    except ValidationError:  # pragma: no cover
-        return {}
+        # try:
+    return QuestRayshiftResponse.parse_raw(r.content).response.questDetails
+    # except ValidationError:  # pragma: no cover
+    return {}
 
 
 def get_all_quest_lists(

@@ -2368,6 +2368,14 @@ class NiceStageCutIn(BaseModelORJson):
     drops: list[EnemyDrop]
 
 
+class NiceBattleBg(BaseModelORJson):
+    id: int
+    type: int
+    priority: int
+    individuality: list[NiceTrait]
+    imageId: int
+
+
 class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
@@ -2380,6 +2388,7 @@ class NiceStage(BaseModelORJson):
     limitAct: StageLimitActType | None = Field(
         None, title="Action after turn countdown is over"
     )
+    battleBg: NiceBattleBg | None = None
     NoEntryIds: list[int] | None = None
     waveStartMovies: list[NiceStageStartMovie] = []
     cutin: NiceStageCutIn | None = None
@@ -2525,6 +2534,7 @@ class NiceQuestPhase(NiceQuest):
     enemyHash: str | None = None
     availableEnemyHashes: list[str]
     dropsFromAllHashes: bool | None = None
+    battleBg: NiceBattleBg | None = None
     extraDetail: NiceQuestPhaseExtraDetail
     scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]
