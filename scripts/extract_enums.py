@@ -578,6 +578,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "War Board Treasure Rarity",
         "WAR_BOARD_TREASURE_RARITY_NAME",
     ),
+    (
+        "BattleFieldEnvironmentData.GrantType",
+        "BattleFieldEnvironmentDataGrantType",
+        "NiceBattleFieldEnvironmentGrantType",
+        "Battle Field Environment Grant Type",
+        "BATTLE_ENVIRONMENT_GRANT_TYPE_NAME",
+    ),
 ]
 
 

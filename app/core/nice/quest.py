@@ -25,6 +25,7 @@ from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stag
 from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import STAGE_LIMIT_ACT_TYPE_NAME, get_class_name
 from ...schemas.gameenums import (
+    BATTLE_ENVIRONMENT_GRANT_TYPE_NAME,
     COND_TYPE_NAME,
     FREQUENCY_TYPE_NAME,
     QUEST_AFTER_CLEAR_NAME,
@@ -173,7 +174,7 @@ def get_nice_quest_restriction(
 def get_nice_battle_bg(battle_bg: MstBattleBg) -> NiceBattleBg:
     return NiceBattleBg(
         id=battle_bg.id,
-        type=battle_bg.type,
+        type=BATTLE_ENVIRONMENT_GRANT_TYPE_NAME[battle_bg.type],
         priority=battle_bg.priority,
         individuality=get_traits_list(battle_bg.individuality),
         imageId=battle_bg.imageId,

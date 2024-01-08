@@ -45,6 +45,7 @@ from .gameenums import (
     NiceAiActTarget,
     NiceAiActType,
     NiceAiCond,
+    NiceBattleFieldEnvironmentGrantType,
     NiceBuffType,
     NiceCardType,
     NiceClassBoardSkillType,
@@ -2370,7 +2371,7 @@ class NiceStageCutIn(BaseModelORJson):
 
 class NiceBattleBg(BaseModelORJson):
     id: int
-    type: int
+    type: NiceBattleFieldEnvironmentGrantType
     priority: int
     individuality: list[NiceTrait]
     imageId: int

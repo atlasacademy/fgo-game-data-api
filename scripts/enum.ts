@@ -1811,3 +1811,9 @@ export enum NiceWarBoardTreasureRarity {
     ITEM_ICON_PLUS = "itemIconPlus",
     ITEM_ICON_PLUS2 = "itemIconPlus2",
 }
+
+export enum NiceBattleFieldEnvironmentGrantType {
+    None = "none",
+    Stage = "stage",
+    Function = "function",
+}

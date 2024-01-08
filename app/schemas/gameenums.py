@@ -5331,3 +5331,24 @@ WAR_BOARD_TREASURE_RARITY_NAME: dict[int, NiceWarBoardTreasureRarity] = {
     10: NiceWarBoardTreasureRarity.itemIconPlus,
     11: NiceWarBoardTreasureRarity.itemIconPlus2,
 }
+
+
+class BattleFieldEnvironmentDataGrantType(IntEnum):
+    None = 0
+    Stage = 1
+    Function = 2
+
+
+class NiceBattleFieldEnvironmentGrantType(StrEnum):
+    """Battle Field Environment Grant Type"""
+
+    none = "none"
+    stage = "stage"
+    function = "function"
+
+
+BATTLE_ENVIRONMENT_GRANT_TYPE_NAME: dict[int, NiceBattleFieldEnvironmentGrantType] = {
+    0: NiceBattleFieldEnvironmentGrantType.none,
+    1: NiceBattleFieldEnvironmentGrantType.stage,
+    2: NiceBattleFieldEnvironmentGrantType.function,
+}
