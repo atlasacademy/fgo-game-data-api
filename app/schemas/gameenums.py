@@ -5334,7 +5334,7 @@ WAR_BOARD_TREASURE_RARITY_NAME: dict[int, NiceWarBoardTreasureRarity] = {
 
 
 class BattleFieldEnvironmentDataGrantType(IntEnum):
-    None = 0
+    None_ = 0
     Stage = 1
     Function = 2
 

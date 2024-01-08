@@ -1813,7 +1813,7 @@ export enum NiceWarBoardTreasureRarity {
 }
 
 export enum NiceBattleFieldEnvironmentGrantType {
-    None = "none",
+    None_ = "none",
     Stage = "stage",
     Function = "function",
 }

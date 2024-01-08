@@ -34,6 +34,9 @@ RAW_NAME_OVERRIDE = {
         "FUNCTION_ATTACK_AFTER": "FUNCTION_ATTACK",
         "FUNCTION_COMMANDCODEATTACK_BEFORE": "FUNCTION_COMMANDCODEATTACK",
     },
+    "BattleFieldEnvironmentDataGrantType": {
+        "None": "None_",
+    },
 }
 
 
