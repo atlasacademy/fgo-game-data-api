@@ -342,6 +342,7 @@ export enum NiceBuffType {
     TREASURE_DEVICE_AFTER_FUNCTION = "treasureDeviceAfterFunction",
     SKILL_AFTER_FUNCTION_MAIN_ONLY = "skillAfterFunctionMainOnly",
     TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = "treasureDeviceAfterFunctionMainOnly",
+    PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = "preventInvisibleWhenInstantDeath",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -475,6 +476,7 @@ export enum NiceBuffAction {
     FUNCTION_TREASURE_DEVICE_AFTER = "functionTreasureDeviceAfter",
     FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = "functionTreasureDeviceAfterMainOnly",
     GUTS = "guts",
+    PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = "preventInvisibleWhenInstantDeath",
 }
 
 export enum NiceBuffLimit {
@@ -976,6 +978,9 @@ export enum NiceCondType {
     RAID_GROUP_OPEN_ABOVE = "raidGroupOpenAbove",
     RAID_GROUP_OPEN_BELOW = "raidGroupOpenBelow",
     TREASURE_DEVICE_ACCELERATE = "treasureDeviceAccelerate",
+    PLAY_QUEST_PHASE = "playQuestPhase",
+    NOT_PLAY_QUEST_PHASE = "notPlayQuestPhase",
+    EVENT_START_TO_END = "eventStartToEnd",
 }
 
 export enum NiceVoiceCondType {
@@ -1418,6 +1423,8 @@ export enum NiceAiCond {
     TOTAL_TURN_LOWER = "totalTurnLower",
     TOTAL_TURN_EQUAL = "totalTurnEqual",
     CHECK_WAR_BOARD_SQUARE_INDIVIDUALITY = "checkWarBoardSquareIndividuality",
+    CHECK_PT_HIGHER_NPGAUGE = "checkPtHigherNpgauge",
+    CHECK_SELF_HIGHER_NPGAUGE = "checkSelfHigherNpgauge",
 }
 
 export enum NiceAiActType {

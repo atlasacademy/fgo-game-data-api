@@ -701,6 +701,7 @@ class BuffType(IntEnum):
     TREASURE_DEVICE_AFTER_FUNCTION = 186
     SKILL_AFTER_FUNCTION_MAIN_ONLY = 187
     TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = 188
+    PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = 189
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -882,6 +883,7 @@ class NiceBuffType(StrEnum):
     treasureDeviceAfterFunction = "treasureDeviceAfterFunction"
     skillAfterFunctionMainOnly = "skillAfterFunctionMainOnly"
     treasureDeviceAfterFunctionMainOnly = "treasureDeviceAfterFunctionMainOnly"
+    preventInvisibleWhenInstantDeath = "preventInvisibleWhenInstantDeath"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1061,6 +1063,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     186: NiceBuffType.treasureDeviceAfterFunction,
     187: NiceBuffType.skillAfterFunctionMainOnly,
     188: NiceBuffType.treasureDeviceAfterFunctionMainOnly,
+    189: NiceBuffType.preventInvisibleWhenInstantDeath,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1195,6 +1198,7 @@ class BuffAction(IntEnum):
     FUNCTION_TREASURE_DEVICE_AFTER = 124
     FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = 125
     GUTS = 126
+    PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = 127
 
 
 class NiceBuffAction(StrEnum):
@@ -1327,6 +1331,7 @@ class NiceBuffAction(StrEnum):
     functionTreasureDeviceAfter = "functionTreasureDeviceAfter"
     functionTreasureDeviceAfterMainOnly = "functionTreasureDeviceAfterMainOnly"
     guts = "guts"
+    preventInvisibleWhenInstantDeath = "preventInvisibleWhenInstantDeath"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1457,6 +1462,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     124: NiceBuffAction.functionTreasureDeviceAfter,
     125: NiceBuffAction.functionTreasureDeviceAfterMainOnly,
     126: NiceBuffAction.guts,
+    127: NiceBuffAction.preventInvisibleWhenInstantDeath,
 }
 
 
@@ -2266,6 +2272,9 @@ class CondType(IntEnum):
     RAID_GROUP_OPEN_ABOVE = 206
     RAID_GROUP_OPEN_BELOW = 207
     TREASURE_DEVICE_ACCELERATE = 208
+    PLAY_QUEST_PHASE = 209
+    NOT_PLAY_QUEST_PHASE = 210
+    EVENT_START_TO_END = 211
 
 
 class NiceCondType(StrEnum):
@@ -2477,6 +2486,9 @@ class NiceCondType(StrEnum):
     raidGroupOpenAbove = "raidGroupOpenAbove"
     raidGroupOpenBelow = "raidGroupOpenBelow"
     treasureDeviceAccelerate = "treasureDeviceAccelerate"
+    playQuestPhase = "playQuestPhase"
+    notPlayQuestPhase = "notPlayQuestPhase"
+    eventStartToEnd = "eventStartToEnd"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2686,6 +2698,9 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     206: NiceCondType.raidGroupOpenAbove,
     207: NiceCondType.raidGroupOpenBelow,
     208: NiceCondType.treasureDeviceAccelerate,
+    209: NiceCondType.playQuestPhase,
+    210: NiceCondType.notPlayQuestPhase,
+    211: NiceCondType.eventStartToEnd,
 }
 
 
@@ -3723,6 +3738,8 @@ class AiCond(IntEnum):
     TOTAL_TURN_LOWER = 192
     TOTAL_TURN_EQUAL = 193
     CHECK_WAR_BOARD_SQUARE_INDIVIDUALITY = 194
+    CHECK_PT_HIGHER_NPGAUGE = 195
+    CHECK_SELF_HIGHER_NPGAUGE = 196
 
 
 class NiceAiCond(StrEnum):
@@ -3899,6 +3916,8 @@ class NiceAiCond(StrEnum):
     totalTurnLower = "totalTurnLower"
     totalTurnEqual = "totalTurnEqual"
     checkWarBoardSquareIndividuality = "checkWarBoardSquareIndividuality"
+    checkPtHigherNpgauge = "checkPtHigherNpgauge"
+    checkSelfHigherNpgauge = "checkSelfHigherNpgauge"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -4057,6 +4076,8 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     192: NiceAiCond.totalTurnLower,
     193: NiceAiCond.totalTurnEqual,
     194: NiceAiCond.checkWarBoardSquareIndividuality,
+    195: NiceAiCond.checkPtHigherNpgauge,
+    196: NiceAiCond.checkSelfHigherNpgauge,
 }
 
 
