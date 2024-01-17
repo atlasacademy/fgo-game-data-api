@@ -1009,7 +1009,7 @@ class NiceLoreComment(BaseModel):
 
 
 class NiceSvtOverwriteValue(BaseModel):
-    overwriteNoblePhantasm: NiceTd
+    overwriteNoblePhantasm: NiceTd | None = None
 
 
 class NiceSvtOverwrite(BaseModel):
