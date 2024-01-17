@@ -1824,3 +1824,7 @@ export enum NiceBattleFieldEnvironmentGrantType {
     Stage = "stage",
     Function = "function",
 }
+
+export enum NiceServantOverwriteType {
+    TREASURE_DEVICE = "treasureDevice",
+}

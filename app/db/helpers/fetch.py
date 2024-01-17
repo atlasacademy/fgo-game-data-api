@@ -108,6 +108,7 @@ from ...models.raw import (
     mstSvtLimitAdd,
     mstSvtLimitImage,
     mstSvtMultiPortrait,
+    mstSvtOverwrite,
     mstSvtPassiveSkill,
     mstSvtScript,
     mstSvtVoiceRelation,
@@ -227,6 +228,7 @@ from ...schemas.raw import (
     MstSvtLimitAdd,
     MstSvtLimitImage,
     MstSvtMultiPortrait,
+    MstSvtOverwrite,
     MstSvtPassiveSkill,
     MstSvtScript,
     MstSvtVoiceRelation,
@@ -525,6 +527,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventPointActivity.c.groupId,
     ),
     MstWarBoard: (mstWarBoard, mstWarBoard.c.eventId, mstWarBoard.c.id),
+    MstSvtOverwrite: (
+        mstSvtOverwrite,
+        mstSvtOverwrite.c.svtId,
+        mstSvtOverwrite.c.priority,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)

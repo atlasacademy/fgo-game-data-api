@@ -17,6 +17,7 @@ from ..schemas.gameenums import (
     CondType,
     PayType,
     PurchaseType,
+    ServantOverwriteType,
     VoiceCondType,
     WarBoardStageLayoutType,
 )
@@ -135,6 +136,7 @@ from ..schemas.raw import (
     MstSvtLimitAdd,
     MstSvtLimitImage,
     MstSvtMultiPortrait,
+    MstSvtOverwrite,
     MstSvtPassiveSkill,
     MstSvtScript,
     MstSvtVoice,
@@ -459,6 +461,7 @@ async def get_servant_entity(
     mstSvtCoin = await fetch.get_one(conn, MstSvtCoin, servant_id)
     mstSvtAdd = await fetch.get_one(conn, MstSvtAdd, servant_id)
     mstSvtMultiPortrait = await fetch.get_all(conn, MstSvtMultiPortrait, servant_id)
+    mstSvtOverwrite = await fetch.get_all(conn, MstSvtOverwrite, servant_id)
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = await svt.get_svt_script(
@@ -470,11 +473,15 @@ async def get_servant_entity(
     ]
     mstSkill = await get_skill_entity_no_reverse_many(conn, skill_ids, expand)
 
-    td_ids = [
+    td_ids = {
         td.treasureDeviceId
         for td in await td.get_mstSvtTreasureDevice(conn, svt_id=servant_id)
         if td.treasureDeviceId != EXTRA_ATTACK_TD_ID
-    ]
+    } | {
+        int(overwrite.overwriteValue["overwriteTreasureDeviceId"])
+        for overwrite in mstSvtOverwrite
+        if overwrite.type == ServantOverwriteType.TREASURE_DEVICE
+    }
     mstTreasureDevice = await get_td_entity_no_reverse_many(conn, td_ids, expand)
 
     item_ids: set[int] = set()
@@ -531,6 +538,7 @@ async def get_servant_entity(
         mstCombineAppendPassiveSkill=mstCombineAppendPassiveSkill,
         mstSvtCoin=mstSvtCoin,
         mstSvtAdd=mstSvtAdd,
+        mstSvtOverwrite=mstSvtOverwrite,
         # needed costume to get the nice limits and costume ids
         mstSvtCostume=mstSvtCostume,
         # needed this to get CharaFigure available forms

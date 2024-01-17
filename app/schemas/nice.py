@@ -78,6 +78,7 @@ from .gameenums import (
     NiceQuestType,
     NiceRestrictionRangeType,
     NiceRestrictionType,
+    NiceServantOverwriteType,
     NiceShopType,
     NiceSpotOverwriteType,
     NiceStatusRank,
@@ -1007,6 +1008,19 @@ class NiceLoreComment(BaseModel):
     additionalConds: list[NiceLoreCommentAdd]
 
 
+class NiceSvtOverwriteValue(BaseModel):
+    noblePhantasm: NiceTd | None = None
+
+
+class NiceSvtOverwrite(BaseModel):
+    type: NiceServantOverwriteType
+    priority: int
+    condType: NiceCondType
+    condTargetId: int
+    condValue: int
+    overwriteValue: NiceSvtOverwriteValue
+
+
 class NiceLoreStats(BaseModel):
     strength: NiceStatusRank  # power
     endurance: NiceStatusRank  # defense
@@ -1337,6 +1351,7 @@ class NiceServant(BaseModelORJson):
     ascensionImage: list[NiceServantLimitImage] = Field(
         ..., title="Servant Limit Image"
     )
+    overwrites: list[NiceSvtOverwrite] = Field(..., title="Servant Overwrites")
     ascensionMaterials: dict[int, NiceLvlUpMaterial] = Field(
         ...,
         title="Ascension Materials",

@@ -841,6 +841,19 @@ mstSvtMultiPortrait = Table(
 )
 
 
+mstSvtOverwrite = Table(
+    "mstSvtOverwrite",
+    metadata,
+    Column("svtId", Integer),
+    Column("type", Integer),
+    Column("priority", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condValue", Integer),
+    Column("overwriteValue", JSONB),
+)
+
+
 mstEquip = Table(
     "mstEquip",
     metadata,
@@ -2608,6 +2621,7 @@ TABLES_TO_BE_LOADED = [
     [mstSvtMultiPortrait],
     [mstSvtPassiveSkill],
     [mstSvtScript],
+    [mstSvtOverwrite],
     [mstSvtSkill, mstSvtSkillRelease],
     [mstSvtTreasureDevice, mstSvtTreasureDeviceRelease],
     [mstSvtVoice],
