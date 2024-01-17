@@ -1018,6 +1018,9 @@ class Trait(StrEnum):
     buffBuffSuccessRateUp = "buffBuffSuccessRateUp"
     groupServant = "groupServant"
     takeruDummyTrait = "takeruDummyTrait"
+    artsBuff = "artsBuff"
+    busterBuff = "busterBuff"
+    quickBuff = "quickBuff"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1286,6 +1289,9 @@ TRAIT_NAME: dict[int, Trait] = {
     3089: Trait.burnEffectivenessUp,
     3090: Trait.buffBuffSuccessRateUp,
     3091: Trait.takeruDummyTrait,
+    3092: Trait.artsBuff,
+    3093: Trait.busterBuff,
+    3094: Trait.quickBuff,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
