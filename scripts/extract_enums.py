@@ -588,6 +588,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Battle Field Environment Grant Type",
         "BATTLE_ENVIRONMENT_GRANT_TYPE_NAME",
     ),
+    (
+        "ServantOverwriteEntity.ServantOverwriteType",
+        "ServantOverwriteType",
+        "NiceServantOverwriteType",
+        "Servant Overwrite Type",
+        "SERVANT_OVERWRITE_TYPE_NAME",
+    ),
 ]
 
 

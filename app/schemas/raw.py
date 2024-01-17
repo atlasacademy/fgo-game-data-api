@@ -859,6 +859,16 @@ class MstSvtMultiPortrait(BaseModelORJson):
     displayPriority: int
 
 
+class MstSvtOverwrite(BaseModelORJson):
+    svtId: int
+    type: int
+    priority: int
+    condType: int
+    condTargetId: int
+    condValue: int
+    overwriteValue: dict[str, Any]
+
+
 def get_subtitle_svtId(sub_id: str) -> int:
     svt = sub_id.split("_")[0]
     try:
@@ -2009,6 +2019,7 @@ class ServantEntity(BaseModelORJson):
     expandedAppendPassive: list[SkillEntityNoReverse] = []
     mstSvtAppendPassiveSkillUnlock: list[MstSvtAppendPassiveSkillUnlock]
     mstCombineAppendPassiveSkill: list[MstCombineAppendPassiveSkill]
+    mstSvtOverwrite: list[MstSvtOverwrite]
     mstItem: list[MstItem]
     mstCommonRelease: list[MstCommonRelease]
     mstSvtCoin: Optional[MstSvtCoin] = None

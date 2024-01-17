@@ -5373,3 +5373,18 @@ BATTLE_ENVIRONMENT_GRANT_TYPE_NAME: dict[int, NiceBattleFieldEnvironmentGrantTyp
     1: NiceBattleFieldEnvironmentGrantType.stage,
     2: NiceBattleFieldEnvironmentGrantType.function,
 }
+
+
+class ServantOverwriteType(IntEnum):
+    TREASURE_DEVICE = 1
+
+
+class NiceServantOverwriteType(StrEnum):
+    """Servant Overwrite Type"""
+
+    treasureDevice = "treasureDevice"
+
+
+SERVANT_OVERWRITE_TYPE_NAME: dict[int, NiceServantOverwriteType] = {
+    1: NiceServantOverwriteType.treasureDevice,
+}
