@@ -366,11 +366,6 @@ async def get_nice_servant(
     )
 
     # Filter out dummy TDs that are used by enemy servants
-    overwriteTds = {
-        int(overwrite.overwriteValue["overwriteTreasureDeviceId"])
-        for overwrite in raw_svt.mstSvtOverwrite
-        if overwrite.type == ServantOverwriteType.TREASURE_DEVICE
-    }
     if raw_svt.mstSvt.isServant():
         playable_tds = [
             td
@@ -379,7 +374,6 @@ async def get_nice_servant(
                 svtTd for svtTd in td.mstSvtTreasureDevice if svtTd.svtId == svt_id
             ).num
             == 1
-            and td.mstTreasureDevice.id not in overwriteTds
         ]
         for playable_td in playable_tds:
             if "tdTypeChangeIDs" in playable_td.mstTreasureDevice.script:
