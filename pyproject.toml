@@ -7,20 +7,20 @@ packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.108.0"
-uvicorn = {extras = ["standard"], version = "^0.25.0"}
+fastapi = "^0.109.0"
+uvicorn = {extras = ["standard"], version = "^0.26.0"}
 python-dotenv = "^1.0.0"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
 orjson = "^3.9.10"
 aiofiles = "^23.2.1"
-GitPython = "^3.1.40"
+GitPython = "^3.1.41"
 SQLAlchemy = "^2.0.25"
-httpx = "^0.26.0"
+httpx = {extras = ["http2"], version = "^0.26.0"}
 fastapi-cache2 = "^0.2.1"
 gunicorn = { extras = ["setproctitle"], version = "^21.2.0" }
 redis = "^5.0.1"
 hiredis = "^2.3.2"
-psycopg = "^3.1.16"
+psycopg = "^3.1.17"
 pydantic = "<2"
 
 [tool.poetry.group.dev.dependencies]
@@ -36,7 +36,7 @@ fuzzywuzzy-stubs = "^0.0.1"
 types-aiofiles = "^23.2.0.20240106"
 types-redis = "^4.6.0.20240106"
 types-orjson = "^3.6.2"
-ruff = "^0.1.11"
+ruff = "^0.1.13"
 types-pyopenssl = "^23.3.0.20240106"
 
 [tool.pytest.ini_options]
