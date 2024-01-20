@@ -572,11 +572,16 @@ async def get_nice_quest_phase(
         if (
             db_data.raw.mstQuest.type in (QuestType.MAIN, QuestType.FREE)
             and db_data.nice.warId < 1000
-        ) or db_data.nice.warId == 1002:
+        ):
             if region == Region.JP:
                 min_query_id = 154613  # 2021-08-01 10:00:00 UTC
             elif region == Region.NA:
                 min_query_id = 1062363  # 2022-07-04 09:00:00 UTC
+        elif db_data.nice.warId == 1002:
+            if region == Region.JP:
+                min_query_id = 499538  # 2022-01-02 00:00:00 UTC
+            elif region == Region.NA:
+                min_query_id = 6481638  # 2024-01-02 00:00:00 UTC
 
         rayshift_query_questHash = (
             None if db_data.raw.mstQuest.type == QuestType.WAR_BOARD else questHash
