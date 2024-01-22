@@ -179,7 +179,9 @@ async def get_nice_td(
             base_settings_id["item_id"] = chosen_svt.svtId
 
         imageId = chosen_svt.imageIndex
-        if imageId < 2:
+        if "npNameFileSuffix" in tdEntity.mstTreasureDevice.script:
+            file_i = f"np_{tdEntity.mstTreasureDevice.script['npNameFileSuffix']}"
+        elif imageId < 2:
             file_i = "np"
         else:
             file_i = "np" + str(imageId // 2)
