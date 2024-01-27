@@ -254,7 +254,7 @@ async def dump_nice_bgms(
 
 
 async def dump_nice_gachas(util: ExportUtil) -> None:
-    all_gacha = await get_all_nice_gachas(util.conn)
+    all_gacha = await get_all_nice_gachas(util.conn, util.lang)
     await util.dump_orjson("nice_gacha", all_gacha)
 
 
@@ -553,6 +553,7 @@ async def generate_exports(
                     await dump_nice_ccs(util_en, mstCcs)
                     await dump_nice_bgms(util_en, bgms)
                     await dump_nice_class_boards(util_en, mstClassBoardBases)
+                    await dump_nice_gachas(util_en)
 
                 await dump_svt(util, "nice_servant", all_servants)
                 await dump_svt(util, "nice_equip", all_equips)

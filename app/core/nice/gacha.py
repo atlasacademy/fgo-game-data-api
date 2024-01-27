@@ -48,6 +48,8 @@ async def get_nice_gacha_from_id(
     return get_nice_gacha(raw_gacha, lang)
 
 
-async def get_all_nice_gachas(conn: AsyncConnection) -> list[NiceGacha]:
+async def get_all_nice_gachas(
+    conn: AsyncConnection, lang: Language = Language.jp
+) -> list[NiceGacha]:
     all_raw = await get_all_gacha_entities(conn)
-    return [get_nice_gacha(gacha) for gacha in all_raw]
+    return [get_nice_gacha(gacha, lang) for gacha in all_raw]
