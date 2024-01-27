@@ -206,20 +206,24 @@ def get_nice_stage(
         enemyFieldPosCount=raw_stage.script.get("enemyFieldPosCount"),
         enemyActCount=raw_stage.script.get("EnemyActCount"),
         turn=raw_stage.script.get("turn"),
-        limitAct=STAGE_LIMIT_ACT_TYPE_NAME[raw_stage.script["LimitAct"]]
-        if "LimitAct" in raw_stage.script
-        else None,
-        battleBg=next(
-            (
-                get_nice_battle_bg(bg)
-                for bg in bgs
-                if bg.id == raw_stage.script["changeBgId"]
-                and bg.type == raw_stage.script["changeBgType"]
-            ),
-            None,
-        )
-        if "changeBgId" in raw_stage.script and "changeBgType" in raw_stage.script
-        else None,
+        limitAct=(
+            STAGE_LIMIT_ACT_TYPE_NAME[raw_stage.script["LimitAct"]]
+            if "LimitAct" in raw_stage.script
+            else None
+        ),
+        battleBg=(
+            next(
+                (
+                    get_nice_battle_bg(bg)
+                    for bg in bgs
+                    if bg.id == raw_stage.script["changeBgId"]
+                    and bg.type == raw_stage.script["changeBgType"]
+                ),
+                None,
+            )
+            if "changeBgId" in raw_stage.script and "changeBgType" in raw_stage.script
+            else None
+        ),
         NoEntryIds=raw_stage.script.get("NoEntryIds"),
         waveStartMovies=waveStartMovies.get(raw_stage.wave, []),
         cutin=stage_cutins.get(raw_stage.wave, None),
@@ -283,13 +287,15 @@ def get_nice_quest_with_war_spot(
         "chapterId": raw_quest.mstQuest.chapterId,
         "chapterSubId": raw_quest.mstQuest.chapterSubId,
         "chapterSubStr": raw_quest.mstQuest.chapterSubStr,
-        "giftIcon": AssetURL.items.format(
-            base_url=settings.asset_url,
-            region=region,
-            item_id=raw_quest.mstQuest.giftIconId,
-        )
-        if raw_quest.mstQuest.giftIconId != 0
-        else None,
+        "giftIcon": (
+            AssetURL.items.format(
+                base_url=settings.asset_url,
+                region=region,
+                item_id=raw_quest.mstQuest.giftIconId,
+            )
+            if raw_quest.mstQuest.giftIconId != 0
+            else None
+        ),
         "gifts": [
             get_nice_gift(region, gift, raw_quest.mstGiftAdd, gift_maps)
             for gift in raw_quest.mstGift

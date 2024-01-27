@@ -40,12 +40,14 @@ def get_nice_enemy_master_battle(
         maxCommandSpell=battle.maxCommandSpell,
         offsetX=battle.offsetX,
         offsetY=battle.offsetY,
-        cutin=[
-            fmt_url(AssetURL.enemyMasterFigure, **base_settings, item_id=cutin_id)
-            for cutin_id in cutin_ids
-        ]
-        if cutin_ids
-        else None,
+        cutin=(
+            [
+                fmt_url(AssetURL.enemyMasterFigure, **base_settings, item_id=cutin_id)
+                for cutin_id in cutin_ids
+            ]
+            if cutin_ids
+            else None
+        ),
     )
 
 

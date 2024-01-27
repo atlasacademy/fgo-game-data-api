@@ -200,27 +200,33 @@ async def get_nice_event(
         originalName=raw_event.mstEvent.name,
         shortName=raw_event.mstEvent.shortName,
         detail=raw_event.mstEvent.detail,
-        noticeBanner=fmt_url(
-            AssetURL.banner,
-            **base_settings,
-            banner=f"event_war_{raw_event.mstEvent.noticeBannerId}",
-        )
-        if raw_event.mstEvent.noticeBannerId != 0
-        else None,
-        banner=fmt_url(
-            AssetURL.banner,
-            **base_settings,
-            banner=f"event_war_{raw_event.mstEvent.bannerId}",
-        )
-        if raw_event.mstEvent.bannerId != 0
-        else None,
-        icon=fmt_url(
-            AssetURL.banner,
-            **base_settings,
-            banner=f"banner_icon_{raw_event.mstEvent.iconId}",
-        )
-        if raw_event.mstEvent.iconId != 0
-        else None,
+        noticeBanner=(
+            fmt_url(
+                AssetURL.banner,
+                **base_settings,
+                banner=f"event_war_{raw_event.mstEvent.noticeBannerId}",
+            )
+            if raw_event.mstEvent.noticeBannerId != 0
+            else None
+        ),
+        banner=(
+            fmt_url(
+                AssetURL.banner,
+                **base_settings,
+                banner=f"event_war_{raw_event.mstEvent.bannerId}",
+            )
+            if raw_event.mstEvent.bannerId != 0
+            else None
+        ),
+        icon=(
+            fmt_url(
+                AssetURL.banner,
+                **base_settings,
+                banner=f"banner_icon_{raw_event.mstEvent.iconId}",
+            )
+            if raw_event.mstEvent.iconId != 0
+            else None
+        ),
         bannerPriority=raw_event.mstEvent.bannerPriority,
         noticeAt=raw_event.mstEvent.noticeAt,
         startedAt=raw_event.mstEvent.startedAt,
@@ -332,32 +338,36 @@ async def get_nice_event(
             )
             for recipe in raw_event.mstEventRecipe
         ],
-        digging=get_nice_digging(
-            region,
-            raw_event.mstEventDigging,
-            raw_event.mstEventDiggingBlock,
-            raw_event.mstEventDiggingReward,
-            item_map=item_map,
-            gift_data=gift_data,
-            common_consumes=common_consumes,
-            raw_consumes=raw_event.mstCommonConsume,
-        )
-        if raw_event.mstEventDigging
-        else None,
-        cooltime=NiceEventCooltime(
-            rewards=[
-                get_nice_event_cooltime(
-                    region,
-                    cooltime,
-                    gift_data,
-                    common_releases[cooltime.commonReleaseId],
-                    raw_releases=raw_event.mstCommonRelease,
-                )
-                for cooltime in raw_event.mstEventCooltimeReward
-            ]
-        )
-        if raw_event.mstEventCooltimeReward
-        else None,
+        digging=(
+            get_nice_digging(
+                region,
+                raw_event.mstEventDigging,
+                raw_event.mstEventDiggingBlock,
+                raw_event.mstEventDiggingReward,
+                item_map=item_map,
+                gift_data=gift_data,
+                common_consumes=common_consumes,
+                raw_consumes=raw_event.mstCommonConsume,
+            )
+            if raw_event.mstEventDigging
+            else None
+        ),
+        cooltime=(
+            NiceEventCooltime(
+                rewards=[
+                    get_nice_event_cooltime(
+                        region,
+                        cooltime,
+                        gift_data,
+                        common_releases[cooltime.commonReleaseId],
+                        raw_releases=raw_event.mstCommonRelease,
+                    )
+                    for cooltime in raw_event.mstEventCooltimeReward
+                ]
+            )
+            if raw_event.mstEventCooltimeReward
+            else None
+        ),
         fortifications=[
             get_nice_fortification(
                 region,

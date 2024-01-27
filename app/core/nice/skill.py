@@ -240,21 +240,25 @@ async def get_nice_skill_with_svt(
                     "skillGroupId": group.id,
                     "startedAt": overwrite.startedAt,
                     "endedAt": overwrite.endedAt,
-                    "icon": AssetURL.skillIcon.format(
-                        base_url=settings.asset_url,
-                        region=region,
-                        item_id=overwrite.iconId,
-                    )
-                    if overwrite.iconId != 0
-                    else None,
+                    "icon": (
+                        AssetURL.skillIcon.format(
+                            base_url=settings.asset_url,
+                            region=region,
+                            item_id=overwrite.iconId,
+                        )
+                        if overwrite.iconId != 0
+                        else None
+                    ),
                     "detail": strip_formatting_brackets(overwrite_detail.detail),
                     "unmodifiedDetail": overwrite_detail.detail,
                     "functions": [
                         await get_nice_function(conn, region, function, lang, [svals])
                         for function, svals in zip(
-                            overwrite.expandedFuncId
-                            if overwrite.expandedFuncId
-                            else [],
+                            (
+                                overwrite.expandedFuncId
+                                if overwrite.expandedFuncId
+                                else []
+                            ),
                             overwrite.svals,
                             strict=False,
                         )

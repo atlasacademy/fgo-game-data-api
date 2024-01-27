@@ -40,9 +40,10 @@ async def main(
     if not any([get_raw, get_nice, get_basic]):
         get_raw = get_nice = get_basic = True
 
-    async with LifespanManager(app, startup_timeout=60), AsyncClient(
-        app=app, base_url="http://test"
-    ) as ac:
+    async with (
+        LifespanManager(app, startup_timeout=60),
+        AsyncClient(app=app, base_url="http://test") as ac,
+    ):
         for to_download, query_data, endpoint, folder in (
             (get_raw, test_raw_data, "raw", "test_data_raw"),
             (get_nice, test_nice_data, "nice", "test_data_nice"),

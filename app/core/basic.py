@@ -451,9 +451,11 @@ async def get_basic_svt(
                     "id": costume.id,
                     "costumeCollectionNo": costume.costumeCollectionNo,
                     "battleCharaId": costume.battleCharaId,
-                    "shortName": get_translation(lang, costume.shortName)
-                    if region == Region.JP and lang is not None
-                    else costume.shortName,
+                    "shortName": (
+                        get_translation(lang, costume.shortName)
+                        if region == Region.JP and lang is not None
+                        else costume.shortName
+                    ),
                 }
         if svtExtra.zeroLimitOverwriteName is not None:
             basic_servant["name"] = svtExtra.zeroLimitOverwriteName

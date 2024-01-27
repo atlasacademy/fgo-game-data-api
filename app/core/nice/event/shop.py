@@ -50,9 +50,11 @@ def get_nice_set_item(
         purchaseType=PURCHASE_TYPE_NAME[set_item.purchaseType],
         targetId=set_item.targetId,
         setNum=set_item.setNum,
-        gifts=get_nice_gifts(region, set_item.targetId, gift_data)
-        if set_item.purchaseType == PurchaseType.GIFT
-        else [],
+        gifts=(
+            get_nice_gifts(region, set_item.targetId, gift_data)
+            if set_item.purchaseType == PurchaseType.GIFT
+            else []
+        ),
     )
 
 
@@ -160,14 +162,16 @@ def get_nice_shop(
         limitNum=shop.limitNum,
         defaultLv=shop.defaultLv,
         defaultLimitCount=shop.defaultLimitCount,
-        image=fmt_url(
-            AssetURL.items,
-            base_url=settings.asset_url,
-            region=region,
-            item_id=shop.imageId,
-        )
-        if shop.imageId != 0
-        else None,
+        image=(
+            fmt_url(
+                AssetURL.items,
+                base_url=settings.asset_url,
+                region=region,
+                item_id=shop.imageId,
+            )
+            if shop.imageId != 0
+            else None
+        ),
         openedAt=shop.openedAt,
         closedAt=shop.closedAt,
     )

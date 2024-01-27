@@ -9,9 +9,11 @@ def get_nice_svt_trait(svt_individuality: MstSvtIndividuality) -> NiceServantTra
         idx=svt_individuality.idx,
         trait=get_traits_list(sorted(svt_individuality.individuality)),
         limitCount=svt_individuality.limitCount,
-        condType=COND_TYPE_NAME[svt_individuality.condType]
-        if svt_individuality.condType is not None
-        else None,
+        condType=(
+            COND_TYPE_NAME[svt_individuality.condType]
+            if svt_individuality.condType is not None
+            else None
+        ),
         condId=svt_individuality.condId,
         condNum=svt_individuality.condNum,
     )

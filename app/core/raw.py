@@ -1428,11 +1428,15 @@ async def get_shop_entities(
                 ],
                 mstShopScript=shop_script_map.get(shop.id),
                 mstItem=[item_map[item_id]] if item_id in item_map else [],
-                mstCommonConsume=[
-                    consume for consume in common_consumes if consume.id in shop.itemIds
-                ]
-                if shop.payType == PayType.COMMON_CONSUME
-                else [],
+                mstCommonConsume=(
+                    [
+                        consume
+                        for consume in common_consumes
+                        if consume.id in shop.itemIds
+                    ]
+                    if shop.payType == PayType.COMMON_CONSUME
+                    else []
+                ),
                 mstGift=gifts,
                 mstGiftAdd=gift_adds,
             )

@@ -171,9 +171,9 @@ def update_servant_translation(jp_master: Path, na_master: Path) -> None:
                 if "overWriteServantName" in limit["script"]:
                     names_dict[limit_id] = limit["script"]["overWriteServantName"]
                 if "overWriteServantBattleName" in limit["script"]:
-                    names_dict[
-                        (col_nos[limit["svtId"]], limit["limitCount"], 1)
-                    ] = limit["script"]["overWriteServantBattleName"]
+                    names_dict[(col_nos[limit["svtId"]], limit["limitCount"], 1)] = (
+                        limit["script"]["overWriteServantBattleName"]
+                    )
 
     updated_translation = {}
     for jp_key in sorted(jp_names.keys()):

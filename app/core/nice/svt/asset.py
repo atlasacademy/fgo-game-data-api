@@ -119,9 +119,11 @@ def get_svt_extraAssets(
             limit.limitCount: fmt_url(
                 AssetURL.enemy,
                 **base_settings,
-                item_id=all_limit_adds[limit.limitCount].battleCharaId
-                if limit.limitCount in all_limit_adds
-                else svt_id,
+                item_id=(
+                    all_limit_adds[limit.limitCount].battleCharaId
+                    if limit.limitCount in all_limit_adds
+                    else svt_id
+                ),
                 i=limit.limitCount,
             )
             for limit in raw_svt.mstSvtLimit

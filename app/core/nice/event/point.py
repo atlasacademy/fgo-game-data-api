@@ -71,14 +71,16 @@ def get_nice_pointBuff(
         detail=pointBuff.detail,
         icon=icon,
         background=ITEM_BG_TYPE_NAME.get(pointBuff.bgImageId, NiceItemBGType.unknown),
-        skillIcon=fmt_url(
-            AssetURL.eventUi,
-            base_url=settings.asset_url,
-            region=region,
-            event=f"Prefabs/{pointBuff.eventId}/bufficon_{pointBuff.skillIconId:0>2}",
-        )
-        if pointBuff.skillIconId
-        else None,
+        skillIcon=(
+            fmt_url(
+                AssetURL.eventUi,
+                base_url=settings.asset_url,
+                region=region,
+                event=f"Prefabs/{pointBuff.eventId}/bufficon_{pointBuff.skillIconId:0>2}",
+            )
+            if pointBuff.skillIconId
+            else None
+        ),
         lv=pointBuff.lv,
         value=pointBuff.value,
     )

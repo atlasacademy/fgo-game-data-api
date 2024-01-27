@@ -176,13 +176,15 @@ def get_enemy_passive(svt: UserSvt, all_skills: MultipleNiceSkills) -> EnemyPass
             for skill_id in svt.classPassive
             if SkillSvt(skill_id, svt.svtId) in all_skills
         ],
-        addPassive=[
-            all_skills[SkillSvt(skill_id, svt.svtId)]
-            for skill_id in svt.addPassive
-            if SkillSvt(skill_id, svt.svtId) in all_skills
-        ]
-        if svt.addPassive
-        else [],
+        addPassive=(
+            [
+                all_skills[SkillSvt(skill_id, svt.svtId)]
+                for skill_id in svt.addPassive
+                if SkillSvt(skill_id, svt.svtId) in all_skills
+            ]
+            if svt.addPassive
+            else []
+        ),
         addPassiveLvs=svt.addPassiveLvs,
         appendPassiveSkillIds=svt.appendPassiveSkillIds,
         appendPassiveSkillLvs=svt.appendPassiveSkillLvs,
@@ -535,9 +537,11 @@ async def get_war_board_enemies(
             quest_detail.userSvt[0].svtId,
             quest_detail.userSvt[0].limitCount,
             quest_detail.userSvt[0].dispLimitCount,
-            quest_detail.userSvt[0].enemyScript.get("imageSvtId")
-            if quest_detail.userSvt[0].enemyScript
-            else None,
+            (
+                quest_detail.userSvt[0].enemyScript.get("imageSvtId")
+                if quest_detail.userSvt[0].enemyScript
+                else None
+            ),
         )
         for quest_detail in quest_details
     ]

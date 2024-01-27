@@ -130,8 +130,7 @@ class MstSvtSkillRelease(BaseModelORJson):
     condGroup: int
 
 
-class MstSvtTreasureDeviceRelease(MstSvtSkillRelease):
-    ...
+class MstSvtTreasureDeviceRelease(MstSvtSkillRelease): ...
 
 
 class MstSvtPassiveSkill(BaseModelORJson):
@@ -743,7 +742,9 @@ class MstSvtCostume(BaseModelORJson):
     detail: str  # "霊基接触の影響か、この霊衣で\n戦闘すると言動に謎の変化が見られる",
     itemGetInfo: str  # "クエスト「エピローグ」クリアで開放",
     releaseInfo: str  # "最終再臨かつLv.MAXで開放",
-    costumeReleaseDetail: str  # "簡易霊衣「アマゾネスCEOセット」開放権を\n獲得できます。",
+    costumeReleaseDetail: (
+        str  # "簡易霊衣「アマゾネスCEOセット」開放権を\n獲得できます。",
+    )
     priority: int  # 1,
     flag: int  # 0,
     costumeCollectionNo: int  # 32,

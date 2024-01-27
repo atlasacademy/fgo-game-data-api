@@ -62,18 +62,26 @@ def get_nice_event_reward_scene(
             image=get_guide_image_url(
                 region, guideImageId, reward_scene.guideLimitCounts[i], limit_adds
             ),
-            faceId=reward_scene.guideFaceIds[i]
-            if len(reward_scene.guideFaceIds) > i
-            else None,
-            displayName=reward_scene.guideDisplayNames[i]
-            if len(reward_scene.guideDisplayNames) > i
-            else None,
-            weight=reward_scene.guideWeights[i]
-            if len(reward_scene.guideWeights) > i
-            else None,
-            unselectedMax=reward_scene.guideUnselectedMax[i]
-            if len(reward_scene.guideUnselectedMax) > i
-            else None,
+            faceId=(
+                reward_scene.guideFaceIds[i]
+                if len(reward_scene.guideFaceIds) > i
+                else None
+            ),
+            displayName=(
+                reward_scene.guideDisplayNames[i]
+                if len(reward_scene.guideDisplayNames) > i
+                else None
+            ),
+            weight=(
+                reward_scene.guideWeights[i]
+                if len(reward_scene.guideWeights) > i
+                else None
+            ),
+            unselectedMax=(
+                reward_scene.guideUnselectedMax[i]
+                if len(reward_scene.guideUnselectedMax) > i
+                else None
+            ),
         )
         for i, guideImageId in enumerate(reward_scene.guideImageIds)
     ]
@@ -95,13 +103,15 @@ def get_nice_event_reward_scene(
             **base_settings,
             fname=f"btn_txt_off_{event_id}_{reward_scene.tabImageId}",
         ),
-        image=fmt_url(
-            AssetURL.eventReward,
-            **base_settings,
-            fname=f"event_type_txt_{event_id}_{reward_scene.imageId}",
-        )
-        if reward_scene.imageId > 0
-        else None,
+        image=(
+            fmt_url(
+                AssetURL.eventReward,
+                **base_settings,
+                fname=f"event_type_txt_{event_id}_{reward_scene.imageId}",
+            )
+            if reward_scene.imageId > 0
+            else None
+        ),
         bg=fmt_url(
             AssetURL.back,
             **base_settings,

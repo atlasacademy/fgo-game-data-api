@@ -123,21 +123,25 @@ def get_nice_map(
 
     return NiceMap(
         id=raw_map.id,
-        mapImage=fmt_url(AssetURL.mapImg, **base_settings, map_id=raw_map.mapImageId)
-        if raw_map.mapImageId != 0
-        else None,
+        mapImage=(
+            fmt_url(AssetURL.mapImg, **base_settings, map_id=raw_map.mapImageId)
+            if raw_map.mapImageId != 0
+            else None
+        ),
         mapImageW=raw_map.mapImageW,
         mapImageH=raw_map.mapImageH,
         mapGimmicks=[
             get_nice_map_gimmick(region, gimmick, war_asset_id) for gimmick in gimmicks
         ],
-        headerImage=fmt_url(
-            AssetURL.banner,
-            **base_settings,
-            banner=f"img_title_header_{raw_map.headerImageId}",
-        )
-        if raw_map.headerImageId != 0
-        else None,
+        headerImage=(
+            fmt_url(
+                AssetURL.banner,
+                **base_settings,
+                banner=f"img_title_header_{raw_map.headerImageId}",
+            )
+            if raw_map.headerImageId != 0
+            else None
+        ),
         bgm=bgm,
     )
 
@@ -227,15 +231,17 @@ def get_nice_spot(
         mapId=raw_spot.mapId,
         name=get_translation(lang, raw_spot.name),
         originalName=raw_spot.name,
-        image=fmt_url(
-            AssetURL.spotImg,
-            base_url=settings.asset_url,
-            region=region,
-            war_asset_id=war_asset_id,
-            spot_id=raw_spot.imageId,
-        )
-        if raw_spot.imageId != 0
-        else None,
+        image=(
+            fmt_url(
+                AssetURL.spotImg,
+                base_url=settings.asset_url,
+                region=region,
+                war_asset_id=war_asset_id,
+                spot_id=raw_spot.imageId,
+            )
+            if raw_spot.imageId != 0
+            else None
+        ),
         x=Decimal(raw_spot.x),
         y=Decimal(raw_spot.y),
         imageOfsX=raw_spot.imageOfsX,
@@ -382,16 +388,20 @@ async def get_nice_war(
         longName=get_translation(lang, raw_war.mstWar.longName),
         originalLongName=raw_war.mstWar.longName,
         flags=get_flags(raw_war.mstWar.flag, WAR_FLAG_NAME),
-        banner=fmt_url(AssetURL.banner, **base_settings, banner=banner_file)
-        if raw_war.mstWar.bannerId != 0
-        else None,
-        headerImage=fmt_url(
-            AssetURL.banner,
-            **base_settings,
-            banner=f"img_title_header_{raw_war.mstWar.headerImageId}",
-        )
-        if raw_war.mstWar.headerImageId != 0
-        else None,
+        banner=(
+            fmt_url(AssetURL.banner, **base_settings, banner=banner_file)
+            if raw_war.mstWar.bannerId != 0
+            else None
+        ),
+        headerImage=(
+            fmt_url(
+                AssetURL.banner,
+                **base_settings,
+                banner=f"img_title_header_{raw_war.mstWar.headerImageId}",
+            )
+            if raw_war.mstWar.headerImageId != 0
+            else None
+        ),
         priority=raw_war.mstWar.priority,
         parentWarId=raw_war.mstWar.parentWarId,
         materialParentWarId=raw_war.mstWar.materialParentWarId,

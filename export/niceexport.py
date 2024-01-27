@@ -225,9 +225,11 @@ def get_nice_class(raw_data: Any) -> Any:
             "id": class_data["id"],
             "className": get_class_name(class_data["id"]),
             "name": class_data["name"],
-            "individuality": TRAIT_NAME.get(class_data["individuality"], Trait.unknown)
-            if class_data["individuality"]
-            else Trait.unknown,
+            "individuality": (
+                TRAIT_NAME.get(class_data["individuality"], Trait.unknown)
+                if class_data["individuality"]
+                else Trait.unknown
+            ),
             "attackRate": class_data["attackRate"],
             "imageId": class_data["imageId"],
             "iconImageId": class_data["iconImageId"],
@@ -461,9 +463,9 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
             "maxFriend": get_current_value(
                 constant["FRIEND_NUM"], "addFriendMax", lvli
             ),
-            "gift": get_nice_gift(mstGiftId[lvl["giftId"]])
-            if lvl["giftId"] != 0
-            else None,
+            "gift": (
+                get_nice_gift(mstGiftId[lvl["giftId"]]) if lvl["giftId"] != 0 else None
+            ),
         }
         for lvli, lvl in enumerate(mstUserExp)
     }

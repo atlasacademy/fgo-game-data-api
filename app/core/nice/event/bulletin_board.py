@@ -61,14 +61,16 @@ def get_nice_bulletin_board(
             for release in bulletin_releases
             if release.bulletinBoardId == raw_bulletin.id
         ],
-        script=[
-            get_nice_bulletin_board_script(
-                region,
-                script,
-                raw_bulletin.eventId,
-            )
-            for script in raw_bulletin.script
-        ]
-        if raw_bulletin.script
-        else [],
+        script=(
+            [
+                get_nice_bulletin_board_script(
+                    region,
+                    script,
+                    raw_bulletin.eventId,
+                )
+                for script in raw_bulletin.script
+            ]
+            if raw_bulletin.script
+            else []
+        ),
     )
