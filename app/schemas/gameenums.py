@@ -5388,3 +5388,21 @@ class NiceServantOverwriteType(StrEnum):
 SERVANT_OVERWRITE_TYPE_NAME: dict[int, NiceServantOverwriteType] = {
     1: NiceServantOverwriteType.treasureDevice,
 }
+
+
+class GachaFlag(IntEnum):
+    PC_MESSAGE = 2
+    BONUS_SELECT = 8
+
+
+class NiceGachaFlag(StrEnum):
+    """Gacha Flag"""
+
+    pcMessage = "pcMessage"
+    bonusSelect = "bonusSelect"
+
+
+GACHA_FLAG_NAME: dict[int, NiceGachaFlag] = {
+    2: NiceGachaFlag.pcMessage,
+    8: NiceGachaFlag.bonusSelect,
+}

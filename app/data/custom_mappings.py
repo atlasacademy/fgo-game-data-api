@@ -37,6 +37,7 @@ class Translation(StrEnum):
     CC = "cc_names"
     MC = "mc_names"
     COSTUME = "costume_names"
+    GACHA = "gacha_names"
     MANUAL = "manual_names"
 
 

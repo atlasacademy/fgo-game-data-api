@@ -37,6 +37,7 @@ TRANSLATION_FILES = (
     "cc_names",
     "mc_names",
     "costume_names",
+    "gacha_names",
 )
 LOGIN_ITEM_REGEX = re.compile(r"(\d+)月交換券\((\d+)\)")
 VOICE_NAME_REGEX = re.compile(r"^(.*?)(\d+)$", re.DOTALL)
@@ -429,6 +430,7 @@ def main(jp_master: Path, na_master: Path) -> None:
         "costume_names", jp_master, na_master, "mstSvtCostume", get_costume_names
     )
     update_translation("cv_names", jp_master, na_master, "mstCv", get_names)
+    update_translation("gacha_names", jp_master, na_master, "mstGacha", get_names)
     update_translation(
         "overwrite_voice_names",
         jp_master,

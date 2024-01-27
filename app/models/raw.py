@@ -1162,6 +1162,18 @@ mstGacha = Table(
     Column("flag", Integer),
 )
 
+mstGachaStoryAdjust = Table(
+    "mstGachaStoryAdjust",
+    metadata,
+    Column("gachaId", Integer),
+    Column("idx", Integer),
+    Column("adjustId", Integer),
+    Column("condType", Integer),
+    Column("targetId", Integer),
+    Column("value", Integer),
+    Column("imageId", Integer),
+)
+
 
 mstEvent = Table(
     "mstEvent",
@@ -2648,5 +2660,5 @@ TABLES_TO_BE_LOADED = [
     [mstClassBoardBase, mstClassBoardClass, mstClassBoardLine, mstFuncDisp],
     [mstClassBoardLock, mstClassBoardSquare],
     [mstFuncTypeDetail, mstBuffTypeDetail],
-    [mstGacha],
+    [mstGacha, mstGachaStoryAdjust],
 ]

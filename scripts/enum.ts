@@ -1828,3 +1828,8 @@ export enum NiceBattleFieldEnvironmentGrantType {
 export enum NiceServantOverwriteType {
     TREASURE_DEVICE = "treasureDevice",
 }
+
+export enum NiceGachaFlag {
+    PC_MESSAGE = "pcMessage",
+    BONUS_SELECT = "bonusSelect",
+}

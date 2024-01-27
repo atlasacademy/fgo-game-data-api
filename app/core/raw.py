@@ -6,7 +6,19 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
 from ..data.shop import get_shop_cost_item_id
-from ..db.helpers import ai, event, fetch, item, quest, script, skill, svt, td, war
+from ..db.helpers import (
+    ai,
+    event,
+    fetch,
+    gacha,
+    item,
+    quest,
+    script,
+    skill,
+    svt,
+    td,
+    war,
+)
 from ..redis import Redis
 from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
@@ -36,6 +48,7 @@ from ..schemas.raw import (
     EventMissionEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
+    GachaEntity,
     ItemEntity,
     MasterMissionEntity,
     MstBgm,
@@ -1510,3 +1523,11 @@ async def get_class_board_entity(
         mstItem=mstItem,
         mstSkill=skill_entities,
     )
+
+
+async def get_gacha_entity(conn: AsyncConnection, gacha_id: int) -> GachaEntity:
+    gacha_entity = await gacha.get_gacha_entity(conn, gacha_id)
+    if gacha_entity is None:
+        raise HTTPException(status_code=404, detail="Banner not found")
+
+    return gacha_entity

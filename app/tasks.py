@@ -11,6 +11,8 @@ from git import Repo
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
+from app.core.nice.gacha import get_all_nice_gachas
+
 from .config import Settings, app_info, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
@@ -249,6 +251,11 @@ async def dump_nice_bgms(
 ) -> None:  # pragma: no cover
     all_bgm_data = get_all_nice_bgms(util.region, util.lang, bgms)
     await util.dump_orjson("nice_bgm", all_bgm_data)
+
+
+async def dump_nice_gachas(util: ExportUtil) -> None:
+    all_gacha = await get_all_nice_gachas(util.conn)
+    await util.dump_orjson("nice_gacha", all_gacha)
 
 
 async def get_nice_mms_from_raw(
@@ -524,6 +531,7 @@ async def generate_exports(
                 await dump_nice_shops(util, nice_shops)
                 await dump_nice_enemy_masters(util, mstEnemyMasters)
                 await dump_nice_class_boards(util, mstClassBoardBases)
+                await dump_nice_gachas(util)
 
                 util_en = ExportUtil(conn, redis, region, export_path, Language.en)
                 nice_items_lang_en: list[NiceItem] = []

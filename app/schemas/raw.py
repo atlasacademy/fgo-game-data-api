@@ -1022,6 +1022,16 @@ class MstGacha(BaseModelORJson):
     flag: int
 
 
+class MstGachaStoryAdjust(BaseModelORJson):
+    gachaId: int
+    idx: int
+    adjustId: int
+    condType: int
+    targetId: int
+    value: int
+    imageId: int
+
+
 class MstEventReward(BaseModelORJson):
     eventId: int  # 80305
     groupId: int  # 0
@@ -2355,6 +2365,11 @@ class ClassBoardEntity(BaseModelORJson):
     mstItem: list[MstItem]
     mstSkill: list[SkillEntityNoReverse]
     # mstFuncDisp: list[MstFuncDisp]
+
+
+class GachaEntity(BaseModelORJson):
+    mstGacha: MstGacha
+    mstGachaStoryAdjust: list[MstGachaStoryAdjust]
 
 
 class AssetStorageLine(BaseModelORJson):

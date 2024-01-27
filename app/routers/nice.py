@@ -9,6 +9,7 @@ from ..core.nice import (
     cc,
     class_board,
     enemy_master,
+    gacha,
     gift,
     item,
     mc,
@@ -40,6 +41,7 @@ from ..schemas.nice import (
     NiceEquip,
     NiceEvent,
     NiceEventMission,
+    NiceGacha,
     NiceGift,
     NiceItem,
     NiceMasterMission,
@@ -1037,3 +1039,21 @@ async def get_gift(
 ) -> Response:
     async with get_db(region) as conn:
         return list_response(await gift.get_nice_gifts_from_id(conn, region, [gift_id]))
+
+
+@router.get(
+    "/{region}/gacha/{gacha_id}",
+    summary="Get Gacha data",
+    response_description="Nice Gacha Entity",
+    response_model=NiceGacha,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_gacha(
+    region: Region,
+    gacha_id: int,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    async with get_db(region) as conn:
+        return item_response(await gacha.get_nice_gacha_from_id(conn, gacha_id, lang))

@@ -64,6 +64,7 @@ from .gameenums import (
     NiceFrequencyType,
     NiceFuncTargetType,
     NiceFuncType,
+    NiceGachaFlag,
     NiceGender,
     NiceGiftType,
     NiceItemType,
@@ -2814,3 +2815,29 @@ class NiceBuffTypeDetail(BaseModelORJson):
     buffType: NiceBuffType
     ignoreValueUp: bool
     script: dict[str, Any]
+
+
+class GachaStoryAdjust(BaseModelORJson):
+    idx: int
+    adjustId: int
+    condType: NiceCondType
+    targetId: int
+    value: int
+    imageId: int
+
+
+class NiceGacha(BaseModelORJson):
+    id: int
+    name: str
+    imageId: int
+    type: NicePayType
+    adjustId: int
+    pickupId: int
+    drawNum1: int
+    drawNum2: int
+    maxDrawNum: int
+    openedAt: int
+    closedAt: int
+    detailUrl: str
+    flags: list[NiceGachaFlag]
+    storyAdjusts: list[GachaStoryAdjust]

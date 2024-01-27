@@ -595,6 +595,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Servant Overwrite Type",
         "SERVANT_OVERWRITE_TYPE_NAME",
     ),
+    (
+        "GachaEntity.Flag",
+        "GachaFlag",
+        "NiceGachaFlag",
+        "Gacha Flag",
+        "GACHA_FLAG_NAME",
+    ),
 ]
 
 

@@ -18,6 +18,7 @@ from ..schemas.raw import (
     EventEntity,
     EventMissionEntity,
     FunctionEntity,
+    GachaEntity,
     ItemEntity,
     MasterMissionEntity,
     MstEventAlloutBattle,
@@ -846,3 +847,24 @@ async def get_class_board(
     async with get_db(region) as conn:
         class_board_entity = await raw.get_class_board_entity(conn, class_board_id)
         return item_response(class_board_entity)
+
+
+@router.get(
+    "/{region}/gacha/{gacha_id}",
+    summary="Get Banner data",
+    response_description="Gacha entity",
+    response_model=GachaEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_gacha(
+    region: Region,
+    gacha_id: int,
+) -> Response:
+    """
+    Get Gacha info from ID
+    """
+    async with get_db(region) as conn:
+        gacha_entity = await raw.get_gacha_entity(conn, gacha_id)
+        return item_response(gacha_entity)
