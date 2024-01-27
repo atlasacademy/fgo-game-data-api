@@ -226,7 +226,9 @@ async def get_quest_phase_search(
         )
 
     def questDetail_contains(userSvt_shape: dict[str, Any]) -> ColumnElement[bool]:
-        return rayshiftQuest.c.questDetail.contains({"userSvt": [userSvt_shape]})
+        return rayshiftQuest.c.questDetail.contains(
+            {"userSvt": [userSvt_shape | {"commandCardParam": None}]}
+        )
 
     where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
     if name:
