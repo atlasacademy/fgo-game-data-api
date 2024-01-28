@@ -59,6 +59,7 @@ from .gameenums import (
     NiceEventFortificationSvtType,
     NiceEventOverwriteType,
     NiceEventRewardSceneFlag,
+    NiceEventSvtType,
     NiceEventType,
     NiceEventWorkType,
     NiceFrequencyType,
@@ -2037,6 +2038,32 @@ class NiceEventAdd(BaseModelORJson):
     endedAt: int
 
 
+class NiceEventSvtScript(BaseModelORJson):
+    addGetMessage: str | None = None
+    addMessageReleaseConditions: list[NiceCommonRelease] | None = None
+    isProtectedDuringEvent: bool | None = None
+    joinQuestId: int | None = None
+    joinShopId: int | None = None
+    notPresentAnonymous: bool | None = None
+    notPresentRarePri: int | None = None
+    ruby: str | None = None
+
+
+class NiceEventSvt(BaseModelORJson):
+    svtId: int
+    script: NiceEventSvtScript
+    originalScript: dict[str, Any]
+    type: NiceEventSvtType
+    joinMessage: str
+    getMessage: str
+    leaveMessage: str
+    name: str
+    battleName: str
+    releaseConditions: list[NiceCommonRelease]
+    startedAt: int
+    endedAt: int
+
+
 class NiceWarBoardTreasure(BaseModelORJson):
     warBoardTreasureId: int
     rarity: NiceWarBoardTreasureRarity
@@ -2082,6 +2109,7 @@ class NiceEvent(BaseModelORJson):
     materialOpenedAt: int
     warIds: list[int]
     eventAdds: list[NiceEventAdd]
+    svts: list[NiceEventSvt]
     shop: list[NiceShop]
     rewards: list[NiceEventReward]
     rewardScenes: list[NiceEventRewardScene]

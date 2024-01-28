@@ -1833,3 +1833,10 @@ export enum NiceGachaFlag {
     PC_MESSAGE = "pcMessage",
     BONUS_SELECT = "bonusSelect",
 }
+
+export enum NiceEventSvtType {
+    NONE = "none",
+    JOIN = "join",
+    COND_JOIN = "condJoin",
+    DIRECT_JOIN = "directJoin",
+}

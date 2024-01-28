@@ -34,6 +34,7 @@ from .campaign import get_nice_campaign, get_nice_event_quest
 from .command_assist import get_nice_command_assist
 from .cooltime import get_nice_event_cooltime
 from .digging import get_nice_digging
+from .event_svt import get_nice_event_svt
 from .fortification import get_nice_fortification
 from .heel_portrait import get_nice_heel_portrait
 from .lottery import get_nice_lottery
@@ -236,6 +237,10 @@ async def get_nice_event(
         warIds=[war.id for war in raw_event.mstWar],
         eventAdds=[
             get_nice_event_add(region, event_add) for event_add in raw_event.mstEventAdd
+        ],
+        svts=[
+            get_nice_event_svt(event_svt, raw_event.mstCommonRelease)
+            for event_svt in raw_event.mstEventSvt
         ],
         shop=[
             get_nice_shop(

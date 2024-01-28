@@ -1765,6 +1765,24 @@ mstHeelPortrait = Table(
 )
 
 
+mstEventSvt = Table(
+    "mstEventSvt",
+    metadata,
+    Column("script", JSONB),
+    Column("eventId", Integer),
+    Column("svtId", Integer),
+    Column("type", Integer),
+    Column("joinMessage", String),
+    Column("getMessage", String),
+    Column("leaveMessage", String),
+    Column("name", String),
+    Column("battleName", String),
+    Column("commonReleaseId", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
 mstWarBoard = Table(
     "mstWarBoard",
     metadata,
@@ -2646,6 +2664,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventBulletinBoard, mstEventBulletinBoardRelease],
     [mstEventRecipe, mstEventRecipeGift],
     [mstEventFortification, mstEventFortificationDetail, mstEventFortificationSvt],
+    [mstEventSvt],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

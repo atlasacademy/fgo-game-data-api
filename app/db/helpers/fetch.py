@@ -68,6 +68,7 @@ from ...models.raw import (
     mstEventReward,
     mstEventRewardScene,
     mstEventRewardSet,
+    mstEventSvt,
     mstEventTower,
     mstEventVoicePlay,
     mstFriendship,
@@ -188,6 +189,7 @@ from ...schemas.raw import (
     MstEventReward,
     MstEventRewardScene,
     MstEventRewardSet,
+    MstEventSvt,
     MstEventTower,
     MstEventVoicePlay,
     MstFriendship,
@@ -531,6 +533,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtOverwrite,
         mstSvtOverwrite.c.svtId,
         mstSvtOverwrite.c.priority,
+    ),
+    MstEventSvt: (
+        mstEventSvt,
+        mstEventSvt.c.eventId,
+        mstEventSvt.c.svtId,
     ),
 }
 

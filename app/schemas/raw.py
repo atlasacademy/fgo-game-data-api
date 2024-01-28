@@ -1475,6 +1475,21 @@ class MstEventAdd(BaseModelORJson):
     endedAt: int
 
 
+class MstEventSvt(BaseModelORJson):
+    script: dict[str, Any]
+    eventId: int
+    svtId: int
+    type: int
+    joinMessage: str
+    getMessage: str
+    leaveMessage: str
+    name: str
+    battleName: str
+    commonReleaseId: int
+    startedAt: int
+    endedAt: int
+
+
 class MstWarBoard(BaseModelORJson):
     id: int
     backGroundId: int
@@ -2198,6 +2213,7 @@ class EventEntity(BaseModelORJson):
     mstHeelPortrait: list[MstHeelPortrait]
     mstEventMural: list[MstEventMural]
     mstEventPointActivity: list[MstEventPointActivity]
+    mstEventSvt: list[MstEventSvt]
     mstWarBoard: list[MstWarBoard]
     mstWarBoardStage: list[MstWarBoardStage]
     mstWarBoardQuest: list[MstWarBoardQuest]

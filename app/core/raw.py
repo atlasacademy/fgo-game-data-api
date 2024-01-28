@@ -111,6 +111,7 @@ from ..schemas.raw import (
     MstEventReward,
     MstEventRewardScene,
     MstEventRewardSet,
+    MstEventSvt,
     MstEventTower,
     MstEventVoicePlay,
     MstFriendship,
@@ -1072,11 +1073,19 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         },
     )
 
+    event_svts = await fetch.get_all(conn, MstEventSvt, event_id)
+    event_svt_release_ids = {svt.commonReleaseId for svt in event_svts} | {
+        svt.script["addMessageCommonReleaseId"]
+        for svt in event_svts
+        if "addMessageCommonReleaseId" in svt.script
+    }
+
     common_release_ids = (
         cooltime_release_ids
         | recipe_release_ids
         | fortification_release_ids
         | command_assist_release_ids
+        | event_svt_release_ids
     )
     common_releases = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids
@@ -1183,6 +1192,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventPointActivity=await fetch.get_all(
             conn, MstEventPointActivity, event_id
         ),
+        mstEventSvt=event_svts,
         mstWarBoard=warboards,
         mstWarBoardStage=warboard_stages,
         mstWarBoardQuest=warboard_quests,

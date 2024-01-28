@@ -5406,3 +5406,27 @@ GACHA_FLAG_NAME: dict[int, NiceGachaFlag] = {
     2: NiceGachaFlag.pcMessage,
     8: NiceGachaFlag.bonusSelect,
 }
+
+
+class EventSvtType(IntEnum):
+    NONE = 0
+    JOIN = 1
+    COND_JOIN = 2
+    DIRECT_JOIN = 3
+
+
+class NiceEventSvtType(StrEnum):
+    """Event Svt Type"""
+
+    none = "none"
+    join_ = "join"
+    condJoin = "condJoin"
+    directJoin = "directJoin"
+
+
+EVENT_SVT_TYPE_NAME: dict[int, NiceEventSvtType] = {
+    0: NiceEventSvtType.none,
+    1: NiceEventSvtType.join_,
+    2: NiceEventSvtType.condJoin,
+    3: NiceEventSvtType.directJoin,
+}
