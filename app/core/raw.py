@@ -1181,7 +1181,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventFortificationDetail=fortification_details,
         mstEventFortificationSvt=fortification_servants,
         mstEventQuest=await fetch.get_all(conn, MstEventQuest, event_id),
-        mstEventCampaign=await fetch.get_all(conn, MstEventCampaign, event_id),
+        mstEventCampaign=await fetch.get_all_multiple(
+            conn, MstEventCampaign, [event_id]
+        ),
         mstEventBulletinBoard=bulletins,
         mstEventBulletinBoardRelease=bulletin_releases,
         mstEventRecipe=recipes,

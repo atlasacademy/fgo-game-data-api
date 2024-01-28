@@ -612,7 +612,13 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstCommonRelease: (
         mstCommonRelease,
         mstCommonRelease.c.id,
-        [mstCommonRelease.c.id],
+        [
+            mstCommonRelease.c.id,
+            mstCommonRelease.c.priority,
+            mstCommonRelease.c.condGroup,
+            mstCommonRelease.c.condType,
+            mstCommonRelease.c.condId,
+        ],
     ),
     MstSpotRoad: (mstSpotRoad, mstSpotRoad.c.mapId, [mstSpotRoad.c.id]),
     MstBoxGachaTalk: (mstBoxGachaTalk, mstBoxGachaTalk.c.id, [mstBoxGachaTalk.c.id]),
@@ -670,6 +676,17 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstWarBoardQuest,
         mstWarBoardQuest.c.stageId,
         [mstWarBoardQuest.c.stageId],
+    ),
+    MstEventCampaign: (
+        mstEventCampaign,
+        mstEventCampaign.c.eventId,
+        [
+            mstEventCampaign.c.eventId,
+            mstEventCampaign.c.idx,
+            mstEventCampaign.c.target,
+            mstEventCampaign.c.priority,
+            mstEventCampaign.c.groupId,
+        ],
     ),
 }
 

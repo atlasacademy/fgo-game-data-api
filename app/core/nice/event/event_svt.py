@@ -3,7 +3,7 @@ from typing import Any
 from ....schemas.gameenums import EVENT_SVT_TYPE_NAME
 from ....schemas.nice import NiceEventSvt, NiceEventSvtScript
 from ....schemas.raw import MstCommonRelease, MstEventSvt
-from ..common_release import get_sorted_common_releases
+from ..common_release import get_nice_common_releases
 
 
 def get_nice_event_svt_script(
@@ -26,7 +26,7 @@ def get_nice_event_svt_script(
             out[bool_key] = script[bool_key] == 1
 
     if "addMessageCommonReleaseId" in script:
-        out["addMessageReleaseConditions"] = get_sorted_common_releases(
+        out["addMessageReleaseConditions"] = get_nice_common_releases(
             raw_releases, script["addMessageCommonReleaseId"]
         )
 
@@ -46,7 +46,7 @@ def get_nice_event_svt(
         leaveMessage=event_svt.leaveMessage,
         name=event_svt.name,
         battleName=event_svt.battleName,
-        releaseConditions=get_sorted_common_releases(
+        releaseConditions=get_nice_common_releases(
             raw_releases, event_svt.commonReleaseId
         ),
         startedAt=event_svt.startedAt,
