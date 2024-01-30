@@ -23,6 +23,7 @@ from ....schemas.gameenums import (
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     NiceStatusRank,
+    NiceSvtFlag,
     ServantOverwriteType,
     SvtType,
 )
@@ -167,7 +168,7 @@ async def get_nice_servant(
         "classId": raw_svt.mstSvt.classId,
         "className": get_class_name(raw_svt.mstSvt.classId),
         "type": SVT_TYPE_NAME[raw_svt.mstSvt.type],
-        "flag": SVT_FLAG_NAME[raw_svt.mstSvt.flag],
+        "flag": SVT_FLAG_NAME.get(raw_svt.mstSvt.flag, NiceSvtFlag.unknown),
         "cost": raw_svt.mstSvt.cost,
         "instantDeathChance": raw_svt.mstSvt.deathRate,
         "starGen": raw_svt.mstSvt.starRate,

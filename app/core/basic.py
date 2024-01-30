@@ -54,6 +54,7 @@ from ..schemas.gameenums import (
     SVT_TYPE_NAME,
     WAR_FLAG_NAME,
     BuffConvertType,
+    NiceSvtFlag,
     Quest_FLAG_NAME,
     SvtType,
 )
@@ -429,7 +430,7 @@ async def get_basic_svt(
         "id": svt_id,
         "collectionNo": mstSvt.collectionNo,
         "type": SVT_TYPE_NAME[mstSvt.type],
-        "flag": SVT_FLAG_NAME[mstSvt.flag],
+        "flag": SVT_FLAG_NAME.get(mstSvt.flag, NiceSvtFlag.unknown),
         "name": mstSvt.name,
         "originalName": mstSvt.name,
         "classId": mstSvt.classId,

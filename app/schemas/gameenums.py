@@ -93,6 +93,10 @@ class NiceSvtFlag(StrEnum):
     normal = "normal"
     goetia = "goetia"
     matDropRateUpCe = "matDropRateUpCe"
+    campaignCe = "campaignCe"
+    eventCeSummon = "eventCeSummon"
+    eventCeShop = "eventCeShop"
+    unknown = "unknown"
 
 
 SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
@@ -104,6 +108,10 @@ SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
     0: NiceSvtFlag.normal,
     63: NiceSvtFlag.goetia,
     64: NiceSvtFlag.matDropRateUpCe,
+    256: NiceSvtFlag.campaignCe,
+    512: NiceSvtFlag.eventCeSummon,
+    1024: NiceSvtFlag.eventCeShop,
+    -1: NiceSvtFlag.unknown,
 }
 
 
