@@ -1021,6 +1021,7 @@ class Trait(StrEnum):
     artsBuff = "artsBuff"
     busterBuff = "busterBuff"
     quickBuff = "quickBuff"
+    FSNServant = "FSNServant"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1213,6 +1214,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2879: Trait.caitCuCerpriestessOnTheField,
     2880: Trait.elementalsWrath,
     2881: Trait.groupServant,
+    2883: Trait.FSNServant,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
