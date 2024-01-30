@@ -219,6 +219,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "SVT_FLAG_NAME",
     ),
     (
+        "ServantEntity.FlagField",
+        "SvtFlagOriginal",
+        "NiceSvtFlagOriginal",
+        "Original Servant Flag Enum",
+        "SVT_FLAG_ORIGINAL_NAME",
+    ),
+    (
         "FuncList.TYPE",
         "FuncType",
         "NiceFuncType",

@@ -21,6 +21,7 @@ from ....schemas.gameenums import (
     GENDER_TYPE_NAME,
     STATUS_RANK_NAME,
     SVT_FLAG_NAME,
+    SVT_FLAG_ORIGINAL_NAME,
     SVT_TYPE_NAME,
     NiceStatusRank,
     NiceSvtFlag,
@@ -44,7 +45,7 @@ from ....schemas.raw import (
     ServantEntity,
 )
 from ... import raw
-from ...utils import get_traits_list, get_translation
+from ...utils import get_flags, get_traits_list, get_translation
 from ..item import get_nice_item_amount_qp, get_nice_item_from_raw
 from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
@@ -169,6 +170,7 @@ async def get_nice_servant(
         "className": get_class_name(raw_svt.mstSvt.classId),
         "type": SVT_TYPE_NAME[raw_svt.mstSvt.type],
         "flag": SVT_FLAG_NAME.get(raw_svt.mstSvt.flag, NiceSvtFlag.unknown),
+        "flags": get_flags(raw_svt.mstSvt.flag, SVT_FLAG_ORIGINAL_NAME),
         "cost": raw_svt.mstSvt.cost,
         "instantDeathChance": raw_svt.mstSvt.deathRate,
         "starGen": raw_svt.mstSvt.starRate,

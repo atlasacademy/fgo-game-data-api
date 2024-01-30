@@ -16,6 +16,7 @@ from .gameenums import (
     NiceQuestFlag,
     NiceQuestType,
     NiceSvtFlag,
+    NiceSvtFlagOriginal,
     NiceSvtType,
     NiceWarFlag,
 )
@@ -67,6 +68,7 @@ class BasicServant(BaseModelORJson):
     originalOverwriteName: str | None = None
     type: NiceSvtType
     flag: NiceSvtFlag
+    flags: list[NiceSvtFlagOriginal]
     classId: int
     className: SvtClass | str
     attribute: Attribute
@@ -88,6 +90,7 @@ class BasicEquip(BaseModelORJson):
     originalName: str
     type: NiceSvtType
     flag: NiceSvtFlag
+    flags: list[NiceSvtFlagOriginal]
     rarity: int
     atkMax: int
     hpMax: int

@@ -86,6 +86,7 @@ from .gameenums import (
     NiceStatusRank,
     NiceSvtClassSupportGroupType,
     NiceSvtFlag,
+    NiceSvtFlagOriginal,
     NiceSvtType,
     NiceSvtVoiceType,
     NiceTdEffectFlag,
@@ -1235,8 +1236,11 @@ class NiceServant(BaseModelORJson):
     )
     type: NiceSvtType = Field(..., title="svt's type", description="svt's type.")
     flag: NiceSvtFlag = Field(
-        ..., title="svt's flag", description="Some random flags given to the svt items."
+        ...,
+        title="svt's flag",
+        description="[DEPRECATED] Use the `flags` field. Some random flags given to the svt items.",
     )
+    flags: list[NiceSvtFlagOriginal]
     rarity: int = Field(..., title="svt's rarity", description="svt's rarity.")
     cost: int = Field(
         ..., title="svt's cost", description="Cost to put the item in a party."
@@ -1432,8 +1436,11 @@ class NiceEquip(BaseModelORJson):
     )
     type: NiceSvtType = Field(..., title="svt's type", description="svt's type.")
     flag: NiceSvtFlag = Field(
-        ..., title="svt's flag", description="Some random flags given to the svt items."
+        ...,
+        title="svt's flag",
+        description="[DEPRECATED] Use the `flags` field. Some random flags given to the svt items.",
     )
+    flags: list[NiceSvtFlagOriginal]
     rarity: int = Field(..., title="svt's rarity", description="svt's rarity.")
     cost: int = Field(
         ..., title="svt's cost", description="Cost to put the item in a party."

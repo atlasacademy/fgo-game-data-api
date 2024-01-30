@@ -34,6 +34,14 @@ export enum NiceSvtFlag {
     UNKNOWN = "unknown",
 }
 
+export enum NiceSvtFlagOriginal {
+    ONLY_USE_FOR_NPC = "onlyUseForNpc",
+    SVT_EQUIP_FRIEND_SHIP = "svtEquipFriendShip",
+    IGNORE_COMBINE_LIMIT_SPECIAL = "ignoreCombineLimitSpecial",
+    SVT_EQUIP_EXP = "svtEquipExp",
+    SVT_EQUIP_CHOCOLATE = "svtEquipChocolate",
+}
+
 export enum NiceFuncType {
     NONE = "none",
     ADD_STATE = "addState",

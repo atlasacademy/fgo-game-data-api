@@ -115,6 +115,33 @@ SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
 }
 
 
+class SvtFlagOriginal(IntEnum):
+    ONLY_USE_FOR_NPC = 2
+    SVT_EQUIP_FRIEND_SHIP = 4
+    IGNORE_COMBINE_LIMIT_SPECIAL = 8
+    SVT_EQUIP_EXP = 16
+    SVT_EQUIP_CHOCOLATE = 32
+
+
+class NiceSvtFlagOriginal(StrEnum):
+    """Original Servant Flag Enum"""
+
+    onlyUseForNpc = "onlyUseForNpc"
+    svtEquipFriendShip = "svtEquipFriendShip"
+    ignoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
+    svtEquipExp = "svtEquipExp"
+    svtEquipChocolate = "svtEquipChocolate"
+
+
+SVT_FLAG_ORIGINAL_NAME: dict[int, NiceSvtFlagOriginal] = {
+    2: NiceSvtFlagOriginal.onlyUseForNpc,
+    4: NiceSvtFlagOriginal.svtEquipFriendShip,
+    8: NiceSvtFlagOriginal.ignoreCombineLimitSpecial,
+    16: NiceSvtFlagOriginal.svtEquipExp,
+    32: NiceSvtFlagOriginal.svtEquipChocolate,
+}
+
+
 class FuncType(IntEnum):
     NONE = 0
     ADD_STATE = 1
