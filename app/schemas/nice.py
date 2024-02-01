@@ -2470,6 +2470,22 @@ class NiceQuestMessage(BaseModelORJson):
     targetNum: int
 
 
+class NiceBattleMessage(BaseModelORJson):
+    id: int
+    idx: int
+    priority: int
+    releaseConditions: list[NiceCommonRelease]
+    motionId: int
+    message: str
+    script: dict[str, Any]
+
+
+class NiceBattleMessageGroup(BaseModelORJson):
+    groupId: int
+    probability: int
+    messages: list[NiceBattleMessage]
+
+
 class NiceQuestHint(BaseModelORJson):
     title: str
     message: str

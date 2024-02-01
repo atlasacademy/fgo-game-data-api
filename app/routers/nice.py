@@ -5,6 +5,7 @@ from ..config import Settings, logger
 from ..core import search
 from ..core.nice import (
     ai,
+    battle_message,
     bgm,
     cc,
     class_board,
@@ -33,6 +34,8 @@ from ..schemas.nice import (
     NiceAiCollection,
     NiceBaseFunctionReverse,
     NiceBattleMasterImage,
+    NiceBattleMessage,
+    NiceBattleMessageGroup,
     NiceBgmEntity,
     NiceBuffReverse,
     NiceClassBoard,
@@ -1021,6 +1024,44 @@ async def get_battle_master_image(
     async with get_db(region) as conn:
         return list_response(
             await enemy_master.get_nice_battle_master_images(conn, region, image_id)
+        )
+
+
+@router.get(
+    "/{region}/battle-message/{message_id}",
+    summary="Get Battle Message data",
+    response_description="Nice Battle Message Entity",
+    response_model=list[NiceBattleMessage],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_message(
+    region: Region,
+    message_id: int,
+) -> Response:
+    async with get_db(region) as conn:
+        return list_response(
+            await battle_message.get_nice_battle_messages(conn, message_id)
+        )
+
+
+@router.get(
+    "/{region}/battle-message-group/{group_id}",
+    summary="Get Battle Message Group data",
+    response_description="Nice Battle Message Group Entity",
+    response_model=list[NiceBattleMessageGroup],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_message_group(
+    region: Region,
+    group_id: int,
+) -> Response:
+    async with get_db(region) as conn:
+        return list_response(
+            await battle_message.get_nice_battle_message_groups(conn, group_id)
         )
 
 

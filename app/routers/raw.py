@@ -11,6 +11,8 @@ from ..schemas.enums import AiType
 from ..schemas.raw import (
     AiCollection,
     BattleMasterImageEntity,
+    BattleMessageEntity,
+    BattleMessageGroupEntity,
     BgmEntity,
     BuffEntity,
     ClassBoardEntity,
@@ -850,6 +852,50 @@ async def get_battle_master_image(
             conn, image_id
         )
         return item_response(battle_master_image_entity)
+
+
+@router.get(
+    "/{region}/battle-message/{message_id}",
+    summary="Get Battle Message data",
+    response_description="Battle Message entity",
+    response_model=BattleMessageEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_message(
+    region: Region,
+    message_id: int,
+) -> Response:
+    """
+    Get Battle Message info from ID
+    """
+    async with get_db(region) as conn:
+        battle_message_entity = await raw.get_battle_message_entity(conn, message_id)
+        return item_response(battle_message_entity)
+
+
+@router.get(
+    "/{region}/battle-message-group/{group_id}",
+    summary="Get Battle Message Group data",
+    response_description="Battle Message Group entity",
+    response_model=BattleMessageGroupEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_message_group(
+    region: Region,
+    group_id: int,
+) -> Response:
+    """
+    Get Battle Message Group info from ID
+    """
+    async with get_db(region) as conn:
+        battle_message_group_entity = await raw.get_battle_message_group_entity(
+            conn, group_id
+        )
+        return item_response(battle_message_group_entity)
 
 
 @router.get(

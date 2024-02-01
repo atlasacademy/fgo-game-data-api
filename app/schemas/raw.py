@@ -1830,6 +1830,22 @@ class MstClosedMessage(BaseModelORJson):
     message: str
 
 
+class MstBattleMessage(BaseModelORJson):
+    id: int
+    idx: int
+    priority: int
+    commonReleaseId: int
+    motionId: int
+    message: str
+    script: dict[str, Any]
+
+
+class MstBattleMessageGroup(BaseModelORJson):
+    groupId: int
+    messageId: int
+    probability: int
+
+
 class MstQuestPhase(BaseModelORJson):
     classIds: list[int]  # [7],
     individuality: list[int]  # [2038, 2039, 94000046],
@@ -1916,6 +1932,7 @@ class MstStage(BaseModelORJson):
     enemyInfo: int  # 1
     bgmId: int  # 1
     startEffectId: int  # 1
+    stageCutinGroupIds: list[int] | None = None
 
 
 class MstStageRemap(BaseModelORJson):
@@ -2031,6 +2048,17 @@ class EnemyMasterEntity(BaseModelORJson):
 
 class BattleMasterImageEntity(BaseModelORJson):
     mstBattleMasterImage: list[MstBattleMasterImage]
+    mstCommonRelease: list[MstCommonRelease]
+
+
+class BattleMessageEntity(BaseModelORJson):
+    mstBattleMessage: list[MstBattleMessage]
+    mstCommonRelease: list[MstCommonRelease]
+
+
+class BattleMessageGroupEntity(BaseModelORJson):
+    mstBattleMessageGroup: list[MstBattleMessageGroup]
+    mstBattleMessage: list[MstBattleMessage]
     mstCommonRelease: list[MstCommonRelease]
 
 
