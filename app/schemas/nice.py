@@ -84,6 +84,7 @@ from .gameenums import (
     NiceSpotOverwriteType,
     NiceStatusRank,
     NiceSvtClassSupportGroupType,
+    NiceSvtDeadType,
     NiceSvtFlag,
     NiceSvtFlagOriginal,
     NiceSvtType,
@@ -95,7 +96,6 @@ from .gameenums import (
     NiceWarFlag,
     NiceWarOverwriteType,
     NiceWarStartType,
-    SvtDeadType,
 )
 
 
@@ -2234,7 +2234,7 @@ class NiceQuest(BaseModelORJson):
 
 
 class EnemyScript(BaseModelORJson):
-    deathType: Optional[SvtDeadType]
+    deathType: Optional[NiceSvtDeadType]
     appear: Optional[bool]
     noVoice: Optional[bool]
     raid: Optional[int]
