@@ -801,6 +801,20 @@ class NiceEnemyMaster(BaseModelORJson):
     battles: list[NiceEnemyMasterBattle]
 
 
+class NiceBattleMasterImage(BaseModelORJson):
+    id: int
+    type: NiceGender
+    faceIcon: HttpUrl
+    skillCutin: HttpUrl
+    skillCutinOffsetX: int
+    skillCutinOffsetY: int
+    commandSpellCutin: HttpUrl
+    commandSpellCutinOffsetX: int
+    commandSpellCutinOffsetY: int
+    resultImage: HttpUrl
+    releaseConditions: list[NiceCommonRelease]
+
+
 def get_community_limit(limit_count: int) -> int:
     return limit_count + 1 if limit_count < 2 else limit_count
 

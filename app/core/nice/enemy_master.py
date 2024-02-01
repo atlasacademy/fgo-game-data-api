@@ -6,10 +6,22 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Region
-from ...schemas.nice import AssetURL, NiceEnemyMaster, NiceEnemyMasterBattle
-from ...schemas.raw import MstEnemyMaster, MstEnemyMasterBattle
+from ...schemas.enums import GENDER_TYPE_NAME
+from ...schemas.nice import (
+    AssetURL,
+    NiceBattleMasterImage,
+    NiceEnemyMaster,
+    NiceEnemyMasterBattle,
+)
+from ...schemas.raw import (
+    MstBattleMasterImage,
+    MstCommonRelease,
+    MstEnemyMaster,
+    MstEnemyMasterBattle,
+)
 from .. import raw
 from ..utils import fmt_url
+from .common_release import get_nice_common_releases
 
 
 settings = Settings()
@@ -76,4 +88,53 @@ async def get_all_nice_enemy_masters(
     return [
         await get_nice_enemy_master(conn, region, mstEnemyMaster.id, mstEnemyMaster)
         for mstEnemyMaster in mstEnemyMasters
+    ]
+
+
+def get_nice_battle_master_image(
+    region: Region,
+    mstBattleMasterImage: MstBattleMasterImage,
+    mstCommonRelease: list[MstCommonRelease],
+) -> NiceBattleMasterImage:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+
+    masterFaceImage = AssetURL.mc["masterFaceImage"]
+    masterFigure = AssetURL.mc["masterFigure"]
+
+    return NiceBattleMasterImage(
+        id=mstBattleMasterImage.id,
+        type=GENDER_TYPE_NAME[mstBattleMasterImage.type],
+        faceIcon=fmt_url(
+            masterFaceImage, **base_settings, item_id=mstBattleMasterImage.faceIconId
+        ),
+        skillCutin=fmt_url(
+            masterFigure, **base_settings, item_id=mstBattleMasterImage.skillCutinId
+        ),
+        skillCutinOffsetX=mstBattleMasterImage.skillCutinOffsetX,
+        skillCutinOffsetY=mstBattleMasterImage.skillCutinOffsetY,
+        commandSpellCutin=fmt_url(
+            masterFigure,
+            **base_settings,
+            item_id=mstBattleMasterImage.commandSpellCutinId,
+        ),
+        commandSpellCutinOffsetX=mstBattleMasterImage.commandSpellCutinOffsetX,
+        commandSpellCutinOffsetY=mstBattleMasterImage.commandSpellCutinOffsetY,
+        resultImage=fmt_url(
+            masterFigure, **base_settings, item_id=mstBattleMasterImage.resultImageId
+        ),
+        releaseConditions=get_nice_common_releases(
+            mstCommonRelease, mstBattleMasterImage.commonReleaseId
+        ),
+    )
+
+
+async def get_nice_battle_master_images(
+    conn: AsyncConnection, region: Region, image_id: int
+) -> list[NiceBattleMasterImage]:
+    raw_master = await raw.get_battle_master_image_entity(conn, image_id)
+    return [
+        get_nice_battle_master_image(
+            region, mstBattleMasterImage, raw_master.mstCommonRelease
+        )
+        for mstBattleMasterImage in raw_master.mstBattleMasterImage
     ]

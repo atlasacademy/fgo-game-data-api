@@ -32,6 +32,7 @@ from ..schemas.enums import AiType
 from ..schemas.nice import (
     NiceAiCollection,
     NiceBaseFunctionReverse,
+    NiceBattleMasterImage,
     NiceBgmEntity,
     NiceBuffReverse,
     NiceClassBoard,
@@ -1001,6 +1002,25 @@ async def get_enemy_master(
     async with get_db(region) as conn:
         return item_response(
             await enemy_master.get_nice_enemy_master(conn, region, master_id)
+        )
+
+
+@router.get(
+    "/{region}/battle-master-image/{image_id}",
+    summary="Get Battle Master Image data",
+    response_description="Nice Battle Master Image Entity",
+    response_model=list[NiceBattleMasterImage],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_master_image(
+    region: Region,
+    image_id: int,
+) -> Response:
+    async with get_db(region) as conn:
+        return list_response(
+            await enemy_master.get_nice_battle_master_images(conn, region, image_id)
         )
 
 

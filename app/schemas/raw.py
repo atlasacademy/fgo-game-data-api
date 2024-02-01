@@ -604,6 +604,20 @@ class MstEnemyMasterBattle(BaseModelORJson):
     script: str
 
 
+class MstBattleMasterImage(BaseModelORJson):
+    id: int
+    type: int
+    faceIconId: int
+    skillCutinId: int
+    skillCutinOffsetX: int
+    skillCutinOffsetY: int
+    commandSpellCutinId: int
+    commandSpellCutinOffsetX: int
+    commandSpellCutinOffsetY: int
+    resultImageId: int
+    commonReleaseId: int
+
+
 class MstCommandCode(BaseModelORJson):
     id: int  # 8400110
     collectionNo: int  # 11
@@ -2013,6 +2027,11 @@ class MysticCodeEntity(BaseModelORJson):
 class EnemyMasterEntity(BaseModelORJson):
     mstEnemyMaster: MstEnemyMaster
     mstEnemyMasterBattle: list[MstEnemyMasterBattle]
+
+
+class BattleMasterImageEntity(BaseModelORJson):
+    mstBattleMasterImage: list[MstBattleMasterImage]
+    mstCommonRelease: list[MstCommonRelease]
 
 
 class Master(BaseModelORJson):

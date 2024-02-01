@@ -38,6 +38,7 @@ from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,
     AiEntity,
+    BattleMasterImageEntity,
     BgmEntity,
     BuffEntity,
     BuffEntityNoReverse,
@@ -51,6 +52,7 @@ from ..schemas.raw import (
     GachaEntity,
     ItemEntity,
     MasterMissionEntity,
+    MstBattleMasterImage,
     MstBgm,
     MstBgmRelease,
     MstBlankEarthSpot,
@@ -697,6 +699,25 @@ async def get_enemy_master_entity(
     mstEnemyMasterBattle = await fetch.get_all(conn, MstEnemyMasterBattle, master_id)
     return EnemyMasterEntity(
         mstEnemyMaster=master_db, mstEnemyMasterBattle=mstEnemyMasterBattle
+    )
+
+
+async def get_battle_master_image_entity(
+    conn: AsyncConnection, battle_master_image_id: int
+) -> BattleMasterImageEntity:
+    mstBattleMasterImage = await fetch.get_all(
+        conn, MstBattleMasterImage, battle_master_image_id
+    )
+    if not mstBattleMasterImage:
+        raise HTTPException(status_code=404, detail="Battle Master Image not found")
+
+    common_release_ids = {image.commonReleaseId for image in mstBattleMasterImage}
+    common_releases = await fetch.get_all_multiple(
+        conn, MstCommonRelease, common_release_ids
+    )
+    return BattleMasterImageEntity(
+        mstBattleMasterImage=mstBattleMasterImage,
+        mstCommonRelease=common_releases,
     )
 
 

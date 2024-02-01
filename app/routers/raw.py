@@ -10,6 +10,7 @@ from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.raw import (
     AiCollection,
+    BattleMasterImageEntity,
     BgmEntity,
     BuffEntity,
     ClassBoardEntity,
@@ -826,6 +827,29 @@ async def get_enemy_master(
     async with get_db(region) as conn:
         enemy_master_entity = await raw.get_enemy_master_entity(conn, master_id)
         return item_response(enemy_master_entity)
+
+
+@router.get(
+    "/{region}/battle-master-image/{image_id}",
+    summary="Get Battle Master Image data",
+    response_description="Battle Master Image entity",
+    response_model=BattleMasterImageEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_master_image(
+    region: Region,
+    image_id: int,
+) -> Response:
+    """
+    Get Battle Master Image info from ID
+    """
+    async with get_db(region) as conn:
+        battle_master_image_entity = await raw.get_battle_master_image_entity(
+            conn, image_id
+        )
+        return item_response(battle_master_image_entity)
 
 
 @router.get(

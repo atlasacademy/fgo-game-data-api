@@ -7,6 +7,7 @@ from sqlalchemy.sql import ColumnElement, select
 
 from ...models.raw import (
     AssetStorage,
+    mstBattleMasterImage,
     mstBgm,
     mstBgmRelease,
     mstBlankEarthSpot,
@@ -128,6 +129,7 @@ from ...models.raw import (
 from ...schemas.base import BaseModelORJson
 from ...schemas.raw import (
     AssetStorageLine,
+    MstBattleMasterImage,
     MstBgm,
     MstBgmRelease,
     MstBlankEarthSpot,
@@ -373,6 +375,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEnemyMasterBattle,
         mstEnemyMasterBattle.c.enemyMasterId,
         mstEnemyMasterBattle.c.id,
+    ),
+    MstBattleMasterImage: (
+        mstBattleMasterImage,
+        mstBattleMasterImage.c.id,
+        mstBattleMasterImage.c.type,
     ),
     MstEventAdd: (mstEventAdd, mstEventAdd.c.eventId, mstEventAdd.c.priority),
     MstEventMission: (

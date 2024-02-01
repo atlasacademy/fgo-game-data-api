@@ -925,6 +925,23 @@ mstEnemyMasterBattle = Table(
 )
 
 
+mstBattleMasterImage = Table(
+    "mstBattleMasterImage",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("type", Integer),
+    Column("faceIconId", Integer),
+    Column("skillCutinId", Integer),
+    Column("skillCutinOffsetX", Integer),
+    Column("skillCutinOffsetY", Integer),
+    Column("commandSpellCutinId", Integer),
+    Column("commandSpellCutinOffsetX", Integer),
+    Column("commandSpellCutinOffsetY", Integer),
+    Column("resultImageId", Integer),
+    Column("commonReleaseId", Integer),
+)
+
+
 mstItem = Table(
     "mstItem",
     metadata,
@@ -2590,6 +2607,7 @@ TABLES_TO_BE_LOADED = [
     [mstCv],
     [mstEquip, mstEquipAdd, mstEquipExp, mstEquipSkill],
     [mstEnemyMaster, mstEnemyMasterBattle],
+    [mstBattleMasterImage],
     [mstEventAdd],
     [
         mstEventMission,
