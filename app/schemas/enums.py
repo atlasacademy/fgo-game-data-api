@@ -487,26 +487,6 @@ AI_TIMING_NAME: dict[int, AiTiming] = {
 }
 
 
-### Enemy death type ###
-
-
-class EnemyDeathType(StrEnum):
-    ESCAPE = "escape"
-    STAND = "stand"
-    EFFECT = "effect"
-    WAIT = "wait"
-    ENERGY = "energy"
-
-
-ENEMY_DEATH_TYPE_NAME: dict[int, EnemyDeathType] = {
-    1: EnemyDeathType.ESCAPE,
-    2: EnemyDeathType.STAND,
-    3: EnemyDeathType.EFFECT,
-    4: EnemyDeathType.WAIT,
-    5: EnemyDeathType.ENERGY,
-}
-
-
 ### Enemy role type ###
 
 

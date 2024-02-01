@@ -26,7 +26,6 @@ from .enums import (
     AiTiming,
     AiType,
     Attribute,
-    EnemyDeathType,
     EnemyRoleType,
     EventPointActivityObjectType,
     FuncApplyTarget,
@@ -96,6 +95,7 @@ from .gameenums import (
     NiceWarFlag,
     NiceWarOverwriteType,
     NiceWarStartType,
+    SvtDeadType,
 )
 
 
@@ -2234,7 +2234,7 @@ class NiceQuest(BaseModelORJson):
 
 
 class EnemyScript(BaseModelORJson):
-    deathType: Optional[EnemyDeathType]
+    deathType: Optional[SvtDeadType]
     appear: Optional[bool]
     noVoice: Optional[bool]
     raid: Optional[int]

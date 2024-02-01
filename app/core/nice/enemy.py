@@ -10,12 +10,11 @@ from ...schemas.basic import BasicServant
 from ...schemas.common import Language, Region
 from ...schemas.enums import (
     ATTRIBUTE_NAME,
-    ENEMY_DEATH_TYPE_NAME,
     ENEMY_ROLE_TYPE_NAME,
     EnemyRoleType,
     get_class_name,
 )
-from ...schemas.gameenums import GIFT_TYPE_NAME
+from ...schemas.gameenums import GIFT_TYPE_NAME, SVT_DEAD_TYPE_NAME
 from ...schemas.nice import (
     DeckType,
     EnemyAi,
@@ -129,7 +128,7 @@ def get_enemy_script(enemyScript: dict[str, Any]) -> EnemyScript:
             enemy_script[script_key] = enemyScript[script_key] == 1
 
     if "kill" in enemyScript:
-        enemy_script["deathType"] = ENEMY_DEATH_TYPE_NAME[enemyScript["kill"]]
+        enemy_script["deathType"] = SVT_DEAD_TYPE_NAME[enemyScript["kill"]]
 
     if "shiftClear" in enemyScript:
         trait_ids = [

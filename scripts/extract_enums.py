@@ -67,6 +67,7 @@ EXTRA_STR_NAME = {
         0: "NORMAL",
         63: "GOETIA",
         64: "MAT_DROP_RATE_UP_CE",
+        128: "DAVINCI_SHOP_CE",
         256: "CAMPAIGN_CE",
         512: "EVENT_CE_SUMMON",
         1024: "EVENT_CE_SHOP",
@@ -624,6 +625,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceEventSvtType",
         "Event Svt Type",
         "EVENT_SVT_TYPE_NAME",
+    ),
+    (
+        "BattleServantData.DEADTYPE",
+        "SvtDeadType",
+        "NiceSvtDeadType",
+        "Svt Dead Type",
+        "SVT_DEAD_TYPE_NAME",
     ),
 ]
 
