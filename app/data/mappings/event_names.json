@@ -88,6 +88,8 @@
   "雑賀孫一 獲得経験値2倍！": "Saika Magoichi 2X EXP!",
   "ネモ〔サンタ〕 獲得経験値2倍！": "Nemo (Santa) 2X EXP!",
   "宮本伊織 獲得経験値2倍！": "Miyamoto Iori 2X EXP!",
+  "「Fate/stay night」サーヴァント7騎 獲得経験値2倍！": "「Fate/stay night」サーヴァント7騎 獲得経験値2倍！",
+  "「巡霊の祝祭 第7弾」関連サーヴァント 獲得経験値2倍！": "「巡霊の祝祭 第7弾」関連サーヴァント 獲得経験値2倍！",
   "消費AP 50%DOWN": "AP Cost 1/2",
   "獲得FP2倍キャンペーン": "2X Friend Point Campaign",
   "消費AP 75%DOWN": "AP Cost 1/4",
@@ -133,6 +135,7 @@
   "「巡霊の祝祭 第5弾」関連サーヴァント 獲得絆ポイント 20%UP": "\"Evocation Vestival Part 5\" Related Servants Bond Points UP 20%",
   "「巡霊の祝祭 第6弾」関連サーヴァント 獲得絆ポイント 20%UP": "\"Evocation Vestival Part 6\" Related Servants Bond Points UP 20%",
   "特定サーヴァント 獲得絆ポイント 20%UP": "特定サーヴァント 獲得絆ポイント 20%UP",
+  "「巡霊の祝祭 第7弾」関連サーヴァント 獲得絆ポイント 20%UP": "「巡霊の祝祭 第7弾」関連サーヴァント 獲得絆ポイント 20%UP",
   "ネロ祭": "Nero Fest",
   "月の女神はお団子の夢を見るか？": "Does Moon Goddess Dream of Dumplings?",
   "歌うカボチャ城の冒険\n～マッドパーティー2015～": "The Adventure of Singing Pumpkin Castle - Mad Party 2015",
@@ -318,7 +321,7 @@
   "復刻版:レディ・ライネスの事件簿 -Plus Episode-": "Revival: Lady Reines's Case Files - Plus Episode",
   "闇のコヤンスカヤ体験クエスト": "Koyanskaya of Dark Trial Quest",
   "アドバンスドクエスト 第1弾": "Advanced Quest - Round 1",
-  "マナナン・スーベニア・バレンタイン\n～チョコの樹と女神の選択～": "Manannán Souvenir Valentine\n- The Chocolate Tree and The Goddess' Choice",
+  "マナナン・スーベニア・バレンタイン\n～チョコの樹と女神の選択～": "Manannan's Souvenir Valentines - The Chocolate Tree and the Goddess's Choice",
   "レディ･ライネスの事件簿 Plus Episode\n偽典の帰還": "Lady Reines's Case Files Plus Episode \nA Fictitious Return",
   "15人の理知的なメガネたち": "15 Bespectacled Intellectuals",
   "アドバンスドクエスト 第2弾": "Advanced Quest: Part 2",
@@ -383,5 +386,7 @@
   "雪原のメリー・クリスマス2023\n～7days / 8years Snow Carol～": "Merry Christmas in the Snowy Fields 2023\n- 7 Days / 8 Years Snow Carol",
   "盈月剣風帖": "Waxing Moon Clashing Swords Chronicles",
   "ヤマトタケル体験クエスト": "Yamato Takeru Trial Quest",
-  "アドバンスドクエスト 第17弾": "Advanced Quest: Part 17"
+  "アドバンスドクエスト 第17弾": "Advanced Quest: Part 17",
+  "期間限定で「Fate/stay night」サーヴァント7騎はすべてのクエストで攻撃威力50%アップ！": "期間限定で「Fate/stay night」サーヴァント7騎はすべてのクエストで攻撃威力50%アップ！",
+  "「Fate/stay night」20周年記念キャンペーン": "「Fate/stay night」20周年記念キャンペーン"
 }
