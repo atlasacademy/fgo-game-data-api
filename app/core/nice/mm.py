@@ -5,11 +5,33 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...core.basic import get_basic_quest_from_raw
 from ...schemas.common import Language, Region
-from ...schemas.nice import NiceMasterMission
-from ...schemas.raw import MasterMissionEntity, MstGift, MstMasterMission
+from ...schemas.nice import NiceCompleteMission, NiceMasterMission
+from ...schemas.raw import (
+    MasterMissionEntity,
+    MstBgm,
+    MstCompleteMission,
+    MstGift,
+    MstMasterMission,
+)
 from .. import raw
+from .bgm import get_nice_bgm
 from .event.mission import get_nice_missions
-from .gift import GiftData
+from .gift import GiftData, get_nice_gifts
+
+
+def get_nice_complete_mission(
+    region: Region,
+    mission: MstCompleteMission,
+    gift_data: GiftData,
+    bgm: MstBgm | None,
+    lang: Language,
+) -> NiceCompleteMission:
+    return NiceCompleteMission(
+        objectId=mission.objectId,
+        presentMessageId=mission.presentMessageId,
+        gifts=get_nice_gifts(region, mission.giftId, gift_data),
+        bgm=get_nice_bgm(region, bgm, lang),
+    )
 
 
 def get_nice_master_mission_from_raw(
@@ -18,13 +40,14 @@ def get_nice_master_mission_from_raw(
     gift_maps: dict[int, list[MstGift]] = defaultdict(list)
     for gift in raw_mm.mstGift:
         gift_maps[gift.id].append(gift)
+    gift_data = GiftData(raw_mm.mstGiftAdd, gift_maps)
 
     missions = get_nice_missions(
         region,
         raw_mm.mstEventMission,
         raw_mm.mstEventMissionCondition,
         raw_mm.mstEventMissionConditionDetail,
-        GiftData(raw_mm.mstGiftAdd, gift_maps),
+        gift_data,
     )
     return NiceMasterMission(
         id=raw_mm.mstMasterMission.id,
@@ -32,6 +55,13 @@ def get_nice_master_mission_from_raw(
         endedAt=raw_mm.mstMasterMission.endedAt,
         closedAt=raw_mm.mstMasterMission.closedAt,
         missions=missions,
+        completeMission=(
+            get_nice_complete_mission(
+                region, raw_mm.mstCompleteMission, gift_data, raw_mm.mstBgm, lang
+            )
+            if raw_mm.mstCompleteMission
+            else None
+        ),
         quests=[
             get_basic_quest_from_raw(mstQuest, lang) for mstQuest in raw_mm.mstQuest
         ],

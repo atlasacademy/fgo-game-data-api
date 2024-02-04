@@ -30,15 +30,24 @@ def get_bgm_url(region: Region, raw_bgm: MstBgm) -> HttpUrl | None:
     )
 
 
-def get_nice_bgm(region: Region, raw_bgm: MstBgm, lang: Language) -> NiceBgm:
-    return NiceBgm(
-        id=raw_bgm.id,
-        name=get_translation(lang, raw_bgm.name),
-        originalName=raw_bgm.name,
-        fileName=raw_bgm.fileName,
-        notReleased=raw_bgm.flag == BgmFlag.IS_NOT_RELEASE,
-        audioAsset=get_bgm_url(region, raw_bgm),
-    )
+def get_nice_bgm(region: Region, raw_bgm: MstBgm | None, lang: Language) -> NiceBgm:
+    if raw_bgm:
+        return NiceBgm(
+            id=raw_bgm.id,
+            name=get_translation(lang, raw_bgm.name),
+            originalName=raw_bgm.name,
+            fileName=raw_bgm.fileName,
+            notReleased=raw_bgm.flag == BgmFlag.IS_NOT_RELEASE,
+            audioAsset=get_bgm_url(region, raw_bgm),
+        )
+    else:
+        return NiceBgm(
+            id=0,
+            name="",
+            originalName="",
+            fileName="",
+            notReleased=True,
+        )
 
 
 def get_nice_bgm_release(

@@ -80,6 +80,7 @@ from ..schemas.raw import (
     MstCommandCodeSkill,
     MstCommonConsume,
     MstCommonRelease,
+    MstCompleteMission,
     MstCv,
     MstEnemyMaster,
     MstEnemyMasterBattle,
@@ -960,6 +961,13 @@ async def get_master_mission_entity(
 
     gift_ids = {mission.giftId for mission in missions}
 
+    complete_mission = await fetch.get_one(conn, MstCompleteMission, mm_id)
+    if complete_mission:
+        gift_ids.add(complete_mission.giftId)
+        bgm = await fetch.get_one(conn, MstBgm, complete_mission.bgmId)
+    else:
+        bgm = None
+
     gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
     replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
 
@@ -973,6 +981,8 @@ async def get_master_mission_entity(
         mstEventMission=missions,
         mstEventMissionCondition=conds,
         mstEventMissionConditionDetail=cond_details,
+        mstCompleteMission=complete_mission,
+        mstBgm=bgm,
         mstGift=gifts,
         mstGiftAdd=gift_adds,
         mstQuest=quests,

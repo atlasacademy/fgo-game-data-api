@@ -1332,6 +1332,17 @@ mstMasterMission = Table(
 )
 
 
+mstCompleteMission = Table(
+    "mstCompleteMission",
+    metadata,
+    Column("masterMissionId", Integer, primary_key=True),
+    Column("objectId", Integer),
+    Column("presentMessageId", Integer),
+    Column("giftId", Integer),
+    Column("bgmId", Integer),
+)
+
+
 mstEventRandomMission = Table(
     "mstEventRandomMission",
     metadata,
@@ -2657,6 +2668,7 @@ TABLES_TO_BE_LOADED = [
     [mstGiftAdd],
     [mstIllustrator],
     [mstMasterMission],
+    [mstCompleteMission],
     [mstEventRandomMission],
     [mstQuestConsumeItem],
     [mstQuestMessage],

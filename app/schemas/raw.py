@@ -1078,6 +1078,14 @@ class MstEventPointBuff(BaseModelORJson):
     value: int
 
 
+class MstCompleteMission(BaseModelORJson):
+    masterMissionId: int
+    objectId: int
+    presentMessageId: int
+    giftId: int
+    bgmId: int
+
+
 class MstMasterMission(BaseModelORJson):
     id: int
     priority: int = 0
@@ -2319,6 +2327,8 @@ class MasterMissionEntity(BaseModelORJson):
     mstEventMission: list[MstEventMission]
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
+    mstCompleteMission: MstCompleteMission | None
+    mstBgm: MstBgm | None
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]
     mstQuest: list[MstQuestWithWar]
