@@ -29,6 +29,7 @@ settings = Settings()
 NO_API_KEY = settings.rayshift_api_key.get_secret_value() == ""
 QUEST_ENDPOINT = f"{settings.rayshift_api_url}/avalon-data-export/quests"
 REGION_ENUM = {Region.JP: 1, Region.NA: 2}
+DEFAULT_WAIT_SEC = 15
 
 
 async def get_quest_response(
@@ -53,7 +54,7 @@ async def get_quest_response(
             return QuestRayshiftResponse.parse_raw(r.content).response
         elif r.status_code == httpx.codes.TOO_MANY_REQUESTS:  # pragma: no cover
             rate_limit = BaseRayshiftResponse.parse_raw(r.content)
-            wait_seconds = rate_limit.wait if rate_limit.wait else 60
+            wait_seconds = rate_limit.wait + 1 if rate_limit.wait else DEFAULT_WAIT_SEC
             raise HTTPException(
                 status_code=r.status_code,
                 detail=f"Please wait {wait_seconds} seconds until you make the next quest request",
@@ -112,7 +113,7 @@ def get_multiple_quests(
 
     r = client.get(f"{QUEST_ENDPOINT}/get", params=params)
     if r.status_code == httpx.codes.TOO_MANY_REQUESTS:  # pragma: no cover
-        sleep_time = r.json().get("wait", 10)
+        sleep_time = r.json().get("wait", DEFAULT_WAIT_SEC - 1) + 1
         logger.info(f"Sleeping {sleep_time} seconds for RayShift API")
         time.sleep(sleep_time)
         r = client.get(f"{QUEST_ENDPOINT}/get", params=params)
@@ -121,6 +122,7 @@ def get_multiple_quests(
         return QuestRayshiftResponse.parse_raw(r.content).response.questDetails
     except ValidationError as e:  # pragma: no cover
         logger.exception(e)
+        logger.exception(r.text)
         return {}
 
 
