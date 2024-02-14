@@ -80,6 +80,10 @@ class SvtFlag(IntEnum):
     IGNORE_COMBINE_LIMIT_SPECIAL = 8
     SVT_EQUIP_EXP = 16
     SVT_EQUIP_CHOCOLATE = 32
+    SVT_EQUIP_MANA_EXCHANGE = 128
+    SVT_EQUIP_CAMPAIGN = 256
+    SVT_EQUIP_EVENT = 512
+    SVT_EQUIP_EVENT_REWARD = 1024
 
 
 class NiceSvtFlag(StrEnum):
@@ -90,6 +94,10 @@ class NiceSvtFlag(StrEnum):
     ignoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
     svtEquipExp = "svtEquipExp"
     svtEquipChocolate = "svtEquipChocolate"
+    svtEquipManaExchange = "svtEquipManaExchange"
+    svtEquipCampaign = "svtEquipCampaign"
+    svtEquipEvent = "svtEquipEvent"
+    svtEquipEventReward = "svtEquipEventReward"
     normal = "normal"
     goetia = "goetia"
     matDropRateUpCe = "matDropRateUpCe"
@@ -106,6 +114,10 @@ SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
     8: NiceSvtFlag.ignoreCombineLimitSpecial,
     16: NiceSvtFlag.svtEquipExp,
     32: NiceSvtFlag.svtEquipChocolate,
+    128: NiceSvtFlag.svtEquipManaExchange,
+    256: NiceSvtFlag.svtEquipCampaign,
+    512: NiceSvtFlag.svtEquipEvent,
+    1024: NiceSvtFlag.svtEquipEventReward,
     0: NiceSvtFlag.normal,
     63: NiceSvtFlag.goetia,
     64: NiceSvtFlag.matDropRateUpCe,
@@ -123,6 +135,10 @@ class SvtFlagOriginal(IntEnum):
     IGNORE_COMBINE_LIMIT_SPECIAL = 8
     SVT_EQUIP_EXP = 16
     SVT_EQUIP_CHOCOLATE = 32
+    SVT_EQUIP_MANA_EXCHANGE = 128
+    SVT_EQUIP_CAMPAIGN = 256
+    SVT_EQUIP_EVENT = 512
+    SVT_EQUIP_EVENT_REWARD = 1024
 
 
 class NiceSvtFlagOriginal(StrEnum):
@@ -133,6 +149,10 @@ class NiceSvtFlagOriginal(StrEnum):
     ignoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
     svtEquipExp = "svtEquipExp"
     svtEquipChocolate = "svtEquipChocolate"
+    svtEquipManaExchange = "svtEquipManaExchange"
+    svtEquipCampaign = "svtEquipCampaign"
+    svtEquipEvent = "svtEquipEvent"
+    svtEquipEventReward = "svtEquipEventReward"
 
 
 SVT_FLAG_ORIGINAL_NAME: dict[int, NiceSvtFlagOriginal] = {
@@ -141,6 +161,10 @@ SVT_FLAG_ORIGINAL_NAME: dict[int, NiceSvtFlagOriginal] = {
     8: NiceSvtFlagOriginal.ignoreCombineLimitSpecial,
     16: NiceSvtFlagOriginal.svtEquipExp,
     32: NiceSvtFlagOriginal.svtEquipChocolate,
+    128: NiceSvtFlagOriginal.svtEquipManaExchange,
+    256: NiceSvtFlagOriginal.svtEquipCampaign,
+    512: NiceSvtFlagOriginal.svtEquipEvent,
+    1024: NiceSvtFlagOriginal.svtEquipEventReward,
 }
 
 
@@ -1675,6 +1699,7 @@ class DataValsType(IntEnum):
     UnSubStateWhenContinue = 144
     CheckTargetHaveDefeatPoint = 145
     NPFixedDamageValue = 146
+    IgnoreShiftSafeDamage = 147
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2312,6 +2337,9 @@ class CondType(IntEnum):
     PLAY_QUEST_PHASE = 209
     NOT_PLAY_QUEST_PHASE = 210
     EVENT_START_TO_END = 211
+    COMMON_VALUE_ABOVE = 212
+    COMMON_VALUE_BELOW = 213
+    COMMON_VALUE_EQUAL = 214
 
 
 class NiceCondType(StrEnum):
@@ -2526,6 +2554,9 @@ class NiceCondType(StrEnum):
     playQuestPhase = "playQuestPhase"
     notPlayQuestPhase = "notPlayQuestPhase"
     eventStartToEnd = "eventStartToEnd"
+    commonValueAbove = "commonValueAbove"
+    commonValueBelow = "commonValueBelow"
+    commonValueEqual = "commonValueEqual"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2738,6 +2769,9 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     209: NiceCondType.playQuestPhase,
     210: NiceCondType.notPlayQuestPhase,
     211: NiceCondType.eventStartToEnd,
+    212: NiceCondType.commonValueAbove,
+    213: NiceCondType.commonValueBelow,
+    214: NiceCondType.commonValueEqual,
 }
 
 
@@ -3466,6 +3500,7 @@ class WarEntityFlag(IntEnum):
     IS_WAR_ICON_FREE = 2097152
     IS_WAR_ICON_CENTER = 4194304
     NOTICE_BOARD = 8388608
+    CHANGE_DISP_CLOSED_MESSAGE = 16777216
 
 
 class NiceWarFlag(StrEnum):
@@ -3494,6 +3529,7 @@ class NiceWarFlag(StrEnum):
     isWarIconFree = "isWarIconFree"
     isWarIconCenter = "isWarIconCenter"
     noticeBoard = "noticeBoard"
+    changeDispClosedMessage = "changeDispClosedMessage"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -3520,6 +3556,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     2097152: NiceWarFlag.isWarIconFree,
     4194304: NiceWarFlag.isWarIconCenter,
     8388608: NiceWarFlag.noticeBoard,
+    16777216: NiceWarFlag.changeDispClosedMessage,
 }
 
 

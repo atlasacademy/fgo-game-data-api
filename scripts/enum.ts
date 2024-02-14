@@ -25,6 +25,10 @@ export enum NiceSvtFlag {
     IGNORE_COMBINE_LIMIT_SPECIAL = "ignoreCombineLimitSpecial",
     SVT_EQUIP_EXP = "svtEquipExp",
     SVT_EQUIP_CHOCOLATE = "svtEquipChocolate",
+    SVT_EQUIP_MANA_EXCHANGE = "svtEquipManaExchange",
+    SVT_EQUIP_CAMPAIGN = "svtEquipCampaign",
+    SVT_EQUIP_EVENT = "svtEquipEvent",
+    SVT_EQUIP_EVENT_REWARD = "svtEquipEventReward",
     NORMAL = "normal",
     GOETIA = "goetia",
     MAT_DROP_RATE_UP_CE = "matDropRateUpCe",
@@ -41,6 +45,10 @@ export enum NiceSvtFlagOriginal {
     IGNORE_COMBINE_LIMIT_SPECIAL = "ignoreCombineLimitSpecial",
     SVT_EQUIP_EXP = "svtEquipExp",
     SVT_EQUIP_CHOCOLATE = "svtEquipChocolate",
+    SVT_EQUIP_MANA_EXCHANGE = "svtEquipManaExchange",
+    SVT_EQUIP_CAMPAIGN = "svtEquipCampaign",
+    SVT_EQUIP_EVENT = "svtEquipEvent",
+    SVT_EQUIP_EVENT_REWARD = "svtEquipEventReward",
 }
 
 export enum NiceFuncType {
@@ -647,6 +655,7 @@ export enum NiceDataValsType {
     UnSubStateWhenContinue = "unsubstatewhencontinue",
     CheckTargetHaveDefeatPoint = "checktargethavedefeatpoint",
     NPFixedDamageValue = "npfixeddamagevalue",
+    IgnoreShiftSafeDamage = "ignoreshiftsafedamage",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -994,6 +1003,9 @@ export enum NiceCondType {
     PLAY_QUEST_PHASE = "playQuestPhase",
     NOT_PLAY_QUEST_PHASE = "notPlayQuestPhase",
     EVENT_START_TO_END = "eventStartToEnd",
+    COMMON_VALUE_ABOVE = "commonValueAbove",
+    COMMON_VALUE_BELOW = "commonValueBelow",
+    COMMON_VALUE_EQUAL = "commonValueEqual",
 }
 
 export enum NiceVoiceCondType {
@@ -1248,6 +1260,7 @@ export enum NiceWarFlag {
     IS_WAR_ICON_FREE = "isWarIconFree",
     IS_WAR_ICON_CENTER = "isWarIconCenter",
     NOTICE_BOARD = "noticeBoard",
+    CHANGE_DISP_CLOSED_MESSAGE = "changeDispClosedMessage",
 }
 
 export enum NiceWarStartType {
