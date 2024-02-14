@@ -32,10 +32,6 @@ export enum NiceSvtFlag {
     NORMAL = "normal",
     GOETIA = "goetia",
     MAT_DROP_RATE_UP_CE = "matDropRateUpCe",
-    DAVINCI_SHOP_CE = "davinciShopCe",
-    CAMPAIGN_CE = "campaignCe",
-    EVENT_CE_SUMMON = "eventCeSummon",
-    EVENT_CE_SHOP = "eventCeShop",
     UNKNOWN = "unknown",
 }
 
