@@ -751,6 +751,7 @@
   "遅延発動(チャンスタイム！！)": "Delayed Effect (Chance Time!!!)",
   "パッションオンザビーチ": "Passion On the Beach",
   "現状最下位": "Currently Last Place",
+  "毎ターンNP獲得〔水辺〕": "NP Gain Per Turn",
   "毎ターン発動(攻撃力アップ)": "Triggers Each Turn (ATK Up)",
   "毎ターン発動(弱体無効)〔森〕": "Triggers Each Turn (Debuff Immune) [Forest]",
   "毎ターン発動(やけど)〔炎上〕": "Triggers Each Turn (Burn) [Burning]",
@@ -2313,6 +2314,7 @@
   "威力アップ〔魔獣型のサーヴァント〕": "Strength Up [Demonic Beast Servant]",
   "クリスマス・ポーター": "Christmas Porter",
   "月陰の縁": "Destiny Under the Moonshade",
+  "チョコラフター": "チョコラフター",
   "血塗れの皇子": "Bloodstained Prince",
   "威力アップ【Fate20周年記念】": "Strength Up [Fate 20th Anniversary]",
   "威力アップ〔地の力を持つサーヴァント〕": "Strength Up [Earth Servant]",
@@ -2825,5 +2827,9 @@
   "残光：火の型": "Afterglow: Fire Stance",
   "残光：風の型": "Afterglow: Wind Stance",
   "残光：空の型": "Afterglow: Void Stance",
-  "剣の鬼": "Sword Demon"
+  "剣の鬼": "Sword Demon",
+  "殺戮女神の加護": "殺戮女神の加護",
+  "伏兵の奇襲": "伏兵の奇襲",
+  "海蛇の絞縛": "海蛇の絞縛",
+  "トロイの木馬": "トロイの木馬"
 }
