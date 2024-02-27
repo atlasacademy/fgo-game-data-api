@@ -9,7 +9,13 @@ from pydantic import DirectoryPath
 from ..config import logger, project_root
 from ..core.utils import get_traits_list
 from ..schemas.common import Region
-from ..schemas.enums import ATTRIBUTE_NAME, TRAIT_NAME, Trait, get_class_name
+from ..schemas.enums import (
+    ATTRIBUTE_NAME,
+    CLASS_NAME,
+    TRAIT_NAME,
+    Trait,
+    get_class_name,
+)
 from ..schemas.gameenums import (
     AI_COND_CHECK_NAME,
     AI_COND_NAME,
@@ -107,20 +113,6 @@ def get_nice_attri_relation(raw_data: Any) -> Any:
             out_data[atkAttri][defAttri] = attackRate
         else:
             out_data[atkAttri] = {defAttri: attackRate}
-    return out_data
-
-
-def get_nice_class_relation(raw_data: Any) -> Any:
-    out_data: dict[str, dict[str, int]] = {}
-    for class_relation in raw_data:
-        atkAttri = get_class_name(class_relation["atkClass"])
-        defAttri = get_class_name(class_relation["defClass"])
-        if atkAttri and defAttri:
-            attackRate = class_relation["attackRate"]
-            if atkAttri in out_data:
-                out_data[atkAttri][defAttri] = attackRate
-            else:
-                out_data[atkAttri] = {defAttri: attackRate}
     return out_data
 
 
@@ -231,11 +223,6 @@ TO_EXPORT = [
         output="NiceAttributeRelation",
     ),
     ExportParam(
-        input="mstClassRelation",
-        converter=get_nice_class_relation,
-        output="NiceClassRelation",
-    ),
-    ExportParam(
         input="mstBuff",
         converter=get_nice_buff_action,
         output="NiceBuffList.ActionList",
@@ -246,6 +233,51 @@ TO_EXPORT = [
         output="NiceSvtGrailCost",
     ),
 ]
+
+
+async def get_nice_class_relation(
+    region: Region, master_path: Path, export_path: Path
+) -> None:
+    async with aiofiles.open(
+        master_path / "master" / "mstClass.json", "r", encoding="utf-8"
+    ) as fp:
+        class_detail: dict[int, dict[str, int]] = {
+            c["id"]: c for c in json.loads(await fp.read())
+        }
+    async with aiofiles.open(
+        master_path / "master" / "mstClassRelation.json", "r", encoding="utf-8"
+    ) as fp:
+        mstClassRelation: list[dict[str, int]] = json.loads(await fp.read())
+
+    out_data: dict[str, dict[str, int]] = {
+        class_name: {} for class_name in CLASS_NAME.values()
+    }
+
+    for atk_class_id, atk_class_name in CLASS_NAME.items():
+        for def_class_id, def_class_name in CLASS_NAME.items():
+            if atk_class_id not in class_detail or def_class_id not in class_detail:
+                continue
+
+            atk_rel_id = class_detail[atk_class_id]["relationId"]
+            def_rel_id = class_detail[def_class_id]["relationId"]
+
+            relation = next(
+                (
+                    rel
+                    for rel in mstClassRelation
+                    if rel["atkClass"] == atk_rel_id and rel["defClass"] == def_rel_id
+                ),
+                None,
+            )
+
+            if relation is None:
+                continue
+
+            out_data[atk_class_name][def_class_name] = relation["attackRate"]
+
+    export_file = export_path / region.value / "NiceClassRelation.json"
+    async with aiofiles.open(export_file, "w", encoding="utf-8") as fp:
+        await fp.write(json.dumps(out_data, ensure_ascii=False, indent=2))
 
 
 async def export_constant(region: Region, master_path: Path, export_path: Path) -> None:
@@ -316,3 +348,4 @@ async def export_constants(region_path: dict[Region, DirectoryPath]) -> None:
         await export_constant(region, path, export_path)
         await export_nice_master_lvl(region, path, export_path)
         await get_nice_ai_cond(region, export_path)
+        await get_nice_class_relation(region, path, export_path)
