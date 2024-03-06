@@ -1039,7 +1039,7 @@
     "isIndiv": false,
     "isParams": false
   },
-  "COUNT_HIGHER_AI_171": {
+  "COUNT_HIGHER_PLAYER_COMMAND_SPELL": {
     "target": 1,
     "paramater": 31,
     "check": 3,
@@ -1047,7 +1047,7 @@
     "isIndiv": false,
     "isParams": false
   },
-  "COUNT_LOWER_AI_172": {
+  "COUNT_LOWER_PLAYER_COMMAND_SPELL": {
     "target": 1,
     "paramater": 31,
     "check": 4,
@@ -1055,7 +1055,7 @@
     "isIndiv": false,
     "isParams": false
   },
-  "COUNT_EQUAL_AI_173": {
+  "COUNT_EQUAL_PLAYER_COMMAND_SPELL": {
     "target": 1,
     "paramater": 31,
     "check": 1,
@@ -1063,7 +1063,7 @@
     "isIndiv": false,
     "isParams": false
   },
-  "CHECK_AI_174": {
+  "CHECK_MASTER_SKILL_THISTURN": {
     "target": 1,
     "paramater": 32,
     "check": 1,
