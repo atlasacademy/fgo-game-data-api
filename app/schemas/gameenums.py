@@ -250,8 +250,8 @@ class FuncType(IntEnum):
     FRIEND_POINT_UP_DUPLICATE = 123
     MOVE_STATE = 124
     CHANGE_BGM_COSTUME = 125
-    FUNC_126 = 126
-    FUNC_127 = 127
+    LOSS_COMMAND_SPELL = 126
+    GAIN_COMMAND_SPELL = 127
     UPDATE_ENTRY_POSITIONS = 128
     BUDDY_POINT_UP = 129
     ADD_FIELD_CHANGE_TO_FIELD = 130
@@ -356,8 +356,8 @@ class NiceFuncType(StrEnum):
     friendPointUpDuplicate = "friendPointUpDuplicate"
     moveState = "moveState"
     changeBgmCostume = "changeBgmCostume"
-    func126 = "func126"
-    func127 = "func127"
+    lossCommandSpell = "lossCommandSpell"
+    gainCommandSpell = "gainCommandSpell"
     updateEntryPositions = "updateEntryPositions"
     buddyPointUp = "buddyPointUp"
     addFieldChangeToField = "addFieldChangeToField"
@@ -460,8 +460,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     123: NiceFuncType.friendPointUpDuplicate,
     124: NiceFuncType.moveState,
     125: NiceFuncType.changeBgmCostume,
-    126: NiceFuncType.func126,
-    127: NiceFuncType.func127,
+    126: NiceFuncType.lossCommandSpell,
+    127: NiceFuncType.gainCommandSpell,
     128: NiceFuncType.updateEntryPositions,
     129: NiceFuncType.buddyPointUp,
     130: NiceFuncType.addFieldChangeToField,
@@ -3780,10 +3780,10 @@ class AiCond(IntEnum):
     CHECK_PRECEDING_ENEMY = 168
     COUNT_HIGHER_REMAIN_TURN = 169
     COUNT_LOWER_REMAIN_TURN = 170
-    COUNT_HIGHER_AI_171 = 171
-    COUNT_LOWER_AI_172 = 172
-    COUNT_EQUAL_AI_173 = 173
-    CHECK_AI_174 = 174
+    COUNT_HIGHER_PLAYER_COMMAND_SPELL = 171
+    COUNT_LOWER_PLAYER_COMMAND_SPELL = 172
+    COUNT_EQUAL_PLAYER_COMMAND_SPELL = 173
+    CHECK_MASTER_SKILL_THISTURN = 174
     CHECK_SELF_NPTURN_HIGHER = 175
     CHECK_SELF_NPTURN_LOWER = 176
     CHECK_USE_SKILL_THISTURN = 177
@@ -3956,10 +3956,10 @@ class NiceAiCond(StrEnum):
     checkPrecedingEnemy = "checkPrecedingEnemy"
     countHigherRemainTurn = "countHigherRemainTurn"
     countLowerRemainTurn = "countLowerRemainTurn"
-    countHigherAi171 = "countHigherAi171"
-    countLowerAi172 = "countLowerAi172"
-    countEqualAi173 = "countEqualAi173"
-    checkAi174 = "checkAi174"
+    countHigherPlayerCommandSpell = "countHigherPlayerCommandSpell"
+    countLowerPlayerCommandSpell = "countLowerPlayerCommandSpell"
+    countEqualPlayerCommandSpell = "countEqualPlayerCommandSpell"
+    checkMasterSkillThisturn = "checkMasterSkillThisturn"
     checkSelfNpturnHigher = "checkSelfNpturnHigher"
     checkSelfNpturnLower = "checkSelfNpturnLower"
     checkUseSkillThisturn = "checkUseSkillThisturn"
@@ -4118,10 +4118,10 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     168: NiceAiCond.checkPrecedingEnemy,
     169: NiceAiCond.countHigherRemainTurn,
     170: NiceAiCond.countLowerRemainTurn,
-    171: NiceAiCond.countHigherAi171,
-    172: NiceAiCond.countLowerAi172,
-    173: NiceAiCond.countEqualAi173,
-    174: NiceAiCond.checkAi174,
+    171: NiceAiCond.countHigherPlayerCommandSpell,
+    172: NiceAiCond.countLowerPlayerCommandSpell,
+    173: NiceAiCond.countEqualPlayerCommandSpell,
+    174: NiceAiCond.checkMasterSkillThisturn,
     175: NiceAiCond.checkSelfNpturnHigher,
     176: NiceAiCond.checkSelfNpturnLower,
     177: NiceAiCond.checkUseSkillThisturn,
@@ -4643,8 +4643,8 @@ class AiCondParameter(IntEnum):
     DEAD = 28
     PRECEDING_ENEMY = 29
     REMAIN_TURN = 30
-    AVALON_145566 = 31
-    CHECK_PARAMATER_32 = 32
+    MASTER_COMMAND_SPELL_COUNT = 31
+    CHECK_MASTER_SKILL_THISTURN = 32
     CHAIN_COUNT = 33
     CHECK_TARGET_SKILL_THISTURN = 34
     CHECK_SELECT_CHAIN = 35
@@ -4689,8 +4689,8 @@ class NiceAiCondParameter(StrEnum):
     dead = "dead"
     precedingEnemy = "precedingEnemy"
     remainTurn = "remainTurn"
-    avalon145566 = "avalon145566"
-    checkParamater32 = "checkParamater32"
+    masterCommandSpellCount = "masterCommandSpellCount"
+    checkMasterSkillThisturn = "checkMasterSkillThisturn"
     chainCount = "chainCount"
     checkTargetSkillThisturn = "checkTargetSkillThisturn"
     checkSelectChain = "checkSelectChain"
@@ -4733,8 +4733,8 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     28: NiceAiCondParameter.dead,
     29: NiceAiCondParameter.precedingEnemy,
     30: NiceAiCondParameter.remainTurn,
-    31: NiceAiCondParameter.avalon145566,
-    32: NiceAiCondParameter.checkParamater32,
+    31: NiceAiCondParameter.masterCommandSpellCount,
+    32: NiceAiCondParameter.checkMasterSkillThisturn,
     33: NiceAiCondParameter.chainCount,
     34: NiceAiCondParameter.checkTargetSkillThisturn,
     35: NiceAiCondParameter.checkSelectChain,
