@@ -2207,6 +2207,7 @@ class NiceQuestPhaseScript(BaseModelORJson):
 class NiceQuest(BaseModelORJson):
     id: int
     name: str
+    originalName: str
     type: NiceQuestType
     flags: list[NiceQuestFlag]
     consumeType: NiceConsumeType
