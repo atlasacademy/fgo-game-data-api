@@ -2279,7 +2279,7 @@ mstQuestRestrictionInfo = Table(
     Column("script", JSONB),
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
-    Column("flag", Integer),
+    Column("flag", BigInteger),
 )
 
 

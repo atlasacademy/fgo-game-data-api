@@ -223,9 +223,7 @@ async def parse_dataVals(
                             text = array2[0]
                             value = int(array2[1])
                         except ValueError as err:
-                            raise HTTPException(
-                                status_code=500, detail=error_message
-                            ) from err
+                            value = array2[1]
                 else:
                     raise HTTPException(status_code=500, detail=error_message) from None
 

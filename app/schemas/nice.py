@@ -1,6 +1,6 @@
 from decimal import Decimal
 from enum import StrEnum
-from typing import Any, Generic, Optional, TypeVar
+from typing import Any, Generic, Optional, TypeVar, Union
 
 from pydantic import BaseModel, Field, HttpUrl
 from pydantic.generics import GenericModel
@@ -252,7 +252,7 @@ class BaseVals(BaseModel):
     Turn: Optional[int] = None
     Count: Optional[int] = None
     Value: Optional[int] = None
-    Value2: Optional[int] = None
+    Value2: Optional[Union[int,str]] = None
     UseRate: Optional[int] = None
     Target: Optional[int] = None
     Correction: Optional[int] = None
