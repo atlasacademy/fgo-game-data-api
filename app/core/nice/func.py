@@ -74,6 +74,7 @@ async def parse_dataVals(
     conn: AsyncConnection, datavals: str, functype: int
 ) -> DataValType:
     error_message = f"Can't parse datavals: {datavals}"
+    exception = HTTPException(status_code=500, detail=error_message)
     INITIAL_VALUE = -98765
     # Prefix to be used for temporary keys that need further parsing.
     # Some functions' datavals can't be parsed by themselves and need the first
@@ -200,9 +201,7 @@ async def parse_dataVals(
                         # using DUMMY_PREFIX + ... and parse it later
                         dependMstFunc = await fetch.get_one(conn, MstFunc, int(output["DependFuncId"]))  # type: ignore
                         if not dependMstFunc:
-                            raise HTTPException(
-                                status_code=500, detail=error_message
-                            ) from None
+                            raise exception from None
                         vals_value = await parse_dataVals(
                             conn, array2[1], dependMstFunc.funcType
                         )
@@ -211,9 +210,7 @@ async def parse_dataVals(
                         try:
                             output[array2[0]] = [int(i) for i in array2[1].split("/")]
                         except ValueError as err:
-                            raise HTTPException(
-                                status_code=500, detail=error_message
-                            ) from err
+                            raise exception from err
                     elif array2[0] in STRING_LIST_DATAVALS:
                         output[array2[0]] = array2[1].split("/")
                     elif array2[0] in STRING_DATAVALS:
@@ -223,9 +220,9 @@ async def parse_dataVals(
                             text = array2[0]
                             value = int(array2[1])
                         except ValueError as err:
-                            value = array2[1]
+                            raise exception from err
                 else:
-                    raise HTTPException(status_code=500, detail=error_message) from None
+                    raise exception from None
 
             if text:
                 output[text] = value
