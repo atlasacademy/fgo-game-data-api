@@ -494,6 +494,10 @@ class NiceFuncGroup(BaseModelORJson):
     isDispValue: bool
 
 
+class FunctionScript(BaseModel):
+    overwriteTvals: list[list[NiceTrait]] | None = None
+
+
 class NiceBaseFunction(BaseModelORJson):
     funcId: int = Field(..., title="Function ID", description="Function ID")
     funcType: NiceFuncType = Field(
@@ -524,11 +528,20 @@ class NiceBaseFunction(BaseModelORJson):
         description="Function tvals: If available, function's targets or their buffs "
         "need to satisfy the traits given here.",
     )
+    overWriteTvalsList: list[list[NiceTrait]] = Field(
+        ...,
+        title="Overwrite Tvals List",
+        description="Overwrite functvals if given. Two-dimensional list, the inner trait list acts as a combined trait in functvals",
+    )
     funcquestTvals: list[NiceTrait] = Field(
         ...,
         title="Function quest traits",
         description="Function quest traits. "
         "The current quest needs this traits for the function to works.",
+    )
+    script: FunctionScript = Field(
+        ...,
+        title="Function script",
     )
     funcGroup: list[NiceFuncGroup] = Field(
         ...,

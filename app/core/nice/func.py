@@ -10,9 +10,9 @@ from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.enums import FUNC_APPLYTARGET_NAME, FUNC_VALS_NOT_BUFF
 from ...schemas.gameenums import FUNC_TARGETTYPE_NAME, FUNC_TYPE_NAME, FuncType
-from ...schemas.nice import AssetURL, NiceFuncGroup
+from ...schemas.nice import AssetURL, FunctionScript, NiceFuncGroup
 from ...schemas.raw import FunctionEntityNoReverse, MstFunc, MstFuncGroup
-from ..utils import fmt_url, get_traits_list
+from ..utils import fmt_url, get_traits_list, get_traits_list_list
 from .buff import get_nice_buff
 
 
@@ -283,6 +283,19 @@ def get_nice_func_group(
     )
 
 
+def get_nice_func_script(mstFunc: MstFunc) -> FunctionScript:
+    if not mstFunc.script:
+        return FunctionScript()
+
+    script: dict[str, Any] = {}
+    if "overwriteTvals" in mstFunc.script:
+        script["overwriteTvals"] = get_traits_list_list(
+            mstFunc.script["overwriteTvals"]
+        )
+
+    return FunctionScript.parse_obj(script)
+
+
 async def get_nice_function(
     conn: AsyncConnection,
     region: Region,
@@ -300,6 +313,9 @@ async def get_nice_function(
         "funcPopupText": function.mstFunc.popupText,
         "funcquestTvals": get_traits_list(function.mstFunc.questTvals),
         "functvals": get_traits_list(function.mstFunc.tvals),
+        "overWriteTvalsList": get_traits_list_list(
+            function.mstFunc.overWriteTvalsList or []
+        ),
         "funcType": FUNC_TYPE_NAME[function.mstFunc.funcType],
         "funcTargetTeam": FUNC_APPLYTARGET_NAME[function.mstFunc.applyTarget],
         "funcTargetType": FUNC_TARGETTYPE_NAME[function.mstFunc.targetType],
@@ -310,6 +326,7 @@ async def get_nice_function(
         "buffs": [
             get_nice_buff(buff, region, lang) for buff in function.mstFunc.expandedVals
         ],
+        "script": get_nice_func_script(function.mstFunc),
     }
 
     if function.mstFunc.funcType in FUNC_VALS_NOT_BUFF:

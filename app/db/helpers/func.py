@@ -1,7 +1,7 @@
 from typing import Iterable, Optional
 
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, select, true
+from sqlalchemy.sql import and_, or_, select, true
 from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import mstFunc
@@ -27,7 +27,12 @@ async def get_func_search(
     if vals:
         where_clause.append(mstFunc.c.vals.contains(vals))
     if tvals:
-        where_clause.append(mstFunc.c.tvals.contains(tvals))
+        where_clause.append(
+            or_(
+                mstFunc.c.tvals.contains(tvals),
+                mstFunc.c.overWriteTvalsList.contains([list(tvals)]),
+            )
+        )
     if questTvals:
         where_clause.append(mstFunc.c.questTvals.contains(questTvals))
 

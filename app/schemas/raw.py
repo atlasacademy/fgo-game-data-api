@@ -60,6 +60,8 @@ class MstFunc(BaseModelORJson):
     questTvals: list[int]  # [94000015],
     effectList: list[int]  # [332],
     popupTextColor: int  # 2,
+    script: dict[str, Any] | None = None
+    overWriteTvalsList: list[list[int]] | None = None
     id: int  # 657,
     cond: int = 0  # 0,
     funcType: int  # 16,
@@ -562,6 +564,7 @@ class MstEquip(BaseModelORJson):
     imageId: int  # 20
     maleSpellId: int  # 1
     femaleSpellId: int  # 2
+    shotName: str | None = None
 
 
 class MstEquipExp(BaseModelORJson):
@@ -867,6 +870,7 @@ class MstSvtGroup(BaseModelORJson):
 class MstSvtMultiPortrait(BaseModelORJson):
     commonPosition: list[int]
     summonPosition: list[int]
+    withMasterPhotoPosition: list[int] | None = None
     svtId: int
     limitCount: int
     idx: int
@@ -1241,6 +1245,7 @@ class MstBoxGachaBase(BaseModelORJson):
     priority: int
     maxNum: int
     detail: str
+    boxGachaTalkId: list[int] | None = None
 
 
 class MstBoxGachaTalk(BaseModelORJson):
@@ -1351,6 +1356,7 @@ class MstEventQuest(BaseModelORJson):
     eventId: int
     questId: int
     phase: int
+    isExcepted: int | None = None
     createdAt: int | None = None
 
 
@@ -1716,6 +1722,7 @@ class MstBlankEarthSpot(BaseModelORJson):
     condTargetType: int
     condTargetId: int
     condTargetNum: int
+    flag: int | None = None
 
 
 class MstSpotAdd(BaseModelORJson):
@@ -1825,6 +1832,7 @@ class MstQuestReleaseOverwrite(BaseModelORJson):
     eventId: int
     startedAt: int
     endedAt: int
+    leftIndent: int | None = None
 
 
 class MstQuestConsumeItem(BaseModelORJson):
@@ -1836,6 +1844,8 @@ class MstQuestConsumeItem(BaseModelORJson):
 class MstClosedMessage(BaseModelORJson):
     id: int
     message: str
+    leftIndent: int | None = None
+    flag: int | None = None
 
 
 class MstBattleMessage(BaseModelORJson):

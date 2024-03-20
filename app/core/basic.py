@@ -81,6 +81,7 @@ from .utils import (
     get_nice_trait,
     get_np_name,
     get_traits_list,
+    get_traits_list_list,
     get_translation,
 )
 
@@ -270,6 +271,7 @@ async def get_basic_function_from_raw(
         funcTargetType=FUNC_TARGETTYPE_NAME[mstFunc.targetType],
         funcquestTvals=get_traits_list(mstFunc.questTvals),
         functvals=get_traits_list(mstFunc.tvals),
+        overWriteTvalsList=get_traits_list_list(mstFunc.overWriteTvalsList or []),
         traitVals=traitVals,
         buffs=buffs,
     )

@@ -104,6 +104,10 @@ def get_traits_list(input_idv: Iterable[int]) -> list[NiceTrait]:
     return [get_nice_trait(individuality) for individuality in input_idv]
 
 
+def get_traits_list_list(input_idvs: Iterable[Iterable[int]]) -> list[list[NiceTrait]]:
+    return [get_traits_list(vals) for vals in input_idvs]
+
+
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
 
 

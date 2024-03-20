@@ -41,6 +41,7 @@ class BasicFunction(BaseModelORJson):
     funcTargetType: NiceFuncTargetType
     funcTargetTeam: FuncApplyTarget
     functvals: list[NiceTrait]
+    overWriteTvalsList: list[list[NiceTrait]]
     funcquestTvals: list[NiceTrait]
     traitVals: list[NiceTrait] = []
     buffs: Sequence[BasicBuff]

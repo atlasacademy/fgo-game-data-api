@@ -88,6 +88,8 @@ mstFunc = Table(
     Column("questTvals", ARRAY(Integer)),
     Column("effectList", ARRAY(Integer)),
     Column("popupTextColor", Integer),
+    Column("script", JSONB),
+    Column("overWriteTvalsList", JSONB),
     Column("id", Integer, primary_key=True),
     Column("cond", Integer, default=0),
     Column("funcType", Integer, index=True),
@@ -833,6 +835,7 @@ mstSvtMultiPortrait = Table(
     metadata,
     Column("commonPosition", ARRAY(Integer)),
     Column("summonPosition", ARRAY(Integer)),
+    Column("withMasterPhotoPosition", ARRAY(Integer)),
     Column("svtId", Integer, index=True),
     Column("limitCount", Integer),
     Column("idx", Integer),
@@ -867,6 +870,7 @@ mstEquip = Table(
     Column("imageId", Integer),
     Column("maleSpellId", Integer),
     Column("femaleSpellId", Integer),
+    Column("shotName", String),
 )
 
 
@@ -1541,6 +1545,7 @@ mstEventQuest = Table(
     Column("eventId", Integer, index=True),
     Column("questId", Integer),
     Column("phase", Integer),
+    Column("isExcepted", Integer),
     Column("createdAt", Integer),
 )
 
@@ -1710,6 +1715,7 @@ mstBoxGachaBase = Table(
     Column("priority", Integer),
     Column("maxNum", Integer),
     Column("detail", String),
+    Column("boxGachaTalkId", ARRAY(Integer)),
 )
 
 
@@ -2021,6 +2027,7 @@ mstBlankEarthSpot = Table(
     Column("condTargetType", Integer),
     Column("condTargetId", Integer),
     Column("condTargetNum", Integer),
+    Column("flag", Integer),
 )
 
 
@@ -2178,6 +2185,7 @@ mstQuestReleaseOverwrite = Table(
     Column("eventId", Integer),
     Column("startedAt", Integer),
     Column("endedAt", Integer),
+    Column("leftIndent", Integer),
 )
 
 
@@ -2186,6 +2194,8 @@ mstClosedMessage = Table(
     metadata,
     Column("id", Integer, primary_key=True),
     Column("message", String),
+    Column("leftIndent", Integer),
+    Column("flag", Integer),
 )
 
 
