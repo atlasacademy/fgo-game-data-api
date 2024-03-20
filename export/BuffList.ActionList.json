@@ -1457,6 +1457,28 @@
     "isRec": true,
     "plusAction": 0
   },
+  "PREVENT_INVISIBLE_WHEN_INSTANT_DEATH": {
+    "limit": 0,
+    "plusTypes": [
+      189
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_SUBATTRIBUTE": {
+    "limit": 0,
+    "plusTypes": [
+      190
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
   "GUTS": {
     "limit": 0,
     "plusTypes": [
