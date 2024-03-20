@@ -360,6 +360,7 @@ export enum NiceBuffType {
     SKILL_AFTER_FUNCTION_MAIN_ONLY = "skillAfterFunctionMainOnly",
     TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = "treasureDeviceAfterFunctionMainOnly",
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = "preventInvisibleWhenInstantDeath",
+    OVERWRITE_SUBATTRIBUTE = "overwriteSubattribute",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -494,6 +495,7 @@ export enum NiceBuffAction {
     FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = "functionTreasureDeviceAfterMainOnly",
     GUTS = "guts",
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = "preventInvisibleWhenInstantDeath",
+    OVERWRITE_SUBATTRIBUTE = "overwriteSubattribute",
 }
 
 export enum NiceBuffLimit {
@@ -652,6 +654,8 @@ export enum NiceDataValsType {
     CheckTargetHaveDefeatPoint = "checktargethavedefeatpoint",
     NPFixedDamageValue = "npfixeddamagevalue",
     IgnoreShiftSafeDamage = "ignoreshiftsafedamage",
+    ActAttackFunction = "actattackfunction",
+    DelayRemoveBuffExpiredOnPlayerTurn = "delayremovebuffexpiredonplayerturn",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1002,6 +1006,7 @@ export enum NiceCondType {
     COMMON_VALUE_ABOVE = "commonValueAbove",
     COMMON_VALUE_BELOW = "commonValueBelow",
     COMMON_VALUE_EQUAL = "commonValueEqual",
+    ELAPSED_TIME_AFTER_QUEST_CLEAR = "elapsedTimeAfterQuestClear",
 }
 
 export enum NiceVoiceCondType {
@@ -1113,7 +1118,7 @@ export enum NiceQuestFlag {
     NO_DISPLAY_MISSION_NOTIFY = "noDisplayMissionNotify",
     HIDE_PROGRESS = "hideProgress",
     DROP_FIRST_TIME_ONLY = "dropFirstTimeOnly",
-    CHAPTER_SUB_ID_JAPANESE_NUMERALS = "chapterSubIdJapaneseNumerals",
+    CHAPTER_SUB_ID_JAPANESE_NUMERALS_CALLIGRAPHY = "chapterSubIdJapaneseNumeralsCalligraphy",
     SUPPORT_ONLY_FORCE_BATTLE = "supportOnlyForceBattle",
     EVENT_DECK_NO_SUPPORT = "eventDeckNoSupport",
     FATIGUE_BATTLE = "fatigueBattle",
@@ -1155,6 +1160,7 @@ export enum NiceQuestFlag {
     ALLOUT_BATTLE = "alloutBattle",
     RECOLLECTION = "recollection",
     NOT_SINGLE_SUPPORT_ONLY = "notSingleSupportOnly",
+    DISABLE_CHAPTER_SUB = "disableChapterSub",
 }
 
 export enum NiceStatusRank {
@@ -1257,6 +1263,7 @@ export enum NiceWarFlag {
     IS_WAR_ICON_CENTER = "isWarIconCenter",
     NOTICE_BOARD = "noticeBoard",
     CHANGE_DISP_CLOSED_MESSAGE = "changeDispClosedMessage",
+    CHAPTER_SUB_ID_JAPANESE_NUMERALS_NORMAL = "chapterSubIdJapaneseNumeralsNormal",
 }
 
 export enum NiceWarStartType {
@@ -1759,12 +1766,13 @@ export enum NiceRestrictionRangeType {
 }
 
 export enum NiceFrequencyType {
+    NONE = "none",
     ONCE = "once",
     ONCE_UNTIL_REBOOT = "onceUntilReboot",
     EVERY_TIME = "everyTime",
     VALENTINE = "valentine",
     EVERY_TIME_AFTER = "everyTimeAfter",
-    NONE = "none",
+    EVERY_TIME_BEFORE = "everyTimeBefore",
 }
 
 export enum NiceCommandCardAttackType {

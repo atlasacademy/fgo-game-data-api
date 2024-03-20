@@ -82,7 +82,6 @@ EXTRA_STR_NAME = {
         40: "UNKNOWN_40",
         -1: "UNKNOWN",
     },
-    "NiceFrequencyType": {0: "NONE"},
     "NiceEventType": {27: "FORTUNE_CAMPAIGN"},
 }
 
@@ -525,7 +524,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "RESTRICTION_RANGE_TYPE_NAME",
     ),
     (
-        "ShopDetailEntity.FrequencyType",
+        "Frequency.Type",
         "FrequencyType",
         "NiceFrequencyType",
         "Frequency Type",

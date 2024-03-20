@@ -755,6 +755,7 @@ class BuffType(IntEnum):
     SKILL_AFTER_FUNCTION_MAIN_ONLY = 187
     TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = 188
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = 189
+    OVERWRITE_SUBATTRIBUTE = 190
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -937,6 +938,7 @@ class NiceBuffType(StrEnum):
     skillAfterFunctionMainOnly = "skillAfterFunctionMainOnly"
     treasureDeviceAfterFunctionMainOnly = "treasureDeviceAfterFunctionMainOnly"
     preventInvisibleWhenInstantDeath = "preventInvisibleWhenInstantDeath"
+    overwriteSubattribute = "overwriteSubattribute"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1117,6 +1119,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     187: NiceBuffType.skillAfterFunctionMainOnly,
     188: NiceBuffType.treasureDeviceAfterFunctionMainOnly,
     189: NiceBuffType.preventInvisibleWhenInstantDeath,
+    190: NiceBuffType.overwriteSubattribute,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1252,6 +1255,7 @@ class BuffAction(IntEnum):
     FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY = 125
     GUTS = 126
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = 127
+    OVERWRITE_SUBATTRIBUTE = 128
 
 
 class NiceBuffAction(StrEnum):
@@ -1385,6 +1389,7 @@ class NiceBuffAction(StrEnum):
     functionTreasureDeviceAfterMainOnly = "functionTreasureDeviceAfterMainOnly"
     guts = "guts"
     preventInvisibleWhenInstantDeath = "preventInvisibleWhenInstantDeath"
+    overwriteSubattribute = "overwriteSubattribute"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1516,6 +1521,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     125: NiceBuffAction.functionTreasureDeviceAfterMainOnly,
     126: NiceBuffAction.guts,
     127: NiceBuffAction.preventInvisibleWhenInstantDeath,
+    128: NiceBuffAction.overwriteSubattribute,
 }
 
 
@@ -1692,6 +1698,8 @@ class DataValsType(IntEnum):
     CheckTargetHaveDefeatPoint = 145
     NPFixedDamageValue = 146
     IgnoreShiftSafeDamage = 147
+    ActAttackFunction = 148
+    DelayRemoveBuffExpiredOnPlayerTurn = 149
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2332,6 +2340,7 @@ class CondType(IntEnum):
     COMMON_VALUE_ABOVE = 212
     COMMON_VALUE_BELOW = 213
     COMMON_VALUE_EQUAL = 214
+    ELAPSED_TIME_AFTER_QUEST_CLEAR = 215
 
 
 class NiceCondType(StrEnum):
@@ -2549,6 +2558,7 @@ class NiceCondType(StrEnum):
     commonValueAbove = "commonValueAbove"
     commonValueBelow = "commonValueBelow"
     commonValueEqual = "commonValueEqual"
+    elapsedTimeAfterQuestClear = "elapsedTimeAfterQuestClear"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2764,6 +2774,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     212: NiceCondType.commonValueAbove,
     213: NiceCondType.commonValueBelow,
     214: NiceCondType.commonValueEqual,
+    215: NiceCondType.elapsedTimeAfterQuestClear,
 }
 
 
@@ -3062,7 +3073,7 @@ class QuestFlag(IntEnum):
     NO_DISPLAY_MISSION_NOTIFY = 32768
     HIDE_PROGRESS = 65536
     DROP_FIRST_TIME_ONLY = 131072
-    CHAPTER_SUB_ID_JAPANESE_NUMERALS = 262144
+    CHAPTER_SUB_ID_JAPANESE_NUMERALS_CALLIGRAPHY = 262144
     SUPPORT_ONLY_FORCE_BATTLE = 524288
     EVENT_DECK_NO_SUPPORT = 1048576
     FATIGUE_BATTLE = 2097152
@@ -3104,6 +3115,7 @@ class QuestFlag(IntEnum):
     ALLOUT_BATTLE = 288230376151711744
     RECOLLECTION = 576460752303423488
     NOT_SINGLE_SUPPORT_ONLY = 1152921504606846976
+    DISABLE_CHAPTER_SUB = 2305843009213693952
 
 
 class NiceQuestFlag(StrEnum):
@@ -3127,7 +3139,7 @@ class NiceQuestFlag(StrEnum):
     noDisplayMissionNotify = "noDisplayMissionNotify"
     hideProgress = "hideProgress"
     dropFirstTimeOnly = "dropFirstTimeOnly"
-    chapterSubIdJapaneseNumerals = "chapterSubIdJapaneseNumerals"
+    chapterSubIdJapaneseNumeralsCalligraphy = "chapterSubIdJapaneseNumeralsCalligraphy"
     supportOnlyForceBattle = "supportOnlyForceBattle"
     eventDeckNoSupport = "eventDeckNoSupport"
     fatigueBattle = "fatigueBattle"
@@ -3169,6 +3181,7 @@ class NiceQuestFlag(StrEnum):
     alloutBattle = "alloutBattle"
     recollection = "recollection"
     notSingleSupportOnly = "notSingleSupportOnly"
+    disableChapterSub = "disableChapterSub"
 
 
 Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
@@ -3190,7 +3203,7 @@ Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
     32768: NiceQuestFlag.noDisplayMissionNotify,
     65536: NiceQuestFlag.hideProgress,
     131072: NiceQuestFlag.dropFirstTimeOnly,
-    262144: NiceQuestFlag.chapterSubIdJapaneseNumerals,
+    262144: NiceQuestFlag.chapterSubIdJapaneseNumeralsCalligraphy,
     524288: NiceQuestFlag.supportOnlyForceBattle,
     1048576: NiceQuestFlag.eventDeckNoSupport,
     2097152: NiceQuestFlag.fatigueBattle,
@@ -3232,6 +3245,7 @@ Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
     288230376151711744: NiceQuestFlag.alloutBattle,
     576460752303423488: NiceQuestFlag.recollection,
     1152921504606846976: NiceQuestFlag.notSingleSupportOnly,
+    2305843009213693952: NiceQuestFlag.disableChapterSub,
 }
 
 
@@ -3493,6 +3507,7 @@ class WarEntityFlag(IntEnum):
     IS_WAR_ICON_CENTER = 4194304
     NOTICE_BOARD = 8388608
     CHANGE_DISP_CLOSED_MESSAGE = 16777216
+    CHAPTER_SUB_ID_JAPANESE_NUMERALS_NORMAL = 33554432
 
 
 class NiceWarFlag(StrEnum):
@@ -3522,6 +3537,7 @@ class NiceWarFlag(StrEnum):
     isWarIconCenter = "isWarIconCenter"
     noticeBoard = "noticeBoard"
     changeDispClosedMessage = "changeDispClosedMessage"
+    chapterSubIdJapaneseNumeralsNormal = "chapterSubIdJapaneseNumeralsNormal"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -3549,6 +3565,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     4194304: NiceWarFlag.isWarIconCenter,
     8388608: NiceWarFlag.noticeBoard,
     16777216: NiceWarFlag.changeDispClosedMessage,
+    33554432: NiceWarFlag.chapterSubIdJapaneseNumeralsNormal,
 }
 
 
@@ -5143,31 +5160,35 @@ RESTRICTION_RANGE_TYPE_NAME: dict[int, NiceRestrictionRangeType] = {
 
 
 class FrequencyType(IntEnum):
+    NONE = 0
     ONCE = 1
     ONCE_UNTIL_REBOOT = 2
     EVERY_TIME = 3
     VALENTINE = 4
     EVERY_TIME_AFTER = 5
+    EVERY_TIME_BEFORE = 6
 
 
 class NiceFrequencyType(StrEnum):
     """Frequency Type"""
 
+    none = "none"
     once = "once"
     onceUntilReboot = "onceUntilReboot"
     everyTime = "everyTime"
     valentine = "valentine"
     everyTimeAfter = "everyTimeAfter"
-    none = "none"
+    everyTimeBefore = "everyTimeBefore"
 
 
 FREQUENCY_TYPE_NAME: dict[int, NiceFrequencyType] = {
+    0: NiceFrequencyType.none,
     1: NiceFrequencyType.once,
     2: NiceFrequencyType.onceUntilReboot,
     3: NiceFrequencyType.everyTime,
     4: NiceFrequencyType.valentine,
     5: NiceFrequencyType.everyTimeAfter,
-    0: NiceFrequencyType.none,
+    6: NiceFrequencyType.everyTimeBefore,
 }
 
 
