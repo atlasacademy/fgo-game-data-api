@@ -195,9 +195,19 @@ async def parse_dataVals(
                         # This assumes DependFuncId is parsed before.
                         # If DW ever make it more complicated than this, consider
                         # using DUMMY_PREFIX + ... and parse it later
+                        if "DependFuncId" not in output:
+                            logger.error(
+                                f"Failed to find DependFuncId dataval for {arrayi}"
+                            )
+                            raise exception from None
+
                         dependMstFunc = await fetch.get_one(conn, MstFunc, int(output["DependFuncId"]))  # type: ignore
                         if not dependMstFunc:
+                            logger.error(
+                                f"Failed to find func data for dependFuncId: {output['DependFuncId']}"
+                            )
                             raise exception from None
+
                         vals_value = await parse_dataVals(
                             conn, array2[1], dependMstFunc.funcType
                         )
@@ -205,8 +215,10 @@ async def parse_dataVals(
                     elif array2[0] in LIST_DATAVALS:
                         try:
                             output[array2[0]] = [int(i) for i in array2[1].split("/")]
-                        except ValueError as err:
-                            raise exception from err
+                        except ValueError:
+                            logger.error(
+                                f"Failed to parse list datavals: {array2[1]} of {arrayi}"
+                            )
                     elif array2[0] in STRING_LIST_DATAVALS:
                         output[array2[0]] = array2[1].split("/")
                     elif array2[0] in STRING_DATAVALS:
@@ -215,10 +227,12 @@ async def parse_dataVals(
                         try:
                             text = array2[0]
                             value = int(array2[1])
-                        except ValueError as err:
-                            raise exception from err
+                        except ValueError:
+                            logger.error(
+                                f"Failed to parse string dataval to int: {array2[1]} of {arrayi}"
+                            )
                 else:
-                    raise exception from None
+                    logger.error(f"Failed to parse keyword dataval: {arrayi}")
 
             if text:
                 output[text] = value
