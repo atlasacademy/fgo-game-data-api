@@ -564,7 +564,7 @@ class MstEquip(BaseModelORJson):
     imageId: int  # 20
     maleSpellId: int  # 1
     femaleSpellId: int  # 2
-    shotName: str | None = None
+    shortName: str | None = None
 
 
 class MstEquipExp(BaseModelORJson):

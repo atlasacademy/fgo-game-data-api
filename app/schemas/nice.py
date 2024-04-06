@@ -791,6 +791,7 @@ class NiceMysticCodeCostume(BaseModel):
 class NiceMysticCode(BaseModelORJson):
     id: int
     name: str
+    shortName: str
     originalName: str
     detail: str
     maxLv: int

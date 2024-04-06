@@ -870,7 +870,7 @@ mstEquip = Table(
     Column("imageId", Integer),
     Column("maleSpellId", Integer),
     Column("femaleSpellId", Integer),
-    Column("shotName", String),
+    Column("shortName", String),
 )
 
 

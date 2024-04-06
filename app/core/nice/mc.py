@@ -86,6 +86,7 @@ async def get_nice_mystic_code(
     nice_mc = NiceMysticCode(
         id=raw_mc.mstEquip.id,
         name=get_translation(lang, raw_mc.mstEquip.name),
+        shortName=raw_mc.mstEquip.shortName if raw_mc.mstEquip.shortName else "",
         originalName=raw_mc.mstEquip.name,
         detail=raw_mc.mstEquip.detail,
         maxLv=raw_mc.mstEquip.maxLv,
