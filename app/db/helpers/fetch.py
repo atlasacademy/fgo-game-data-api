@@ -612,7 +612,12 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstShopRelease: (
         mstShopRelease,
         mstShopRelease.c.shopId,
-        [mstShopRelease.c.shopId, mstShopRelease.c.priority],
+        [
+            mstShopRelease.c.shopId,
+            mstShopRelease.c.priority,
+            mstShopRelease.c.condType,
+            mstShopRelease.c.condNum,
+        ],
     ),
     MstItem: (mstItem, mstItem.c.id, [mstItem.c.id]),
     MstMapGimmick: (mstMapGimmick, mstMapGimmick.c.mapId, [mstMapGimmick.c.id]),
