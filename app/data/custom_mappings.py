@@ -65,7 +65,7 @@ with open(MAPPING_PATH / "extra_charafigure.json", "rb") as fp:
         cf["svtId"]: sorted(cf["charaFigureIds"]) for cf in orjson.loads(fp.read())
     }
 
-EXTRA_IMAGES: dict[int, list[Union[int, str]]] = {}
+EXTRA_IMAGES: dict[int, list[str]] = {}
 
 with open(MAPPING_PATH / "extra_image.json", "rb") as fp:
     EXTRA_IMAGES = {
