@@ -2,13 +2,18 @@
   {
     "svtId": 100100,
     "imageIds": [
-      "cut171_token_101"
+      "cut171_token_101",
+      "cut481_doujinshi07",
+      "cut481_doujinshi07_2",
+      "cut481_doujinshi11"
     ]
   },
   {
     "svtId": 100200,
     "imageIds": [
-      "cut009_bike"
+      "cut009_bike",
+      "cut481_doujinshi07",
+      "cut481_doujinshi07_2"
     ]
   },
   {
@@ -30,7 +35,8 @@
     "imageIds": [
       "cut083_book10",
       "cut171_token_108",
-      "cut326_icon_gwn"
+      "cut326_icon_gwn",
+      "cut481_doujinshi12"
     ]
   },
   {
@@ -113,19 +119,32 @@
   {
     "svtId": 102000,
     "imageIds": [
-      "cut083_book10"
+      "cut083_book10",
+      "cut481_doujinshi12"
     ]
   },
   {
     "svtId": 102200,
     "imageIds": [
-      "cut171_token_204"
+      "cut171_token_204",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06"
     ]
   },
   {
     "svtId": 102600,
     "imageIds": [
       "cut171_token_206",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06",
       "cut463_portrait_don"
     ]
   },
@@ -154,7 +173,9 @@
       "cut034_fks02",
       "cut034_fks03",
       "cut034_fks04",
-      "cut037_fks"
+      "cut037_fks",
+      "cut148_callout03",
+      "cut148_callout04"
     ]
   },
   {
@@ -253,6 +274,8 @@
     "imageIds": [
       "cut233_hjm16",
       "cut322_hjm01",
+      "cut333_cut02",
+      "cut333_cut04",
       "cut326_icon_hjm"
     ]
   },
@@ -283,7 +306,8 @@
       "cut041_mrm",
       "cut257_mms01",
       "cut257_mms02",
-      "cut257_mms03"
+      "cut257_mms03",
+      "cut481_doujinshi11"
     ]
   },
   {
@@ -296,7 +320,11 @@
   {
     "svtId": 105200,
     "imageIds": [
-      "cut350_chl"
+      "cut350_chl",
+      "cut481_doujinshi02",
+      "cut519_pos_m01",
+      "cut519_pos_m02",
+      "cut519_pos_w01"
     ]
   },
   {
@@ -362,7 +390,8 @@
   {
     "svtId": 200800,
     "imageIds": [
-      "cut083_book10"
+      "cut083_book10",
+      "cut481_doujinshi12"
     ]
   },
   {
@@ -383,6 +412,12 @@
       "scene86906",
       "scene86907",
       "scene86909"
+    ]
+  },
+  {
+    "svtId": 201000,
+    "imageIds": [
+      "cut392_wipe"
     ]
   },
   {
@@ -428,14 +463,21 @@
     "svtId": 201600,
     "imageIds": [
       "cut011_emo",
-      "cut012_emo"
+      "cut012_emo",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06"
     ]
   },
   {
     "svtId": 202000,
     "imageIds": [
       "cut083_book02",
-      "cut416_leg"
+      "cut416_leg",
+      "cut481_doujinshi11"
     ]
   },
   {
@@ -446,7 +488,6 @@
       "cut033_machine11",
       "cut148_callout03",
       "cut148_callout04",
-
       "cut034_mry00",
       "cut034_mry01",
       "cut034_mry02",
@@ -468,6 +509,13 @@
     "svtId": 202500,
     "imageIds": [
       "cut125_manb00"
+    ]
+  },
+  {
+    "svtId": 202600,
+    "imageIds": [
+      "cut481_doujinshi07",
+      "cut481_doujinshi07_2"
     ]
   },
   {
@@ -553,6 +601,7 @@
   {
     "svtId": 203500,
     "imageIds": [
+      "cut134_goldenarrow",
       "cut137_paris0",
       "cut137_paris2",
       "cut137_paris4",
@@ -612,6 +661,8 @@
       "cut323_nbk02",
       "cut323_nbk03",
       "cut326_icon_nbk",
+      "cut333_cut02",
+      "cut333_cut04",
       "cut484_sticker05"
     ]
   },
@@ -629,7 +680,11 @@
     "svtId": 204400,
     "imageIds": [
       "cut281_mans04",
-      "cut282_mans00"
+      "cut282_mans00",
+      "cut293_photo04_1",
+      "cut293_photo04_2",
+      "cut293_photo04_4",
+      "cut293_photo04_5"
     ]
   },
   {
@@ -663,6 +718,7 @@
     "svtId": 204900,
     "imageIds": [
       "cut495_mbgs05",
+      "cut481_doujinshi12",
       "cut533_mbgs00"
     ]
   },
@@ -682,7 +738,8 @@
     "svtId": 300200,
     "imageIds": [
       "cut034_dir00",
-      "cut058_yro"
+      "cut058_yro",
+      "cut481_doujinshi02"
     ]
   },
   {
@@ -782,6 +839,12 @@
     ]
   },
   {
+    "svtId": 303000,
+    "imageIds": [
+      "cut481_doujinshi11"
+    ]
+  },
+  {
     "svtId": 303200,
     "imageIds": [
       "back51300",
@@ -796,7 +859,19 @@
   {
     "svtId": 303300,
     "imageIds": [
+      "cut481_doujinshi04"
+    ]
+  },
+  {
+    "svtId": 303400,
+    "imageIds": [
       "cut387_valkyrie01"
+    ]
+  },
+  {
+    "svtId": 303600,
+    "imageIds": [
+      "cut519_pos_m02"
     ]
   },
   {
@@ -975,6 +1050,7 @@
       "cut035_bdk",
       "cut083_book07",
       "cut125_khg00",
+      "cut395_pos",
       "cut535_bdk"
     ]
   },
@@ -1006,6 +1082,17 @@
       "cut100_aks",
       "cut101_aks",
       "cut293_photo03_1"
+    ]
+  },
+  {
+    "svtId": 401700,
+    "imageIds": [
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06"
     ]
   },
   {
@@ -1070,6 +1157,7 @@
   {
     "svtId": 402900,
     "imageIds": [
+      "cut135_aigis_eclipse",
       "cut171_token_401",
       "cut338_als05"
     ]
@@ -1089,7 +1177,8 @@
   {
     "svtId": 403400,
     "imageIds": [
-      "cut138_bsm"
+      "cut138_bsm",
+      "cut525_khg00_bsm00"
     ]
   },
   {
@@ -1146,6 +1235,8 @@
   {
     "svtId": 403900,
     "imageIds": [
+      "cut136_durendal01",
+      "cut136_durendal02",
       "cut293_photo04_1",
       "cut293_photo04_2",
       "cut293_photo04_4",
@@ -1177,7 +1268,8 @@
     "svtId": 404200,
     "imageIds": [
       "cut267_hbt",
-      "cut447_hbt"
+      "cut447_hbt",
+      "cut481_doujinshi12"
     ]
   },
   {
@@ -1199,6 +1291,9 @@
     "svtId": 404700,
     "imageIds": [
       "cut326_icon_kstt",
+      "cut333_cut01",
+      "cut333_cut03",
+      "cut348_map02",
       "cut357_cstt01",
       "cut357_cstt02"
     ]
@@ -1281,6 +1376,12 @@
     "imageIds": [
       "cut083_book12",
       "cut171_token_201",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06",
       "cut242_photo4"
     ]
   },
@@ -1318,7 +1419,8 @@
     "svtId": 501000,
     "imageIds": [
       "cut326_icon_pss",
-      "cut332_pss01"
+      "cut332_pss01",
+      "cut481_doujinshi08"
     ]
   },
   {
@@ -1341,6 +1443,17 @@
     "svtId": 501200,
     "imageIds": [
       "cut260_ntc"
+    ]
+  },
+  {
+    "svtId": 501400,
+    "imageIds": [
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06"
     ]
   },
   {
@@ -1405,6 +1518,12 @@
       "cut083_book02",
       "cut148_callout03",
       "cut148_callout04",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06",
       "cut332_eds01"
     ]
   },
@@ -1494,7 +1613,14 @@
       "cut353_kdk06",
       "cut355_kdk_01",
       "cut355_kdk_02",
-      "cut355_kdk_03"
+      "cut355_kdk_03",
+      "cut481_doujinshi02"
+    ]
+  },
+  {
+    "svtId": 504200,
+    "imageIds": [
+      "cut113_portrait"
     ]
   },
   {
@@ -1612,7 +1738,8 @@
     "svtId": 600500,
     "imageIds": [
       "card002_jack_01",
-      "cut083_book07"
+      "cut083_book07",
+      "cut083_book12"
     ]
   },
   {
@@ -1635,6 +1762,7 @@
   {
     "svtId": 601000,
     "imageIds": [
+      "cut461_shoes",
       "cut462_stn_full"
     ]
   },
@@ -1648,13 +1776,26 @@
     "svtId": 601200,
     "imageIds": [
       "cut171_token_205",
-      "cut326_icon_ssn"
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06",
+      "cut326_icon_ssn",
+      "cut481_doujinshi08"
     ]
   },
   {
     "svtId": 601300,
     "imageIds": [
-      "cut171_token_207"
+      "cut171_token_207",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06"
     ]
   },
   {
@@ -1671,7 +1812,9 @@
       "cut033_machine14",
       "cut034_hrx00",
       "cut034_hrx01",
-      "cut034_hrx02"
+      "cut034_hrx02",
+      "cut481_doujinshi07",
+      "cut481_doujinshi07_2"
     ]
   },
   {
@@ -1685,7 +1828,8 @@
     "svtId": 602600,
     "imageIds": [
       "cut034_ens00",
-      "cut101_ens"
+      "cut101_ens",
+      "cut395_pos"
     ]
   },
   {
@@ -1740,7 +1884,8 @@
   {
     "svtId": 603400,
     "imageIds": [
-      "cut083_book05"
+      "cut083_book05",
+      "cut481_doujinshi04"
     ]
   },
   {
@@ -1769,7 +1914,13 @@
   {
     "svtId": 603800,
     "imageIds": [
-      "cut171_token_202"
+      "cut171_token_202",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06"
     ]
   },
   {
@@ -1796,18 +1947,23 @@
   {
     "svtId": 604400,
     "imageIds": [
-      "cut386_mern10"
+      "cut386_mern10",
+      "cut387_valkyrie02"
     ]
   },
   {
     "svtId": 604500,
     "imageIds": [
-      "cut386_mrid09"
+      "cut386_mrid09",
+      "cut387_valkyrie02",
+      "cut481_doujinshi04"
     ]
   },
   {
     "svtId": 604600,
     "imageIds": [
+      "cut432_photo01",
+      "cut432_photo02",
       "cut481_doujinshi10"
     ]
   },
@@ -1865,7 +2021,8 @@
     "svtId": 700700,
     "imageIds": [
       "cut100_vrd",
-      "cut101_vrd"
+      "cut101_vrd",
+      "cut481_doujinshi02"
     ]
   },
   {
@@ -1903,6 +2060,12 @@
     ]
   },
   {
+    "svtId": 701400,
+    "imageIds": [
+      "cut481_doujinshi08"
+    ]
+  },
+  {
     "svtId": 701500,
     "imageIds": [
       "cut171_token_124"
@@ -1911,6 +2074,8 @@
   {
     "svtId": 702000,
     "imageIds": [
+      "cut293_photo03_1",
+      "cut293_photo03_2",
       "cut325_kfo01",
       "cut325_kfo02",
       "cut326_icon_kfo",
@@ -1958,6 +2123,7 @@
   {
     "svtId": 702800,
     "imageIds": [
+      "cut083_book12",
       "cut365_pby00_full"
     ]
   },
@@ -2003,7 +2169,9 @@
       "back80200_a",
       "back80200_k",
       "cut116_ajo",
-      "cut326_icon_ajo"
+      "cut326_icon_ajo",
+      "cut333_cut01",
+      "cut333_cut03"
     ]
   },
   {
@@ -2053,7 +2221,9 @@
   {
     "svtId": 704200,
     "imageIds": [
+      "cut348_map01",
       "cut358_khd",
+      "cut481_doujinshi05",
       "cut525_khd00"
     ]
   },
@@ -2075,6 +2245,7 @@
     "svtId": 704700,
     "imageIds": [
       "back198200",
+      "cut481_doujinshi12",
       "cut487_matc13",
       "cut532_matc11_1",
       "cut532_matc11_2",
@@ -2181,7 +2352,8 @@
     "imageIds": [
       "cut238_Grail01",
       "cut242_card",
-      "cut287_asr00"
+      "cut287_asr00",
+      "cut395_pos"
     ]
   },
   {
@@ -2275,6 +2447,7 @@
   {
     "svtId": 901700,
     "imageIds": [
+      "cut481_doujinshi12",
       "cut497_mmls02_1",
       "cut497_mmls02_2"
     ]
@@ -2379,7 +2552,8 @@
   {
     "svtId": 1001400,
     "imageIds": [
-      "cut206_Immortality"
+      "cut206_Immortality",
+      "cut481_doujinshi02"
     ]
   },
   {
@@ -2425,7 +2599,13 @@
   {
     "svtId": 1100600,
     "imageIds": [
-      "cut171_token_203"
+      "cut171_token_203",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06"
     ]
   },
   {
@@ -2461,6 +2641,7 @@
     "svtId": 1101000,
     "imageIds": [
       "cut224_tky",
+      "cut481_doujinshi04",
       "cut546_kky01",
       "cut556_kky00"
     ]
@@ -2560,6 +2741,12 @@
     "imageIds": [
       "cut169_spaceprobe",
       "cut171_token",
+      "cut173_jinrou01",
+      "cut173_jinrou02",
+      "cut173_jinrou03",
+      "cut173_jinrou04",
+      "cut173_jinrou05",
+      "cut173_jinrou06",
       "cut242_photo6_hf",
       "cut242_photo6_hm",
       "cut242_photo6_kf",
@@ -2607,6 +2794,7 @@
     "imageIds": [
       "cut265_nnr",
       "cut271_nnr",
+      "cut481_doujinshi12",
       "cut669_vs02",
       "cut672_nnr00",
       "cut672_nnr02",
@@ -2656,6 +2844,12 @@
       "cut395_pos",
       "cut432_photo01",
       "cut432_photo02"
+    ]
+  },
+  {
+    "svtId": 2800600,
+    "imageIds": [
+      "cut481_doujinshi12"
     ]
   },
   {
