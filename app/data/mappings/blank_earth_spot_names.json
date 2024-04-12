@@ -7,6 +7,7 @@
   "北大西洋エリア": "Northern Atlantic Area",
   "北欧エリア": "Scandinavian Area",
   "カリブ海エリア": "Caribbean Area",
+  "バミューダ海域エリア": "Bermuda Ocean Area",
   "アフリカ南部エリア": "Southern African Area",
   "アメリカ南部エリア": "Southern United States Area",
   "アメリカ東部エリア": "Eastern United States Area",
@@ -14,6 +15,5 @@
   "東アジアエリア": "Eastern Asian Area",
   "エジプトエリア": "Egyptian Area",
   "日本エリア": "Japan Area",
-  "南欧エリア": "Southern European Area",
-  "バミューダ海域エリア": "Bermuda Ocean Area"
+  "南欧エリア": "Southern European Area"
 }
