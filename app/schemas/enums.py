@@ -360,6 +360,9 @@ class SvtClass(StrEnum):
     beastVI = "beastVI"
     beastVIBoss = "beastVIBoss"
     uOlgaMarieFlare = "uOlgaMarieFlare"
+    uOlgaMarieAqua = "uOlgaMarieAqua"
+    uOlgaMarieFlareCollection = "uOlgaMarieFlareCollection"
+    uOlgaMarieAquaCollection = "uOlgaMarieAquaCollection"
     atlasUnmappedClass = "atlasUnmappedClass"
     # OTHER = "OTHER"
     ALL = "ALL"
@@ -404,6 +407,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     34: SvtClass.beastVI,
     35: SvtClass.beastVIBoss,
     36: SvtClass.uOlgaMarieFlare,
+    37: SvtClass.uOlgaMarieAqua,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -418,6 +422,8 @@ CLASS_NAME: dict[int, SvtClass] = {
     # 1003: SvtClass.MIX,
     # 1004: SvtClass.EXTRA1,
     # 1005: SvtClass.EXTRA2,
+    9001: SvtClass.uOlgaMarieFlareCollection,
+    9002: SvtClass.uOlgaMarieAquaCollection,
 }
 
 
