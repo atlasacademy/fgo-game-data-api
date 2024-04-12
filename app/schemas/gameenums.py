@@ -262,6 +262,8 @@ class FuncType(IntEnum):
     LAST_USE_PLAYER_SKILL_COPY = 135
     CHANGE_ENEMY_MASTER_FACE = 136
     DAMAGE_VALUE_SAFE_ONCE = 137
+    ADD_BATTLE_VALUE = 138
+    SET_BATTLE_VALUE = 139
 
 
 class NiceFuncType(StrEnum):
@@ -368,6 +370,8 @@ class NiceFuncType(StrEnum):
     lastUsePlayerSkillCopy = "lastUsePlayerSkillCopy"
     changeEnemyMasterFace = "changeEnemyMasterFace"
     damageValueSafeOnce = "damageValueSafeOnce"
+    addBattleValue = "addBattleValue"
+    setBattleValue = "setBattleValue"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -472,6 +476,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     135: NiceFuncType.lastUsePlayerSkillCopy,
     136: NiceFuncType.changeEnemyMasterFace,
     137: NiceFuncType.damageValueSafeOnce,
+    138: NiceFuncType.addBattleValue,
+    139: NiceFuncType.setBattleValue,
 }
 
 
@@ -1758,6 +1764,7 @@ class ItemType(IntEnum):
     TRADE_AP = 32
     RI = 33
     STORMPOD = 34
+    BATTLE_ITEM = 35
 
 
 class NiceItemType(StrEnum):
@@ -1797,6 +1804,7 @@ class NiceItemType(StrEnum):
     tradeAp = "tradeAp"
     ri = "ri"
     stormpod = "stormpod"
+    battleItem = "battleItem"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1834,6 +1842,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     32: NiceItemType.tradeAp,
     33: NiceItemType.ri,
     34: NiceItemType.stormpod,
+    35: NiceItemType.battleItem,
 }
 
 
@@ -1853,6 +1862,7 @@ class GiftType(IntEnum):
     EVENT_BOARD_GAME_TOKEN = 13
     EVENT_COMMAND_ASSIST = 14
     EVENT_HEEL_PORTRAIT = 15
+    BATTLE_ITEM = 16
 
 
 class NiceGiftType(StrEnum):
@@ -1873,6 +1883,7 @@ class NiceGiftType(StrEnum):
     eventBoardGameToken = "eventBoardGameToken"
     eventCommandAssist = "eventCommandAssist"
     eventHeelPortrait = "eventHeelPortrait"
+    battleItem = "battleItem"
 
 
 GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
@@ -1891,6 +1902,7 @@ GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
     13: NiceGiftType.eventBoardGameToken,
     14: NiceGiftType.eventCommandAssist,
     15: NiceGiftType.eventHeelPortrait,
+    16: NiceGiftType.battleItem,
 }
 
 
@@ -3823,6 +3835,12 @@ class AiCond(IntEnum):
     CHECK_WAR_BOARD_SQUARE_INDIVIDUALITY = 194
     CHECK_PT_HIGHER_NPGAUGE = 195
     CHECK_SELF_HIGHER_NPGAUGE = 196
+    CHECK_BATTLE_VALUE_ABOVE = 197
+    CHECK_BATTLE_VALUE_EQUAL = 198
+    CHECK_BATTLE_VALUE_NOT_EQUAL = 199
+    CHECK_BATTLE_VALUE_BELOW = 200
+    CHECK_BATTLE_VALUE_BETWEEN = 201
+    CHECK_BATTLE_VALUE_NOT_BETWEEN = 202
 
 
 class NiceAiCond(StrEnum):
@@ -4001,6 +4019,12 @@ class NiceAiCond(StrEnum):
     checkWarBoardSquareIndividuality = "checkWarBoardSquareIndividuality"
     checkPtHigherNpgauge = "checkPtHigherNpgauge"
     checkSelfHigherNpgauge = "checkSelfHigherNpgauge"
+    checkBattleValueAbove = "checkBattleValueAbove"
+    checkBattleValueEqual = "checkBattleValueEqual"
+    checkBattleValueNotEqual = "checkBattleValueNotEqual"
+    checkBattleValueBelow = "checkBattleValueBelow"
+    checkBattleValueBetween = "checkBattleValueBetween"
+    checkBattleValueNotBetween = "checkBattleValueNotBetween"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -4161,6 +4185,12 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     194: NiceAiCond.checkWarBoardSquareIndividuality,
     195: NiceAiCond.checkPtHigherNpgauge,
     196: NiceAiCond.checkSelfHigherNpgauge,
+    197: NiceAiCond.checkBattleValueAbove,
+    198: NiceAiCond.checkBattleValueEqual,
+    199: NiceAiCond.checkBattleValueNotEqual,
+    200: NiceAiCond.checkBattleValueBelow,
+    201: NiceAiCond.checkBattleValueBetween,
+    202: NiceAiCond.checkBattleValueNotBetween,
 }
 
 
@@ -4670,6 +4700,7 @@ class AiCondParameter(IntEnum):
     COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = 38
     TOTAL_TURN = 39
     WAR_BOARD_SQUARE_INDIVIDUALITY = 40
+    CHECK_BATTLE_VALUE = 41
 
 
 class NiceAiCondParameter(StrEnum):
@@ -4716,6 +4747,7 @@ class NiceAiCondParameter(StrEnum):
     countPlayerSkillIncludeMasterSkill = "countPlayerSkillIncludeMasterSkill"
     totalTurn = "totalTurn"
     warBoardSquareIndividuality = "warBoardSquareIndividuality"
+    checkBattleValue = "checkBattleValue"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -4760,6 +4792,7 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     38: NiceAiCondParameter.countPlayerSkillIncludeMasterSkill,
     39: NiceAiCondParameter.totalTurn,
     40: NiceAiCondParameter.warBoardSquareIndividuality,
+    41: NiceAiCondParameter.checkBattleValue,
 }
 
 
@@ -4798,6 +4831,8 @@ class AiCheckTarget(IntEnum):
     LOWER = 4
     MULTIPLE = 5
     EXIST = 6
+    BETWEEN = 7
+    BETWEEN_NOT = 8
 
 
 class NiceAiCondCheck(StrEnum):
@@ -4810,6 +4845,8 @@ class NiceAiCondCheck(StrEnum):
     lower_ = "lower"
     multiple = "multiple"
     exist = "exist"
+    between = "between"
+    betweenNot = "betweenNot"
 
 
 AI_COND_CHECK_NAME: dict[int, NiceAiCondCheck] = {
@@ -4820,6 +4857,8 @@ AI_COND_CHECK_NAME: dict[int, NiceAiCondCheck] = {
     4: NiceAiCondCheck.lower_,
     5: NiceAiCondCheck.multiple,
     6: NiceAiCondCheck.exist,
+    7: NiceAiCondCheck.between,
+    8: NiceAiCondCheck.betweenNot,
 }
 
 

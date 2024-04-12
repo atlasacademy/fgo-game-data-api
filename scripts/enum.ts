@@ -149,6 +149,8 @@ export enum NiceFuncType {
     LAST_USE_PLAYER_SKILL_COPY = "lastUsePlayerSkillCopy",
     CHANGE_ENEMY_MASTER_FACE = "changeEnemyMasterFace",
     DAMAGE_VALUE_SAFE_ONCE = "damageValueSafeOnce",
+    ADD_BATTLE_VALUE = "addBattleValue",
+    SET_BATTLE_VALUE = "setBattleValue",
 }
 
 export enum NiceFuncTargetType {
@@ -699,6 +701,7 @@ export enum NiceItemType {
     TRADE_AP = "tradeAp",
     RI = "ri",
     STORMPOD = "stormpod",
+    BATTLE_ITEM = "battleItem",
 }
 
 export enum NiceGiftType {
@@ -717,6 +720,7 @@ export enum NiceGiftType {
     EVENT_BOARD_GAME_TOKEN = "eventBoardGameToken",
     EVENT_COMMAND_ASSIST = "eventCommandAssist",
     EVENT_HEEL_PORTRAIT = "eventHeelPortrait",
+    BATTLE_ITEM = "battleItem",
 }
 
 export enum NiceShopType {
@@ -1454,6 +1458,12 @@ export enum NiceAiCond {
     CHECK_WAR_BOARD_SQUARE_INDIVIDUALITY = "checkWarBoardSquareIndividuality",
     CHECK_PT_HIGHER_NPGAUGE = "checkPtHigherNpgauge",
     CHECK_SELF_HIGHER_NPGAUGE = "checkSelfHigherNpgauge",
+    CHECK_BATTLE_VALUE_ABOVE = "checkBattleValueAbove",
+    CHECK_BATTLE_VALUE_EQUAL = "checkBattleValueEqual",
+    CHECK_BATTLE_VALUE_NOT_EQUAL = "checkBattleValueNotEqual",
+    CHECK_BATTLE_VALUE_BELOW = "checkBattleValueBelow",
+    CHECK_BATTLE_VALUE_BETWEEN = "checkBattleValueBetween",
+    CHECK_BATTLE_VALUE_NOT_BETWEEN = "checkBattleValueNotBetween",
 }
 
 export enum NiceAiActType {
@@ -1641,6 +1651,7 @@ export enum NiceAiCondParameter {
     COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = "countPlayerSkillIncludeMasterSkill",
     TOTAL_TURN = "totalTurn",
     WAR_BOARD_SQUARE_INDIVIDUALITY = "warBoardSquareIndividuality",
+    CHECK_BATTLE_VALUE = "checkBattleValue",
 }
 
 export enum NiceAiCondRefine {
@@ -1659,6 +1670,8 @@ export enum NiceAiCondCheck {
     LOWER = "lower",
     MULTIPLE = "multiple",
     EXIST = "exist",
+    BETWEEN = "between",
+    BETWEEN_NOT = "betweenNot",
 }
 
 export enum NiceTdEffectFlag {
