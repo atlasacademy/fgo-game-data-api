@@ -1,5 +1,5 @@
 {
-  "フレンドポイント召喚": "Friend Point Summon",
+  "フレンドポイント召喚": "Limited Time\nLearning with Manga! FGO Collaboration Event Friend Point Summon",
   "チュートリアル召喚": "Tutorial Summon",
   "ストーリー召喚": "【paid】After completing Part 1 Chapter 5",
   "【復刻ハロウィン】【課金】第1部 0章 クリア前ベース": "【Halloween_revival】【paid】Base before completing Part 1 Chapter 0",
@@ -1074,7 +1074,7 @@
   "マンガで分かる！FGOコラボレーションイベント開幕直前 \nアストルフォ(セイバー)ピックアップ召喚": "Learning with Manga! FGO Collaboration Event Pre-Release Astolfo (Saber) Pickup Summon",
   "マンガで分かる！FGOコラボレーションイベント開幕直前 \nレオナルド･ダ･ヴィンチ(ライダー)ピックアップ召喚": "Learning with Manga! FGO Collaboration Event Pre-Release Leonardo da Vinci (Rider) Pickup Summon",
   "マンガで分かる！FGOコラボレーションイベント開幕直前 \nレオナルド･ダ･ヴィンチ(キャスター)ピックアップ召喚": "Learning with Manga! FGO Collaboration Event Pre-Release Leonardo da Vinci (Caster) Pickup Summon",
-  "マンガで分かる！Fate/Grand Order\nコラボレーションイベントピックアップ召喚": "Learning with Manga! Fate/Grand Order Collaboration Event Pickup Summon",
+  "マンガで分かる！Fate/Grand Order\nコラボレーションイベントピックアップ召喚": "Learning with Manga! FGO Collaboration Event Super Bunyan Pickup Summon",
   "2500万DL記念 アルトリア･キャスターピックアップ召喚": "25M Downloads Celebration Altria Caster Pickup Summon",
   "2500万DL記念 ミス･クレーンピックアップ召喚": "25M Downloads Celebration Miss Crane Pickup Summon",
   "2500万DL記念 ジャンヌ･ダルク〔オルタ〕\n(アヴェンジャー)ピックアップ召喚": "25M Downloads Celebration Jeanne d'Arc Alter (Avenger) Pickup Summon",
@@ -1541,5 +1541,9 @@
   "「巡霊の祝祭 第8弾」 ケツァル･コアトルピックアップ召喚": "\"Evocation Festival: Part 8\" Quetzalcoatl Pickup Summon",
   "「巡霊の祝祭 第8弾」 \nネロ･クラウディウス(キャスター)ピックアップ召喚": "\"Evocation Festival: Part 8\" Nero Claudius (Caster) Pickup Summon",
   "「巡霊の祝祭 第8弾」 李書文(アサシン)ピックアップ召喚": "\"Evocation Festival: Part 8\" Li Shuwen (Assassin) Pickup Summon",
-  "「巡霊の祝祭 第8弾」 項羽ピックアップ召喚": "\"Evocation Festival: Part 8\" Xiang Yu Pickup Summon"
+  "「巡霊の祝祭 第8弾」 項羽ピックアップ召喚": "\"Evocation Festival: Part 8\" Xiang Yu Pickup Summon",
+  "オーディール･コール：新任務開放キャンペーン 第6弾 \nレディ･アヴァロンピックアップ召喚": "オーディール･コール：新任務開放キャンペーン 第6弾 \nレディ･アヴァロンピックアップ召喚",
+  "歴代コラボレーションイベント\n「マンガで分かる！Fate/Grand Order」 \nスーパーバニヤンピックアップ召喚": "歴代コラボレーションイベント\n「マンガで分かる！Fate/Grand Order」 \nスーパーバニヤンピックアップ召喚",
+  "歴代コラボレーションイベント「Fate/Requiem」 \nボイジャーピックアップ召喚": "歴代コラボレーションイベント「Fate/Requiem」 \nボイジャーピックアップ召喚",
+  "歴代コラボレーションイベント\n「魔法少女紀行 ～プリズマ･コーズ～」 \nイリヤスフィール･フォン･アインツベルン(キャスター)\nピックアップ召喚": "歴代コラボレーションイベント\n「魔法少女紀行 ～プリズマ･コーズ～」 \nイリヤスフィール･フォン･アインツベルン(キャスター)\nピックアップ召喚"
 }
