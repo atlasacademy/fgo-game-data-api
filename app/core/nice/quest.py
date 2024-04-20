@@ -25,6 +25,7 @@ from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stag
 from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import STAGE_LIMIT_ACT_TYPE_NAME, get_class_name
 from ...schemas.gameenums import (
+    AI_ALLOCATION_SVT_FLAG_NAME,
     BATTLE_ENVIRONMENT_GRANT_TYPE_NAME,
     COND_TYPE_NAME,
     FREQUENCY_TYPE_NAME,
@@ -40,6 +41,7 @@ from ...schemas.nice import (
     AssetURL,
     DeckType,
     EnemyDrop,
+    NiceAiAllocation,
     NiceBattleBg,
     NiceBgm,
     NiceQuest,
@@ -78,7 +80,7 @@ from ...schemas.raw import (
 )
 from .. import raw
 from ..rayshift import get_quest_enemy_hash
-from ..utils import fmt_url, get_flags, get_traits_list, get_translation
+from ..utils import fmt_url, get_flags, get_nice_trait, get_traits_list, get_translation
 from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
 from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies, get_war_board_enemies
@@ -227,6 +229,20 @@ def get_nice_stage(
         NoEntryIds=raw_stage.script.get("NoEntryIds"),
         waveStartMovies=waveStartMovies.get(raw_stage.wave, []),
         cutin=stage_cutins.get(raw_stage.wave, None),
+        aiAllocations=(
+            [
+                NiceAiAllocation(
+                    aiIds=ai_allocation["aiIds"],
+                    individuality=get_nice_trait(ai_allocation["individuality"]),
+                    applySvtType=get_flags(
+                        ai_allocation["applySvtType"], AI_ALLOCATION_SVT_FLAG_NAME
+                    ),
+                )
+                for ai_allocation in raw_stage.script["aiAllocations"]
+            ]
+            if "aiAllocations" in raw_stage.script
+            else None
+        ),
         originalScript=raw_stage.script or {},
         enemies=enemies,
     )

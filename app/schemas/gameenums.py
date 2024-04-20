@@ -5589,3 +5589,27 @@ SVT_DEAD_TYPE_NAME: dict[int, NiceSvtDeadType] = {
     5: NiceSvtDeadType.energy,
     6: NiceSvtDeadType.crystal,
 }
+
+
+class AiAllocationSvtFlag(IntEnum):
+    ALL = 0
+    OWN = 1
+    FRIEND = 2
+    NPC = 4
+
+
+class NiceAiAllocationSvtFlag(StrEnum):
+    """AI Allocation Svt Flag"""
+
+    all = "all"
+    own = "own"
+    friend = "friend"
+    npc = "npc"
+
+
+AI_ALLOCATION_SVT_FLAG_NAME: dict[int, NiceAiAllocationSvtFlag] = {
+    0: NiceAiAllocationSvtFlag.all,
+    1: NiceAiAllocationSvtFlag.own,
+    2: NiceAiAllocationSvtFlag.friend,
+    4: NiceAiAllocationSvtFlag.npc,
+}

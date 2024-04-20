@@ -1893,3 +1893,10 @@ export enum NiceSvtDeadType {
     ENERGY = "energy",
     CRYSTAL = "crystal",
 }
+
+export enum NiceAiAllocationSvtFlag {
+    ALL = "all",
+    OWN = "own",
+    FRIEND = "friend",
+    NPC = "npc",
+}

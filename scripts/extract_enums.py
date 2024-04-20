@@ -628,6 +628,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Svt Dead Type",
         "SVT_DEAD_TYPE_NAME",
     ),
+    (
+        "AiAllocationInfo.ApplySvtFlag",
+        "AiAllocationSvtFlag",
+        "NiceAiAllocationSvtFlag",
+        "AI Allocation Svt Flag",
+        "AI_ALLOCATION_SVT_FLAG_NAME",
+    ),
 ]
 
 

@@ -43,6 +43,7 @@ from .gameenums import (
     NiceAiActNum,
     NiceAiActTarget,
     NiceAiActType,
+    NiceAiAllocationSvtFlag,
     NiceAiCond,
     NiceBattleFieldEnvironmentGrantType,
     NiceBuffType,
@@ -2469,6 +2470,12 @@ class NiceBattleBg(BaseModelORJson):
     imageId: int
 
 
+class NiceAiAllocation(BaseModelORJson):
+    aiIds: list[int]
+    individuality: NiceTrait
+    applySvtType: list[NiceAiAllocationSvtFlag]
+
+
 class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
@@ -2485,6 +2492,7 @@ class NiceStage(BaseModelORJson):
     NoEntryIds: list[int] | None = None
     waveStartMovies: list[NiceStageStartMovie] = []
     cutin: NiceStageCutIn | None = None
+    aiAllocations: list[NiceAiAllocation] | None = None
     originalScript: dict[str, Any]
     enemies: list[QuestEnemy] = []
 
