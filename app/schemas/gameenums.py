@@ -661,7 +661,7 @@ class BuffType(IntEnum):
     DAMAGE_FUNCTION = 86
     UP_GIVEGAIN_HP = 87
     DOWN_GIVEGAIN_HP = 88
-    COMMANDATTACK_FUNCTION = 89
+    COMMANDATTACK_AFTER_FUNCTION = 89
     DEADATTACK_FUNCTION = 90
     UP_SPECIALDEFENCE = 91
     DOWN_SPECIALDEFENCE = 92
@@ -700,8 +700,8 @@ class BuffType(IntEnum):
     DOWN_FUNCGAIN_NP = 125
     UP_FUNC_HP_REDUCE = 126
     DOWN_FUNC_HP_REDUCE = 127
-    UP_DEFENCECOMMAN_DAMAGE = 128
-    DOWN_DEFENCECOMMAN_DAMAGE = 129
+    UP_DEFENCE_COMMANDDAMAGE = 128
+    DOWN_DEFENCE_COMMANDDAMAGE = 129
     NPATTACK_PREV_BUFF = 130
     FIX_COMMANDCARD = 131
     DONOT_GAINNP = 132
@@ -709,8 +709,8 @@ class BuffType(IntEnum):
     DONOT_ACT_COMMANDTYPE = 134
     UP_DAMAGE_EVENT_POINT = 135
     UP_DAMAGE_SPECIAL = 136
-    ATTACK_FUNCTION = 137
-    COMMANDCODEATTACK_FUNCTION = 138
+    ATTACK_AFTER_FUNCTION = 137
+    COMMANDCODEATTACK_BEFORE_FUNCTION = 138
     DONOT_NOBLE_COND_MISMATCH = 139
     DONOT_SELECT_COMMANDCARD = 140
     DONOT_REPLACE = 141
@@ -844,7 +844,7 @@ class NiceBuffType(StrEnum):
     damageFunction = "damageFunction"
     upGivegainHp = "upGivegainHp"
     downGivegainHp = "downGivegainHp"
-    commandattackFunction = "commandattackFunction"
+    commandattackAfterFunction = "commandattackAfterFunction"
     deadattackFunction = "deadattackFunction"
     upSpecialdefence = "upSpecialdefence"
     downSpecialdefence = "downSpecialdefence"
@@ -883,8 +883,8 @@ class NiceBuffType(StrEnum):
     downFuncgainNp = "downFuncgainNp"
     upFuncHpReduce = "upFuncHpReduce"
     downFuncHpReduce = "downFuncHpReduce"
-    upDefencecommanDamage = "upDefencecommanDamage"
-    downDefencecommanDamage = "downDefencecommanDamage"
+    upDefenceCommanddamage = "upDefenceCommanddamage"
+    downDefenceCommanddamage = "downDefenceCommanddamage"
     npattackPrevBuff = "npattackPrevBuff"
     fixCommandcard = "fixCommandcard"
     donotGainnp = "donotGainnp"
@@ -892,8 +892,8 @@ class NiceBuffType(StrEnum):
     donotActCommandtype = "donotActCommandtype"
     upDamageEventPoint = "upDamageEventPoint"
     upDamageSpecial = "upDamageSpecial"
-    attackFunction = "attackFunction"
-    commandcodeattackFunction = "commandcodeattackFunction"
+    attackAfterFunction = "attackAfterFunction"
+    commandcodeattackBeforeFunction = "commandcodeattackBeforeFunction"
     donotNobleCondMismatch = "donotNobleCondMismatch"
     donotSelectCommandcard = "donotSelectCommandcard"
     donotReplace = "donotReplace"
@@ -1025,7 +1025,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     86: NiceBuffType.damageFunction,
     87: NiceBuffType.upGivegainHp,
     88: NiceBuffType.downGivegainHp,
-    89: NiceBuffType.commandattackFunction,
+    89: NiceBuffType.commandattackAfterFunction,
     90: NiceBuffType.deadattackFunction,
     91: NiceBuffType.upSpecialdefence,
     92: NiceBuffType.downSpecialdefence,
@@ -1064,8 +1064,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     125: NiceBuffType.downFuncgainNp,
     126: NiceBuffType.upFuncHpReduce,
     127: NiceBuffType.downFuncHpReduce,
-    128: NiceBuffType.upDefencecommanDamage,
-    129: NiceBuffType.downDefencecommanDamage,
+    128: NiceBuffType.upDefenceCommanddamage,
+    129: NiceBuffType.downDefenceCommanddamage,
     130: NiceBuffType.npattackPrevBuff,
     131: NiceBuffType.fixCommandcard,
     132: NiceBuffType.donotGainnp,
@@ -1073,8 +1073,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     134: NiceBuffType.donotActCommandtype,
     135: NiceBuffType.upDamageEventPoint,
     136: NiceBuffType.upDamageSpecial,
-    137: NiceBuffType.attackFunction,
-    138: NiceBuffType.commandcodeattackFunction,
+    137: NiceBuffType.attackAfterFunction,
+    138: NiceBuffType.commandcodeattackBeforeFunction,
     139: NiceBuffType.donotNobleCondMismatch,
     140: NiceBuffType.donotSelectCommandcard,
     141: NiceBuffType.donotReplace,
@@ -1190,7 +1190,7 @@ class BuffAction(IntEnum):
     FUNCTION_WAVESTART = 54
     FUNCTION_SELFTURNEND = 55
     GIVE_GAIN_HP = 56
-    FUNCTION_COMMANDATTACK = 57
+    FUNCTION_COMMANDATTACK_AFTER = 57
     FUNCTION_DEADATTACK = 58
     FUNCTION_ENTRY = 59
     CHAGETD = 60
@@ -1213,8 +1213,8 @@ class BuffAction(IntEnum):
     DONOT_ACT_COMMANDTYPE = 77
     DAMAGE_EVENT_POINT = 78
     DAMAGE_SPECIAL = 79
-    FUNCTION_ATTACK = 80
-    FUNCTION_COMMANDCODEATTACK = 81
+    FUNCTION_ATTACK_AFTER = 80
+    FUNCTION_COMMANDCODEATTACK_BEFORE = 81
     DONOT_NOBLE_COND_MISMATCH = 82
     DONOT_SELECT_COMMANDCARD = 83
     DONOT_REPLACE = 84
@@ -1324,7 +1324,7 @@ class NiceBuffAction(StrEnum):
     functionWavestart = "functionWavestart"
     functionSelfturnend = "functionSelfturnend"
     giveGainHp = "giveGainHp"
-    functionCommandattack = "functionCommandattack"
+    functionCommandattackAfter = "functionCommandattackAfter"
     functionDeadattack = "functionDeadattack"
     functionEntry = "functionEntry"
     chagetd = "chagetd"
@@ -1347,8 +1347,8 @@ class NiceBuffAction(StrEnum):
     donotActCommandtype = "donotActCommandtype"
     damageEventPoint = "damageEventPoint"
     damageSpecial = "damageSpecial"
-    functionAttack = "functionAttack"
-    functionCommandcodeattack = "functionCommandcodeattack"
+    functionAttackAfter = "functionAttackAfter"
+    functionCommandcodeattackBefore = "functionCommandcodeattackBefore"
     donotNobleCondMismatch = "donotNobleCondMismatch"
     donotSelectCommandcard = "donotSelectCommandcard"
     donotReplace = "donotReplace"
@@ -1456,7 +1456,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     54: NiceBuffAction.functionWavestart,
     55: NiceBuffAction.functionSelfturnend,
     56: NiceBuffAction.giveGainHp,
-    57: NiceBuffAction.functionCommandattack,
+    57: NiceBuffAction.functionCommandattackAfter,
     58: NiceBuffAction.functionDeadattack,
     59: NiceBuffAction.functionEntry,
     60: NiceBuffAction.chagetd,
@@ -1479,8 +1479,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     77: NiceBuffAction.donotActCommandtype,
     78: NiceBuffAction.damageEventPoint,
     79: NiceBuffAction.damageSpecial,
-    80: NiceBuffAction.functionAttack,
-    81: NiceBuffAction.functionCommandcodeattack,
+    80: NiceBuffAction.functionAttackAfter,
+    81: NiceBuffAction.functionCommandcodeattackBefore,
     82: NiceBuffAction.donotNobleCondMismatch,
     83: NiceBuffAction.donotSelectCommandcard,
     84: NiceBuffAction.donotReplace,
