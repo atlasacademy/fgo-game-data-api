@@ -2604,10 +2604,13 @@ class NiceQuestPhaseAiNpc(BaseModelORJson):
 class NiceQuestPhaseOverwriteEquipSkill(BaseModelORJson):
     lv: int
     id: int
+    condId: int | None = None
 
 
 class NiceQuestPhaseOverwriteEquipSkills(BaseModelORJson):
-    iconId: int
+    iconId: int | None = None
+    cutInView: int | None = None  # 1: ShowMasterSkillCutIn
+    notDispEquipSkillIconSplit: int | None = None
     skills: list[NiceQuestPhaseOverwriteEquipSkill]
 
 
@@ -2619,7 +2622,9 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     aiNpc: NiceQuestPhaseAiNpc | None = None
     aiMultiNpc: list[NiceQuestPhaseAiNpc] | None = None
     overwriteEquipSkills: NiceQuestPhaseOverwriteEquipSkills | None = None
+    addEquipSkills: NiceQuestPhaseOverwriteEquipSkills | None = None
     waveSetup: int | None = None  # U Olga Marie Quest
+    interruptibleQuest: int | None = None
     masterImageId: int | None = None
 
 
