@@ -354,7 +354,7 @@ class BaseVals(BaseModel):
     NotAccompanyWhenLinkedTargetMoveState: int | None = None
     NotTargetSkillIdArray: list[int] | None = None
     ShortTurn: int | None = None
-    FieldIndividuality: int | None = None
+    FieldIndividuality: list[int] | None = None
     BGId: int | None = None
     BGType: int | None = None
     BgmId: int | None = None

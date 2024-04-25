@@ -58,6 +58,7 @@ LIST_DATAVALS = {
     "NotSkillCopyTargetIndividualities",
     "TargetEnemyRange",
     "TriggeredFieldCountRange",
+    "FieldIndividuality",
 }
 STRING_DATAVALS = {
     "PopValueText",
