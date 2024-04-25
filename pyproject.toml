@@ -18,26 +18,26 @@ SQLAlchemy = "^2.0.29"
 httpx = {extras = ["http2"], version = "^0.27.0"}
 fastapi-cache2 = "^0.2.1"
 gunicorn = {extras = ["setproctitle"], version = "^22.0.0"}
-redis = "^5.0.3"
+redis = "^5.0.4"
 hiredis = "^2.3.2"
 psycopg = "^3.1.18"
 pydantic = "<2"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "^1.9.0"
-black = "^24.4.0"
+mypy = "^1.10.0"
+black = "^24.4.1"
 isort = "^5.13.2"
 pytest = "^8.1.1"
 pytest-xdist = "^3.6.0"
 pytest-asyncio = "^0.23.6"
-coverage = "^7.4.4"
+coverage = "^7.5.0"
 asgi-lifespan = "^2.1.0"
 fuzzywuzzy-stubs = "^0.0.1"
 types-aiofiles = "^23.2.0.20240403"
-types-redis = "^4.6.0.20240417"
+types-redis = "^4.6.0.20240425"
 types-orjson = "^3.6.2"
-ruff = "^0.4.1"
-types-pyopenssl = "^24.0.0.20240417"
+ruff = "^0.4.2"
+types-pyopenssl = "^24.1.0.20240425"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
