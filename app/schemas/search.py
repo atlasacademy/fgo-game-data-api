@@ -347,6 +347,7 @@ class FuncSearchQueryParams:
     vals: list[Union[Trait, int]] = Query([])
     tvals: list[Union[Trait, int]] = Query([])
     questTvals: list[Union[Trait, int]] = Query([])
+    funcIndividuality: list[Union[Trait, int]] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -358,6 +359,7 @@ class FuncSearchQueryParams:
                 self.vals,
                 self.tvals,
                 self.questTvals,
+                self.funcIndividuality,
             ]
         )
 
@@ -373,6 +375,7 @@ class FuncSearchQueryParams:
         so the search might return vals with buffs that have the same ids.
         - **tvals**: an integer or a trait enum.
         - **questTvals**: integer.
+        - **funcIndividuality**: an integer or a trait enum.
 
         At least one of the parameter is required for the query.
         """

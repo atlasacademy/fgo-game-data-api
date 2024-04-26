@@ -16,6 +16,7 @@ async def get_func_search(
     vals: Optional[Iterable[int]],
     tvals: Optional[Iterable[int]],
     questTvals: Optional[Iterable[int]],
+    func_individuality: Optional[Iterable[int]],
 ) -> list[MstFunc]:
     where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
     if func_types:
@@ -35,6 +36,10 @@ async def get_func_search(
         )
     if questTvals:
         where_clause.append(mstFunc.c.questTvals.contains(questTvals))
+    if func_individuality:
+        where_clause.append(
+            mstFunc.c.script.contains({"funcIndividuality": list(func_individuality)})
+        )
 
     func_search_stmt = select(mstFunc).distinct().where(and_(*where_clause))
 

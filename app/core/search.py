@@ -379,6 +379,7 @@ async def search_func(
     vals = reverse_traits(search_param.vals)
     tvals = reverse_traits(search_param.tvals)
     questTvals = reverse_traits(search_param.questTvals)
+    func_individuality = reverse_traits(search_param.funcIndividuality)
 
     matches = await get_func_search(
         conn,
@@ -388,6 +389,7 @@ async def search_func(
         vals,
         tvals,
         questTvals,
+        func_individuality,
     )
 
     if search_param.popupText:
