@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `SHORTEN_SKILL` and `EXTEND_SKILL` function uses `Rate`/`Value`/`Value2` dataval instead of `Rate`/`Value`/`Target`
 - Removed `commonConsume` from `NiceEventTreasureBox` and `NiceEventDiggingBlock`. Use `consumes` instead.
 - Removed `commonRelease` from `NiceEventCooltimeReward`. Use `releaseConditions` instead.
+- Removed `detail` from `NiceEventMissionCondition`. Use `details` instead.
 
 ## 5.78.0 - 2022-04-23
 ### Added

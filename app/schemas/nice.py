@@ -1775,7 +1775,6 @@ class NiceEventMissionCondition(BaseModelORJson):
     conditionMessage: str
     closedMessage: str
     flag: int
-    detail: Optional[NiceEventMissionConditionDetail] = None
     details: list[NiceEventMissionConditionDetail] | None = None
 
 
