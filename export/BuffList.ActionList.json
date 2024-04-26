@@ -694,7 +694,7 @@
     "isRec": true,
     "plusAction": 0
   },
-  "FUNCTION_COMMANDATTACK": {
+  "FUNCTION_COMMANDATTACK_AFTER": {
     "limit": 0,
     "plusTypes": [
       89
@@ -963,7 +963,7 @@
     "isRec": true,
     "plusAction": 0
   },
-  "FUNCTION_ATTACK": {
+  "FUNCTION_ATTACK_AFTER": {
     "limit": 0,
     "plusTypes": [
       137
@@ -974,7 +974,7 @@
     "isRec": true,
     "plusAction": 0
   },
-  "FUNCTION_COMMANDCODEATTACK": {
+  "FUNCTION_COMMANDCODEATTACK_BEFORE": {
     "limit": 0,
     "plusTypes": [
       138
