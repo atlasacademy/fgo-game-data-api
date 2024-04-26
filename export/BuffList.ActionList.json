@@ -183,6 +183,30 @@
     "isRec": true,
     "plusAction": 0
   },
+  "RECEIVE_DAMAGE_PIERCE": {
+    "limit": 0,
+    "plusTypes": [
+      22
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SPECIAL_RECEIVE_DAMAGE": {
+    "limit": 0,
+    "plusTypes": [
+      195
+    ],
+    "minusTypes": [
+      196
+    ],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
   "PIERCE_INVINCIBLE": {
     "limit": 0,
     "plusTypes": [
@@ -413,6 +437,19 @@
     "baseValue": 0,
     "isRec": false,
     "plusAction": 72
+  },
+  "FUNC_HP_REDUCE_VALUE": {
+    "limit": 0,
+    "plusTypes": [
+      197
+    ],
+    "minusTypes": [
+      198
+    ],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   },
   "GAIN_HP": {
     "limit": 3,
@@ -1479,11 +1516,66 @@
     "isRec": true,
     "plusAction": 0
   },
+  "AVOIDANCE_ATTACK_DEATH_DAMAGE": {
+    "limit": 0,
+    "plusTypes": [
+      191
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "AVOID_FUNCTION_EXECUTE_SELF": {
+    "limit": 0,
+    "plusTypes": [
+      192
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
   "GUTS": {
     "limit": 0,
     "plusTypes": [
       37,
       104
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_CONTINUE": {
+    "limit": 0,
+    "plusTypes": [
+      194
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CHANGE_BGM": {
+    "limit": 0,
+    "plusTypes": [
+      199
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "PIERCE_SUBDAMAGE": {
+    "limit": 0,
+    "plusTypes": [
+      193
     ],
     "minusTypes": [],
     "baseParam": 1000,
