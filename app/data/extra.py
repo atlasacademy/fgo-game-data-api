@@ -84,10 +84,15 @@ def get_extra_svt_data(
                     actIndividualities.add(tuple(mstSkill.actIndividuality))
             if len(actIndividualities) == 1:
                 individualities = actIndividualities.pop()
-                if len(individualities) == 1 and individualities[0] in mstSvtId:
-                    bondEquip[individualities[0]] = mstSvt.id
+                for individuality in individualities:
+                    if individuality in mstSvtId:
+                        bondEquip[individuality] = mstSvt.id
 
-    bondEquipOwner = {equip_id: svt_id for svt_id, equip_id in bondEquip.items()}
+    bondEquipOwner = {
+        equip_id: svt_id
+        for svt_id, equip_id in bondEquip.items()
+        if mstSvtId[svt_id].collectionNo != 0
+    }
 
     valentineEquip: dict[int, list[int]] = defaultdict(list)
     valentineScript: dict[int, list[NiceValentineScript]] = defaultdict(list)
