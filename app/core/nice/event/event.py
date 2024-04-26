@@ -122,8 +122,6 @@ async def get_nice_event(
         for item in raw_event.mstItem
     }
 
-    common_releases = {release.id: release for release in raw_event.mstCommonRelease}
-
     gift_data = GiftData(raw_event.mstGiftAdd, gift_maps)
 
     missions = get_nice_missions(
@@ -361,7 +359,6 @@ async def get_nice_event(
                         region,
                         cooltime,
                         gift_data,
-                        common_releases[cooltime.commonReleaseId],
                         raw_releases=raw_event.mstCommonRelease,
                     )
                     for cooltime in raw_event.mstEventCooltimeReward

@@ -1910,7 +1910,6 @@ class NiceEventCooltimeReward(BaseModelORJson):
     spotId: int
     lv: int
     name: str
-    commonRelease: NiceCommonRelease
     releaseConditions: list[NiceCommonRelease]
     cooltime: int
     addEventPointRate: int
