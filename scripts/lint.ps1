@@ -1,2 +1,2 @@
 mypy app tests export scripts
-ruff .
+ruff check .

@@ -8,16 +8,16 @@ packages = [{ include = "app" }]
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.110.2"
-uvicorn = {extras = ["standard"], version = "^0.29.0"}
+uvicorn = { extras = ["standard"], version = "^0.29.0" }
 python-dotenv = "^1.0.1"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
 orjson = "^3.10.1"
 aiofiles = "^23.2.1"
 GitPython = "^3.1.43"
 SQLAlchemy = "^2.0.29"
-httpx = {extras = ["http2"], version = "^0.27.0"}
+httpx = { extras = ["http2"], version = "^0.27.0" }
 fastapi-cache2 = "^0.2.1"
-gunicorn = {extras = ["setproctitle"], version = "^22.0.0"}
+gunicorn = { extras = ["setproctitle"], version = "^22.0.0" }
 redis = "^5.0.4"
 hiredis = "^2.3.2"
 psycopg = "^3.1.18"
@@ -79,7 +79,7 @@ module = ["fastapi_cache.*"]
 no_implicit_reexport = false
 ignore_missing_imports = true
 
-[tool.ruff]
+[tool.ruff.lint]
 select = [
     "F",
     "E",
@@ -110,7 +110,7 @@ ignore = [
     "RUF003",
 ]
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "app/schemas/basic.py" = ["RUF012"]
 "app/schemas/raw.py" = ["RUF012"]
 "app/schemas/nice.py" = ["RUF012"]

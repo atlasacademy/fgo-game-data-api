@@ -25,7 +25,6 @@ from ....schemas.gameenums import (
     SVT_TYPE_NAME,
     NiceStatusRank,
     NiceSvtFlag,
-    ServantOverwriteType,
     SvtType,
 )
 from ....schemas.nice import (

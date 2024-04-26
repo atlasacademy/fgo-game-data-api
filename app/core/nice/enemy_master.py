@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Region
-from ...schemas.enums import GENDER_TYPE_NAME
+from ...schemas.gameenums import GENDER_TYPE_NAME
 from ...schemas.nice import (
     AssetURL,
     NiceBattleMasterImage,
