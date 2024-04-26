@@ -308,6 +308,10 @@ def get_nice_func_script(mstFunc: MstFunc) -> FunctionScript:
         script["overwriteTvals"] = get_traits_list_list(
             mstFunc.script["overwriteTvals"]
         )
+    if "funcIndividuality" in mstFunc.script:
+        script["funcIndividuality"] = get_traits_list(
+            mstFunc.script["funcIndividuality"]
+        )
 
     return FunctionScript.parse_obj(script)
 

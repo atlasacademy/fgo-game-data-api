@@ -511,6 +511,7 @@ class NiceFuncGroup(BaseModelORJson):
 
 class FunctionScript(BaseModel):
     overwriteTvals: list[list[NiceTrait]] | None = None
+    funcIndividuality: list[NiceTrait] | None = None
 
 
 class NiceBaseFunction(BaseModelORJson):
@@ -2925,6 +2926,7 @@ class NiceClassBoard(BaseModelORJson):
 class NiceFuncTypeDetail(BaseModelORJson):
     funcType: NiceFuncType
     ignoreValueUp: bool
+    individuality: list[int] | None = None
 
 
 class NiceBuffTypeDetail(BaseModelORJson):

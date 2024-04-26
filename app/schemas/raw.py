@@ -2450,6 +2450,7 @@ class MstFuncDisp(BaseModelORJson):
 class MstFuncTypeDetail(BaseModelORJson):
     funcType: int
     ignoreValueUp: bool
+    individuality: list[int] | None = None
 
 
 class MstBuffTypeDetail(BaseModelORJson):
