@@ -151,6 +151,8 @@ export enum NiceFuncType {
     DAMAGE_VALUE_SAFE_ONCE = "damageValueSafeOnce",
     ADD_BATTLE_VALUE = "addBattleValue",
     SET_BATTLE_VALUE = "setBattleValue",
+    GAIN_MULTIPLY_NP = "gainMultiplyNp",
+    LOSS_MULTIPLY_NP = "lossMultiplyNp",
 }
 
 export enum NiceFuncTargetType {
@@ -363,6 +365,15 @@ export enum NiceBuffType {
     TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = "treasureDeviceAfterFunctionMainOnly",
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = "preventInvisibleWhenInstantDeath",
     OVERWRITE_SUBATTRIBUTE = "overwriteSubattribute",
+    AVOIDANCE_ATTACK_DEATH_DAMAGE = "avoidanceAttackDeathDamage",
+    AVOID_FUNCTION_EXECUTE_SELF = "avoidFunctionExecuteSelf",
+    PIERCE_SUBDAMAGE = "pierceSubdamage",
+    CONTINUE_FUNCTION = "continueFunction",
+    ADD_SPECIALDAMAGE = "addSpecialdamage",
+    SUB_SPECIALDAMAGE = "subSpecialdamage",
+    ADD_FUNC_HP_REDUCE = "addFuncHpReduce",
+    SUB_FUNC_HP_REDUCE = "subFuncHpReduce",
+    CHANGE_BGM = "changeBgm",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -498,6 +509,14 @@ export enum NiceBuffAction {
     GUTS = "guts",
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = "preventInvisibleWhenInstantDeath",
     OVERWRITE_SUBATTRIBUTE = "overwriteSubattribute",
+    AVOIDANCE_ATTACK_DEATH_DAMAGE = "avoidanceAttackDeathDamage",
+    AVOID_FUNCTION_EXECUTE_SELF = "avoidFunctionExecuteSelf",
+    FUNCTION_CONTINUE = "functionContinue",
+    PIERCE_SUBDAMAGE = "pierceSubdamage",
+    RECEIVE_DAMAGE_PIERCE = "receiveDamagePierce",
+    SPECIAL_RECEIVE_DAMAGE = "specialReceiveDamage",
+    FUNC_HP_REDUCE_VALUE = "funcHpReduceValue",
+    CHANGE_BGM = "changeBgm",
 }
 
 export enum NiceBuffLimit {
@@ -608,7 +627,6 @@ export enum NiceDataValsType {
     BehaveAsFamilyBuff = "behaveasfamilybuff",
     UnSubStateWhileLinkedToOthers = "unsubstatewhilelinkedtoothers",
     NotAccompanyWhenLinkedTargetMoveState = "notaccompanywhenlinkedtargetmovestate",
-    AllowSubBgmPlaying = "allowsubbgmplaying",
     NotTargetSkillIdArray = "nottargetskillidarray",
     ShortTurn = "shortturn",
     FieldIndividuality = "fieldindividuality",
@@ -658,6 +676,21 @@ export enum NiceDataValsType {
     IgnoreShiftSafeDamage = "ignoreshiftsafedamage",
     ActAttackFunction = "actattackfunction",
     DelayRemoveBuffExpiredOnPlayerTurn = "delayremovebuffexpiredonplayerturn",
+    AllowRemoveBuff = "allowremovebuff",
+    NotExecFunctionIfKeepAliveOnWarBoard = "notexecfunctionifkeepaliveonwarboard",
+    SnapShotParamAddSelfIndv = "snapshotparamaddselfindv",
+    SnapShotParamAddOpIndv = "snapshotparamaddopindv",
+    SnapShotParamAddFieldIndv = "snapshotparamaddfieldindv",
+    SnapShotParamAddValue = "snapshotparamaddvalue",
+    SnapShotParamAddMaxValue = "snapshotparamaddmaxvalue",
+    SnapShotParamAddMaxCount = "snapshotparamaddmaxcount",
+    NotExecOnTransform = "notexecontransform",
+    NotRemoveOnTransform = "notremoveontransform",
+    PriorityBgm = "prioritybgm",
+    BgmAllowSubPlaying = "bgmallowsubplaying",
+    BgPriority = "bgpriority",
+    PriorityBg = "prioritybg",
+    ResetBgmPriorityAtWaveStart = "resetbgmpriorityatwavestart",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1011,6 +1044,9 @@ export enum NiceCondType {
     COMMON_VALUE_BELOW = "commonValueBelow",
     COMMON_VALUE_EQUAL = "commonValueEqual",
     ELAPSED_TIME_AFTER_QUEST_CLEAR = "elapsedTimeAfterQuestClear",
+    WITH_STARTING_MEMBER = "withStartingMember",
+    LATEST_QUEST_PHASE_EQUAL = "latestQuestPhaseEqual",
+    NOT_LATEST_QUEST_PHASE_EQUAL = "notLatestQuestPhaseEqual",
 }
 
 export enum NiceVoiceCondType {
@@ -1464,6 +1500,14 @@ export enum NiceAiCond {
     CHECK_BATTLE_VALUE_BELOW = "checkBattleValueBelow",
     CHECK_BATTLE_VALUE_BETWEEN = "checkBattleValueBetween",
     CHECK_BATTLE_VALUE_NOT_BETWEEN = "checkBattleValueNotBetween",
+    CHECK_USE_MASTER_SKILL_INDEX = "checkUseMasterSkillIndex",
+    CHECK_USE_MASTER_SKILL_INDEX_THIS_TURN = "checkUseMasterSkillIndexThisTurn",
+    COUNT_MASTER_SKILL_HIGHER_THIS_TURN = "countMasterSkillHigherThisTurn",
+    COUNT_MASTER_SKILL_LOWER_THIS_TURN = "countMasterSkillLowerThisTurn",
+    COUNT_MASTER_SKILL_EQUAL_THIS_TURN = "countMasterSkillEqualThisTurn",
+    COUNT_MASTER_SKILL_HIGHER_THIS_WAVE = "countMasterSkillHigherThisWave",
+    COUNT_MASTER_SKILL_LOWER_THIS_WAVE = "countMasterSkillLowerThisWave",
+    COUNT_MASTER_SKILL_EQUAL_THIS_WAVE = "countMasterSkillEqualThisWave",
 }
 
 export enum NiceAiActType {
@@ -1652,6 +1696,10 @@ export enum NiceAiCondParameter {
     TOTAL_TURN = "totalTurn",
     WAR_BOARD_SQUARE_INDIVIDUALITY = "warBoardSquareIndividuality",
     CHECK_BATTLE_VALUE = "checkBattleValue",
+    CHECK_PLAYER_MASTER_SKILL_INDEX = "checkPlayerMasterSkillIndex",
+    CHECK_PLAYER_MASTER_SKILL_INDEX_THIS_TURN = "checkPlayerMasterSkillIndexThisTurn",
+    COUNT_PLAYER_MASTER_SKILL_THIS_TURN = "countPlayerMasterSkillThisTurn",
+    COUNT_PLAYER_MASTER_SKILL_THIS_WAVE = "countPlayerMasterSkillThisWave",
 }
 
 export enum NiceAiCondRefine {
@@ -1672,6 +1720,7 @@ export enum NiceAiCondCheck {
     EXIST = "exist",
     BETWEEN = "between",
     BETWEEN_NOT = "betweenNot",
+    ALL_EXIST = "allExist",
 }
 
 export enum NiceTdEffectFlag {

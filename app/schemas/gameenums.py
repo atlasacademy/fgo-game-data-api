@@ -264,6 +264,8 @@ class FuncType(IntEnum):
     DAMAGE_VALUE_SAFE_ONCE = 137
     ADD_BATTLE_VALUE = 138
     SET_BATTLE_VALUE = 139
+    GAIN_MULTIPLY_NP = 140
+    LOSS_MULTIPLY_NP = 141
 
 
 class NiceFuncType(StrEnum):
@@ -372,6 +374,8 @@ class NiceFuncType(StrEnum):
     damageValueSafeOnce = "damageValueSafeOnce"
     addBattleValue = "addBattleValue"
     setBattleValue = "setBattleValue"
+    gainMultiplyNp = "gainMultiplyNp"
+    lossMultiplyNp = "lossMultiplyNp"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -478,6 +482,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     137: NiceFuncType.damageValueSafeOnce,
     138: NiceFuncType.addBattleValue,
     139: NiceFuncType.setBattleValue,
+    140: NiceFuncType.gainMultiplyNp,
+    141: NiceFuncType.lossMultiplyNp,
 }
 
 
@@ -762,6 +768,15 @@ class BuffType(IntEnum):
     TREASURE_DEVICE_AFTER_FUNCTION_MAIN_ONLY = 188
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = 189
     OVERWRITE_SUBATTRIBUTE = 190
+    AVOIDANCE_ATTACK_DEATH_DAMAGE = 191
+    AVOID_FUNCTION_EXECUTE_SELF = 192
+    PIERCE_SUBDAMAGE = 193
+    CONTINUE_FUNCTION = 194
+    ADD_SPECIALDAMAGE = 195
+    SUB_SPECIALDAMAGE = 196
+    ADD_FUNC_HP_REDUCE = 197
+    SUB_FUNC_HP_REDUCE = 198
+    CHANGE_BGM = 199
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -945,6 +960,15 @@ class NiceBuffType(StrEnum):
     treasureDeviceAfterFunctionMainOnly = "treasureDeviceAfterFunctionMainOnly"
     preventInvisibleWhenInstantDeath = "preventInvisibleWhenInstantDeath"
     overwriteSubattribute = "overwriteSubattribute"
+    avoidanceAttackDeathDamage = "avoidanceAttackDeathDamage"
+    avoidFunctionExecuteSelf = "avoidFunctionExecuteSelf"
+    pierceSubdamage = "pierceSubdamage"
+    continueFunction = "continueFunction"
+    addSpecialdamage = "addSpecialdamage"
+    subSpecialdamage = "subSpecialdamage"
+    addFuncHpReduce = "addFuncHpReduce"
+    subFuncHpReduce = "subFuncHpReduce"
+    changeBgm = "changeBgm"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1126,6 +1150,15 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     188: NiceBuffType.treasureDeviceAfterFunctionMainOnly,
     189: NiceBuffType.preventInvisibleWhenInstantDeath,
     190: NiceBuffType.overwriteSubattribute,
+    191: NiceBuffType.avoidanceAttackDeathDamage,
+    192: NiceBuffType.avoidFunctionExecuteSelf,
+    193: NiceBuffType.pierceSubdamage,
+    194: NiceBuffType.continueFunction,
+    195: NiceBuffType.addSpecialdamage,
+    196: NiceBuffType.subSpecialdamage,
+    197: NiceBuffType.addFuncHpReduce,
+    198: NiceBuffType.subFuncHpReduce,
+    199: NiceBuffType.changeBgm,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1262,6 +1295,14 @@ class BuffAction(IntEnum):
     GUTS = 126
     PREVENT_INVISIBLE_WHEN_INSTANT_DEATH = 127
     OVERWRITE_SUBATTRIBUTE = 128
+    AVOIDANCE_ATTACK_DEATH_DAMAGE = 129
+    AVOID_FUNCTION_EXECUTE_SELF = 130
+    FUNCTION_CONTINUE = 131
+    PIERCE_SUBDAMAGE = 132
+    RECEIVE_DAMAGE_PIERCE = 133
+    SPECIAL_RECEIVE_DAMAGE = 134
+    FUNC_HP_REDUCE_VALUE = 135
+    CHANGE_BGM = 136
 
 
 class NiceBuffAction(StrEnum):
@@ -1396,6 +1437,14 @@ class NiceBuffAction(StrEnum):
     guts = "guts"
     preventInvisibleWhenInstantDeath = "preventInvisibleWhenInstantDeath"
     overwriteSubattribute = "overwriteSubattribute"
+    avoidanceAttackDeathDamage = "avoidanceAttackDeathDamage"
+    avoidFunctionExecuteSelf = "avoidFunctionExecuteSelf"
+    functionContinue = "functionContinue"
+    pierceSubdamage = "pierceSubdamage"
+    receiveDamagePierce = "receiveDamagePierce"
+    specialReceiveDamage = "specialReceiveDamage"
+    funcHpReduceValue = "funcHpReduceValue"
+    changeBgm = "changeBgm"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1528,6 +1577,14 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     126: NiceBuffAction.guts,
     127: NiceBuffAction.preventInvisibleWhenInstantDeath,
     128: NiceBuffAction.overwriteSubattribute,
+    129: NiceBuffAction.avoidanceAttackDeathDamage,
+    130: NiceBuffAction.avoidFunctionExecuteSelf,
+    131: NiceBuffAction.functionContinue,
+    132: NiceBuffAction.pierceSubdamage,
+    133: NiceBuffAction.receiveDamagePierce,
+    134: NiceBuffAction.specialReceiveDamage,
+    135: NiceBuffAction.funcHpReduceValue,
+    136: NiceBuffAction.changeBgm,
 }
 
 
@@ -1656,56 +1713,70 @@ class DataValsType(IntEnum):
     BehaveAsFamilyBuff = 97
     UnSubStateWhileLinkedToOthers = 98
     NotAccompanyWhenLinkedTargetMoveState = 99
-    AllowSubBgmPlaying = 100
-    NotTargetSkillIdArray = 101
-    ShortTurn = 102
-    FieldIndividuality = 103
-    BGId = 104
-    BGType = 105
-    BgmId = 106
-    TakeOverFieldState = 107
-    TakeOverNextWaveBGAndBGM = 108
-    RemoveFieldBuffActorDeath = 109
-    FieldBuffGrantType = 110
-    Priority = 111
-    AddIndividualityEx = 112
-    IgnoreResistance = 113
-    GainNpTargetPassiveIndividuality = 114
-    HpReduceToRegainIndiv = 115
-    DisplayActualRecoveryHpFlag = 116
-    ShiftDeckIndex = 117
-    PopValueText = 118
-    IsLossHpPerNow = 119
-    CopyTargetFunctionType = 120
-    CopyFunctionTargetPTOnly = 121
-    IgnoreValueUp = 122
-    ApplyValueUp = 123
-    ActNoDamageBuff = 124
-    ActSelectIndex = 125
-    CopyTargetBuffType = 126
-    NotSkillCopyTargetFuncIds = 127
-    NotSkillCopyTargetIndividualities = 128
-    ClassIconAuraEffectId = 129
-    ActMasterGenderType = 130
-    IntervalTurn = 131
-    IntervalCount = 132
-    TriggeredFieldCountTarget = 133
-    TriggeredFieldCountRange = 134
-    TargetEnemyRange = 135
-    TriggeredFuncPositionSameTarget = 136
-    TriggeredFuncPositionAll = 137
-    TriggeredTargetHpRange = 138
-    TriggeredTargetHpRateRange = 139
-    ExcludeUnSubStateIndiv = 140
-    ProgressTurnOnBoard = 141
-    CheckTargetResurrectable = 142
-    CancelTransform = 143
-    UnSubStateWhenContinue = 144
-    CheckTargetHaveDefeatPoint = 145
-    NPFixedDamageValue = 146
-    IgnoreShiftSafeDamage = 147
-    ActAttackFunction = 148
-    DelayRemoveBuffExpiredOnPlayerTurn = 149
+    NotTargetSkillIdArray = 100
+    ShortTurn = 101
+    FieldIndividuality = 102
+    BGId = 103
+    BGType = 104
+    BgmId = 105
+    TakeOverFieldState = 106
+    TakeOverNextWaveBGAndBGM = 107
+    RemoveFieldBuffActorDeath = 108
+    FieldBuffGrantType = 109
+    Priority = 110
+    AddIndividualityEx = 111
+    IgnoreResistance = 112
+    GainNpTargetPassiveIndividuality = 113
+    HpReduceToRegainIndiv = 114
+    DisplayActualRecoveryHpFlag = 115
+    ShiftDeckIndex = 116
+    PopValueText = 117
+    IsLossHpPerNow = 118
+    CopyTargetFunctionType = 119
+    CopyFunctionTargetPTOnly = 120
+    IgnoreValueUp = 121
+    ApplyValueUp = 122
+    ActNoDamageBuff = 123
+    ActSelectIndex = 124
+    CopyTargetBuffType = 125
+    NotSkillCopyTargetFuncIds = 126
+    NotSkillCopyTargetIndividualities = 127
+    ClassIconAuraEffectId = 128
+    ActMasterGenderType = 129
+    IntervalTurn = 130
+    IntervalCount = 131
+    TriggeredFieldCountTarget = 132
+    TriggeredFieldCountRange = 133
+    TargetEnemyRange = 134
+    TriggeredFuncPositionSameTarget = 135
+    TriggeredFuncPositionAll = 136
+    TriggeredTargetHpRange = 137
+    TriggeredTargetHpRateRange = 138
+    ExcludeUnSubStateIndiv = 139
+    ProgressTurnOnBoard = 140
+    CheckTargetResurrectable = 141
+    CancelTransform = 142
+    UnSubStateWhenContinue = 143
+    CheckTargetHaveDefeatPoint = 144
+    NPFixedDamageValue = 145
+    IgnoreShiftSafeDamage = 146
+    ActAttackFunction = 147
+    DelayRemoveBuffExpiredOnPlayerTurn = 148
+    AllowRemoveBuff = 149
+    NotExecFunctionIfKeepAliveOnWarBoard = 150
+    SnapShotParamAddSelfIndv = 151
+    SnapShotParamAddOpIndv = 152
+    SnapShotParamAddFieldIndv = 153
+    SnapShotParamAddValue = 154
+    SnapShotParamAddMaxValue = 155
+    SnapShotParamAddMaxCount = 156
+    NotExecOnTransform = 157
+    NotRemoveOnTransform = 158
+    PriorityBgm = 159
+    BgmAllowSubPlaying = 160
+    BgPriority = 161
+    PriorityBg = 162
+    ResetBgmPriorityAtWaveStart = 163
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2353,6 +2424,9 @@ class CondType(IntEnum):
     COMMON_VALUE_BELOW = 213
     COMMON_VALUE_EQUAL = 214
     ELAPSED_TIME_AFTER_QUEST_CLEAR = 215
+    WITH_STARTING_MEMBER = 216
+    LATEST_QUEST_PHASE_EQUAL = 217
+    NOT_LATEST_QUEST_PHASE_EQUAL = 218
 
 
 class NiceCondType(StrEnum):
@@ -2571,6 +2645,9 @@ class NiceCondType(StrEnum):
     commonValueBelow = "commonValueBelow"
     commonValueEqual = "commonValueEqual"
     elapsedTimeAfterQuestClear = "elapsedTimeAfterQuestClear"
+    withStartingMember = "withStartingMember"
+    latestQuestPhaseEqual = "latestQuestPhaseEqual"
+    notLatestQuestPhaseEqual = "notLatestQuestPhaseEqual"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2787,6 +2864,9 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     213: NiceCondType.commonValueBelow,
     214: NiceCondType.commonValueEqual,
     215: NiceCondType.elapsedTimeAfterQuestClear,
+    216: NiceCondType.withStartingMember,
+    217: NiceCondType.latestQuestPhaseEqual,
+    218: NiceCondType.notLatestQuestPhaseEqual,
 }
 
 
@@ -3841,6 +3921,14 @@ class AiCond(IntEnum):
     CHECK_BATTLE_VALUE_BELOW = 200
     CHECK_BATTLE_VALUE_BETWEEN = 201
     CHECK_BATTLE_VALUE_NOT_BETWEEN = 202
+    CHECK_USE_MASTER_SKILL_INDEX = 203
+    CHECK_USE_MASTER_SKILL_INDEX_THIS_TURN = 204
+    COUNT_MASTER_SKILL_HIGHER_THIS_TURN = 205
+    COUNT_MASTER_SKILL_LOWER_THIS_TURN = 206
+    COUNT_MASTER_SKILL_EQUAL_THIS_TURN = 207
+    COUNT_MASTER_SKILL_HIGHER_THIS_WAVE = 208
+    COUNT_MASTER_SKILL_LOWER_THIS_WAVE = 209
+    COUNT_MASTER_SKILL_EQUAL_THIS_WAVE = 210
 
 
 class NiceAiCond(StrEnum):
@@ -4025,6 +4113,14 @@ class NiceAiCond(StrEnum):
     checkBattleValueBelow = "checkBattleValueBelow"
     checkBattleValueBetween = "checkBattleValueBetween"
     checkBattleValueNotBetween = "checkBattleValueNotBetween"
+    checkUseMasterSkillIndex = "checkUseMasterSkillIndex"
+    checkUseMasterSkillIndexThisTurn = "checkUseMasterSkillIndexThisTurn"
+    countMasterSkillHigherThisTurn = "countMasterSkillHigherThisTurn"
+    countMasterSkillLowerThisTurn = "countMasterSkillLowerThisTurn"
+    countMasterSkillEqualThisTurn = "countMasterSkillEqualThisTurn"
+    countMasterSkillHigherThisWave = "countMasterSkillHigherThisWave"
+    countMasterSkillLowerThisWave = "countMasterSkillLowerThisWave"
+    countMasterSkillEqualThisWave = "countMasterSkillEqualThisWave"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -4191,6 +4287,14 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     200: NiceAiCond.checkBattleValueBelow,
     201: NiceAiCond.checkBattleValueBetween,
     202: NiceAiCond.checkBattleValueNotBetween,
+    203: NiceAiCond.checkUseMasterSkillIndex,
+    204: NiceAiCond.checkUseMasterSkillIndexThisTurn,
+    205: NiceAiCond.countMasterSkillHigherThisTurn,
+    206: NiceAiCond.countMasterSkillLowerThisTurn,
+    207: NiceAiCond.countMasterSkillEqualThisTurn,
+    208: NiceAiCond.countMasterSkillHigherThisWave,
+    209: NiceAiCond.countMasterSkillLowerThisWave,
+    210: NiceAiCond.countMasterSkillEqualThisWave,
 }
 
 
@@ -4701,6 +4805,10 @@ class AiCondParameter(IntEnum):
     TOTAL_TURN = 39
     WAR_BOARD_SQUARE_INDIVIDUALITY = 40
     CHECK_BATTLE_VALUE = 41
+    CHECK_PLAYER_MASTER_SKILL_INDEX = 42
+    CHECK_PLAYER_MASTER_SKILL_INDEX_THIS_TURN = 43
+    COUNT_PLAYER_MASTER_SKILL_THIS_TURN = 44
+    COUNT_PLAYER_MASTER_SKILL_THIS_WAVE = 45
 
 
 class NiceAiCondParameter(StrEnum):
@@ -4748,6 +4856,10 @@ class NiceAiCondParameter(StrEnum):
     totalTurn = "totalTurn"
     warBoardSquareIndividuality = "warBoardSquareIndividuality"
     checkBattleValue = "checkBattleValue"
+    checkPlayerMasterSkillIndex = "checkPlayerMasterSkillIndex"
+    checkPlayerMasterSkillIndexThisTurn = "checkPlayerMasterSkillIndexThisTurn"
+    countPlayerMasterSkillThisTurn = "countPlayerMasterSkillThisTurn"
+    countPlayerMasterSkillThisWave = "countPlayerMasterSkillThisWave"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -4793,6 +4905,10 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     39: NiceAiCondParameter.totalTurn,
     40: NiceAiCondParameter.warBoardSquareIndividuality,
     41: NiceAiCondParameter.checkBattleValue,
+    42: NiceAiCondParameter.checkPlayerMasterSkillIndex,
+    43: NiceAiCondParameter.checkPlayerMasterSkillIndexThisTurn,
+    44: NiceAiCondParameter.countPlayerMasterSkillThisTurn,
+    45: NiceAiCondParameter.countPlayerMasterSkillThisWave,
 }
 
 
@@ -4833,6 +4949,7 @@ class AiCheckTarget(IntEnum):
     EXIST = 6
     BETWEEN = 7
     BETWEEN_NOT = 8
+    ALL_EXIST = 9
 
 
 class NiceAiCondCheck(StrEnum):
@@ -4847,6 +4964,7 @@ class NiceAiCondCheck(StrEnum):
     exist = "exist"
     between = "between"
     betweenNot = "betweenNot"
+    allExist = "allExist"
 
 
 AI_COND_CHECK_NAME: dict[int, NiceAiCondCheck] = {
@@ -4859,6 +4977,7 @@ AI_COND_CHECK_NAME: dict[int, NiceAiCondCheck] = {
     6: NiceAiCondCheck.exist,
     7: NiceAiCondCheck.between,
     8: NiceAiCondCheck.betweenNot,
+    9: NiceAiCondCheck.allExist,
 }
 
 

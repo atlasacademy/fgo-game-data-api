@@ -59,6 +59,9 @@ LIST_DATAVALS = {
     "TargetEnemyRange",
     "TriggeredFieldCountRange",
     "FieldIndividuality",
+    "SnapShotParamAddSelfIndv",
+    "SnapShotParamAddOpIndv",
+    "SnapShotParamAddFieldIndv",
 }
 STRING_DATAVALS = {
     "PopValueText",

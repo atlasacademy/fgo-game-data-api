@@ -350,7 +350,6 @@ class BaseVals(BaseModel):
         default=None,
         description="The buff with this dataVal is removed if the linked buff is removed.",
     )
-    AllowSubBgmPlaying: int | None = None
     NotAccompanyWhenLinkedTargetMoveState: int | None = None
     NotTargetSkillIdArray: list[int] | None = None
     ShortTurn: int | None = None
@@ -401,6 +400,21 @@ class BaseVals(BaseModel):
     IgnoreShiftSafeDamage: int | None = None
     ActAttackFunction: int | None = None
     DelayRemoveBuffExpiredOnPlayerTurn: int | None = None
+    AllowRemoveBuff: int | None = None
+    NotExecFunctionIfKeepAliveOnWarBoard: int | None = None
+    SnapShotParamAddSelfIndv: list[int] | None = None
+    SnapShotParamAddOpIndv: list[int] | None = None
+    SnapShotParamAddFieldIndv: list[int] | None = None
+    SnapShotParamAddValue: int | None = None
+    SnapShotParamAddMaxValue: int | None = None
+    SnapShotParamAddMaxCount: int | None = None
+    NotExecOnTransform: int | None = None
+    NotRemoveOnTransform: int | None = None
+    PriorityBgm: int | None = None
+    BgmAllowSubPlaying: int | None = None
+    BgPriority: int | None = None
+    PriorityBg: int | None = None
+    ResetBgmPriorityAtWaveStart: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
