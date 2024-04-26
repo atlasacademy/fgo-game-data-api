@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 6.0.0 - 2024-04-25
+### Changed
+- Changed buff type enums
+  - `commandattackFunction` to `commandattackAfterFunction`
+  - `upDefencecommanDamage` to `upDefenceCommanddamage`
+  - `downDefencecommanDamage` to `downDefenceCommanddamage`
+  - `attackFunction` to `attackAfterFunction`
+  - `commandcodeattackFunction` to `commandcodeattackBeforeFunction`
+- `FieldIndividuality` dataval is `list[int]` instead of `int`
+- `SHORTEN_SKILL` and `EXTEND_SKILL` function uses `Rate`/`Value`/`Value` dataval instead of `Rate`/`Value2`/`Target`
+
 ## 5.78.0 - 2022-04-23
 ### Added
 - `costumes` to nice mystic code.
