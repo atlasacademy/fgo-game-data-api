@@ -1876,7 +1876,6 @@ class NiceEventTreasureBox(BaseModelORJson):
     treasureBoxGifts: list[NiceEventTreasureBoxGift]
     maxDrawNumOnce: int
     extraGifts: list[NiceGift]
-    commonConsume: NiceCommonConsume
     consumes: list[NiceCommonConsume]
 
 
@@ -1884,7 +1883,6 @@ class NiceEventDiggingBlock(BaseModelORJson):
     id: int
     eventId: int
     image: HttpUrl
-    commonConsume: NiceCommonConsume
     consumes: list[NiceCommonConsume]
     objectId: int
     diggingEventPoint: int

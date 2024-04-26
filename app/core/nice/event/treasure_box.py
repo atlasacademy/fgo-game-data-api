@@ -20,7 +20,6 @@ def get_nice_treasure_box(
     treasure_box: MstTreasureBox,
     box_gifts: list[MstTreasureBoxGift],
     gift_data: GiftData,
-    common_consumes: dict[int, MstCommonConsume],
     raw_consumes: list[MstCommonConsume],
 ) -> NiceEventTreasureBox:
     return NiceEventTreasureBox(
@@ -34,9 +33,6 @@ def get_nice_treasure_box(
         ],
         maxDrawNumOnce=treasure_box.maxDrawNumOnce,
         extraGifts=get_nice_gifts(region, treasure_box.extraGiftId, gift_data),
-        commonConsume=get_nice_common_consume(
-            common_consumes[treasure_box.commonConsumeId]
-        ),
         consumes=[
             get_nice_common_consume(consume)
             for consume in raw_consumes

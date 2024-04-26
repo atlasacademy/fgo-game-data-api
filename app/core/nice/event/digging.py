@@ -23,7 +23,6 @@ settings = Settings()
 def get_nice_digging_block(
     region: Region,
     block: MstEventDiggingBlock,
-    common_consumes: dict[int, MstCommonConsume],
     raw_consumes: list[MstCommonConsume],
 ) -> NiceEventDiggingBlock:
     return NiceEventDiggingBlock(
@@ -35,7 +34,6 @@ def get_nice_digging_block(
             region=region,
             event=f"Prefabs/{block.eventId}/event_digging_block_{block.imageId}",
         ),
-        commonConsume=get_nice_common_consume(common_consumes[block.commonConsumeId]),
         consumes=[
             get_nice_common_consume(consume)
             for consume in raw_consumes
@@ -66,7 +64,6 @@ def get_nice_digging(
     rewards: list[MstEventDiggingReward],
     item_map: dict[int, NiceItem],
     gift_data: GiftData,
-    common_consumes: dict[int, MstCommonConsume],
     raw_consumes: list[MstCommonConsume],
 ) -> NiceEventDigging:
     return NiceEventDigging(
@@ -81,7 +78,7 @@ def get_nice_digging(
         eventPointItem=item_map[digging.eventPointItemId],
         resettableDiggedNum=digging.resettableDiggedNum,
         blocks=[
-            get_nice_digging_block(region, block, common_consumes, raw_consumes)
+            get_nice_digging_block(region, block, raw_consumes)
             for block in blocks
             if block.eventId == digging.eventId
         ],
