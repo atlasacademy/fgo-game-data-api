@@ -1009,6 +1009,10 @@ class Trait(StrEnum):
     quickBuff = "quickBuff"
     FSNServant = "FSNServant"
     fieldDarkness = "fieldDarkness"
+    magicBullet = "magicBullet"
+    protagonistCorrection = "protagonistCorrection"
+    normalAoko = "normalAoko"
+    magicBulletAtkBuff = "magicBulletAtkBuff"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1203,6 +1207,10 @@ TRAIT_NAME: dict[int, Trait] = {
     2881: Trait.groupServant,
     2883: Trait.FSNServant,
     2884: Trait.fieldDarkness,
+    2885: Trait.magicBullet,
+    2888: Trait.protagonistCorrection,
+    2911: Trait.normalAoko,
+    2912: Trait.magicBulletAtkBuff,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
