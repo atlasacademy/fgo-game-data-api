@@ -440,6 +440,7 @@ async def get_basic_svt(
         "classId": mstSvt.classId,
         "className": get_class_name(mstSvt.classId),
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
+        "traits": get_traits_list(sorted(mstSvt.individuality)),
         "rarity": mstSvtLimit.rarity,
         "atkMax": mstSvtLimit.atkMax,
         "hpMax": mstSvtLimit.hpMax,

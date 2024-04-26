@@ -73,6 +73,7 @@ class BasicServant(BaseModelORJson):
     classId: int
     className: SvtClass | str
     attribute: Attribute
+    traits: list[NiceTrait]
     rarity: int
     atkMax: int
     hpMax: int
