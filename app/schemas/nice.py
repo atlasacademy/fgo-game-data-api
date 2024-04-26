@@ -2926,7 +2926,7 @@ class NiceClassBoard(BaseModelORJson):
 class NiceFuncTypeDetail(BaseModelORJson):
     funcType: NiceFuncType
     ignoreValueUp: bool
-    individuality: list[int] | None = None
+    individuality: list[NiceTrait] | None = None
 
 
 class NiceBuffTypeDetail(BaseModelORJson):
