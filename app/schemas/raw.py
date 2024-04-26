@@ -255,6 +255,15 @@ class MstSvtAdd(BaseModelORJson):
     script: dict[str, Any]
 
 
+class MstSvtTransform(BaseModelORJson):
+    befSvtId: int
+    befDispLimitCount: int
+    befTitle: str
+    aftSvtId: int
+    aftDispLimitCount: int
+    aftTitle: str
+
+
 # Dummy ID that is used when enemy servant does an extra attack instead of NP
 EXTRA_ATTACK_TD_ID = 100
 
@@ -1930,6 +1939,17 @@ class MstQuestRestrictionInfo(BaseModelORJson):
     questId: int
     phase: int
     flag: int
+
+
+class MstQuestPhasePresent(BaseModelORJson):
+    questId: int
+    phase: int
+    giftId: int
+    presentMessageId: int
+    condType: int
+    condId: int
+    condNum: int
+    script: dict[str, Any]
 
 
 class MstRestriction(BaseModelORJson):
