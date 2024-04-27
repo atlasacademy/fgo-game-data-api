@@ -1014,6 +1014,7 @@ class Trait(StrEnum):
     normalAokoBuff = "normalAokoBuff"
     magicBulletAtkBuff = "magicBulletAtkBuff"
     demeritFunction = "demeritFunction"
+    extraBuff = "extraBuff"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1292,6 +1293,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3093: Trait.busterBuff,
     3094: Trait.quickBuff,
     3098: Trait.demeritFunction,
+    3100: Trait.extraBuff,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
