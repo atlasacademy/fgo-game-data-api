@@ -13,7 +13,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
 from app.core.nice.gacha import get_all_nice_gachas
 
-from .config import Settings, app_info, logger, project_root
+from .config import EXTRA_SVT_ID_IN_NICE, Settings, app_info, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
     get_all_basic_equips,
@@ -480,6 +480,12 @@ async def generate_exports(
                 all_servants = [
                     svt for svt in all_svts if svt.collectionNo != 0 and svt.isServant()
                 ]
+                all_nice_servants = [
+                    svt
+                    for svt in all_svts
+                    if (svt.collectionNo != 0 and svt.isServant())
+                    or svt.id in EXTRA_SVT_ID_IN_NICE
+                ]
                 await dump_basic_servants(util, "basic_servant", all_servants)
 
                 all_equips = [
@@ -555,7 +561,7 @@ async def generate_exports(
                     await dump_nice_class_boards(util_en, mstClassBoardBases)
                     await dump_nice_gachas(util_en)
 
-                await dump_svt(util, "nice_servant", all_servants)
+                await dump_svt(util, "nice_servant", all_nice_servants)
                 await dump_svt(util, "nice_equip", all_equips)
 
                 await dump_nice_wars(util, mstWars)

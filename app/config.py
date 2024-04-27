@@ -119,3 +119,5 @@ instance_info = {
     "app_settings": app_settings_str,
     "file_path": str(project_root),
 }
+
+EXTRA_SVT_ID_IN_NICE = (600710, 2501500)
