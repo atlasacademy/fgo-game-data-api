@@ -738,10 +738,15 @@ async def get_nice_quest_phase(
             all_hashes=all_rayshift_hashes,
         )
 
+        TTL_SCALE = 12
         if quest_already_closed:
             ttl = None
-        elif 0 < current_time - db_data.nice.openedAt < settings.quest_cache_length:
-            ttl = current_time - db_data.nice.openedAt
+        elif (
+            0
+            < current_time - db_data.nice.openedAt
+            < settings.quest_cache_length * TTL_SCALE
+        ):
+            ttl = (current_time - db_data.nice.openedAt) // TTL_SCALE
         else:
             ttl = settings.quest_cache_length
 
