@@ -103,6 +103,8 @@ class BuffConvert(BaseModel):
     targetLimit: NiceBuffConvertLimitType
     convertType: NiceBuffConvertType
     targets: list[int] | list[NiceTrait] | list[dict[str, Any]]
+    targetBuffs: list[dict[str, Any]]
+    targetIndividualities: list[NiceTrait]
     convertBuffs: list[dict[str, Any]]
     script: BuffConvertScript
     effectId: int
