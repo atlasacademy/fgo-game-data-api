@@ -13,9 +13,16 @@ from app.rayshift.quest import get_all_quest_lists, get_multiple_quests
 from app.schemas.common import Region
 
 
-def main(quest_ids: list[int], load_all: bool = False, no_load: bool = False) -> None:
+def main(
+    quest_ids: list[int],
+    load_all: bool = False,
+    no_load: bool = False,
+    selected_region: str | None = None,
+) -> None:
     client = httpx.Client(follow_redirects=True, timeout=60)
     for region in [Region.NA, Region.JP]:
+        if selected_region and region != selected_region:
+            continue
         print(f"Loading {region} rayshift data cache …")
         start_loading_time = time.perf_counter()
 
@@ -79,7 +86,10 @@ if __name__ == "__main__":
         action="append",
         required=False,
     )
+    parser.add_argument(
+        "--region", "-r", help="Region", type=str, required=False, default=None
+    )
 
     args = parser.parse_args()
 
-    main(args.quest_id, args.all, args.no_load)
+    main(args.quest_id, args.all, args.no_load, args.region)
