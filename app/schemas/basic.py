@@ -1,5 +1,5 @@
 from decimal import Decimal
-from typing import Optional, Sequence
+from typing import Any, Optional, Sequence
 
 from pydantic import Field, HttpUrl
 
@@ -26,13 +26,17 @@ class BasicBuff(BaseModelORJson):
     id: int
     name: str
     originalName: str
+    detail: str
     icon: HttpUrl
     type: NiceBuffType
+    buffGroup: int
     script: BuffScript
+    originalScript: dict[str, Any]
     vals: list[NiceTrait]
     tvals: list[NiceTrait]
     ckSelfIndv: list[NiceTrait]
     ckOpIndv: list[NiceTrait]
+    maxRate: int
 
 
 class BasicFunction(BaseModelORJson):

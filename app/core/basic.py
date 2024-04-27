@@ -181,6 +181,7 @@ def get_basic_buff_no_reverse(
         id=mstBuff.id,
         name=get_translation(lang, mstBuff.name),
         originalName=mstBuff.name,
+        detail=mstBuff.detail,
         icon=fmt_url(
             AssetURL.buffIcon,
             base_url=settings.asset_url,
@@ -188,6 +189,7 @@ def get_basic_buff_no_reverse(
             item_id=mstBuff.iconId,
         ),
         type=BUFF_TYPE_NAME[mstBuff.type],
+        buffGroup=mstBuff.buffGroup,
         script=BuffScript.parse_obj(
             get_nice_buff_script(
                 mstBuff,
@@ -196,10 +198,12 @@ def get_basic_buff_no_reverse(
                 ),
             )
         ),
+        originalScript=mstBuff.script,
         vals=get_traits_list(mstBuff.vals),
         tvals=get_traits_list(mstBuff.tvals),
         ckSelfIndv=get_traits_list(mstBuff.ckSelfIndv),
         ckOpIndv=get_traits_list(mstBuff.ckOpIndv),
+        maxRate=mstBuff.maxRate,
     )
 
 
