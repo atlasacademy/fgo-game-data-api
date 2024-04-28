@@ -2322,7 +2322,10 @@
   "混沌機構": "Chaos Mechanism",
   "威力アップ〔星の力〕": "Strength Up [Star Attribute]",
   "WISH ON THE STARRY NIGHT": "WISH ON THE STARRY NIGHT",
+  "即死時ガッツ": "即死時ガッツ",
   "ダメージカット貫通": "Ignore Damage Cut",
+  "コマドリカウンター": "コマドリカウンター",
+  "身代わり": "Substitution",
   "致死ダメージ回避": "Lethal Damage Evade",
   "主人公補正": "Protagonist Correction",
   "奇禍の予見": "Premonition of Strange Disasters",
@@ -2952,7 +2955,14 @@
   "探索優先": "Exploration Priority",
   "財宝略奪": "Treasure Looting",
   "タイムブリンク": "Time Blink",
+  "美の神域": "美の神域",
   "黒い煙霧": "Black Smoke",
   "Make it count": "Make it count",
-  "オンリーワン": "Only One"
+  "オンリーワン": "Only One",
+  "歪な造形": "歪な造形",
+  "怪しく揺れ蠢く": "怪しく揺れ蠢く",
+  "終わらぬ作業": "終わらぬ作業",
+  "高速おきあがり": "高速おきあがり",
+  "カース・マジック": "カース・マジック",
+  "ストロングフィスト": "ストロングフィスト"
 }
