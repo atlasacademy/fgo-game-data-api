@@ -168,6 +168,7 @@ def get_nice_buff_action(raw_data: Any) -> Any:
         out_item["minusTypes"] = [
             BUFF_TYPE_NAME[bufft] for bufft in out_item["minusTypes"]
         ]
+        out_item["plusAction"] = BUFF_ACTION_NAME[out_item["plusAction"]]
         out_data[BUFF_ACTION_NAME[BuffAction[buff_action].value]] = out_item
     return out_data
 
