@@ -674,7 +674,7 @@ async def get_nice_quest_phase(
                         rayshift_quest_details[0],
                         rayshift_quest_drops,
                         lang,
-                        include_spawn_bonus_enemy=questHash is not None,
+                        include_spawn_bonus_enemy=True,
                     )
                 nice_quest_drops = [
                     get_nice_drop(drop)
