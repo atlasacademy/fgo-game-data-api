@@ -47,6 +47,7 @@ class BasicFunction(BaseModelORJson):
     functvals: list[NiceTrait]
     overWriteTvalsList: list[list[NiceTrait]]
     funcquestTvals: list[NiceTrait]
+    funcPopupText: str
     traitVals: list[NiceTrait] = []
     buffs: Sequence[BasicBuff]
 
