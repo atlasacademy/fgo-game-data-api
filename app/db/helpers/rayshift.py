@@ -45,7 +45,7 @@ async def get_rayshift_quest_db(
     if questHash:
         where_conds.append(rayshiftQuestHash.c.questHash == questHash)
     else:
-        order_by.append(rayshiftQuestHash.c.questHash.desc())
+        order_by = [rayshiftQuestHash.c.questHash.desc(), *order_by]
 
     if questSelect:
         where_conds.append(quest_select_or(questSelect))
