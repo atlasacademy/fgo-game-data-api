@@ -313,7 +313,9 @@ async def startup() -> None:
     app.state.redis = redis
 
     region_pathes = {
-        region: region_data.gamedata for region, region_data in settings.data.items()
+        region: region_data.gamedata
+        for region, region_data in settings.data.items()
+        if region == Region.JP
     }
 
     await load_and_export(redis, region_pathes, async_engines, False)

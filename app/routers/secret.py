@@ -48,10 +48,12 @@ async def update_gamedata(
         region: region_data.gamedata for region, region_data in settings.data.items()
     }
     if payload:
-        for region, region_data in settings.data.items():
-            if payload.ref == f"refs/heads/{region.name}":
-                region_pathes = {region: region_data.gamedata}
-                break
+        ref_regions = payload.ref.removeprefix("refs/heads/").split("&")
+        region_pathes = {
+            region: region_data.gamedata
+            for region, region_data in settings.data.items()
+            if region.name in ref_regions
+        }
     background_tasks.add_task(pull_and_update, region_pathes, async_engines, redis)
     secret_info = await get_secret_info(redis)
     regions = ", ".join(region.name for region in region_pathes)
