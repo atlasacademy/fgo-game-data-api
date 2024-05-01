@@ -2306,6 +2306,7 @@ class EnemyScript(BaseModelORJson):
     npInfoEnable: Optional[bool]
     npCharge: Optional[int]
     NoSkipDead: Optional[bool]
+    probability_type: int | None
 
 
 class EnemyInfoScript(BaseModelORJson):

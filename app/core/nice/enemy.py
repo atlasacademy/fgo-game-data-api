@@ -107,6 +107,7 @@ def get_enemy_script(enemyScript: dict[str, Any]) -> EnemyScript:
         "change",
         "skillShift",
         "missionTargetSkillShift",
+        "probability_type",
     ]
     for script_key in as_is_script_keys:
         if script_key in enemyScript:
