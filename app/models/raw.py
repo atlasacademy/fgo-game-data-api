@@ -1391,6 +1391,7 @@ mstEventMission = Table(
     Column("bannerGroup", Integer),
     Column("priority", Integer),
     Column("rewardRarity", Integer),
+    Column("giftIconId", Integer),
 )
 
 
@@ -2311,6 +2312,7 @@ mstQuestPhasePresent = Table(
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
     Column("giftId", Integer),
+    Column("giftIconId", Integer),
     Column("presentMessageId", Integer),
     Column("condType", Integer),
     Column("condId", Integer),
@@ -2613,6 +2615,7 @@ mstCommandSpell = Table(
 mstFuncTypeDetail = Table(
     "mstFuncTypeDetail",
     metadata,
+    Column("individuality", ARRAY(Integer)),
     Column("funcType", Integer, index=True),
     Column("ignoreValueUp", Boolean),
 )

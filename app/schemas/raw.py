@@ -1168,6 +1168,7 @@ class MstEventMission(BaseModelORJson):
     rewardRarity: int
     notfyPriority: int
     presentMessageId: int
+    giftIconId: int | None = None
 
 
 class MstEventMissionCondition(BaseModelORJson):
@@ -1945,6 +1946,7 @@ class MstQuestPhasePresent(BaseModelORJson):
     questId: int
     phase: int
     giftId: int
+    giftIconId: int
     presentMessageId: int
     condType: int
     condId: int
