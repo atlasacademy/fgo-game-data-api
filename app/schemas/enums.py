@@ -1016,8 +1016,8 @@ class Trait(StrEnum):
     demeritFunction = "demeritFunction"
     extraBuff = "extraBuff"
     robinCounter = "robinCounter"
-    kuonjiAliceFormA = "kuonjiAliceFormA"
-    kuonjiAliceFormB = "kuonjiAliceFormB"
+    kuonjiAliceHasSkill3 = "kuonjiAliceHasSkill3"
+    kuonjiAliceStage3 = "kuonjiAliceStage3"
     instantDeathFunction = "instantDeathFunction"
     forceInstantDeathFunction = "forceInstantDeathFunction"
     buffGutsOnInstantDeath = "buffGutsOnInstantDeath"
@@ -1220,10 +1220,10 @@ TRAIT_NAME: dict[int, Trait] = {
     2886: Trait.robinCounter,
     2887: Trait.robinAllGone,
     2888: Trait.protagonistCorrection,
-    2903: Trait.kuonjiAliceFormB,
+    2903: Trait.kuonjiAliceStage3,
     2911: Trait.normalAokoBuff,
     2912: Trait.magicBulletAtkBuff,
-    2913: Trait.kuonjiAliceFormA,
+    2913: Trait.kuonjiAliceHasSkill3,
     2914: Trait.buffGutsOnInstantDeath,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
