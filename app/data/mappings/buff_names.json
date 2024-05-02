@@ -1818,7 +1818,7 @@
   "繁殖": "Multiply",
   "休憩": "Breaktime",
   "死亡時発動(休憩解除)": "Activate on Defeat (Remove Breaktime)",
-  "死亡時発動(終焉特権)": "Activate on Defeat (Cessation Privilege)",
+  "死亡時発動(終焉特権)": "Activate on Defeat (Demise Privilege)",
   "抗体": "Anti Body",
   "攻撃時追加効果(攻城状態付与)": "Bonus Effect on Attack (Apply Siege Trait)",
   "宝具攻撃時追加効果(攻城状態付与)": "Bonus Effect on Attack (Apply Siege Trait)",
