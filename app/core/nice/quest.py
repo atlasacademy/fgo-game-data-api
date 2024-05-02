@@ -738,7 +738,7 @@ async def get_nice_quest_phase(
             all_hashes=all_rayshift_hashes,
         )
 
-        TTL_SCALE = 12
+        TTL_SCALE = 6
         if quest_already_closed:
             ttl = None
         elif (
@@ -746,7 +746,7 @@ async def get_nice_quest_phase(
             < current_time - db_data.nice.openedAt
             < settings.quest_cache_length * TTL_SCALE
         ):
-            ttl = (current_time - db_data.nice.openedAt) // TTL_SCALE
+            ttl = min((current_time - db_data.nice.openedAt) // TTL_SCALE, 60)
         else:
             ttl = settings.quest_cache_length
 
