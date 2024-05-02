@@ -38,6 +38,7 @@ from ...models.raw import (
     mstQuestMessage,
     mstQuestPhase,
     mstQuestPhaseDetail,
+    mstQuestPhasePresent,
     mstQuestRelease,
     mstQuestReleaseOverwrite,
     mstQuestRestriction,
@@ -467,23 +468,28 @@ JOINED_QUEST_TABLES = (
         ),
     )
     .outerjoin(mstGiftAddAlias, mstGiftAddAlias.c.giftId == mstQuest.c.giftId)
+)
+
+
+JOINED_QUEST_ENTITY_TABLES = (
+    JOINED_QUEST_TABLES.outerjoin(
+        mstQuestPhaseDetail,
+        and_(
+            mstQuest.c.id == mstQuestPhaseDetail.c.questId,
+            mstQuestPhase.c.phase == mstQuestPhaseDetail.c.phase,
+        ),
+    )
+    .outerjoin(scripts_cte, mstQuest.c.id == scripts_cte.c.questId)
+    .outerjoin(mstQuestPhasePresent, mstQuestPhasePresent.c.questId == mstQuest.c.id)
     .outerjoin(
         mstGiftAlias,
         or_(
             mstGiftAlias.c.id == mstQuest.c.giftId,
+            mstGiftAlias.c.id == mstQuestPhasePresent.c.giftId,
             mstGiftAlias.c.id == mstGiftAddAlias.c.priorGiftId,
         ),
     )
 )
-
-
-JOINED_QUEST_ENTITY_TABLES = JOINED_QUEST_TABLES.outerjoin(
-    mstQuestPhaseDetail,
-    and_(
-        mstQuest.c.id == mstQuestPhaseDetail.c.questId,
-        mstQuestPhase.c.phase == mstQuestPhaseDetail.c.phase,
-    ),
-).outerjoin(scripts_cte, mstQuest.c.id == scripts_cte.c.questId)
 
 
 phasesNoBattle = func.array_remove(
@@ -515,6 +521,7 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstItem),
     sql_jsonb_agg(mstGiftAlias, "mstGift"),
     sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
+    sql_jsonb_agg(mstQuestPhasePresent, "mstQuestPhasePresent"),
     func.to_jsonb(
         func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)
     ).label("phases"),
@@ -639,8 +646,23 @@ async def get_quest_phase_entity(
             mstRestriction,
             mstRestriction.c.id == mstQuestRestriction.c.restrictionId,
         )
+        .outerjoin(
+            mstQuestPhasePresent,
+            and_(
+                mstQuest.c.id == mstQuestPhasePresent.c.questId,
+                mstQuestPhase.c.phase == mstQuestPhasePresent.c.phase,
+            ),
+        )
         .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
+        .outerjoin(
+            mstGiftAlias,
+            or_(
+                mstGiftAlias.c.id == mstQuest.c.giftId,
+                mstGiftAlias.c.id == mstQuestPhasePresent.c.giftId,
+                mstGiftAlias.c.id == mstGiftAddAlias.c.priorGiftId,
+            ),
+        )
         .outerjoin(
             mstBattleBg,
             or_(
@@ -727,6 +749,7 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstBattleBg),
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
+        sql_jsonb_agg(mstQuestPhasePresent, "mstQuestPhasePresent"),
         phases_select,
         phasesWithEnemies_select,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),

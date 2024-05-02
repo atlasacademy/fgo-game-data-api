@@ -2215,6 +2215,7 @@ class QuestEntity(BaseModelORJson):
     mstClosedMessage: list[MstClosedMessage]
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]
+    mstQuestPhasePresent: list[MstQuestPhasePresent] = []
     mstItem: list[MstItem] = []
     phases: list[int]
     phasesWithEnemies: list[int] = []
