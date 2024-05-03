@@ -790,7 +790,7 @@ async def get_nice_quest_phase(
             < current_time - db_data.nice.openedAt
             < settings.quest_cache_length * TTL_SCALE
         ):
-            ttl = min((current_time - db_data.nice.openedAt) // TTL_SCALE, 60)
+            ttl = max((current_time - db_data.nice.openedAt) // TTL_SCALE, 150)
         else:
             ttl = settings.quest_cache_length
 
