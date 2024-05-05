@@ -81,15 +81,19 @@ def get_nice_spot_road(
 def get_nice_map_gimmick(
     region: Region, raw_map_gimmick: MstMapGimmick, war_asset_id: int
 ) -> NiceMapGimmick:
-    return NiceMapGimmick(
-        id=raw_map_gimmick.id,
-        image=fmt_url(
+    if raw_map_gimmick.imageId:
+        image = fmt_url(
             AssetURL.mapGimmickImg,
             base_url=settings.asset_url,
             region=region,
             war_asset_id=war_asset_id,
-            gimmick_id=raw_map_gimmick.id,
-        ),
+            gimmick_id=raw_map_gimmick.imageId,
+        )
+    else:
+        image = None
+    return NiceMapGimmick(
+        id=raw_map_gimmick.id,
+        image=image,
         x=raw_map_gimmick.x,
         y=raw_map_gimmick.y,
         depthOffset=raw_map_gimmick.depthOffset,
