@@ -59,6 +59,13 @@
     ]
   },
   {
+    "svtId": 101000,
+    "imageIds": [
+      "cut297_frame16",
+      "cut298_map"
+    ]
+  },
+  {
     "svtId": 101200,
     "imageIds": [
       "cut034_bdv00",
@@ -153,6 +160,13 @@
     "imageIds": [
       "cut233_okt02",
       "cut292_okt02"
+    ]
+  },
+  {
+    "svtId": 102800,
+    "imageIds": [
+	  "cut564_cut01",
+      "cut564_rgs_sword"
     ]
   },
   {
@@ -307,7 +321,8 @@
       "cut257_mms01",
       "cut257_mms02",
       "cut257_mms03",
-      "cut481_doujinshi11"
+      "cut481_doujinshi11",
+	  "cut564_cut01"
     ]
   },
   {
@@ -541,6 +556,12 @@
     ]
   },
   {
+    "svtId": 202900,
+    "imageIds": [
+      "cut564_cut02"
+    ]
+  },
+  {
     "svtId": 203000,
     "imageIds": [
       "cut171_token_crn"
@@ -726,6 +747,12 @@
     "svtId": 205000,
     "imageIds": [
       "cut475_ptr_full"
+    ]
+  },
+  {
+    "svtId": 205100,
+    "imageIds": [
+      "cut564_cut02"
     ]
   },
   {
@@ -1538,6 +1565,7 @@
   {
     "svtId": 502600,
     "imageIds": [
+      "cut297_frame15",
       "cut499_erh02"
     ]
   },
@@ -1666,6 +1694,13 @@
     ]
   },
   {
+    "svtId": 504700,
+    "imageIds": [
+      "cut335_ship",
+      "cut335_ship_reverse"
+    ]
+  },
+  {
     "svtId": 504800,
     "imageIds": [
       "cut281_mclt15",
@@ -1728,6 +1763,17 @@
       "cut528_map01",
       "cut528_map03",
       "cut529_yss2_02"
+    ]
+  },
+  {
+    "svtId": 505500,
+    "imageIds": [
+      "cut551_diddle",
+      "cut552_kmd",
+      "cut564_cut02",
+      "cut566_qonz_full_12",
+      "cut569_qonz3_full_1",
+      "cut579_qonz_18"
     ]
   },
   {
@@ -1878,6 +1924,12 @@
     ]
   },
   {
+    "svtId": 603100,
+    "imageIds": [
+      "cut297_frame17"
+    ]
+  },
+  {
     "svtId": 603200,
     "imageIds": [
       "cut542_srs07"
@@ -1989,6 +2041,12 @@
       "cut062_tri03",
       "cut442_jeep",
       "cut445_dbt"
+    ]
+  },
+  {
+    "svtId": 604900,
+    "imageIds": [
+      "cut564_cut02"
     ]
   },
   {
@@ -2267,6 +2325,13 @@
     ]
   },
   {
+    "svtId": 704900,
+    "imageIds": [
+      "cut564_cut02",
+      "cut579_sjr_21"
+    ]
+  },
+  {
     "svtId": 800100,
     "imageIds": [
       "00001",
@@ -2340,6 +2405,13 @@
       "cut542_hand_m",
       "cut542_hand_w",
       "cut542_msh08",
+      "cut564_cut03_m_1uniform",
+      "cut564_cut03_m_2polar",
+      "cut564_cut03_m_3battle",
+      "cut564_cut03_w_1uniform",
+      "cut564_cut03_w_2polar",
+      "cut564_cut03_w_3battle",
+      "cut579_msh_06",
       "cut669_vs01",
       "cut_manwaka_f",
       "cut_manwaka_m"
@@ -2403,7 +2475,8 @@
   {
     "svtId": 901100,
     "imageIds": [
-      "cut243_kar"
+      "cut243_kar",
+      "cut564_cut01"
     ]
   },
   {
@@ -2499,7 +2572,8 @@
   {
     "svtId": 1000400,
     "imageIds": [
-      "cut083_book02"
+      "cut083_book02",
+      "cut297_frame17"
     ]
   },
   {
@@ -2539,7 +2613,12 @@
       "cut317_bzt02",
       "cut317_bzt05",
       "cut317_mnn02",
-      "cut317_mnn05"
+      "cut317_mnn05",
+	  "cut564_cut01",
+      "cut565_mnn_full",
+      "cut570_mnn_01",
+      "cut570_mnn_02",
+      "cut570_mnn_03"
     ]
   },
   {
@@ -2646,7 +2725,8 @@
       "cut141_sist03",
       "cut141_sist09",
       "cut141_sist25",
-      "cut144_asto05"
+      "cut144_asto05",
+	  "cut564_cut01"
     ]
   },
   {
@@ -2821,6 +2901,16 @@
     "svtId": 2501300,
     "imageIds": [
       "cut498_wjn00"
+    ]
+  },
+  {
+    "svtId": 2501400,
+    "imageIds": [
+      "cut548_aok01",
+      "cut548_aok02",
+      "cut548_aok03",
+      "cut548_aok04",
+      "cut548_aok05"
     ]
   },
   {
