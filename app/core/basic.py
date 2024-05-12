@@ -126,6 +126,7 @@ def get_nice_buff_script(
         "checkIndvType",
         "HP_LOWER",
         "INDIVIDUALITIE_COUNT_ABOVE",
+        "INDIVIDUALITIE_COUNT_BELOW",
         "HP_HIGHER",
         "CounterMessage",
         "avoidanceText",
