@@ -16,4 +16,7 @@ def get_nice_svt_trait(svt_individuality: MstSvtIndividuality) -> NiceServantTra
         ),
         condId=svt_individuality.condId,
         condNum=svt_individuality.condNum,
+        eventId=svt_individuality.eventId,
+        startedAt=svt_individuality.startedAt,
+        endedAt=svt_individuality.endedAt,
     )

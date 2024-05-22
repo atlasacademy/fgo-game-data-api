@@ -1034,6 +1034,9 @@ class NiceServantTrait(BaseModel):
     condType: Optional[NiceCondType] = None
     condId: Optional[int] = None
     condNum: Optional[int] = None
+    eventId: int | None = None
+    startedAt: int | None = None
+    endedAt: int | None = None
 
 
 class NiceLoreCommentAdd(BaseModel):
