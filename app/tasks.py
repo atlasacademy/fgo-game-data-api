@@ -643,21 +643,26 @@ async def update_master_repo_info(
 
 
 async def clear_redis_cache(
-    redis: Redis, region_path: dict[Region, DirectoryPath]
+    redis: Redis,
+    region_path: dict[Region, DirectoryPath],
+    clear_heavy_quests: bool = False,
 ) -> None:  # pragma: no cover
     key_count = 0
 
     for region in region_path:
         key_pattern = f"{settings.redis_prefix}:cache:{region.value}*"
         async for key in redis.scan_iter(match=key_pattern):
-            await redis.delete(key)
-            key_count += 1
+            if (clear_heavy_quests and b"heavy" in key) or (
+                not clear_heavy_quests and b"heavy" not in key
+            ):
+                await redis.delete(key)
+                key_count += 1
 
     async for key in redis.scan_iter(match=f"{settings.redis_prefix}:cache::*"):
         await redis.delete(key)
         key_count += 1
 
-    logger.info(f"Cleared {key_count} cache redis keys.")
+    logger.info(f"Cleared {key_count} cache redis keys. {clear_heavy_quests=}")
 
 
 async def load_svt_extra(
@@ -695,12 +700,15 @@ async def load_and_export(
             await report_webhooks(region_path, "load")
 
     if settings.clear_redis_cache:
-        await clear_redis_cache(redis, region_path)
+        await clear_redis_cache(redis, region_path, clear_heavy_quests=False)
 
     if settings.export_all_nice:
         await generate_exports(redis, region_path, async_engines)
         if enable_webhook:
             await report_webhooks(region_path, "export")
+
+    if settings.clear_redis_cache:
+        await clear_redis_cache(redis, region_path, clear_heavy_quests=True)
 
 
 def update_data_repo(
