@@ -2980,11 +2980,11 @@
   "不思議な種": "Mysterious Seed",
   "隷属の呪縛": "Curse of Servitude",
   "呪縛の鎖": "Chain of Curses",
-  "被ダメージ時発動〔クリティカル〕": "Activate when Damaged(Critical Attacks)",
-  "大食": "大食",
-  "暴食": "暴食",
-  "ヒュドラの猛毒": "ヒュドラの猛毒",
-  "2ターン毎発動": "2ターン毎発動",
-  "生命維持ユニット": "生命維持ユニット",
-  "力の代償": "力の代償"
+  "被ダメージ時発動〔クリティカル〕": "Activate when Damaged (Critical Attacks)",
+  "大食": "Large Appetite",
+  "暴食": "Gluttony",
+  "ヒュドラの猛毒": "Hydra's Venom",
+  "2ターン毎発動": "Triggers Every 2 Turns",
+  "生命維持ユニット": "Life Support Unit",
+  "力の代償": "The Price of Power"
 }
