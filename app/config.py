@@ -73,7 +73,7 @@ class Settings(BaseSettings):
     github_webhook_git_pull: bool = False
     webhooks: list[str] = []
     error_webhooks: list[HttpUrl] = []
-    quest_heavy_cache_threshold: int = 2000
+    quest_heavy_cache_threshold: int = 1000
 
     @validator("asset_url", "rayshift_api_url")
     def remove_last_slash(cls, value: str) -> str:

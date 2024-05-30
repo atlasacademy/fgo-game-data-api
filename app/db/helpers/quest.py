@@ -200,7 +200,7 @@ async def get_quest_phase_search(
     enemy_script: Iterable[str] | None = None,
 ) -> list[MstQuestWithPhase]:
     from_clause: Union[Join, Table] = MSTQUEST_WITH_PHASE_FROM
-    if bgm_id or field_ai_id or enemy_svt_ai_id:
+    if bgm_id or field_ai_id:
         from_clause = from_clause.join(
             mstStage,
             and_(
@@ -286,14 +286,7 @@ async def get_quest_phase_search(
             mstStage.c.script.contains({"aiFieldIds": [{"id": field_ai_id}]})
         )
     if enemy_svt_ai_id:
-        where_clause.append(
-            or_(
-                questDetail_contains({"aiId": enemy_svt_ai_id}),
-                mstStage.c.script.contains(
-                    {"aiAllocations": [{"aiIds": [enemy_svt_ai_id]}]}
-                ),
-            )
-        )
+        where_clause.append(questDetail_contains({"aiId": enemy_svt_ai_id}))
     if enemy_trait:
         where_clause.append(questDetail_contains({"individuality": list(enemy_trait)}))
     if enemy_svt_id:
