@@ -54,7 +54,7 @@
   "「Lostbelt No.2」関連サーヴァント強化『大成功＆極大成功』率2倍！": "\"Lostbelt No.2\" Related Servants Enhancement Super & Great Success Rate x2!",
   "「Lostbelt No.2」関連サーヴァント 獲得経験値2倍！": "\"Lostbelt No.2\" Related Servants 2X EXP!",
   "「Lostbelt No.3」関連サーヴァント 獲得経験値2倍！": "\"Lostbelt No.3\" Related Servants 2X EXP!",
-  "「Lostbelt No.3」関連サーヴァント強化『大成功＆極大成功』率2倍！": "\"Lostbelt No.3\" Related Servants Super & Great Success x2!",
+  "「Lostbelt No.3」関連サーヴァント強化『大成功＆極大成功』率2倍！": "\"Lostbelt No.3\" Related Servants Enhancement Super & Great Success Rate x2!",
   "スルーズ、ヒルド、オルトリンデ 獲得経験値2倍！": "Thrud, Hildr, Ortlinde 2X EXP!",
   "マシュ強化『大成功＆極大成功』率2倍！": "Mash Super & Great Success x2!",
   "壱与 獲得経験値2倍！": "Iyo 2X EXP",
@@ -98,7 +98,7 @@
   "消費AP 75%DOWN": "AP Cost 1/4",
   "特定ｻｰｳﾞｧﾝﾄ獲得FP2倍ｷｬﾝﾍﾟｰﾝ": "Specific Servants Gain 2x Friend Points Campaign",
   "特定サーヴァント獲得FP2倍": "Certain Servants FP x2",
-  "初回クリアまで消費AP 50%DOWN": "AP Cost 1/2 Until First Clear of Part 2 Chapter 2",
+  "初回クリアまで消費AP 50%DOWN": "AP Cost 1/2 Until First Clear",
   "獲得FP4倍": "4X Friend Point Campaign",
   "Fate/stay night関連ｻｰｳﾞｧﾝﾄ獲得FP2倍": "Certain Servants FP x2",
   "THE STAGE関連ｻｰｳﾞｧﾝﾄ獲得FP2倍": "THE STAGE Related Servants FP x2",
@@ -400,5 +400,6 @@
   "オルガマリークエスト_2": "Olga Marie Quest_2",
   "魔法使いの夜アフターナイト／隈乃温泉殺人事件\n～駒鳥は見た！ 魔法使いは二度死ぬ～": "Witch on the Holy Night/After Night: Kumano Hot Springs Killer Case - Robin Witnessed It! The Magician Dies Once More",
   "期間限定で第8弾で召喚可能となったイベント限定サーヴァントはすべてのクエストで攻撃威力50%アップ！": "50% ATK Strength Up on the \"Evocation Festival: Part 8\" Servants for a Limited Time!",
-  "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ アンケート復刻版": "Survey Revival: Chaldea Summer Adventure! A Boy Pursuing Dreams and a Girl Who Dreams"
+  "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ アンケート復刻版": "Survey Revival: Chaldea Summer Adventure! A Boy Pursuing Dreams and a Girl Who Dreams",
+  "アドバンスドクエスト 第18弾": "アドバンスドクエスト 第18弾"
 }
