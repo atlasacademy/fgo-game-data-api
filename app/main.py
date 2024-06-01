@@ -24,7 +24,7 @@ from .redis import Redis
 from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo
-from .tasks import load_and_export
+from .zstd import zstd_compress, zstd_decompress
 
 
 settings = Settings()
@@ -293,11 +293,12 @@ class RedisBackend:  # pragma: no cover
 class PickleCoder:  # pragma: no cover
     @classmethod
     def encode(cls, value: Any) -> bytes:
-        return pickle.dumps(value)
+        picked = pickle.dumps(value, protocol=pickle.HIGHEST_PROTOCOL)
+        return zstd_compress(picked)
 
     @classmethod
     def decode(cls, value: bytes) -> Any:
-        return pickle.loads(value)
+        return pickle.loads(zstd_decompress(value))
 
 
 @app.on_event("startup")
