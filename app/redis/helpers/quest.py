@@ -41,10 +41,11 @@ async def get_stages_cache(
 ) -> Optional[RayshiftRedisData]:
     redis_key = get_redis_cache_key(region, quest_id, phase, hash, lang)
 
-    async for key in redis.scan_iter(match=f"{redis_key}*"):
-        redis_data = await redis.get(key)
-        if redis_data:
-            return cast(RayshiftRedisData, pickle.loads(redis_data))
+    if redis_data := await redis.get(redis_key):
+        return cast(RayshiftRedisData, pickle.loads(redis_data))
+
+    if redis_data := await redis.get(f"{redis_key}:heavy"):
+        return cast(RayshiftRedisData, pickle.loads(redis_data))
 
     return None
 
