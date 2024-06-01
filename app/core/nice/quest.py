@@ -783,8 +783,15 @@ async def get_nice_quest_phase(
         )
 
         TTL_SCALE = 6
+        quest_has_many_runs = (
+            cache_data.quest_drops
+            and cache_data.quest_drops[0].runs > settings.quest_heavy_cache_threshold
+        )
+
         if quest_already_closed:
             ttl = None
+        elif quest_has_many_runs:
+            ttl = settings.quest_cache_length * TTL_SCALE
         elif (
             0
             < current_time - db_data.nice.openedAt
