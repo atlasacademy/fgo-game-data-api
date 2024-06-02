@@ -19,6 +19,7 @@ from ..data.reverse import (
 )
 from ..schemas.common import Region
 from ..schemas.raw import MstSvtExtra
+from ..zstd import zstd_compress
 from . import Redis
 from .helpers.pydantic_object import pydantic_obj_redis_table
 from .helpers.reverse import RedisReverse
@@ -38,7 +39,8 @@ async def load_pydantic_object(
                 with open(table_json, "rb") as fp:
                     master_data: list[dict[str, Any]] = orjson.loads(fp.read())
                 redis_data = {
-                    item[id_field]: orjson.dumps(item) for item in master_data
+                    item[id_field]: zstd_compress(orjson.dumps(item))
+                    for item in master_data
                 }
                 redis_key = f"{redis_prefix}:{region.name}:{master_file}"
                 await redis.delete(redis_key)
@@ -50,7 +52,8 @@ async def load_svt_extra_redis(
 ) -> None:
     redis_key = f"{REDIS_DATA_PREFIX}:{region.name}:mstSvtExtra"
     svtExtra_redis_data = {
-        str(svtExtra.svtId): svtExtra.json() for svtExtra in svtExtras
+        str(svtExtra.svtId): zstd_compress(svtExtra.json().encode("utf-8"))
+        for svtExtra in svtExtras
     }
     await redis.delete(redis_key)
     await redis.hset(redis_key, mapping=svtExtra_redis_data)
@@ -62,7 +65,9 @@ async def load_mstBuff(
     for region, repo_folder in region_path.items():
         redis_key = f"{redis_prefix}:{region.name}:mstBuff"
         mstBuff_data = get_buff_with_classrelation(repo_folder)
-        mstBuff_redis = {k: v.json() for k, v in mstBuff_data.items()}
+        mstBuff_redis = {
+            k: zstd_compress(v.json().encode("utf-8")) for k, v in mstBuff_data.items()
+        }
         await redis.delete(redis_key)
         await redis.hset(redis_key, mapping=mstBuff_redis)
 
@@ -76,7 +81,9 @@ async def load_mstSvtLimit(
             with open(mstSvtLimit_json, "rb") as fp:
                 mstSvtLimit_data: list[dict[str, Any]] = orjson.loads(fp.read())
             redis_data = {
-                f'{item["svtId"]}:{item["limitCount"]}': orjson.dumps(item)
+                f'{item["svtId"]}:{item["limitCount"]}': zstd_compress(
+                    orjson.dumps(item)
+                )
                 for item in mstSvtLimit_data
             }
             redis_key = f"{redis_prefix}:{region.name}:mstSvtlimit"
@@ -108,7 +115,9 @@ async def load_reverse_data(
     for region, gamedata_path in region_path.items():
         for data in reverse_data_detail:
             reverse_data = data.dataFunc(gamedata_path)
-            redis_data = {str(k): orjson.dumps(v) for k, v in reverse_data.items()}
+            redis_data = {
+                str(k): zstd_compress(orjson.dumps(v)) for k, v in reverse_data.items()
+            }
             redis_key = f"{redis_prefix}:{region.name}:{data.key.name}"
             await redis.delete(redis_key)
             await redis.hset(redis_key, mapping=redis_data)

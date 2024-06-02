@@ -4,6 +4,7 @@ import orjson
 
 from ...config import Settings
 from ...schemas.common import Region
+from ...zstd import zstd_decompress
 from .. import Redis
 
 
@@ -28,7 +29,7 @@ async def get_reverse_ids(
     item_redis = await redis.hget(redis_key, str(item_id))
 
     if item_redis:
-        id_list: list[int] = orjson.loads(item_redis)
+        id_list: list[int] = orjson.loads(zstd_decompress(item_redis))
         return id_list
 
     return []
