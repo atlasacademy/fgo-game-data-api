@@ -1,12 +1,12 @@
 import re
 import string
 from enum import Enum
-from typing import Iterable, Literal, Optional, TypeVar, Union
+from typing import Any, Iterable, Literal, Optional, TypeVar, Union
 
 from pydantic import HttpUrl
-from pydantic.tools import parse_obj_as
 
 from ..data.custom_mappings import TRANSLATION_OVERRIDE, TRANSLATIONS, Translation
+from ..schemas.base import HttpUrlAdapter
 from ..schemas.common import Language, NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
 
@@ -126,9 +126,8 @@ def nullable_to_string(nullable: Optional[str]) -> str:
         return nullable
 
 
-def fmt_url(url_fmt: str, **kwargs: int | str | HttpUrl) -> HttpUrl:
-    url: HttpUrl = parse_obj_as(HttpUrl, url_fmt.format(**kwargs))
-    return url
+def fmt_url(url_fmt: str, **kwargs: Any) -> HttpUrl:
+    return HttpUrlAdapter.validate_python(url_fmt.format(**kwargs))
 
 
 TFlagEnum = TypeVar("TFlagEnum", bound=Enum)

@@ -42,7 +42,9 @@ async def client() -> AsyncGenerator[AsyncClient, None]:
 @pytest.fixture(scope="session")
 async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
     engine = create_async_engine(
-        settings.data[Region.NA].postgresdsn.replace("postgresql", "postgresql+psycopg")
+        str(settings.data[Region.NA].postgresdsn).replace(
+            "postgresql", "postgresql+psycopg"
+        )
     )
     connection = await engine.connect()
     try:
@@ -54,5 +56,5 @@ async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
 
 @pytest.fixture(scope="session")
 async def redis() -> AsyncGenerator["Redis[bytes]", None]:
-    async with Redis.from_url(settings.redisdsn) as redis_client:
+    async with Redis.from_url(str(settings.redisdsn)) as redis_client:
         yield redis_client

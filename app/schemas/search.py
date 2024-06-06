@@ -105,7 +105,7 @@ class SvtSearchQueryParams:
     excludeCollectionNo: list[int] = Query([])
     type: list[NiceSvtType] = Query([])
     flag: list[NiceSvtFlag] = Query([])
-    rarity: list[int] = Query([], ge=0, le=5)
+    rarity: list[int] = Query([])
     className: list[SvtClass] = Query([])
     gender: list[NiceGender] = Query([])
     attribute: list[Attribute] = Query([])

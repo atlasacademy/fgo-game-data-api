@@ -1,9 +1,9 @@
 from decimal import Decimal
-from typing import Any, Optional, Sequence
+from typing import Annotated, Any, Optional, Sequence
 
 from pydantic import Field, HttpUrl
 
-from .base import BaseModelORJson
+from .base import BaseModelORJson, DecimalSerializer
 from .common import BasicCostume, BuffScript, MCAssets, NiceTrait
 from .enums import Attribute, FuncApplyTarget, SvtClass
 from .gameenums import (
@@ -102,8 +102,8 @@ class BasicEquip(BaseModelORJson):
     atkMax: int
     hpMax: int
     face: HttpUrl
-    bondEquipOwner: Optional[int]
-    valentineEquipOwner: Optional[int]
+    bondEquipOwner: Optional[int] = None
+    valentineEquipOwner: Optional[int] = None
 
 
 class BasicMysticCode(BaseModelORJson):
@@ -177,7 +177,7 @@ class BasicEvent(BaseModelORJson):
 
 class BasicWar(BaseModelORJson):
     id: int
-    coordinates: list[list[Decimal]]
+    coordinates: list[list[Annotated[Decimal, DecimalSerializer]]]
     age: str
     name: str
     longName: str

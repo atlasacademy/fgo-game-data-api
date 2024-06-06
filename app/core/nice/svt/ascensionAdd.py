@@ -1,6 +1,7 @@
 from typing import cast
 
 import orjson
+from pydantic import HttpUrl
 
 from ....config import Settings
 from ....schemas.common import Language, NiceTrait, Region
@@ -16,7 +17,7 @@ settings = Settings()
 def get_nice_ascensionAdd(
     region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int], lang: Language
 ) -> AscensionAdd:
-    base_settings_id: dict[str, int | str] = {
+    base_settings_id: dict[str, int | str | HttpUrl] = {
         "base_url": settings.asset_url,
         "region": region,
         "item_id": raw_svt.mstSvt.id,
@@ -35,7 +36,11 @@ def get_nice_ascensionAdd(
     }
 
     ascensionAdd: dict[
-        str, dict[str, dict[int, list[NiceCommonRelease] | list[NiceTrait] | int | str]]
+        str,
+        dict[
+            str,
+            dict[int, list[NiceCommonRelease] | list[NiceTrait] | int | str | HttpUrl],
+        ],
     ] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
         for ascensionAddField in set(OVERWRITE_FIELDS)

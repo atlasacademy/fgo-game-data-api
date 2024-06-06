@@ -10,7 +10,7 @@ settings = Settings()
 
 engines = {
     region: create_engine(
-        region_data.postgresdsn.replace("postgresql", "postgresql+psycopg"),
+        str(region_data.postgresdsn).replace("postgresql", "postgresql+psycopg"),
         pool_size=1,
         max_overflow=5,
         future=True,
@@ -20,7 +20,7 @@ engines = {
 
 async_engines = {
     region: create_async_engine(
-        region_data.postgresdsn.replace("postgresql", "postgresql+psycopg"),
+        str(region_data.postgresdsn).replace("postgresql", "postgresql+psycopg"),
         echo=logger.isEnabledFor(TRACE_LOG_LEVEL),
         pool_size=settings.db_pool_size,
         max_overflow=settings.db_max_overflow,

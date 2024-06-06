@@ -556,7 +556,7 @@ def get_insert_rayshift_quest_data(
 ) -> list[dict[str, Any]]:
     data = []
     for query_id, quest_detail in quest_details.items():
-        quest_detail_dict = quest_detail.dict()
+        quest_detail_dict = quest_detail.model_dump(mode="json")
         quest_detail_dict["addedTime"] = quest_detail.addedTime.isoformat()
         data.append(
             {

@@ -1,7 +1,7 @@
 from collections import defaultdict
-from typing import Union
 
 import orjson
+from pydantic import HttpUrl
 
 from ....config import Settings
 from ....data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES
@@ -16,7 +16,7 @@ settings = Settings()
 
 
 def get_male_image_extraAssets(region: Region, svt_id: int) -> ExtraAssets:
-    base_settings_id: dict[str, Union[int, str]] = {
+    base_settings_id: dict[str, int | str | HttpUrl] = {
         "base_url": settings.asset_url,
         "region": region,
         "item_id": svt_id,
@@ -83,7 +83,7 @@ def get_svt_extraAssets(
     facesChange = ExtraAssetsUrl()
 
     base_settings = {"base_url": settings.asset_url, "region": region}
-    base_settings_id: dict[str, Union[int, str]] = {
+    base_settings_id: dict[str, int | str | HttpUrl] = {
         "base_url": settings.asset_url,
         "region": region,
         "item_id": svt_id,

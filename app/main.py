@@ -303,7 +303,7 @@ class PickleCoder:  # pragma: no cover
 
 @app.on_event("startup")
 async def startup() -> None:
-    redis = await Redis.from_url(settings.redisdsn)
+    redis = await Redis.from_url(str(settings.redisdsn))
     FastAPICache.init(
         RedisBackend(redis),  # type: ignore
         prefix=f"{settings.redis_prefix}:cache",

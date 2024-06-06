@@ -16,7 +16,7 @@ def get_buff_with_classrelation(gamedata_path: DirectoryPath) -> dict[int, MstBu
         if "relationId" in buff.script:
             overwrite_relation_id = int(buff.script["relationId"])
             overwrites = [
-                overwrite.dict()
+                overwrite.model_dump(mode="json")
                 for overwrite in mstClassRelationOverwrites
                 if overwrite.id == overwrite_relation_id
             ]
@@ -25,7 +25,7 @@ def get_buff_with_classrelation(gamedata_path: DirectoryPath) -> dict[int, MstBu
     for convert in mstBuffConvert:
         if convert.buffId in mstBuffs:
             buff = mstBuffs[convert.buffId]
-            convert_data = convert.dict()
+            convert_data = convert.model_dump(mode="json")
             if convert_data["convertType"] == BuffConvertType.BUFF:
                 convert_data["targetBuffs"] = [
                     mstBuffs[buff_id] for buff_id in convert_data["targetIds"]

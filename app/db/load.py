@@ -169,7 +169,11 @@ def load_skill_td_lv(
             and func_entity["mstFunc"]["vals"][0] in mstBuffId
         ):
             func_entity["mstFunc"]["expandedVals"] = [
-                {"mstBuff": mstBuffId[func_entity["mstFunc"]["vals"][0]].dict()}
+                {
+                    "mstBuff": mstBuffId[func_entity["mstFunc"]["vals"][0]].model_dump(
+                        mode="json"
+                    )
+                }
             ]
         else:
             func_entity["mstFunc"]["expandedVals"] = []
@@ -259,7 +263,7 @@ def load_event(
     event_war = get_event_with_warIds(gamedata_path)
     load_pydantic_to_db(conn, event_war.mstEvents, mstEvent)
 
-    mstWar_db_data = [orjson.loads(war.json()) for war in event_war.mstWars]
+    mstWar_db_data = [war.model_dump(mode="json") for war in event_war.mstWars]
     insert_db(conn, mstWar, mstWar_db_data)
 
 
@@ -267,7 +271,7 @@ def load_item(
     conn: Connection, gamedata_path: DirectoryPath
 ) -> None:  # pragma: no cover
     mstItems = get_item_with_use(gamedata_path)
-    mstItem_db_data = [item.dict() for item in mstItems]
+    mstItem_db_data = [item.model_dump(mode="json") for item in mstItems]
     insert_db(conn, mstItem, mstItem_db_data)
 
 
@@ -275,7 +279,7 @@ def load_gift(
     conn: Connection, gamedata_path: DirectoryPath
 ) -> None:  # pragma: no cover
     mstGifts = get_gift_with_index(gamedata_path)
-    insert_db(conn, mstGift, [item.dict() for item in mstGifts])
+    insert_db(conn, mstGift, [item.model_dump(mode="json") for item in mstGifts])
 
 
 def load_script_list(
@@ -387,7 +391,7 @@ def load_subtitle(
 def load_pydantic_to_db(
     conn: Connection, pydantic_data: Sequence[BaseModelORJson], db_table: Table
 ) -> None:  # pragma: no cover
-    db_data = [item.dict() for item in pydantic_data]
+    db_data = [item.model_dump(mode="json") for item in pydantic_data]
     insert_db(conn, db_table, db_data)
 
 

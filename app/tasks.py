@@ -594,11 +594,13 @@ async def generate_exports(
             if repo_info is None:
                 info_path = export_path / "info.json"
                 if info_path.exists():
-                    repo_info = RepoInfo.parse_file(info_path)
+                    repo_info = RepoInfo.model_validate(
+                        orjson.loads(info_path.read_bytes())
+                    )
 
             export_info = await load_export_info(region, region_path[region])
             if repo_info:
-                export_info = repo_info.dict() | export_info
+                export_info = repo_info.model_dump(mode="json") | export_info
             await dump_normal(export_path, "info", export_info)
 
             run_time = time.perf_counter() - start_time

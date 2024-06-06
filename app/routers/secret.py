@@ -28,7 +28,9 @@ router = APIRouter(
 async def get_secret_info(redis: Redis) -> dict[str, Any]:
     all_repo_info = await get_all_repo_info(redis, settings.data.keys())
     response_data = dict(
-        data_repo_version={k.value: v.dict() for k, v in all_repo_info.items()},
+        data_repo_version={
+            k.value: v.model_dump(mode="json") for k, v in all_repo_info.items()
+        },
         **instance_info,
     )
     return response_data

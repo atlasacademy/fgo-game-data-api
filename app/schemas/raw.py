@@ -1,9 +1,9 @@
 from decimal import Decimal
-from typing import Any, Optional
+from typing import Annotated, Any, Optional
 
 from pydantic import Field
 
-from .base import BaseModelORJson
+from .base import BaseModelORJson, DecimalSerializer
 from .common import NiceCostume, NiceValentineScript, StageLink
 from .enums import SERVANT_TYPES, AiType
 from .gameenums import SvtType
@@ -459,7 +459,7 @@ class MstSvtLimit(BaseModelORJson):
 
 
 class MstSvtComment(BaseModelORJson):
-    condValues: Optional[list[int]]  # Can be `null` explicitly
+    condValues: Optional[list[int]] = None  # Can be `null` explicitly
     script: Optional[dict[str, Any]] = None
     svtId: int  # 1000100
     id: int  # 2
@@ -499,13 +499,13 @@ class MstSvtScript(BaseModelORJson):
     faceX: int  # 376
     faceY: int  # 163
     bgImageId: int = 0  # 0
-    scale: Decimal  # 1.0
+    scale: Annotated[Decimal, DecimalSerializer]  # 1.0
     offsetX: int  # -4
     offsetY: int  # 102
     offsetXMyroom: int  # 283
     offsetYMyroom: int  # 119
-    svtId: Optional[int]
-    limitCount: Optional[int]
+    svtId: Optional[int] = None
+    limitCount: Optional[int] = None
 
 
 class MstCv(BaseModelORJson):
@@ -670,8 +670,8 @@ class MstGift(BaseModelORJson):
     objectId: int  # 403000
     priority: int  # 0
     num: int  # 1
-    lv: Optional[int]
-    limitCount: Optional[int]
+    lv: Optional[int] = None
+    limitCount: Optional[int] = None
 
 
 class MstGiftAdd(BaseModelORJson):
@@ -797,8 +797,8 @@ class MstVoice(BaseModelORJson):
 class ScriptJsonInfo(BaseModelORJson):
     id: str  # "0_S010"
     face: int  # 0
-    delay: Decimal  # 0.0
-    text: Optional[str]  # "I ask of you, are you my Master?"
+    delay: Annotated[Decimal, DecimalSerializer]  # 0.0
+    text: Optional[str] = None  # "I ask of you, are you my Master?"
     form: int = 0  # 0
     changeEffect: int = 0  # 0
     multiFace: Optional[list[int]] = None
@@ -819,9 +819,9 @@ class ScriptJsonCond(BaseModelORJson):
 
 
 class ScriptJson(BaseModelORJson):
-    summonScript: Optional[str]
-    overwriteName: Optional[str]
-    overwritePriority: Optional[int]
+    summonScript: Optional[str] = None
+    overwriteName: Optional[str] = None
+    overwritePriority: Optional[int] = None
     infos: list[ScriptJsonInfo] = []
     conds: list[ScriptJsonCond] | None = []
     condAddItem: int = 0
@@ -830,7 +830,7 @@ class ScriptJson(BaseModelORJson):
 
 class MstSvtVoice(BaseModelORJson):
     scriptJson: list[ScriptJson]
-    scriptJsonAdditory: Optional[list[ScriptJson]]
+    scriptJsonAdditory: Optional[list[ScriptJson]] = None
     id: int
     voicePrefix: int
     type: int
@@ -1226,7 +1226,7 @@ class MstEventTowerReward(BaseModelORJson):
 
 class MstBoxGacha(BaseModelORJson):
     baseIds: list[int]
-    pickupIds: Optional[list[int]]
+    pickupIds: Optional[list[int]] = None
     talkIds: list[int]
     script: Optional[dict[str, Any]] = None
     id: int
@@ -1239,9 +1239,9 @@ class MstBoxGacha(BaseModelORJson):
     detailUrl: str
     priority: int
     flag: int
-    presentMessageId: Optional[int]
-    changeMaxDrawAtOnceResetNum: Optional[int]
-    maxRequiredPresentBoxSpace: Optional[int]
+    presentMessageId: Optional[int] = None
+    changeMaxDrawAtOnceResetNum: Optional[int] = None
+    maxRequiredPresentBoxSpace: Optional[int] = None
 
 
 class MstBoxGachaBase(BaseModelORJson):
@@ -1582,7 +1582,7 @@ class MstWarBoardTreasure(BaseModelORJson):
 
 
 class MstEvent(BaseModelORJson):
-    script: list[dict[str, str]]  # []
+    script: list[dict[str, Any]]  # []
     id: int  # 10083
     baseEventId: int  # 0
     type: int  # 20
@@ -1611,7 +1611,7 @@ class MstEvent(BaseModelORJson):
 
 
 class MstWar(BaseModelORJson):
-    coordinates: list[list[Decimal]]
+    coordinates: list[list[Annotated[Decimal, DecimalSerializer]]]
     id: int  # 9046
     age: str  # "-"
     name: str  # "ルルハワ"
@@ -1888,11 +1888,11 @@ class MstQuestPhase(BaseModelORJson):
     playerExp: int  # 550,
     friendshipExp: int  # 165
     giftId: int = 0
-    encountSvtIds: Optional[list[int]]
+    encountSvtIds: Optional[list[int]] = None
 
 
 class MstQuestPhaseDetail(BaseModelORJson):
-    beforeActionVals: list[str] | None
+    beforeActionVals: list[str] | None = None
     afterActionVals: list[str]
     boardMessage: dict[str, Any]
     questId: int
@@ -1956,7 +1956,7 @@ class MstQuestPhasePresent(BaseModelORJson):
 
 class MstRestriction(BaseModelORJson):
     targetVals: list[int]
-    targetVals2: list[int] | None
+    targetVals2: list[int] | None = None
     id: int
     name: str
     type: int
@@ -2036,7 +2036,7 @@ class NpcSvtFollower(BaseModelORJson):
     skillLv1: int
     skillLv2: int
     skillLv3: int
-    passiveSkills: Optional[list[int]]
+    passiveSkills: Optional[list[int]] = None
     flag: int
     createdAt: int = 0
 
@@ -2340,7 +2340,7 @@ class ShopEntity(BaseModelORJson):
     mstShop: MstShop
     mstSetItem: list[MstSetItem]
     mstShopRelease: list[MstShopRelease]
-    mstShopScript: MstShopScript | None
+    mstShopScript: MstShopScript | None = None
     mstItem: list[MstItem]
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]
@@ -2360,8 +2360,8 @@ class MasterMissionEntity(BaseModelORJson):
     mstEventMission: list[MstEventMission]
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
-    mstCompleteMission: MstCompleteMission | None
-    mstBgm: MstBgm | None
+    mstCompleteMission: MstCompleteMission | None = None
+    mstBgm: MstBgm | None = None
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]
     mstQuest: list[MstQuestWithWar]

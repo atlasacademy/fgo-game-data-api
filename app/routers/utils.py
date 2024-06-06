@@ -39,7 +39,8 @@ def item_response(item: BaseModelORJson) -> Response:
     if the input model and the specificed response_model are the same.
     """
     return Response(
-        item.json(exclude_unset=True, exclude_none=True), media_type=JSON_MIME
+        item.model_dump_json(exclude_unset=True, exclude_none=True),
+        media_type=JSON_MIME,
     )
 
 
@@ -49,7 +50,10 @@ def list_string(items: Iterable[BaseModelORJson]) -> str:
     """
     return (
         "["
-        + ",".join(item.json(exclude_unset=True, exclude_none=True) for item in items)
+        + ",".join(
+            item.model_dump_json(exclude_unset=True, exclude_none=True)
+            for item in items
+        )
         + "]"
     )
 
@@ -60,7 +64,7 @@ def list_string_exclude(items: Iterable[BaseModelORJson], exclude: set[str]) -> 
     Attributes given to exclude will be excluded from the output json string.
     """
     all_items = ",".join(
-        item.json(exclude_unset=True, exclude_none=True, exclude=exclude)
+        item.model_dump_json(exclude_unset=True, exclude_none=True, exclude=exclude)
         for item in items
     )
     return "[" + all_items + "]"

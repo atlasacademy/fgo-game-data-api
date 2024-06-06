@@ -1,17 +1,13 @@
-from typing import Any
-
-import orjson
-from pydantic import BaseModel
-
-
-def orjson_dumps(v: Any, *, default: Any) -> str:
-    return orjson.dumps(v, default=default, option=orjson.OPT_NON_STR_KEYS).decode()
+from pydantic import BaseModel, ConfigDict, HttpUrl, PlainSerializer, TypeAdapter
 
 
 class BaseModelORJson(BaseModel):
-    """Slightly modified pydantic BaseModel that uses orjson for json methods"""
+    model_config = ConfigDict(from_attributes=True, cache_strings=True)
 
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
-        orm_mode = True
+
+HttpUrlAdapter: TypeAdapter[HttpUrl] = TypeAdapter(HttpUrl)
+
+
+DecimalSerializer = PlainSerializer(
+    lambda x: float(x), return_type=float, when_used="json"
+)

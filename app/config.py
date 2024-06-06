@@ -1,25 +1,27 @@
 import logging
 from logging.handlers import HTTPHandler
 from pathlib import Path
-from typing import Any, Optional
+from typing import Optional, Type
 
-import orjson
 from git import Repo
 from pydantic import (
-    BaseSettings,
     DirectoryPath,
-    Extra,
     Field,
     HttpUrl,
     PostgresDsn,
     RedisDsn,
     SecretStr,
-    validator,
+    field_validator,
 )
 from pydantic.main import BaseModel
-from pydantic.tools import parse_obj_as
+from pydantic_settings import (
+    BaseSettings,
+    JsonConfigSettingsSource,
+    PydanticBaseSettingsSource,
+)
 from uvicorn.logging import DefaultFormatter
 
+from .schemas.base import HttpUrlAdapter
 from .schemas.common import Region, RepoInfo
 
 
@@ -42,10 +44,6 @@ logger.addHandler(console_handler)
 logger.setLevel(uvicorn_logger.level)
 
 
-def json_config_settings_source(_: BaseSettings) -> Any:
-    return orjson.loads(Path("config.json").read_bytes())
-
-
 class RegionSettings(BaseModel):
     gamedata: DirectoryPath
     postgresdsn: PostgresDsn
@@ -57,14 +55,16 @@ class Settings(BaseSettings):
     redis_prefix: str = "fgoapi"
     clear_redis_cache: bool = True
     rayshift_api_key: SecretStr = SecretStr("")
-    rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
+    rayshift_api_url: HttpUrl = HttpUrlAdapter.validate_python(
+        "https://rayshift.io/api/v1/"
+    )
     quest_cache_length: int = 3600
     db_pool_size: int = 3
     db_max_overflow: int = 10
     write_postgres_data: bool = True
     write_redis_data: bool = True
-    asset_url: HttpUrl = parse_obj_as(
-        HttpUrl, "https://assets.atlasacademy.io/GameData/"
+    asset_url: HttpUrl = HttpUrlAdapter.validate_python(
+        "https://assets.atlasacademy.io/GameData/"
     )
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
@@ -75,26 +75,32 @@ class Settings(BaseSettings):
     error_webhooks: list[HttpUrl] = []
     quest_heavy_cache_threshold: int = 1000
 
-    @validator("asset_url", "rayshift_api_url")
-    def remove_last_slash(cls, value: str) -> str:
-        if value.endswith("/"):
-            return value[:-1]
+    @field_validator("asset_url", "rayshift_api_url")
+    @classmethod
+    def remove_last_slash(cls, value: HttpUrl) -> HttpUrl:
+        if str(value).endswith("/"):
+            return HttpUrlAdapter.validate_python(str(value).removesuffix("/"))
         else:
-            return value
+            return HttpUrlAdapter.validate_python(str(value))
 
-    class Config:
-        extra = Extra.ignore
-        env_file = ".env"
-        secrets_dir = "secrets"
-
-        @classmethod
-        def customise_sources(cls, init_settings, env_settings, file_secret_settings):  # type: ignore
-            return (
-                init_settings,
-                file_secret_settings,
-                env_settings,
-                json_config_settings_source,
-            )
+    @classmethod
+    def settings_customise_sources(
+        cls,
+        settings_cls: Type[BaseSettings],
+        init_settings: PydanticBaseSettingsSource,
+        env_settings: PydanticBaseSettingsSource,
+        dotenv_settings: PydanticBaseSettingsSource,
+        file_secret_settings: PydanticBaseSettingsSource,
+    ) -> tuple[PydanticBaseSettingsSource, ...]:
+        return (
+            init_settings,
+            file_secret_settings,
+            env_settings,
+            dotenv_settings,
+            JsonConfigSettingsSource(
+                settings_cls, json_file=Path("config.json"), json_file_encoding="utf-8"
+            ),
+        )
 
 
 settings = Settings()
@@ -114,10 +120,9 @@ app_info = RepoInfo(
     hash=latest_commit.hexsha[:6],
     timestamp=latest_commit.committed_date,
 )
-app_settings_str = orjson.loads(settings.json())
 instance_info = {
-    "app_version": app_info.dict(),
-    "app_settings": app_settings_str,
+    "app_version": app_info.model_dump(mode="json"),
+    "app_settings": settings.model_dump(mode="json"),
     "file_path": str(project_root),
 }
 

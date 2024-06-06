@@ -1,11 +1,10 @@
 from decimal import Decimal
 from enum import StrEnum
-from typing import Any, Generic, Optional, TypeVar
+from typing import Annotated, Any, Generic, Optional, TypeVar
 
 from pydantic import BaseModel, Field, HttpUrl
-from pydantic.generics import GenericModel
 
-from .base import BaseModelORJson
+from .base import BaseModelORJson, DecimalSerializer
 from .basic import (
     BasicQuest,
     BasicReversedBuff,
@@ -825,7 +824,7 @@ class NiceEnemyMasterBattle(BaseModelORJson):
     maxCommandSpell: int
     offsetX: int
     offsetY: int
-    cutin: list[HttpUrl] | None
+    cutin: list[HttpUrl] | None = None
 
 
 class NiceEnemyMaster(BaseModelORJson):
@@ -906,16 +905,16 @@ class NiceCardDetail(BaseModel):
     hitsDistribution: list[int]
     attackIndividuality: list[NiceTrait]
     attackType: NiceCommandCardAttackType
-    damageRate: int | None
-    attackNpRate: int | None
-    defenseNpRate: int | None
-    dropStarRate: int | None
+    damageRate: int | None = None
+    attackNpRate: int | None = None
+    defenseNpRate: int | None = None
+    dropStarRate: int | None = None
 
 
 AscensionAddData = TypeVar("AscensionAddData")
 
 
-class AscensionAddEntry(GenericModel, Generic[AscensionAddData]):
+class AscensionAddEntry(BaseModel, Generic[AscensionAddData]):
     ascension: dict[int, AscensionAddData] = Field(
         ...,
         title="Ascension changes",
@@ -1056,7 +1055,7 @@ class NiceLoreComment(BaseModel):
     condMessage: str
     comment: str
     condType: NiceCondType
-    condValues: Optional[list[int]]
+    condValues: Optional[list[int]] = None
     condValue2: int
     additionalConds: list[NiceLoreCommentAdd]
 
@@ -1157,7 +1156,7 @@ class NiceVoiceLine(BaseModelORJson):
     audioAssets: list[str] = Field(
         ..., title="Voice line mp3 URLs", description="Voice line mp3 URLs."
     )
-    delay: list[Decimal] = Field(
+    delay: list[Annotated[Decimal, DecimalSerializer]] = Field(
         ...,
         title="Voice line delays",
         description="Delays in seconds before playing the audio file.",
@@ -1756,8 +1755,8 @@ class NiceEventPointBuff(BaseModelORJson):
     detail: str
     icon: HttpUrl
     background: NiceItemBGType
-    skillIcon: HttpUrl | None
-    lv: int | None
+    skillIcon: HttpUrl | None = None
+    lv: int | None = None
     value: int
 
 
@@ -2178,8 +2177,8 @@ class NiceEvent(BaseModelORJson):
     treasureBoxes: list[NiceEventTreasureBox]
     bulletinBoards: list[NiceEventBulletinBoard]
     recipes: list[NiceEventRecipe]
-    digging: NiceEventDigging | None
-    cooltime: NiceEventCooltime | None
+    digging: NiceEventDigging | None = None
+    cooltime: NiceEventCooltime | None = None
     fortifications: list[NiceEventFortification]
     campaigns: list[NiceEventCampaign]
     campaignQuests: list[NiceEventQuest]
@@ -2197,7 +2196,7 @@ class NiceCompleteMission(BaseModelORJson):
     objectId: int
     presentMessageId: int
     gifts: list[NiceGift]
-    bgm: NiceBgm | None
+    bgm: NiceBgm | None = None
 
 
 class NiceMasterMission(BaseModelORJson):
@@ -2206,7 +2205,7 @@ class NiceMasterMission(BaseModelORJson):
     endedAt: int
     closedAt: int
     missions: list[NiceEventMission]
-    completeMission: NiceCompleteMission | None
+    completeMission: NiceCompleteMission | None = None
     quests: list[BasicQuest]
 
 
@@ -2287,44 +2286,44 @@ class NiceQuest(BaseModelORJson):
 
 
 class EnemyScript(BaseModelORJson):
-    deathType: Optional[NiceSvtDeadType]
-    appear: Optional[bool]
-    noVoice: Optional[bool]
-    raid: Optional[int]
-    superBoss: Optional[int]
-    hpBarType: Optional[int]
+    deathType: Optional[NiceSvtDeadType] = None
+    appear: Optional[bool] = None
+    noVoice: Optional[bool] = None
+    raid: Optional[int] = None
+    superBoss: Optional[int] = None
+    hpBarType: Optional[int] = None
     leader: Optional[bool] = Field(None, title="Battle ends if servant is defeated")
-    scale: Optional[int]
-    svtVoiceId: Optional[int]
-    treasureDeviceVoiceId: Optional[str]
-    changeAttri: Optional[Attribute]
-    billBoardGroup: Optional[int]
-    multiTargetCore: Optional[bool]
-    multiTargetUp: Optional[bool]
-    multiTargetUnder: Optional[bool]
-    startPos: Optional[bool]
-    deadChangePos: Optional[int]
+    scale: Optional[int] = None
+    svtVoiceId: Optional[int] = None
+    treasureDeviceVoiceId: Optional[str] = None
+    changeAttri: Optional[Attribute] = None
+    billBoardGroup: Optional[int] = None
+    multiTargetCore: Optional[bool] = None
+    multiTargetUp: Optional[bool] = None
+    multiTargetUnder: Optional[bool] = None
+    startPos: Optional[bool] = None
+    deadChangePos: Optional[int] = None
     call: Optional[list[int]] = Field(None, title="Summon these NPC IDs")
     shift: Optional[list[int]] = Field(None, title="Break bar switch to these NPC IDs")
-    shiftPosition: Optional[int]
+    shiftPosition: Optional[int] = None
     shiftClear: list[NiceTrait] | None = Field(
         None, title="Active buff traits to remove with break bar"
     )
-    skillShift: Optional[list[int]]
-    missionTargetSkillShift: Optional[list[int]]
-    change: Optional[list[int]]
-    forceDropItem: Optional[bool]
-    entryIndex: Optional[int]  # Only used for Rashomon raids
-    treasureDeviceName: Optional[str]
-    treasureDeviceRuby: Optional[str]
-    npInfoEnable: Optional[bool]
-    npCharge: Optional[int]
-    NoSkipDead: Optional[bool]
-    probability_type: int | None
+    skillShift: Optional[list[int]] = None
+    missionTargetSkillShift: Optional[list[int]] = None
+    change: Optional[list[int]] = None
+    forceDropItem: Optional[bool] = None
+    entryIndex: Optional[int] = None  # Only used for Rashomon raids
+    treasureDeviceName: Optional[str] = None
+    treasureDeviceRuby: Optional[str] = None
+    npInfoEnable: Optional[bool] = None
+    npCharge: Optional[int] = None
+    NoSkipDead: Optional[bool] = None
+    probability_type: int | None = None
 
 
 class EnemyInfoScript(BaseModelORJson):
-    isAddition: bool | None
+    isAddition: bool | None = None
 
 
 class EnemySkill(BaseModelORJson):
@@ -2728,7 +2727,7 @@ class NiceSpotRoad(BaseModelORJson):
 
 class NiceMapGimmick(BaseModel):
     id: int
-    image: Optional[HttpUrl]
+    image: Optional[HttpUrl] = None
     x: int
     y: int
     depthOffset: int
@@ -2774,8 +2773,8 @@ class NiceSpot(BaseModel):
     name: str
     originalName: str
     image: Optional[HttpUrl] = None
-    x: Decimal
-    y: Decimal
+    x: Annotated[Decimal, DecimalSerializer]
+    y: Annotated[Decimal, DecimalSerializer]
     imageOfsX: int
     imageOfsY: int
     nameOfsX: int
@@ -2811,7 +2810,7 @@ class NiceWarQuestSelection(BaseModelORJson):
 
 class NiceWar(BaseModelORJson):
     id: int
-    coordinates: list[list[Decimal]]
+    coordinates: list[list[Annotated[Decimal, DecimalSerializer]]]
     age: str
     name: str
     originalName: str
@@ -2905,15 +2904,15 @@ class NiceClassBoardLock(BaseModelORJson):
 
 class NiceClassBoardSquare(BaseModelORJson):
     id: int
-    icon: HttpUrl | None
+    icon: HttpUrl | None = None
     items: list[NiceItemAmount]
     posX: int
     posY: int
     skillType: NiceClassBoardSkillType
-    targetSkill: NiceSkill | None
+    targetSkill: NiceSkill | None = None
     upSkillLv: int
-    targetCommandSpell: NiceClassBoardCommandSpell | None
-    lock: NiceClassBoardLock | None
+    targetCommandSpell: NiceClassBoardCommandSpell | None = None
+    lock: NiceClassBoardLock | None = None
     flags: list[NiceClassBoardSquareFlag]
     priority: int
 
