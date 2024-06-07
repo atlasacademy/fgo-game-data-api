@@ -9,8 +9,7 @@ repository = "https://github.com/atlasacademy/fgo-game-data-api"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-pydantic = "^1"
-orjson = "^3"
+pydantic = "^2"
 
 [tool.poetry.dev-dependencies]
 
