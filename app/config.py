@@ -55,17 +55,13 @@ class Settings(BaseSettings):
     redis_prefix: str = "fgoapi"
     clear_redis_cache: bool = True
     rayshift_api_key: SecretStr = SecretStr("")
-    rayshift_api_url: HttpUrl = HttpUrlAdapter.validate_python(
-        "https://rayshift.io/api/v1/"
-    )
+    rayshift_api_url: str = "https://rayshift.io/api/v1/"
     quest_cache_length: int = 3600
     db_pool_size: int = 3
     db_max_overflow: int = 10
     write_postgres_data: bool = True
     write_redis_data: bool = True
-    asset_url: HttpUrl = HttpUrlAdapter.validate_python(
-        "https://assets.atlasacademy.io/GameData/"
-    )
+    asset_url: str = "https://assets.atlasacademy.io/GameData"
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
     documentation_all_nice: bool = False
@@ -77,11 +73,8 @@ class Settings(BaseSettings):
 
     @field_validator("asset_url", "rayshift_api_url")
     @classmethod
-    def remove_last_slash(cls, value: HttpUrl) -> HttpUrl:
-        if str(value).endswith("/"):
-            return HttpUrlAdapter.validate_python(str(value).removesuffix("/"))
-        else:
-            return HttpUrlAdapter.validate_python(str(value))
+    def remove_last_slash(cls, value: str) -> str:
+        return value.removesuffix("/")
 
     @classmethod
     def settings_customise_sources(
