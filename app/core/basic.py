@@ -205,12 +205,12 @@ def get_basic_buff_no_reverse(
         ),
         type=BUFF_TYPE_NAME[mstBuff.type],
         buffGroup=mstBuff.buffGroup,
-        script=BuffScript.parse_obj(
+        script=BuffScript.model_validate(
             get_nice_buff_script(
                 mstBuff,
                 lambda buff: get_basic_buff_no_reverse(
-                    MstBuff.parse_obj(buff), region, lang
-                ),
+                    MstBuff.model_validate(buff), region, lang
+                ).model_dump(mode="json", exclude_unset=True, exclude_none=True),
             )
         ),
         originalScript=mstBuff.script,
