@@ -829,7 +829,7 @@ class ScriptJson(BaseModelORJson):
 
 
 class MstSvtVoice(BaseModelORJson):
-    scriptJson: list[ScriptJson]
+    scriptJson: list[ScriptJson | None]
     scriptJsonAdditory: Optional[list[ScriptJson]] = None
     id: int
     voicePrefix: int
