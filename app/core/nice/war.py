@@ -17,6 +17,7 @@ from ...schemas.gameenums import (
 )
 from ...schemas.nice import (
     AssetURL,
+    NiceBgm,
     NiceMap,
     NiceMapGimmick,
     NiceQuest,
@@ -121,9 +122,11 @@ def get_nice_map(
 ) -> NiceMap:
     base_settings = {"base_url": settings.asset_url, "region": region}
 
-    bgm = get_nice_bgm(
-        region, next(bgm for bgm in bgms if bgm.id == raw_map.bgmId), lang
-    )
+    bgms = [bgm for bgm in bgms if bgm.id == raw_map.bgmId]
+    if bgms:
+        bgm = get_nice_bgm(region, bgms[0], lang)
+    else:
+        bgm = NiceBgm(id=-1, name="", originalName="", fileName="", notReleased=True)
 
     return NiceMap(
         id=raw_map.id,
