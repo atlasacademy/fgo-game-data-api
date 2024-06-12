@@ -21,7 +21,6 @@ from pydantic_settings import (
 )
 from uvicorn.logging import DefaultFormatter
 
-from .schemas.base import HttpUrlAdapter
 from .schemas.common import Region, RepoInfo
 
 

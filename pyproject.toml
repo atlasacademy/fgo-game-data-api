@@ -11,7 +11,7 @@ fastapi = "^0.111.0"
 uvicorn = { extras = ["standard"], version = "^0.30.1" }
 python-dotenv = "^1.0.1"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
-orjson = "^3.10.3"
+orjson = "^3.10.4"
 aiofiles = "^23.2.1"
 GitPython = "^3.1.43"
 SQLAlchemy = "^2.0.30"

@@ -751,6 +751,7 @@ def test_nice_voice_summon_script() -> None:
     mstVoices = {voice.id: voice for voice in raw_voice}
 
     raw_svt_voice = load_master_data(test_gamedata, MstSvtVoice)[0]
+    assert raw_svt_voice.scriptJson[0] is not None
     nice_voice = get_nice_voice_line(
         Region.JP,
         raw_svt_voice.scriptJson[0],
