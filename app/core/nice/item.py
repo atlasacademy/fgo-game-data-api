@@ -1,4 +1,3 @@
-from collections import defaultdict
 from typing import Iterable
 
 from pydantic import HttpUrl
@@ -15,8 +14,8 @@ from ...schemas.nice import (
     NiceItemSelect,
     NiceLvlUpMaterial,
 )
-from ...schemas.raw import MstGift, MstItem, MstItemSelect
-from ..nice.gift import GiftData, get_nice_gifts
+from ...schemas.raw import MstItem, MstItemSelect
+from ..nice.gift import GiftData, get_gift_map, get_nice_gifts
 from ..raw import get_item_entity
 from ..utils import fmt_url, get_traits_list, get_translation
 
@@ -58,10 +57,9 @@ def get_nice_item_from_raw(
         icon_url = fmt_url(AssetURL.coins, **url_format_params)
     else:
         icon_url = fmt_url(AssetURL.items, **url_format_params)
-    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
-    for gift in raw_item.mstGift:
-        gift_maps[gift.id].append(gift)
-    gift_data = GiftData(gift_adds=raw_item.mstGiftAdd, gift_maps=gift_maps)
+
+    gift_maps = get_gift_map(raw_item.mstGift)
+    gift_data = GiftData(gift_adds=raw_item.mstGiftAdd, gift_map=gift_maps)
 
     return NiceItem(
         id=raw_item.id,

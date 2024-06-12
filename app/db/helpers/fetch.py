@@ -606,7 +606,17 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         [mstSvtVoiceRelation.c.svtId],
     ),
     MstBgm: (mstBgm, mstBgm.c.id, [mstBgm.c.id]),
-    MstGift: (mstGift, mstGift.c.id, [mstGift.c.id, mstGift.c.sort_id]),
+    MstGift: (
+        mstGift,
+        mstGift.c.id,
+        [
+            mstGift.c.id,
+            mstGift.c.priority.desc(),
+            mstGift.c.type,
+            mstGift.c.objectId,
+            mstGift.c.sort_id,
+        ],
+    ),
     MstGiftAdd: (mstGiftAdd, mstGiftAdd.c.giftId, [mstGiftAdd.c.giftId]),
     MstShopScript: (mstShopScript, mstShopScript.c.shopId, [mstShopScript.c.shopId]),
     MstShopRelease: (

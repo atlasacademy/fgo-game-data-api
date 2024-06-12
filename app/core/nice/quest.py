@@ -65,8 +65,6 @@ from ...schemas.raw import (
     MstBgm,
     MstBlankEarthSpot,
     MstClosedMessage,
-    MstGift,
-    MstGiftAdd,
     MstQuestHint,
     MstQuestMessage,
     MstQuestPhasePresent,
@@ -88,7 +86,7 @@ from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
 from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies, get_war_board_enemies
 from .follower import get_nice_support_servants
-from .gift import get_nice_gift
+from .gift import GiftData, get_gift_map, get_nice_gifts
 from .item import get_nice_item_amount, get_nice_item_from_raw
 from .stage_cutin import get_quest_stage_cutins
 
@@ -267,19 +265,11 @@ def get_nice_all_scripts(
 
 
 def get_nice_quest_present(
-    region: Region,
-    quest_present: MstQuestPhasePresent,
-    gifts: list[MstGift],
-    gift_adds: list[MstGiftAdd],
-    gift_maps: dict[int, list[MstGift]],
+    region: Region, quest_present: MstQuestPhasePresent, gift_data: GiftData
 ) -> NiceQuestPhasePresent:
     return NiceQuestPhasePresent(
         phase=quest_present.phase,
-        gifts=[
-            get_nice_gift(region, gift, gift_adds, gift_maps)
-            for gift in gifts
-            if gift.id == quest_present.giftId
-        ],
+        gifts=get_nice_gifts(region, quest_present.giftId, gift_data),
         giftIcon=(
             fmt_url(
                 AssetURL.items,
@@ -304,9 +294,8 @@ def get_nice_quest_with_war_spot(
     mstWar: MstWar,
     mstSpot: MstSpot | MstBlankEarthSpot,
 ) -> dict[str, Any]:
-    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
-    for gift in raw_quest.mstGift:
-        gift_maps[gift.id].append(gift)
+    gift_map = get_gift_map(raw_quest.mstGift)
+    gift_data = GiftData(raw_quest.mstGiftAdd, gift_map)
 
     nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
@@ -346,11 +335,7 @@ def get_nice_quest_with_war_spot(
             if raw_quest.mstQuest.giftIconId != 0
             else None
         ),
-        "gifts": [
-            get_nice_gift(region, gift, raw_quest.mstGiftAdd, gift_maps)
-            for gift in raw_quest.mstGift
-            if gift.id == raw_quest.mstQuest.giftId
-        ],
+        "gifts": get_nice_gifts(region, raw_quest.mstQuest.giftId, gift_data),
         "releaseConditions": [
             get_nice_quest_release(release, raw_quest.mstClosedMessage)
             for release in raw_quest.mstQuestRelease
@@ -360,13 +345,7 @@ def get_nice_quest_with_war_spot(
             for release in raw_quest.mstQuestReleaseOverwrite
         ],
         "presents": [
-            get_nice_quest_present(
-                region,
-                quest_present,
-                raw_quest.mstGift,
-                raw_quest.mstGiftAdd,
-                gift_maps,
-            )
+            get_nice_quest_present(region, quest_present, gift_data)
             for quest_present in raw_quest.mstQuestPhasePresent
         ],
         "phases": sorted(raw_quest.phases),

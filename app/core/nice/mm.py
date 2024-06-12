@@ -1,4 +1,3 @@
-from collections import defaultdict
 from typing import Optional
 
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -10,13 +9,12 @@ from ...schemas.raw import (
     MasterMissionEntity,
     MstBgm,
     MstCompleteMission,
-    MstGift,
     MstMasterMission,
 )
 from .. import raw
 from .bgm import get_nice_bgm
 from .event.mission import get_nice_missions
-from .gift import GiftData, get_nice_gifts
+from .gift import GiftData, get_gift_map, get_nice_gifts
 
 
 def get_nice_complete_mission(
@@ -37,10 +35,8 @@ def get_nice_complete_mission(
 def get_nice_master_mission_from_raw(
     region: Region, raw_mm: MasterMissionEntity, lang: Language
 ) -> NiceMasterMission:
-    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
-    for gift in raw_mm.mstGift:
-        gift_maps[gift.id].append(gift)
-    gift_data = GiftData(raw_mm.mstGiftAdd, gift_maps)
+    gift_map = get_gift_map(raw_mm.mstGift)
+    gift_data = GiftData(raw_mm.mstGiftAdd, gift_map)
 
     missions = get_nice_missions(
         region,

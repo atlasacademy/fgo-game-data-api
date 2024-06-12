@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....schemas.common import Region
@@ -25,11 +23,10 @@ from ....schemas.raw import (
     MstEventMissionConditionDetail,
     MstEventMissionGroup,
     MstEventRandomMission,
-    MstGift,
 )
 from ... import raw
 from ...utils import get_traits_list
-from ..gift import GiftData, get_nice_gifts
+from ..gift import GiftData, get_gift_map, get_nice_gifts
 
 
 def get_nice_mission_cond_detail(
@@ -159,16 +156,14 @@ def get_nice_mission_groups(
 def get_nice_event_mission_from_raw(
     region: Region, raw_mission: EventMissionEntity
 ) -> NiceEventMission:
-    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
-    for gift in raw_mission.mstGift:
-        gift_maps[gift.id].append(gift)
+    gift_map = get_gift_map(raw_mission.mstGift)
 
     return get_nice_mission(
         region,
         raw_mission.mstEventMission,
         raw_mission.mstEventMissionCondition,
         {detail.id: detail for detail in raw_mission.mstEventMissionConditionDetail},
-        GiftData(raw_mission.mstGiftAdd, gift_maps),
+        GiftData(raw_mission.mstGiftAdd, gift_map),
     )
 
 

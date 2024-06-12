@@ -21,11 +21,11 @@ from ....schemas.nice import (
     NiceVoiceCond,
     NiceVoiceGroup,
 )
-from ....schemas.raw import MstEventAdd, MstGift
+from ....schemas.raw import MstEventAdd
 from ... import raw
 from ...utils import fmt_url, get_translation
 from ..bgm import get_nice_bgm_entity_from_raw
-from ..gift import GiftData
+from ..gift import GiftData, get_gift_map
 from ..item import get_nice_item_from_raw
 from ..skill import get_nice_skill_from_raw
 from ..svt.voice import get_nice_voice_group
@@ -113,16 +113,13 @@ async def get_nice_event(
         shop_script.shopId: shop_script for shop_script in raw_event.mstShopScript
     }
 
-    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
-    for gift in raw_event.mstGift:
-        gift_maps[gift.id].append(gift)
-
     item_map = {
         item.id: get_nice_item_from_raw(region, item, lang)
         for item in raw_event.mstItem
     }
 
-    gift_data = GiftData(raw_event.mstGiftAdd, gift_maps)
+    gift_map = get_gift_map(raw_event.mstGift)
+    gift_data = GiftData(raw_event.mstGiftAdd, gift_map)
 
     missions = get_nice_missions(
         region,

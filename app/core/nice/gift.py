@@ -28,13 +28,25 @@ settings = Settings()
 @dataclass
 class GiftData:
     gift_adds: list[MstGiftAdd]
-    gift_maps: dict[int, list[MstGift]]
+    gift_map: dict[int, list[MstGift]]
+
+
+def get_gift_map(gifts: list[MstGift]) -> dict[int, list[MstGift]]:
+    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
+    for gift in gifts:
+        gift_maps[gift.id].append(gift)
+
+    return gift_maps
+
+
+def gift_sort(gift: MstGift) -> tuple[int, int, int, int, int]:
+    return (gift.id, -gift.priority, gift.type, gift.objectId, gift.sort_id)
 
 
 def get_nice_gifts(region: Region, gift_id: int, gift_data: GiftData) -> list[NiceGift]:
     return [
-        get_nice_gift(region, gift, gift_data.gift_adds, gift_data.gift_maps)
-        for gift in gift_data.gift_maps[gift_id]
+        get_nice_gift(region, gift, gift_data.gift_adds, gift_data.gift_map)
+        for gift in sorted(gift_data.gift_map[gift_id], key=gift_sort)
     ]
 
 
@@ -124,7 +136,9 @@ async def get_nice_gifts_from_id(
     gifts = await fetch.get_all_multiple(
         conn, MstGift, set(gift_ids) | replacement_gift_ids
     )
-    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
-    for gift in gifts:
-        gift_maps[gift.id].append(gift)
-    return [get_nice_gift(region, gift, gift_adds, gift_maps) for gift in gifts]
+    gift_maps = get_gift_map(gifts)
+
+    return [
+        get_nice_gift(region, gift, gift_adds, gift_maps)
+        for gift in sorted(gifts, key=gift_sort)
+    ]
