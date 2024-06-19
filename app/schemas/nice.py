@@ -413,7 +413,13 @@ class BaseVals(BaseModel):
     BgmAllowSubPlaying: int | None = None
     BgPriority: int | None = None
     PriorityBg: int | None = None
-    ResetBgmPriorityAtWaveStart: int | None = None
+    ResetPriorityBgmAtWaveStart: int | None = None
+    ControlOtherBgmAtOverStageBgm_Priority: int | None = None
+    ControlOtherBgmAtOverStageBgm_Target: int | None = None
+    ExtendBuffHalfTurnInOpponentTurn: int | None = None
+    ShortenBuffHalfTurnInOpponentTurn: int | None = None
+    ExtendBuffHalfTurnInPartyTurn: int | None = None
+    ShortenBuffHalfTurnInPartyTurn: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

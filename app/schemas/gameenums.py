@@ -1776,7 +1776,13 @@ class DataValsType(IntEnum):
     BgmAllowSubPlaying = 160
     BgPriority = 161
     PriorityBg = 162
-    ResetBgmPriorityAtWaveStart = 163
+    ResetPriorityBgmAtWaveStart = 163
+    ControlOtherBgmAtOverStageBgm_Priority = 164
+    ControlOtherBgmAtOverStageBgm_Target = 165
+    ExtendBuffHalfTurnInOpponentTurn = 166
+    ShortenBuffHalfTurnInOpponentTurn = 167
+    ExtendBuffHalfTurnInPartyTurn = 168
+    ShortenBuffHalfTurnInPartyTurn = 169
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2427,6 +2433,9 @@ class CondType(IntEnum):
     WITH_STARTING_MEMBER = 216
     LATEST_QUEST_PHASE_EQUAL = 217
     NOT_LATEST_QUEST_PHASE_EQUAL = 218
+    PURCHASE_SHOP_NUM = 219
+    MISSION_ACHIEVE_NUM_BELOW = 221
+    MISSION_ACHIEVE_NUM_ABOVE = 222
 
 
 class NiceCondType(StrEnum):
@@ -2648,6 +2657,9 @@ class NiceCondType(StrEnum):
     withStartingMember = "withStartingMember"
     latestQuestPhaseEqual = "latestQuestPhaseEqual"
     notLatestQuestPhaseEqual = "notLatestQuestPhaseEqual"
+    purchaseShopNum = "purchaseShopNum"
+    missionAchieveNumBelow = "missionAchieveNumBelow"
+    missionAchieveNumAbove = "missionAchieveNumAbove"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2867,6 +2879,9 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     216: NiceCondType.withStartingMember,
     217: NiceCondType.latestQuestPhaseEqual,
     218: NiceCondType.notLatestQuestPhaseEqual,
+    219: NiceCondType.purchaseShopNum,
+    221: NiceCondType.missionAchieveNumBelow,
+    222: NiceCondType.missionAchieveNumAbove,
 }
 
 

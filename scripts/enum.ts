@@ -690,7 +690,13 @@ export enum NiceDataValsType {
     BgmAllowSubPlaying = "bgmallowsubplaying",
     BgPriority = "bgpriority",
     PriorityBg = "prioritybg",
-    ResetBgmPriorityAtWaveStart = "resetbgmpriorityatwavestart",
+    ResetPriorityBgmAtWaveStart = "resetprioritybgmatwavestart",
+    ControlOtherBgmAtOverStageBgm_Priority = "controlotherbgmatoverstagebgmPriority",
+    ControlOtherBgmAtOverStageBgm_Target = "controlotherbgmatoverstagebgmTarget",
+    ExtendBuffHalfTurnInOpponentTurn = "extendbuffhalfturninopponentturn",
+    ShortenBuffHalfTurnInOpponentTurn = "shortenbuffhalfturninopponentturn",
+    ExtendBuffHalfTurnInPartyTurn = "extendbuffhalfturninpartyturn",
+    ShortenBuffHalfTurnInPartyTurn = "shortenbuffhalfturninpartyturn",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1047,6 +1053,9 @@ export enum NiceCondType {
     WITH_STARTING_MEMBER = "withStartingMember",
     LATEST_QUEST_PHASE_EQUAL = "latestQuestPhaseEqual",
     NOT_LATEST_QUEST_PHASE_EQUAL = "notLatestQuestPhaseEqual",
+    PURCHASE_SHOP_NUM = "purchaseShopNum",
+    MISSION_ACHIEVE_NUM_BELOW = "missionAchieveNumBelow",
+    MISSION_ACHIEVE_NUM_ABOVE = "missionAchieveNumAbove",
 }
 
 export enum NiceVoiceCondType {
