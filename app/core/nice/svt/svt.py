@@ -19,11 +19,9 @@ from ....schemas.gameenums import (
     CARD_TYPE_NAME,
     COND_TYPE_NAME,
     GENDER_TYPE_NAME,
-    STATUS_RANK_NAME,
     SVT_FLAG_NAME,
     SVT_FLAG_ORIGINAL_NAME,
     SVT_TYPE_NAME,
-    NiceStatusRank,
     NiceSvtFlag,
     SvtType,
 )
@@ -53,15 +51,12 @@ from .ascensionAdd import get_nice_ascensionAdd
 from .asset import get_male_image_extraAssets, get_svt_extraAssets
 from .card import get_nice_card
 from .individuality import get_nice_svt_trait
+from .limit import get_nice_status_rank, get_nice_svt_limit
 from .overwrite import get_nice_svt_overwrite
 from .voice import get_nice_voice
 
 
 settings = Settings()
-
-
-def get_nice_status_rank(rank_number: int) -> NiceStatusRank:
-    return STATUS_RANK_NAME.get(rank_number, NiceStatusRank.unknown)
 
 
 def get_nice_servant_change(change: MstSvtChange) -> NiceServantChange:
@@ -188,6 +183,7 @@ async def get_nice_servant(
             get_nice_svt_trait(svt_individuality)
             for svt_individuality in raw_svt.mstSvtIndividuality
         ],
+        "limits": [get_nice_svt_limit(limit) for limit in raw_svt.mstSvtLimit],
         "overwrites": [
             await get_nice_svt_overwrite(
                 conn, region, overwrite, svt_id, raw_svt.mstTreasureDevice, lang

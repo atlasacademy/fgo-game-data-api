@@ -1091,6 +1091,26 @@ class NiceLoreStats(BaseModel):
     deity: NiceStatusRank
 
 
+class NiceSvtLimit(BaseModelORJson):
+    limitCount: int
+    rarity: int
+    lvMax: int
+    hpBase: int
+    hpMax: int
+    atkBase: int
+    atkMax: int
+    criticalWeight: int
+    strength: NiceStatusRank
+    endurance: NiceStatusRank
+    agility: NiceStatusRank
+    magic: NiceStatusRank
+    luck: NiceStatusRank
+    np: NiceStatusRank
+    deity: NiceStatusRank
+    policy: ServantPolicy
+    personality: ServantPersonality
+
+
 class NiceVoiceCond(BaseModel):
     condType: NiceVoiceCondType = Field(
         ..., title="Voice Cond Type", description="Voice Condition Type Enum"
@@ -1395,6 +1415,11 @@ class NiceServant(BaseModelORJson):
         None,
         title="Valentine Servant ID",
         description="Servant ID if this CE is a valentine CE",
+    )
+    limits: list[NiceSvtLimit] = Field(
+        ...,
+        title="Svt Limit",
+        description="Ascension and Costume data.",
     )
     ascensionAdd: AscensionAdd = Field(
         ...,
