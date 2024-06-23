@@ -133,10 +133,12 @@ async def get_nice_gifts_from_id(
     gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
     replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
 
-    gifts = await fetch.get_all_multiple(
+    all_gifts = await fetch.get_all_multiple(
         conn, MstGift, set(gift_ids) | replacement_gift_ids
     )
-    gift_maps = get_gift_map(gifts)
+    gift_maps = get_gift_map(all_gifts)
+
+    gifts = [gift for gift_id in gift_ids for gift in gift_maps[gift_id]]
 
     return [
         get_nice_gift(region, gift, gift_adds, gift_maps)
