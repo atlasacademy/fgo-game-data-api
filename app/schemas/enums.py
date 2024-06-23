@@ -10,6 +10,7 @@ from .gameenums import (
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
     CLASS_OVERWRITE_NAME,
+    COMBINE_ADJUST_TARGET_TYPE_NAME,
     COND_TYPE_NAME,
     EVENT_LOTTERY_FLAG_NAME,
     EVENT_TYPE_NAME,
@@ -36,6 +37,8 @@ from .gameenums import (
     FuncType,
     NiceBuffType,
     NiceCardType,
+    NiceCombineAdjustTarget,
+    NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
@@ -276,6 +279,20 @@ QUEST_TYPE_REVERSE: dict[NiceQuestType, int] = {
 
 QUEST_FLAG_REVERSE: dict[NiceQuestFlag, int] = {
     v: k for k, v in Quest_FLAG_NAME.items()
+}
+
+
+### Event Type Flag ###
+
+EVENT_TYPE_REVERSE: dict[NiceEventType, int] = {
+    v: k for k, v in EVENT_TYPE_NAME.items()
+}
+
+
+### Event Campaign Target Flag ###
+
+COMBINE_ADJUST_TARGET_REVERSE: dict[NiceCombineAdjustTarget, int] = {
+    v: k for k, v in COMBINE_ADJUST_TARGET_TYPE_NAME.items()
 }
 
 

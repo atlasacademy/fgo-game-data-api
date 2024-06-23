@@ -19,6 +19,8 @@ from .enums import (
 from .gameenums import (
     NiceBuffType,
     NiceCardType,
+    NiceCombineAdjustTarget,
+    NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
@@ -535,5 +537,25 @@ class ShopSearchQueryParams:
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
         Search and return the list of matched shop entities.
+        """
+    )
+
+
+@dataclass
+class EventSearchQueryParams:
+    region: Region
+    name: Optional[str] = Query(None, max_length=999)
+    ongoing: Optional[bool] = Query(None)
+    eventType: Optional[NiceEventType] = Query(None)
+    campaignTarget: Optional[NiceCombineAdjustTarget] = Query(None)
+
+    def hasSearchParams(self) -> bool:
+        return any(
+            [self.name, self.ongoing is not None, self.eventType, self.campaignTarget]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matched event entities.
         """
     )

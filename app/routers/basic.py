@@ -26,6 +26,7 @@ from ..schemas.common import Language, Region, ReverseDepth
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
+    EventSearchQueryParams,
     FuncSearchQueryParams,
     QuestSearchQueryParams,
     ServantSearchQueryParams,
@@ -537,6 +538,27 @@ async def get_buff(
     return item_response(
         await basic.get_basic_buff(redis, region, buff_id, lang, reverse, reverseDepth)
     )
+
+
+@router.get(
+    "/{region}/event/search",
+    summary="Find and get event data",
+    description=EventSearchQueryParams.DESCRIPTION,
+    response_description="Basic Event Entities",
+    response_model=list[BasicEvent],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+@cache(expire=settings.quest_cache_length)
+async def find_event(
+    search_param: EventSearchQueryParams = Depends(EventSearchQueryParams),
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_event(conn, search_param)
+        return list_response(
+            [basic.get_basic_event_from_raw(event, lang) for event in matches]
+        )
 
 
 @router.get(

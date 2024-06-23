@@ -1,12 +1,26 @@
+import time
 from typing import Iterable
 
 from sqlalchemy import Table
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import Join, and_, select, true
+from sqlalchemy.sql import Join, and_, or_, select, true
 from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
-from ...models.raw import mstBoxGachaBase, mstEventTowerReward, mstShop, mstWar
-from ...schemas.raw import MstBoxGachaBase, MstEventTowerReward, MstShop, MstWar
+from ...models.raw import (
+    mstBoxGachaBase,
+    mstEvent,
+    mstEventCampaign,
+    mstEventTowerReward,
+    mstShop,
+    mstWar,
+)
+from ...schemas.raw import (
+    MstBoxGachaBase,
+    MstEvent,
+    MstEventTowerReward,
+    MstShop,
+    MstWar,
+)
 from .utils import fetch_one
 
 
@@ -75,4 +89,41 @@ async def get_shop_search(
     return [
         MstShop.from_orm(shop)
         for shop in (await conn.execute(shop_search_stmt)).fetchall()
+    ]
+
+
+async def get_event_search(
+    conn: AsyncConnection,
+    ongoing: bool | None = None,
+    event_type: int | None = None,
+    campaign_target: int | None = None,
+) -> list[MstEvent]:
+    from_clause: Join | Table = mstEvent
+    where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
+
+    if event_type is not None:
+        where_clause.append(mstEvent.c.type == event_type)
+    if campaign_target is not None:
+        from_clause = from_clause.outerjoin(
+            mstEventCampaign, mstEventCampaign.c.eventId == mstEvent.c.id
+        )
+        where_clause.append(mstEventCampaign.c.target == campaign_target)
+    if ongoing is not None:
+        now = int(time.time())
+        if ongoing:
+            where_clause.append(
+                and_(now >= mstEvent.c.startedAt, now <= mstEvent.c.endedAt)
+            )
+        else:
+            where_clause.append(
+                or_(now < mstEvent.c.startedAt, now > mstEvent.c.endedAt)
+            )
+
+    event_search_stmt = (
+        select(mstEvent).distinct().select_from(from_clause).where(and_(*where_clause))
+    )
+
+    return [
+        MstEvent.model_validate(event)
+        for event in (await conn.execute(event_search_stmt)).fetchall()
     ]

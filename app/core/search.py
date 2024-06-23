@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import CV_EN_TO_JP, ILLUSTRATOR_EN_TO_JP
 from ..db.helpers.buff import get_buff_search
-from ..db.helpers.event import get_shop_search
+from ..db.helpers.event import get_event_search, get_shop_search
 from ..db.helpers.func import get_func_search
 from ..db.helpers.item import get_item_search
 from ..db.helpers.quest import get_quest_phase_search
@@ -21,6 +21,8 @@ from ..schemas.enums import (
     BUFF_TYPE_NAME_REVERSE,
     CARD_TYPE_NAME_REVERSE,
     CLASS_NAME_REVERSE,
+    COMBINE_ADJUST_TARGET_REVERSE,
+    EVENT_TYPE_REVERSE,
     FUNC_APPLYTARGET_NAME_REVERSE,
     FUNC_TARGETTYPE_NAME_REVERSE,
     FUNC_TYPE_NAME_REVERSE,
@@ -39,6 +41,7 @@ from ..schemas.enums import (
 )
 from ..schemas.raw import (
     MstBuff,
+    MstEvent,
     MstFunc,
     MstItem,
     MstQuestWithPhase,
@@ -51,6 +54,7 @@ from ..schemas.raw import (
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
+    EventSearchQueryParams,
     FuncSearchQueryParams,
     ItemSearchQueryParams,
     QuestSearchQueryParams,
@@ -510,3 +514,35 @@ async def search_shop(
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
     return sorted(matches, key=lambda shop: shop.id)
+
+
+async def search_event(
+    conn: AsyncConnection, search_param: EventSearchQueryParams
+) -> list[MstEvent]:
+    if not search_param.hasSearchParams():
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
+    event_type = (
+        EVENT_TYPE_REVERSE[search_param.eventType]
+        if search_param.eventType is not None
+        else None
+    )
+    event_campaign_target = (
+        COMBINE_ADJUST_TARGET_REVERSE[search_param.campaignTarget]
+        if search_param.campaignTarget is not None
+        else None
+    )
+
+    matches = await get_event_search(
+        conn, search_param.ongoing, event_type, event_campaign_target
+    )
+
+    if search_param.name:
+        matches = [
+            event
+            for event in matches
+            if match_name(search_param.name, event.name)
+            or match_name(search_param.name, get_translation(Language.en, event.name))
+        ]
+
+    return sorted(matches, key=lambda item: item.id)
