@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from ..schemas.base import BaseModelORJson
 
 
-JSON_MIME = "application/json"
+JSON_MIME = "application/json; charset=utf-8"
 
 
 class DetailMessage(BaseModel):
