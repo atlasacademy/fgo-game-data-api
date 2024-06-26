@@ -1893,9 +1893,9 @@
   "攻撃時追加効果(浮世絵鑑賞解除)": "Bonus Effect when Attacking (Remove Appreciating Ukiyo-e)",
   "読本の魅力": "Appeal of Yomi-hon",
   "浮世絵の魅力": "Appeal of Ukiyo-e",
-  "死と貧食の怪物": "Monster of Death-Gluttony",
+  "死と貧食の怪物": "Monster of Death and Devouring",
   "物語": "Story",
-  "攻撃時追加効果(物語付与)": "Bonus Effect on Attack (Storytelling)",
+  "攻撃時追加効果(物語付与)": "Bonus Effect when Attacking (Apply Story)",
   "フィールド変化〔千年城〕": "Field Change [Thousand-Year Castle]",
   "Artsアップ：中立": "Arts Up: Neutral",
   "Busterアップ：王": "Buster Up: King",
@@ -2991,5 +2991,9 @@
   "誓いの第二防壁": "The Second Bulwark of Oath",
   "栄華": "Glory",
   "呪縛の紋様": "Cursed Pattern",
-  "不滅の第三防壁": "The Third Bulwark of Indestructibility"
+  "不滅の第三防壁": "The Third Bulwark of Indestructibility",
+  "宝具威力アップ・対竜": "宝具威力アップ・対竜",
+  "不明の性質": "不明の性質",
+  "太公望の真・三昧真火": "太公望の真・三昧真火",
+  "太公望の三昧真火": "太公望の三昧真火"
 }
