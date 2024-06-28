@@ -1783,6 +1783,7 @@ class DataValsType(IntEnum):
     ShortenBuffHalfTurnInOpponentTurn = 167
     ExtendBuffHalfTurnInPartyTurn = 168
     ShortenBuffHalfTurnInPartyTurn = 169
+    LinkageBuffGrantSuccessEvenIfOtherFailed = 170
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2434,8 +2435,10 @@ class CondType(IntEnum):
     LATEST_QUEST_PHASE_EQUAL = 217
     NOT_LATEST_QUEST_PHASE_EQUAL = 218
     PURCHASE_SHOP_NUM = 219
-    MISSION_ACHIEVE_NUM_BELOW = 221
-    MISSION_ACHIEVE_NUM_ABOVE = 222
+    EVENT_TRADE_TOTAL_NUM = 220
+    LIMITED_MISSION_ACHIEVE_NUM_BELOW = 221
+    LIMITED_MISSION_ACHIEVE_NUM_ABOVE = 222
+    NOT_SVT_VOICE_PLAYED = 223
 
 
 class NiceCondType(StrEnum):
@@ -2658,8 +2661,10 @@ class NiceCondType(StrEnum):
     latestQuestPhaseEqual = "latestQuestPhaseEqual"
     notLatestQuestPhaseEqual = "notLatestQuestPhaseEqual"
     purchaseShopNum = "purchaseShopNum"
-    missionAchieveNumBelow = "missionAchieveNumBelow"
-    missionAchieveNumAbove = "missionAchieveNumAbove"
+    eventTradeTotalNum = "eventTradeTotalNum"
+    limitedMissionAchieveNumBelow = "limitedMissionAchieveNumBelow"
+    limitedMissionAchieveNumAbove = "limitedMissionAchieveNumAbove"
+    notSvtVoicePlayed = "notSvtVoicePlayed"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2880,8 +2885,10 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     217: NiceCondType.latestQuestPhaseEqual,
     218: NiceCondType.notLatestQuestPhaseEqual,
     219: NiceCondType.purchaseShopNum,
-    221: NiceCondType.missionAchieveNumBelow,
-    222: NiceCondType.missionAchieveNumAbove,
+    220: NiceCondType.eventTradeTotalNum,
+    221: NiceCondType.limitedMissionAchieveNumBelow,
+    222: NiceCondType.limitedMissionAchieveNumAbove,
+    223: NiceCondType.notSvtVoicePlayed,
 }
 
 
@@ -3017,7 +3024,8 @@ class SvtVoiceType(IntEnum):
     EVENT_EXPEDITION = 21
     EVENT_RECIPE = 22
     EVENT_FORTIFICATION = 23
-    SUM = 24
+    EVENT_TRADE = 24
+    SUM = 25
 
 
 class NiceSvtVoiceType(StrEnum):
@@ -3046,6 +3054,7 @@ class NiceSvtVoiceType(StrEnum):
     eventExpedition = "eventExpedition"
     eventRecipe = "eventRecipe"
     eventFortification = "eventFortification"
+    eventTrade = "eventTrade"
     sum = "sum"
 
 
@@ -3073,7 +3082,8 @@ VOICE_TYPE_NAME: dict[int, NiceSvtVoiceType] = {
     21: NiceSvtVoiceType.eventExpedition,
     22: NiceSvtVoiceType.eventRecipe,
     23: NiceSvtVoiceType.eventFortification,
-    24: NiceSvtVoiceType.sum,
+    24: NiceSvtVoiceType.eventTrade,
+    25: NiceSvtVoiceType.sum,
 }
 
 
@@ -5052,6 +5062,7 @@ class CombineAdjustTargetType(IntEnum):
     LARGE_SUCCESS_BY_CLASS = 32
     SUPER_SUCCESS_BY_CLASS = 33
     EXCHANGE_SVT = 34
+    QUEST_ITEM_FIRST_TIME = 35
 
 
 class NiceCombineAdjustTarget(StrEnum):
@@ -5091,6 +5102,7 @@ class NiceCombineAdjustTarget(StrEnum):
     largeSuccessByClass = "largeSuccessByClass"
     superSuccessByClass = "superSuccessByClass"
     exchangeSvt = "exchangeSvt"
+    questItemFirstTime = "questItemFirstTime"
 
 
 COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
@@ -5128,6 +5140,7 @@ COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
     32: NiceCombineAdjustTarget.largeSuccessByClass,
     33: NiceCombineAdjustTarget.superSuccessByClass,
     34: NiceCombineAdjustTarget.exchangeSvt,
+    35: NiceCombineAdjustTarget.questItemFirstTime,
 }
 
 
@@ -5340,6 +5353,7 @@ class FrequencyType(IntEnum):
     VALENTINE = 4
     EVERY_TIME_AFTER = 5
     EVERY_TIME_BEFORE = 6
+    ONCE_UNTIL_REMIND = 7
 
 
 class NiceFrequencyType(StrEnum):
@@ -5352,6 +5366,7 @@ class NiceFrequencyType(StrEnum):
     valentine = "valentine"
     everyTimeAfter = "everyTimeAfter"
     everyTimeBefore = "everyTimeBefore"
+    onceUntilRemind = "onceUntilRemind"
 
 
 FREQUENCY_TYPE_NAME: dict[int, NiceFrequencyType] = {
@@ -5362,6 +5377,7 @@ FREQUENCY_TYPE_NAME: dict[int, NiceFrequencyType] = {
     4: NiceFrequencyType.valentine,
     5: NiceFrequencyType.everyTimeAfter,
     6: NiceFrequencyType.everyTimeBefore,
+    7: NiceFrequencyType.onceUntilRemind,
 }
 
 

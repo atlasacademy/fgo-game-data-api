@@ -697,6 +697,7 @@ export enum NiceDataValsType {
     ShortenBuffHalfTurnInOpponentTurn = "shortenbuffhalfturninopponentturn",
     ExtendBuffHalfTurnInPartyTurn = "extendbuffhalfturninpartyturn",
     ShortenBuffHalfTurnInPartyTurn = "shortenbuffhalfturninpartyturn",
+    LinkageBuffGrantSuccessEvenIfOtherFailed = "linkagebuffgrantsuccessevenifotherfailed",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1054,8 +1055,10 @@ export enum NiceCondType {
     LATEST_QUEST_PHASE_EQUAL = "latestQuestPhaseEqual",
     NOT_LATEST_QUEST_PHASE_EQUAL = "notLatestQuestPhaseEqual",
     PURCHASE_SHOP_NUM = "purchaseShopNum",
-    MISSION_ACHIEVE_NUM_BELOW = "missionAchieveNumBelow",
-    MISSION_ACHIEVE_NUM_ABOVE = "missionAchieveNumAbove",
+    EVENT_TRADE_TOTAL_NUM = "eventTradeTotalNum",
+    LIMITED_MISSION_ACHIEVE_NUM_BELOW = "limitedMissionAchieveNumBelow",
+    LIMITED_MISSION_ACHIEVE_NUM_ABOVE = "limitedMissionAchieveNumAbove",
+    NOT_SVT_VOICE_PLAYED = "notSvtVoicePlayed",
 }
 
 export enum NiceVoiceCondType {
@@ -1120,6 +1123,7 @@ export enum NiceSvtVoiceType {
     EVENT_EXPEDITION = "eventExpedition",
     EVENT_RECIPE = "eventRecipe",
     EVENT_FORTIFICATION = "eventFortification",
+    EVENT_TRADE = "eventTrade",
     SUM = "sum",
 }
 
@@ -1773,6 +1777,7 @@ export enum NiceCombineAdjustTarget {
     LARGE_SUCCESS_BY_CLASS = "largeSuccessByClass",
     SUPER_SUCCESS_BY_CLASS = "superSuccessByClass",
     EXCHANGE_SVT = "exchangeSvt",
+    QUEST_ITEM_FIRST_TIME = "questItemFirstTime",
 }
 
 export enum NiceEventCombineCalc {
@@ -1844,6 +1849,7 @@ export enum NiceFrequencyType {
     VALENTINE = "valentine",
     EVERY_TIME_AFTER = "everyTimeAfter",
     EVERY_TIME_BEFORE = "everyTimeBefore",
+    ONCE_UNTIL_REMIND = "onceUntilRemind",
 }
 
 export enum NiceCommandCardAttackType {

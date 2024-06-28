@@ -420,6 +420,7 @@ class BaseVals(BaseModel):
     ShortenBuffHalfTurnInOpponentTurn: int | None = None
     ExtendBuffHalfTurnInPartyTurn: int | None = None
     ShortenBuffHalfTurnInPartyTurn: int | None = None
+    LinkageBuffGrantSuccessEvenIfOtherFailed: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
