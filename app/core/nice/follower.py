@@ -13,7 +13,11 @@ from ...core.utils import get_flags, get_nice_trait, get_translation
 from ...redis import Redis
 from ...schemas.basic import BasicServant
 from ...schemas.common import Language, NiceTrait, Region
-from ...schemas.gameenums import COND_TYPE_NAME, NPC_SERVANT_FOLLOWER_FLAG_NAME
+from ...schemas.gameenums import (
+    COND_TYPE_NAME,
+    NPC_FOLLOWER_FLAG_NAME,
+    NPC_SERVANT_FOLLOWER_FLAG_NAME,
+)
 from ...schemas.nice import (
     EnemySkill,
     NiceEquip,
@@ -179,6 +183,7 @@ def get_nice_support_servant(
         skills=get_nice_follower_skills(npcSvtFollower, all_skills),
         noblePhantasm=get_nice_follower_td(npcSvtFollower, all_tds),
         flags=get_flags(npcSvtFollower.flag, NPC_SERVANT_FOLLOWER_FLAG_NAME),
+        followerFlags=get_flags(npcFollower.flag, NPC_FOLLOWER_FLAG_NAME),
         equips=[get_nice_follower_equip(equip, all_equips) for equip in npcSvtEquip],
         script=get_nice_follower_script(npcFollower.npcScript),
         limit=get_nice_follower_limit(npcSvtFollower),

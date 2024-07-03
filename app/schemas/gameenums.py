@@ -5784,3 +5784,24 @@ SVT_MULTI_PORTRAIT_SCENE_TYPE_NAME: dict[int, NiceSvtMultiPortraitType] = {
     1: NiceSvtMultiPortraitType.combine,
     2: NiceSvtMultiPortraitType.limitUp,
 }
+
+
+class NpcFollowerEntityFlag(IntEnum):
+    RECOMMENDED_ICON = 1
+    IS_MY_SVT_OR_NPC = 2
+    FIXED_NPC = 4
+
+
+class NiceNpcFollowerEntityFlag(StrEnum):
+    """NPC Follower Flag"""
+
+    recommendedIcon = "recommendedIcon"
+    isMySvtOrNpc = "isMySvtOrNpc"
+    fixedNpc = "fixedNpc"
+
+
+NPC_FOLLOWER_FLAG_NAME: dict[int, NiceNpcFollowerEntityFlag] = {
+    1: NiceNpcFollowerEntityFlag.recommendedIcon,
+    2: NiceNpcFollowerEntityFlag.isMySvtOrNpc,
+    4: NiceNpcFollowerEntityFlag.fixedNpc,
+}

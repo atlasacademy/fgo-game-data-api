@@ -630,6 +630,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Svt Multi Portrait Scene Overwrite Type",
         "SVT_MULTI_PORTRAIT_SCENE_TYPE_NAME",
     ),
+    (
+        "NpcFollowerEntity.Flag",
+        "NpcFollowerEntityFlag",
+        "NiceNpcFollowerEntityFlag",
+        "NPC Follower Flag",
+        "NPC_FOLLOWER_FLAG_NAME",
+    ),
 ]
 
 
