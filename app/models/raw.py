@@ -628,6 +628,7 @@ mstSvtLimitAdd = Table(
     Column("battleCharaOffsetZ", Integer),
     Column("svtVoiceId", Integer),
     Column("voicePrefix", Integer),
+    Column("attri", Integer),
 )
 
 
@@ -1338,6 +1339,7 @@ mstEventVoicePlay = Table(
 mstMasterMission = Table(
     "mstMasterMission",
     metadata,
+    Column("script", JSONB),
     Column("id", Integer),
     Column("priority", Integer, default=0),
     Column("startedAt", BigInteger),

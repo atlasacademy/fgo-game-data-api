@@ -5,6 +5,7 @@ from pydantic import HttpUrl
 
 from ....config import Settings
 from ....schemas.common import Language, NiceTrait, Region
+from ....schemas.enums import ATTRIBUTE_NAME
 from ....schemas.nice import AscensionAdd, AssetURL, NiceCommonRelease
 from ....schemas.raw import ServantEntity
 from ...utils import fmt_url, get_np_name, get_traits_list, get_translation
@@ -44,7 +45,7 @@ def get_nice_ascensionAdd(
     ] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
         for ascensionAddField in set(OVERWRITE_FIELDS)
-        | {"individuality", "voicePrefix", "lvMax", "rarity"}
+        | {"individuality", "voicePrefix", "lvMax", "rarity", "attribute"}
     }
 
     ascensionAdd["charaGraphChange"] = {"ascension": {}, "costume": {}}
@@ -112,6 +113,11 @@ def get_nice_ascensionAdd(
             else cast(list[NiceTrait], [])
         )
 
+        if limitAdd.attri is not None and limitAdd.attri != -1:
+            ascensionAdd["attribute"][dict_to_add][key_value] = ATTRIBUTE_NAME[
+                limitAdd.attri
+            ]
+
         ascensionAdd["voicePrefix"][dict_to_add][key_value] = limitAdd.voicePrefix
 
     for dst_field, src_field in OVERWRITE_FIELDS.items():
@@ -145,4 +151,4 @@ def get_nice_ascensionAdd(
 
                 ascensionAdd[dst_field][add_category][limitAdd.limitCount] = add_data
 
-    return AscensionAdd.parse_obj(ascensionAdd)
+    return AscensionAdd.model_validate(ascensionAdd)

@@ -958,9 +958,11 @@ class AscensionAddEntryCommonRelease(BaseModel):
 AscensionAddEntryInt = AscensionAddEntry[int]
 AscensionAddEntryStr = AscensionAddEntry[str]
 AscensionAddEntryHttpUrl = AscensionAddEntry[HttpUrl]
+AscensionAddEntryAttribte = AscensionAddEntry[Attribute]
 
 
 class AscensionAdd(BaseModel):
+    attribute: AscensionAddEntryAttribte
     individuality: AscensionAddEntryTrait = Field(
         ...,
         title="Individuality changes",

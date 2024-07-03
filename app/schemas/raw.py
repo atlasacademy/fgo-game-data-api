@@ -747,6 +747,7 @@ class MstSvtLimitAdd(BaseModelORJson):
     battleCharaOffsetZ: int
     svtVoiceId: int  # 102900,
     voicePrefix: int  # 11
+    attri: int | None = None
 
 
 class MstSvtLimitImage(BaseModelORJson):
@@ -1100,6 +1101,7 @@ class MstCompleteMission(BaseModelORJson):
 
 
 class MstMasterMission(BaseModelORJson):
+    script: dict[str, Any] | None = None
     id: int
     priority: int = 0
     startedAt: int
