@@ -623,6 +623,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "AI Allocation Svt Flag",
         "AI_ALLOCATION_SVT_FLAG_NAME",
     ),
+    (
+        "SvtMultiPortraitEntity.SceneOverwriteType",
+        "SvtMultiPortraitSceneOverwriteType",
+        "NiceSvtMultiPortraitType",
+        "Svt Multi Portrait Scene Overwrite Type",
+        "SVT_MULTI_PORTRAIT_SCENE_TYPE_NAME",
+    ),
 ]
 
 

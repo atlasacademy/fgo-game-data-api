@@ -840,6 +840,7 @@ mstSvtMultiPortrait = Table(
     Column("svtId", Integer, index=True),
     Column("limitCount", Integer),
     Column("idx", Integer),
+    Column("type", Integer),
     Column("portraitImageId", Integer),
     Column("displayPriority", Integer),
 )

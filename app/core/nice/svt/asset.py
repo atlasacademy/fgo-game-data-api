@@ -6,7 +6,7 @@ from pydantic import HttpUrl
 from ....config import Settings
 from ....data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES
 from ....schemas.common import Region
-from ....schemas.gameenums import SvtType
+from ....schemas.gameenums import SvtMultiPortraitSceneOverwriteType, SvtType
 from ....schemas.nice import AssetURL, ExtraAssets, ExtraAssetsUrl
 from ....schemas.raw import ServantEntity
 from ...utils import fmt_url
@@ -35,6 +35,8 @@ def get_male_image_extraAssets(region: Region, svt_id: int) -> ExtraAssets:
         charaFigure=ExtraAssetsUrl(),
         charaFigureForm={},
         charaFigureMulti={},
+        charaFigureMultiCombine={},
+        charaFigureMultiLimitUp={},
         commands=ExtraAssetsUrl(),
         status=ExtraAssetsUrl(),
         equipFace=ExtraAssetsUrl(
@@ -72,6 +74,12 @@ def get_svt_extraAssets(
         lambda: defaultdict(dict)
     )
     charaFigureMulti: dict[int, dict[str, dict[int, str]]] = defaultdict(
+        lambda: defaultdict(dict)
+    )
+    charaFigureMultiCombine: dict[int, dict[str, dict[int, str]]] = defaultdict(
+        lambda: defaultdict(dict)
+    )
+    charaFigureMultiLimitUp: dict[int, dict[str, dict[int, str]]] = defaultdict(
         lambda: defaultdict(dict)
     )
     narrowFigure = ExtraAssetsUrl()
@@ -327,14 +335,27 @@ def get_svt_extraAssets(
                 charaFigureForm[script_form]["story"][svtScript.id] = asset_url
 
     for multiPortrait in raw_svt.mstSvtMultiPortrait:
+        if (
+            multiPortrait.type is None
+            or multiPortrait.type == SvtMultiPortraitSceneOverwriteType.NONE
+        ):
+            multi_dict = charaFigureMulti
+        elif multiPortrait.type == SvtMultiPortraitSceneOverwriteType.COMBINE:
+            multi_dict = charaFigureMultiCombine
+        elif multiPortrait.type == SvtMultiPortraitSceneOverwriteType.LIMIT_UP:
+            multi_dict = charaFigureMultiLimitUp
+        else:
+            continue
+
         asset_url = AssetURL.charaFigureId.format(
             **base_settings, charaFigure=multiPortrait.portraitImageId
         )
+
         if multiPortrait.limitCount in costume_ids:  # pragma: no cover
             battleCharaId = costume_ids[multiPortrait.limitCount]
-            charaFigureMulti[multiPortrait.idx]["costume"][battleCharaId] = asset_url
+            multi_dict[multiPortrait.idx]["costume"][battleCharaId] = asset_url
         else:
-            charaFigureMulti[multiPortrait.idx]["ascension"][
+            multi_dict[multiPortrait.idx]["ascension"][
                 multiPortrait.limitCount + 1
             ] = asset_url
 
@@ -350,10 +371,18 @@ def get_svt_extraAssets(
         faces=faces,
         charaFigure=charaFigure,
         charaFigureForm={
-            k: ExtraAssetsUrl.parse_obj(v) for k, v in charaFigureForm.items()
+            k: ExtraAssetsUrl.model_validate(v) for k, v in charaFigureForm.items()
         },
         charaFigureMulti={
-            k: ExtraAssetsUrl.parse_obj(v) for k, v in charaFigureMulti.items()
+            k: ExtraAssetsUrl.model_validate(v) for k, v in charaFigureMulti.items()
+        },
+        charaFigureMultiCombine={
+            k: ExtraAssetsUrl.model_validate(v)
+            for k, v in charaFigureMultiCombine.items()
+        },
+        charaFigureMultiLimitUp={
+            k: ExtraAssetsUrl.model_validate(v)
+            for k, v in charaFigureMultiLimitUp.items()
         },
         narrowFigure=narrowFigure,
         commands=commands,

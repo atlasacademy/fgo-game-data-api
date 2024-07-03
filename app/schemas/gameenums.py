@@ -5763,3 +5763,24 @@ AI_ALLOCATION_SVT_FLAG_NAME: dict[int, NiceAiAllocationSvtFlag] = {
     2: NiceAiAllocationSvtFlag.friend,
     4: NiceAiAllocationSvtFlag.npc,
 }
+
+
+class SvtMultiPortraitSceneOverwriteType(IntEnum):
+    NONE = 0
+    COMBINE = 1
+    LIMIT_UP = 2
+
+
+class NiceSvtMultiPortraitType(StrEnum):
+    """Svt Multi Portrait Scene Overwrite Type"""
+
+    none = "none"
+    combine = "combine"
+    limitUp = "limitUp"
+
+
+SVT_MULTI_PORTRAIT_SCENE_TYPE_NAME: dict[int, NiceSvtMultiPortraitType] = {
+    0: NiceSvtMultiPortraitType.none,
+    1: NiceSvtMultiPortraitType.combine,
+    2: NiceSvtMultiPortraitType.limitUp,
+}

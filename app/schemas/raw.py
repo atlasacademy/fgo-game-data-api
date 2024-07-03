@@ -884,6 +884,7 @@ class MstSvtMultiPortrait(BaseModelORJson):
     svtId: int
     limitCount: int
     idx: int
+    type: int | None = None
     portraitImageId: int
     displayPriority: int
 

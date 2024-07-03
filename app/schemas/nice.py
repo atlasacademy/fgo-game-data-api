@@ -893,6 +893,8 @@ class ExtraAssets(ExtraCCAssets):
     charaFigure: ExtraAssetsUrl
     charaFigureForm: dict[int, ExtraAssetsUrl]
     charaFigureMulti: dict[int, ExtraAssetsUrl]
+    charaFigureMultiCombine: dict[int, ExtraAssetsUrl]
+    charaFigureMultiLimitUp: dict[int, ExtraAssetsUrl]
     commands: ExtraAssetsUrl
     status: ExtraAssetsUrl
     equipFace: ExtraAssetsUrl
