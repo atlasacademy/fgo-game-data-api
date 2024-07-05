@@ -195,6 +195,12 @@ async def get_nice_skill_with_svt(
         for scriptKey in skillEntity.mstSkillLv[0].script
     }
 
+    if "IgnoreValueUp" in skillEntity.mstSkill.script:
+        nice_skill["script"]["IgnoreValueUp"] = [
+            skillEntity.mstSkill.script["IgnoreValueUp"] == 1
+            for _ in skillEntity.mstSkillLv
+        ]
+
     nice_skill["functions"] = []
     if skillEntity.mstSkillLv[0].expandedFuncId:
         for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):

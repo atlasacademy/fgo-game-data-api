@@ -666,6 +666,7 @@ class NiceSkillScript(BaseModel):
     actRarity: list[list[int]] | None = None
     battleStartRemainingTurn: list[int] | None = None
     SelectAddInfo: list[NiceSelectAddInfo] | None = None
+    IgnoreValueUp: list[bool] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):
