@@ -245,6 +245,7 @@ async def get_nice_event(
                 item_map,
                 gift_data,
                 raw_event.mstCommonConsume,
+                raw_event.mstCommonRelease,
                 raw_event.mstShopRelease,
             )
             for shop in raw_event.mstShop

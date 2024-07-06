@@ -2348,6 +2348,7 @@ class ShopEntity(BaseModelORJson):
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]
     mstCommonConsume: list[MstCommonConsume]
+    mstCommonRelease: list[MstCommonRelease]
 
 
 class EventMissionEntity(BaseModelORJson):

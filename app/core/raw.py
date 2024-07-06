@@ -1081,6 +1081,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     shop_ids = [shop.id for shop in shops]
     shop_scripts = await fetch.get_all_multiple(conn, MstShopScript, shop_ids)
     shop_releases = await fetch.get_all_multiple(conn, MstShopRelease, shop_ids)
+    shop_release_ids = {shop.freeShopCondId for shop in shops if shop.freeShopCondId}
 
     rewards = await fetch.get_all(conn, MstEventReward, event_id)
 
@@ -1162,6 +1163,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | fortification_release_ids
         | command_assist_release_ids
         | event_svt_release_ids
+        | shop_release_ids
     )
     common_releases = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids
@@ -1474,6 +1476,11 @@ async def get_shop_entities(
         conn, MstCommonConsume, common_consume_ids
     )
 
+    common_release_ids = {shop.freeShopCondId for shop in shops if shop.freeShopCondId}
+    common_releases = await fetch.get_all_multiple(
+        conn, MstCommonRelease, common_release_ids
+    )
+
     set_item_ids = {
         set_id
         for shop in shops
@@ -1538,6 +1545,11 @@ async def get_shop_entities(
                     if shop.payType == PayType.COMMON_CONSUME
                     else []
                 ),
+                mstCommonRelease=[
+                    release
+                    for release in common_releases
+                    if release.id == shop.freeShopCondId
+                ],
                 mstGift=gifts,
                 mstGiftAdd=gift_adds,
             )

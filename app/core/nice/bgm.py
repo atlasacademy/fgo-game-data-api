@@ -107,7 +107,7 @@ def get_nice_bgm_entity_from_raw(
             )
         }
         nice_bgm.shop = get_nice_shop(
-            region, bgm_entity.mstShop, [], {}, item_map, GiftData([], {}), [], []
+            region, bgm_entity.mstShop, [], {}, item_map, GiftData([], {}), [], [], []
         )
 
     return nice_bgm

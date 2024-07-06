@@ -3,6 +3,7 @@ from collections import defaultdict
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
+from ....core.nice.common_release import get_nice_common_releases
 from ....core.nice.gift import GiftData, get_nice_common_consume, get_nice_gifts
 from ....core.nice.item import get_nice_item_from_raw
 from ....core.raw import get_raw_mstShop, get_shop_entities
@@ -29,6 +30,7 @@ from ....schemas.nice import (
 )
 from ....schemas.raw import (
     MstCommonConsume,
+    MstCommonRelease,
     MstGift,
     MstSetItem,
     MstShop,
@@ -79,6 +81,7 @@ def get_nice_shop(
     item_map: dict[int, NiceItem],
     gift_data: GiftData,
     raw_consumes: list[MstCommonConsume],
+    raw_releases: list[MstCommonRelease],
     shop_releases: list[MstShopRelease],
 ) -> NiceShop:
     shop_item_id = get_shop_cost_item_id(shop)
@@ -154,6 +157,9 @@ def get_nice_shop(
         payType=PAY_TYPE_NAME[shop.payType],
         cost=cost,
         consumes=common_consumes,
+        freeShopConds=get_nice_common_releases(raw_releases, shop.freeShopCondId),
+        freeShopReleaseDate=shop.freeShopReleaseDate,
+        freeShopCondMessage=shop.freeShopCondMessage,
         purchaseType=PURCHASE_TYPE_NAME[shop.purchaseType],
         targetIds=shop.targetIds,
         itemSet=shop_set_items,
@@ -217,6 +223,7 @@ async def get_nice_shops_from_raw(
             shop_scripts=script_map,
             item_map=item_map,
             raw_consumes=shop.mstCommonConsume,
+            raw_releases=shop.mstCommonRelease,
             gift_data=gift_data,
             shop_releases=shop.mstShopRelease,
         )
