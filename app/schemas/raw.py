@@ -411,43 +411,6 @@ class MstSvtLimitAdd(BaseModelORJson):
     attri: int | None = None
 
 
-class MstSvtExtra(BaseModelORJson):
-    svtId: int
-    zeroLimitOverwriteName: Optional[str] = None
-    bondEquip: int
-    bondEquipOwner: Optional[int] = None
-    valentineEquip: list[int]
-    valentineScript: list[NiceValentineScript]
-    valentineEquipOwner: Optional[int] = None
-    costumeLimitSvtIdMap: dict[int, NiceCostume] = {}  # Map<costume limit, NiceCostume>
-    limitAdds: list[MstSvtLimitAdd] = []
-
-
-class MstSvtCard(BaseModelORJson):
-    normalDamage: list[int]  # [4, 9, 14, 19, 23, 31],
-    singleDamage: list[int]  # [4, 9, 14, 19, 23, 31],
-    trinityDamage: list[int]  # [4, 9, 14, 19, 23, 31],
-    unisonDamage: list[int]  # [4, 9, 14, 19, 23, 31],
-    grandDamage: list[int]  # [4, 9, 14, 19, 23, 31],
-    attackIndividuality: list[int]  # [3000],
-    svtId: int  # 5009941050,
-    cardId: int  # 5001,
-    motion: int  # 50010,
-    attackType: int  # 5001
-
-
-class MstSvtCardAdd(BaseModelORJson):
-    svtId: int
-    cardId: int
-    script: str
-
-
-class BasicMstSvtLimit(BaseModelORJson):
-    rarity: int
-    hpMax: int
-    atkMax: int
-
-
 class MstSvtLimit(BaseModelORJson):
     weaponColor: int  # 16777215
     svtId: int  # 9403170
@@ -473,6 +436,44 @@ class MstSvtLimit(BaseModelORJson):
     deity: int  # 99
     stepProbability: int  # 1000
     strParam: str  #  "{\"Attack_s1\":285}"
+
+
+class MstSvtExtra(BaseModelORJson):
+    svtId: int
+    zeroLimitOverwriteName: Optional[str] = None
+    bondEquip: int
+    bondEquipOwner: Optional[int] = None
+    valentineEquip: list[int]
+    valentineScript: list[NiceValentineScript]
+    valentineEquipOwner: Optional[int] = None
+    costumeLimitSvtIdMap: dict[int, NiceCostume] = {}  # Map<costume limit, NiceCostume>
+    limitAdds: list[MstSvtLimitAdd] = []
+    limits: list[MstSvtLimit] = []
+
+
+class MstSvtCard(BaseModelORJson):
+    normalDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    singleDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    trinityDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    unisonDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    grandDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    attackIndividuality: list[int]  # [3000],
+    svtId: int  # 5009941050,
+    cardId: int  # 5001,
+    motion: int  # 50010,
+    attackType: int  # 5001
+
+
+class MstSvtCardAdd(BaseModelORJson):
+    svtId: int
+    cardId: int
+    script: str
+
+
+class BasicMstSvtLimit(BaseModelORJson):
+    rarity: int
+    hpMax: int
+    atkMax: int
 
 
 class MstSvtComment(BaseModelORJson):

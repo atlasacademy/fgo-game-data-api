@@ -15,6 +15,7 @@ from ..schemas.raw import (
     MstSvtComment,
     MstSvtCostume,
     MstSvtExtra,
+    MstSvtLimit,
     MstSvtLimitAdd,
     MstSvtSkill,
 )
@@ -48,6 +49,7 @@ def get_extra_svt_data(
 ) -> list[MstSvtExtra]:
     mstSvts = load_master_data(gamedata_path, MstSvt)
     mstSvtLimitAdds = load_master_data(gamedata_path, MstSvtLimitAdd)
+    mstSvtLimits = load_master_data(gamedata_path, MstSvtLimit)
     mstSkills = load_master_data(gamedata_path, MstSkill)
     mstSvtSkills = load_master_data(gamedata_path, MstSvtSkill)
     mstEvents = load_master_data(gamedata_path, MstEvent)
@@ -172,6 +174,10 @@ def get_extra_svt_data(
                 priority=limitAdd.limitCount,
             )
 
+    svtLimits: dict[int, list[MstSvtLimit]] = defaultdict(list)
+    for limit in mstSvtLimits:
+        svtLimits[limit.svtId].append(limit)
+
     all_svt_ids = (
         bondEquip.keys()
         | bondEquipOwner.keys()
@@ -181,6 +187,7 @@ def get_extra_svt_data(
         | zeroLimitOverwriteName.keys()
         | svtCostumeIds.keys()
         | svtLimitAdds.keys()
+        | svtLimits.keys()
     )
 
     return [
@@ -194,6 +201,7 @@ def get_extra_svt_data(
             valentineEquipOwner=valentineEquipOwner.get(svt_id),
             costumeLimitSvtIdMap=svtCostumeIds.get(svt_id, {}),
             limitAdds=svtLimitAdds.get(svt_id, []),
+            limits=svtLimits.get(svt_id, []),
         )
         for svt_id in sorted(all_svt_ids)
     ]

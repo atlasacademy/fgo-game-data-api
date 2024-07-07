@@ -80,6 +80,7 @@ from ..schemas.raw import (
     MstSkill,
     MstSvt,
     MstSvtExtra,
+    MstSvtLimit,
     MstTreasureDevice,
     MstWar,
 )
@@ -425,6 +426,24 @@ async def get_basic_td(
     return basic_td
 
 
+def select_mstSvtLimit(
+    limits: list[MstSvtLimit],
+    svt_limit: Optional[int] = None,
+    prefer_lower: bool = False,
+) -> MstSvtLimit:
+    limit_map = {limit.limitCount: limit for limit in limits}
+    if svt_limit is not None and svt_limit in limit_map:
+        return limit_map[svt_limit]
+
+    low_limit_counts = {0, 1, 2, 3} & limit_map.keys()
+
+    if low_limit_counts:
+        chosen_limit = min(low_limit_counts) if prefer_lower else max(low_limit_counts)
+        return limit_map[chosen_limit]
+
+    return limit_map[min(limit_map.keys())]
+
+
 async def get_basic_svt(
     redis: Redis,
     region: Region,
@@ -441,14 +460,12 @@ async def get_basic_svt(
     if not mstSvt:
         raise HTTPException(status_code=404, detail="Svt not found")
 
-    mstSvtLimit = await pydantic_object.fetch_mstSvtLimit(
-        redis, region, svt_id, svt_limit, mstSvt.isServant()
-    )
-
-    if not mstSvtLimit:  # pragma: no cover
-        raise HTTPException(status_code=404, detail="Svt not found")
-
     svtExtra = await pydantic_object.fetch_id(redis, region, MstSvtExtra, svt_id)
+
+    if not svtExtra:  # pragma: no cover
+        raise HTTPException(status_code=404, detail="Svt limit not found")
+
+    mstSvtLimit = select_mstSvtLimit(svtExtra.limits, svt_limit, mstSvt.isServant())
 
     basic_servant = {
         "id": svt_id,
@@ -468,36 +485,35 @@ async def get_basic_svt(
         "costume": {},
     }
 
-    if svtExtra:
-        basic_servant["bondEquipOwner"] = svtExtra.bondEquipOwner
-        basic_servant["valentineEquipOwner"] = svtExtra.valentineEquipOwner
-        basic_servant["costume"] = {}
-        for costume in svtExtra.costumeLimitSvtIdMap.values():
-            if costume.battleCharaId not in basic_servant["costume"]:  # type: ignore
-                basic_servant["costume"][costume.battleCharaId] = {  # type: ignore
-                    "id": costume.id,
-                    "costumeCollectionNo": costume.costumeCollectionNo,
-                    "battleCharaId": costume.battleCharaId,
-                    "shortName": (
-                        get_translation(lang, costume.shortName)
-                        if region == Region.JP and lang is not None
-                        else costume.shortName
-                    ),
-                }
-        if svtExtra.zeroLimitOverwriteName is not None:
-            basic_servant["name"] = svtExtra.zeroLimitOverwriteName
-            basic_servant["originalName"] = svtExtra.zeroLimitOverwriteName
-            basic_servant["overwriteName"] = mstSvt.name
-            basic_servant["originalOverwriteName"] = mstSvt.name
+    basic_servant["bondEquipOwner"] = svtExtra.bondEquipOwner
+    basic_servant["valentineEquipOwner"] = svtExtra.valentineEquipOwner
+    basic_servant["costume"] = {}
+    for costume in svtExtra.costumeLimitSvtIdMap.values():
+        if costume.battleCharaId not in basic_servant["costume"]:  # type: ignore
+            basic_servant["costume"][costume.battleCharaId] = {  # type: ignore
+                "id": costume.id,
+                "costumeCollectionNo": costume.costumeCollectionNo,
+                "battleCharaId": costume.battleCharaId,
+                "shortName": (
+                    get_translation(lang, costume.shortName)
+                    if region == Region.JP and lang is not None
+                    else costume.shortName
+                ),
+            }
+    if svtExtra.zeroLimitOverwriteName is not None:
+        basic_servant["name"] = svtExtra.zeroLimitOverwriteName
+        basic_servant["originalName"] = svtExtra.zeroLimitOverwriteName
+        basic_servant["overwriteName"] = mstSvt.name
+        basic_servant["originalOverwriteName"] = mstSvt.name
 
-        for limit_add in svtExtra.limitAdds:
-            if (
-                svt_limit
-                and limit_add.attri
-                and limit_add.limitCount == svt_limit
-                and limit_add.attri != SvtAttribute.DEFAULT
-            ):
-                basic_servant["attribute"] = ATTRIBUTE_NAME[limit_add.attri]
+    for limit_add in svtExtra.limitAdds:
+        if (
+            svt_limit
+            and limit_add.attri
+            and limit_add.limitCount == svt_limit
+            and limit_add.attri != SvtAttribute.DEFAULT
+        ):
+            basic_servant["attribute"] = ATTRIBUTE_NAME[limit_add.attri]
 
     base_settings = {
         "base_url": settings.asset_url,
