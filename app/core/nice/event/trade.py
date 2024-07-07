@@ -20,7 +20,7 @@ from ..gift import GiftData, get_nice_common_consumes, get_nice_gifts
 settings = Settings()
 
 
-def get_nice_trade_pick(pickup: MstEventTradePickup):
+def get_nice_trade_pick(pickup: MstEventTradePickup) -> NiceEventTradePickup:
     return NiceEventTradePickup(
         startedAt=pickup.startedAt,
         endedAt=pickup.endedAt,
@@ -44,7 +44,7 @@ def get_nice_trade_goods(
             AssetURL.eventUi,
             base_url=settings.asset_url,
             region=region,
-            event=f"Prefabs/{trade.eventId}/DownloadEventUIAtlas{trade.eventId}01/icon_{trade.goodsIconId}",
+            event=f"Prefabs/{trade.eventId}/icon_{trade.goodsIconId}",
         ),
         gifts=get_nice_gifts(region, trade.giftId, gift_data),
         consumes=get_nice_common_consumes(raw_consumes, trade.commonConsumeId),

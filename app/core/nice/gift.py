@@ -62,7 +62,7 @@ def get_nice_common_consume(common_consume: MstCommonConsume) -> NiceCommonConsu
 
 def get_nice_common_consumes(
     raw_releases: list[MstCommonConsume], consume_id: int | None = None
-):
+) -> list[NiceCommonConsume]:
     return [
         get_nice_common_consume(consume)
         for consume in raw_releases
