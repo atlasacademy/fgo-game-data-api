@@ -9,19 +9,14 @@ from pydantic import DirectoryPath
 from ..config import logger, project_root
 from ..core.utils import get_traits_list
 from ..schemas.common import Region
-from ..schemas.enums import (
-    ATTRIBUTE_NAME,
-    CLASS_NAME,
-    TRAIT_NAME,
-    Trait,
-    get_class_name,
-)
+from ..schemas.enums import CLASS_NAME, TRAIT_NAME, Trait, get_class_name
 from ..schemas.gameenums import (
     AI_COND_CHECK_NAME,
     AI_COND_NAME,
     AI_COND_PARAMETER_NAME,
     AI_COND_REFINE_NAME,
     AI_COND_TARGET_NAME,
+    ATTRIBUTE_NAME,
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,

@@ -5,7 +5,7 @@ from pydantic import HttpUrl
 
 from ....config import Settings
 from ....schemas.common import Language, NiceTrait, Region
-from ....schemas.enums import ATTRIBUTE_NAME
+from ....schemas.gameenums import ATTRIBUTE_NAME, SvtAttribute
 from ....schemas.nice import AscensionAdd, AssetURL, NiceCommonRelease
 from ....schemas.raw import ServantEntity
 from ...utils import fmt_url, get_np_name, get_traits_list, get_translation
@@ -113,7 +113,7 @@ def get_nice_ascensionAdd(
             else cast(list[NiceTrait], [])
         )
 
-        if limitAdd.attri is not None and limitAdd.attri != -1:
+        if limitAdd.attri is not None and limitAdd.attri != SvtAttribute.DEFAULT:
             ascensionAdd["attribute"][dict_to_add][key_value] = ATTRIBUTE_NAME[
                 limitAdd.attri
             ]

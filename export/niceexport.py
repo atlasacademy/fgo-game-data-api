@@ -6,13 +6,14 @@ from typing import Any, Callable, NamedTuple, Union
 from app.config import Settings
 from app.core.utils import get_traits_list
 from app.schemas.common import Region
-from app.schemas.enums import ATTRIBUTE_NAME, TRAIT_NAME, Trait, get_class_name
+from app.schemas.enums import TRAIT_NAME, Trait, get_class_name
 from app.schemas.gameenums import (
     AI_COND_CHECK_NAME,
     AI_COND_NAME,
     AI_COND_PARAMETER_NAME,
     AI_COND_REFINE_NAME,
     AI_COND_TARGET_NAME,
+    ATTRIBUTE_NAME,
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,

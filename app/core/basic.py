@@ -40,13 +40,13 @@ from ..schemas.common import (
     ReverseDepth,
 )
 from ..schemas.enums import (
-    ATTRIBUTE_NAME,
     FUNC_APPLYTARGET_NAME,
     FUNC_VALS_NOT_BUFF,
     SvtClass,
     get_class_name,
 )
 from ..schemas.gameenums import (
+    ATTRIBUTE_NAME,
     BUFF_CONVERT_LIMIT_TYPE_NAME,
     BUFF_CONVERT_TYPE_NAME,
     BUFF_TYPE_NAME,

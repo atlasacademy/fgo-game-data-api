@@ -77,6 +77,7 @@ EXTRA_STR_NAME = {
 STR_NAME_OVERRIDE = {
     "NiceCardType": {"addattack": "extra"},
     "NiceGender": {"other": "unknown"},
+    "Attribute": {"ground": "earth"},
     "NiceStatusRank": {
         "a": "A",
         "aPlus": "A+",
@@ -636,6 +637,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceNpcFollowerEntityFlag",
         "NPC Follower Flag",
         "NPC_FOLLOWER_FLAG_NAME",
+    ),
+    (
+        "SvtAttri.TYPE",
+        "SvtAttribute",
+        "Attribute",
+        "Svt Attribute",
+        "ATTRIBUTE_NAME",
     ),
 ]
 

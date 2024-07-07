@@ -1976,3 +1976,14 @@ export enum NiceNpcFollowerEntityFlag {
     IS_MY_SVT_OR_NPC = "isMySvtOrNpc",
     FIXED_NPC = "fixedNpc",
 }
+
+export enum Attribute {
+    NONE = "none",
+    DEFAULT = "default",
+    HUMAN = "human",
+    SKY = "sky",
+    GROUND = "earth",
+    STAR = "star",
+    BEAST = "beast",
+    VOID = "void",
+}

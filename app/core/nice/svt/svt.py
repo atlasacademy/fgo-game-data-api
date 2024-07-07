@@ -8,7 +8,6 @@ from ....config import Settings
 from ....data.custom_mappings import TRIAL_QUESTS
 from ....schemas.common import Language, NiceCostume, Region
 from ....schemas.enums import (
-    ATTRIBUTE_NAME,
     SERVANT_PERSONALITY_NAME,
     SERVANT_POLICY_NAME,
     ServantPersonality,
@@ -16,6 +15,7 @@ from ....schemas.enums import (
     get_class_name,
 )
 from ....schemas.gameenums import (
+    ATTRIBUTE_NAME,
     CARD_TYPE_NAME,
     COND_TYPE_NAME,
     GENDER_TYPE_NAME,

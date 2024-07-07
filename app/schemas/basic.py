@@ -5,8 +5,9 @@ from pydantic import Field, HttpUrl
 
 from .base import BaseModelORJson, DecimalSerializer
 from .common import BasicCostume, BuffScript, MCAssets, NiceTrait
-from .enums import Attribute, FuncApplyTarget, SvtClass
+from .enums import FuncApplyTarget, SvtClass
 from .gameenums import (
+    Attribute,
     NiceBuffType,
     NiceConsumeType,
     NiceEventType,

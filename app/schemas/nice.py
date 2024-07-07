@@ -24,7 +24,6 @@ from .common import (
 from .enums import (
     AiTiming,
     AiType,
-    Attribute,
     EnemyRoleType,
     EventPointActivityObjectType,
     FuncApplyTarget,
@@ -39,6 +38,7 @@ from .enums import (
     SvtClass,
 )
 from .gameenums import (
+    Attribute,
     NiceAiActNum,
     NiceAiActTarget,
     NiceAiActType,

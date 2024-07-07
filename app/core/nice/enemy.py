@@ -8,13 +8,8 @@ from ...data.custom_mappings import Translation
 from ...redis import Redis
 from ...schemas.basic import BasicServant
 from ...schemas.common import Language, Region
-from ...schemas.enums import (
-    ATTRIBUTE_NAME,
-    ENEMY_ROLE_TYPE_NAME,
-    EnemyRoleType,
-    get_class_name,
-)
-from ...schemas.gameenums import GIFT_TYPE_NAME, SVT_DEAD_TYPE_NAME
+from ...schemas.enums import ENEMY_ROLE_TYPE_NAME, EnemyRoleType, get_class_name
+from ...schemas.gameenums import ATTRIBUTE_NAME, GIFT_TYPE_NAME, SVT_DEAD_TYPE_NAME
 from ...schemas.nice import (
     DeckType,
     EnemyAi,

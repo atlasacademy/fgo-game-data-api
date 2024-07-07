@@ -5805,3 +5805,39 @@ NPC_FOLLOWER_FLAG_NAME: dict[int, NiceNpcFollowerEntityFlag] = {
     2: NiceNpcFollowerEntityFlag.isMySvtOrNpc,
     4: NiceNpcFollowerEntityFlag.fixedNpc,
 }
+
+
+class SvtAttribute(IntEnum):
+    NONE = 0
+    DEFAULT = -1
+    HUMAN = 1
+    SKY = 2
+    GROUND = 3
+    STAR = 4
+    BEAST = 5
+    VOID = 10
+
+
+class Attribute(StrEnum):
+    """Svt Attribute"""
+
+    none = "none"
+    default = "default"
+    human = "human"
+    sky = "sky"
+    ground = "earth"
+    star = "star"
+    beast = "beast"
+    void = "void"
+
+
+ATTRIBUTE_NAME: dict[int, Attribute] = {
+    0: Attribute.none,
+    -1: Attribute.default,
+    1: Attribute.human,
+    2: Attribute.sky,
+    3: Attribute.ground,
+    4: Attribute.star,
+    5: Attribute.beast,
+    10: Attribute.void,
+}

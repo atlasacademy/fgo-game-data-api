@@ -5,6 +5,7 @@ from .gameenums import (
     AI_ACT_TARGET_NAME,
     AI_ACT_TYPE_NAME,
     AI_COND_NAME,
+    ATTRIBUTE_NAME,
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,
@@ -34,6 +35,7 @@ from .gameenums import (
     VOICE_TYPE_NAME,
     WAR_OVERWRITE_TYPE_NAME,
     WAR_START_TYPE_NAME,
+    Attribute,
     FuncType,
     NiceBuffType,
     NiceCardType,
@@ -311,27 +313,6 @@ STAGE_LIMIT_ACT_TYPE_NAME: dict[int, StageLimitActType] = {
 
 
 ### Attribute ###
-
-
-class Attribute(StrEnum):
-    """Servant Attribute Enum"""
-
-    human = "human"
-    sky = "sky"
-    earth = "earth"
-    star = "star"
-    beast = "beast"
-    void = "void"
-
-
-ATTRIBUTE_NAME: dict[int, Attribute] = {
-    1: Attribute.human,
-    2: Attribute.sky,
-    3: Attribute.earth,
-    4: Attribute.star,
-    5: Attribute.beast,
-    10: Attribute.void,
-}
 
 
 ATTRIBUTE_NAME_REVERSE: dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.items()}

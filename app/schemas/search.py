@@ -8,7 +8,6 @@ from .common import Region
 from .enums import (
     NICE_SERVANT_TYPES,
     PLAYABLE_CLASS_LIST,
-    Attribute,
     FuncApplyTarget,
     NiceItemBGType,
     NiceItemUse,
@@ -17,6 +16,7 @@ from .enums import (
     Trait,
 )
 from .gameenums import (
+    Attribute,
     NiceBuffType,
     NiceCardType,
     NiceCombineAdjustTarget,
