@@ -60,6 +60,16 @@ def get_nice_common_consume(common_consume: MstCommonConsume) -> NiceCommonConsu
     )
 
 
+def get_nice_common_consumes(
+    raw_releases: list[MstCommonConsume], consume_id: int | None = None
+):
+    return [
+        get_nice_common_consume(consume)
+        for consume in raw_releases
+        if consume_id is None or consume.id == consume_id
+    ]
+
+
 def get_nice_base_gift(raw_gift: MstGift) -> NiceBaseGift:
     return NiceBaseGift(
         id=raw_gift.id,

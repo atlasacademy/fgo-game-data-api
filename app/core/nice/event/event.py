@@ -46,6 +46,7 @@ from .reward import get_nice_reward
 from .reward_scene import get_nice_event_reward_scene
 from .shop import get_nice_shop
 from .tower import get_nice_event_tower
+from .trade import get_nice_trade_goods
 from .treasure_box import get_nice_treasure_box
 from .voice_play import get_nice_event_voice_play
 from .warboard import get_nice_war_board
@@ -375,6 +376,18 @@ async def get_nice_event(
                 raw_event.mstCommonRelease,
             )
             for fortification in raw_event.mstEventFortification
+        ],
+        tradeGoods=[
+            get_nice_trade_goods(
+                region,
+                trade,
+                raw_event.mstEventTradePickup,
+                gift_data,
+                raw_event.mstCommonConsume,
+                raw_event.mstCommonRelease,
+                item_map,
+            )
+            for trade in raw_event.mstEventTradeGoods
         ],
         campaignQuests=[
             get_nice_event_quest(quest) for quest in raw_event.mstEventQuest

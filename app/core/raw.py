@@ -120,6 +120,8 @@ from ..schemas.raw import (
     MstEventRewardSet,
     MstEventSvt,
     MstEventTower,
+    MstEventTradeGoods,
+    MstEventTradePickup,
     MstEventVoicePlay,
     MstFriendship,
     MstFunc,
@@ -1130,6 +1132,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | {svt.commonReleaseId for svt in fortification_servants}
     )
 
+    trade_goods = await fetch.get_all(conn, MstEventTradeGoods, event_id)
+
     warboards = await fetch.get_all(conn, MstWarBoard, event_id)
     warboard_stages = await fetch.get_all_multiple(
         conn, MstWarBoardStage, {w.id for w in warboards}
@@ -1164,6 +1168,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | command_assist_release_ids
         | event_svt_release_ids
         | shop_release_ids
+        | {trade.commonReleaseId for trade in trade_goods}
     )
     common_releases = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids
@@ -1174,6 +1179,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | digging_consume_ids
         | {box.commonConsumeId for box in treasure_boxes}
         | {recipe.commonConsumeId for recipe in recipes}
+        | {trade.commonConsumeId for trade in trade_goods}
     )
     common_consumes = await fetch.get_all_multiple(
         conn, MstCommonConsume, common_consume_ids
@@ -1196,6 +1202,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | {recipe_gift.giftId for recipe_gift in recipe_gifts}
         | digging_gift_ids
         | {fortification.giftId for fortification in fortifications}
+        | {trade.giftId for trade in trade_goods}
         | {w.giftId for w in warboard_treasures}
     )
 
@@ -1208,6 +1215,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         {get_shop_cost_item_id(shop) for shop in shops}
         | {lottery.payTargetId for lottery in box_gachas}
         | {recipe.eventPointItemId for recipe in recipes}
+        | {trade.eventPointItemId for trade in trade_goods}
     )
     if digging:
         item_ids |= {digging.eventPointItemId}
@@ -1258,6 +1266,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventFortification=fortifications,
         mstEventFortificationDetail=fortification_details,
         mstEventFortificationSvt=fortification_servants,
+        mstEventTradeGoods=trade_goods,
+        mstEventTradePickup=await fetch.get_all(conn, MstEventTradePickup, event_id),
         mstEventQuest=await fetch.get_all(conn, MstEventQuest, event_id),
         mstEventCampaign=await fetch.get_all_multiple(
             conn, MstEventCampaign, [event_id]

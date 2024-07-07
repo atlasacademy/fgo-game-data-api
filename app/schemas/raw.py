@@ -1447,6 +1447,33 @@ class MstEventFortificationSvt(BaseModelORJson):
     commonReleaseId: int
 
 
+class MstEventTradePickup(BaseModelORJson):
+    tradeGoodsId: int
+    startedAt: int
+    endedAt: int
+    eventId: int
+    pickupIconId: int
+    tradeTimeRate: int
+
+
+class MstEventTradeGoods(BaseModelORJson):
+    voiceData: dict[str, Any]
+    id: int
+    eventId: int
+    name: str
+    goodsIconId: int
+    giftId: int
+    commonConsumeId: int
+    eventPointNum: int
+    eventPointItemId: int
+    tradeTime: int
+    maxNum: int
+    maxTradeTime: int
+    presentMessageId: int
+    commonReleaseId: int
+    closedMessage: str
+
+
 class MstEventCommandAssist(BaseModelORJson):
     id: int
     priority: int
@@ -2294,6 +2321,8 @@ class EventEntity(BaseModelORJson):
     mstEventFortification: list[MstEventFortification]
     mstEventFortificationDetail: list[MstEventFortificationDetail]
     mstEventFortificationSvt: list[MstEventFortificationSvt]
+    mstEventTradeGoods: list[MstEventTradeGoods]
+    mstEventTradePickup: list[MstEventTradePickup]
     mstEventCampaign: list[MstEventCampaign]
     mstEventQuest: list[MstEventQuest]
     mstEventBulletinBoard: list[MstEventBulletinBoard]

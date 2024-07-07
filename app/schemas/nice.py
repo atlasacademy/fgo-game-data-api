@@ -2050,6 +2050,31 @@ class NiceEventFortification(BaseModelORJson):
     servants: list[NiceEventFortificationSvt]
 
 
+class NiceEventTradePickup(BaseModelORJson):
+    startedAt: int
+    endedAt: int
+    # pickupIconId: int
+    tradeTimeRate: int
+
+
+class NiceEventTradeGoods(BaseModelORJson):
+    id: int
+    name: str
+    goodsIcon: HttpUrl
+    gifts: list[NiceGift]
+    consumes: list[NiceCommonConsume]
+    eventPointNum: int
+    eventPointItem: NiceItem
+    tradeTime: int
+    maxNum: int
+    maxTradeTime: int
+    # presentMessageId: int
+    releaseConditions: list[NiceCommonRelease]
+    closedMessage: str
+    # voiceData: dict[str,Any]
+    pickups: list[NiceEventTradePickup]
+
+
 class NiceEventRewardSceneGuide(BaseModelORJson):
     imageId: int
     limitCount: int
@@ -2221,6 +2246,7 @@ class NiceEvent(BaseModelORJson):
     digging: NiceEventDigging | None = None
     cooltime: NiceEventCooltime | None = None
     fortifications: list[NiceEventFortification]
+    tradeGoods: list[NiceEventTradeGoods]
     campaigns: list[NiceEventCampaign]
     campaignQuests: list[NiceEventQuest]
     commandAssists: list[NiceEventCommandAssist]

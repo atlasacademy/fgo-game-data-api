@@ -1676,6 +1676,40 @@ mstEventFortificationSvt = Table(
     Column("commonReleaseId", Integer),
 )
 
+
+mstEventTradeGoods = Table(
+    "mstEventTradeGoods",
+    metadata,
+    Column("voiceData", JSONB),
+    Column("id", Integer, primary_key=True),
+    Column("eventId", Integer, index=True),
+    Column("name", String),
+    Column("goodsIconId", Integer),
+    Column("giftId", Integer),
+    Column("commonConsumeId", Integer),
+    Column("eventPointNum", Integer),
+    Column("eventPointItemId", Integer),
+    Column("tradeTime", Integer),
+    Column("maxNum", Integer),
+    Column("maxTradeTime", Integer),
+    Column("presentMessageId", Integer),
+    Column("commonReleaseId", Integer),
+    Column("closedMessage", String),
+)
+
+
+mstEventTradePickup = Table(
+    "mstEventTradePickup",
+    metadata,
+    Column("tradeGoodsId", Integer, index=True),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+    Column("eventId", Integer, index=True),
+    Column("pickupIconId", Integer),
+    Column("tradeTimeRate", Integer),
+)
+
+
 mstEventAlloutBattle = Table(
     "mstEventAlloutBattle",
     metadata,
@@ -2762,6 +2796,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventBulletinBoard, mstEventBulletinBoardRelease],
     [mstEventRecipe, mstEventRecipeGift],
     [mstEventFortification, mstEventFortificationDetail, mstEventFortificationSvt],
+    [mstEventTradeGoods, mstEventTradePickup],
     [mstEventSvt],
     [mstVoice],
     [mstVoicePlayCond],
