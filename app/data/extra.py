@@ -143,7 +143,9 @@ def get_extra_svt_data(
 
     zeroLimitOverwriteName: dict[int, str] = {}
     svtCostumeIds: dict[int, dict[int, NiceCostume]] = defaultdict(dict)
+    svtLimitAdds: dict[int, list[MstSvtLimitAdd]] = defaultdict(list)
     for limitAdd in mstSvtLimitAdds:
+        svtLimitAdds[limitAdd.svtId].append(limitAdd)
         if limitAdd.limitCount == 0 and "overWriteServantName" in limitAdd.script:
             zeroLimitOverwriteName[limitAdd.svtId] = limitAdd.script[
                 "overWriteServantName"
@@ -178,6 +180,7 @@ def get_extra_svt_data(
         | valentineEquipOwner.keys()
         | zeroLimitOverwriteName.keys()
         | svtCostumeIds.keys()
+        | svtLimitAdds.keys()
     )
 
     return [
@@ -190,6 +193,7 @@ def get_extra_svt_data(
             valentineScript=valentineScript.get(svt_id, []),
             valentineEquipOwner=valentineEquipOwner.get(svt_id),
             costumeLimitSvtIdMap=svtCostumeIds.get(svt_id, {}),
+            limitAdds=svtLimitAdds.get(svt_id, []),
         )
         for svt_id in sorted(all_svt_ids)
     ]

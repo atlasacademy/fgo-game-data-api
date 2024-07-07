@@ -395,6 +395,22 @@ class MstSvtIndividuality(BaseModelORJson):
     endedAt: Optional[int] = None
 
 
+class MstSvtLimitAdd(BaseModelORJson):
+    individuality: list[int]  # [],
+    script: dict[str, Any]  # {},
+    svtId: int  # 102900,
+    limitCount: int  # 11,
+    battleCharaId: int  # 102930,
+    fileConvertLimitCount: int  # 0,
+    battleCharaLimitCount: int  # 2,
+    battleCharaOffsetX: int  # 0,
+    battleCharaOffsetY: int  # 0,
+    battleCharaOffsetZ: int
+    svtVoiceId: int  # 102900,
+    voicePrefix: int  # 11
+    attri: int | None = None
+
+
 class MstSvtExtra(BaseModelORJson):
     svtId: int
     zeroLimitOverwriteName: Optional[str] = None
@@ -404,6 +420,7 @@ class MstSvtExtra(BaseModelORJson):
     valentineScript: list[NiceValentineScript]
     valentineEquipOwner: Optional[int] = None
     costumeLimitSvtIdMap: dict[int, NiceCostume] = {}  # Map<costume limit, NiceCostume>
+    limitAdds: list[MstSvtLimitAdd] = []
 
 
 class MstSvtCard(BaseModelORJson):
@@ -732,22 +749,6 @@ class MstSetItem(BaseModelORJson):
 
 class ItemEntity(BaseModelORJson):
     mstItem: MstItem
-
-
-class MstSvtLimitAdd(BaseModelORJson):
-    individuality: list[int]  # [],
-    script: dict[str, Any]  # {},
-    svtId: int  # 102900,
-    limitCount: int  # 11,
-    battleCharaId: int  # 102930,
-    fileConvertLimitCount: int  # 0,
-    battleCharaLimitCount: int  # 2,
-    battleCharaOffsetX: int  # 0,
-    battleCharaOffsetY: int  # 0,
-    battleCharaOffsetZ: int
-    svtVoiceId: int  # 102900,
-    voicePrefix: int  # 11
-    attri: int | None = None
 
 
 class MstSvtLimitImage(BaseModelORJson):

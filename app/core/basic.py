@@ -64,6 +64,7 @@ from ..schemas.gameenums import (
     BuffConvertType,
     NiceSvtFlag,
     Quest_FLAG_NAME,
+    SvtAttribute,
     SvtType,
 )
 from ..schemas.nice import LIMIT_TO_FACE_ID, AssetURL
@@ -488,6 +489,15 @@ async def get_basic_svt(
             basic_servant["originalName"] = svtExtra.zeroLimitOverwriteName
             basic_servant["overwriteName"] = mstSvt.name
             basic_servant["originalOverwriteName"] = mstSvt.name
+
+        for limit_add in svtExtra.limitAdds:
+            if (
+                svt_limit
+                and limit_add.attri
+                and limit_add.limitCount == svt_limit
+                and limit_add.attri != SvtAttribute.DEFAULT
+            ):
+                basic_servant["attribute"] = ATTRIBUTE_NAME[limit_add.attri]
 
     base_settings = {
         "base_url": settings.asset_url,
