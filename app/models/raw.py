@@ -450,6 +450,7 @@ mstSvtExtra = Table(
     "mstSvtExtra",
     metadata,
     Column("svtId", Integer, primary_key=True),
+    Column("mstSvt", JSONB),
     Column("zeroLimitOverwriteName", String),
     Column("bondEquip", Integer),
     Column("bondEquipOwner", Integer),

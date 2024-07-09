@@ -179,7 +179,8 @@ def get_extra_svt_data(
         svtLimits[limit.svtId].append(limit)
 
     all_svt_ids = (
-        bondEquip.keys()
+        mstSvtId.keys()
+        | bondEquip.keys()
         | bondEquipOwner.keys()
         | valentineEquip.keys()
         | valentineScript.keys()
@@ -193,6 +194,7 @@ def get_extra_svt_data(
     return [
         MstSvtExtra(
             svtId=svt_id,
+            mstSvt=mstSvtId[svt_id],
             zeroLimitOverwriteName=zeroLimitOverwriteName.get(svt_id),
             bondEquip=bondEquip.get(svt_id, 0),
             bondEquipOwner=bondEquipOwner.get(svt_id),

@@ -440,6 +440,7 @@ class MstSvtLimit(BaseModelORJson):
 
 class MstSvtExtra(BaseModelORJson):
     svtId: int
+    mstSvt: MstSvt
     zeroLimitOverwriteName: Optional[str] = None
     bondEquip: int
     bondEquipOwner: Optional[int] = None

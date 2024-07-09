@@ -454,16 +454,13 @@ async def get_basic_svt(
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
-    if not mstSvt:
-        mstSvt = await pydantic_object.fetch_id(redis, region, MstSvt, svt_id)
-
-    if not mstSvt:
-        raise HTTPException(status_code=404, detail="Svt not found")
-
     svtExtra = await pydantic_object.fetch_id(redis, region, MstSvtExtra, svt_id)
 
     if not svtExtra:  # pragma: no cover
-        raise HTTPException(status_code=404, detail="Svt limit not found")
+        raise HTTPException(status_code=404, detail="Svt not found")
+
+    if not mstSvt:
+        mstSvt = svtExtra.mstSvt
 
     mstSvtLimit = select_mstSvtLimit(svtExtra.limits, svt_limit, mstSvt.isServant())
 
