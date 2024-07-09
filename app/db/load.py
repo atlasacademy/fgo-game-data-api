@@ -99,18 +99,28 @@ BUFF_TRIGGERING_SKILLS_VALUE = {
 
 
 def get_Value_from_sval(sval: str) -> int:
-    return int(sval.split(",")[3])
+    try:
+        return int(sval.removeprefix("[").removesuffix("]").split(",")[3])
+    except ValueError:
+        return -1
 
 
 BUFF_TRIGGERING_SKILLS_SKILL_ID = {BuffType.NPATTACK_PREV_BUFF}
 
 
 def get_SkillID_from_sval(sval: str) -> int:
-    return int(
-        next(val for val in sval.split(",") if "SkillID:" in val).removeprefix(
-            "SkillID:"
+    try:
+        return int(
+            next(
+                val
+                for val in sval.removeprefix("[").removesuffix("]").split(",")
+                if "SkillID:" in val
+            ).removeprefix("SkillID:")
         )
-    )
+    except ValueError:
+        return -1
+    except StopIteration:
+        return -1
 
 
 def load_skill_td_lv(
