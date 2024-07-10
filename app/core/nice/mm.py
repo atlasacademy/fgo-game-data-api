@@ -4,7 +4,11 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...core.basic import get_basic_quest_from_raw
 from ...schemas.common import Language, Region
-from ...schemas.nice import NiceCompleteMission, NiceMasterMission
+from ...schemas.nice import (
+    NiceCompleteMission,
+    NiceMasterMission,
+    NiceMasterMissionScript,
+)
 from ...schemas.raw import (
     MasterMissionEntity,
     MstBgm,
@@ -50,6 +54,7 @@ def get_nice_master_mission_from_raw(
         startedAt=raw_mm.mstMasterMission.startedAt,
         endedAt=raw_mm.mstMasterMission.endedAt,
         closedAt=raw_mm.mstMasterMission.closedAt,
+        script=NiceMasterMissionScript.model_validate(raw_mm.mstMasterMission.script),
         missions=missions,
         completeMission=(
             get_nice_complete_mission(

@@ -2266,11 +2266,16 @@ class NiceCompleteMission(BaseModelORJson):
     bgm: NiceBgm | None = None
 
 
+class NiceMasterMissionScript(BaseModelORJson):
+    missionIconDetailText: str
+
+
 class NiceMasterMission(BaseModelORJson):
     id: int
     startedAt: int
     endedAt: int
     closedAt: int
+    script: NiceMasterMissionScript
     missions: list[NiceEventMission]
     completeMission: NiceCompleteMission | None = None
     quests: list[BasicQuest]
