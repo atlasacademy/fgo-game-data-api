@@ -2267,7 +2267,7 @@ class NiceCompleteMission(BaseModelORJson):
 
 
 class NiceMasterMissionScript(BaseModelORJson):
-    missionIconDetailText: str
+    missionIconDetailText: str | None = None
 
 
 class NiceMasterMission(BaseModelORJson):
