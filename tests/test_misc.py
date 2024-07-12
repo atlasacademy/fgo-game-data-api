@@ -27,7 +27,7 @@ def test_subtitle_svtId() -> None:
 @pytest.mark.asyncio
 async def test_parse_dataVals_add_state_6_items(na_db_conn: AsyncConnection) -> None:
     result = await parse_dataVals(
-        na_db_conn, "[1000,3,3,300,1000,10]", FuncType.ADD_STATE
+        na_db_conn, Region.NA, "[1000,3,3,300,1000,10]", FuncType.ADD_STATE, Language.en
     )
     assert result == {
         "Rate": 1000,
@@ -43,7 +43,9 @@ async def test_parse_dataVals_add_state_6_items(na_db_conn: AsyncConnection) -> 
 async def test_parse_dataVals_unknown_datavals(
     caplog: pytest.LogCaptureFixture, na_db_conn: AsyncConnection
 ) -> None:
-    await parse_dataVals(na_db_conn, "[1000,3,3,300]", FuncType.SUB_STATE)
+    await parse_dataVals(
+        na_db_conn, Region.NA, "[1000,3,3,300]", FuncType.SUB_STATE, Language.en
+    )
     assert (
         "Some datavals weren't parsed for func type 2: "
         "[1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}" in caplog.text
@@ -52,7 +54,9 @@ async def test_parse_dataVals_unknown_datavals(
 
 @pytest.mark.asyncio
 async def test_parse_dataVals_class_drop_up_rate(na_db_conn: AsyncConnection) -> None:
-    result = await parse_dataVals(na_db_conn, "[2,400,80017]", FuncType.CLASS_DROP_UP)
+    result = await parse_dataVals(
+        na_db_conn, Region.NA, "[2,400,80017]", FuncType.CLASS_DROP_UP, Language.en
+    )
     result = {k: v for k, v in result.items() if "aa" not in k}
     assert result == {
         "EventId": 80017,
@@ -80,7 +84,7 @@ async def test_parse_datavals_fail_list_str(
     dataVals: str, na_db_conn: AsyncConnection
 ) -> None:
     with pytest.raises(HTTPException):
-        await parse_dataVals(na_db_conn, dataVals, 1)
+        await parse_dataVals(na_db_conn, Region.NA, dataVals, 1, Language.en)
 
 
 def test_reverseDepth_str_comparison() -> None:

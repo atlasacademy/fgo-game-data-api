@@ -6,12 +6,12 @@ from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings, logger
-from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.enums import FUNC_APPLYTARGET_NAME, FUNC_VALS_NOT_BUFF
 from ...schemas.gameenums import FUNC_TARGETTYPE_NAME, FUNC_TYPE_NAME, FuncType
 from ...schemas.nice import AssetURL, FunctionScript, NiceFuncGroup
 from ...schemas.raw import FunctionEntityNoReverse, MstFunc, MstFuncGroup
+from ..raw import get_func_entity_no_reverse
 from ..utils import fmt_url, get_traits_list, get_traits_list_list
 from .buff import get_nice_buff
 
@@ -71,11 +71,11 @@ STRING_DATAVALS = {
 STRING_LIST_DATAVALS = {"ApplyValueUp"}
 
 
-DataValType = dict[str, int | str | list[int] | list[str]]
+DataValType = dict[str, int | str | list[int] | list[str] | dict[str, Any]]
 
 
 async def parse_dataVals(
-    conn: AsyncConnection, datavals: str, functype: int
+    conn: AsyncConnection, region: Region, datavals: str, functype: int, lang: Language
 ) -> DataValType:
     error_message = f"Can't parse datavals: {datavals}"
     exception = HTTPException(status_code=500, detail=error_message)
@@ -207,17 +207,20 @@ async def parse_dataVals(
                             )
                             raise exception from None
 
-                        dependMstFunc = await fetch.get_one(conn, MstFunc, int(output["DependFuncId"]))  # type: ignore
-                        if not dependMstFunc:
-                            logger.error(
-                                f"Failed to find func data for dependFuncId: {output['DependFuncId']}"
-                            )
-                            raise exception from None
-
-                        vals_value = await parse_dataVals(
-                            conn, array2[1], dependMstFunc.funcType
+                        depend_func_entity = await get_func_entity_no_reverse(
+                            conn, int(output["DependFuncId"])  # type: ignore[arg-type]
                         )
-                        output["DependFuncVals"] = vals_value  # type: ignore
+
+                        output["DependFunc"] = await get_nice_function(
+                            conn, region, depend_func_entity, lang
+                        )
+                        output["DependFuncVals"] = await parse_dataVals(
+                            conn,
+                            region,
+                            array2[1],
+                            depend_func_entity.mstFunc.funcType,
+                            lang,
+                        )
                     elif array2[0] in LIST_DATAVALS:
                         try:
                             output[array2[0]] = [int(i) for i in array2[1].split("/")]
@@ -313,7 +316,7 @@ def get_nice_func_script(mstFunc: MstFunc) -> FunctionScript:
             mstFunc.script["funcIndividuality"]
         )
 
-    return FunctionScript.parse_obj(script)
+    return FunctionScript.model_validate(script)
 
 
 async def get_nice_function(
@@ -368,7 +371,9 @@ async def get_nice_function(
     ]:
         if argument:
             nice_func[field] = [
-                await parse_dataVals(conn, sval, function.mstFunc.funcType)
+                await parse_dataVals(
+                    conn, region, sval, function.mstFunc.funcType, lang
+                )
                 for sval in argument
             ]
 

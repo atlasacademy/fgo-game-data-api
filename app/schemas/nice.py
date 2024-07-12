@@ -248,6 +248,150 @@ class NiceLvlUpMaterial(BaseModel):
     qp: int
 
 
+class NiceCommonRelease(BaseModelORJson):
+    id: int
+    priority: int
+    condGroup: int
+    condType: NiceCondType
+    condId: int
+    condNum: int
+
+
+class NiceBuff(BaseModelORJson):
+    id: int = Field(..., title="Buff ID", description="Buff ID.")
+    name: str = Field(..., title="Buff name", description="Buff name.")
+    originalName: str
+    detail: str = Field(
+        ..., title="Buff detailed description", description="Buff detailed description."
+    )
+    icon: Optional[HttpUrl] = Field(
+        None, title="Buff icon URL", description="Buff icon URL."
+    )
+    type: NiceBuffType = Field(..., title="Buff type", description="Buff type.")
+    buffGroup: int = Field(
+        ...,
+        title="Buff group",
+        description="Buff group."
+        "See https://github.com/atlasacademy/fgo-docs#unstackable-buffs "
+        "for how this field is used.",
+    )
+    script: BuffScript = Field(
+        ...,
+        title="Buff script",
+        description="Random stuffs that get added to the buff entry. "
+        "See each field description for more details.",
+    )
+    originalScript: dict[str, Any] = Field({}, title="Original Buff script")
+    vals: list[NiceTrait] = Field(
+        ...,
+        title="Buff individualities",
+        description="Buff traits/individualities. "
+        "For example, buff removal uses this field to target the buffs.",
+    )
+    tvals: list[NiceTrait] = Field(
+        ...,
+        title="Buff tvals",
+        description="Buff tvals: I'm quite sure this field is used for "
+        "visual purposes only and not gameplay.",
+    )
+    ckSelfIndv: list[NiceTrait] = Field(
+        ...,
+        title="Check self individualities",
+        description="Buff holder's required individuality for the buff's effect to apply.",
+    )
+    ckOpIndv: list[NiceTrait] = Field(
+        ...,
+        title="Check oponent individualities",
+        description="Target's required individuality for the buff's effect to apply.",
+    )
+    maxRate: int = Field(
+        ...,
+        title="Buff max rate",
+        description="Buff max rate. "
+        "See https://github.com/atlasacademy/fgo-docs#lower-and-upper-bounds-of-buffs "
+        "for how this field is used.",
+    )
+
+
+class NiceFuncGroup(BaseModelORJson):
+    eventId: int
+    baseFuncId: int
+    nameTotal: str
+    name: str
+    icon: Optional[HttpUrl] = None
+    priority: int
+    isDispValue: bool
+
+
+class FunctionScript(BaseModel):
+    overwriteTvals: list[list[NiceTrait]] | None = None
+    funcIndividuality: list[NiceTrait] | None = None
+
+
+class NiceBaseFunction(BaseModelORJson):
+    funcId: int = Field(..., title="Function ID", description="Function ID")
+    funcType: NiceFuncType = Field(
+        ..., title="Function type", description="Function type"
+    )
+    funcTargetType: NiceFuncTargetType = Field(
+        ...,
+        title="Function target type",
+        description="Determines the number of targets and the pool of applicable targets.",
+    )
+    funcTargetTeam: FuncApplyTarget = Field(
+        ...,
+        title="Function target team",
+        description="Determines whether the function applies to only player's servants, "
+        "only quest enemies or both. "
+        "Note that this is independent of `funcTargetType`. "
+        "You need to look at both fields to check if the function applies.",
+    )
+    funcPopupText: str = Field(
+        ..., title="Function pop-up text", description="Function pop-up text"
+    )
+    funcPopupIcon: Optional[HttpUrl] = Field(
+        None, title="Function pop-up icon URL", description="Function pop-up icon URL."
+    )
+    functvals: list[NiceTrait] = Field(
+        ...,
+        title="Function tvals",
+        description="Function tvals: If available, function's targets or their buffs "
+        "need to satisfy the traits given here.",
+    )
+    overWriteTvalsList: list[list[NiceTrait]] = Field(
+        ...,
+        title="Overwrite Tvals List",
+        description="Overwrite functvals if given. Two-dimensional list, the inner trait list acts as a combined trait in functvals",
+    )
+    funcquestTvals: list[NiceTrait] = Field(
+        ...,
+        title="Function quest traits",
+        description="Function quest traits. "
+        "The current quest needs this traits for the function to works.",
+    )
+    script: FunctionScript = Field(
+        ...,
+        title="Function script",
+    )
+    funcGroup: list[NiceFuncGroup] = Field(
+        ...,
+        title="Function group details",
+        description="Some more details for event drop up, bond point up functions",
+    )
+    traitVals: list[NiceTrait] = Field(
+        [],
+        title="Trait details",
+        description="Trait details to be used by buff removal functions.",
+    )
+    buffs: list[NiceBuff] = Field(
+        ...,
+        title="Buff details",
+        description="Buff details to be used by apply buff functions."
+        "Even though this is a list, it is safe to assume it only contains 1 buff if applicable"
+        "e.g. you can get the buff by buffs[0]. `buffs[0]` is also what the game hardcoded.",
+    )
+
+
 class BaseVals(BaseModel):
     Rate: Optional[int] = None
     Turn: Optional[int] = None
@@ -435,154 +579,11 @@ class BaseVals(BaseModel):
     # aa2: Optional[int] = None
     # aa3: Optional[int] = None
     # aa4: Optional[int] = None
+    DependFunc: NiceBaseFunction | None = None
 
 
 class Vals(BaseVals):
     DependFuncVals: Optional[BaseVals] = None
-
-
-class NiceCommonRelease(BaseModelORJson):
-    id: int
-    priority: int
-    condGroup: int
-    condType: NiceCondType
-    condId: int
-    condNum: int
-
-
-class NiceBuff(BaseModelORJson):
-    id: int = Field(..., title="Buff ID", description="Buff ID.")
-    name: str = Field(..., title="Buff name", description="Buff name.")
-    originalName: str
-    detail: str = Field(
-        ..., title="Buff detailed description", description="Buff detailed description."
-    )
-    icon: Optional[HttpUrl] = Field(
-        None, title="Buff icon URL", description="Buff icon URL."
-    )
-    type: NiceBuffType = Field(..., title="Buff type", description="Buff type.")
-    buffGroup: int = Field(
-        ...,
-        title="Buff group",
-        description="Buff group."
-        "See https://github.com/atlasacademy/fgo-docs#unstackable-buffs "
-        "for how this field is used.",
-    )
-    script: BuffScript = Field(
-        ...,
-        title="Buff script",
-        description="Random stuffs that get added to the buff entry. "
-        "See each field description for more details.",
-    )
-    originalScript: dict[str, Any] = Field({}, title="Original Buff script")
-    vals: list[NiceTrait] = Field(
-        ...,
-        title="Buff individualities",
-        description="Buff traits/individualities. "
-        "For example, buff removal uses this field to target the buffs.",
-    )
-    tvals: list[NiceTrait] = Field(
-        ...,
-        title="Buff tvals",
-        description="Buff tvals: I'm quite sure this field is used for "
-        "visual purposes only and not gameplay.",
-    )
-    ckSelfIndv: list[NiceTrait] = Field(
-        ...,
-        title="Check self individualities",
-        description="Buff holder's required individuality for the buff's effect to apply.",
-    )
-    ckOpIndv: list[NiceTrait] = Field(
-        ...,
-        title="Check oponent individualities",
-        description="Target's required individuality for the buff's effect to apply.",
-    )
-    maxRate: int = Field(
-        ...,
-        title="Buff max rate",
-        description="Buff max rate. "
-        "See https://github.com/atlasacademy/fgo-docs#lower-and-upper-bounds-of-buffs "
-        "for how this field is used.",
-    )
-
-
-class NiceFuncGroup(BaseModelORJson):
-    eventId: int
-    baseFuncId: int
-    nameTotal: str
-    name: str
-    icon: Optional[HttpUrl] = None
-    priority: int
-    isDispValue: bool
-
-
-class FunctionScript(BaseModel):
-    overwriteTvals: list[list[NiceTrait]] | None = None
-    funcIndividuality: list[NiceTrait] | None = None
-
-
-class NiceBaseFunction(BaseModelORJson):
-    funcId: int = Field(..., title="Function ID", description="Function ID")
-    funcType: NiceFuncType = Field(
-        ..., title="Function type", description="Function type"
-    )
-    funcTargetType: NiceFuncTargetType = Field(
-        ...,
-        title="Function target type",
-        description="Determines the number of targets and the pool of applicable targets.",
-    )
-    funcTargetTeam: FuncApplyTarget = Field(
-        ...,
-        title="Function target team",
-        description="Determines whether the function applies to only player's servants, "
-        "only quest enemies or both. "
-        "Note that this is independent of `funcTargetType`. "
-        "You need to look at both fields to check if the function applies.",
-    )
-    funcPopupText: str = Field(
-        ..., title="Function pop-up text", description="Function pop-up text"
-    )
-    funcPopupIcon: Optional[HttpUrl] = Field(
-        None, title="Function pop-up icon URL", description="Function pop-up icon URL."
-    )
-    functvals: list[NiceTrait] = Field(
-        ...,
-        title="Function tvals",
-        description="Function tvals: If available, function's targets or their buffs "
-        "need to satisfy the traits given here.",
-    )
-    overWriteTvalsList: list[list[NiceTrait]] = Field(
-        ...,
-        title="Overwrite Tvals List",
-        description="Overwrite functvals if given. Two-dimensional list, the inner trait list acts as a combined trait in functvals",
-    )
-    funcquestTvals: list[NiceTrait] = Field(
-        ...,
-        title="Function quest traits",
-        description="Function quest traits. "
-        "The current quest needs this traits for the function to works.",
-    )
-    script: FunctionScript = Field(
-        ...,
-        title="Function script",
-    )
-    funcGroup: list[NiceFuncGroup] = Field(
-        ...,
-        title="Function group details",
-        description="Some more details for event drop up, bond point up functions",
-    )
-    traitVals: list[NiceTrait] = Field(
-        [],
-        title="Trait details",
-        description="Trait details to be used by buff removal functions.",
-    )
-    buffs: list[NiceBuff] = Field(
-        ...,
-        title="Buff details",
-        description="Buff details to be used by apply buff functions."
-        "Even though this is a list, it is safe to assume it only contains 1 buff if applicable"
-        "e.g. you can get the buff by buffs[0]. `buffs[0]` is also what the game hardcoded.",
-    )
 
 
 class NiceFunction(NiceBaseFunction):
