@@ -30,7 +30,7 @@ async def get_skillEntity(
         select(
             mstSkillLv.c.skillId,
             func.jsonb_agg(
-                aggregate_order_by(mstSkillLv.table_valued(), mstSkillLv.c.lv)
+                aggregate_order_by(mstSkillLv.table_valued(), mstSkillLv.c.lv)  # type: ignore[no-untyped-call]
             ).label(mstSkillLv.name),
         )
         .where(mstSkillLv.c.skillId.in_(skill_ids))
@@ -44,12 +44,12 @@ async def get_skillEntity(
             func.jsonb_build_object(
                 "svt",
                 func.coalesce(
-                    func.array_remove(array_agg(mstAi.c.id.distinct()), None),
+                    func.array_remove(array_agg(mstAi.c.id.distinct()), None),  # type: ignore[no-untyped-call]
                     [],
                 ),
                 "field",
                 func.coalesce(
-                    func.array_remove(array_agg(mstAiField.c.id.distinct()), None),
+                    func.array_remove(array_agg(mstAiField.c.id.distinct()), None),  # type: ignore[no-untyped-call]
                     [],
                 ),
             ).label("aiIds"),

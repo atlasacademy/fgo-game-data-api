@@ -25,7 +25,7 @@ async def get_tdEntity(
             func.jsonb_agg(
                 aggregate_order_by(
                     mstTreasureDeviceLv.table_valued(), mstTreasureDeviceLv.c.lv
-                )
+                )  # type: ignore[no-untyped-call]
             ).label(mstTreasureDeviceLv.name),
         )
         .where(mstTreasureDeviceLv.c.treaureDeviceId.in_(td_ids))

@@ -436,7 +436,7 @@ def get_rayshift_phases_cte(
 
 def get_rayshift_phase_with_enemy_select(rayshift_cte: CTE) -> Label[Any]:
     return func.to_jsonb(
-        func.array_remove(array_agg(rayshift_cte.c.phase.distinct()), None)
+        func.array_remove(array_agg(rayshift_cte.c.phase.distinct()), None)  # type: ignore[no-untyped-call]
     ).label("phasesWithEnemies")
 
 
@@ -500,7 +500,7 @@ phasesNoBattle = func.array_remove(
                 mstQuestPhase.c.phase,
             ),
         ).distinct()
-    ),
+    ),  # type: ignore[no-untyped-call]
     None,
 ).label("phasesNoBattle")
 
@@ -516,11 +516,11 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
     sql_jsonb_agg(mstQuestPhasePresent, "mstQuestPhasePresent"),
     func.to_jsonb(
-        func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)
+        func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)  # type: ignore[no-untyped-call]
     ).label("phases"),
     phasesNoBattle,
     func.to_jsonb(
-        func.array_remove(array_agg(scripts_cte.table_valued().distinct()), None)
+        func.array_remove(array_agg(scripts_cte.table_valued().distinct()), None)  # type: ignore[no-untyped-call]
     ).label("allScripts"),
 ]
 
@@ -682,7 +682,7 @@ async def get_quest_phase_entity(
     )
 
     phasesWithEnemies_select = func.coalesce(
-        select(func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None))
+        select(func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None))  # type: ignore[no-untyped-call]
         .select_from(rayshiftQuest)
         .where(rayshiftQuest.c.questId == quest_id)
         .scalar_subquery(),
@@ -693,7 +693,7 @@ async def get_quest_phase_entity(
         (
             select(
                 func.array_remove(
-                    array_agg(ScriptFileList.c.scriptFileName.distinct()), None
+                    array_agg(ScriptFileList.c.scriptFileName.distinct()), None  # type: ignore[no-untyped-call]
                 )
             )
             .select_from(ScriptFileList)
@@ -722,7 +722,7 @@ async def get_quest_phase_entity(
                         "sceneType",
                         ScriptFileList.c.sceneType,
                     ).distinct()
-                )
+                )  # type: ignore[no-untyped-call]
             )
             .select_from(ScriptFileList)
             .where(ScriptFileList.c.questId == quest_id)

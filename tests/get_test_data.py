@@ -93,6 +93,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if platform.system() == "Windows":
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())  # type: ignore[attr-defined]
 
     asyncio.run(main(args.raw, args.nice, args.basic, args.test))

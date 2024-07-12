@@ -56,7 +56,7 @@ async def load_svt_extra_redis(
         for svtExtra in svtExtras
     }
     await redis.delete(redis_key)
-    await redis.hset(redis_key, mapping=svtExtra_redis_data)
+    await redis.hset(redis_key, mapping=svtExtra_redis_data)  # type: ignore[arg-type]
 
 
 async def load_mstBuff(
@@ -69,7 +69,7 @@ async def load_mstBuff(
             k: zstd_compress(v.json().encode("utf-8")) for k, v in mstBuff_data.items()
         }
         await redis.delete(redis_key)
-        await redis.hset(redis_key, mapping=mstBuff_redis)
+        await redis.hset(redis_key, mapping=mstBuff_redis)  # type: ignore[arg-type]
 
 
 @dataclass
@@ -101,7 +101,7 @@ async def load_reverse_data(
             }
             redis_key = f"{redis_prefix}:{region.name}:{data.key.name}"
             await redis.delete(redis_key)
-            await redis.hset(redis_key, mapping=redis_data)
+            await redis.hset(redis_key, mapping=redis_data)  # type: ignore[arg-type]
 
 
 async def load_redis_data(

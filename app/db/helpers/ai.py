@@ -16,11 +16,11 @@ async def get_ai_entity(
             func.jsonb_build_object(
                 "svt" if ai_table is mstAi else "field",
                 func.coalesce(
-                    func.array_remove(array_agg(ai_table.c.id.distinct()), None),
+                    func.array_remove(array_agg(ai_table.c.id.distinct()), None),  # type: ignore[no-untyped-call]
                     [],
                 ),
                 "field" if ai_table is mstAi else "svt",
-                cast(array([]), ARRAY(Integer)),
+                cast(array([]), ARRAY(Integer)),  # type: ignore[no-untyped-call]
             )
         )
         .select_from(ai_table)

@@ -24,7 +24,7 @@ def event_loop() -> Generator[AbstractEventLoop, None, None]:
     https://github.com/pytest-dev/pytest-asyncio/issues/171
     """
     if platform.system() == "Windows":
-        policy: AbstractEventLoopPolicy = asyncio.WindowsSelectorEventLoopPolicy()
+        policy: AbstractEventLoopPolicy = asyncio.WindowsSelectorEventLoopPolicy()  # type: ignore[attr-defined]
     else:
         policy = asyncio.get_event_loop_policy()
     loop = policy.new_event_loop()

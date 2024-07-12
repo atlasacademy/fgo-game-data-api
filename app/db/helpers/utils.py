@@ -14,7 +14,7 @@ def sql_jsonb_agg(
 ) -> _ColumnsClauseArgument[JSONB]:
     """Equivalent to `func.JSONB_AGG` but removes empty elements from the output"""
     return func.to_jsonb(
-        func.array_remove(array_agg(table.table_valued().distinct()), None)
+        func.array_remove(array_agg(table.table_valued().distinct()), None)  # type: ignore[no-untyped-call]
     ).label(label if label else table.name)
 
 
