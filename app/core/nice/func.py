@@ -247,7 +247,11 @@ async def parse_dataVals(
                 output[text] = value
 
         if not any(key.startswith(prefix) for key in output):
-            if len(array) != len(output) and functype != FuncType.NONE:
+            if (
+                len([val for val in array if val])
+                != len([k for k in output if k != "DependFunc"])
+                and functype != FuncType.NONE
+            ):
                 logger.warning(
                     f"Some datavals weren't parsed for func type {functype}: [{datavals}] => {output}"
                 )
