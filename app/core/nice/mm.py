@@ -54,7 +54,11 @@ def get_nice_master_mission_from_raw(
         startedAt=raw_mm.mstMasterMission.startedAt,
         endedAt=raw_mm.mstMasterMission.endedAt,
         closedAt=raw_mm.mstMasterMission.closedAt,
-        script=NiceMasterMissionScript.model_validate(raw_mm.mstMasterMission.script),
+        script=NiceMasterMissionScript.model_validate(
+            raw_mm.mstMasterMission.script
+            if raw_mm.mstMasterMission.script is not None
+            else {}
+        ),
         missions=missions,
         completeMission=(
             get_nice_complete_mission(
