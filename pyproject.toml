@@ -7,7 +7,7 @@ packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = "^0.111.0"
+fastapi = "^0.111.1"
 uvicorn = { extras = ["standard"], version = "^0.30.1" }
 python-dotenv = "^1.0.1"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
@@ -22,7 +22,7 @@ redis = "^5.0.7"
 hiredis = "^2.3.2"
 psycopg = "^3.2.1"
 pydantic = "^2.8.2"
-zstandard = "^0.22.0"
+zstandard = "^0.23.0"
 uvicorn-worker = "^0.2.0"
 pydantic-settings = "^2.3.4"
 
@@ -33,13 +33,13 @@ isort = "^5.13.2"
 pytest = "^8.2.2"
 pytest-xdist = "^3.6.1"
 pytest-asyncio = "^0.23.7"
-coverage = "^7.5.4"
+coverage = "^7.6.0"
 asgi-lifespan = "^2.1.0"
 fuzzywuzzy-stubs = "^0.0.1"
 types-aiofiles = "^24.1.0.20240626"
 types-redis = "^4.6.0.20240425"
 types-orjson = "^3.6.2"
-ruff = "^0.5.1"
+ruff = "^0.5.2"
 types-pyopenssl = "^24.1.0.20240425"
 
 [tool.pytest.ini_options]
