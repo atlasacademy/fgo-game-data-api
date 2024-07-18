@@ -430,7 +430,7 @@ def select_mstSvtLimit(
     limits: list[MstSvtLimit],
     svt_limit: Optional[int] = None,
     prefer_lower: bool = False,
-) -> MstSvtLimit:
+) -> MstSvtLimit | None:
     limit_map = {limit.limitCount: limit for limit in limits}
     if svt_limit is not None and svt_limit in limit_map:
         return limit_map[svt_limit]
@@ -441,7 +441,10 @@ def select_mstSvtLimit(
         chosen_limit = min(low_limit_counts) if prefer_lower else max(low_limit_counts)
         return limit_map[chosen_limit]
 
-    return limit_map[min(limit_map.keys())]
+    if limit_map:
+        return limit_map[min(limit_map.keys())]
+
+    return None
 
 
 async def get_basic_svt(
@@ -463,6 +466,9 @@ async def get_basic_svt(
         mstSvt = svtExtra.mstSvt
 
     mstSvtLimit = select_mstSvtLimit(svtExtra.limits, svt_limit, mstSvt.isServant())
+
+    if not mstSvtLimit:  # pragma: no cover
+        raise HTTPException(status_code=404, detail="Svt limit not found")
 
     basic_servant = {
         "id": svt_id,
