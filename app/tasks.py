@@ -11,8 +11,6 @@ from git import Repo
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
-from app.core.nice.gacha import get_all_nice_gachas
-
 from .config import EXTRA_SVT_ID_IN_NICE, Settings, app_info, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
@@ -28,6 +26,7 @@ from .core.nice.class_board import get_all_nice_class_boards
 from .core.nice.enemy_master import get_all_nice_enemy_masters
 from .core.nice.event.event import get_nice_event
 from .core.nice.event.shop import get_nice_shops_from_raw
+from .core.nice.gacha import get_all_nice_gachas
 from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
 from .core.nice.mm import get_all_nice_mms
@@ -38,6 +37,7 @@ from .core.utils import get_translation
 from .data.extra import get_extra_svt_data
 from .db.engine import engines
 from .db.helpers import fetch
+from .db.helpers.gacha import get_all_gacha_entities
 from .db.load import load_pydantic_to_db, update_db
 from .export.constants import export_constants
 from .models.raw import mstSvtExtra
@@ -52,6 +52,7 @@ from .schemas.gameenums import NiceItemType, SvtType
 from .schemas.nice import (
     NiceEquip,
     NiceEvent,
+    NiceGacha,
     NiceItem,
     NiceMasterMission,
     NiceServant,
@@ -60,13 +61,13 @@ from .schemas.nice import (
 from .schemas.raw import (
     AssetStorageLine,
     BgmEntity,
+    GachaEntity,
     MstClassBoardBase,
     MstCommandCode,
     MstCv,
     MstEnemyMaster,
     MstEquip,
     MstEvent,
-    MstGacha,
     MstIllustrator,
     MstItem,
     MstMasterMission,
@@ -253,9 +254,8 @@ async def dump_nice_bgms(
     await util.dump_orjson("nice_bgm", all_bgm_data)
 
 
-async def dump_nice_gachas(util: ExportUtil) -> None:
-    all_gacha = await get_all_nice_gachas(util.conn, util.lang)
-    await util.dump_orjson("nice_gacha", all_gacha)
+async def dump_nice_gachas(util: ExportUtil, gachas: list[GachaEntity]) -> None:
+    await util.dump_orjson("nice_gacha", get_all_nice_gachas(gachas, util.lang))
 
 
 async def get_nice_mms_from_raw(
@@ -403,7 +403,7 @@ def is_recent(
 class TimerData(BaseModelORJson):
     updatedAt: int
     events: list[NiceEvent]
-    gachas: list[MstGacha]
+    gachas: list[NiceGacha]
     masterMissions: list[NiceMasterMission]
     shops: list[NiceShop]
     items: list[NiceItem]
@@ -412,7 +412,7 @@ class TimerData(BaseModelORJson):
 async def dump_current_events(
     util: ExportUtil,
     nice_events: list[NiceEvent],
-    raw_gachas: list[MstGacha],
+    raw_gacha_entities: list[GachaEntity],
     nice_mms: list[NiceMasterMission],
     nice_shops: list[NiceShop],
     nice_items: list[NiceItem],
@@ -424,11 +424,12 @@ async def dump_current_events(
         for event in nice_events
         if is_recent(now, event.startedAt, event.endedAt, event.finishedAt, 14, 3)
     ]
-    gachas = [
-        gacha
-        for gacha in raw_gachas
-        if is_recent(now, gacha.openedAt, gacha.closedAt, None, 14, 3)
+    recent_gacha_entities = [
+        g
+        for g in raw_gacha_entities
+        if is_recent(now, g.mstGacha.openedAt, g.mstGacha.closedAt, None, 14, 3)
     ]
+    nice_gachas = get_all_nice_gachas(recent_gacha_entities, util.lang)
     masterMissions = [
         mm
         for mm in nice_mms
@@ -451,7 +452,7 @@ async def dump_current_events(
     timer_data = TimerData(
         updatedAt=now,
         events=events,
-        gachas=gachas,
+        gachas=nice_gachas,
         masterMissions=masterMissions,
         shops=shops,
         items=items,
@@ -537,7 +538,9 @@ async def generate_exports(
                 await dump_nice_shops(util, nice_shops)
                 await dump_nice_enemy_masters(util, mstEnemyMasters)
                 await dump_nice_class_boards(util, mstClassBoardBases)
-                await dump_nice_gachas(util)
+
+                raw_gacha_entities = await get_all_gacha_entities(conn)
+                await dump_nice_gachas(util, raw_gacha_entities)
 
                 util_en = ExportUtil(conn, redis, region, export_path, Language.en)
                 nice_items_lang_en: list[NiceItem] = []
@@ -559,7 +562,7 @@ async def generate_exports(
                     await dump_nice_ccs(util_en, mstCcs)
                     await dump_nice_bgms(util_en, bgms)
                     await dump_nice_class_boards(util_en, mstClassBoardBases)
-                    await dump_nice_gachas(util_en)
+                    await dump_nice_gachas(util_en, raw_gacha_entities)
 
                 await dump_svt(util, "nice_servant", all_nice_servants)
                 await dump_svt(util, "nice_equip", all_equips)
@@ -568,10 +571,13 @@ async def generate_exports(
                 nice_events = await get_nice_events_from_raw(util, mstEvents)
                 await dump_nice_events(util, nice_events)
 
-                raw_gachas = await fetch.get_everything(conn, MstGacha)
-
                 await dump_current_events(
-                    util, nice_events, raw_gachas, nice_mms, nice_shops, nice_items
+                    util,
+                    nice_events,
+                    raw_gacha_entities,
+                    nice_mms,
+                    nice_shops,
+                    nice_items,
                 )
 
                 if region == Region.JP:
@@ -584,7 +590,7 @@ async def generate_exports(
                     await dump_current_events(
                         util_en,
                         nice_events_lang_en,
-                        raw_gachas,
+                        raw_gacha_entities,
                         nice_mms,
                         nice_shops,
                         nice_items_lang_en,
