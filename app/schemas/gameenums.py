@@ -1843,6 +1843,7 @@ class ItemType(IntEnum):
     RI = 33
     STORMPOD = 34
     BATTLE_ITEM = 35
+    ANIPLEX_PLUS_CHARGE_STONE = 36
 
 
 class NiceItemType(StrEnum):
@@ -1883,6 +1884,7 @@ class NiceItemType(StrEnum):
     ri = "ri"
     stormpod = "stormpod"
     battleItem = "battleItem"
+    aniplexPlusChargeStone = "aniplexPlusChargeStone"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1921,6 +1923,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     33: NiceItemType.ri,
     34: NiceItemType.stormpod,
     35: NiceItemType.battleItem,
+    36: NiceItemType.aniplexPlusChargeStone,
 }
 
 
