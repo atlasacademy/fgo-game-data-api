@@ -25,12 +25,12 @@ async def get_nice_append_passive(
     nice_skill = (
         await get_nice_skill_with_svt(conn, append_skill, svt_id, region, lang)
     )[0]
-    items = [item_map[item_id] for item_id in unlock.itemIds]
+    items = [item_map[item_id] for item_id in unlock.itemIds if item_id in item_map]
     nice_unlock = get_nice_item_amount(items, unlock.itemNums)
     return NiceServantAppendPassiveSkill(
         num=svt_append.num,
         priority=svt_append.priority,
-        skill=NiceSkill.parse_obj(nice_skill),
+        skill=NiceSkill.model_validate(nice_skill),
         unlockMaterials=nice_unlock,
     )
 
