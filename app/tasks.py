@@ -697,38 +697,47 @@ async def load_and_export(
     async_engines: dict[Region, AsyncEngine],
     enable_webhook: bool,
 ) -> None:  # pragma: no cover
-    if settings.write_postgres_data:
-        update_db(region_path)
-    if settings.write_redis_data:
-        await load_redis_data(redis, region_path)
-        await update_master_repo_info(redis, region_path)
-    if settings.write_postgres_data or settings.write_redis_data:
-        await load_svt_extra(redis, region_path)
-        if enable_webhook:
-            await report_webhooks(region_path, "load")
+    try:
+        if settings.write_postgres_data:
+            update_db(region_path)
+        if settings.write_redis_data:
+            await load_redis_data(redis, region_path)
+            await update_master_repo_info(redis, region_path)
+        if settings.write_postgres_data or settings.write_redis_data:
+            await load_svt_extra(redis, region_path)
+            if enable_webhook:
+                await report_webhooks(region_path, "load")
+    except Exception:  # noqa: BLE001
+        logger.exception("Failed to load data")
 
     if settings.clear_redis_cache:
         await clear_redis_cache(redis, region_path, clear_heavy_quests=False)
 
     if settings.export_all_nice:
-        await generate_exports(redis, region_path, async_engines)
-        if enable_webhook:
-            await report_webhooks(region_path, "export")
+        try:
+            await generate_exports(redis, region_path, async_engines)
+            if enable_webhook:
+                await report_webhooks(region_path, "export")
+        except Exception:  # noqa: BLE001
+            logger.exception("Failed to export data")
 
     if settings.clear_redis_cache:
         await clear_redis_cache(redis, region_path, clear_heavy_quests=True)
 
 
 def update_data_repo(
-    region_path: dict[Region, DirectoryPath]
+    region_path: dict[Region, DirectoryPath],
 ) -> None:  # pragma: no cover
-    if settings.github_webhook_git_pull:
-        for gamedata in region_path.values():
-            if (gamedata / ".git").exists():
-                repo = Repo(gamedata)
-                for fetch_info in repo.remotes[0].pull():
-                    commit_hash = fetch_info.commit.hexsha[:6]
-                    logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
+    try:
+        if settings.github_webhook_git_pull:
+            for gamedata in region_path.values():
+                if (gamedata / ".git").exists():
+                    repo = Repo(gamedata)
+                    for fetch_info in repo.remotes[0].pull():
+                        commit_hash = fetch_info.commit.hexsha[:6]
+                        logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
+    except Exception:  # noqa: BLE001
+        logger.exception("Failed to pull data")
 
 
 async def report_webhooks(
@@ -750,8 +759,5 @@ async def pull_and_update(
     async_engines: dict[Region, AsyncEngine],
     redis: Redis,
 ) -> None:  # pragma: no cover
-    try:
-        await run_in_threadpool(lambda: update_data_repo(region_path))
-        await load_and_export(redis, region_path, async_engines, True)
-    except Exception:  # noqa: BLE001
-        logger.exception("Failed to pull and update data")
+    await run_in_threadpool(lambda: update_data_repo(region_path))
+    await load_and_export(redis, region_path, async_engines, True)
