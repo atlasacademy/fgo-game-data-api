@@ -2,7 +2,7 @@ import asyncio
 import time
 from collections import defaultdict
 from dataclasses import dataclass
-from typing import Any, Optional, Union
+from typing import Any, Optional, Union, cast
 
 from fastapi import HTTPException
 from fastapi_cache.decorator import cache
@@ -529,8 +529,11 @@ async def get_nice_quest_phase(
     lang: Language = Language.jp,
     questHash: str | None = None,
 ) -> NiceQuestPhase:
-    db_data: DBQuestPhase = await get_nice_quest_phase_no_rayshift(
-        conn, redis, region, quest_id, phase, lang
+    db_data = cast(
+        DBQuestPhase,
+        await get_nice_quest_phase_no_rayshift(
+            conn, redis, region, quest_id, phase, lang
+        ),
     )
     current_time = int(time.time())
     quest_already_closed = current_time > db_data.nice.closedAt

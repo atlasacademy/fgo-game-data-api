@@ -13,7 +13,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi_cache import FastAPICache
+from fastapi_cache import Coder, FastAPICache
+from fastapi_cache.backends.redis import RedisBackend
 from redis.asyncio import Redis as AsyncRedis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
@@ -235,12 +236,13 @@ def get_region(args: list[Any], kwargs: dict[str, Any]) -> str:  # pragma: no co
 
 
 def custom_key_builder(
-    func: Callable[..., Any],
-    namespace: str,
-    args: tuple[Any, ...],
-    kwargs: dict[str, Any],
+    __function: Callable[..., Any],
+    __namespace: str = "",
+    *,
     request: Optional[Request] = None,  # noqa: ARG001
     response: Optional[Response] = None,  # noqa: ARG001
+    args: tuple[Any, ...],
+    kwargs: dict[str, Any],
 ) -> str:
     prefix = FastAPICache.get_prefix()
     static_kwargs = {k: v for k, v in kwargs.items() if k not in {"conn", "redis"}}
@@ -254,43 +256,24 @@ def custom_key_builder(
     region = get_region(static_args, static_kwargs)
 
     try:
-        args_dump = orjson.dumps(static_args).decode("utf-8")
-        kwargs_dump = orjson.dumps(static_kwargs).decode("utf-8")
+        args_dump = orjson.dumps(static_args)
+        kwargs_dump = orjson.dumps(static_kwargs)
     except TypeError:  # orjson can't dump 64+ bit int
-        args_dump = json.dumps(static_args)
-        kwargs_dump = json.dumps(static_kwargs)
+        args_dump = json.dumps(static_args).encode("utf-8")
+        kwargs_dump = json.dumps(static_kwargs).encode("utf-8")
 
-    raw_key = f"{func.__module__}:{func.__name__}:{args_dump}:{kwargs_dump}"
-    cache_key = hashlib.sha1(raw_key.encode("utf-8")).hexdigest()
+    raw_key = (
+        f"{__function.__module__}:{__function.__name__}:".encode("utf-8")
+        + args_dump
+        + b":"
+        + kwargs_dump
+    )
+    cache_key = hashlib.sha1(raw_key).hexdigest()
 
-    return f"{prefix}:{region}:{namespace}:{cache_key}"
-
-
-class RedisBackend:  # pragma: no cover
-    def __init__(self, redis: Redis):
-        self.redis: Redis = redis
-
-    async def get_with_ttl(self, key: str) -> tuple[int, str]:
-        async with self.redis.pipeline(transaction=True) as pipe:
-            return await pipe.ttl(key).get(key).execute()  # type: ignore
-
-    async def get(self, key: str) -> bytes | None:
-        return await self.redis.get(key)
-
-    async def set(self, key: str, value: str, expire: int | None = None) -> bool | None:
-        return await self.redis.set(key, value, ex=expire)
-
-    async def clear(self, namespace: str | None = None, key: str | None = None) -> int:
-        if namespace:
-            lua = f"for i, name in ipairs(redis.call('KEYS', '{namespace}:*')) do redis.call('DEL', name); end"
-            return await self.redis.eval(lua, numkeys=0)  # type: ignore
-        elif key:
-            return await self.redis.delete(key)
-
-        raise ValueError("Either namespace or key must be specified.")
+    return f"{prefix}:{region}:{__namespace}:{cache_key}"
 
 
-class PickleCoder:  # pragma: no cover
+class PickleCoder(Coder):  # pragma: no cover
     @classmethod
     def encode(cls, value: Any) -> bytes:
         picked = pickle.dumps(value, protocol=pickle.HIGHEST_PROTOCOL)
@@ -305,11 +288,11 @@ class PickleCoder:  # pragma: no cover
 async def startup() -> None:
     redis = await Redis.from_url(str(settings.redisdsn))
     FastAPICache.init(
-        RedisBackend(redis),  # type: ignore
+        RedisBackend(redis),
         prefix=f"{settings.redis_prefix}:cache",
         expire=60 * 60 * 24 * 7,
         key_builder=custom_key_builder,
-        coder=PickleCoder,  # type: ignore
+        coder=PickleCoder,
     )
     app.state.redis = redis
 
