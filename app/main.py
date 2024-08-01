@@ -314,7 +314,7 @@ app.include_router(raw.router)
 
 @app.get("/", include_in_schema=False)
 async def root() -> RedirectResponse:
-    return RedirectResponse("/rapidoc")
+    return RedirectResponse("/docs")
 
 
 @app.get("/info", summary="Data version info", response_model=dict[Region, RepoInfo])
