@@ -13,7 +13,7 @@ engines = {
         str(region_data.postgresdsn).replace("postgresql", "postgresql+psycopg"),
         pool_size=1,
         max_overflow=5,
-        future=True,
+        pool_pre_ping=True,
     )
     for region, region_data in settings.data.items()
 }
@@ -24,7 +24,7 @@ async_engines = {
         echo=logger.isEnabledFor(TRACE_LOG_LEVEL),
         pool_size=settings.db_pool_size,
         max_overflow=settings.db_max_overflow,
-        pool_timeout=300,
+        pool_pre_ping=True,
     )
     for region, region_data in settings.data.items()
 }
