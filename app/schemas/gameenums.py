@@ -266,6 +266,8 @@ class FuncType(IntEnum):
     SET_BATTLE_VALUE = 139
     GAIN_MULTIPLY_NP = 140
     LOSS_MULTIPLY_NP = 141
+    ADD_BATTLE_POINT = 142
+    DAMAGE_NP_BATTLE_POINT_PHASE = 143
 
 
 class NiceFuncType(StrEnum):
@@ -376,6 +378,8 @@ class NiceFuncType(StrEnum):
     setBattleValue = "setBattleValue"
     gainMultiplyNp = "gainMultiplyNp"
     lossMultiplyNp = "lossMultiplyNp"
+    addBattlePoint = "addBattlePoint"
+    damageNpBattlePointPhase = "damageNpBattlePointPhase"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -484,6 +488,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     139: NiceFuncType.setBattleValue,
     140: NiceFuncType.gainMultiplyNp,
     141: NiceFuncType.lossMultiplyNp,
+    142: NiceFuncType.addBattlePoint,
+    143: NiceFuncType.damageNpBattlePointPhase,
 }
 
 
@@ -777,6 +783,13 @@ class BuffType(IntEnum):
     ADD_FUNC_HP_REDUCE = 197
     SUB_FUNC_HP_REDUCE = 198
     CHANGE_BGM = 199
+    CONFIRM_COMMAND_FUNCTION = 200
+    SKILL_BEFORE_FUNCTION = 201
+    SKILL_TARGETED_BEFORE_FUNCTION = 202
+    FIELD_INDIVIDUALITY_CHANGED_FUNCTION = 203
+    TREASURE_DEVICE_BEFORE_FUNCTION = 204
+    START_TACTICAL_BEFORE_FUNCTION = 205
+    SHORTEN_SKILL_AFTER_USE_SKILL = 206
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -969,6 +982,13 @@ class NiceBuffType(StrEnum):
     addFuncHpReduce = "addFuncHpReduce"
     subFuncHpReduce = "subFuncHpReduce"
     changeBgm = "changeBgm"
+    confirmCommandFunction = "confirmCommandFunction"
+    skillBeforeFunction = "skillBeforeFunction"
+    skillTargetedBeforeFunction = "skillTargetedBeforeFunction"
+    fieldIndividualityChangedFunction = "fieldIndividualityChangedFunction"
+    treasureDeviceBeforeFunction = "treasureDeviceBeforeFunction"
+    startTacticalBeforeFunction = "startTacticalBeforeFunction"
+    shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1159,6 +1179,13 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     197: NiceBuffType.addFuncHpReduce,
     198: NiceBuffType.subFuncHpReduce,
     199: NiceBuffType.changeBgm,
+    200: NiceBuffType.confirmCommandFunction,
+    201: NiceBuffType.skillBeforeFunction,
+    202: NiceBuffType.skillTargetedBeforeFunction,
+    203: NiceBuffType.fieldIndividualityChangedFunction,
+    204: NiceBuffType.treasureDeviceBeforeFunction,
+    205: NiceBuffType.startTacticalBeforeFunction,
+    206: NiceBuffType.shortenSkillAfterUseSkill,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1303,6 +1330,13 @@ class BuffAction(IntEnum):
     SPECIAL_RECEIVE_DAMAGE = 134
     FUNC_HP_REDUCE_VALUE = 135
     CHANGE_BGM = 136
+    FUNCTION_CONFIRM_COMMAND = 137
+    FUNCTION_SKILL_BEFORE = 138
+    FUNCTION_SKILL_TARGETED_BEFORE = 139
+    FUNCTION_FIELD_INDIVIDUALITY_CHANGED = 140
+    FUNCTION_TREASURE_DEVICE_BEFORE = 141
+    FUNCTION_START_TACTICAL_BEFORE = 142
+    SHORTEN_SKILL_AFTER_USE_SKILL = 143
 
 
 class NiceBuffAction(StrEnum):
@@ -1445,6 +1479,13 @@ class NiceBuffAction(StrEnum):
     specialReceiveDamage = "specialReceiveDamage"
     funcHpReduceValue = "funcHpReduceValue"
     changeBgm = "changeBgm"
+    functionConfirmCommand = "functionConfirmCommand"
+    functionSkillBefore = "functionSkillBefore"
+    functionSkillTargetedBefore = "functionSkillTargetedBefore"
+    functionFieldIndividualityChanged = "functionFieldIndividualityChanged"
+    functionTreasureDeviceBefore = "functionTreasureDeviceBefore"
+    functionStartTacticalBefore = "functionStartTacticalBefore"
+    shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1585,6 +1626,13 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     134: NiceBuffAction.specialReceiveDamage,
     135: NiceBuffAction.funcHpReduceValue,
     136: NiceBuffAction.changeBgm,
+    137: NiceBuffAction.functionConfirmCommand,
+    138: NiceBuffAction.functionSkillBefore,
+    139: NiceBuffAction.functionSkillTargetedBefore,
+    140: NiceBuffAction.functionFieldIndividualityChanged,
+    141: NiceBuffAction.functionTreasureDeviceBefore,
+    142: NiceBuffAction.functionStartTacticalBefore,
+    143: NiceBuffAction.shortenSkillAfterUseSkill,
 }
 
 
@@ -1784,6 +1832,18 @@ class DataValsType(IntEnum):
     ExtendBuffHalfTurnInPartyTurn = 168
     ShortenBuffHalfTurnInPartyTurn = 169
     LinkageBuffGrantSuccessEvenIfOtherFailed = 170
+    BattlePointId = 171
+    BattlePointValue = 172
+    BattlePointUiUpdateType = 173
+    BattlePointOverwrite = 174
+    CheckOverChargeStageRange = 175
+    CheckBattlePointPhaseRange = 176
+    StartingPosition = 177
+    FriendShipAbove = 178
+    DamageRateBattlePointPhase = 179
+    ParamAddBattlePointPhaseId = 180
+    ParamAddBattlePointPhaseValue = 181
+    ShortenMaxCountEachSkill = 182
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2442,6 +2502,10 @@ class CondType(IntEnum):
     LIMITED_MISSION_ACHIEVE_NUM_BELOW = 221
     LIMITED_MISSION_ACHIEVE_NUM_ABOVE = 222
     NOT_SVT_VOICE_PLAYED = 223
+    BATTLE_POINT_ABOVE = 225
+    BATTLE_POINT_BELOW = 226
+    NOT_HAVE_CHARGE_STONE = 229
+    HAVE_CHARGE_STONE = 230
 
 
 class NiceCondType(StrEnum):
@@ -2668,6 +2732,10 @@ class NiceCondType(StrEnum):
     limitedMissionAchieveNumBelow = "limitedMissionAchieveNumBelow"
     limitedMissionAchieveNumAbove = "limitedMissionAchieveNumAbove"
     notSvtVoicePlayed = "notSvtVoicePlayed"
+    battlePointAbove = "battlePointAbove"
+    battlePointBelow = "battlePointBelow"
+    notHaveChargeStone = "notHaveChargeStone"
+    haveChargeStone = "haveChargeStone"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2892,6 +2960,10 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     221: NiceCondType.limitedMissionAchieveNumBelow,
     222: NiceCondType.limitedMissionAchieveNumAbove,
     223: NiceCondType.notSvtVoicePlayed,
+    225: NiceCondType.battlePointAbove,
+    226: NiceCondType.battlePointBelow,
+    229: NiceCondType.notHaveChargeStone,
+    230: NiceCondType.haveChargeStone,
 }
 
 
@@ -4544,6 +4616,7 @@ class MissionType(IntEnum):
     LIMITED = 5
     COMPLETE = 6
     RANDOM = 7
+    SERVANT = 8
 
 
 class NiceMissionType(StrEnum):
@@ -4557,6 +4630,7 @@ class NiceMissionType(StrEnum):
     limited = "limited"
     complete = "complete"
     random = "random"
+    servant = "servant"
 
 
 MISSION_TYPE_NAME: dict[int, NiceMissionType] = {
@@ -4568,6 +4642,7 @@ MISSION_TYPE_NAME: dict[int, NiceMissionType] = {
     5: NiceMissionType.limited,
     6: NiceMissionType.complete,
     7: NiceMissionType.random,
+    8: NiceMissionType.servant,
 }
 
 
@@ -5221,6 +5296,7 @@ class ServantClassSupportGroupType(IntEnum):
     BERSERKER = 7
     EXTRA = 8
     MIX = 9
+    RECOMMEND = 10
     NOT_SUPPORT = 999
 
 
@@ -5237,6 +5313,7 @@ class NiceSvtClassSupportGroupType(StrEnum):
     berserker = "berserker"
     extra = "extra"
     mix = "mix"
+    recommend = "recommend"
     notSupport = "notSupport"
 
 
@@ -5251,6 +5328,7 @@ SVT_CLASS_SUPPORT_GROUP_TYPE_NAME: dict[int, NiceSvtClassSupportGroupType] = {
     7: NiceSvtClassSupportGroupType.berserker,
     8: NiceSvtClassSupportGroupType.extra,
     9: NiceSvtClassSupportGroupType.mix,
+    10: NiceSvtClassSupportGroupType.recommend,
     999: NiceSvtClassSupportGroupType.notSupport,
 }
 
@@ -5672,6 +5750,7 @@ SERVANT_OVERWRITE_TYPE_NAME: dict[int, NiceServantOverwriteType] = {
 class GachaFlag(IntEnum):
     PC_MESSAGE = 2
     BONUS_SELECT = 8
+    DISPLAY_FEATURED_SVT = 16
 
 
 class NiceGachaFlag(StrEnum):
@@ -5679,11 +5758,13 @@ class NiceGachaFlag(StrEnum):
 
     pcMessage = "pcMessage"
     bonusSelect = "bonusSelect"
+    displayFeaturedSvt = "displayFeaturedSvt"
 
 
 GACHA_FLAG_NAME: dict[int, NiceGachaFlag] = {
     2: NiceGachaFlag.pcMessage,
     8: NiceGachaFlag.bonusSelect,
+    16: NiceGachaFlag.displayFeaturedSvt,
 }
 
 

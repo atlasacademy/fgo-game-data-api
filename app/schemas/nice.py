@@ -566,6 +566,18 @@ class BaseVals(BaseModel):
     ExtendBuffHalfTurnInPartyTurn: int | None = None
     ShortenBuffHalfTurnInPartyTurn: int | None = None
     LinkageBuffGrantSuccessEvenIfOtherFailed: int | None = None
+    BattlePointId: int | None = None
+    BattlePointValue: int | None = None
+    BattlePointUiUpdateType: int | None = None
+    BattlePointOverwrite: int | None = None
+    CheckOverChargeStageRange: int | None = None
+    CheckBattlePointPhaseRange: int | None = None
+    StartingPosition: int | None = None
+    FriendShipAbove: int | None = None
+    DamageRateBattlePointPhase: int | None = None
+    ParamAddBattlePointPhaseId: int | None = None
+    ParamAddBattlePointPhaseValue: int | None = None
+    ShortenMaxCountEachSkill: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

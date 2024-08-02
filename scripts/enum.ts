@@ -153,6 +153,8 @@ export enum NiceFuncType {
     SET_BATTLE_VALUE = "setBattleValue",
     GAIN_MULTIPLY_NP = "gainMultiplyNp",
     LOSS_MULTIPLY_NP = "lossMultiplyNp",
+    ADD_BATTLE_POINT = "addBattlePoint",
+    DAMAGE_NP_BATTLE_POINT_PHASE = "damageNpBattlePointPhase",
 }
 
 export enum NiceFuncTargetType {
@@ -374,6 +376,13 @@ export enum NiceBuffType {
     ADD_FUNC_HP_REDUCE = "addFuncHpReduce",
     SUB_FUNC_HP_REDUCE = "subFuncHpReduce",
     CHANGE_BGM = "changeBgm",
+    CONFIRM_COMMAND_FUNCTION = "confirmCommandFunction",
+    SKILL_BEFORE_FUNCTION = "skillBeforeFunction",
+    SKILL_TARGETED_BEFORE_FUNCTION = "skillTargetedBeforeFunction",
+    FIELD_INDIVIDUALITY_CHANGED_FUNCTION = "fieldIndividualityChangedFunction",
+    TREASURE_DEVICE_BEFORE_FUNCTION = "treasureDeviceBeforeFunction",
+    START_TACTICAL_BEFORE_FUNCTION = "startTacticalBeforeFunction",
+    SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -517,6 +526,13 @@ export enum NiceBuffAction {
     SPECIAL_RECEIVE_DAMAGE = "specialReceiveDamage",
     FUNC_HP_REDUCE_VALUE = "funcHpReduceValue",
     CHANGE_BGM = "changeBgm",
+    FUNCTION_CONFIRM_COMMAND = "functionConfirmCommand",
+    FUNCTION_SKILL_BEFORE = "functionSkillBefore",
+    FUNCTION_SKILL_TARGETED_BEFORE = "functionSkillTargetedBefore",
+    FUNCTION_FIELD_INDIVIDUALITY_CHANGED = "functionFieldIndividualityChanged",
+    FUNCTION_TREASURE_DEVICE_BEFORE = "functionTreasureDeviceBefore",
+    FUNCTION_START_TACTICAL_BEFORE = "functionStartTacticalBefore",
+    SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
 }
 
 export enum NiceBuffLimit {
@@ -698,6 +714,18 @@ export enum NiceDataValsType {
     ExtendBuffHalfTurnInPartyTurn = "extendbuffhalfturninpartyturn",
     ShortenBuffHalfTurnInPartyTurn = "shortenbuffhalfturninpartyturn",
     LinkageBuffGrantSuccessEvenIfOtherFailed = "linkagebuffgrantsuccessevenifotherfailed",
+    BattlePointId = "battlepointid",
+    BattlePointValue = "battlepointvalue",
+    BattlePointUiUpdateType = "battlepointuiupdatetype",
+    BattlePointOverwrite = "battlepointoverwrite",
+    CheckOverChargeStageRange = "checkoverchargestagerange",
+    CheckBattlePointPhaseRange = "checkbattlepointphaserange",
+    StartingPosition = "startingposition",
+    FriendShipAbove = "friendshipabove",
+    DamageRateBattlePointPhase = "damageratebattlepointphase",
+    ParamAddBattlePointPhaseId = "paramaddbattlepointphaseid",
+    ParamAddBattlePointPhaseValue = "paramaddbattlepointphasevalue",
+    ShortenMaxCountEachSkill = "shortenmaxcounteachskill",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1060,6 +1088,10 @@ export enum NiceCondType {
     LIMITED_MISSION_ACHIEVE_NUM_BELOW = "limitedMissionAchieveNumBelow",
     LIMITED_MISSION_ACHIEVE_NUM_ABOVE = "limitedMissionAchieveNumAbove",
     NOT_SVT_VOICE_PLAYED = "notSvtVoicePlayed",
+    BATTLE_POINT_ABOVE = "battlePointAbove",
+    BATTLE_POINT_BELOW = "battlePointBelow",
+    NOT_HAVE_CHARGE_STONE = "notHaveChargeStone",
+    HAVE_CHARGE_STONE = "haveChargeStone",
 }
 
 export enum NiceVoiceCondType {
@@ -1600,6 +1632,7 @@ export enum NiceMissionType {
     LIMITED = "limited",
     COMPLETE = "complete",
     RANDOM = "random",
+    SERVANT = "servant",
 }
 
 export enum NiceMissionRewardType {
@@ -1810,6 +1843,7 @@ export enum NiceSvtClassSupportGroupType {
     BERSERKER = "berserker",
     EXTRA = "extra",
     MIX = "mix",
+    RECOMMEND = "recommend",
     NOT_SUPPORT = "notSupport",
 }
 
@@ -1940,6 +1974,7 @@ export enum NiceServantOverwriteType {
 export enum NiceGachaFlag {
     PC_MESSAGE = "pcMessage",
     BONUS_SELECT = "bonusSelect",
+    DISPLAY_FEATURED_SVT = "displayFeaturedSvt",
 }
 
 export enum NiceEventSvtType {
