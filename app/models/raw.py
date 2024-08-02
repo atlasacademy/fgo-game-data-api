@@ -874,6 +874,34 @@ mstSvtTransform = Table(
 )
 
 
+mstSvtBattlePoint = Table(
+    "mstSvtBattlePoint",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("battlePointId", Integer),
+)
+
+
+mstBattlePoint = Table(
+    "mstBattlePoint",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("name", String),
+    Column("flag", Integer),
+)
+
+
+mstBattlePointPhase = Table(
+    "mstBattlePointPhase",
+    metadata,
+    Column("battlePointId", Integer, index=True),
+    Column("phase", Integer),
+    Column("value", Integer),
+    Column("name", String),
+    Column("effectId", Integer),
+)
+
+
 mstEquip = Table(
     "mstEquip",
     metadata,
@@ -992,6 +1020,20 @@ mstItem = Table(
     Column("mstItemSelect", JSONB),
     Column("mstGift", JSONB),
     Column("mstGiftAdd", JSONB),
+)
+
+
+mstItemDropEfficiency = Table(
+    "mstItemDropEfficiency",
+    metadata,
+    Column("itemId", Integer, index=True),
+    Column("targetType", Integer),
+    Column("priority", Integer),
+    Column("title", String),
+    Column("iconName", String),
+    Column("transitionParam", String),
+    Column("commonReleaseId", Integer),
+    Column("closedMessageId", Integer),
 )
 
 
@@ -1210,6 +1252,14 @@ mstGachaStoryAdjust = Table(
     Column("targetId", Integer),
     Column("value", Integer),
     Column("imageId", Integer),
+)
+
+
+viewGachaFeaturedSvt = Table(
+    "viewGachaFeaturedSvt",
+    metadata,
+    Column("gachaId", Integer, index=True),
+    Column("svtIds", ARRAY(Integer)),
 )
 
 
@@ -2361,6 +2411,15 @@ mstQuestPhasePresent = Table(
 )
 
 
+mstQuestPhaseIndividuality = Table(
+    "mstQuestPhaseIndividuality",
+    metadata,
+    Column("questId", Integer, index=True),
+    Column("phase", Integer, index=True),
+    Column("individuality", ARRAY(Integer)),
+)
+
+
 mstRestriction = Table(
     "mstRestriction",
     metadata,
@@ -2402,6 +2461,8 @@ mstBattleBg = Table(
     Column("script", JSONB),
     Column("id", Integer),
     Column("type", Integer),
+    Column("resourceId", Integer),
+    Column("resourceType", Integer),
     Column("imageId", Integer),
     Column("priority", Integer),
 )
@@ -2756,6 +2817,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuestRelease, mstQuestReleaseOverwrite],
     [mstQuestRestriction, mstQuestRestrictionInfo, mstRestriction],
     [mstQuestPhasePresent],
+    [mstQuestPhaseIndividuality],
     [mstStage],
     [mstStageRemap],
     [mstBattleBg],
@@ -2791,6 +2853,7 @@ TABLES_TO_BE_LOADED = [
     [mstSvtTreasureDevice, mstSvtTreasureDeviceRelease],
     [mstSvtVoice],
     [mstSvtVoiceRelation],
+    [mstSvtBattlePoint, mstBattlePoint, mstBattlePointPhase],
     [mstTreasureBox],
     [mstTreasureBoxGift],
     [mstTreasureDevice, mstTreasureDeviceDetail],
@@ -2815,5 +2878,6 @@ TABLES_TO_BE_LOADED = [
     [mstClassBoardBase, mstClassBoardClass, mstClassBoardLine, mstFuncDisp],
     [mstClassBoardLock, mstClassBoardSquare],
     [mstFuncTypeDetail, mstBuffTypeDetail],
-    [mstGacha, mstGachaStoryAdjust],
+    [mstGacha, mstGachaStoryAdjust, viewGachaFeaturedSvt],
+    [mstItemDropEfficiency],
 ]

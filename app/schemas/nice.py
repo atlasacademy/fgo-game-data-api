@@ -570,8 +570,8 @@ class BaseVals(BaseModel):
     BattlePointValue: int | None = None
     BattlePointUiUpdateType: int | None = None
     BattlePointOverwrite: int | None = None
-    CheckOverChargeStageRange: int | None = None
-    CheckBattlePointPhaseRange: int | None = None
+    CheckOverChargeStageRange: str | None = None
+    CheckBattlePointPhaseRange: str | None = None
     StartingPosition: int | None = None
     FriendShipAbove: int | None = None
     DamageRateBattlePointPhase: int | None = None

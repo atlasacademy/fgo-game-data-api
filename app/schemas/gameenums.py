@@ -5925,3 +5925,134 @@ ATTRIBUTE_NAME: dict[int, Attribute] = {
     5: Attribute.beast,
     10: Attribute.void,
 }
+
+
+class BattlePointFlag(IntEnum):
+    NONE = 0
+    NOT_TARGET_OTHER_PLAYER = 1
+    HIDE_UI_GAUGE_ALL_TIME = 2
+    HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT = 4
+    HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT_AND_FOLLOWER_SUPPORT = 8
+
+
+class NiceBattlePointFlag(StrEnum):
+    """Battle Point Flag"""
+
+    none = "none"
+    notTargetOtherPlayer = "notTargetOtherPlayer"
+    hideUiGaugeAllTime = "hideUiGaugeAllTime"
+    hideUiGaugeWhenCantAddPoint = "hideUiGaugeWhenCantAddPoint"
+    hideUiGaugeWhenCantAddPointAndFollowerSupport = (
+        "hideUiGaugeWhenCantAddPointAndFollowerSupport"
+    )
+
+
+BATTLE_POINT_FLAG_NAME: dict[int, NiceBattlePointFlag] = {
+    0: NiceBattlePointFlag.none,
+    1: NiceBattlePointFlag.notTargetOtherPlayer,
+    2: NiceBattlePointFlag.hideUiGaugeAllTime,
+    4: NiceBattlePointFlag.hideUiGaugeWhenCantAddPoint,
+    8: NiceBattlePointFlag.hideUiGaugeWhenCantAddPointAndFollowerSupport,
+}
+
+
+class ItemTransitionType(IntEnum):
+    NONE = 0
+    EVENT_SHOP = 1
+    BLANK_EARTH = 2
+    CHALDEA_GATE = 3
+    FREE_QUEST = 4
+    WEEKDAYS_QUEST = 5
+    MAIN_SCENARIO = 6
+    MISSION = 7
+    TRADE_AP = 8
+    GRAIL_FRAGMENTS = 9
+    COIN_ROOM = 10
+    SVT_SELL = 11
+    FRIEND = 12
+    MANA_PRI = 13
+    PURE_PRI = 14
+    RARE_PRI = 15
+    SUMMON = 16
+
+
+class NiceItemTransitionType(StrEnum):
+    """Item Transition Type"""
+
+    none = "none"
+    eventShop = "eventShop"
+    blankEarth = "blankEarth"
+    chaldeaGate = "chaldeaGate"
+    freeQuest = "freeQuest"
+    weekdaysQuest = "weekdaysQuest"
+    mainScenario = "mainScenario"
+    mission = "mission"
+    tradeAp = "tradeAp"
+    grailFragments = "grailFragments"
+    coinRoom = "coinRoom"
+    svtSell = "svtSell"
+    friend = "friend"
+    manaPri = "manaPri"
+    purePri = "purePri"
+    rarePri = "rarePri"
+    summon = "summon"
+
+
+ITEM_TRANSITION_TYPE_NAME: dict[int, NiceItemTransitionType] = {
+    0: NiceItemTransitionType.none,
+    1: NiceItemTransitionType.eventShop,
+    2: NiceItemTransitionType.blankEarth,
+    3: NiceItemTransitionType.chaldeaGate,
+    4: NiceItemTransitionType.freeQuest,
+    5: NiceItemTransitionType.weekdaysQuest,
+    6: NiceItemTransitionType.mainScenario,
+    7: NiceItemTransitionType.mission,
+    8: NiceItemTransitionType.tradeAp,
+    9: NiceItemTransitionType.grailFragments,
+    10: NiceItemTransitionType.coinRoom,
+    11: NiceItemTransitionType.svtSell,
+    12: NiceItemTransitionType.friend,
+    13: NiceItemTransitionType.manaPri,
+    14: NiceItemTransitionType.purePri,
+    15: NiceItemTransitionType.rarePri,
+    16: NiceItemTransitionType.summon,
+}
+
+
+class ItemTransitionTargetValue(IntEnum):
+    NONE = 0
+    QUEST_ID = 1
+    SPOT_ID = 2
+    WAR_ID = 3
+    EVENT_ID = 4
+    MISSION_TYPE = 5
+    MANA_PRI_TARGET_ITEM_ID = 6
+    PURE_PRI_TARGET_ITEM_ID = 7
+    RARE_PRI_TARGET_ITEM_ID = 8
+
+
+class NiceItemTransitionTargetValue(StrEnum):
+    """Item Transition Target Value"""
+
+    none = "none"
+    questId = "questId"
+    spotId = "spotId"
+    warId = "warId"
+    eventId = "eventId"
+    missionType = "missionType"
+    manaPriTargetItemId = "manaPriTargetItemId"
+    purePriTargetItemId = "purePriTargetItemId"
+    rarePriTargetItemId = "rarePriTargetItemId"
+
+
+ITEM_TRANSITION_TARGET_VALUE: dict[int, NiceItemTransitionTargetValue] = {
+    0: NiceItemTransitionTargetValue.none,
+    1: NiceItemTransitionTargetValue.questId,
+    2: NiceItemTransitionTargetValue.spotId,
+    3: NiceItemTransitionTargetValue.warId,
+    4: NiceItemTransitionTargetValue.eventId,
+    5: NiceItemTransitionTargetValue.missionType,
+    6: NiceItemTransitionTargetValue.manaPriTargetItemId,
+    7: NiceItemTransitionTargetValue.purePriTargetItemId,
+    8: NiceItemTransitionTargetValue.rarePriTargetItemId,
+}

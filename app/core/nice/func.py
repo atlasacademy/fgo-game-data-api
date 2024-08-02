@@ -67,6 +67,8 @@ STRING_DATAVALS = {
     "PopValueText",
     "TriggeredTargetHpRange",
     "TriggeredTargetHpRateRange",
+    "CheckOverChargeStageRange",
+    "CheckBattlePointPhaseRange",
 }
 STRING_LIST_DATAVALS = {"ApplyValueUp"}
 
@@ -208,7 +210,8 @@ async def parse_dataVals(
                             raise exception from None
 
                         depend_func_entity = await get_func_entity_no_reverse(
-                            conn, int(output["DependFuncId"])  # type: ignore[arg-type]
+                            conn,
+                            int(output["DependFuncId"]),  # type: ignore[arg-type]
                         )
 
                         output["DependFunc"] = await get_nice_function(

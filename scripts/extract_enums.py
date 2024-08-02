@@ -645,6 +645,27 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Svt Attribute",
         "ATTRIBUTE_NAME",
     ),
+    (
+        "BattlePointEntity.FlagType",
+        "BattlePointFlag",
+        "NiceBattlePointFlag",
+        "Battle Point Flag",
+        "BATTLE_POINT_FLAG_NAME",
+    ),
+    (
+        "ItemTransitionType.Type",
+        "ItemTransitionType",
+        "NiceItemTransitionType",
+        "Item Transition Type",
+        "ITEM_TRANSITION_TYPE_NAME",
+    ),
+    (
+        "ItemTransitionType.TargetValueType",
+        "ItemTransitionTargetValue",
+        "NiceItemTransitionTargetValue",
+        "Item Transition Target Value",
+        "ITEM_TRANSITION_TARGET_VALUE",
+    ),
 ]
 
 

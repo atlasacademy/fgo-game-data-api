@@ -741,6 +741,17 @@ class MstItem(BaseModelORJson):
     mstGiftAdd: list[MstGiftAdd] = []
 
 
+class MstItemDropEfficiency(BaseModelORJson):
+    itemId: int
+    targetType: int
+    priority: int
+    title: str
+    iconName: str
+    transitionParam: str
+    commonReleaseId: int
+    closedMessageId: int
+
+
 class MstSetItem(BaseModelORJson):
     id: int
     purchaseType: int
@@ -900,6 +911,25 @@ class MstSvtOverwrite(BaseModelORJson):
     condTargetId: int
     condValue: int
     overwriteValue: dict[str, Any]
+
+
+class MstSvtBattlePoint(BaseModelORJson):
+    svtId: int
+    battlePointId: int
+
+
+class MstBattlePoint(BaseModelORJson):
+    id: int
+    name: str
+    flag: int
+
+
+class MstBattlePointPhase(BaseModelORJson):
+    battlePointId: int
+    phase: int
+    value: int
+    name: str
+    effectId: int
 
 
 def get_subtitle_svtId(sub_id: str) -> int:
@@ -1062,6 +1092,11 @@ class MstGachaStoryAdjust(BaseModelORJson):
     targetId: int
     value: int
     imageId: int
+
+
+class ViewGachaFeaturedSvt(BaseModelORJson):
+    gachaId: int
+    svtIds: list[int]
 
 
 class MstEventReward(BaseModelORJson):
@@ -1987,6 +2022,12 @@ class MstQuestPhasePresent(BaseModelORJson):
     script: dict[str, Any]
 
 
+class MstQuestPhaseIndividuality(BaseModelORJson):
+    questId: int
+    phase: int
+    individuality: list[int]
+
+
 class MstRestriction(BaseModelORJson):
     targetVals: list[int]
     targetVals2: list[int] | None = None
@@ -2022,6 +2063,8 @@ class MstBattleBg(BaseModelORJson):
     script: dict[str, Any]
     id: int
     type: int
+    resourceId: int | None = None
+    resourceType: int | None = None
     imageId: int
     priority: int
 

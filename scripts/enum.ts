@@ -2023,3 +2023,43 @@ export enum Attribute {
     BEAST = "beast",
     VOID = "void",
 }
+
+export enum NiceBattlePointFlag {
+    NONE = "none",
+    NOT_TARGET_OTHER_PLAYER = "notTargetOtherPlayer",
+    HIDE_UI_GAUGE_ALL_TIME = "hideUiGaugeAllTime",
+    HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT = "hideUiGaugeWhenCantAddPoint",
+    HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT_AND_FOLLOWER_SUPPORT = "hideUiGaugeWhenCantAddPointAndFollowerSupport",
+}
+
+export enum NiceItemTransitionType {
+    NONE = "none",
+    EVENT_SHOP = "eventShop",
+    BLANK_EARTH = "blankEarth",
+    CHALDEA_GATE = "chaldeaGate",
+    FREE_QUEST = "freeQuest",
+    WEEKDAYS_QUEST = "weekdaysQuest",
+    MAIN_SCENARIO = "mainScenario",
+    MISSION = "mission",
+    TRADE_AP = "tradeAp",
+    GRAIL_FRAGMENTS = "grailFragments",
+    COIN_ROOM = "coinRoom",
+    SVT_SELL = "svtSell",
+    FRIEND = "friend",
+    MANA_PRI = "manaPri",
+    PURE_PRI = "purePri",
+    RARE_PRI = "rarePri",
+    SUMMON = "summon",
+}
+
+export enum NiceItemTransitionTargetValue {
+    NONE = "none",
+    QUEST_ID = "questId",
+    SPOT_ID = "spotId",
+    WAR_ID = "warId",
+    EVENT_ID = "eventId",
+    MISSION_TYPE = "missionType",
+    MANA_PRI_TARGET_ITEM_ID = "manaPriTargetItemId",
+    PURE_PRI_TARGET_ITEM_ID = "purePriTargetItemId",
+    RARE_PRI_TARGET_ITEM_ID = "rarePriTargetItemId",
+}
