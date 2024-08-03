@@ -1582,5 +1582,82 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "FUNCTION_CONFIRM_COMMAND": {
+    "limit": 0,
+    "plusTypes": [
+      200
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_SKILL_BEFORE": {
+    "limit": 0,
+    "plusTypes": [
+      201
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_SKILL_TARGETED_BEFORE": {
+    "limit": 0,
+    "plusTypes": [
+      202
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_FIELD_INDIVIDUALITY_CHANGED": {
+    "limit": 0,
+    "plusTypes": [
+      203
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_TREASURE_DEVICE_BEFORE": {
+    "limit": 0,
+    "plusTypes": [
+      204
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_START_TACTICAL_BEFORE": {
+    "limit": 0,
+    "plusTypes": [
+      205
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SHORTEN_SKILL_AFTER_USE_SKILL": {
+    "limit": 0,
+    "plusTypes": [
+      206
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
