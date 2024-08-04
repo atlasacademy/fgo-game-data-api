@@ -11,7 +11,7 @@ from git import Repo
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
-from .config import EXTRA_SVT_ID_IN_NICE, Settings, app_info, logger, project_root
+from .config import EXTRA_SVT_ID_IN_NICE, Settings, get_app_info, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
     get_all_basic_equips,
@@ -617,6 +617,7 @@ async def load_export_info(
     region: Region, region_folder: DirectoryPath
 ) -> dict[str, Any]:
     export_info: dict[str, Any] = {}
+    app_info = get_app_info()
     export_info |= {
         "serverHash": app_info.hash,
         "serverTimestamp": app_info.timestamp,

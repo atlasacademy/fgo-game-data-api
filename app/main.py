@@ -18,7 +18,7 @@ from fastapi_cache.backends.redis import RedisBackend
 from redis.asyncio import Redis as AsyncRedis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from .config import Settings, app_info, logger, project_root
+from .config import Settings, get_app_info, logger, project_root
 from .core.info import get_all_repo_info
 from .db.engine import async_engines, engines
 from .redis import Redis
@@ -344,6 +344,7 @@ def custom_openapi() -> dict[str, Any]:
         tags=app.openapi_tags,
         servers=app.servers,
     )
+    app_info = get_app_info()
     openapi_schema["info"]["x-server-commit-hash"] = app_info.hash
     openapi_schema["info"]["x-server-commit-timestamp"] = app_info.timestamp
     app.openapi_schema = openapi_schema

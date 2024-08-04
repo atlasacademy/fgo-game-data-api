@@ -3,7 +3,7 @@ from typing import Any, Optional
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from pydantic import BaseModel
 
-from ..config import Settings, instance_info
+from ..config import Settings, get_instance_info
 from ..core.info import get_all_repo_info
 from ..db.engine import async_engines
 from ..redis import Redis
@@ -31,7 +31,7 @@ async def get_secret_info(redis: Redis) -> dict[str, Any]:
         data_repo_version={
             k.value: v.model_dump(mode="json") for k, v in all_repo_info.items()
         },
-        **instance_info,
+        **get_instance_info(),
     )
     return response_data
 

@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import HTTPHandler
 from pathlib import Path
-from typing import Optional, Type
+from typing import Any, Optional, Type
 
 from git import Repo
 from pydantic import (
@@ -106,16 +106,26 @@ for url in settings.error_webhooks:
         logger.addHandler(http_handler)
 
 
-repo = Repo(project_root)
-latest_commit = repo.commit()
-app_info = RepoInfo(
-    hash=latest_commit.hexsha[:6],
-    timestamp=latest_commit.committed_date,
-)
-instance_info = {
-    "app_version": app_info.model_dump(mode="json"),
-    "app_settings": settings.model_dump(mode="json"),
-    "file_path": str(project_root),
-}
+def get_repo_info(loc: Path) -> RepoInfo:
+    repo = Repo(loc)
+    latest_commit = repo.commit()
+    return RepoInfo(
+        hash=latest_commit.hexsha[:6],
+        timestamp=latest_commit.committed_date,
+    )
+
+
+def get_app_info() -> RepoInfo:
+    return get_repo_info(project_root)
+
+
+def get_instance_info() -> dict[str, Any]:
+    app_info = get_app_info()
+    return {
+        "app_version": app_info.model_dump(mode="json"),
+        "app_settings": settings.model_dump(mode="json"),
+        "file_path": str(project_root),
+    }
+
 
 EXTRA_SVT_ID_IN_NICE = (600710, 2501500)
