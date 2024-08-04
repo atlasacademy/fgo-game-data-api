@@ -3,6 +3,8 @@ from typing import Annotated, Any, Optional
 
 from pydantic import Field
 
+from app.data import script
+
 from .base import BaseModelORJson, DecimalSerializer
 from .common import NiceCostume, NiceValentineScript, StageLink
 from .enums import SERVANT_TYPES, AiType
@@ -742,6 +744,7 @@ class MstItem(BaseModelORJson):
 
 
 class MstItemDropEfficiency(BaseModelORJson):
+    script: dict[str, Any]
     itemId: int
     targetType: int
     priority: int
@@ -919,8 +922,9 @@ class MstSvtBattlePoint(BaseModelORJson):
 
 
 class MstBattlePoint(BaseModelORJson):
+    script: dict[str, Any] | None = None
     id: int
-    name: str
+    name: str | None = None
     flag: int
 
 

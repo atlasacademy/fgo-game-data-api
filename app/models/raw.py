@@ -885,6 +885,7 @@ mstSvtBattlePoint = Table(
 mstBattlePoint = Table(
     "mstBattlePoint",
     metadata,
+    Column("script", JSONB),
     Column("id", Integer, index=True),
     Column("name", String),
     Column("flag", Integer),
@@ -1026,6 +1027,7 @@ mstItem = Table(
 mstItemDropEfficiency = Table(
     "mstItemDropEfficiency",
     metadata,
+    Column("script", JSONB),
     Column("itemId", Integer, index=True),
     Column("targetType", Integer),
     Column("priority", Integer),
