@@ -1022,6 +1022,7 @@ class Trait(StrEnum):
     forceInstantDeathFunction = "forceInstantDeathFunction"
     buffGutsOnInstantDeath = "buffGutsOnInstantDeath"
     robinAllGone = "robinAllGone"
+    classBeastEresh = "classBeastEresh"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1056,6 +1057,7 @@ TRAIT_NAME: dict[int, Trait] = {
     125: Trait.classBeastVI,
     126: Trait.classBeastVIBoss,
     127: Trait.classUOlgaMarieFlare,
+    129: Trait.classBeastEresh,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
