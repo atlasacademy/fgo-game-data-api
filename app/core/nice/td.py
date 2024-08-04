@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import CARD_TYPE_NAME, NiceTdEffectFlag
-from ...schemas.nice import AssetURL, NiceTd, NiceTdSvt
+from ...schemas.nice import AssetURL, NiceTd, NiceTdSvt, TdChangeByBattlePoint
 from ...schemas.raw import (
     MstSvtTreasureDevice,
     MstSvtTreasureDeviceRelease,
@@ -113,6 +113,22 @@ async def get_nice_td(
             nice_td["script"][script_key] = tdEntity.mstTreasureDevice.script[
                 script_key
             ]
+
+    tdChangeByBattlePoint: list[TdChangeByBattlePoint] = []
+
+    for k, v in tdEntity.mstTreasureDevice.script.items():
+        if k.startswith("tdChangeByBattlePoint"):
+            _, battlePointId, phase = k.split("_")
+            tdChangeByBattlePoint.append(
+                TdChangeByBattlePoint(
+                    battlePointId=int(battlePointId),
+                    phase=int(phase),
+                    noblePhantasmId=int(v),
+                )
+            )
+
+    if tdChangeByBattlePoint:
+        nice_td["script"]["tdChangeByBattlePoint"] = tdChangeByBattlePoint
 
     nice_td["functions"] = []
 

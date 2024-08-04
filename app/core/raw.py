@@ -523,6 +523,15 @@ async def get_servant_entity(
     }
     mstTreasureDevice = await get_td_entity_no_reverse_many(conn, td_ids, expand)
 
+    extra_td_ids = {
+        int(v)
+        for td in mstTreasureDevice
+        for k, v in td.mstTreasureDevice.script.items()
+        if k.startswith("tdChangeByBattlePoint")
+    }
+
+    mstTreasureDevice += await get_td_entity_no_reverse_many(conn, extra_td_ids, expand)
+
     item_ids: set[int] = set()
     for combine in (
         mstCombineLimit

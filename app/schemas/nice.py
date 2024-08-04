@@ -674,6 +674,12 @@ class NiceSelectAddInfo(BaseModel):
     btn: list[NiceSelectAddInfoBtn]
 
 
+class TdChangeByBattlePoint(BaseModel):
+    battlePointId: int
+    phase: int
+    noblePhantasmId: int
+
+
 class NiceSkillScript(BaseModel):
     NP_HIGHER: Optional[list[int]] = None
     NP_LOWER: Optional[list[int]] = None
@@ -692,6 +698,7 @@ class NiceSkillScript(BaseModel):
     SelectAddInfo: list[NiceSelectAddInfo] | None = None
     IgnoreValueUp: list[bool] | None = None
     IgnoreBattlePointUp: list[list[int]] | None = None
+    tdChangeByBattlePoint: list[TdChangeByBattlePoint] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):

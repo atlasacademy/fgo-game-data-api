@@ -375,18 +375,21 @@ async def get_nice_servant(
             ).num
             == 1
         ]
+
+        to_append_td_ids: set[int] = set()
+
         for playable_td in playable_tds:
-            if "tdTypeChangeIDs" in playable_td.mstTreasureDevice.script:
-                # Space Ishtar different NPs
-                tdTypeChangeIDs: list[int] = playable_td.mstTreasureDevice.script[
-                    "tdTypeChangeIDs"
-                ]
-                for td in raw_svt.mstTreasureDevice:
-                    if (
-                        td.mstTreasureDevice.id in tdTypeChangeIDs
-                        and td not in playable_tds
-                    ):
-                        playable_tds.append(td)
+            for k, v in playable_td.mstTreasureDevice.script.items():
+                if k == "tdTypeChangeIDs":
+                    # Space Ishtar different NPs
+                    tdTypeChangeIDs: list[int] = v
+                    to_append_td_ids |= set(tdTypeChangeIDs)
+                elif k.startswith("tdChangeByBattlePoint"):
+                    to_append_td_ids.add(int(v))
+
+        for td in raw_svt.mstTreasureDevice:
+            if td.mstTreasureDevice.id in to_append_td_ids and td not in playable_tds:
+                playable_tds.append(td)
     else:
         playable_tds = raw_svt.mstTreasureDevice
 
