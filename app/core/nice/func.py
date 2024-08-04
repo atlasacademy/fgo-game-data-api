@@ -9,7 +9,13 @@ from ...config import Settings, logger
 from ...schemas.common import Language, Region
 from ...schemas.enums import FUNC_APPLYTARGET_NAME, FUNC_VALS_NOT_BUFF
 from ...schemas.gameenums import FUNC_TARGETTYPE_NAME, FUNC_TYPE_NAME, FuncType
-from ...schemas.nice import AssetURL, FunctionScript, NiceFuncGroup
+from ...schemas.nice import (
+    AssetURL,
+    FunctionScript,
+    NiceFuncGroup,
+    ValCheckBattlePointPhaseRange,
+    ValDamageRateBattlePointPhase,
+)
 from ...schemas.raw import FunctionEntityNoReverse, MstFunc, MstFuncGroup
 from ..raw import get_func_entity_no_reverse
 from ..utils import fmt_url, get_traits_list, get_traits_list_list
@@ -62,18 +68,27 @@ LIST_DATAVALS = {
     "SnapShotParamAddSelfIndv",
     "SnapShotParamAddOpIndv",
     "SnapShotParamAddFieldIndv",
+    "StartingPosition",
+    "ShortenMaxCountEachSkill",
 }
 STRING_DATAVALS = {
     "PopValueText",
     "TriggeredTargetHpRange",
     "TriggeredTargetHpRateRange",
-    "CheckOverChargeStageRange",
-    "CheckBattlePointPhaseRange",
 }
-STRING_LIST_DATAVALS = {"ApplyValueUp"}
+STRING_LIST_DATAVALS = {"ApplyValueUp", "CheckOverChargeStageRange"}
 
 
-DataValType = dict[str, int | str | list[int] | list[str] | dict[str, Any]]
+DataValType = dict[
+    str,
+    int
+    | str
+    | list[int]
+    | list[str]
+    | dict[str, Any]
+    | list[ValDamageRateBattlePointPhase]
+    | list[ValCheckBattlePointPhaseRange],
+]
 
 
 async def parse_dataVals(
@@ -88,6 +103,8 @@ async def parse_dataVals(
     # See the "Further parsing" section.
     # The prefix should be something unlikely to be a dataval key.
     prefix = "aa"
+    DamageRateBattlePointPhase: list[ValDamageRateBattlePointPhase] = []
+    CheckBattlePointPhaseRange: list[ValCheckBattlePointPhaseRange] = []
 
     output: DataValType = {}
     if datavals != "[]":
@@ -107,6 +124,7 @@ async def parse_dataVals(
                     FuncType.DAMAGE_NP_INDIVIDUAL_SUM,
                     FuncType.DAMAGE_NP_RARE,
                     FuncType.DAMAGE_NP_AND_CHECK_INDIVIDUALITY,
+                    FuncType.DAMAGE_NP_BATTLE_POINT_PHASE,
                 }:
                     if i == 0:
                         text = "Rate"
@@ -235,6 +253,21 @@ async def parse_dataVals(
                         output[array2[0]] = array2[1].split("/")
                     elif array2[0] in STRING_DATAVALS:
                         output[array2[0]] = array2[1]
+                    elif array2[0].startswith("DamageRateBattlePointPhase"):
+                        DamageRateBattlePointPhase.append(
+                            ValDamageRateBattlePointPhase(
+                                battlePointPhase=int(array2[0].split("_")[1]),
+                                value=int(array2[1]),
+                            )
+                        )
+                    elif array2[0].startswith("CheckBattlePointPhaseRange"):
+                        logger.info(array2[1].split("/"))
+                        CheckBattlePointPhaseRange.append(
+                            ValCheckBattlePointPhaseRange(
+                                battlePointId=int(array2[0].split("_")[1]),
+                                range=array2[1].split("/"),
+                            )
+                        )
                     else:
                         try:
                             text = array2[0]
@@ -248,6 +281,11 @@ async def parse_dataVals(
 
             if text:
                 output[text] = value
+
+        if DamageRateBattlePointPhase:
+            output["DamageRateBattlePointPhase"] = DamageRateBattlePointPhase
+        if CheckBattlePointPhaseRange:
+            output["CheckBattlePointPhaseRange"] = CheckBattlePointPhaseRange
 
         if not any(key.startswith(prefix) for key in output):
             if (

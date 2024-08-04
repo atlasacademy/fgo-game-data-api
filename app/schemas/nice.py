@@ -392,6 +392,16 @@ class NiceBaseFunction(BaseModelORJson):
     )
 
 
+class ValCheckBattlePointPhaseRange(BaseModel):
+    battlePointId: int
+    range: list[str]
+
+
+class ValDamageRateBattlePointPhase(BaseModel):
+    battlePointPhase: int
+    value: int
+
+
 class BaseVals(BaseModel):
     Rate: Optional[int] = None
     Turn: Optional[int] = None
@@ -570,14 +580,14 @@ class BaseVals(BaseModel):
     BattlePointValue: int | None = None
     BattlePointUiUpdateType: int | None = None
     BattlePointOverwrite: int | None = None
-    CheckOverChargeStageRange: str | None = None
-    CheckBattlePointPhaseRange: str | None = None
-    StartingPosition: int | None = None
+    CheckOverChargeStageRange: list[str] | None = None
+    CheckBattlePointPhaseRange: list[ValCheckBattlePointPhaseRange] | None = None
+    StartingPosition: list[int] | None = None
     FriendShipAbove: int | None = None
-    DamageRateBattlePointPhase: int | None = None
+    DamageRateBattlePointPhase: list[ValDamageRateBattlePointPhase] | None = None
     ParamAddBattlePointPhaseId: int | None = None
     ParamAddBattlePointPhaseValue: int | None = None
-    ShortenMaxCountEachSkill: int | None = None
+    ShortenMaxCountEachSkill: list[int] | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

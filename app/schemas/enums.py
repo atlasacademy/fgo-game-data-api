@@ -361,6 +361,7 @@ class SvtClass(StrEnum):
     uOlgaMarieAqua = "uOlgaMarieAqua"
     uOlgaMarieFlareCollection = "uOlgaMarieFlareCollection"
     uOlgaMarieAquaCollection = "uOlgaMarieAquaCollection"
+    beastEresh = "beastEresh"
     atlasUnmappedClass = "atlasUnmappedClass"
     # OTHER = "OTHER"
     ALL = "ALL"
@@ -405,6 +406,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     34: SvtClass.beastVI,
     35: SvtClass.beastVIBoss,
     36: SvtClass.uOlgaMarieFlare,
+    38: SvtClass.beastEresh,
     37: SvtClass.uOlgaMarieAqua,
     97: SvtClass.unknown,
     # 98
