@@ -261,7 +261,6 @@ async def parse_dataVals(
                             )
                         )
                     elif array2[0].startswith("CheckBattlePointPhaseRange"):
-                        logger.info(array2[1].split("/"))
                         CheckBattlePointPhaseRange.append(
                             ValCheckBattlePointPhaseRange(
                                 battlePointId=int(array2[0].split("_")[1]),
