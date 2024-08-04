@@ -691,6 +691,7 @@ class NiceSkillScript(BaseModel):
     battleStartRemainingTurn: list[int] | None = None
     SelectAddInfo: list[NiceSelectAddInfo] | None = None
     IgnoreValueUp: list[bool] | None = None
+    IgnoreBattlePointUp: list[list[int]] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):
@@ -2762,6 +2763,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     waveSetup: int | None = None  # U Olga Marie Quest
     interruptibleQuest: int | None = None
     masterImageId: int | None = None
+    IgnoreBattlePointUp: list[int] | None = None
 
 
 class NiceRestriction(BaseModelORJson):
