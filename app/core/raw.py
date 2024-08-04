@@ -57,6 +57,8 @@ from ..schemas.raw import (
     MstBattleMasterImage,
     MstBattleMessage,
     MstBattleMessageGroup,
+    MstBattlePoint,
+    MstBattlePointPhase,
     MstBgm,
     MstBgmRelease,
     MstBlankEarthSpot,
@@ -144,6 +146,7 @@ from ..schemas.raw import (
     MstSvtAdd,
     MstSvtAppendPassiveSkill,
     MstSvtAppendPassiveSkillUnlock,
+    MstSvtBattlePoint,
     MstSvtCard,
     MstSvtCardAdd,
     MstSvtChange,
@@ -493,6 +496,17 @@ async def get_servant_entity(
         conn, [servant_id, *costume_chara_ids, *EXTRA_CHARAFIGURES.get(servant_id, [])]
     )
 
+    mstSvtBattlePoint = await fetch.get_all_multiple(
+        conn, MstSvtBattlePoint, [servant_id]
+    )
+    battle_point_ids = {bp.battlePointId for bp in mstSvtBattlePoint}
+    mstBattlePoint = await fetch.get_all_multiple(
+        conn, MstBattlePoint, battle_point_ids
+    )
+    mstBattlePointPhase = await fetch.get_all_multiple(
+        conn, MstBattlePointPhase, battle_point_ids
+    )
+
     skill_ids = [
         skill.skillId for skill in await skill.get_mstSvtSkill(conn, svt_id=servant_id)
     ]
@@ -570,6 +584,9 @@ async def get_servant_entity(
         mstSvtScript=mstSvtScript,
         mstSvtExp=mstSvtExp,
         mstFriendship=mstFriendship,
+        mstSvtBattlePoint=mstSvtBattlePoint,
+        mstBattlePoint=mstBattlePoint,
+        mstBattlePointPhase=mstBattlePointPhase,
         mstSkill=mstSkill,
         mstTreasureDevice=mstTreasureDevice,
         mstSvtExtra=mstSvtExtra,

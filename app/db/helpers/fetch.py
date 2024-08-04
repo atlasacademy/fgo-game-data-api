@@ -768,7 +768,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstBattlePointPhase: (
         mstBattlePointPhase,
         mstBattlePointPhase.c.battlePointId,
-        [mstBattlePointPhase.c.phase],
+        [mstBattlePointPhase.c.battlePointId, mstBattlePointPhase.c.phase],
     ),
     MstItemDropEfficiency: (
         mstItemDropEfficiency,

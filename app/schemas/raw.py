@@ -3,8 +3,6 @@ from typing import Annotated, Any, Optional
 
 from pydantic import Field
 
-from app.data import script
-
 from .base import BaseModelORJson, DecimalSerializer
 from .common import NiceCostume, NiceValentineScript, StageLink
 from .enums import SERVANT_TYPES, AiType
@@ -2213,6 +2211,9 @@ class ServantEntity(BaseModelORJson):
     mstSvtAppendPassiveSkillUnlock: list[MstSvtAppendPassiveSkillUnlock]
     mstCombineAppendPassiveSkill: list[MstCombineAppendPassiveSkill]
     mstSvtOverwrite: list[MstSvtOverwrite]
+    mstSvtBattlePoint: list[MstSvtBattlePoint]
+    mstBattlePoint: list[MstBattlePoint]
+    mstBattlePointPhase: list[MstBattlePointPhase]
     mstItem: list[MstItem]
     mstCommonRelease: list[MstCommonRelease]
     mstSvtCoin: Optional[MstSvtCoin] = None

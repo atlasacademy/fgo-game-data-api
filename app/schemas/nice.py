@@ -45,6 +45,7 @@ from .gameenums import (
     NiceAiAllocationSvtFlag,
     NiceAiCond,
     NiceBattleFieldEnvironmentGrantType,
+    NiceBattlePointFlag,
     NiceBuffType,
     NiceCardType,
     NiceClassBoardSkillType,
@@ -1141,6 +1142,19 @@ class NiceSvtLimit(BaseModelORJson):
     personality: ServantPersonality
 
 
+class NiceBattlePointPhase(BaseModelORJson):
+    phase: int
+    value: int
+    name: str
+    effectId: int
+
+
+class NiceBattlePoint(BaseModelORJson):
+    id: int
+    flags: list[NiceBattlePointFlag]
+    phases: list[NiceBattlePointPhase]
+
+
 class NiceVoiceCond(BaseModel):
     condType: NiceVoiceCondType = Field(
         ..., title="Voice Cond Type", description="Voice Condition Type Enum"
@@ -1496,6 +1510,7 @@ class NiceServant(BaseModelORJson):
         description="Random stuffs that get added to the servant entry. "
         "See each field description for more details.",
     )
+    battlePoints: list[NiceBattlePoint]
     skills: list[NiceSkill] = Field(
         ..., title="Skills", description="List of servant or CE skills."
     )
