@@ -138,6 +138,7 @@ def get_nice_buff_script(
         "IncludeIgnoreIndividuality",
         "ProgressSelfTurn",
         "extendLowerLimit",
+        "useFirstTimeInTurn",
     ):
         if script_item in mstBuff.script:
             script[script_item] = mstBuff.script[script_item]

@@ -134,6 +134,7 @@ class BuffScript(BaseModel):
     TargetIndiv: NiceTrait | None = None
     extendLowerLimit: int | None = None
     convert: BuffConvert | None = None
+    useFirstTimeInTurn: int | None = None
 
 
 class ScriptLink(BaseModelORJson):
