@@ -644,6 +644,7 @@ class ServantPersonality(StrEnum):
     evil = "evil"
     goodAndEvil = "goodAndEvil"
     bride = "bride"
+    beast = "beast"
     unknown = "unknown"
 
 
@@ -656,6 +657,7 @@ SERVANT_PERSONALITY_NAME = {
     6: ServantPersonality.goodAndEvil,
     7: ServantPersonality.bride,
     8: ServantPersonality.summer,
+    9: ServantPersonality.beast,
 }
 
 
