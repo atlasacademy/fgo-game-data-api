@@ -1638,7 +1638,7 @@
     "isRec": true,
     "plusAction": 0
   },
-  "FUNCTION_START_TACTICAL_BEFORE": {
+  "FUNCTION_STEP_IN_AFTER": {
     "limit": 0,
     "plusTypes": [
       205

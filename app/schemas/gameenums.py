@@ -788,7 +788,7 @@ class BuffType(IntEnum):
     SKILL_TARGETED_BEFORE_FUNCTION = 202
     FIELD_INDIVIDUALITY_CHANGED_FUNCTION = 203
     TREASURE_DEVICE_BEFORE_FUNCTION = 204
-    START_TACTICAL_BEFORE_FUNCTION = 205
+    STEP_IN_AFTER_FUNCTION = 205
     SHORTEN_SKILL_AFTER_USE_SKILL = 206
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
@@ -987,7 +987,7 @@ class NiceBuffType(StrEnum):
     skillTargetedBeforeFunction = "skillTargetedBeforeFunction"
     fieldIndividualityChangedFunction = "fieldIndividualityChangedFunction"
     treasureDeviceBeforeFunction = "treasureDeviceBeforeFunction"
-    startTacticalBeforeFunction = "startTacticalBeforeFunction"
+    stepInAfterFunction = "stepInAfterFunction"
     shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
@@ -1184,7 +1184,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     202: NiceBuffType.skillTargetedBeforeFunction,
     203: NiceBuffType.fieldIndividualityChangedFunction,
     204: NiceBuffType.treasureDeviceBeforeFunction,
-    205: NiceBuffType.startTacticalBeforeFunction,
+    205: NiceBuffType.stepInAfterFunction,
     206: NiceBuffType.shortenSkillAfterUseSkill,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
@@ -1335,7 +1335,7 @@ class BuffAction(IntEnum):
     FUNCTION_SKILL_TARGETED_BEFORE = 139
     FUNCTION_FIELD_INDIVIDUALITY_CHANGED = 140
     FUNCTION_TREASURE_DEVICE_BEFORE = 141
-    FUNCTION_START_TACTICAL_BEFORE = 142
+    FUNCTION_STEP_IN_AFTER = 142
     SHORTEN_SKILL_AFTER_USE_SKILL = 143
 
 
@@ -1484,7 +1484,7 @@ class NiceBuffAction(StrEnum):
     functionSkillTargetedBefore = "functionSkillTargetedBefore"
     functionFieldIndividualityChanged = "functionFieldIndividualityChanged"
     functionTreasureDeviceBefore = "functionTreasureDeviceBefore"
-    functionStartTacticalBefore = "functionStartTacticalBefore"
+    functionStepInAfter = "functionStepInAfter"
     shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
 
 
@@ -1631,7 +1631,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     139: NiceBuffAction.functionSkillTargetedBefore,
     140: NiceBuffAction.functionFieldIndividualityChanged,
     141: NiceBuffAction.functionTreasureDeviceBefore,
-    142: NiceBuffAction.functionStartTacticalBefore,
+    142: NiceBuffAction.functionStepInAfter,
     143: NiceBuffAction.shortenSkillAfterUseSkill,
 }
 
@@ -5974,6 +5974,8 @@ class ItemTransitionType(IntEnum):
     PURE_PRI = 14
     RARE_PRI = 15
     SUMMON = 16
+    REVIVAL_ITEM = 17
+    BLANK_EARTH_SCENARIO = 18
 
 
 class NiceItemTransitionType(StrEnum):
@@ -5996,6 +5998,8 @@ class NiceItemTransitionType(StrEnum):
     purePri = "purePri"
     rarePri = "rarePri"
     summon = "summon"
+    revivalItem = "revivalItem"
+    blankEarthScenario = "blankEarthScenario"
 
 
 ITEM_TRANSITION_TYPE_NAME: dict[int, NiceItemTransitionType] = {
@@ -6016,6 +6020,8 @@ ITEM_TRANSITION_TYPE_NAME: dict[int, NiceItemTransitionType] = {
     14: NiceItemTransitionType.purePri,
     15: NiceItemTransitionType.rarePri,
     16: NiceItemTransitionType.summon,
+    17: NiceItemTransitionType.revivalItem,
+    18: NiceItemTransitionType.blankEarthScenario,
 }
 
 
@@ -6029,6 +6035,7 @@ class ItemTransitionTargetValue(IntEnum):
     MANA_PRI_TARGET_ITEM_ID = 6
     PURE_PRI_TARGET_ITEM_ID = 7
     RARE_PRI_TARGET_ITEM_ID = 8
+    LEAF_EXCHANGE_TARGET_ITEM_ID = 9
 
 
 class NiceItemTransitionTargetValue(StrEnum):
@@ -6043,6 +6050,7 @@ class NiceItemTransitionTargetValue(StrEnum):
     manaPriTargetItemId = "manaPriTargetItemId"
     purePriTargetItemId = "purePriTargetItemId"
     rarePriTargetItemId = "rarePriTargetItemId"
+    leafExchangeTargetItemId = "leafExchangeTargetItemId"
 
 
 ITEM_TRANSITION_TARGET_VALUE: dict[int, NiceItemTransitionTargetValue] = {
@@ -6055,4 +6063,5 @@ ITEM_TRANSITION_TARGET_VALUE: dict[int, NiceItemTransitionTargetValue] = {
     6: NiceItemTransitionTargetValue.manaPriTargetItemId,
     7: NiceItemTransitionTargetValue.purePriTargetItemId,
     8: NiceItemTransitionTargetValue.rarePriTargetItemId,
+    9: NiceItemTransitionTargetValue.leafExchangeTargetItemId,
 }

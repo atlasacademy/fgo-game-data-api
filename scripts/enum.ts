@@ -381,7 +381,7 @@ export enum NiceBuffType {
     SKILL_TARGETED_BEFORE_FUNCTION = "skillTargetedBeforeFunction",
     FIELD_INDIVIDUALITY_CHANGED_FUNCTION = "fieldIndividualityChangedFunction",
     TREASURE_DEVICE_BEFORE_FUNCTION = "treasureDeviceBeforeFunction",
-    START_TACTICAL_BEFORE_FUNCTION = "startTacticalBeforeFunction",
+    STEP_IN_AFTER_FUNCTION = "stepInAfterFunction",
     SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
@@ -531,7 +531,7 @@ export enum NiceBuffAction {
     FUNCTION_SKILL_TARGETED_BEFORE = "functionSkillTargetedBefore",
     FUNCTION_FIELD_INDIVIDUALITY_CHANGED = "functionFieldIndividualityChanged",
     FUNCTION_TREASURE_DEVICE_BEFORE = "functionTreasureDeviceBefore",
-    FUNCTION_START_TACTICAL_BEFORE = "functionStartTacticalBefore",
+    FUNCTION_STEP_IN_AFTER = "functionStepInAfter",
     SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
 }
 
@@ -2050,6 +2050,8 @@ export enum NiceItemTransitionType {
     PURE_PRI = "purePri",
     RARE_PRI = "rarePri",
     SUMMON = "summon",
+    REVIVAL_ITEM = "revivalItem",
+    BLANK_EARTH_SCENARIO = "blankEarthScenario",
 }
 
 export enum NiceItemTransitionTargetValue {
@@ -2062,4 +2064,5 @@ export enum NiceItemTransitionTargetValue {
     MANA_PRI_TARGET_ITEM_ID = "manaPriTargetItemId",
     PURE_PRI_TARGET_ITEM_ID = "purePriTargetItemId",
     RARE_PRI_TARGET_ITEM_ID = "rarePriTargetItemId",
+    LEAF_EXCHANGE_TARGET_ITEM_ID = "leafExchangeTargetItemId",
 }
