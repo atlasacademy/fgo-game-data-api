@@ -139,6 +139,7 @@ def get_nice_buff_script(
         "ProgressSelfTurn",
         "extendLowerLimit",
         "useFirstTimeInTurn",
+        "fromCommandSpell",
     ):
         if script_item in mstBuff.script:
             script[script_item] = mstBuff.script[script_item]

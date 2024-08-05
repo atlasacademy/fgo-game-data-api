@@ -135,6 +135,7 @@ class BuffScript(BaseModel):
     extendLowerLimit: int | None = None
     convert: BuffConvert | None = None
     useFirstTimeInTurn: int | None = None
+    fromCommandSpell: int | None = None
 
 
 class ScriptLink(BaseModelORJson):
