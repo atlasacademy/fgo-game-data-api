@@ -1025,6 +1025,7 @@ class Trait(StrEnum):
     buffGutsOnInstantDeath = "buffGutsOnInstantDeath"
     robinAllGone = "robinAllGone"
     classBeastEresh = "classBeastEresh"
+    alignmentBeast = "alignmentBeast"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1073,6 +1074,7 @@ TRAIT_NAME: dict[int, Trait] = {
     305: Trait.alignmentBalanced,
     306: Trait.alignmentMadness,
     308: Trait.alignmentSummer,
+    309: Trait.alignmentBeast,
     400: Trait.zeroStarServant,
     401: Trait.oneStarServant,
     402: Trait.twoStarServant,
