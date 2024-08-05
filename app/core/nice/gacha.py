@@ -37,6 +37,9 @@ def get_nice_gacha(gacha: GachaEntity, lang: Language = Language.jp) -> NiceGach
         storyAdjusts=[
             get_nice_gacha_story_adjust(story) for story in gacha.mstGachaStoryAdjust
         ],
+        featuredSvtIds=(
+            gacha.viewGachaFeaturedSvt[0].svtIds if gacha.viewGachaFeaturedSvt else []
+        ),
     )
 
 

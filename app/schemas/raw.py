@@ -2561,6 +2561,7 @@ class ClassBoardEntity(BaseModelORJson):
 class GachaEntity(BaseModelORJson):
     mstGacha: MstGacha
     mstGachaStoryAdjust: list[MstGachaStoryAdjust]
+    viewGachaFeaturedSvt: list[ViewGachaFeaturedSvt]
 
 
 class AssetStorageLine(BaseModelORJson):
