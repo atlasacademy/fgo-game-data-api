@@ -2339,9 +2339,9 @@
   "毎ターンスター獲得〔水辺〕": "C. Star Gain Per Turn [Near Water]",
   "Quick通常攻撃ダメージ前追加効果": "Pre-Quick Damage Bonus Effect",
   "Buster通常攻撃ダメージ前追加効果": "Pre-Buster Damage Bonus Effect",
-  "空間保存": "空間保存",
-  "クリティカル威力アップ〔サーヴァント〕": "クリティカル威力アップ〔サーヴァント〕",
-  "スタン・石化・拘束・豚化無効": "スタン・石化・拘束・豚化無効",
+  "空間保存": "Spatial Conservation",
+  "クリティカル威力アップ〔サーヴァント〕": "Critical Strength Up [Servant]",
+  "スタン・石化・拘束・豚化無効": "Stun, Petrify, Bound and Pigify Immune",
   "攻撃力アップ〔対セイバー〕": "ATK Up (Anti-Saber)",
   "攻撃力アップ〔対アーチャー〕": "ATK Up (Anti-Archer)",
   "攻撃力アップ〔対ランサー〕": "ATK Up (Anti-Lancer)",
@@ -2375,7 +2375,7 @@
   "クリティカル威力アップ〔Quick〕": "Critical Strength Up (Quick)",
   "クリティカル威力アップ〔Arts〕": "Critical Strength Up (Arts)",
   "クリティカル威力アップ〔Buster〕": "Critical Strength Up (Buster)",
-  "スキル使用後リチャージ": "スキル使用後リチャージ",
+  "スキル使用後リチャージ": "Recharge After Skill Usage",
   "論理的な弁舌": "Logical Speech",
   "独善的な主張": "Self-Righteous Opinion",
   "第二の鎖": "The Second Chain",
@@ -3031,5 +3031,5 @@
   "不明の性質": "Unknown Nature",
   "太公望の真・三昧真火": "Taigong Wang's Truth - True Samadhi Fire",
   "太公望の三昧真火": "Taigong Wang's True Samadhi Fire",
-  "対セイバー防御脆性": "対セイバー防御脆性"
+  "対セイバー防御脆性": "Anti-Saber Defense Vulnerability"
 }
