@@ -136,6 +136,7 @@ class BuffScript(BaseModel):
     convert: BuffConvert | None = None
     useFirstTimeInTurn: int | None = None
     fromCommandSpell: int | None = None
+    fromMasterEquip: int | None = None
 
 
 class ScriptLink(BaseModelORJson):

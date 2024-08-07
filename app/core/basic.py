@@ -140,6 +140,7 @@ def get_nice_buff_script(
         "extendLowerLimit",
         "useFirstTimeInTurn",
         "fromCommandSpell",
+        "fromMasterEquip",
     ):
         if script_item in mstBuff.script:
             script[script_item] = mstBuff.script[script_item]
