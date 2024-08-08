@@ -63,6 +63,8 @@ async def find_servant(
     redis: Redis = Depends(get_redis),
 ) -> Response:
     async with get_db(search_param.region) as conn:
+        if not search_param.excludeCollectionNo:
+            search_param.excludeCollectionNo = [0]
         matches = await search.search_servant(conn, search_param, limit=10000)
         return list_response(
             [

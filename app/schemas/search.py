@@ -7,7 +7,6 @@ from fastapi import Query
 from .common import Region
 from .enums import (
     NICE_SERVANT_TYPES,
-    PLAYABLE_CLASS_LIST,
     FuncApplyTarget,
     NiceItemBGType,
     NiceItemUse,
@@ -44,7 +43,7 @@ class ServantSearchQueryParams:
     type: list[NiceSvtType] = Query(NICE_SERVANT_TYPES)
     flag: list[NiceSvtFlag] = Query([])
     rarity: list[int] = Query([])
-    className: list[SvtClass] = Query(PLAYABLE_CLASS_LIST)
+    className: list[SvtClass] = Query([])
     gender: list[NiceGender] = Query([])
     attribute: list[Attribute] = Query([])
     trait: list[Union[Trait, int]] = Query([])
@@ -61,7 +60,7 @@ class ServantSearchQueryParams:
                 self.type != NICE_SERVANT_TYPES,
                 self.flag,
                 self.rarity,
-                self.className != PLAYABLE_CLASS_LIST,
+                self.className,
                 self.gender,
                 self.attribute,
                 self.trait,

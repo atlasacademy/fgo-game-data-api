@@ -437,24 +437,6 @@ def get_class_name(class_id: int) -> SvtClass | str:
 CLASS_NAME_REVERSE: dict[SvtClass, int] = {v: k for k, v in CLASS_NAME.items()}
 
 
-PLAYABLE_CLASS_LIST = [
-    SvtClass.saber,
-    SvtClass.archer,
-    SvtClass.lancer,
-    SvtClass.rider,
-    SvtClass.caster,
-    SvtClass.assassin,
-    SvtClass.berserker,
-    SvtClass.shielder,
-    SvtClass.ruler,
-    SvtClass.alterEgo,
-    SvtClass.avenger,
-    SvtClass.moonCancer,
-    SvtClass.foreigner,
-    SvtClass.pretender,
-]
-
-
 ### AI Type ###
 
 

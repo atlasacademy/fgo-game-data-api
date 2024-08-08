@@ -81,6 +81,8 @@ async def find_servant(
     lore: bool = False,
 ) -> Response:
     async with get_db(search_param.region) as conn:
+        if not search_param.excludeCollectionNo:
+            search_param.excludeCollectionNo = [0]
         matches = await search.search_servant(conn, search_param)
         return list_response(
             [
