@@ -1,8 +1,10 @@
+from fastapi import HTTPException
 from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...core.nice.gift import GiftData
+from ...db.helpers.bgm import search_bgm
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import COND_TYPE_NAME, BgmFlag
 from ...schemas.nice import AssetURL, NiceBgm, NiceBgmEntity, NiceBgmRelease
@@ -114,9 +116,19 @@ def get_nice_bgm_entity_from_raw(
 
 
 async def get_nice_bgm_entity(
-    conn: AsyncConnection, region: Region, bgm_id: int, lang: Language
+    conn: AsyncConnection,
+    region: Region,
+    bgm_id: int,
+    lang: Language,
+    file_name: str | None = None,
 ) -> NiceBgmEntity:
-    bgm_entity = await get_bgm_entity(conn, bgm_id)
+    if bgm_id == -1 and file_name:
+        found_bgm_id = await search_bgm(conn, file_name)
+        if not found_bgm_id:
+            raise HTTPException(status_code=404, detail="BGM not found")
+        bgm_entity = await get_bgm_entity(conn, found_bgm_id)
+    else:
+        bgm_entity = await get_bgm_entity(conn, bgm_id)
     return get_nice_bgm_entity_from_raw(region, bgm_entity, lang)
 
 
