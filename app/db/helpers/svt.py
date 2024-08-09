@@ -114,11 +114,16 @@ async def get_svt_limit_add(
 
 
 async def get_svt_script(
-    conn: AsyncConnection, svt_ids: list[int]
+    conn: AsyncConnection, svt_ids: Iterable[int]
 ) -> list[MstSvtScript]:
     stmt = (
         select(mstSvtScript)
-        .where((mstSvtScript.c.id // 10).in_(set(svt_ids)))
+        .where(
+            or_(
+                (mstSvtScript.c.id // 10).in_(set(svt_ids)),
+                mstSvtScript.c.id.in_(set(svt_ids)),
+            )
+        )
         .order_by(mstSvtScript.c.id, mstSvtScript.c.form)
     )
     return [

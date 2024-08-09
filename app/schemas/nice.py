@@ -99,6 +99,7 @@ from .gameenums import (
     NiceWarOverwriteType,
     NiceWarStartType,
 )
+from .raw import MstSvtScriptExtendData
 
 
 class AssetURL:
@@ -1163,6 +1164,22 @@ class NiceBattlePoint(BaseModelORJson):
     phases: list[NiceBattlePointPhase]
 
 
+class NiceSvtScript(BaseModelORJson):
+    id: int
+    form: int
+    faceX: int
+    faceY: int
+    extendData: MstSvtScriptExtendData
+    bgImageId: int = 0
+    scale: Annotated[Decimal, DecimalSerializer]
+    offsetX: int
+    offsetY: int
+    offsetXMyroom: int
+    offsetYMyroom: int
+    svtId: Optional[int] = None
+    limitCount: Optional[int] = None
+
+
 class NiceVoiceCond(BaseModel):
     condType: NiceVoiceCondType = Field(
         ..., title="Voice Cond Type", description="Voice Condition Type Enum"
@@ -1518,6 +1535,7 @@ class NiceServant(BaseModelORJson):
         description="Random stuffs that get added to the servant entry. "
         "See each field description for more details.",
     )
+    charaScripts: list[NiceSvtScript]
     battlePoints: list[NiceBattlePoint]
     skills: list[NiceSkill] = Field(
         ..., title="Skills", description="List of servant or CE skills."

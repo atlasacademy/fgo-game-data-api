@@ -51,6 +51,7 @@ from .ascensionAdd import get_nice_ascensionAdd
 from .asset import get_male_image_extraAssets, get_svt_extraAssets
 from .battle_point import get_svt_bp
 from .card import get_nice_card
+from .chara_script import get_nice_chara_script
 from .individuality import get_nice_svt_trait
 from .limit import get_nice_status_rank, get_nice_svt_limit
 from .overwrite import get_nice_svt_overwrite
@@ -173,6 +174,7 @@ async def get_nice_servant(
         "starAbsorb": last_svt_limit.criticalWeight,
         "rarity": last_svt_limit.rarity,
         "cards": [CARD_TYPE_NAME[card_id] for card_id in raw_svt.mstSvt.cardIds],
+        "charaScripts": [get_nice_chara_script(s) for s in raw_svt.mstSvtScript],
         "battlePoints": get_svt_bp(raw_svt.mstBattlePoint, raw_svt.mstBattlePointPhase),
         "bondGrowth": [
             friendship.friendship

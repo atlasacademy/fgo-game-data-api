@@ -493,7 +493,7 @@ async def get_servant_entity(
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = await svt.get_svt_script(
-        conn, [servant_id, *costume_chara_ids, *EXTRA_CHARAFIGURES.get(servant_id, [])]
+        conn, {servant_id, *costume_chara_ids, *EXTRA_CHARAFIGURES.get(servant_id, [])}
     )
 
     mstSvtBattlePoint = await fetch.get_all_multiple(
