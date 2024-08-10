@@ -137,6 +137,24 @@ class StageCutinInfo(BaseModelORJson):
     voiceId: str
 
 
+class UserEquip(BaseModelORJson):
+    userId: int
+    userSvtId: int
+    svtId: int
+    limitCount: int
+    lv: int
+    exp: int
+    hp: int
+    atk: int
+    skillId1: int
+    skillLv1: int
+    skillId2: int
+    skillLv2: int
+    skillId3: int
+    skillLv3: int
+    updatedAt: int
+
+
 class QuestDetail(BaseModelORJson):
     battleId: int
     addedTime: datetime
@@ -157,6 +175,7 @@ class QuestDetail(BaseModelORJson):
     superBossInfo: list[SuperBossInfo]
     userSvt: list[UserSvt]
     stageCutins: list[StageCutinInfo] | None = None
+    userEquips: list[UserEquip] | None = None
 
 
 class QuestResponse(BaseModelORJson):
