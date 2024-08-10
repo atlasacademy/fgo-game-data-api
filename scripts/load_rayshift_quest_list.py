@@ -49,7 +49,7 @@ def main(
         print(f"Loading {len(query_ids)} query IDs")
 
         if query_ids:
-            QUERY_IDS_PER_REQUEST = 25
+            QUERY_IDS_PER_REQUEST = 100
             for i in range(0, len(query_ids), QUERY_IDS_PER_REQUEST):
                 request_query_ids = query_ids[i : i + QUERY_IDS_PER_REQUEST]
                 quest_details = get_multiple_quests(client, region, request_query_ids)
