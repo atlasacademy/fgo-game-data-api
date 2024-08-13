@@ -552,7 +552,7 @@ do_update_quest_stmt = insert_quest_stmt.on_conflict_do_update(
 
 
 def get_insert_rayshift_quest_data(
-    quest_details: dict[int, QuestDetail]
+    quest_details: dict[int, QuestDetail],
 ) -> list[dict[str, Any]]:
     data = []
     for query_id, quest_detail in quest_details.items():
@@ -584,7 +584,7 @@ def insert_rayshift_quest_db_sync(
 
 
 def get_insert_rayshift_quest_hash_data(
-    quest_details: dict[int, QuestDetail]
+    quest_details: dict[int, QuestDetail],
 ) -> list[dict[str, Any]]:
     return [
         {
@@ -595,18 +595,25 @@ def get_insert_rayshift_quest_hash_data(
     ]
 
 
+insert_quest_hash_stmt = insert(rayshiftQuestHash)
+do_update_quest_hash_stmt = insert_quest_hash_stmt.on_conflict_do_update(
+    index_elements=[rayshiftQuestHash.c.queryId],
+    set_={rayshiftQuestHash.c.questHash: insert_quest_hash_stmt.excluded.questHash},
+)
+
+
 async def insert_rayshift_quest_hash_db(
     conn: AsyncConnection, quest_details: dict[int, QuestDetail]
 ) -> None:
     data = get_insert_rayshift_quest_hash_data(quest_details)
-    await conn.execute(rayshiftQuestHash.insert(), data)
+    await conn.execute(do_update_quest_hash_stmt, data)
 
 
 def insert_rayshift_quest_hash_db_sync(
     conn: Connection, quest_details: dict[int, QuestDetail]
 ) -> None:
     data = get_insert_rayshift_quest_hash_data(quest_details)
-    conn.execute(rayshiftQuestHash.insert(), data)
+    conn.execute(do_update_quest_hash_stmt, data)
 
 
 def insert_rayshift_quest_list(conn: Connection, quest_list: list[QuestList]) -> None:
