@@ -22,6 +22,6 @@ rayshiftQuest = Table(
 rayshiftQuestHash = Table(
     "rayshiftQuestHash",
     metadata,
-    Column("queryId", Integer, index=True),
+    Column("queryId", Integer, primary_key=True),
     Column("questHash", VARCHAR(100), index=True),
 )
