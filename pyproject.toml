@@ -8,16 +8,16 @@ packages = [{ include = "app" }]
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = { extras = ["standard"], version = "^0.112.0" }
-uvicorn = { extras = ["standard"], version = "^0.30.5" }
+uvicorn = {extras = ["standard"], version = "^0.30.6"}
 python-dotenv = "^1.0.1"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
-orjson = "^3.10.6"
+orjson = "^3.10.7"
 aiofiles = "^24.1.0"
 GitPython = "^3.1.43"
 SQLAlchemy = "^2.0.32"
 httpx = { extras = ["http2"], version = "^0.27.0" }
 fastapi-cache2 = "^0.2.2"
-gunicorn = { extras = ["setproctitle"], version = "^22.0.0" }
+gunicorn = {extras = ["setproctitle"], version = "^23.0.0"}
 redis = "^5.0.8"
 hiredis = "^3.0.0"
 psycopg = "^3.2.1"
