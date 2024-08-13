@@ -51,12 +51,14 @@ def main(
         if query_ids:
             QUERY_IDS_PER_REQUEST = 25
             for i in range(0, len(query_ids), QUERY_IDS_PER_REQUEST):
+                start_req_time = time.perf_counter()
                 request_query_ids = query_ids[i : i + QUERY_IDS_PER_REQUEST]
                 quest_details = get_multiple_quests(client, region, request_query_ids)
                 if quest_details:
                     load_rayshift_quest_details(region, quest_details)
+                    load_req_time = round((time.perf_counter() - start_req_time) * 1000)
                     print(
-                        f"Loaded {min(i + QUERY_IDS_PER_REQUEST, len(query_ids))} query IDs"
+                        f"Loaded {min(i + QUERY_IDS_PER_REQUEST, len(query_ids))} query IDs in {load_req_time}ms"
                     )
                 else:
                     print(f"Failed to fetch query IDs: {request_query_ids}")
