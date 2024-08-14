@@ -1832,18 +1832,19 @@ class DataValsType(IntEnum):
     ExtendBuffHalfTurnInPartyTurn = 168
     ShortenBuffHalfTurnInPartyTurn = 169
     LinkageBuffGrantSuccessEvenIfOtherFailed = 170
-    BattlePointId = 171
-    BattlePointValue = 172
-    BattlePointUiUpdateType = 173
-    BattlePointOverwrite = 174
-    CheckOverChargeStageRange = 175
-    CheckBattlePointPhaseRange = 176
-    StartingPosition = 177
-    FriendShipAbove = 178
-    DamageRateBattlePointPhase = 179
-    ParamAddBattlePointPhaseId = 180
-    ParamAddBattlePointPhaseValue = 181
-    ShortenMaxCountEachSkill = 182
+    DisplayNoEffectCauses = 171
+    BattlePointId = 172
+    BattlePointValue = 173
+    BattlePointUiUpdateType = 174
+    BattlePointOverwrite = 175
+    CheckOverChargeStageRange = 176
+    CheckBattlePointPhaseRange = 177
+    StartingPosition = 178
+    FriendShipAbove = 179
+    DamageRateBattlePointPhase = 180
+    ParamAddBattlePointPhaseId = 181
+    ParamAddBattlePointPhaseValue = 182
+    ShortenMaxCountEachSkill = 183
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2504,8 +2505,13 @@ class CondType(IntEnum):
     NOT_SVT_VOICE_PLAYED = 223
     BATTLE_POINT_ABOVE = 225
     BATTLE_POINT_BELOW = 226
+    BEFORE_SPECIFIED_DATE = 228
     NOT_HAVE_CHARGE_STONE = 229
     HAVE_CHARGE_STONE = 230
+    BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = 231
+    BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = 232
+    NOT_BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = 235
+    NOT_BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = 236
 
 
 class NiceCondType(StrEnum):
@@ -2734,8 +2740,13 @@ class NiceCondType(StrEnum):
     notSvtVoicePlayed = "notSvtVoicePlayed"
     battlePointAbove = "battlePointAbove"
     battlePointBelow = "battlePointBelow"
+    beforeSpecifiedDate = "beforeSpecifiedDate"
     notHaveChargeStone = "notHaveChargeStone"
     haveChargeStone = "haveChargeStone"
+    battleFunctionTargetAllIndividuality = "battleFunctionTargetAllIndividuality"
+    battleFunctionTargetOneIndividuality = "battleFunctionTargetOneIndividuality"
+    notBattleFunctionTargetAllIndividuality = "notBattleFunctionTargetAllIndividuality"
+    notBattleFunctionTargetOneIndividuality = "notBattleFunctionTargetOneIndividuality"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2962,8 +2973,13 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     223: NiceCondType.notSvtVoicePlayed,
     225: NiceCondType.battlePointAbove,
     226: NiceCondType.battlePointBelow,
+    228: NiceCondType.beforeSpecifiedDate,
     229: NiceCondType.notHaveChargeStone,
     230: NiceCondType.haveChargeStone,
+    231: NiceCondType.battleFunctionTargetAllIndividuality,
+    232: NiceCondType.battleFunctionTargetOneIndividuality,
+    235: NiceCondType.notBattleFunctionTargetAllIndividuality,
+    236: NiceCondType.notBattleFunctionTargetOneIndividuality,
 }
 
 

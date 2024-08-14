@@ -578,6 +578,7 @@ class BaseVals(BaseModel):
     ExtendBuffHalfTurnInPartyTurn: int | None = None
     ShortenBuffHalfTurnInPartyTurn: int | None = None
     LinkageBuffGrantSuccessEvenIfOtherFailed: int | None = None
+    DisplayNoEffectCauses: int | None = None
     BattlePointId: int | None = None
     BattlePointValue: int | None = None
     BattlePointUiUpdateType: int | None = None
