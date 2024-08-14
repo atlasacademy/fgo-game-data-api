@@ -75,6 +75,7 @@ STRING_DATAVALS = {
     "PopValueText",
     "TriggeredTargetHpRange",
     "TriggeredTargetHpRateRange",
+    "DisplayNoEffectCauses",
 }
 STRING_LIST_DATAVALS = {"ApplyValueUp", "CheckOverChargeStageRange"}
 
