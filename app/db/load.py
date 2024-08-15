@@ -10,6 +10,7 @@ from sqlalchemy.engine import Connection, Engine
 from sqlalchemy.sql import text
 
 from ..config import logger
+from ..data.bgm import get_bgms
 from ..data.buff import get_buff_with_classrelation
 from ..data.event import get_event_with_warIds
 from ..data.gift import get_gift_with_index
@@ -19,6 +20,7 @@ from ..models.raw import (
     TABLES_TO_BE_LOADED,
     AssetStorage,
     ScriptFileList,
+    mstBgm,
     mstBuff,
     mstClassBoardCommandSpell,
     mstCommandSpell,
@@ -277,6 +279,13 @@ def load_event(
     insert_db(conn, mstWar, mstWar_db_data)
 
 
+def load_bgm(
+    conn: Connection, gamedata_path: DirectoryPath, asset_lines: list[AssetStorageLine]
+) -> None:  # pragma: no cover
+    bgms = get_bgms(gamedata_path, asset_lines)
+    load_pydantic_to_db(conn, bgms, mstBgm)
+
+
 def load_item(
     conn: Connection, gamedata_path: DirectoryPath
 ) -> None:  # pragma: no cover
@@ -405,9 +414,9 @@ def load_pydantic_to_db(
     insert_db(conn, db_table, db_data)
 
 
-def load_asset_storage(
-    conn: Connection, repo_folder: DirectoryPath
-) -> None:  # pragma: no cover
+def get_asset_storage_lines(
+    repo_folder: DirectoryPath,
+) -> list[AssetStorageLine]:  # pragma: no cover
     with open(repo_folder / "AssetStorage.txt", "r", encoding="utf-8") as fp:
         asset_storage = fp.readlines()
 
@@ -436,6 +445,12 @@ def load_asset_storage(
             )
         )
 
+    return asset_lines
+
+
+def load_asset_storage(
+    conn: Connection, asset_lines: list[AssetStorageLine]
+) -> None:  # pragma: no cover
     load_pydantic_to_db(conn, asset_lines, AssetStorage)
 
 
@@ -489,9 +504,11 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
             logger.info("Updating event …")
             load_event(conn, repo_folder)
 
+        asset_lines = get_asset_storage_lines(repo_folder)
         with engine.begin() as conn:
-            logger.info("Updated AssetStorage …")
-            load_asset_storage(conn, repo_folder)
+            logger.info("Updated AssetStorage and bgms …")
+            load_asset_storage(conn, asset_lines)
+            load_bgm(conn, repo_folder, asset_lines)
 
         logger.info("Updating script list …")
         load_script_list(engine, region, repo_folder)

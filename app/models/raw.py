@@ -2003,6 +2003,7 @@ mstBgm = Table(
     Column("shopId", Integer),
     Column("logoId", Integer),
     Column("script", String),
+    Column("fileLocation", String),
 )
 
 
@@ -2769,7 +2770,7 @@ TABLES_TO_BE_LOADED = [
     [mstAiAct],
     [mstAi],
     [mstAiField],
-    [mstBgm, mstBgmRelease],
+    [mstBgmRelease],
     [mstBoxGacha, mstBoxGachaBase, mstBoxGachaTalk],
     [mstClassRelationOverwrite, mstBuffConvert],
     [mstClosedMessage],

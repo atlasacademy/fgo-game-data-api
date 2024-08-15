@@ -980,6 +980,7 @@ class MstBgm(BaseModelORJson):
     shopId: int  # 7000001
     logoId: int  # 1
     script: str | None = None
+    fileLocation: str | None = None
 
 
 class MstBgmRelease(BaseModelORJson):

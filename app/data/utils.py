@@ -7,6 +7,7 @@ from ..schemas.base import BaseModelORJson
 from ..schemas.raw import (
     MstAi,
     MstAiAct,
+    MstBgm,
     MstBuff,
     MstBuffConvert,
     MstClassRelationOverwrite,
@@ -94,6 +95,7 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstVoice: "mstVoice",
     MstWar: "mstWar",
     MstBuffConvert: "mstBuffConvert",
+    MstBgm: "mstBgm",
 }
 
 
@@ -108,4 +110,4 @@ def load_master_data(
 
     with open(file_loc, "rb") as fp:
         data = orjson.loads(fp.read())
-    return [model.parse_obj(item) for item in data]
+    return [model.model_validate(item) for item in data]

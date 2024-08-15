@@ -19,12 +19,17 @@ settings = Settings()
 
 
 def get_bgm_url(region: Region, raw_bgm: MstBgm) -> HttpUrl | None:
+    base_folder = (
+        raw_bgm.fileLocation.removeprefix("Audio/").removesuffix(".cpk.bytes")
+        if raw_bgm.fileLocation
+        else raw_bgm.fileName
+    )
     return (
         fmt_url(
             AssetURL.audio,
             base_url=settings.asset_url,
             region=region,
-            folder=raw_bgm.fileName,
+            folder=base_folder,
             id=raw_bgm.fileName,
         )
         if raw_bgm.fileName != ""
