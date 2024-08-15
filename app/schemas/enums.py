@@ -1016,6 +1016,11 @@ class Trait(StrEnum):
     robinAllGone = "robinAllGone"
     classBeastEresh = "classBeastEresh"
     alignmentBeast = "alignmentBeast"
+    bunnyServant = "bunnyServant"
+    buffSpecialDmgAgainstAlignmentGood = "buffSpecialDmgAgainstAlignmentGood"
+    buffSpecialDmgAgainstAlignmentEvil = "buffSpecialDmgAgainstAlignmentEvil"
+    hasSupereffectiveNPAgainstAlignmentGood = "hasSupereffectiveNPAgainstAlignmentGood"
+    hasSupereffectiveNPAgainstAlignmentEvil = "hasSupereffectiveNPAgainstAlignmentEvil"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1221,6 +1226,11 @@ TRAIT_NAME: dict[int, Trait] = {
     2912: Trait.magicBulletAtkBuff,
     2913: Trait.kuonjiAliceHasSkill3,
     2914: Trait.buffGutsOnInstantDeath,
+    2919: Trait.bunnyServant,
+    2920: Trait.buffSpecialDmgAgainstAlignmentGood,
+    2921: Trait.buffSpecialDmgAgainstAlignmentEvil,
+    2922: Trait.hasSupereffectiveNPAgainstAlignmentGood,
+    2923: Trait.hasSupereffectiveNPAgainstAlignmentEvil,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
