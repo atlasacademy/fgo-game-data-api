@@ -2336,6 +2336,7 @@
   "遅延発動〔Arts化〕": "Delayed Effect (Arts Transformation)",
   "遅延発動〔Buster化〕": "Delayed Effect (Buster Transformation)",
   "COFFEE BREAK": "COFFEE BREAK",
+  "サマータイム・トラベラー": "サマータイム・トラベラー",
   "毎ターンスター獲得〔水辺〕": "C. Star Gain Per Turn [Near Water]",
   "Quick通常攻撃ダメージ前追加効果": "Pre-Quick Damage Bonus Effect",
   "Buster通常攻撃ダメージ前追加効果": "Pre-Buster Damage Bonus Effect",
@@ -2344,6 +2345,7 @@
   "スタン・石化・拘束・豚化無効": "Stun, Petrify, Bound and Pigify Immune",
   "フィールド変化〔水辺〕": "Field Change [Near Water]",
   "威力アップ〔恐怖〕": "Strength Up [Terror]",
+  "強化解除耐性ダウン": "強化解除耐性ダウン",
   "攻撃力アップ〔対セイバー〕": "ATK Up (Anti-Saber)",
   "攻撃力アップ〔対アーチャー〕": "ATK Up (Anti-Archer)",
   "攻撃力アップ〔対ランサー〕": "ATK Up (Anti-Lancer)",
@@ -3033,5 +3035,9 @@
   "不明の性質": "Unknown Nature",
   "太公望の真・三昧真火": "Taigong Wang's Truth - True Samadhi Fire",
   "太公望の三昧真火": "Taigong Wang's True Samadhi Fire",
+  "原因不明の頭痛": "原因不明の頭痛",
+  "シティ・バカンス満喫中": "シティ・バカンス満喫中",
+  "ご機嫌な朝食": "ご機嫌な朝食",
+  "複雑な譜面": "複雑な譜面",
   "対セイバー防御脆性": "Anti-Saber Defense Vulnerability"
 }
