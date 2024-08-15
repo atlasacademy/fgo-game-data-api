@@ -1,4 +1,4 @@
-from typing import Iterable, Optional
+from typing import Any, Iterable, Optional
 
 import orjson
 from fastapi import HTTPException
@@ -403,13 +403,26 @@ async def get_td_entity(
     return td_entity
 
 
+def fix_script_extend_data(data: dict[str, Any]) -> dict[str, Any]:
+    if isinstance(data.get("faceSize"), list):
+        data["faceSizeRect"] = data["faceSize"]
+        data.pop("faceSize")
+
+    return data
+
+
 async def get_svt_scripts(
     conn: AsyncConnection, ids: Iterable[int]
 ) -> list[MstSvtScript]:
     if not ids:
         return []
 
-    return await fetch.get_all_multiple(conn, MstSvtScript, ids)
+    scripts = await fetch.get_all_multiple(conn, MstSvtScript, ids)
+
+    for s in scripts:
+        s.extendData = fix_script_extend_data(s.extendData)
+
+    return scripts
 
 
 async def get_event_allout(

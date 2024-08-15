@@ -505,7 +505,8 @@ class MstSvtScriptExtendDataCond(BaseModelORJson):
 
 
 class MstSvtScriptExtendData(BaseModelORJson):
-    faceSize: None | int | list[int] = None
+    faceSize: None | int = None
+    faceSizeRect: None | list[int] = None
     combineResultMultipleForm: Optional[int] = None
     myroomForm: Optional[int] = None
     conds: Optional[list[MstSvtScriptExtendDataCond]] = None
