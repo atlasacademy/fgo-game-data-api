@@ -989,6 +989,7 @@ mstBattleMasterImage = Table(
     Column("commandSpellCutinOffsetY", Integer),
     Column("resultImageId", Integer),
     Column("commonReleaseId", Integer),
+    Column("script", String),
 )
 
 
@@ -2125,6 +2126,7 @@ mstBlankEarthSpot = Table(
     Column("id", Integer, primary_key=True),
     Column("warId", Integer, index=True),
     Column("mapId", Integer),
+    Column("onObjectType", Integer),
     Column("name", String, index=True),
     Column("objectId", Integer),
     Column("x", Numeric),

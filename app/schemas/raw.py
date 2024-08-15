@@ -648,6 +648,7 @@ class MstBattleMasterImage(BaseModelORJson):
     commandSpellCutinOffsetY: int
     resultImageId: int
     commonReleaseId: int
+    script: str | None = None
 
 
 class MstCommandCode(BaseModelORJson):
@@ -1796,6 +1797,7 @@ class MstBlankEarthSpot(BaseModelORJson):
     id: int
     warId: int
     mapId: int
+    onObjectType: int | None = None
     name: str
     objectId: int
     x: float
