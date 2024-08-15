@@ -506,7 +506,7 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
 
         asset_lines = get_asset_storage_lines(repo_folder)
         with engine.begin() as conn:
-            logger.info("Updated AssetStorage and bgms …")
+            logger.info("Updating AssetStorage and bgms …")
             load_asset_storage(conn, asset_lines)
             load_bgm(conn, repo_folder, asset_lines)
 

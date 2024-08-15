@@ -1995,7 +1995,7 @@ mstBgm = Table(
     "mstBgm",
     metadata,
     Column("id", Integer, primary_key=True),
-    Column("fileName", String),
+    Column("fileName", String, index=True),
     Column("name", String),
     Column("priority", Integer),
     Column("detail", String, default=""),
