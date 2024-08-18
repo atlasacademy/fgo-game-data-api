@@ -1,3 +1,4 @@
+import asyncio
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -6,6 +7,7 @@ from typing import Any, Iterable, Union
 import aiofiles
 import httpx
 import orjson
+import psutil
 from fastapi.concurrency import run_in_threadpool
 from git import Repo
 from pydantic import DirectoryPath
@@ -664,8 +666,16 @@ async def clear_redis_cache(
             if (clear_heavy_quests and b"heavy" in key) or (
                 not clear_heavy_quests and b"heavy" not in key
             ):
+                if clear_heavy_quests:
+                    while (load := psutil.cpu_percent()) > 25:
+                        logger.warning(f"Load too heavy {load}")
+                        await asyncio.sleep(15)
+
                 await redis.delete(key)
                 key_count += 1
+
+                if clear_heavy_quests:
+                    await asyncio.sleep(5)
 
     async for key in redis.scan_iter(match=f"{settings.redis_prefix}:cache::*"):
         await redis.delete(key)
