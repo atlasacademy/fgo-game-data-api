@@ -21,7 +21,7 @@ settings = Settings()
 def get_bgm_url(region: Region, raw_bgm: MstBgm) -> HttpUrl | None:
     base_folder = (
         raw_bgm.fileLocation.removeprefix("Audio/").removesuffix(".cpk.bytes")
-        if raw_bgm.fileLocation
+        if hasattr(raw_bgm, "fileLocation") and raw_bgm.fileLocation
         else raw_bgm.fileName
     )
     return (
