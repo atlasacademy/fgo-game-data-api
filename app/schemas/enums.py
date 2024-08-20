@@ -1021,6 +1021,8 @@ class Trait(StrEnum):
     buffSpecialDmgAgainstAlignmentEvil = "buffSpecialDmgAgainstAlignmentEvil"
     hasSupereffectiveNPAgainstAlignmentGood = "hasSupereffectiveNPAgainstAlignmentGood"
     hasSupereffectiveNPAgainstAlignmentEvil = "hasSupereffectiveNPAgainstAlignmentEvil"
+    happyHalloween = "happyHalloween"
+    happyHalloweenCounter = "happyHalloweenCounter"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1204,6 +1206,8 @@ TRAIT_NAME: dict[int, Trait] = {
     2850: Trait.hasGoddessMetamorphosis,
     2851: Trait.servantsWithSkyAttribute,
     2857: Trait.holdingHolyGrail,
+    2859: Trait.happyHalloween,
+    2860: Trait.happyHalloweenCounter,
     2858: Trait.standardClassServant,
     2871: Trait.murasamaAscension0,
     2872: Trait.manuscriptComplete,
