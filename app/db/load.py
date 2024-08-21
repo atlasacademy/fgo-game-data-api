@@ -4,6 +4,7 @@ from collections import defaultdict
 from typing import Any, Optional, Sequence, Union
 
 import orjson
+import sqlalchemy
 from pydantic import DirectoryPath
 from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
@@ -54,8 +55,16 @@ from .helpers.rayshift import (
 
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
     logger.debug(f"Recreating table {table.name}")
-    table.drop(conn, checkfirst=True)
-    table.create(conn, checkfirst=True)
+    for _ in range(10):
+        try:
+            table.drop(conn, checkfirst=True)
+            table.create(conn, checkfirst=True)
+            return
+        except sqlalchemy.exc.OperationalError as e:
+            logger.exception(e)
+            time.sleep(15)
+
+    raise Exception(f"Failed to recreate table {table.name}")
 
 
 def insert_db(conn: Connection, table: Table, db_data: Any) -> None:  # pragma: no cover
