@@ -233,6 +233,8 @@ class NiceItem(BaseModelORJson):
     icon: HttpUrl
     background: NiceItemBGType
     value: int
+    eventId: int
+    eventGroupId: int
     priority: int
     dropPriority: int
     startedAt: int

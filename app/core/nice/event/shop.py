@@ -113,6 +113,8 @@ def get_nice_shop(
                 ),
                 background=NiceItemBGType.zero,
                 value=0,
+                eventId=0,
+                eventGroupId=0,
                 priority=0,
                 dropPriority=0,
                 startedAt=0,

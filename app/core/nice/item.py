@@ -72,6 +72,8 @@ def get_nice_item_from_raw(
         icon=icon_url,
         background=ITEM_BG_TYPE_NAME.get(raw_item.bgImageId, NiceItemBGType.unknown),
         value=raw_item.value,
+        eventId=raw_item.eventId,
+        eventGroupId=raw_item.eventGroupId,
         priority=raw_item.priority,
         dropPriority=raw_item.dropPriority,
         startedAt=raw_item.startedAt,
