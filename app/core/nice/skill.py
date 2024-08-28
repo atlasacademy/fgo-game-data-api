@@ -206,7 +206,9 @@ async def get_nice_skill_with_svt(
     ]
 
     for lv in skillEntity.mstSkillLv:
-        if "selectTreasureDeviceInfo" in lv.script:
+        if "selectTreasureDeviceInfo" in lv.script and isinstance(
+            lv.script["selectTreasureDeviceInfo"], dict
+        ):
             lv.script["selectTreasureDeviceInfo"] = get_nice_select_td_info(
                 lv.script["selectTreasureDeviceInfo"]
             )
