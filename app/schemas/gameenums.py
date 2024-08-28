@@ -6125,3 +6125,27 @@ ITEM_TRANSITION_TARGET_VALUE: dict[int, NiceItemTransitionTargetValue] = {
     8: NiceItemTransitionTargetValue.rarePriTargetItemId,
     9: NiceItemTransitionTargetValue.leafExchangeTargetItemId,
 }
+
+
+class WarReleaseDisplayType(IntEnum):
+    HIDE = 0
+    OPEN = 1
+    CLOSE = 2
+    ANNOUNCEMENT = 3
+
+
+class NiceWarReleaseDisplayType(StrEnum):
+    """War Release Display Type"""
+
+    hide = "hide"
+    open = "open"
+    close = "close"
+    announcement = "announcement"
+
+
+WAR_RELEASE_DISPLAY_TYPE_NAME: dict[int, NiceWarReleaseDisplayType] = {
+    0: NiceWarReleaseDisplayType.hide,
+    1: NiceWarReleaseDisplayType.open,
+    2: NiceWarReleaseDisplayType.close,
+    3: NiceWarReleaseDisplayType.announcement,
+}

@@ -2086,3 +2086,10 @@ export enum NiceItemTransitionTargetValue {
     RARE_PRI_TARGET_ITEM_ID = "rarePriTargetItemId",
     LEAF_EXCHANGE_TARGET_ITEM_ID = "leafExchangeTargetItemId",
 }
+
+export enum NiceWarReleaseDisplayType {
+    HIDE = "hide",
+    OPEN = "open",
+    CLOSE = "close",
+    ANNOUNCEMENT = "announcement",
+}

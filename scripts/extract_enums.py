@@ -666,6 +666,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Item Transition Target Value",
         "ITEM_TRANSITION_TARGET_VALUE",
     ),
+    (
+        "WarReleaseEntity.WarDisplayType",
+        "WarReleaseDisplayType",
+        "NiceWarReleaseDisplayType",
+        "War Release Display Type",
+        "WAR_RELEASE_DISPLAY_TYPE_NAME",
+    ),
 ]
 
 

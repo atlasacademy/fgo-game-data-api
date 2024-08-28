@@ -2021,6 +2021,19 @@ mstBgmRelease = Table(
 )
 
 
+mstWarRelease = Table(
+    "mstWarRelease",
+    metadata,
+    Column("warId", Integer),
+    Column("condType", Integer),
+    Column("condId", Integer),
+    Column("condNum", Integer),
+    Column("warDisplayType", Integer),
+    Column("closedDialogMessage", String),
+    Column("priority", Integer),
+)
+
+
 mstWar = Table(
     "mstWar",
     metadata,
@@ -2877,7 +2890,7 @@ TABLES_TO_BE_LOADED = [
     [mstMap],
     [mstSpot, mstBlankEarthSpot, mstSpotAdd, mstSpotRoad],
     [mstMapGimmick],
-    [mstWarAdd],
+    [mstWarAdd, mstWarRelease],
     [mstWarQuestSelection],
     [mstEventCampaign],
     [mstEventQuest],

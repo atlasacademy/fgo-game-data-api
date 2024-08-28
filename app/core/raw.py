@@ -178,6 +178,7 @@ from ..schemas.raw import (
     MstWarBoardStageLayout,
     MstWarBoardTreasure,
     MstWarQuestSelection,
+    MstWarRelease,
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
@@ -907,6 +908,7 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
         mstQuest=quests,
         mstSpotRoad=spot_roads,
         mstWarQuestSelection=quest_selections,
+        mstWarRelease=await fetch.get_all_multiple(conn, MstWarRelease, [war_id]),
     )
 
 

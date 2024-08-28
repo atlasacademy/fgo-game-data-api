@@ -1654,6 +1654,16 @@ class MstWarBoardTreasure(BaseModelORJson):
     rarity: int
 
 
+class MstWarRelease(BaseModelORJson):
+    warId: int
+    condType: int
+    condId: int
+    condNum: int
+    warDisplayType: int
+    closedDialogMessage: str
+    priority: int
+
+
 class MstEvent(BaseModelORJson):
     script: list[dict[str, Any]]  # []
     id: int  # 10083
@@ -2423,6 +2433,7 @@ class WarEntity(BaseModelORJson):
     mstQuest: list[QuestEntity]
     mstSpotRoad: list[MstSpotRoad]
     mstWarQuestSelection: list[MstWarQuestSelection]
+    mstWarRelease: list[MstWarRelease]
 
 
 class ShopEntity(BaseModelORJson):

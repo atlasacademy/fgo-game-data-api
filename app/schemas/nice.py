@@ -97,6 +97,7 @@ from .gameenums import (
     NiceWarBoardTreasureRarity,
     NiceWarFlag,
     NiceWarOverwriteType,
+    NiceWarReleaseDisplayType,
     NiceWarStartType,
 )
 from .raw import MstSvtScriptExtendData
@@ -2970,6 +2971,15 @@ class NiceWarQuestSelection(BaseModelORJson):
     priority: int
 
 
+class NiceWarRelease(BaseModelORJson):
+    priority: int
+    condType: NiceCondType
+    condId: int
+    condNum: int
+    warDisplayType: NiceWarReleaseDisplayType
+    closedDialogMessage: str
+
+
 class NiceWar(BaseModelORJson):
     id: int
     coordinates: list[list[Annotated[Decimal, DecimalSerializer]]]
@@ -2994,6 +3004,7 @@ class NiceWar(BaseModelORJson):
     eventId: int
     eventName: str
     lastQuestId: int
+    releaseConditions: list[NiceWarRelease]
     warAdds: list[NiceWarAdd]
     maps: list[NiceMap]
     spots: list[NiceSpot]

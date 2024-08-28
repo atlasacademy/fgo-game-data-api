@@ -10,6 +10,7 @@ from ...schemas.gameenums import (
     SPOT_OVERWRITE_TYPE_NAME,
     WAR_FLAG_NAME,
     WAR_OVERWRITE_TYPE_NAME,
+    WAR_RELEASE_DISPLAY_TYPE_NAME,
     WAR_START_TYPE_NAME,
     WarEntityFlag,
     WarEntityStartType,
@@ -27,6 +28,7 @@ from ...schemas.nice import (
     NiceWar,
     NiceWarAdd,
     NiceWarQuestSelection,
+    NiceWarRelease,
 )
 from ...schemas.raw import (
     MstBgm,
@@ -40,6 +42,7 @@ from ...schemas.raw import (
     MstWar,
     MstWarAdd,
     MstWarQuestSelection,
+    MstWarRelease,
     QuestEntity,
 )
 from .. import raw
@@ -207,6 +210,17 @@ def get_nice_war_quest_selection(
         ),
         shortcutBanner=banner_url,
         priority=quest_selection.priority,
+    )
+
+
+def get_nice_war_release(cond: MstWarRelease) -> NiceWarRelease:
+    return NiceWarRelease(
+        priority=cond.priority,
+        condType=COND_TYPE_NAME[cond.condType],
+        condId=cond.condId,
+        condNum=cond.condNum,
+        warDisplayType=WAR_RELEASE_DISPLAY_TYPE_NAME[cond.warDisplayType],
+        closedDialogMessage=cond.closedDialogMessage,
     )
 
 
@@ -423,6 +437,9 @@ async def get_nice_war(
         eventId=raw_war.mstWar.eventId,
         eventName=get_translation(lang, raw_war.mstWar.eventName),
         lastQuestId=raw_war.mstWar.lastQuestId,
+        releaseConditions=[
+            get_nice_war_release(cond) for cond in raw_war.mstWarRelease
+        ],
         warAdds=[
             get_nice_war_add(region, war_add, banner_template)
             for war_add in raw_war.mstWarAdd

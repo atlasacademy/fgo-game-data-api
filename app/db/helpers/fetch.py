@@ -134,6 +134,7 @@ from ...models.raw import (
     mstWarBoardStageLayout,
     mstWarBoardTreasure,
     mstWarQuestSelection,
+    mstWarRelease,
 )
 from ...schemas.base import BaseModelORJson
 from ...schemas.raw import (
@@ -265,6 +266,7 @@ from ...schemas.raw import (
     MstWarBoardStageLayout,
     MstWarBoardTreasure,
     MstWarQuestSelection,
+    MstWarRelease,
 )
 from .utils import fetch_one
 
@@ -778,6 +780,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
             mstItemDropEfficiency.c.targetType,
             mstItemDropEfficiency.c.priority,
         ],
+    ),
+    MstWarRelease: (
+        mstWarRelease,
+        mstWarRelease.c.warId,
+        [mstWarRelease.c.warId, mstWarRelease.c.priority],
     ),
 }
 
