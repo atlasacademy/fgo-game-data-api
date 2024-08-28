@@ -2771,7 +2771,7 @@ class SupportServant(BaseModelORJson):
     traits: list[NiceTrait]
     skills: EnemySkill
     noblePhantasm: SupportServantTd
-    passiveSkills: list[SupportServantPassiveSkill]
+    # passiveSkills: list[SupportServantPassiveSkill]
     flags: list[NiceNpcServantFollowerFlag]
     followerFlags: list[NiceNpcFollowerEntityFlag]
     equips: list[SupportServantEquip]
