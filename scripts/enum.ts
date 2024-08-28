@@ -1096,6 +1096,8 @@ export enum NiceCondType {
     HAVE_CHARGE_STONE = "haveChargeStone",
     BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = "battleFunctionTargetAllIndividuality",
     BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = "battleFunctionTargetOneIndividuality",
+    BEFORE_QUEST_CLEAR_TIME = "beforeQuestClearTime",
+    AFTER_QUEST_CLEAR_TIME = "afterQuestClearTime",
     NOT_BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = "notBattleFunctionTargetAllIndividuality",
     NOT_BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = "notBattleFunctionTargetOneIndividuality",
 }
@@ -1560,6 +1562,15 @@ export enum NiceAiCond {
     COUNT_MASTER_SKILL_HIGHER_THIS_WAVE = "countMasterSkillHigherThisWave",
     COUNT_MASTER_SKILL_LOWER_THIS_WAVE = "countMasterSkillLowerThisWave",
     COUNT_MASTER_SKILL_EQUAL_THIS_WAVE = "countMasterSkillEqualThisWave",
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL_HIGHER = "countAvailablePlayerAndMasterSkillHigher",
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL_LOWER = "countAvailablePlayerAndMasterSkillLower",
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL_EQUAL = "countAvailablePlayerAndMasterSkillEqual",
+    COUNT_AVAILABLE_PLAYER_SKILL_HIGHER = "countAvailablePlayerSkillHigher",
+    COUNT_AVAILABLE_PLAYER_SKILL_LOWER = "countAvailablePlayerSkillLower",
+    COUNT_AVAILABLE_PLAYER_SKILL_EQUAL = "countAvailablePlayerSkillEqual",
+    COUNT_AVAILABLE_MASTER_SKILL_HIGHER = "countAvailableMasterSkillHigher",
+    COUNT_AVAILABLE_MASTER_SKILL_LOWER = "countAvailableMasterSkillLower",
+    COUNT_AVAILABLE_MASTER_SKILL_EQUAL = "countAvailableMasterSkillEqual",
 }
 
 export enum NiceAiActType {
@@ -1753,6 +1764,9 @@ export enum NiceAiCondParameter {
     CHECK_PLAYER_MASTER_SKILL_INDEX_THIS_TURN = "checkPlayerMasterSkillIndexThisTurn",
     COUNT_PLAYER_MASTER_SKILL_THIS_TURN = "countPlayerMasterSkillThisTurn",
     COUNT_PLAYER_MASTER_SKILL_THIS_WAVE = "countPlayerMasterSkillThisWave",
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL = "countAvailablePlayerAndMasterSkill",
+    COUNT_AVAILABLE_PLAYER_SKILL = "countAvailablePlayerSkill",
+    COUNT_AVAILABLE_MASTER_SKILL = "countAvailableMasterSkill",
 }
 
 export enum NiceAiCondRefine {

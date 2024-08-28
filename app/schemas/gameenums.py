@@ -2510,6 +2510,8 @@ class CondType(IntEnum):
     HAVE_CHARGE_STONE = 230
     BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = 231
     BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = 232
+    BEFORE_QUEST_CLEAR_TIME = 233
+    AFTER_QUEST_CLEAR_TIME = 234
     NOT_BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = 235
     NOT_BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = 236
 
@@ -2745,6 +2747,8 @@ class NiceCondType(StrEnum):
     haveChargeStone = "haveChargeStone"
     battleFunctionTargetAllIndividuality = "battleFunctionTargetAllIndividuality"
     battleFunctionTargetOneIndividuality = "battleFunctionTargetOneIndividuality"
+    beforeQuestClearTime = "beforeQuestClearTime"
+    afterQuestClearTime = "afterQuestClearTime"
     notBattleFunctionTargetAllIndividuality = "notBattleFunctionTargetAllIndividuality"
     notBattleFunctionTargetOneIndividuality = "notBattleFunctionTargetOneIndividuality"
 
@@ -2978,6 +2982,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     230: NiceCondType.haveChargeStone,
     231: NiceCondType.battleFunctionTargetAllIndividuality,
     232: NiceCondType.battleFunctionTargetOneIndividuality,
+    233: NiceCondType.beforeQuestClearTime,
+    234: NiceCondType.afterQuestClearTime,
     235: NiceCondType.notBattleFunctionTargetAllIndividuality,
     236: NiceCondType.notBattleFunctionTargetOneIndividuality,
 }
@@ -4045,6 +4051,15 @@ class AiCond(IntEnum):
     COUNT_MASTER_SKILL_HIGHER_THIS_WAVE = 208
     COUNT_MASTER_SKILL_LOWER_THIS_WAVE = 209
     COUNT_MASTER_SKILL_EQUAL_THIS_WAVE = 210
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL_HIGHER = 211
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL_LOWER = 212
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL_EQUAL = 213
+    COUNT_AVAILABLE_PLAYER_SKILL_HIGHER = 214
+    COUNT_AVAILABLE_PLAYER_SKILL_LOWER = 215
+    COUNT_AVAILABLE_PLAYER_SKILL_EQUAL = 216
+    COUNT_AVAILABLE_MASTER_SKILL_HIGHER = 217
+    COUNT_AVAILABLE_MASTER_SKILL_LOWER = 218
+    COUNT_AVAILABLE_MASTER_SKILL_EQUAL = 219
 
 
 class NiceAiCond(StrEnum):
@@ -4237,6 +4252,17 @@ class NiceAiCond(StrEnum):
     countMasterSkillHigherThisWave = "countMasterSkillHigherThisWave"
     countMasterSkillLowerThisWave = "countMasterSkillLowerThisWave"
     countMasterSkillEqualThisWave = "countMasterSkillEqualThisWave"
+    countAvailablePlayerAndMasterSkillHigher = (
+        "countAvailablePlayerAndMasterSkillHigher"
+    )
+    countAvailablePlayerAndMasterSkillLower = "countAvailablePlayerAndMasterSkillLower"
+    countAvailablePlayerAndMasterSkillEqual = "countAvailablePlayerAndMasterSkillEqual"
+    countAvailablePlayerSkillHigher = "countAvailablePlayerSkillHigher"
+    countAvailablePlayerSkillLower = "countAvailablePlayerSkillLower"
+    countAvailablePlayerSkillEqual = "countAvailablePlayerSkillEqual"
+    countAvailableMasterSkillHigher = "countAvailableMasterSkillHigher"
+    countAvailableMasterSkillLower = "countAvailableMasterSkillLower"
+    countAvailableMasterSkillEqual = "countAvailableMasterSkillEqual"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -4411,6 +4437,15 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     208: NiceAiCond.countMasterSkillHigherThisWave,
     209: NiceAiCond.countMasterSkillLowerThisWave,
     210: NiceAiCond.countMasterSkillEqualThisWave,
+    211: NiceAiCond.countAvailablePlayerAndMasterSkillHigher,
+    212: NiceAiCond.countAvailablePlayerAndMasterSkillLower,
+    213: NiceAiCond.countAvailablePlayerAndMasterSkillEqual,
+    214: NiceAiCond.countAvailablePlayerSkillHigher,
+    215: NiceAiCond.countAvailablePlayerSkillLower,
+    216: NiceAiCond.countAvailablePlayerSkillEqual,
+    217: NiceAiCond.countAvailableMasterSkillHigher,
+    218: NiceAiCond.countAvailableMasterSkillLower,
+    219: NiceAiCond.countAvailableMasterSkillEqual,
 }
 
 
@@ -4928,6 +4963,9 @@ class AiCondParameter(IntEnum):
     CHECK_PLAYER_MASTER_SKILL_INDEX_THIS_TURN = 43
     COUNT_PLAYER_MASTER_SKILL_THIS_TURN = 44
     COUNT_PLAYER_MASTER_SKILL_THIS_WAVE = 45
+    COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL = 46
+    COUNT_AVAILABLE_PLAYER_SKILL = 47
+    COUNT_AVAILABLE_MASTER_SKILL = 48
 
 
 class NiceAiCondParameter(StrEnum):
@@ -4979,6 +5017,9 @@ class NiceAiCondParameter(StrEnum):
     checkPlayerMasterSkillIndexThisTurn = "checkPlayerMasterSkillIndexThisTurn"
     countPlayerMasterSkillThisTurn = "countPlayerMasterSkillThisTurn"
     countPlayerMasterSkillThisWave = "countPlayerMasterSkillThisWave"
+    countAvailablePlayerAndMasterSkill = "countAvailablePlayerAndMasterSkill"
+    countAvailablePlayerSkill = "countAvailablePlayerSkill"
+    countAvailableMasterSkill = "countAvailableMasterSkill"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -5028,6 +5069,9 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     43: NiceAiCondParameter.checkPlayerMasterSkillIndexThisTurn,
     44: NiceAiCondParameter.countPlayerMasterSkillThisTurn,
     45: NiceAiCondParameter.countPlayerMasterSkillThisWave,
+    46: NiceAiCondParameter.countAvailablePlayerAndMasterSkill,
+    47: NiceAiCondParameter.countAvailablePlayerSkill,
+    48: NiceAiCondParameter.countAvailableMasterSkill,
 }
 
 
