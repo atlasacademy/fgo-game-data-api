@@ -1025,6 +1025,7 @@ class Trait(StrEnum):
     happyHalloweenCounter = "happyHalloweenCounter"
     protectedByBBDubai = "protectedByBBDubai"
     notProtectedByBBDubai = "notProtectedByBBDubai"
+    canFlyInSpace = "canFlyInSpace"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1237,6 +1238,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2921: Trait.buffSpecialDmgAgainstAlignmentEvil,
     2922: Trait.hasSupereffectiveNPAgainstAlignmentGood,
     2923: Trait.hasSupereffectiveNPAgainstAlignmentEvil,
+    2924: Trait.canFlyInSpace,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
