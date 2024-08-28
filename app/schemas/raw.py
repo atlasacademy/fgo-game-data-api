@@ -2100,6 +2100,8 @@ class NpcFollowerRelease(BaseModelORJson):
 
 
 class NpcSvtFollower(BaseModelORJson):
+    passiveSkill: list[int] | None = None
+    passiveSkillLvs: list[int] | None = None
     appendPassiveSkillIds: Optional[list[int]] = None
     appendPassiveSkillLvs: Optional[list[int]] = None
     id: int

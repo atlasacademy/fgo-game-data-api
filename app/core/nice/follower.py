@@ -26,6 +26,7 @@ from ...schemas.nice import (
     SupportServantEquip,
     SupportServantLimit,
     SupportServantMisc,
+    SupportServantPassiveSkill,
     SupportServantRelease,
     SupportServantScript,
     SupportServantTd,
@@ -77,6 +78,23 @@ def get_nice_follower_td(
         noblePhantasm=all_nps.get(TdSvt(svt.treasureDeviceId, svt.svtId), None),
         noblePhantasmLv=svt.treasureDeviceLv,
     )
+
+
+def get_nice_follower_passive_skills(
+    svt: NpcSvtFollower, all_skills: MultipleNiceSkills
+) -> list[SupportServantPassiveSkill]:
+    return [
+        SupportServantPassiveSkill(
+            skillId=skill_id,
+            skill=all_skills.get(SkillSvt(skill_id, svt.svtId), None),
+            skillLv=(
+                svt.passiveSkillLvs[i]
+                if svt.passiveSkillLvs and len(svt.passiveSkillLvs) > i
+                else None
+            ),
+        )
+        for i, skill_id in enumerate(svt.passiveSkill if svt.passiveSkill else [])
+    ]
 
 
 def get_nice_follower_limit(npcSvtFollower: NpcSvtFollower) -> SupportServantLimit:
@@ -182,6 +200,7 @@ def get_nice_support_servant(
         traits=get_nice_follower_traits(npcSvtFollower.individuality),
         skills=get_nice_follower_skills(npcSvtFollower, all_skills),
         noblePhantasm=get_nice_follower_td(npcSvtFollower, all_tds),
+        passiveSkills=get_nice_follower_passive_skills(npcSvtFollower, all_skills),
         flags=get_flags(npcSvtFollower.flag, NPC_SERVANT_FOLLOWER_FLAG_NAME),
         followerFlags=get_flags(npcFollower.flag, NPC_FOLLOWER_FLAG_NAME),
         equips=[get_nice_follower_equip(equip, all_equips) for equip in npcSvtEquip],
@@ -217,6 +236,7 @@ async def get_nice_support_servants(
             npcSvt.skillId1,
             npcSvt.skillId2,
             npcSvt.skillId3,
+            *(npcSvt.passiveSkill if npcSvt.passiveSkill else []),
         ]:
             if skill_id != 0:
                 all_skill_ids.add(SkillSvt(skill_id, npcSvt.svtId))

@@ -2521,6 +2521,8 @@ npcFollowerRelease = Table(
 npcSvtFollower = Table(
     "npcSvtFollower",
     metadata,
+    Column("passiveSkill", ARRAY(Integer)),
+    Column("passiveSkillLvs", ARRAY(Integer)),
     Column("appendPassiveSkillIds", ARRAY(Integer)),
     Column("appendPassiveSkillLvs", ARRAY(Integer)),
     Column("id", Integer, primary_key=True),
