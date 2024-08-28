@@ -1023,6 +1023,8 @@ class Trait(StrEnum):
     hasSupereffectiveNPAgainstAlignmentEvil = "hasSupereffectiveNPAgainstAlignmentEvil"
     happyHalloween = "happyHalloween"
     happyHalloweenCounter = "happyHalloweenCounter"
+    protectedByBBDubai = "protectedByBBDubai"
+    notProtectedByBBDubai = "notProtectedByBBDubai"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1318,6 +1320,8 @@ TRAIT_NAME: dict[int, Trait] = {
     3097: Trait.forceInstantDeathFunction,
     3098: Trait.demeritFunction,
     3100: Trait.extraBuff,
+    3102: Trait.protectedByBBDubai,
+    3103: Trait.notProtectedByBBDubai,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
