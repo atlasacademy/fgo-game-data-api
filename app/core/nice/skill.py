@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, SkillScriptCond
-from ...schemas.gameenums import COND_TYPE_NAME
+from ...schemas.gameenums import CARD_TYPE_NAME, COND_TYPE_NAME
 from ...schemas.nice import (
     AssetURL,
     ExtraPassive,
@@ -16,6 +16,8 @@ from ...schemas.nice import (
     NiceSkillReverse,
     NiceSkillSvt,
     NiceSvtSkillRelease,
+    SelectTreasureDeviceInfo,
+    SelectTreasureDeviceInfoTreasureDevice,
 )
 from ...schemas.raw import (
     MstCommonRelease,
@@ -131,6 +133,22 @@ def get_nice_skill_release(release: MstSvtSkillRelease) -> NiceSvtSkillRelease:
     )
 
 
+def get_nice_select_td_info(select_info: Any) -> SelectTreasureDeviceInfo:
+    return SelectTreasureDeviceInfo(
+        dialogType=select_info["dialogType"],
+        treasureDevices=[
+            SelectTreasureDeviceInfoTreasureDevice(
+                id=td["id"],
+                type=CARD_TYPE_NAME[td["type"]],
+                message=td["message"],
+            )
+            for td in select_info["treasureDevices"]
+        ],
+        title=select_info["title"],
+        messageOnSelected=select_info["messageOnSelected"],
+    )
+
+
 async def get_nice_skill_with_svt(
     conn: AsyncConnection,
     skillEntity: SkillEntityNoReverse,
@@ -186,6 +204,12 @@ async def get_nice_skill_with_svt(
     nice_skill["coolDown"] = [
         skill_lv.chargeTurn for skill_lv in skillEntity.mstSkillLv
     ]
+
+    for lv in skillEntity.mstSkillLv:
+        if "selectTreasureDeviceInfo" in lv.script:
+            lv.script["selectTreasureDeviceInfo"] = get_nice_select_td_info(
+                lv.script["selectTreasureDeviceInfo"]
+            )
 
     nice_skill["script"] = {
         scriptKey: [

@@ -684,6 +684,19 @@ class TdChangeByBattlePoint(BaseModel):
     noblePhantasmId: int
 
 
+class SelectTreasureDeviceInfoTreasureDevice(BaseModel):
+    id: int
+    type: NiceCardType
+    message: str
+
+
+class SelectTreasureDeviceInfo(BaseModel):
+    dialogType: int
+    treasureDevices: list[SelectTreasureDeviceInfoTreasureDevice]
+    title: str
+    messageOnSelected: str
+
+
 class NiceSkillScript(BaseModel):
     NP_HIGHER: Optional[list[int]] = None
     NP_LOWER: Optional[list[int]] = None
@@ -703,6 +716,7 @@ class NiceSkillScript(BaseModel):
     IgnoreValueUp: list[bool] | None = None
     IgnoreBattlePointUp: list[list[int]] | None = None
     tdChangeByBattlePoint: list[TdChangeByBattlePoint] | None = None
+    selectTreasureDeviceInfo: list[SelectTreasureDeviceInfo] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):
@@ -2707,6 +2721,12 @@ class SupportServantTd(BaseModelORJson):
     noblePhantasmLv: int
 
 
+class SupportServantPassiveSkill(BaseModelORJson):
+    skillId: int
+    skill: NiceSkill | None = None
+    skillLv: int | None = None
+
+
 class SupportServantMisc(BaseModelORJson):
     followerFlag: int
     svtFollowerFlag: int
@@ -2751,6 +2771,7 @@ class SupportServant(BaseModelORJson):
     traits: list[NiceTrait]
     skills: EnemySkill
     noblePhantasm: SupportServantTd
+    passiveSkills: list[SupportServantPassiveSkill]
     flags: list[NiceNpcServantFollowerFlag]
     followerFlags: list[NiceNpcFollowerEntityFlag]
     equips: list[SupportServantEquip]
