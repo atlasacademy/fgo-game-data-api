@@ -104,23 +104,43 @@ def get_nice_battle_master_image(
     return NiceBattleMasterImage(
         id=mstBattleMasterImage.id,
         type=GENDER_TYPE_NAME[mstBattleMasterImage.type],
-        faceIcon=fmt_url(
-            masterFaceImage, **base_settings, item_id=mstBattleMasterImage.faceIconId
+        faceIcon=(
+            fmt_url(
+                masterFaceImage,
+                **base_settings,
+                item_id=mstBattleMasterImage.faceIconId,
+            )
+            if mstBattleMasterImage.faceIconId
+            else None
         ),
-        skillCutin=fmt_url(
-            masterFigure, **base_settings, item_id=mstBattleMasterImage.skillCutinId
+        skillCutin=(
+            fmt_url(
+                masterFigure, **base_settings, item_id=mstBattleMasterImage.skillCutinId
+            )
+            if mstBattleMasterImage.skillCutinId
+            else None
         ),
         skillCutinOffsetX=mstBattleMasterImage.skillCutinOffsetX,
         skillCutinOffsetY=mstBattleMasterImage.skillCutinOffsetY,
-        commandSpellCutin=fmt_url(
-            masterFigure,
-            **base_settings,
-            item_id=mstBattleMasterImage.commandSpellCutinId,
+        commandSpellCutin=(
+            fmt_url(
+                masterFigure,
+                **base_settings,
+                item_id=mstBattleMasterImage.commandSpellCutinId,
+            )
+            if mstBattleMasterImage.commandSpellCutinId
+            else None
         ),
         commandSpellCutinOffsetX=mstBattleMasterImage.commandSpellCutinOffsetX,
         commandSpellCutinOffsetY=mstBattleMasterImage.commandSpellCutinOffsetY,
-        resultImage=fmt_url(
-            masterFigure, **base_settings, item_id=mstBattleMasterImage.resultImageId
+        resultImage=(
+            fmt_url(
+                masterFigure,
+                **base_settings,
+                item_id=mstBattleMasterImage.resultImageId,
+            )
+            if mstBattleMasterImage.resultImageId
+            else None
         ),
         releaseConditions=get_nice_common_releases(
             mstCommonRelease, mstBattleMasterImage.commonReleaseId

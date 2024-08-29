@@ -896,14 +896,14 @@ class NiceEnemyMaster(BaseModelORJson):
 class NiceBattleMasterImage(BaseModelORJson):
     id: int
     type: NiceGender
-    faceIcon: HttpUrl
-    skillCutin: HttpUrl
+    faceIcon: HttpUrl | None = None
+    skillCutin: HttpUrl | None = None
     skillCutinOffsetX: int
     skillCutinOffsetY: int
-    commandSpellCutin: HttpUrl
+    commandSpellCutin: HttpUrl | None = None
     commandSpellCutinOffsetX: int
     commandSpellCutinOffsetY: int
-    resultImage: HttpUrl
+    resultImage: HttpUrl | None = None
     releaseConditions: list[NiceCommonRelease]
 
 
