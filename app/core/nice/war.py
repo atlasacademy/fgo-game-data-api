@@ -338,15 +338,25 @@ async def get_nice_war(
 
     if raw_war.mstWar.flag & WarEntityFlag.MAIN_SCENARIO != 0:
         last_war_id = await fetch.get_one(conn, MstConstant, "LAST_WAR_ID")
-        if region == Region.JP or (
-            raw_war.mstWar.id > 10000
-            or (last_war_id and raw_war.mstWar.id <= last_war_id.value)
-        ):
-            banner_template = "questboard_cap{:>03}"
+
+        if region == Region.JP:
             banner_id = raw_war.mstWar.bannerId
+            if (
+                raw_war.mstWar.id < 10000
+                and raw_war.mstWar.flag & WarEntityFlag.NOTICE_BOARD != 0
+            ):
+                banner_template = "questboard_cap_closed_{:>03}"
+            else:
+                banner_template = "questboard_cap{:>03}"
         else:
-            banner_template = "questboard_cap_closed"
-            banner_id = 0
+            if raw_war.mstWar.id > 10000 or (
+                last_war_id and raw_war.mstWar.id <= last_war_id.value
+            ):
+                banner_template = "questboard_cap{:>03}"
+                banner_id = raw_war.mstWar.bannerId
+            else:
+                banner_template = "questboard_cap_closed"
+                banner_id = 0
     elif (
         raw_war.mstWar.flag & WarEntityFlag.IS_EVENT != 0
         and raw_war.mstWar.flag & WarEntityFlag.SUB_FOLDER == 0
