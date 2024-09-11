@@ -383,6 +383,7 @@ export enum NiceBuffType {
     TREASURE_DEVICE_BEFORE_FUNCTION = "treasureDeviceBeforeFunction",
     STEP_IN_AFTER_FUNCTION = "stepInAfterFunction",
     SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
+    PIERCE_SPECIAL_INVINCIBLE = "pierceSpecialInvincible",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -533,6 +534,7 @@ export enum NiceBuffAction {
     FUNCTION_TREASURE_DEVICE_BEFORE = "functionTreasureDeviceBefore",
     FUNCTION_STEP_IN_AFTER = "functionStepInAfter",
     SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
+    PIERCE_SPECIAL_INVINCIBLE = "pierceSpecialInvincible",
 }
 
 export enum NiceBuffLimit {

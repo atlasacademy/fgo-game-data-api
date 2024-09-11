@@ -790,6 +790,7 @@ class BuffType(IntEnum):
     TREASURE_DEVICE_BEFORE_FUNCTION = 204
     STEP_IN_AFTER_FUNCTION = 205
     SHORTEN_SKILL_AFTER_USE_SKILL = 206
+    PIERCE_SPECIAL_INVINCIBLE = 207
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -989,6 +990,7 @@ class NiceBuffType(StrEnum):
     treasureDeviceBeforeFunction = "treasureDeviceBeforeFunction"
     stepInAfterFunction = "stepInAfterFunction"
     shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
+    pierceSpecialInvincible = "pierceSpecialInvincible"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1186,6 +1188,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     204: NiceBuffType.treasureDeviceBeforeFunction,
     205: NiceBuffType.stepInAfterFunction,
     206: NiceBuffType.shortenSkillAfterUseSkill,
+    207: NiceBuffType.pierceSpecialInvincible,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1337,6 +1340,7 @@ class BuffAction(IntEnum):
     FUNCTION_TREASURE_DEVICE_BEFORE = 141
     FUNCTION_STEP_IN_AFTER = 142
     SHORTEN_SKILL_AFTER_USE_SKILL = 143
+    PIERCE_SPECIAL_INVINCIBLE = 144
 
 
 class NiceBuffAction(StrEnum):
@@ -1486,6 +1490,7 @@ class NiceBuffAction(StrEnum):
     functionTreasureDeviceBefore = "functionTreasureDeviceBefore"
     functionStepInAfter = "functionStepInAfter"
     shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
+    pierceSpecialInvincible = "pierceSpecialInvincible"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1633,6 +1638,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     141: NiceBuffAction.functionTreasureDeviceBefore,
     142: NiceBuffAction.functionStepInAfter,
     143: NiceBuffAction.shortenSkillAfterUseSkill,
+    144: NiceBuffAction.pierceSpecialInvincible,
 }
 
 
