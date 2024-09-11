@@ -165,6 +165,11 @@ def get_nice_buff_script(
             for buffType in mstBuff.script["CheckOpponentBuffTypes"].split(",")
         ]
 
+    if "NotPierceIndividuality" in mstBuff.script:
+        script["NotPierceIndividuality"] = get_traits_list_list(
+            mstBuff.script["NotPierceIndividuality"]
+        )
+
     if "convert" in mstBuff.script:
         convert = mstBuff.script["convert"]
 

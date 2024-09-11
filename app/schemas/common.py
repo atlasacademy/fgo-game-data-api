@@ -137,6 +137,7 @@ class BuffScript(BaseModel):
     useFirstTimeInTurn: int | None = None
     fromCommandSpell: int | None = None
     fromMasterEquip: int | None = None
+    NotPierceIndividuality: list[list[NiceTrait]] | None = None
 
 
 class ScriptLink(BaseModelORJson):
