@@ -2814,6 +2814,9 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     interruptibleQuest: int | None = None
     masterImageId: int | None = None
     IgnoreBattlePointUp: list[int] | None = None
+    useEventDeckNo: int | None = None
+    masterSkillDelay: int | None = None
+    masterSkillDelayInfo: str | None = None
 
 
 class NiceRestriction(BaseModelORJson):
