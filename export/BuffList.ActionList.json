@@ -1659,5 +1659,16 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "PIERCE_SPECIAL_INVINCIBLE": {
+    "limit": 0,
+    "plusTypes": [
+      207
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
