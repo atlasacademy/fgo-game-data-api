@@ -978,6 +978,17 @@
     "isRec": true,
     "plusAction": 0
   },
+  "DONOT_ACT_COMMANDCARD": {
+    "limit": 0,
+    "plusTypes": [
+      209
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
   "DAMAGE_EVENT_POINT": {
     "limit": 1,
     "plusTypes": [
@@ -1664,6 +1675,17 @@
     "limit": 0,
     "plusTypes": [
       207
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTIONED_FUNCTION": {
+    "limit": 0,
+    "plusTypes": [
+      208
     ],
     "minusTypes": [],
     "baseParam": 1000,
