@@ -268,6 +268,8 @@ class FuncType(IntEnum):
     LOSS_MULTIPLY_NP = 141
     ADD_BATTLE_POINT = 142
     DAMAGE_NP_BATTLE_POINT_PHASE = 143
+    SET_NP_EXECUTED_STATE = 144
+    HIDE_OVER_GAUGE = 145
 
 
 class NiceFuncType(StrEnum):
@@ -380,6 +382,8 @@ class NiceFuncType(StrEnum):
     lossMultiplyNp = "lossMultiplyNp"
     addBattlePoint = "addBattlePoint"
     damageNpBattlePointPhase = "damageNpBattlePointPhase"
+    setNpExecutedState = "setNpExecutedState"
+    hideOverGauge = "hideOverGauge"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -490,6 +494,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     141: NiceFuncType.lossMultiplyNp,
     142: NiceFuncType.addBattlePoint,
     143: NiceFuncType.damageNpBattlePointPhase,
+    144: NiceFuncType.setNpExecutedState,
+    145: NiceFuncType.hideOverGauge,
 }
 
 
@@ -525,6 +531,7 @@ class FuncTargetType(IntEnum):
     PT_ONE_HP_LOWEST_VALUE = 28
     PT_ONE_HP_LOWEST_RATE = 29
     ENEMY_RANGE = 30
+    HAND_COMMANDCARD_RANDOM_ONE = 31
 
 
 class NiceFuncTargetType(StrEnum):
@@ -561,6 +568,7 @@ class NiceFuncTargetType(StrEnum):
     ptOneHpLowestValue = "ptOneHpLowestValue"
     ptOneHpLowestRate = "ptOneHpLowestRate"
     enemyRange = "enemyRange"
+    handCommandcardRandomOne = "handCommandcardRandomOne"
 
 
 FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
@@ -595,6 +603,7 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     28: NiceFuncTargetType.ptOneHpLowestValue,
     29: NiceFuncTargetType.ptOneHpLowestRate,
     30: NiceFuncTargetType.enemyRange,
+    31: NiceFuncTargetType.handCommandcardRandomOne,
 }
 
 
@@ -791,6 +800,8 @@ class BuffType(IntEnum):
     STEP_IN_AFTER_FUNCTION = 205
     SHORTEN_SKILL_AFTER_USE_SKILL = 206
     PIERCE_SPECIAL_INVINCIBLE = 207
+    FUNCTIONED_FUNCTION = 208
+    DONOT_ACT_COMMANDCARD = 209
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -991,6 +1002,8 @@ class NiceBuffType(StrEnum):
     stepInAfterFunction = "stepInAfterFunction"
     shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
     pierceSpecialInvincible = "pierceSpecialInvincible"
+    functionedFunction = "functionedFunction"
+    donotActCommandcard = "donotActCommandcard"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1189,6 +1202,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     205: NiceBuffType.stepInAfterFunction,
     206: NiceBuffType.shortenSkillAfterUseSkill,
     207: NiceBuffType.pierceSpecialInvincible,
+    208: NiceBuffType.functionedFunction,
+    209: NiceBuffType.donotActCommandcard,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1341,6 +1356,8 @@ class BuffAction(IntEnum):
     FUNCTION_STEP_IN_AFTER = 142
     SHORTEN_SKILL_AFTER_USE_SKILL = 143
     PIERCE_SPECIAL_INVINCIBLE = 144
+    FUNCTIONED_FUNCTION = 145
+    DONOT_ACT_COMMANDCARD = 146
 
 
 class NiceBuffAction(StrEnum):
@@ -1491,6 +1508,8 @@ class NiceBuffAction(StrEnum):
     functionStepInAfter = "functionStepInAfter"
     shortenSkillAfterUseSkill = "shortenSkillAfterUseSkill"
     pierceSpecialInvincible = "pierceSpecialInvincible"
+    functionedFunction = "functionedFunction"
+    donotActCommandcard = "donotActCommandcard"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1639,6 +1658,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     142: NiceBuffAction.functionStepInAfter,
     143: NiceBuffAction.shortenSkillAfterUseSkill,
     144: NiceBuffAction.pierceSpecialInvincible,
+    145: NiceBuffAction.functionedFunction,
+    146: NiceBuffAction.donotActCommandcard,
 }
 
 
@@ -1851,6 +1872,9 @@ class DataValsType(IntEnum):
     ParamAddBattlePointPhaseId = 181
     ParamAddBattlePointPhaseValue = 182
     ShortenMaxCountEachSkill = 183
+    ChargeHpMaxBeforeBreakGaugeUp = 184
+    TargetFunctionIndividuality = 185
+    TargetBuffIndividuality = 186
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2520,6 +2544,8 @@ class CondType(IntEnum):
     AFTER_QUEST_CLEAR_TIME = 234
     NOT_BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = 235
     NOT_BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = 236
+    EVENT_SCRIPT_NOT_PLAY = 237
+    EVENT_SCRIPT_FLAG = 238
 
 
 class NiceCondType(StrEnum):
@@ -2757,6 +2783,8 @@ class NiceCondType(StrEnum):
     afterQuestClearTime = "afterQuestClearTime"
     notBattleFunctionTargetAllIndividuality = "notBattleFunctionTargetAllIndividuality"
     notBattleFunctionTargetOneIndividuality = "notBattleFunctionTargetOneIndividuality"
+    eventScriptNotPlay = "eventScriptNotPlay"
+    eventScriptFlag = "eventScriptFlag"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2992,6 +3020,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     234: NiceCondType.afterQuestClearTime,
     235: NiceCondType.notBattleFunctionTargetAllIndividuality,
     236: NiceCondType.notBattleFunctionTargetOneIndividuality,
+    237: NiceCondType.eventScriptNotPlay,
+    238: NiceCondType.eventScriptFlag,
 }
 
 
@@ -4609,8 +4639,10 @@ class AiActNum(IntEnum):
     REACTION_BEFORE_DEAD = -16
     SHIFT_SERVANT_AFTER = -17
     REACTION_BEFORE_MOVE_WAVE = -18
+    SHIFT_SERVANT_BEFORE = -19
     REACTION_ENEMY_TURN_START_PRIORITY = -401
     REACTION_ENEMY_TURN_END_PRIORITY = -501
+    SHIFT_SERVANT_BEFORE_PRIORITY = -1901
 
 
 class NiceAiActNum(StrEnum):
@@ -4634,8 +4666,10 @@ class NiceAiActNum(StrEnum):
     reactionBeforeDead = "reactionBeforeDead"
     shiftServantAfter = "shiftServantAfter"
     reactionBeforeMoveWave = "reactionBeforeMoveWave"
+    shiftServantBefore = "shiftServantBefore"
     reactionEnemyTurnStartPriority = "reactionEnemyTurnStartPriority"
     reactionEnemyTurnEndPriority = "reactionEnemyTurnEndPriority"
+    shiftServantBeforePriority = "shiftServantBeforePriority"
     unknown = "unknown"
 
 
@@ -4658,8 +4692,10 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -16: NiceAiActNum.reactionBeforeDead,
     -17: NiceAiActNum.shiftServantAfter,
     -18: NiceAiActNum.reactionBeforeMoveWave,
+    -19: NiceAiActNum.shiftServantBefore,
     -401: NiceAiActNum.reactionEnemyTurnStartPriority,
     -501: NiceAiActNum.reactionEnemyTurnEndPriority,
+    -1901: NiceAiActNum.shiftServantBeforePriority,
     -9999: NiceAiActNum.unknown,
 }
 
@@ -5866,6 +5902,7 @@ class SvtDeadType(IntEnum):
     WAIT = 4
     ENERGY = 5
     CRYSTAL = 6
+    EXPLOSION = 7
 
 
 class NiceSvtDeadType(StrEnum):
@@ -5878,6 +5915,7 @@ class NiceSvtDeadType(StrEnum):
     wait = "wait"
     energy = "energy"
     crystal = "crystal"
+    explosion = "explosion"
 
 
 SVT_DEAD_TYPE_NAME: dict[int, NiceSvtDeadType] = {
@@ -5888,6 +5926,7 @@ SVT_DEAD_TYPE_NAME: dict[int, NiceSvtDeadType] = {
     4: NiceSvtDeadType.wait,
     5: NiceSvtDeadType.energy,
     6: NiceSvtDeadType.crystal,
+    7: NiceSvtDeadType.explosion,
 }
 
 

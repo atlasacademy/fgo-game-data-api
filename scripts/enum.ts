@@ -155,6 +155,8 @@ export enum NiceFuncType {
     LOSS_MULTIPLY_NP = "lossMultiplyNp",
     ADD_BATTLE_POINT = "addBattlePoint",
     DAMAGE_NP_BATTLE_POINT_PHASE = "damageNpBattlePointPhase",
+    SET_NP_EXECUTED_STATE = "setNpExecutedState",
+    HIDE_OVER_GAUGE = "hideOverGauge",
 }
 
 export enum NiceFuncTargetType {
@@ -189,6 +191,7 @@ export enum NiceFuncTargetType {
     PT_ONE_HP_LOWEST_VALUE = "ptOneHpLowestValue",
     PT_ONE_HP_LOWEST_RATE = "ptOneHpLowestRate",
     ENEMY_RANGE = "enemyRange",
+    HAND_COMMANDCARD_RANDOM_ONE = "handCommandcardRandomOne",
 }
 
 export enum NiceBuffType {
@@ -384,6 +387,8 @@ export enum NiceBuffType {
     STEP_IN_AFTER_FUNCTION = "stepInAfterFunction",
     SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
     PIERCE_SPECIAL_INVINCIBLE = "pierceSpecialInvincible",
+    FUNCTIONED_FUNCTION = "functionedFunction",
+    DONOT_ACT_COMMANDCARD = "donotActCommandcard",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -535,6 +540,8 @@ export enum NiceBuffAction {
     FUNCTION_STEP_IN_AFTER = "functionStepInAfter",
     SHORTEN_SKILL_AFTER_USE_SKILL = "shortenSkillAfterUseSkill",
     PIERCE_SPECIAL_INVINCIBLE = "pierceSpecialInvincible",
+    FUNCTIONED_FUNCTION = "functionedFunction",
+    DONOT_ACT_COMMANDCARD = "donotActCommandcard",
 }
 
 export enum NiceBuffLimit {
@@ -729,6 +736,9 @@ export enum NiceDataValsType {
     ParamAddBattlePointPhaseId = "paramaddbattlepointphaseid",
     ParamAddBattlePointPhaseValue = "paramaddbattlepointphasevalue",
     ShortenMaxCountEachSkill = "shortenmaxcounteachskill",
+    ChargeHpMaxBeforeBreakGaugeUp = "chargehpmaxbeforebreakgaugeup",
+    TargetFunctionIndividuality = "targetfunctionindividuality",
+    TargetBuffIndividuality = "targetbuffindividuality",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1102,6 +1112,8 @@ export enum NiceCondType {
     AFTER_QUEST_CLEAR_TIME = "afterQuestClearTime",
     NOT_BATTLE_FUNCTION_TARGET_ALL_INDIVIDUALITY = "notBattleFunctionTargetAllIndividuality",
     NOT_BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = "notBattleFunctionTargetOneIndividuality",
+    EVENT_SCRIPT_NOT_PLAY = "eventScriptNotPlay",
+    EVENT_SCRIPT_FLAG = "eventScriptFlag",
 }
 
 export enum NiceVoiceCondType {
@@ -1637,8 +1649,10 @@ export enum NiceAiActNum {
     REACTION_BEFORE_DEAD = "reactionBeforeDead",
     SHIFT_SERVANT_AFTER = "shiftServantAfter",
     REACTION_BEFORE_MOVE_WAVE = "reactionBeforeMoveWave",
+    SHIFT_SERVANT_BEFORE = "shiftServantBefore",
     REACTION_ENEMY_TURN_START_PRIORITY = "reactionEnemyTurnStartPriority",
     REACTION_ENEMY_TURN_END_PRIORITY = "reactionEnemyTurnEndPriority",
+    SHIFT_SERVANT_BEFORE_PRIORITY = "shiftServantBeforePriority",
     UNKNOWN = "unknown",
 }
 
@@ -2014,6 +2028,7 @@ export enum NiceSvtDeadType {
     WAIT = "wait",
     ENERGY = "energy",
     CRYSTAL = "crystal",
+    EXPLOSION = "explosion",
 }
 
 export enum NiceAiAllocationSvtFlag {

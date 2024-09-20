@@ -76,6 +76,9 @@ STRING_DATAVALS = {
     "TriggeredTargetHpRange",
     "TriggeredTargetHpRateRange",
     "DisplayNoEffectCauses",
+    "ChargeHpMaxBeforeBreakGaugeUp",
+    "TargetFunctionIndividuality",
+    "TargetBuffIndividuality",
 }
 STRING_LIST_DATAVALS = {"ApplyValueUp", "CheckOverChargeStageRange"}
 
