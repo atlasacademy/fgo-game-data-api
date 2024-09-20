@@ -70,7 +70,7 @@ EXTRA_STR_NAME = {
         40: "UNKNOWN_40",
         -1: "UNKNOWN",
     },
-    "NiceEventType": {27: "FORTUNE_CAMPAIGN"},
+    "NiceEventType": {27: "FORTUNE_CAMPAIGN", 28: "GENDER_SELECTION"},
 }
 
 

@@ -1336,6 +1336,7 @@ export enum NiceEventType {
     INTERLUDE_CAMPAIGN = "interludeCampaign",
     MYROOM_PHOTO_CAMPAIGN = "myroomPhotoCampaign",
     FORTUNE_CAMPAIGN = "fortuneCampaign",
+    GENDER_SELECTION = "genderSelection",
 }
 
 export enum NiceEventOverwriteType {
