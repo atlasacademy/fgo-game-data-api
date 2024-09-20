@@ -70,15 +70,14 @@ LIST_DATAVALS = {
     "SnapShotParamAddFieldIndv",
     "StartingPosition",
     "ShortenMaxCountEachSkill",
+    "TargetFunctionIndividuality",
+    "TargetBuffIndividuality",
 }
 STRING_DATAVALS = {
     "PopValueText",
     "TriggeredTargetHpRange",
     "TriggeredTargetHpRateRange",
     "DisplayNoEffectCauses",
-    "ChargeHpMaxBeforeBreakGaugeUp",
-    "TargetFunctionIndividuality",
-    "TargetBuffIndividuality",
 }
 STRING_LIST_DATAVALS = {"ApplyValueUp", "CheckOverChargeStageRange"}
 

@@ -594,9 +594,9 @@ class BaseVals(BaseModel):
     ParamAddBattlePointPhaseId: int | None = None
     ParamAddBattlePointPhaseValue: int | None = None
     ShortenMaxCountEachSkill: list[int] | None = None
-    ChargeHpMaxBeforeBreakGaugeUp: str | None = None
-    TargetFunctionIndividuality: str | None = None
-    TargetBuffIndividuality: str | None = None
+    ChargeHpMaxBeforeBreakGaugeUp: int | None = None
+    TargetFunctionIndividuality: list[int] | None = None
+    TargetBuffIndividuality: list[int] | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
