@@ -310,6 +310,7 @@ async def get_nice_servant(
             combine.itemIds, combine.itemNums, combine.qp, item_map
         )
         for combine in raw_svt.mstCombineCostume
+        if combine.costumeId in costume_ids
     }
 
     if raw_svt.mstSvtCoin:

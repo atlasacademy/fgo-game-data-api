@@ -65,7 +65,7 @@ def get_nice_voice_cond(
 ) -> NiceVoiceCond:
     cond_value = (
         costume_ids[cond.value]
-        if cond.condType == VoiceCondType.COSTUME
+        if cond.condType == VoiceCondType.COSTUME and cond.value in costume_ids
         else cond.value
     )
 
