@@ -1174,8 +1174,8 @@ mstShop = Table(
     Column("warningMessage", String),
     Column("imageId", Integer),
     Column("bgImageId", Integer),
-    Column("openedAt", Integer),
-    Column("closedAt", Integer),
+    Column("openedAt", BigInteger),
+    Column("closedAt", BigInteger),
 )
 
 mstShopRelease = Table(
