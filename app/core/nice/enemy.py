@@ -366,6 +366,7 @@ async def get_quest_enemies(
     mstStages: list[MstStage],
     quest_detail: QuestDetail,
     quest_drop: list[QuestDrop],
+    support_user_svts: list[UserSvt],
     lang: Language = Language.jp,
     include_spawn_bonus_enemy: bool = False,
 ) -> QuestEnemies:
@@ -385,9 +386,14 @@ async def get_quest_enemies(
 
     user_svt_id = {svt.id: svt for svt in quest_detail.userSvt}
 
+    support_user_svts = sorted(
+        support_user_svts, key=lambda svt: len(svt.model_dump_json())
+    )
+    all_user_svts = quest_detail.userSvt + support_user_svts
+
     all_skill_ids: set[SkillSvt] = set()
     all_td_ids: set[TdSvt] = set()
-    for user_svt in quest_detail.userSvt:
+    for user_svt in all_user_svts:
         if user_svt.treasureDeviceId != 0:
             all_td_ids.add(TdSvt(user_svt.treasureDeviceId, user_svt.svtId))
         for skill_id in [
@@ -407,7 +413,7 @@ async def get_quest_enemies(
             userSvt.dispLimitCount,
             userSvt.enemyScript.get("imageSvtId") if userSvt.enemyScript else None,
         )
-        for userSvt in quest_detail.userSvt
+        for userSvt in all_user_svts
     ]
 
     all_skills, all_tds, all_svts = await asyncio.gather(
@@ -498,6 +504,31 @@ async def get_quest_enemies(
         }
     else:
         nice_follower = {}
+
+    for i, support_user_svt in enumerate(support_user_svts):
+        if len(quest_detail.userSvt) + i > len(all_svts):
+            break
+        basic_svt = all_svts[len(quest_detail.userSvt) + i]
+        dummy_support_svt_deck = DeckSvt(
+            uniqueId=-1,
+            name=basic_svt.name,
+            roleType=-1,
+            npcId=-1,
+            index=-1,
+            id=-1,
+            userSvtId=-1,
+            isFollowerSvt=True,
+            npcFollowerSvtId=0,
+        )
+        nice_follower[-13 * support_user_svt.svtId] = get_quest_enemy(
+            deck_svt_info=EnemyDeckInfo(DeckType.SVT_FOLLOWER, dummy_support_svt_deck),
+            user_svt=support_user_svt,
+            basic_svt=basic_svt,
+            drops=[],
+            all_enemy_skills=all_skills,
+            all_enemy_tds=all_tds,
+            lang=lang,
+        )
 
     return QuestEnemies(
         enemy_waves=out_enemies, ai_npcs=nice_ai_npc, followers=nice_follower

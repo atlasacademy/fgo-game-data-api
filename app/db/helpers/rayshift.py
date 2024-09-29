@@ -13,7 +13,7 @@ from sqlalchemy.sql.expression import text
 
 from ...core.rayshift import get_quest_enemy_hash
 from ...models.rayshift import rayshiftQuest, rayshiftQuestHash
-from ...schemas.rayshift import CutInSkill, QuestDetail, QuestDrop, QuestList
+from ...schemas.rayshift import CutInSkill, QuestDetail, QuestDrop, QuestList, UserSvt
 from .utils import fetch_one
 
 
@@ -352,6 +352,45 @@ async def get_rayshift_drops(
 
     results = await conn.execute(stmt)
     return [QuestDrop.from_orm(row) for row in results.fetchall()]
+
+
+async def get_all_support_servants(
+    conn: AsyncConnection,
+    quest_id: int,
+    phase: int,
+    questSelect: list[int],
+    questHash: str | None = None,
+    min_query_id: int | None = None,
+) -> list[UserSvt]:
+    select_detail = get_rayshift_select(
+        quest_id=quest_id,
+        phase=phase,
+        questSelect=questSelect,
+        questHash=questHash,
+        min_query_id=min_query_id,
+    )
+
+    user_svt_cte = (
+        select(
+            (
+                func.jsonb_array_elements(
+                    rayshiftQuest.c.questDetail["userSvt"], type_=JSONB
+                )
+                - "id"
+            ).label("user_svt")
+        )
+        .select_from(select_detail.select_from)
+        .where(and_(*select_detail.where_conds))
+        .cte(name="user_svt")
+    )
+    stmt = (
+        select(user_svt_cte.c.user_svt.distinct())
+        .select_from(user_svt_cte)
+        .where(user_svt_cte.c.user_svt["commandCardParam"] != cast("null", JSONB))
+    )
+
+    results = await conn.execute(stmt)
+    return [UserSvt(id=1, **row._asdict()["user_svt"]) for row in results.fetchall()]
 
 
 async def quest_has_cutins(

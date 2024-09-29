@@ -13,6 +13,7 @@ from ...db.helpers import war
 from ...db.helpers.quest import get_questSelect_container
 from ...db.helpers.rayshift import (
     get_all_quest_hashes,
+    get_all_support_servants,
     get_cutin_drops,
     get_cutin_skills,
     get_rayshift_drops,
@@ -569,10 +570,9 @@ async def get_nice_quest_phase(
                 if follower.npcSvtFollowerId in followers:
                     follower.detail = followers[follower.npcSvtFollowerId]
                 else:
-                    for npcSvtFollowerId, quest_enemy in followers.items():
+                    for quest_enemy in followers.values():
                         if (
-                            npcSvtFollowerId == 0
-                            and quest_enemy.svt.id == follower.svt.id
+                            quest_enemy.svt.id == follower.svt.id
                             and quest_enemy.limit.limitCount
                             == follower.limit.limitCount
                         ):
@@ -692,6 +692,12 @@ async def get_nice_quest_phase(
                         conn, redis, region, rayshift_quest_details, lang
                     )
                 else:
+                    if db_data.nice.supportServants:
+                        support_servant_details = await get_all_support_servants(
+                            **rayshift_kwargs  # type:ignore
+                        )
+                    else:
+                        support_servant_details = []
                     quest_enemies = await get_quest_enemies(
                         conn,
                         redis,
@@ -699,6 +705,7 @@ async def get_nice_quest_phase(
                         stages,
                         rayshift_quest_details[0],
                         rayshift_quest_drops,
+                        support_servant_details,
                         lang,
                         include_spawn_bonus_enemy=True,
                     )
