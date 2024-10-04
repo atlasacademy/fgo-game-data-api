@@ -1935,6 +1935,7 @@ class ItemType(IntEnum):
     STORMPOD = 34
     BATTLE_ITEM = 35
     ANIPLEX_PLUS_CHARGE_STONE = 36
+    PURE_PRI_SHOP_RESET = 37
 
 
 class NiceItemType(StrEnum):
@@ -1976,6 +1977,7 @@ class NiceItemType(StrEnum):
     stormpod = "stormpod"
     battleItem = "battleItem"
     aniplexPlusChargeStone = "aniplexPlusChargeStone"
+    purePriShopReset = "purePriShopReset"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -2015,6 +2017,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     34: NiceItemType.stormpod,
     35: NiceItemType.battleItem,
     36: NiceItemType.aniplexPlusChargeStone,
+    37: NiceItemType.purePriShopReset,
 }
 
 

@@ -784,6 +784,7 @@ export enum NiceItemType {
     STORMPOD = "stormpod",
     BATTLE_ITEM = "battleItem",
     ANIPLEX_PLUS_CHARGE_STONE = "aniplexPlusChargeStone",
+    PURE_PRI_SHOP_RESET = "purePriShopReset",
 }
 
 export enum NiceGiftType {
