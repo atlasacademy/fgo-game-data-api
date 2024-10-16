@@ -1954,9 +1954,9 @@ class ItemType(IntEnum):
     EUQIP_SKILL_USE_ITEM = 28
     SVT_COIN = 29
     FRIENDSHIP_UP_ITEM = 30
-    PURE_PRI = 31
+    PP = 31
     TRADE_AP = 32
-    REVIVAL_ITEM = 33
+    RI = 33
     STORMPOD = 34
     BATTLE_ITEM = 35
     ANIPLEX_PLUS_CHARGE_STONE = 36
@@ -1996,9 +1996,9 @@ class NiceItemType(StrEnum):
     euqipSkillUseItem = "euqipSkillUseItem"
     svtCoin = "svtCoin"
     friendshipUpItem = "friendshipUpItem"
-    purePri = "purePri"
+    pp = "pp"
     tradeAp = "tradeAp"
-    revivalItem = "revivalItem"
+    ri = "ri"
     stormpod = "stormpod"
     battleItem = "battleItem"
     aniplexPlusChargeStone = "aniplexPlusChargeStone"
@@ -2036,9 +2036,9 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     28: NiceItemType.euqipSkillUseItem,
     29: NiceItemType.svtCoin,
     30: NiceItemType.friendshipUpItem,
-    31: NiceItemType.purePri,
+    31: NiceItemType.pp,
     32: NiceItemType.tradeAp,
-    33: NiceItemType.revivalItem,
+    33: NiceItemType.ri,
     34: NiceItemType.stormpod,
     35: NiceItemType.battleItem,
     36: NiceItemType.aniplexPlusChargeStone,
@@ -2120,9 +2120,9 @@ class ShopType(IntEnum):
     GRAIL_FRAGMENTS = 10
     SVT_COSTUME = 11
     START_UP_SUMMON = 12
-    PURE_PRI = 13
+    SHOP13 = 13
     TRADE_AP = 14
-    REVIVAL_ITEM = 15
+    SHOP15 = 15
     EVENT_SVT_EQUIP = 16
 
 
@@ -2142,9 +2142,9 @@ class NiceShopType(StrEnum):
     grailFragments = "grailFragments"
     svtCostume = "svtCostume"
     startUpSummon = "startUpSummon"
-    purePri = "purePri"
+    shop13 = "shop13"
     tradeAp = "tradeAp"
-    revivalItem = "revivalItem"
+    shop15 = "shop15"
     eventSvtEquip = "eventSvtEquip"
 
 
@@ -2162,9 +2162,9 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     10: NiceShopType.grailFragments,
     11: NiceShopType.svtCostume,
     12: NiceShopType.startUpSummon,
-    13: NiceShopType.purePri,
+    13: NiceShopType.shop13,
     14: NiceShopType.tradeAp,
-    15: NiceShopType.revivalItem,
+    15: NiceShopType.shop15,
     16: NiceShopType.eventSvtEquip,
 }
 
