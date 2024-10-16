@@ -2130,3 +2130,17 @@ export enum NiceWarReleaseDisplayType {
     CLOSE = "close",
     ANNOUNCEMENT = "announcement",
 }
+
+export enum NiceGainNpIndividualSumTarget {
+    SELF = "self",
+    PLAYER = "player",
+    ENEMY = "enemy",
+    ALL = "all",
+    OTHER_ALL = "otherAll",
+}
+
+export enum NiceSvtClassGroupType {
+    NORMAL = "normal",
+    OTHER = "other",
+    ALL = "all",
+}

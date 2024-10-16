@@ -1954,9 +1954,9 @@ class ItemType(IntEnum):
     EUQIP_SKILL_USE_ITEM = 28
     SVT_COIN = 29
     FRIENDSHIP_UP_ITEM = 30
-    PP = 31
+    PURE_PRI = 31
     TRADE_AP = 32
-    RI = 33
+    REVIVAL_ITEM = 33
     STORMPOD = 34
     BATTLE_ITEM = 35
     ANIPLEX_PLUS_CHARGE_STONE = 36
@@ -1996,9 +1996,9 @@ class NiceItemType(StrEnum):
     euqipSkillUseItem = "euqipSkillUseItem"
     svtCoin = "svtCoin"
     friendshipUpItem = "friendshipUpItem"
-    pp = "pp"
+    purePri = "purePri"
     tradeAp = "tradeAp"
-    ri = "ri"
+    revivalItem = "revivalItem"
     stormpod = "stormpod"
     battleItem = "battleItem"
     aniplexPlusChargeStone = "aniplexPlusChargeStone"
@@ -2036,9 +2036,9 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     28: NiceItemType.euqipSkillUseItem,
     29: NiceItemType.svtCoin,
     30: NiceItemType.friendshipUpItem,
-    31: NiceItemType.pp,
+    31: NiceItemType.purePri,
     32: NiceItemType.tradeAp,
-    33: NiceItemType.ri,
+    33: NiceItemType.revivalItem,
     34: NiceItemType.stormpod,
     35: NiceItemType.battleItem,
     36: NiceItemType.aniplexPlusChargeStone,
@@ -2120,9 +2120,9 @@ class ShopType(IntEnum):
     GRAIL_FRAGMENTS = 10
     SVT_COSTUME = 11
     START_UP_SUMMON = 12
-    SHOP13 = 13
+    PURE_PRI = 13
     TRADE_AP = 14
-    SHOP15 = 15
+    REVIVAL_ITEM = 15
     EVENT_SVT_EQUIP = 16
 
 
@@ -2142,9 +2142,9 @@ class NiceShopType(StrEnum):
     grailFragments = "grailFragments"
     svtCostume = "svtCostume"
     startUpSummon = "startUpSummon"
-    shop13 = "shop13"
+    purePri = "purePri"
     tradeAp = "tradeAp"
-    shop15 = "shop15"
+    revivalItem = "revivalItem"
     eventSvtEquip = "eventSvtEquip"
 
 
@@ -2162,9 +2162,9 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     10: NiceShopType.grailFragments,
     11: NiceShopType.svtCostume,
     12: NiceShopType.startUpSummon,
-    13: NiceShopType.shop13,
+    13: NiceShopType.purePri,
     14: NiceShopType.tradeAp,
-    15: NiceShopType.shop15,
+    15: NiceShopType.revivalItem,
     16: NiceShopType.eventSvtEquip,
 }
 
@@ -6226,4 +6226,52 @@ WAR_RELEASE_DISPLAY_TYPE_NAME: dict[int, NiceWarReleaseDisplayType] = {
     1: NiceWarReleaseDisplayType.open,
     2: NiceWarReleaseDisplayType.close,
     3: NiceWarReleaseDisplayType.announcement,
+}
+
+
+class GainNpIndividualSumGainIndividualTarget(IntEnum):
+    SELF = 0
+    PLAYER = 1
+    ENEMY = 2
+    ALL = 3
+    OTHER_ALL = 4
+
+
+class NiceGainNpIndividualSumTarget(StrEnum):
+    """Gain NP Individual Sum Target"""
+
+    self_ = "self"
+    player = "player"
+    enemy = "enemy"
+    all = "all"
+    otherAll = "otherAll"
+
+
+GAIN_NP_INDIVIDUAL_SUM_TARGET_NAME: dict[int, NiceGainNpIndividualSumTarget] = {
+    0: NiceGainNpIndividualSumTarget.self_,
+    1: NiceGainNpIndividualSumTarget.player,
+    2: NiceGainNpIndividualSumTarget.enemy,
+    3: NiceGainNpIndividualSumTarget.all,
+    4: NiceGainNpIndividualSumTarget.otherAll,
+}
+
+
+class SvtClassGroupType(IntEnum):
+    NORMAL = 1
+    OTHER = 2
+    ALL = 3
+
+
+class NiceSvtClassGroupType(StrEnum):
+    """Svt Class Group Type"""
+
+    normal = "normal"
+    other = "other"
+    all = "all"
+
+
+SVT_CLASS_GROUP_TYPE_NAME: dict[int, NiceSvtClassGroupType] = {
+    1: NiceSvtClassGroupType.normal,
+    2: NiceSvtClassGroupType.other,
+    3: NiceSvtClassGroupType.all,
 }

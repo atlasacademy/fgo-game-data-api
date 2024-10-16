@@ -673,6 +673,20 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "War Release Display Type",
         "WAR_RELEASE_DISPLAY_TYPE_NAME",
     ),
+    (
+        "GainNpIndividualSum.GainIndividualTarget",
+        "GainNpIndividualSumGainIndividualTarget",
+        "NiceGainNpIndividualSumTarget",
+        "Gain NP Individual Sum Target",
+        "GAIN_NP_INDIVIDUAL_SUM_TARGET_NAME",
+    ),
+    (
+        "SvtClassGroupType.TYPE",
+        "SvtClassGroupType",
+        "NiceSvtClassGroupType",
+        "Svt Class Group Type",
+        "SVT_CLASS_GROUP_TYPE_NAME",
+    ),
 ]
 
 

@@ -121,6 +121,7 @@ FUNC_VALS_NOT_BUFF = {
     FuncType.EVENT_DROP_UP,
     FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
     FuncType.GAIN_NP_INDIVIDUAL_SUM,
+    FuncType.GAIN_NP_TARGET_SUM,
 }
 
 
@@ -1027,6 +1028,7 @@ class Trait(StrEnum):
     notProtectedByBBDubai = "notProtectedByBBDubai"
     canFlyInSpace = "canFlyInSpace"
     buffSpecialInvinciblePierce = "buffSpecialInvinciblePierce"
+    sakuraSeries = "sakuraSeries"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1240,6 +1242,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2922: Trait.hasSupereffectiveNPAgainstAlignmentGood,
     2923: Trait.hasSupereffectiveNPAgainstAlignmentEvil,
     2924: Trait.canFlyInSpace,
+    2925: Trait.sakuraSeries,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
