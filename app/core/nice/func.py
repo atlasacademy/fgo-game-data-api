@@ -72,6 +72,7 @@ LIST_DATAVALS = {
     "ShortenMaxCountEachSkill",
     "TargetFunctionIndividuality",
     "TargetBuffIndividuality",
+    "TargetEnemyClass",
 }
 STRING_DATAVALS = {
     "PopValueText",

@@ -157,6 +157,7 @@ export enum NiceFuncType {
     DAMAGE_NP_BATTLE_POINT_PHASE = "damageNpBattlePointPhase",
     SET_NP_EXECUTED_STATE = "setNpExecutedState",
     HIDE_OVER_GAUGE = "hideOverGauge",
+    GAIN_NP_TARGET_SUM = "gainNpTargetSum",
 }
 
 export enum NiceFuncTargetType {
@@ -196,6 +197,7 @@ export enum NiceFuncTargetType {
 
 export enum NiceBuffType {
     NONE = "none",
+    INVALID = "invalid",
     UP_COMMANDATK = "upCommandatk",
     UP_STARWEIGHT = "upStarweight",
     UP_CRITICALPOINT = "upCriticalpoint",
@@ -389,6 +391,7 @@ export enum NiceBuffType {
     PIERCE_SPECIAL_INVINCIBLE = "pierceSpecialInvincible",
     FUNCTIONED_FUNCTION = "functionedFunction",
     DONOT_ACT_COMMANDCARD = "donotActCommandcard",
+    UP_NPDAMAGE_INDIVIDUALITY_SUM = "upNpdamageIndividualitySum",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -542,6 +545,7 @@ export enum NiceBuffAction {
     PIERCE_SPECIAL_INVINCIBLE = "pierceSpecialInvincible",
     FUNCTIONED_FUNCTION = "functionedFunction",
     DONOT_ACT_COMMANDCARD = "donotActCommandcard",
+    NPDAMAGE_INDIVIDUALITY = "npdamageIndividuality",
 }
 
 export enum NiceBuffLimit {
@@ -739,6 +743,19 @@ export enum NiceDataValsType {
     ChargeHpMaxBeforeBreakGaugeUp = "chargehpmaxbeforebreakgaugeup",
     TargetFunctionIndividuality = "targetfunctionindividuality",
     TargetBuffIndividuality = "targetbuffindividuality",
+    TargetEnemyClass = "targetenemyclass",
+    ParamAddIndividualityTargetType = "paramaddindividualitytargettype",
+    TriggeredFuncIndexAndCheckList = "triggeredfuncindexandchecklist",
+    FuncCheckTargetIndividualityTargetType = "funcchecktargetindividualitytargettype",
+    FuncCheckTargetIndividualityCountHigher = "funcchecktargetindividualitycounthigher",
+    FuncCheckTargetIndividualityCountLower = "funcchecktargetindividualitycountlower",
+    FuncCheckTargetIndividualityCountEqual = "funcchecktargetindividualitycountequal",
+    ParamAddSelfIndividualityAndCheck = "paramaddselfindividualityandcheck",
+    ParamAddOpIndividualityAndCheck = "paramaddopindividualityandcheck",
+    ParamAddFieldIndividualityAndCheck = "paramaddfieldindividualityandcheck",
+    SnapShotParamAddSelfIndividualityAndCheck = "snapshotparamaddselfindividualityandcheck",
+    SnapShotParamAddOpIndividualityAndCheck = "snapshotparamaddopindividualityandcheck",
+    SnapShotParamAddFieldIndividualityAndCheck = "snapshotparamaddfieldindividualityandcheck",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -778,9 +795,9 @@ export enum NiceItemType {
     EUQIP_SKILL_USE_ITEM = "euqipSkillUseItem",
     SVT_COIN = "svtCoin",
     FRIENDSHIP_UP_ITEM = "friendshipUpItem",
-    PP = "pp",
+    PURE_PRI = "purePri",
     TRADE_AP = "tradeAp",
-    RI = "ri",
+    REVIVAL_ITEM = "revivalItem",
     STORMPOD = "stormpod",
     BATTLE_ITEM = "battleItem",
     ANIPLEX_PLUS_CHARGE_STONE = "aniplexPlusChargeStone",
@@ -820,9 +837,9 @@ export enum NiceShopType {
     GRAIL_FRAGMENTS = "grailFragments",
     SVT_COSTUME = "svtCostume",
     START_UP_SUMMON = "startUpSummon",
-    SHOP13 = "shop13",
+    PURE_PRI = "purePri",
     TRADE_AP = "tradeAp",
-    SHOP15 = "shop15",
+    REVIVAL_ITEM = "revivalItem",
     EVENT_SVT_EQUIP = "eventSvtEquip",
 }
 
@@ -1190,6 +1207,7 @@ export enum NiceQuestType {
     EVENT = "event",
     HEROBALLAD = "heroballad",
     WAR_BOARD = "warBoard",
+    AUTO_EXECUTE = "autoExecute",
 }
 
 export enum NiceConsumeType {
@@ -1699,10 +1717,10 @@ export enum NiceSvtFrameType {
     BRONZE = "bronze",
     SILVER = "silver",
     GOLD = "gold",
-    FRAME_0801 = "frame0801",
-    FRAME_0802 = "frame0802",
-    FRAME_0803 = "frame0803",
-    FRAME_0804 = "frame0804",
+    GOLD_RED = "goldRed",
+    GOLD_RED_GREAT = "goldRedGreat",
+    GOLD_BLACK = "goldBlack",
+    GOLD_BLACK_GREAT = "goldBlackGreat",
 }
 
 export enum NiceCommonConsumeType {

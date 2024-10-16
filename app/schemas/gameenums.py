@@ -270,6 +270,7 @@ class FuncType(IntEnum):
     DAMAGE_NP_BATTLE_POINT_PHASE = 143
     SET_NP_EXECUTED_STATE = 144
     HIDE_OVER_GAUGE = 145
+    GAIN_NP_TARGET_SUM = 146
 
 
 class NiceFuncType(StrEnum):
@@ -384,6 +385,7 @@ class NiceFuncType(StrEnum):
     damageNpBattlePointPhase = "damageNpBattlePointPhase"
     setNpExecutedState = "setNpExecutedState"
     hideOverGauge = "hideOverGauge"
+    gainNpTargetSum = "gainNpTargetSum"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -496,6 +498,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     143: NiceFuncType.damageNpBattlePointPhase,
     144: NiceFuncType.setNpExecutedState,
     145: NiceFuncType.hideOverGauge,
+    146: NiceFuncType.gainNpTargetSum,
 }
 
 
@@ -609,6 +612,7 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
 
 class BuffType(IntEnum):
     NONE = 0
+    INVALID = -1
     UP_COMMANDATK = 1
     UP_STARWEIGHT = 2
     UP_CRITICALPOINT = 3
@@ -802,6 +806,7 @@ class BuffType(IntEnum):
     PIERCE_SPECIAL_INVINCIBLE = 207
     FUNCTIONED_FUNCTION = 208
     DONOT_ACT_COMMANDCARD = 209
+    UP_NPDAMAGE_INDIVIDUALITY_SUM = 210
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -811,6 +816,7 @@ class NiceBuffType(StrEnum):
     """Buff Type Enum"""
 
     none = "none"
+    invalid = "invalid"
     upCommandatk = "upCommandatk"
     upStarweight = "upStarweight"
     upCriticalpoint = "upCriticalpoint"
@@ -1004,6 +1010,7 @@ class NiceBuffType(StrEnum):
     pierceSpecialInvincible = "pierceSpecialInvincible"
     functionedFunction = "functionedFunction"
     donotActCommandcard = "donotActCommandcard"
+    upNpdamageIndividualitySum = "upNpdamageIndividualitySum"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1011,6 +1018,7 @@ class NiceBuffType(StrEnum):
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     0: NiceBuffType.none,
+    -1: NiceBuffType.invalid,
     1: NiceBuffType.upCommandatk,
     2: NiceBuffType.upStarweight,
     3: NiceBuffType.upCriticalpoint,
@@ -1204,6 +1212,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     207: NiceBuffType.pierceSpecialInvincible,
     208: NiceBuffType.functionedFunction,
     209: NiceBuffType.donotActCommandcard,
+    210: NiceBuffType.upNpdamageIndividualitySum,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1358,6 +1367,7 @@ class BuffAction(IntEnum):
     PIERCE_SPECIAL_INVINCIBLE = 144
     FUNCTIONED_FUNCTION = 145
     DONOT_ACT_COMMANDCARD = 146
+    NPDAMAGE_INDIVIDUALITY = 147
 
 
 class NiceBuffAction(StrEnum):
@@ -1510,6 +1520,7 @@ class NiceBuffAction(StrEnum):
     pierceSpecialInvincible = "pierceSpecialInvincible"
     functionedFunction = "functionedFunction"
     donotActCommandcard = "donotActCommandcard"
+    npdamageIndividuality = "npdamageIndividuality"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1660,6 +1671,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     144: NiceBuffAction.pierceSpecialInvincible,
     145: NiceBuffAction.functionedFunction,
     146: NiceBuffAction.donotActCommandcard,
+    147: NiceBuffAction.npdamageIndividuality,
 }
 
 
@@ -1875,6 +1887,19 @@ class DataValsType(IntEnum):
     ChargeHpMaxBeforeBreakGaugeUp = 184
     TargetFunctionIndividuality = 185
     TargetBuffIndividuality = 186
+    TargetEnemyClass = 187
+    ParamAddIndividualityTargetType = 188
+    TriggeredFuncIndexAndCheckList = 189
+    FuncCheckTargetIndividualityTargetType = 190
+    FuncCheckTargetIndividualityCountHigher = 191
+    FuncCheckTargetIndividualityCountLower = 192
+    FuncCheckTargetIndividualityCountEqual = 193
+    ParamAddSelfIndividualityAndCheck = 194
+    ParamAddOpIndividualityAndCheck = 195
+    ParamAddFieldIndividualityAndCheck = 196
+    SnapShotParamAddSelfIndividualityAndCheck = 197
+    SnapShotParamAddOpIndividualityAndCheck = 198
+    SnapShotParamAddFieldIndividualityAndCheck = 199
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1929,9 +1954,9 @@ class ItemType(IntEnum):
     EUQIP_SKILL_USE_ITEM = 28
     SVT_COIN = 29
     FRIENDSHIP_UP_ITEM = 30
-    PP = 31
+    PURE_PRI = 31
     TRADE_AP = 32
-    RI = 33
+    REVIVAL_ITEM = 33
     STORMPOD = 34
     BATTLE_ITEM = 35
     ANIPLEX_PLUS_CHARGE_STONE = 36
@@ -1971,9 +1996,9 @@ class NiceItemType(StrEnum):
     euqipSkillUseItem = "euqipSkillUseItem"
     svtCoin = "svtCoin"
     friendshipUpItem = "friendshipUpItem"
-    pp = "pp"
+    purePri = "purePri"
     tradeAp = "tradeAp"
-    ri = "ri"
+    revivalItem = "revivalItem"
     stormpod = "stormpod"
     battleItem = "battleItem"
     aniplexPlusChargeStone = "aniplexPlusChargeStone"
@@ -2011,9 +2036,9 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     28: NiceItemType.euqipSkillUseItem,
     29: NiceItemType.svtCoin,
     30: NiceItemType.friendshipUpItem,
-    31: NiceItemType.pp,
+    31: NiceItemType.purePri,
     32: NiceItemType.tradeAp,
-    33: NiceItemType.ri,
+    33: NiceItemType.revivalItem,
     34: NiceItemType.stormpod,
     35: NiceItemType.battleItem,
     36: NiceItemType.aniplexPlusChargeStone,
@@ -2095,9 +2120,9 @@ class ShopType(IntEnum):
     GRAIL_FRAGMENTS = 10
     SVT_COSTUME = 11
     START_UP_SUMMON = 12
-    SHOP13 = 13
+    PURE_PRI = 13
     TRADE_AP = 14
-    SHOP15 = 15
+    REVIVAL_ITEM = 15
     EVENT_SVT_EQUIP = 16
 
 
@@ -2117,9 +2142,9 @@ class NiceShopType(StrEnum):
     grailFragments = "grailFragments"
     svtCostume = "svtCostume"
     startUpSummon = "startUpSummon"
-    shop13 = "shop13"
+    purePri = "purePri"
     tradeAp = "tradeAp"
-    shop15 = "shop15"
+    revivalItem = "revivalItem"
     eventSvtEquip = "eventSvtEquip"
 
 
@@ -2137,9 +2162,9 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     10: NiceShopType.grailFragments,
     11: NiceShopType.svtCostume,
     12: NiceShopType.startUpSummon,
-    13: NiceShopType.shop13,
+    13: NiceShopType.purePri,
     14: NiceShopType.tradeAp,
-    15: NiceShopType.shop15,
+    15: NiceShopType.revivalItem,
     16: NiceShopType.eventSvtEquip,
 }
 
@@ -3230,6 +3255,7 @@ class QuestType(IntEnum):
     EVENT = 5
     HEROBALLAD = 6
     WAR_BOARD = 7
+    AUTO_EXECUTE = 8
 
 
 class NiceQuestType(StrEnum):
@@ -3241,6 +3267,7 @@ class NiceQuestType(StrEnum):
     event = "event"
     heroballad = "heroballad"
     warBoard = "warBoard"
+    autoExecute = "autoExecute"
 
 
 QUEST_TYPE_NAME: dict[int, NiceQuestType] = {
@@ -3250,6 +3277,7 @@ QUEST_TYPE_NAME: dict[int, NiceQuestType] = {
     5: NiceQuestType.event,
     6: NiceQuestType.heroballad,
     7: NiceQuestType.warBoard,
+    8: NiceQuestType.autoExecute,
 }
 
 
@@ -4833,10 +4861,10 @@ class SvtFrameType(IntEnum):
     BRONZE = 1
     SILVER = 2
     GOLD = 3
-    FRAME_0801 = 4
-    FRAME_0802 = 5
-    FRAME_0803 = 6
-    FRAME_0804 = 7
+    GOLD_RED = 4
+    GOLD_RED_GREAT = 5
+    GOLD_BLACK = 6
+    GOLD_BLACK_GREAT = 7
 
 
 class NiceSvtFrameType(StrEnum):
@@ -4846,10 +4874,10 @@ class NiceSvtFrameType(StrEnum):
     bronze = "bronze"
     silver = "silver"
     gold = "gold"
-    frame0801 = "frame0801"
-    frame0802 = "frame0802"
-    frame0803 = "frame0803"
-    frame0804 = "frame0804"
+    goldRed = "goldRed"
+    goldRedGreat = "goldRedGreat"
+    goldBlack = "goldBlack"
+    goldBlackGreat = "goldBlackGreat"
 
 
 SERVANT_FRAME_TYPE_NAME: dict[int, NiceSvtFrameType] = {
@@ -4857,10 +4885,10 @@ SERVANT_FRAME_TYPE_NAME: dict[int, NiceSvtFrameType] = {
     1: NiceSvtFrameType.bronze,
     2: NiceSvtFrameType.silver,
     3: NiceSvtFrameType.gold,
-    4: NiceSvtFrameType.frame0801,
-    5: NiceSvtFrameType.frame0802,
-    6: NiceSvtFrameType.frame0803,
-    7: NiceSvtFrameType.frame0804,
+    4: NiceSvtFrameType.goldRed,
+    5: NiceSvtFrameType.goldRedGreat,
+    6: NiceSvtFrameType.goldBlack,
+    7: NiceSvtFrameType.goldBlackGreat,
 }
 
 
