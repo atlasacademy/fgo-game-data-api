@@ -597,19 +597,19 @@ class BaseVals(BaseModel):
     ChargeHpMaxBeforeBreakGaugeUp: int | None = None
     TargetFunctionIndividuality: list[int] | None = None
     TargetBuffIndividuality: list[int] | None = None
-    TargetEnemyClass: list[int] | None = None
+    TargetEnemyClass: int | None = None
     ParamAddIndividualityTargetType: int | None = None
-    TriggeredFuncIndexAndCheckList: int | None = None
+    TriggeredFuncIndexAndCheckList: list[int] | None = None
     FuncCheckTargetIndividualityTargetType: int | None = None
     FuncCheckTargetIndividualityCountHigher: int | None = None
     FuncCheckTargetIndividualityCountLower: int | None = None
     FuncCheckTargetIndividualityCountEqual: int | None = None
-    ParamAddSelfIndividualityAndCheck: int | None = None
-    ParamAddOpIndividualityAndCheck: int | None = None
-    ParamAddFieldIndividualityAndCheck: int | None = None
-    SnapShotParamAddSelfIndividualityAndCheck: int | None = None
-    SnapShotParamAddOpIndividualityAndCheck: int | None = None
-    SnapShotParamAddFieldIndividualityAndCheck: int | None = None
+    ParamAddSelfIndividualityAndCheck: list[list[int]] | None = None
+    ParamAddOpIndividualityAndCheck: list[list[int]] | None = None
+    ParamAddFieldIndividualityAndCheck: list[list[int]] | None = None
+    SnapShotParamAddSelfIndividualityAndCheck: list[list[int]] | None = None
+    SnapShotParamAddOpIndividualityAndCheck: list[list[int]] | None = None
+    SnapShotParamAddFieldIndividualityAndCheck: list[list[int]] | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

@@ -72,7 +72,15 @@ LIST_DATAVALS = {
     "ShortenMaxCountEachSkill",
     "TargetFunctionIndividuality",
     "TargetBuffIndividuality",
-    "TargetEnemyClass",
+    "TriggeredFuncIndexAndCheckList",
+}
+LIST_2D_DATAVALS = {
+    "ParamAddSelfIndividualityAndCheck",
+    "ParamAddOpIndividualityAndCheck",
+    "ParamAddFieldIndividualityAndCheck",
+    "SnapShotParamAddSelfIndividualityAndCheck",
+    "SnapShotParamAddOpIndividualityAndCheck",
+    "SnapShotParamAddFieldIndividualityAndCheck",
 }
 STRING_DATAVALS = {
     "PopValueText",
@@ -88,6 +96,7 @@ DataValType = dict[
     int
     | str
     | list[int]
+    | list[list[int]]
     | list[str]
     | dict[str, Any]
     | list[ValDamageRateBattlePointPhase]
@@ -256,6 +265,16 @@ async def parse_dataVals(
                     elif array2[0] in LIST_DATAVALS:
                         try:
                             output[array2[0]] = [int(i) for i in array2[1].split("/")]
+                        except ValueError:
+                            logger.error(
+                                f"Failed to parse list datavals: {array2[1]} of {arrayi}"
+                            )
+                    elif array2[0] in LIST_2D_DATAVALS:
+                        try:
+                            output[array2[0]] = [
+                                [int(i) for i in arrayi.split("/")]
+                                for arrayi in array2[1].split("|")
+                            ]
                         except ValueError:
                             logger.error(
                                 f"Failed to parse list datavals: {array2[1]} of {arrayi}"
