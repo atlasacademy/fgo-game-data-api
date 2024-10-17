@@ -2315,6 +2315,7 @@ mstClosedMessage = Table(
     metadata,
     Column("id", Integer, primary_key=True),
     Column("message", String),
+    Column("overwriteQuestName", String),
     Column("leftIndent", Integer),
     Column("flag", Integer),
 )

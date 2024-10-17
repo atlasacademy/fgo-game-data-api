@@ -1938,6 +1938,7 @@ class MstQuestConsumeItem(BaseModelORJson):
 class MstClosedMessage(BaseModelORJson):
     id: int
     message: str
+    overwriteQuestName: str | None = None
     leftIndent: int | None = None
     flag: int | None = None
 
