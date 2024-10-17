@@ -7,7 +7,7 @@ import aiofiles
 from pydantic import DirectoryPath
 
 from ..config import logger, project_root
-from ..core.utils import get_traits_list
+from ..core.utils import get_nice_trait, get_traits_list
 from ..schemas.common import Region
 from ..schemas.enums import CLASS_NAME, TRAIT_NAME, Trait, get_class_name
 from ..schemas.gameenums import (
@@ -52,6 +52,10 @@ def get_nice_class(raw_data: Any) -> Any:
             "id": class_data["id"],
             "className": get_class_name(class_data["id"]),
             "name": class_data["name"],
+            "relationSvtIndividuality": [
+                get_nice_trait(i).model_dump(mode="json", exclude_unset=True)
+                for i in class_data.get("relationSvtIndividuality", [])
+            ],
             "individuality": (
                 TRAIT_NAME.get(class_data["individuality"], Trait.unknown)
                 if class_data["individuality"]
