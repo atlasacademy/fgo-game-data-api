@@ -1692,5 +1692,16 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "NPDAMAGE_INDIVIDUALITY": {
+    "limit": 1,
+    "plusTypes": [
+      210
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
   }
 }
