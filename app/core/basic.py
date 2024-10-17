@@ -468,7 +468,9 @@ async def get_basic_svt(
     svtExtra = await pydantic_object.fetch_id(redis, region, MstSvtExtra, svt_id)
 
     if not svtExtra:  # pragma: no cover
-        raise HTTPException(status_code=404, detail="Svt not found")
+        raise HTTPException(
+            status_code=404, detail=f"Svt extra {region} {svt_id} not found"
+        )
 
     if not mstSvt:
         mstSvt = svtExtra.mstSvt
@@ -476,7 +478,9 @@ async def get_basic_svt(
     mstSvtLimit = select_mstSvtLimit(svtExtra.limits, svt_limit, mstSvt.isServant())
 
     if not mstSvtLimit:  # pragma: no cover
-        raise HTTPException(status_code=404, detail="Svt limit not found")
+        raise HTTPException(
+            status_code=404, detail=f"Svt limit {region} {svt_id} not found"
+        )
 
     basic_servant = {
         "id": svt_id,
