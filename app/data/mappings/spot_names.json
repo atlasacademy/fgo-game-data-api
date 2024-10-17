@@ -281,7 +281,7 @@
   "機神回廊": "Machina Corridor",
   "大祭壇": "Great Altar",
   "地下機構帯・外周部": "Underground Structure",
-  "離宮": "Detached Palace",
+  "離宮": "Palace Annex",
   "都市山脈・上空": "Mountain Range City, Aerial",
   "七条四坊": "Shichijou Shi-bou",
   "七条二坊": "Shichijou Ni-bou",
@@ -1427,5 +1427,13 @@
   "ドバイ・ビーチ": "Dubai Beach",
   "ドバイ・モール": "Dubai Mall",
   "ビジネス街": "Business District",
-  "郊外の砂漠": "Desert Suburbs"
+  "郊外の砂漠": "Desert Suburbs",
+  "スタートマス": "スタートマス",
+  "第１ＣＰ": "第１ＣＰ",
+  "第２ＣＰ": "第２ＣＰ",
+  "第３ＣＰ": "第３ＣＰ",
+  "第４ＣＰ": "第４ＣＰ",
+  "第５ＣＰ": "第５ＣＰ",
+  "ゴールマス": "ゴールマス",
+  "バトルマス": "バトルマス"
 }
