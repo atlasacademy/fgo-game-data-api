@@ -167,6 +167,7 @@ async def parse_dataVals(
                 elif functype in {
                     FuncType.SUB_STATE,
                     FuncType.GAIN_NP_INDIVIDUAL_SUM,
+                    FuncType.GAIN_NP_TARGET_SUM,
                     FuncType.SUB_FIELD_BUFF,
                     FuncType.SHORTEN_SKILL,
                     FuncType.EXTEND_SKILL,
