@@ -1,7 +1,13 @@
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import func, select
 
-from ...models.raw import mstGacha, mstGachaStoryAdjust, viewGachaFeaturedSvt
+from ...models.raw import (
+    mstCommonRelease,
+    mstGacha,
+    mstGachaStoryAdjust,
+    mstGachaSub,
+    viewGachaFeaturedSvt,
+)
 from ...schemas.raw import GachaEntity
 from .utils import sql_jsonb_agg
 
@@ -9,11 +15,16 @@ from .utils import sql_jsonb_agg
 SELECT_GACHA_ENTITY = select(
     func.to_jsonb(mstGacha.table_valued()).label(mstGacha.name),
     sql_jsonb_agg(mstGachaStoryAdjust),
+    sql_jsonb_agg(mstGachaSub),
+    sql_jsonb_agg(mstCommonRelease),
     sql_jsonb_agg(viewGachaFeaturedSvt),
 ).select_from(
     mstGacha.outerjoin(
         mstGachaStoryAdjust, mstGacha.c.id == mstGachaStoryAdjust.c.gachaId
-    ).outerjoin(viewGachaFeaturedSvt, mstGacha.c.id == viewGachaFeaturedSvt.c.gachaId)
+    )
+    .outerjoin(mstGachaSub, mstGacha.c.id == mstGachaSub.c.gachaId)
+    .outerjoin(mstCommonRelease, mstGachaSub.c.commonReleaseId == mstCommonRelease.c.id)
+    .outerjoin(viewGachaFeaturedSvt, mstGacha.c.id == viewGachaFeaturedSvt.c.gachaId)
 )
 
 
