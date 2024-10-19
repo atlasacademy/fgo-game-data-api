@@ -1099,6 +1099,18 @@ class MstGachaStoryAdjust(BaseModelORJson):
     imageId: int
 
 
+class MstGachaSub(BaseModelORJson):
+    script: dict[str, Any] | None = None
+    gachaId: int
+    id: int
+    priority: int
+    imageId: int
+    adjustAddId: int
+    openedAt: int
+    closedAt: int
+    commonReleaseId: int
+
+
 class ViewGachaFeaturedSvt(BaseModelORJson):
     gachaId: int
     svtIds: list[int]
@@ -2579,7 +2591,9 @@ class ClassBoardEntity(BaseModelORJson):
 class GachaEntity(BaseModelORJson):
     mstGacha: MstGacha
     mstGachaStoryAdjust: list[MstGachaStoryAdjust]
+    mstGachaSub: list[MstGachaSub]
     viewGachaFeaturedSvt: list[ViewGachaFeaturedSvt]
+    mstCommonRelease: list[MstCommonRelease]
 
 
 class AssetStorageLine(BaseModelORJson):

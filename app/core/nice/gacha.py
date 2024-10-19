@@ -2,10 +2,16 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...schemas.common import Language
 from ...schemas.gameenums import COND_TYPE_NAME, GACHA_FLAG_NAME, PAY_TYPE_NAME
-from ...schemas.nice import GachaStoryAdjust, NiceGacha
-from ...schemas.raw import GachaEntity, MstGachaStoryAdjust
+from ...schemas.nice import GachaStoryAdjust, NiceGacha, NiceGachaSub
+from ...schemas.raw import (
+    GachaEntity,
+    MstCommonRelease,
+    MstGachaStoryAdjust,
+    MstGachaSub,
+)
 from ..raw import get_gacha_entity
 from ..utils import get_flags, get_translation
+from .common_release import get_nice_common_release
 
 
 def get_nice_gacha_story_adjust(gacha_story: MstGachaStoryAdjust) -> GachaStoryAdjust:
@@ -16,6 +22,26 @@ def get_nice_gacha_story_adjust(gacha_story: MstGachaStoryAdjust) -> GachaStoryA
         targetId=gacha_story.targetId,
         value=gacha_story.value,
         imageId=gacha_story.imageId,
+    )
+
+
+def get_nice_gacha_sub(
+    gacha_sub: MstGachaSub,
+    raw_releases: list[MstCommonRelease],
+) -> NiceGachaSub:
+    return NiceGachaSub(
+        id=gacha_sub.id,
+        priority=gacha_sub.priority,
+        imageId=gacha_sub.imageId,
+        adjustAddId=gacha_sub.adjustAddId,
+        openedAt=gacha_sub.openedAt,
+        closedAt=gacha_sub.closedAt,
+        releaseConditions=[
+            get_nice_common_release(release)
+            for release in raw_releases
+            if release.id == gacha_sub.commonReleaseId
+        ],
+        script=gacha_sub.script,
     )
 
 
@@ -36,6 +62,10 @@ def get_nice_gacha(gacha: GachaEntity, lang: Language = Language.jp) -> NiceGach
         flags=get_flags(gacha.mstGacha.flag, GACHA_FLAG_NAME),
         storyAdjusts=[
             get_nice_gacha_story_adjust(story) for story in gacha.mstGachaStoryAdjust
+        ],
+        gachaSubs=[
+            get_nice_gacha_sub(gacha_sub, gacha.mstCommonRelease)
+            for gacha_sub in gacha.mstGachaSub
         ],
         featuredSvtIds=(
             gacha.viewGachaFeaturedSvt[0].svtIds if gacha.viewGachaFeaturedSvt else []

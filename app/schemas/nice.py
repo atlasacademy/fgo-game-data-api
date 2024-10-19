@@ -3150,6 +3150,17 @@ class GachaStoryAdjust(BaseModelORJson):
     imageId: int
 
 
+class NiceGachaSub(BaseModelORJson):
+    id: int
+    priority: int
+    imageId: int
+    adjustAddId: int
+    openedAt: int
+    closedAt: int
+    releaseConditions: list[NiceCommonRelease]
+    script: dict[str, Any] | None = None
+
+
 class NiceGacha(BaseModelORJson):
     id: int
     name: str
@@ -3165,4 +3176,5 @@ class NiceGacha(BaseModelORJson):
     detailUrl: str
     flags: list[NiceGachaFlag]
     storyAdjusts: list[GachaStoryAdjust]
+    gachaSubs: list[NiceGachaSub]
     featuredSvtIds: list[int]
