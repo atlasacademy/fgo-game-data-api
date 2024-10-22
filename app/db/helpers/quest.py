@@ -38,6 +38,7 @@ from ...models.raw import (
     mstQuestMessage,
     mstQuestPhase,
     mstQuestPhaseDetail,
+    mstQuestPhaseIndividuality,
     mstQuestPhasePresent,
     mstQuestRelease,
     mstQuestReleaseOverwrite,
@@ -646,6 +647,13 @@ async def get_quest_phase_entity(
                 mstQuestPhase.c.phase == mstQuestPhasePresent.c.phase,
             ),
         )
+        .outerjoin(
+            mstQuestPhaseIndividuality,
+            and_(
+                mstQuest.c.id == mstQuestPhaseIndividuality.c.questId,
+                mstQuestPhase.c.phase == mstQuestPhaseIndividuality.c.phase,
+            ),
+        )
         .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
         .outerjoin(
@@ -743,6 +751,7 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
         sql_jsonb_agg(mstQuestPhasePresent, "mstQuestPhasePresent"),
+        sql_jsonb_agg(mstQuestPhaseIndividuality, "mstQuestPhaseIndividuality"),
         phases_select,
         phasesWithEnemies_select,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),

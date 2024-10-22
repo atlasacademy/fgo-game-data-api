@@ -2856,6 +2856,7 @@ class NiceQuestPhase(NiceQuest):
     phase: int
     className: list[SvtClass | str]
     individuality: list[NiceTrait]
+    phaseIndividuality: list[NiceTrait]
     qp: int
     exp: int
     bond: int
