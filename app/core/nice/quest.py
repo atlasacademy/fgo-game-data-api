@@ -450,17 +450,11 @@ async def get_nice_quest_phase_no_rayshift(
         "className": [
             get_class_name(class_id) for class_id in raw_quest.mstQuestPhase.classIds
         ],
-        # temp solution
-        "individuality": (
-            get_traits_list(raw_quest.mstQuestPhaseIndividuality[0].individuality)
-            if not raw_quest.mstQuestPhase.individuality
-            and raw_quest.mstQuestPhaseIndividuality
-            else get_traits_list(raw_quest.mstQuestPhase.individuality)
-        ),
+        "individuality": get_traits_list(raw_quest.mstQuestPhase.individuality),
         "phaseIndividuality": (
-            get_traits_list(raw_quest.mstQuestPhaseIndividuality[0].individuality)
+            get_traits_list(raw_quest.mstQuestPhaseIndividuality.individuality)
             if raw_quest.mstQuestPhaseIndividuality
-            else []
+            else None
         ),
         "qp": raw_quest.mstQuestPhase.qp,
         "exp": raw_quest.mstQuestPhase.playerExp,

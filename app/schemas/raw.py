@@ -2336,7 +2336,7 @@ class QuestEntity(BaseModelORJson):
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
     mstQuestPhaseDetail: Optional[MstQuestPhaseDetail] = None
-    mstQuestPhaseIndividuality: list[MstQuestPhaseIndividuality] = []
+    mstQuestPhaseIndividuality: MstQuestPhaseIndividuality | None = None
     mstQuestMessage: list[MstQuestMessage] = []
     scripts: list[str]
     mstStage: list[MstStage]

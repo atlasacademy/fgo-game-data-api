@@ -701,7 +701,8 @@ async def get_quest_phase_entity(
         (
             select(
                 func.array_remove(
-                    array_agg(ScriptFileList.c.scriptFileName.distinct()), None  # type: ignore[no-untyped-call]
+                    array_agg(ScriptFileList.c.scriptFileName.distinct()),  # type: ignore[no-untyped-call]
+                    None,
                 )
             )
             .select_from(ScriptFileList)
@@ -751,12 +752,14 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
         sql_jsonb_agg(mstQuestPhasePresent, "mstQuestPhasePresent"),
-        sql_jsonb_agg(mstQuestPhaseIndividuality, "mstQuestPhaseIndividuality"),
         phases_select,
         phasesWithEnemies_select,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
         func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
             mstQuestPhaseDetail.name
+        ),
+        func.to_jsonb(mstQuestPhaseIndividuality.table_valued()).label(
+            mstQuestPhaseIndividuality.name
         ),
         sql_jsonb_agg(mstQuestMessage),
         sql_jsonb_agg(mstQuestHint),
@@ -780,6 +783,7 @@ async def get_quest_phase_entity(
             mstQuest.table_valued(),
             mstQuestPhase.table_valued(),
             mstQuestPhaseDetail.table_valued(),
+            mstQuestPhaseIndividuality.table_valued(),
         )
     )
 
