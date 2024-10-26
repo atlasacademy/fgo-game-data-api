@@ -407,6 +407,8 @@ async def get_nice_quest_phase_no_rayshift(
     raw_quest = await raw.get_quest_phase_entity(conn, quest_id, phase)
     nice_data = await get_nice_quest(conn, region, raw_quest, lang)
 
+    gift_data = GiftData(raw_quest.mstGiftAdd, get_gift_map(raw_quest.mstGift))
+
     aiNpcIds: list[int] = []
     if "aiNpc" in raw_quest.mstQuestPhase.script:
         aiNpcIds.append(raw_quest.mstQuestPhase.script["aiNpc"]["npcId"])
@@ -471,6 +473,7 @@ async def get_nice_quest_phase_no_rayshift(
             ),
             None,
         ),
+        "phaseGifts": get_nice_gifts(region, raw_quest.mstQuestPhase.giftId, gift_data),
         "availableEnemyHashes": [],
         "scripts": [
             get_nice_script_link(region, script) for script in sorted(raw_quest.scripts)

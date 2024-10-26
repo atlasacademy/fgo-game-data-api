@@ -461,7 +461,6 @@ JOINED_QUEST_TABLES = (
             mstClosedMessage.c.id == mstQuestReleaseOverwrite.c.closedMessageId,
         ),
     )
-    .outerjoin(mstGiftAddAlias, mstGiftAddAlias.c.giftId == mstQuest.c.giftId)
 )
 
 
@@ -475,6 +474,7 @@ JOINED_QUEST_ENTITY_TABLES = (
     )
     .outerjoin(scripts_cte, mstQuest.c.id == scripts_cte.c.questId)
     .outerjoin(mstQuestPhasePresent, mstQuestPhasePresent.c.questId == mstQuest.c.id)
+    .outerjoin(mstGiftAddAlias, mstGiftAddAlias.c.giftId == mstQuest.c.giftId)
     .outerjoin(
         mstGiftAlias,
         or_(
@@ -515,7 +515,7 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstItem),
     sql_jsonb_agg(mstGiftAlias, "mstGift"),
     sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
-    sql_jsonb_agg(mstQuestPhasePresent, "mstQuestPhasePresent"),
+    sql_jsonb_agg(mstQuestPhasePresent),
     func.to_jsonb(
         func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)  # type: ignore[no-untyped-call]
     ).label("phases"),
@@ -657,9 +657,17 @@ async def get_quest_phase_entity(
         .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
         .outerjoin(
+            mstGiftAddAlias,
+            or_(
+                mstGiftAddAlias.c.giftId == mstQuest.c.giftId,
+                mstGiftAddAlias.c.giftId == mstQuestPhase.c.giftId,
+            ),
+        )
+        .outerjoin(
             mstGiftAlias,
             or_(
                 mstGiftAlias.c.id == mstQuest.c.giftId,
+                mstGiftAlias.c.id == mstQuestPhase.c.giftId,
                 mstGiftAlias.c.id == mstQuestPhasePresent.c.giftId,
                 mstGiftAlias.c.id == mstGiftAddAlias.c.priorGiftId,
             ),
@@ -751,7 +759,8 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstBattleBg),
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
-        sql_jsonb_agg(mstQuestPhasePresent, "mstQuestPhasePresent"),
+        sql_jsonb_agg(mstQuestPhase, "mstQuestPhaseList"),
+        sql_jsonb_agg(mstQuestPhasePresent),
         phases_select,
         phasesWithEnemies_select,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),

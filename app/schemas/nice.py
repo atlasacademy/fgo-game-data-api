@@ -2862,6 +2862,7 @@ class NiceQuestPhase(NiceQuest):
     bond: int
     isNpcOnly: bool
     battleBgId: int
+    phaseGifts: list[NiceGift]
     enemyHash: str | None = None
     availableEnemyHashes: list[str]
     dropsFromAllHashes: bool | None = None
