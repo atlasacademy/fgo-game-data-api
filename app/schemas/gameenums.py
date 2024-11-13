@@ -271,6 +271,7 @@ class FuncType(IntEnum):
     SET_NP_EXECUTED_STATE = 144
     HIDE_OVER_GAUGE = 145
     GAIN_NP_TARGET_SUM = 146
+    ENEMY_COUNT_CHANGE = 147
 
 
 class NiceFuncType(StrEnum):
@@ -386,6 +387,7 @@ class NiceFuncType(StrEnum):
     setNpExecutedState = "setNpExecutedState"
     hideOverGauge = "hideOverGauge"
     gainNpTargetSum = "gainNpTargetSum"
+    enemyCountChange = "enemyCountChange"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -499,6 +501,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     144: NiceFuncType.setNpExecutedState,
     145: NiceFuncType.hideOverGauge,
     146: NiceFuncType.gainNpTargetSum,
+    147: NiceFuncType.enemyCountChange,
 }
 
 
@@ -535,6 +538,7 @@ class FuncTargetType(IntEnum):
     PT_ONE_HP_LOWEST_RATE = 29
     ENEMY_RANGE = 30
     HAND_COMMANDCARD_RANDOM_ONE = 31
+    FIELD_ALL = 32
 
 
 class NiceFuncTargetType(StrEnum):
@@ -572,6 +576,7 @@ class NiceFuncTargetType(StrEnum):
     ptOneHpLowestRate = "ptOneHpLowestRate"
     enemyRange = "enemyRange"
     handCommandcardRandomOne = "handCommandcardRandomOne"
+    fieldAll = "fieldAll"
 
 
 FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
@@ -607,6 +612,7 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     29: NiceFuncTargetType.ptOneHpLowestRate,
     30: NiceFuncTargetType.enemyRange,
     31: NiceFuncTargetType.handCommandcardRandomOne,
+    32: NiceFuncTargetType.fieldAll,
 }
 
 
@@ -1900,6 +1906,9 @@ class DataValsType(IntEnum):
     SnapShotParamAddSelfIndividualityAndCheck = 197
     SnapShotParamAddOpIndividualityAndCheck = 198
     SnapShotParamAddFieldIndividualityAndCheck = 199
+    EnemyCountChangeTime = 200
+    EnemyCountChangeEffectId = 201
+    EnemyCountWaitTimeAfterMessage = 202
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1961,6 +1970,8 @@ class ItemType(IntEnum):
     BATTLE_ITEM = 35
     ANIPLEX_PLUS_CHARGE_STONE = 36
     PURE_PRI_SHOP_RESET = 37
+    SHOP17_ITEM = 38
+    REDUCE_TRADE_TIME = 39
 
 
 class NiceItemType(StrEnum):
@@ -2003,6 +2014,8 @@ class NiceItemType(StrEnum):
     battleItem = "battleItem"
     aniplexPlusChargeStone = "aniplexPlusChargeStone"
     purePriShopReset = "purePriShopReset"
+    shop17Item = "shop17Item"
+    reduceTradeTime = "reduceTradeTime"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -2043,6 +2056,8 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     35: NiceItemType.battleItem,
     36: NiceItemType.aniplexPlusChargeStone,
     37: NiceItemType.purePriShopReset,
+    38: NiceItemType.shop17Item,
+    39: NiceItemType.reduceTradeTime,
 }
 
 
@@ -2124,6 +2139,7 @@ class ShopType(IntEnum):
     TRADE_AP = 14
     REVIVAL_ITEM = 15
     EVENT_SVT_EQUIP = 16
+    SHOP17 = 17
 
 
 class NiceShopType(StrEnum):
@@ -2146,6 +2162,7 @@ class NiceShopType(StrEnum):
     tradeAp = "tradeAp"
     revivalItem = "revivalItem"
     eventSvtEquip = "eventSvtEquip"
+    shop17 = "shop17"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -2166,6 +2183,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     14: NiceShopType.tradeAp,
     15: NiceShopType.revivalItem,
     16: NiceShopType.eventSvtEquip,
+    17: NiceShopType.shop17,
 }
 
 
