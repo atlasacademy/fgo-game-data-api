@@ -49,7 +49,7 @@ def get_nice_trade_goods(
         gifts=get_nice_gifts(region, trade.giftId, gift_data),
         consumes=get_nice_common_consumes(raw_consumes, trade.commonConsumeId),
         eventPointNum=trade.eventPointNum,
-        eventPointItem=item_map[trade.eventPointItemId],
+        eventPointItem=item_map.get(trade.eventPointItemId, None),
         tradeTime=trade.tradeTime,
         maxNum=trade.maxNum,
         maxTradeTime=trade.maxTradeTime,
