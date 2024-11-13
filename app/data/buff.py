@@ -31,7 +31,9 @@ def get_buff_with_classrelation(gamedata_path: DirectoryPath) -> dict[int, MstBu
                     mstBuffs[buff_id] for buff_id in convert_data["targetIds"]
                 ]
             convert_data["convertBuffs"] = [
-                mstBuffs[buff_id] for buff_id in convert_data["convertBuffIds"]
+                mstBuffs[buff_id]
+                for buff_id in convert_data["convertBuffIds"]
+                if buff_id in mstBuffs
             ]
             buff.script["convert"] = convert_data
 
