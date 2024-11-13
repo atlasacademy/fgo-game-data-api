@@ -2165,7 +2165,7 @@ class NiceEventTradeGoods(BaseModelORJson):
     gifts: list[NiceGift]
     consumes: list[NiceCommonConsume]
     eventPointNum: int
-    eventPointItem: NiceItem
+    eventPointItem: NiceItem | None
     tradeTime: int
     maxNum: int
     maxTradeTime: int
