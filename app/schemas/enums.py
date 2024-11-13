@@ -1029,6 +1029,7 @@ class Trait(StrEnum):
     canFlyInSpace = "canFlyInSpace"
     buffSpecialInvinciblePierce = "buffSpecialInvinciblePierce"
     sakuraSeries = "sakuraSeries"
+    buffDefenceDown = "buffDefenceDown"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1329,6 +1330,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3102: Trait.protectedByBBDubai,
     3103: Trait.notProtectedByBBDubai,
     3104: Trait.buffSpecialInvinciblePierce,
+    3110: Trait.buffDefenceDown,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
