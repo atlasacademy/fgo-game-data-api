@@ -1970,7 +1970,7 @@ class ItemType(IntEnum):
     BATTLE_ITEM = 35
     ANIPLEX_PLUS_CHARGE_STONE = 36
     PURE_PRI_SHOP_RESET = 37
-    SHOP17_ITEM = 38
+    EXCHANGE_SVT_COIN = 38
     REDUCE_TRADE_TIME = 39
 
 
@@ -2014,7 +2014,7 @@ class NiceItemType(StrEnum):
     battleItem = "battleItem"
     aniplexPlusChargeStone = "aniplexPlusChargeStone"
     purePriShopReset = "purePriShopReset"
-    shop17Item = "shop17Item"
+    exchangeSvtCoin = "exchangeSvtCoin"
     reduceTradeTime = "reduceTradeTime"
 
 
@@ -2056,7 +2056,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     35: NiceItemType.battleItem,
     36: NiceItemType.aniplexPlusChargeStone,
     37: NiceItemType.purePriShopReset,
-    38: NiceItemType.shop17Item,
+    38: NiceItemType.exchangeSvtCoin,
     39: NiceItemType.reduceTradeTime,
 }
 
@@ -2139,7 +2139,7 @@ class ShopType(IntEnum):
     TRADE_AP = 14
     REVIVAL_ITEM = 15
     EVENT_SVT_EQUIP = 16
-    SHOP17 = 17
+    EXCHANGE_SVT_COIN = 17
 
 
 class NiceShopType(StrEnum):
@@ -2162,7 +2162,7 @@ class NiceShopType(StrEnum):
     tradeAp = "tradeAp"
     revivalItem = "revivalItem"
     eventSvtEquip = "eventSvtEquip"
-    shop17 = "shop17"
+    exchangeSvtCoin = "exchangeSvtCoin"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -2183,7 +2183,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     14: NiceShopType.tradeAp,
     15: NiceShopType.revivalItem,
     16: NiceShopType.eventSvtEquip,
-    17: NiceShopType.shop17,
+    17: NiceShopType.exchangeSvtCoin,
 }
 
 
