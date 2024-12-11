@@ -158,6 +158,7 @@ export enum NiceFuncType {
     SET_NP_EXECUTED_STATE = "setNpExecutedState",
     HIDE_OVER_GAUGE = "hideOverGauge",
     GAIN_NP_TARGET_SUM = "gainNpTargetSum",
+    ENEMY_COUNT_CHANGE = "enemyCountChange",
 }
 
 export enum NiceFuncTargetType {
@@ -193,6 +194,7 @@ export enum NiceFuncTargetType {
     PT_ONE_HP_LOWEST_RATE = "ptOneHpLowestRate",
     ENEMY_RANGE = "enemyRange",
     HAND_COMMANDCARD_RANDOM_ONE = "handCommandcardRandomOne",
+    FIELD_ALL = "fieldAll",
 }
 
 export enum NiceBuffType {
@@ -756,6 +758,9 @@ export enum NiceDataValsType {
     SnapShotParamAddSelfIndividualityAndCheck = "snapshotparamaddselfindividualityandcheck",
     SnapShotParamAddOpIndividualityAndCheck = "snapshotparamaddopindividualityandcheck",
     SnapShotParamAddFieldIndividualityAndCheck = "snapshotparamaddfieldindividualityandcheck",
+    EnemyCountChangeTime = "enemycountchangetime",
+    EnemyCountChangeEffectId = "enemycountchangeeffectid",
+    EnemyCountWaitTimeAfterMessage = "enemycountwaittimeaftermessage",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -802,6 +807,8 @@ export enum NiceItemType {
     BATTLE_ITEM = "battleItem",
     ANIPLEX_PLUS_CHARGE_STONE = "aniplexPlusChargeStone",
     PURE_PRI_SHOP_RESET = "purePriShopReset",
+    EXCHANGE_SVT_COIN = "exchangeSvtCoin",
+    REDUCE_TRADE_TIME = "reduceTradeTime",
 }
 
 export enum NiceGiftType {
@@ -841,6 +848,7 @@ export enum NiceShopType {
     TRADE_AP = "tradeAp",
     REVIVAL_ITEM = "revivalItem",
     EVENT_SVT_EQUIP = "eventSvtEquip",
+    EXCHANGE_SVT_COIN = "exchangeSvtCoin",
 }
 
 export enum NicePayType {
@@ -1392,6 +1400,7 @@ export enum NiceWarFlag {
     NOTICE_BOARD = "noticeBoard",
     CHANGE_DISP_CLOSED_MESSAGE = "changeDispClosedMessage",
     CHAPTER_SUB_ID_JAPANESE_NUMERALS_NORMAL = "chapterSubIdJapaneseNumeralsNormal",
+    CALDEAGATE_PRIORITY_DISPLAY = "caldeagatePriorityDisplay",
 }
 
 export enum NiceWarStartType {
@@ -1422,6 +1431,7 @@ export enum NiceWarOverwriteType {
     EFFECT_CHANGE_WHITE_MARK = "effectChangeWhiteMark",
     COMMAND_SPELL_ICON = "commandSpellIcon",
     MASTER_FACE_ICON = "masterFaceIcon",
+    PRIORITY = "priority",
 }
 
 export enum NiceAiCond {

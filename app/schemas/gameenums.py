@@ -3809,6 +3809,7 @@ class WarEntityFlag(IntEnum):
     NOTICE_BOARD = 8388608
     CHANGE_DISP_CLOSED_MESSAGE = 16777216
     CHAPTER_SUB_ID_JAPANESE_NUMERALS_NORMAL = 33554432
+    CALDEAGATE_PRIORITY_DISPLAY = 67108864
 
 
 class NiceWarFlag(StrEnum):
@@ -3839,6 +3840,7 @@ class NiceWarFlag(StrEnum):
     noticeBoard = "noticeBoard"
     changeDispClosedMessage = "changeDispClosedMessage"
     chapterSubIdJapaneseNumeralsNormal = "chapterSubIdJapaneseNumeralsNormal"
+    caldeagatePriorityDisplay = "caldeagatePriorityDisplay"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -3867,6 +3869,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     8388608: NiceWarFlag.noticeBoard,
     16777216: NiceWarFlag.changeDispClosedMessage,
     33554432: NiceWarFlag.chapterSubIdJapaneseNumeralsNormal,
+    67108864: NiceWarFlag.caldeagatePriorityDisplay,
 }
 
 
@@ -3913,6 +3916,7 @@ class WarOverwriteType(IntEnum):
     EFFECT_CHANGE_WHITE_MARK = 19
     COMMAND_SPELL_ICON = 20
     MASTER_FACE_ICON = 21
+    PRIORITY = 22
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -3939,6 +3943,7 @@ class NiceWarOverwriteType(StrEnum):
     effectChangeWhiteMark = "effectChangeWhiteMark"
     commandSpellIcon = "commandSpellIcon"
     masterFaceIcon = "masterFaceIcon"
+    priority = "priority"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -3963,6 +3968,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     19: NiceWarOverwriteType.effectChangeWhiteMark,
     20: NiceWarOverwriteType.commandSpellIcon,
     21: NiceWarOverwriteType.masterFaceIcon,
+    22: NiceWarOverwriteType.priority,
 }
 
 
