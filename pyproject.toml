@@ -7,21 +7,21 @@ packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = {extras = ["standard"], version = "^0.115.4"}
-uvicorn = {extras = ["standard"], version = "^0.32.0"}
+fastapi = {extras = ["standard"], version = "^0.115.6"}
+uvicorn = {extras = ["standard"], version = "^0.32.1"}
 python-dotenv = "^1.0.1"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
-orjson = "^3.10.11"
+orjson = "^3.10.12"
 aiofiles = "^24.1.0"
 GitPython = "^3.1.43"
 SQLAlchemy = "^2.0.36"
-httpx = {extras = ["http2"], version = "^0.27.2"}
+httpx = {extras = ["http2"], version = "^0.28.1"}
 fastapi-cache2 = "^0.2.2"
 gunicorn = {extras = ["setproctitle"], version = "^23.0.0"}
-redis = "^5.2.0"
-hiredis = "^3.0.0"
+redis = "^5.2.1"
+hiredis = "^3.1.0"
 psycopg = "^3.2.3"
-pydantic = "^2.9.2"
+pydantic = "^2.10.3"
 zstandard = "^0.23.0"
 uvicorn-worker = "^0.2.0"
 pydantic-settings = "^2.4.0"
@@ -31,16 +31,16 @@ psutil = "^6.0.0"
 mypy = "^1.13.0"
 black = "^24.10.0"
 isort = "^5.13.2"
-pytest = "^8.3.2"
+pytest = "^8.3.4"
 pytest-xdist = "^3.6.1"
 pytest-asyncio = "^0.24.0"
-coverage = "^7.6.4"
+coverage = "^7.6.9"
 asgi-lifespan = "^2.1.0"
 fuzzywuzzy-stubs = "^0.0.1"
 types-aiofiles = "^24.1.0.20240626"
 types-redis = "^4.6.0.20241004"
 types-orjson = "^3.6.2"
-ruff = "^0.7.2"
+ruff = "^0.8.2"
 types-pyopenssl = "^24.1.0.20240722"
 types-psutil = "^6.1.0.20241102"
 
