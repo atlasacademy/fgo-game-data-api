@@ -458,7 +458,7 @@ async def get_nice_quest_phase_no_rayshift(
             if raw_quest.mstQuestPhaseIndividuality
             else None
         ),
-        "qp": raw_quest.mstQuestPhase.qp,
+        "qp": raw_quest.mstQuestPhase.qp if raw_quest.mstQuestPhase.qp else 0,
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "isNpcOnly": raw_quest.mstQuestPhase.isNpcOnly,
