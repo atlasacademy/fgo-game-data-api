@@ -1,5 +1,6 @@
 {
   "ダ・ヴィンチちゃん": "Da Vinci-chan",
+  "アビゲイル・ウィリアムズ〔サンタ〕": "アビゲイル・ウィリアムズ〔サンタ〕",
   "謎のヒロインＸ〔オルタ〕": "Mysterious Heroine X (Alter)",
   "-": "-",
   "ちびノブ": "Mini Nobu",
@@ -138,7 +139,7 @@
   "イーター": "Eater",
   "シェイプシフター": "Shapeshifter",
   "ＢＢ／ＧＯ": "BB/GO",
-  "魔性菩薩": "Devilish Bodhisattva",
+  "魔性菩薩": "Demonic Bodhisattva",
   "サクラワーム": "Sakura Worm",
   "サクラボット": "Sakura Bot",
   "サクラハンドラ": "Sakura Hand",
@@ -467,5 +468,7 @@
   "スチールワーム": "Steel Worm",
   "サンドワーム": "Sandworm",
   "ムーン・キャンサー＠ボス": "Moon Cancer@Boss",
-  "メカニカルソルジャー": "Mechanical Soldier"
+  "メカニカルソルジャー": "Mechanical Soldier",
+  "ダイダロス": "ダイダロス",
+  "ミリタントマシン": "ミリタントマシン"
 }
