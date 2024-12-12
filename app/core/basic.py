@@ -852,7 +852,7 @@ def get_basic_quest_phase_from_raw(
         closedAt=mstQuestPhase.closedAt,
         phase=mstQuestPhase.phase,
         individuality=get_traits_list(mstQuestPhase.individuality),
-        qp=mstQuestPhase.qp,
+        qp=mstQuestPhase.qp if mstQuestPhase.qp else 0,
         exp=mstQuestPhase.playerExp,
         bond=mstQuestPhase.playerExp,
         battleBgId=mstQuestPhase.battleBgId,
