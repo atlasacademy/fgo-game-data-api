@@ -272,6 +272,7 @@ class FuncType(IntEnum):
     HIDE_OVER_GAUGE = 145
     GAIN_NP_TARGET_SUM = 146
     ENEMY_COUNT_CHANGE = 147
+    DISPLAY_BATTLE_MESSAGE = 148
 
 
 class NiceFuncType(StrEnum):
@@ -388,6 +389,7 @@ class NiceFuncType(StrEnum):
     hideOverGauge = "hideOverGauge"
     gainNpTargetSum = "gainNpTargetSum"
     enemyCountChange = "enemyCountChange"
+    displayBattleMessage = "displayBattleMessage"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -502,6 +504,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     145: NiceFuncType.hideOverGauge,
     146: NiceFuncType.gainNpTargetSum,
     147: NiceFuncType.enemyCountChange,
+    148: NiceFuncType.displayBattleMessage,
 }
 
 
@@ -813,6 +816,9 @@ class BuffType(IntEnum):
     FUNCTIONED_FUNCTION = 208
     DONOT_ACT_COMMANDCARD = 209
     UP_NPDAMAGE_INDIVIDUALITY_SUM = 210
+    COMBO_START_FUNCTION = 211
+    COMBO_END_FUNCTION = 212
+    OVERWRITE_SVT_CARD_TYPE = 213
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1017,6 +1023,9 @@ class NiceBuffType(StrEnum):
     functionedFunction = "functionedFunction"
     donotActCommandcard = "donotActCommandcard"
     upNpdamageIndividualitySum = "upNpdamageIndividualitySum"
+    comboStartFunction = "comboStartFunction"
+    comboEndFunction = "comboEndFunction"
+    overwriteSvtCardType = "overwriteSvtCardType"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1219,6 +1228,9 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     208: NiceBuffType.functionedFunction,
     209: NiceBuffType.donotActCommandcard,
     210: NiceBuffType.upNpdamageIndividualitySum,
+    211: NiceBuffType.comboStartFunction,
+    212: NiceBuffType.comboEndFunction,
+    213: NiceBuffType.overwriteSvtCardType,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1374,6 +1386,9 @@ class BuffAction(IntEnum):
     FUNCTIONED_FUNCTION = 145
     DONOT_ACT_COMMANDCARD = 146
     NPDAMAGE_INDIVIDUALITY = 147
+    FUNCTION_COMBO_START = 148
+    FUNCTION_COMBO_END = 149
+    OVERWRITE_SVT_CARD_TYPE = 150
 
 
 class NiceBuffAction(StrEnum):
@@ -1527,6 +1542,9 @@ class NiceBuffAction(StrEnum):
     functionedFunction = "functionedFunction"
     donotActCommandcard = "donotActCommandcard"
     npdamageIndividuality = "npdamageIndividuality"
+    functionComboStart = "functionComboStart"
+    functionComboEnd = "functionComboEnd"
+    overwriteSvtCardType = "overwriteSvtCardType"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1678,6 +1696,9 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     145: NiceBuffAction.functionedFunction,
     146: NiceBuffAction.donotActCommandcard,
     147: NiceBuffAction.npdamageIndividuality,
+    148: NiceBuffAction.functionComboStart,
+    149: NiceBuffAction.functionComboEnd,
+    150: NiceBuffAction.overwriteSvtCardType,
 }
 
 
@@ -1909,6 +1930,10 @@ class DataValsType(IntEnum):
     EnemyCountChangeTime = 200
     EnemyCountChangeEffectId = 201
     EnemyCountWaitTimeAfterMessage = 202
+    WaitMessageEnd = 203
+    ContinueDisplayMessage = 204
+    StartIntervalTurn = 205
+    StartIntervalCount = 206
 
 
 class ClassRelationOverwriteType(IntEnum):

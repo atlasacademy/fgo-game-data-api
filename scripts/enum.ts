@@ -159,6 +159,7 @@ export enum NiceFuncType {
     HIDE_OVER_GAUGE = "hideOverGauge",
     GAIN_NP_TARGET_SUM = "gainNpTargetSum",
     ENEMY_COUNT_CHANGE = "enemyCountChange",
+    DISPLAY_BATTLE_MESSAGE = "displayBattleMessage",
 }
 
 export enum NiceFuncTargetType {
@@ -394,6 +395,9 @@ export enum NiceBuffType {
     FUNCTIONED_FUNCTION = "functionedFunction",
     DONOT_ACT_COMMANDCARD = "donotActCommandcard",
     UP_NPDAMAGE_INDIVIDUALITY_SUM = "upNpdamageIndividualitySum",
+    COMBO_START_FUNCTION = "comboStartFunction",
+    COMBO_END_FUNCTION = "comboEndFunction",
+    OVERWRITE_SVT_CARD_TYPE = "overwriteSvtCardType",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -548,6 +552,9 @@ export enum NiceBuffAction {
     FUNCTIONED_FUNCTION = "functionedFunction",
     DONOT_ACT_COMMANDCARD = "donotActCommandcard",
     NPDAMAGE_INDIVIDUALITY = "npdamageIndividuality",
+    FUNCTION_COMBO_START = "functionComboStart",
+    FUNCTION_COMBO_END = "functionComboEnd",
+    OVERWRITE_SVT_CARD_TYPE = "overwriteSvtCardType",
 }
 
 export enum NiceBuffLimit {
@@ -761,6 +768,10 @@ export enum NiceDataValsType {
     EnemyCountChangeTime = "enemycountchangetime",
     EnemyCountChangeEffectId = "enemycountchangeeffectid",
     EnemyCountWaitTimeAfterMessage = "enemycountwaittimeaftermessage",
+    WaitMessageEnd = "waitmessageend",
+    ContinueDisplayMessage = "continuedisplaymessage",
+    StartIntervalTurn = "startintervalturn",
+    StartIntervalCount = "startintervalcount",
 }
 
 export enum NiceClassRelationOverwriteType {
