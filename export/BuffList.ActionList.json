@@ -1703,5 +1703,38 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
+  },
+  "FUNCTION_COMBO_START": {
+    "limit": 0,
+    "plusTypes": [
+      211
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_COMBO_END": {
+    "limit": 0,
+    "plusTypes": [
+      212
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_SVT_CARD_TYPE": {
+    "limit": 0,
+    "plusTypes": [
+      213
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
