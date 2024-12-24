@@ -2369,7 +2369,7 @@ class NiceCardType(StrEnum):
     blank = "blank"
     weak = "weak"
     strength = "strength"
-    addattack2 = "extra"
+    addattack2 = "addattack2"
 
 
 CARD_TYPE_NAME: dict[int, NiceCardType] = {
