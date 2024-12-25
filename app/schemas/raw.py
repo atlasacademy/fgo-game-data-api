@@ -1409,6 +1409,7 @@ class MstEventQuestCooltime(BaseModelORJson):
 class MstEventCampaign(BaseModelORJson):
     targetIds: list[int]
     warIds: list[int]
+    warGroupIds: list[int] | None = None
     eventId: int
     target: int
     idx: int
@@ -1730,6 +1731,13 @@ class MstWar(BaseModelORJson):
     eventName: str = ""
     lastQuestId: int  # 0
     assetId: int  # 0
+
+
+class MstWarGroup(BaseModelORJson):
+    id: int
+    warId: int
+    questAfterClear: int
+    questType: int
 
 
 class MstWarAdd(BaseModelORJson):
@@ -2438,6 +2446,7 @@ class WarEntity(BaseModelORJson):
     mstWar: MstWar
     mstEvent: Optional[MstEvent] = None
     mstWarAdd: list[MstWarAdd]
+    mstWarGroup: list[MstWarGroup]
     mstMap: list[MstMap]
     mstBgm: list[MstBgm]
     mstMapGimmick: list[MstMapGimmick]

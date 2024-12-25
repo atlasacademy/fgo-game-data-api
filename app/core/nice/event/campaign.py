@@ -10,6 +10,7 @@ def get_nice_campaign(campaign: MstEventCampaign) -> NiceEventCampaign:
     return NiceEventCampaign(
         targetIds=campaign.targetIds,
         warIds=campaign.warIds,
+        warGroupIds=campaign.warGroupIds or [],
         target=COMBINE_ADJUST_TARGET_TYPE_NAME[campaign.target],
         idx=campaign.idx,
         value=campaign.value,

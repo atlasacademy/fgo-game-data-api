@@ -133,6 +133,7 @@ from ...models.raw import (
     mstWarBoardStage,
     mstWarBoardStageLayout,
     mstWarBoardTreasure,
+    mstWarGroup,
     mstWarQuestSelection,
     mstWarRelease,
 )
@@ -265,6 +266,7 @@ from ...schemas.raw import (
     MstWarBoardStage,
     MstWarBoardStageLayout,
     MstWarBoardTreasure,
+    MstWarGroup,
     MstWarQuestSelection,
     MstWarRelease,
 )
@@ -384,6 +386,7 @@ schema_table_fetch_all: dict[  # type:ignore
     ),
     MstMap: (mstMap, mstMap.c.warId, mstMap.c.id),
     MstWarAdd: (mstWarAdd, mstWarAdd.c.warId, mstWarAdd.c.priority),
+    MstWarGroup: (mstWarGroup, mstWarGroup.c.warId, mstWarGroup.c.id),
     MstWarQuestSelection: (
         mstWarQuestSelection,
         mstWarQuestSelection.c.warId,

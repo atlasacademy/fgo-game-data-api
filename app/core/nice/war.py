@@ -7,6 +7,8 @@ from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
+    QUEST_AFTER_CLEAR_NAME,
+    QUEST_TYPE_NAME,
     SPOT_OVERWRITE_TYPE_NAME,
     WAR_FLAG_NAME,
     WAR_OVERWRITE_TYPE_NAME,
@@ -27,6 +29,7 @@ from ...schemas.nice import (
     NiceSpotRoad,
     NiceWar,
     NiceWarAdd,
+    NiceWarGroup,
     NiceWarQuestSelection,
     NiceWarRelease,
 )
@@ -41,6 +44,7 @@ from ...schemas.raw import (
     MstSpotRoad,
     MstWar,
     MstWarAdd,
+    MstWarGroup,
     MstWarQuestSelection,
     MstWarRelease,
     QuestEntity,
@@ -182,6 +186,14 @@ def get_nice_war_add(
         value=war_add.value,
         startedAt=war_add.startedAt,
         endedAt=war_add.endedAt,
+    )
+
+
+def get_nice_war_group(war_group: MstWarGroup) -> NiceWarGroup:
+    return NiceWarGroup(
+        id=war_group.id,
+        questAfterClear=QUEST_AFTER_CLEAR_NAME[war_group.questAfterClear],
+        questType=QUEST_TYPE_NAME[war_group.questType],
     )
 
 
@@ -454,6 +466,7 @@ async def get_nice_war(
             get_nice_war_add(region, war_add, banner_template)
             for war_add in raw_war.mstWarAdd
         ],
+        groups=[get_nice_war_group(war_group) for war_group in raw_war.mstWarGroup],
         maps=[
             get_nice_map(
                 region,

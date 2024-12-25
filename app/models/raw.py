@@ -1641,6 +1641,7 @@ mstEventCampaign = Table(
     metadata,
     Column("targetIds", ARRAY(Integer)),
     Column("warIds", ARRAY(Integer)),
+    Column("warGroupIds", ARRAY(Integer)),
     Column("eventId", Integer, index=True),
     Column("target", Integer),
     Column("idx", Integer),
@@ -2076,6 +2077,17 @@ mstWar = Table(
     Column("lastQuestId", Integer),
     Column("assetId", Integer),
 )
+
+
+mstWarGroup = Table(
+    "mstWarGroup",
+    metadata,
+    Column("id", Integer),
+    Column("warId", Integer),
+    Column("questAfterClear", Integer),
+    Column("questType", Integer),
+)
+
 
 mstMapGimmick = Table(
     "mstMapGimmick",
@@ -2905,7 +2917,7 @@ TABLES_TO_BE_LOADED = [
     [mstMap],
     [mstSpot, mstBlankEarthSpot, mstSpotAdd, mstSpotRoad],
     [mstMapGimmick],
-    [mstWarAdd, mstWarRelease],
+    [mstWarAdd, mstWarRelease, mstWarGroup],
     [mstWarQuestSelection],
     [mstEventCampaign],
     [mstEventQuest],

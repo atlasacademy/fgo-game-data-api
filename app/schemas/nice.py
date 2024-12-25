@@ -1871,6 +1871,7 @@ class NiceEventQuest(BaseModelORJson):
 class NiceEventCampaign(BaseModelORJson):
     targetIds: list[int]
     warIds: list[int]
+    warGroupIds: list[int]
     target: NiceCombineAdjustTarget
     idx: int
     value: int
@@ -2979,6 +2980,13 @@ class NiceSpot(BaseModel):
     quests: list[NiceQuest]
 
 
+class NiceWarGroup(BaseModelORJson):
+    id: int
+    # warId: int
+    questAfterClear: NiceQuestAfterClearType
+    questType: NiceQuestType
+
+
 class NiceWarAdd(BaseModelORJson):
     warId: int
     type: NiceWarOverwriteType
@@ -3034,6 +3042,7 @@ class NiceWar(BaseModelORJson):
     lastQuestId: int
     releaseConditions: list[NiceWarRelease]
     warAdds: list[NiceWarAdd]
+    groups: list[NiceWarGroup]
     maps: list[NiceMap]
     spots: list[NiceSpot]
     spotRoads: list[NiceSpotRoad]
