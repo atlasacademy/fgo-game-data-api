@@ -2356,6 +2356,7 @@ class CardType(IntEnum):
     BLANK = 5
     WEAK = 10
     STRENGTH = 11
+    ADDATTACK2 = 104
 
 
 class NiceCardType(StrEnum):
@@ -2369,6 +2370,7 @@ class NiceCardType(StrEnum):
     blank = "blank"
     weak = "weak"
     strength = "strength"
+    addattack2 = "addattack2"
 
 
 CARD_TYPE_NAME: dict[int, NiceCardType] = {
@@ -2380,6 +2382,7 @@ CARD_TYPE_NAME: dict[int, NiceCardType] = {
     5: NiceCardType.blank,
     10: NiceCardType.weak,
     11: NiceCardType.strength,
+    104: NiceCardType.addattack2,
 }
 
 
