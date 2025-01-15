@@ -617,6 +617,7 @@ class BaseVals(BaseModel):
     ContinueDisplayMessage: int | None = None
     StartIntervalTurn: int | None = None
     StartIntervalCount: int | None = None
+    CommonReleaseId: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

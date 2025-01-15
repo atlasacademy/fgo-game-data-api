@@ -772,6 +772,7 @@ export enum NiceDataValsType {
     ContinueDisplayMessage = "continuedisplaymessage",
     StartIntervalTurn = "startintervalturn",
     StartIntervalCount = "startintervalcount",
+    CommonReleaseId = "commonreleaseid",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1151,6 +1152,7 @@ export enum NiceCondType {
     NOT_BATTLE_FUNCTION_TARGET_ONE_INDIVIDUALITY = "notBattleFunctionTargetOneIndividuality",
     EVENT_SCRIPT_NOT_PLAY = "eventScriptNotPlay",
     EVENT_SCRIPT_FLAG = "eventScriptFlag",
+    IMAGE_PARTS_GROUP = "imagePartsGroup",
 }
 
 export enum NiceVoiceCondType {
@@ -1626,6 +1628,7 @@ export enum NiceAiCond {
     COUNT_AVAILABLE_MASTER_SKILL_HIGHER = "countAvailableMasterSkillHigher",
     COUNT_AVAILABLE_MASTER_SKILL_LOWER = "countAvailableMasterSkillLower",
     COUNT_AVAILABLE_MASTER_SKILL_EQUAL = "countAvailableMasterSkillEqual",
+    COMMON_RELEASE_ID = "commonReleaseId",
 }
 
 export enum NiceAiActType {
@@ -1653,6 +1656,7 @@ export enum NiceAiActType {
     BATTLE_END = "battleEnd",
     LOSE_END = "loseEnd",
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS = "battleEndNotRelatedSurvivalStatus",
+    BATTLE_END_NOT_RELATED_SURVIVAL_STATUS_INSTANTLY = "battleEndNotRelatedSurvivalStatusInstantly",
     CHANGE_THINKING = "changeThinking",
 }
 
@@ -1824,6 +1828,7 @@ export enum NiceAiCondParameter {
     COUNT_AVAILABLE_PLAYER_AND_MASTER_SKILL = "countAvailablePlayerAndMasterSkill",
     COUNT_AVAILABLE_PLAYER_SKILL = "countAvailablePlayerSkill",
     COUNT_AVAILABLE_MASTER_SKILL = "countAvailableMasterSkill",
+    COMMON_RELEASE_ID = "commonReleaseId",
 }
 
 export enum NiceAiCondRefine {
