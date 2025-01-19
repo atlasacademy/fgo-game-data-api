@@ -915,6 +915,7 @@ export enum NiceCardType {
     BLANK = "blank",
     WEAK = "weak",
     STRENGTH = "strength",
+    ADDATTACK2 = "addattack2",
 }
 
 export enum NiceCondType {

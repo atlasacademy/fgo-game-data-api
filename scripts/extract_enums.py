@@ -29,6 +29,9 @@ RAW_NAME_OVERRIDE = {
 }
 
 
+RAW_EXTRA_ITEMS = {"CardType": {104: "ADDATTACK2"}}
+
+
 def enum_to_dict(cstype: list[str], raw_class_name: str) -> dict[int, str]:
     enum_dict: dict[int, str] = {}
     for enum_item in cstype:
@@ -39,6 +42,7 @@ def enum_to_dict(cstype: list[str], raw_class_name: str) -> dict[int, str]:
         enum_dict[i] = RAW_NAME_OVERRIDE.get(raw_class_name, {}).get(
             enum_item, enum_item
         )
+    enum_dict |= RAW_EXTRA_ITEMS.get(raw_class_name, {})
     return {k: enum_dict[k] for k in sorted(enum_dict.keys(), key=abs)}
 
 
