@@ -457,7 +457,7 @@ async def search_quest(
         field_ai_id=search_param.fieldAiId,
         enemy_svt_id=search_param.enemySvtId,
         enemy_name=search_param.enemyName,
-        enemy_svt_ai_id=search_param.enemySvtAiId,
+        enemy_svt_ai_id=None,
         enemy_trait=reverse_traits(search_param.enemyTrait),
         enemy_class={
             CLASS_NAME_REVERSE[svt_class] for svt_class in search_param.enemyClassName
