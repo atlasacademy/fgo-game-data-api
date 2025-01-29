@@ -20,4 +20,4 @@ def get_nice_campaign(campaign: MstEventCampaign) -> NiceEventCampaign:
 
 
 def get_nice_event_quest(quest: MstEventQuest) -> NiceEventQuest:
-    return NiceEventQuest(questId=quest.questId)
+    return NiceEventQuest(questId=quest.questId, phase=quest.phase)
