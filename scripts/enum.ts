@@ -1154,6 +1154,9 @@ export enum NiceCondType {
     EVENT_SCRIPT_NOT_PLAY = "eventScriptNotPlay",
     EVENT_SCRIPT_FLAG = "eventScriptFlag",
     IMAGE_PARTS_GROUP = "imagePartsGroup",
+    USER_LEVEL_ABOVE = "userLevelAbove",
+    USER_LEVEL_BELOW = "userLevelBelow",
+    USER_LEVEL_EQUAL = "userLevelEqual",
 }
 
 export enum NiceVoiceCondType {
@@ -1895,6 +1898,7 @@ export enum NiceCombineAdjustTarget {
     SUPER_SUCCESS_BY_CLASS = "superSuccessByClass",
     EXCHANGE_SVT = "exchangeSvt",
     QUEST_ITEM_FIRST_TIME = "questItemFirstTime",
+    QUEST_USE_REWARD_ADD_ITEM = "questUseRewardAddItem",
 }
 
 export enum NiceEventCombineCalc {

@@ -2622,6 +2622,9 @@ class CondType(IntEnum):
     EVENT_SCRIPT_NOT_PLAY = 237
     EVENT_SCRIPT_FLAG = 238
     IMAGE_PARTS_GROUP = 241
+    USER_LEVEL_ABOVE = 242
+    USER_LEVEL_BELOW = 243
+    USER_LEVEL_EQUAL = 244
 
 
 class NiceCondType(StrEnum):
@@ -2862,6 +2865,9 @@ class NiceCondType(StrEnum):
     eventScriptNotPlay = "eventScriptNotPlay"
     eventScriptFlag = "eventScriptFlag"
     imagePartsGroup = "imagePartsGroup"
+    userLevelAbove = "userLevelAbove"
+    userLevelBelow = "userLevelBelow"
+    userLevelEqual = "userLevelEqual"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3100,6 +3106,9 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     237: NiceCondType.eventScriptNotPlay,
     238: NiceCondType.eventScriptFlag,
     241: NiceCondType.imagePartsGroup,
+    242: NiceCondType.userLevelAbove,
+    243: NiceCondType.userLevelBelow,
+    244: NiceCondType.userLevelEqual,
 }
 
 
@@ -5343,6 +5352,7 @@ class CombineAdjustTargetType(IntEnum):
     SUPER_SUCCESS_BY_CLASS = 33
     EXCHANGE_SVT = 34
     QUEST_ITEM_FIRST_TIME = 35
+    QUEST_USE_REWARD_ADD_ITEM = 36
 
 
 class NiceCombineAdjustTarget(StrEnum):
@@ -5383,6 +5393,7 @@ class NiceCombineAdjustTarget(StrEnum):
     superSuccessByClass = "superSuccessByClass"
     exchangeSvt = "exchangeSvt"
     questItemFirstTime = "questItemFirstTime"
+    questUseRewardAddItem = "questUseRewardAddItem"
 
 
 COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
@@ -5421,6 +5432,7 @@ COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
     33: NiceCombineAdjustTarget.superSuccessByClass,
     34: NiceCombineAdjustTarget.exchangeSvt,
     35: NiceCombineAdjustTarget.questItemFirstTime,
+    36: NiceCombineAdjustTarget.questUseRewardAddItem,
 }
 
 
