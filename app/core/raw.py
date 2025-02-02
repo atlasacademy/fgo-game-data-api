@@ -620,10 +620,14 @@ async def get_servant_entity(
     )
 
     if expand:
-        extra_passive_ids = {skill.skillId for skill in mstSvtPassiveSkill}
+        extra_passive_ids = {
+            skill.skillId: 1 for skill in mstSvtPassiveSkill
+        }  # to preserve list order
         append_passive_ids = {skill.skillId for skill in mstSvtAppendPassiveSkill}
         expand_skill_ids = (
-            set(svt_entity.mstSvt.classPassive) | extra_passive_ids | append_passive_ids
+            set(svt_entity.mstSvt.classPassive)
+            | set(extra_passive_ids.keys())
+            | append_passive_ids
         )
         expand_skills = {
             skill.mstSkill.id: skill
