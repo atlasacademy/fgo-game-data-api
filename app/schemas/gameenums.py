@@ -6354,3 +6354,136 @@ SVT_CLASS_GROUP_TYPE_NAME: dict[int, NiceSvtClassGroupType] = {
     2: NiceSvtClassGroupType.other,
     3: NiceSvtClassGroupType.all,
 }
+
+
+class EventMissionCondDetailType(IntEnum):
+    ENEMY_KILL_NUM = 1
+    ENEMY_INDIVIDUALITY_KILL_NUM = 2
+    ITEM_GET_TOTAL = 3
+    BATTLE_SVT_IN_DECK = 4
+    BATTLE_SVT_EQUIP_IN_DECK = 5
+    TARGET_QUEST_ENEMY_KILL_NUM = 6
+    TARGET_QUEST_ENEMY_INDIVIDUALITY_KILL_NUM = 7
+    TARGET_QUEST_ITEM_GET_TOTAL = 8
+    QUEST_CLEAR = 9
+    QUEST_CLEAR_NUM = 10
+    SVT_GET_NUM = 11
+    ALL_QUEST_ITEM_GET_TOTAL = 12
+    ALL_INDIVIDUALITY_IN_ENEMY_KILL_NUM = 13
+    TARGET_ENEMY_CLASS_KILL_NUM = 14
+    TARGET_SVT_ENEMY_CLASS_KILL_NUM = 15
+    TARGET_ENEMY_INDIVIDUALITY_CLASS_KILL_NUM = 16
+    BATTLE_SVT_INDIVIDUALITY_SPECIFIC_NUM = 17
+    BATTLE_SVT_CLASS_SPECIFIC_NUM = 18
+    ALL_QUEST_SVT_GET_TOTAL = 19
+    QUEST_GROUP_CLEAR_NUM = 20
+    GACHA_DRAW_NUM = 21
+    QUEST_CLEAR_WITH_SVT_IN_DEC = 22
+    QUEST_CLEAR_WITH_SVT_IN_DECK_NONE_FOLLOWER = 23
+    QUEST_PHASE_CLEAR_NUM = 24
+    EVENT_ITEM_USE_NUM = 25
+    EVENT_BOARD_GAME_CELL_NUM = 26
+    FRIEND_AND_FOLLOW_NUM = 27
+    QUEST_PHASE_CLEAR_NUM_QUEST_TYPE = 28
+    QUEST_PHASE_CLEAR_NUM_QUEST_GROUP = 29
+    QUEST_PHASE_CLEAR_NUM_WAR_ID = 30
+    QUEST_PHASE_CLEAR_NUM_WITH_WAR_BOARD = 31
+    QUEST_CLEAR_WITH_SVT_IN_DECK_ONLY_STARTING_MEMBER = 34
+    QUEST_CLEAR_WITH_SVT_IN_DECK_NONE_FOLLOWER_ONLY_STARTING_MEMBER = 35
+    BATTLE_EXCHANGE_SVT_IN_DECK = 37
+    USE_TREASURE_DEVICE_EXCHANGE_SVT = 38
+    PLAY_VOICE_EXCHANGE_SVT = 39
+    MAP_GIMMICK_COUNT = 40
+    PURCHASE_SHOP_NUM = 41
+    ITEM_USE_QUEST_NUM = 42
+
+
+class NiceEventMissionCondDetailType(StrEnum):
+    """Event Mission Cond Detail Type"""
+
+    enemyKillNum = "enemyKillNum"
+    enemyIndividualityKillNum = "enemyIndividualityKillNum"
+    itemGetTotal = "itemGetTotal"
+    battleSvtInDeck = "battleSvtInDeck"
+    battleSvtEquipInDeck = "battleSvtEquipInDeck"
+    targetQuestEnemyKillNum = "targetQuestEnemyKillNum"
+    targetQuestEnemyIndividualityKillNum = "targetQuestEnemyIndividualityKillNum"
+    targetQuestItemGetTotal = "targetQuestItemGetTotal"
+    questClear = "questClear"
+    questClearNum = "questClearNum"
+    svtGetNum = "svtGetNum"
+    allQuestItemGetTotal = "allQuestItemGetTotal"
+    allIndividualityInEnemyKillNum = "allIndividualityInEnemyKillNum"
+    targetEnemyClassKillNum = "targetEnemyClassKillNum"
+    targetSvtEnemyClassKillNum = "targetSvtEnemyClassKillNum"
+    targetEnemyIndividualityClassKillNum = "targetEnemyIndividualityClassKillNum"
+    battleSvtIndividualitySpecificNum = "battleSvtIndividualitySpecificNum"
+    battleSvtClassSpecificNum = "battleSvtClassSpecificNum"
+    allQuestSvtGetTotal = "allQuestSvtGetTotal"
+    questGroupClearNum = "questGroupClearNum"
+    gachaDrawNum = "gachaDrawNum"
+    questClearWithSvtInDec = "questClearWithSvtInDec"
+    questClearWithSvtInDeckNoneFollower = "questClearWithSvtInDeckNoneFollower"
+    questPhaseClearNum = "questPhaseClearNum"
+    eventItemUseNum = "eventItemUseNum"
+    eventBoardGameCellNum = "eventBoardGameCellNum"
+    friendAndFollowNum = "friendAndFollowNum"
+    questPhaseClearNumQuestType = "questPhaseClearNumQuestType"
+    questPhaseClearNumQuestGroup = "questPhaseClearNumQuestGroup"
+    questPhaseClearNumWarId = "questPhaseClearNumWarId"
+    questPhaseClearNumWithWarBoard = "questPhaseClearNumWithWarBoard"
+    questClearWithSvtInDeckOnlyStartingMember = (
+        "questClearWithSvtInDeckOnlyStartingMember"
+    )
+    questClearWithSvtInDeckNoneFollowerOnlyStartingMember = (
+        "questClearWithSvtInDeckNoneFollowerOnlyStartingMember"
+    )
+    battleExchangeSvtInDeck = "battleExchangeSvtInDeck"
+    useTreasureDeviceExchangeSvt = "useTreasureDeviceExchangeSvt"
+    playVoiceExchangeSvt = "playVoiceExchangeSvt"
+    mapGimmickCount = "mapGimmickCount"
+    purchaseShopNum = "purchaseShopNum"
+    itemUseQuestNum = "itemUseQuestNum"
+
+
+EVENT_MISSION_COND_DETAIL_TYPE_NAME: dict[int, NiceEventMissionCondDetailType] = {
+    1: NiceEventMissionCondDetailType.enemyKillNum,
+    2: NiceEventMissionCondDetailType.enemyIndividualityKillNum,
+    3: NiceEventMissionCondDetailType.itemGetTotal,
+    4: NiceEventMissionCondDetailType.battleSvtInDeck,
+    5: NiceEventMissionCondDetailType.battleSvtEquipInDeck,
+    6: NiceEventMissionCondDetailType.targetQuestEnemyKillNum,
+    7: NiceEventMissionCondDetailType.targetQuestEnemyIndividualityKillNum,
+    8: NiceEventMissionCondDetailType.targetQuestItemGetTotal,
+    9: NiceEventMissionCondDetailType.questClear,
+    10: NiceEventMissionCondDetailType.questClearNum,
+    11: NiceEventMissionCondDetailType.svtGetNum,
+    12: NiceEventMissionCondDetailType.allQuestItemGetTotal,
+    13: NiceEventMissionCondDetailType.allIndividualityInEnemyKillNum,
+    14: NiceEventMissionCondDetailType.targetEnemyClassKillNum,
+    15: NiceEventMissionCondDetailType.targetSvtEnemyClassKillNum,
+    16: NiceEventMissionCondDetailType.targetEnemyIndividualityClassKillNum,
+    17: NiceEventMissionCondDetailType.battleSvtIndividualitySpecificNum,
+    18: NiceEventMissionCondDetailType.battleSvtClassSpecificNum,
+    19: NiceEventMissionCondDetailType.allQuestSvtGetTotal,
+    20: NiceEventMissionCondDetailType.questGroupClearNum,
+    21: NiceEventMissionCondDetailType.gachaDrawNum,
+    22: NiceEventMissionCondDetailType.questClearWithSvtInDec,
+    23: NiceEventMissionCondDetailType.questClearWithSvtInDeckNoneFollower,
+    24: NiceEventMissionCondDetailType.questPhaseClearNum,
+    25: NiceEventMissionCondDetailType.eventItemUseNum,
+    26: NiceEventMissionCondDetailType.eventBoardGameCellNum,
+    27: NiceEventMissionCondDetailType.friendAndFollowNum,
+    28: NiceEventMissionCondDetailType.questPhaseClearNumQuestType,
+    29: NiceEventMissionCondDetailType.questPhaseClearNumQuestGroup,
+    30: NiceEventMissionCondDetailType.questPhaseClearNumWarId,
+    31: NiceEventMissionCondDetailType.questPhaseClearNumWithWarBoard,
+    34: NiceEventMissionCondDetailType.questClearWithSvtInDeckOnlyStartingMember,
+    35: NiceEventMissionCondDetailType.questClearWithSvtInDeckNoneFollowerOnlyStartingMember,
+    37: NiceEventMissionCondDetailType.battleExchangeSvtInDeck,
+    38: NiceEventMissionCondDetailType.useTreasureDeviceExchangeSvt,
+    39: NiceEventMissionCondDetailType.playVoiceExchangeSvt,
+    40: NiceEventMissionCondDetailType.mapGimmickCount,
+    41: NiceEventMissionCondDetailType.purchaseShopNum,
+    42: NiceEventMissionCondDetailType.itemUseQuestNum,
+}

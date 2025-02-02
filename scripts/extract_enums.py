@@ -691,6 +691,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Svt Class Group Type",
         "SVT_CLASS_GROUP_TYPE_NAME",
     ),
+    (
+        "EventMissionCondDetailEntity.MissionCondType",
+        "EventMissionCondDetailType",
+        "NiceEventMissionCondDetailType",
+        "Event Mission Cond Detail Type",
+        "EVENT_MISSION_COND_DETAIL_TYPE_NAME",
+    ),
 ]
 
 
