@@ -7,11 +7,11 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
       - name: Update translation files
         run: |
           git clone https://git.atlasacademy.io/atlasacademy/fgo-game-data.git --branch JP --depth 1 /tmp/fgo-game-data-jp
