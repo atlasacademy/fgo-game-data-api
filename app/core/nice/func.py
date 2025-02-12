@@ -136,7 +136,7 @@ async def parse_dataVals(
                     FuncType.DAMAGE_NP_STATE_INDIVIDUAL_FIX,
                     FuncType.DAMAGE_NP_INDIVIDUAL_SUM,
                     FuncType.DAMAGE_NP_RARE,
-                    FuncType.DAMAGE_NP_AND_CHECK_INDIVIDUALITY,
+                    FuncType.DAMAGE_NP_AND_OR_CHECK_INDIVIDUALITY,
                     FuncType.DAMAGE_NP_BATTLE_POINT_PHASE,
                 }:
                     if i == 0:
