@@ -119,12 +119,12 @@
     "plusAction": 0
   },
   "DAMAGE_DEF": {
-    "limit": 1,
+    "limit": 2,
     "plusTypes": [
-      20
+      214
     ],
     "minusTypes": [
-      21
+      215
     ],
     "baseParam": 1000,
     "baseValue": 1000,
@@ -291,7 +291,7 @@
       52
     ],
     "minusTypes": [
-      68,
+      221,
       60
     ],
     "baseParam": 1000,
@@ -302,10 +302,12 @@
   "COMMAND_NP_DEF": {
     "limit": 1,
     "plusTypes": [
-      105
+      105,
+      220
     ],
     "minusTypes": [
-      106
+      106,
+      222
     ],
     "baseParam": 1000,
     "baseValue": 0,
@@ -345,7 +347,7 @@
       52
     ],
     "minusTypes": [
-      67,
+      224,
       60
     ],
     "baseParam": 1000,
@@ -356,10 +358,12 @@
   "COMMAND_STAR_DEF": {
     "limit": 1,
     "plusTypes": [
-      105
+      105,
+      223
     ],
     "minusTypes": [
-      106
+      106,
+      225
     ],
     "baseParam": 1000,
     "baseValue": 0,
@@ -1734,6 +1738,32 @@
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CRITICAL_DAMAGE_DEF": {
+    "limit": 2,
+    "plusTypes": [
+      216
+    ],
+    "minusTypes": [
+      217
+    ],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "NPDAMAGE_DEF": {
+    "limit": 2,
+    "plusTypes": [
+      218
+    ],
+    "minusTypes": [
+      219
+    ],
+    "baseParam": 1000,
+    "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
   }
