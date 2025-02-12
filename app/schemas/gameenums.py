@@ -216,7 +216,7 @@ class FuncType(IntEnum):
     SHORTEN_USER_EQUIP_SKILL = 52
     QUICK_CHANGE_BG = 53
     SHIFT_SERVANT = 54
-    DAMAGE_NP_AND_CHECK_INDIVIDUALITY = 55
+    DAMAGE_NP_AND_OR_CHECK_INDIVIDUALITY = 55
     ABSORB_NPTURN = 56
     OVERWRITE_DEAD_TYPE = 57
     FORCE_ALL_BUFF_NOACT = 58
@@ -333,7 +333,7 @@ class NiceFuncType(StrEnum):
     shortenUserEquipSkill = "shortenUserEquipSkill"
     quickChangeBg = "quickChangeBg"
     shiftServant = "shiftServant"
-    damageNpAndCheckIndividuality = "damageNpAndCheckIndividuality"
+    damageNpAndOrCheckIndividuality = "damageNpAndCheckIndividuality"
     absorbNpturn = "absorbNpturn"
     overwriteDeadType = "overwriteDeadType"
     forceAllBuffNoact = "forceAllBuffNoact"
@@ -448,7 +448,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     52: NiceFuncType.shortenUserEquipSkill,
     53: NiceFuncType.quickChangeBg,
     54: NiceFuncType.shiftServant,
-    55: NiceFuncType.damageNpAndCheckIndividuality,
+    55: NiceFuncType.damageNpAndOrCheckIndividuality,
     56: NiceFuncType.absorbNpturn,
     57: NiceFuncType.overwriteDeadType,
     58: NiceFuncType.forceAllBuffNoact,
@@ -641,8 +641,6 @@ class BuffType(IntEnum):
     UP_DROPNP = 17
     UP_CRITICALDAMAGE = 18
     DOWN_CRITICALDAMAGE = 19
-    UP_SELFDAMAGE = 20
-    DOWN_SELFDAMAGE = 21
     ADD_SELFDAMAGE = 22
     SUB_SELFDAMAGE = 23
     AVOIDANCE = 24
@@ -674,8 +672,6 @@ class BuffType(IntEnum):
     UP_GAIN_HP = 64
     DOWN_GAIN_HP = 65
     DOWN_COMMANDATK = 66
-    DOWN_COMMANSTAR = 67
-    DOWN_COMMANDNP = 68
     UP_CRITICALRATE = 70
     DOWN_CRITICALRATE = 71
     PIERCE_INVINCIBLE = 72
@@ -819,6 +815,18 @@ class BuffType(IntEnum):
     COMBO_START_FUNCTION = 211
     COMBO_END_FUNCTION = 212
     OVERWRITE_SVT_CARD_TYPE = 213
+    UP_DEFENCE_DAMAGE = 214
+    DOWN_DEFENCE_DAMAGE = 215
+    UP_DEFENCE_CRITICALDAMAGE = 216
+    DOWN_DEFENCE_CRITICALDAMAGE = 217
+    UP_DEFENCE_NPDAMAGE = 218
+    DOWN_DEFENCE_NPDAMAGE = 219
+    UP_DEFENCE_COMMANDNP = 220
+    DOWN_COMMANDNP = 221
+    DOWN_DEFENCE_COMMANDNP = 222
+    UP_DEFENCE_COMMANDSTAR = 223
+    DOWN_COMMANDSTAR = 224
+    DOWN_DEFENCE_COMMANDSTAR = 225
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -848,8 +856,6 @@ class NiceBuffType(StrEnum):
     upDropnp = "upDropnp"
     upCriticaldamage = "upCriticaldamage"
     downCriticaldamage = "downCriticaldamage"
-    upSelfdamage = "upSelfdamage"
-    downSelfdamage = "downSelfdamage"
     addSelfdamage = "addSelfdamage"
     subSelfdamage = "subSelfdamage"
     avoidance = "avoidance"
@@ -881,8 +887,6 @@ class NiceBuffType(StrEnum):
     upGainHp = "upGainHp"
     downGainHp = "downGainHp"
     downCommandatk = "downCommandatk"
-    downCommanstar = "downCommanstar"
-    downCommandnp = "downCommandnp"
     upCriticalrate = "upCriticalrate"
     downCriticalrate = "downCriticalrate"
     pierceInvincible = "pierceInvincible"
@@ -1026,9 +1030,24 @@ class NiceBuffType(StrEnum):
     comboStartFunction = "comboStartFunction"
     comboEndFunction = "comboEndFunction"
     overwriteSvtCardType = "overwriteSvtCardType"
+    upDefenceDamage = "upDefenceDamage"
+    downDefenceDamage = "downDefenceDamage"
+    upDefenceCriticaldamage = "upDefenceCriticaldamage"
+    downDefenceCriticaldamage = "downDefenceCriticaldamage"
+    upDefenceNpdamage = "upDefenceNpdamage"
+    downDefenceNpdamage = "downDefenceNpdamage"
+    upDefenceCommandnp = "upDefenceCommandnp"
+    downDefenceCommandnp = "downDefenceCommandnp"
+    upDefenceCommandstar = "upDefenceCommandstar"
+    downCommandstar = "downCommandstar"
+    downDefenceCommandstar = "downDefenceCommandstar"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
+    upSelfdamage = "upSelfdamage"
+    downSelfdamage = "downSelfdamage"
+    downCommanstar = "downCommanstar"
+    downCommandnp = "downCommandnp"
 
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
@@ -1053,8 +1072,6 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     17: NiceBuffType.upDropnp,
     18: NiceBuffType.upCriticaldamage,
     19: NiceBuffType.downCriticaldamage,
-    20: NiceBuffType.upSelfdamage,
-    21: NiceBuffType.downSelfdamage,
     22: NiceBuffType.addSelfdamage,
     23: NiceBuffType.subSelfdamage,
     24: NiceBuffType.avoidance,
@@ -1086,8 +1103,6 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     64: NiceBuffType.upGainHp,
     65: NiceBuffType.downGainHp,
     66: NiceBuffType.downCommandatk,
-    67: NiceBuffType.downCommanstar,
-    68: NiceBuffType.downCommandnp,
     70: NiceBuffType.upCriticalrate,
     71: NiceBuffType.downCriticalrate,
     72: NiceBuffType.pierceInvincible,
@@ -1231,9 +1246,25 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     211: NiceBuffType.comboStartFunction,
     212: NiceBuffType.comboEndFunction,
     213: NiceBuffType.overwriteSvtCardType,
+    216: NiceBuffType.upDefenceCriticaldamage,
+    217: NiceBuffType.downDefenceCriticaldamage,
+    218: NiceBuffType.upDefenceNpdamage,
+    219: NiceBuffType.downDefenceNpdamage,
+    220: NiceBuffType.upDefenceCommandnp,
+    221: NiceBuffType.downCommandnp,
+    222: NiceBuffType.downDefenceCommandnp,
+    223: NiceBuffType.upDefenceCommandstar,
+    224: NiceBuffType.downCommandstar,
+    225: NiceBuffType.downDefenceCommandstar,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
+    20: NiceBuffType.upSelfdamage,
+    21: NiceBuffType.downSelfdamage,
+    214: NiceBuffType.upSelfdamage,
+    215: NiceBuffType.downSelfdamage,
+    67: NiceBuffType.downCommanstar,
+    68: NiceBuffType.downCommandnp,
 }
 
 
@@ -1248,7 +1279,7 @@ class BuffAction(IntEnum):
     DAMAGE = 7
     DAMAGE_INDIVIDUALITY = 8
     DAMAGE_INDIVIDUALITY_ACTIVEONLY = 9
-    SELFDAMAGE = 10
+    DAMAGE_DEF = 10
     CRITICAL_DAMAGE = 11
     NPDAMAGE = 12
     GIVEN_DAMAGE = 13
@@ -1389,6 +1420,8 @@ class BuffAction(IntEnum):
     FUNCTION_COMBO_START = 148
     FUNCTION_COMBO_END = 149
     OVERWRITE_SVT_CARD_TYPE = 150
+    CRITICAL_DAMAGE_DEF = 151
+    NPDAMAGE_DEF = 152
 
 
 class NiceBuffAction(StrEnum):
@@ -1404,7 +1437,7 @@ class NiceBuffAction(StrEnum):
     damage = "damage"
     damageIndividuality = "damageIndividuality"
     damageIndividualityActiveonly = "damageIndividualityActiveonly"
-    selfdamage = "selfdamage"
+    damageDef = "selfdamage"
     criticalDamage = "criticalDamage"
     npdamage = "npdamage"
     givenDamage = "givenDamage"
@@ -1545,6 +1578,8 @@ class NiceBuffAction(StrEnum):
     functionComboStart = "functionComboStart"
     functionComboEnd = "functionComboEnd"
     overwriteSvtCardType = "overwriteSvtCardType"
+    criticalDamageDef = "criticalDamageDef"
+    npdamageDef = "npdamageDef"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1558,7 +1593,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     7: NiceBuffAction.damage,
     8: NiceBuffAction.damageIndividuality,
     9: NiceBuffAction.damageIndividualityActiveonly,
-    10: NiceBuffAction.selfdamage,
+    10: NiceBuffAction.damageDef,
     11: NiceBuffAction.criticalDamage,
     12: NiceBuffAction.npdamage,
     13: NiceBuffAction.givenDamage,
@@ -1699,6 +1734,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     148: NiceBuffAction.functionComboStart,
     149: NiceBuffAction.functionComboEnd,
     150: NiceBuffAction.overwriteSvtCardType,
+    151: NiceBuffAction.criticalDamageDef,
+    152: NiceBuffAction.npdamageDef,
 }
 
 
@@ -1783,158 +1820,159 @@ class DataValsType(IntEnum):
     ShiftNpcId = 53
     DisplayLastFuncInvalidType = 54
     AndCheckIndividualityList = 55
-    WinBattleNotRelatedSurvivalStatus = 56
-    ForceSelfInstantDeath = 57
-    ChangeMaxBreakGauge = 58
-    ParamAddMaxValue = 59
-    ParamAddMaxCount = 60
-    LossHpChangeDamage = 61
-    IncludePassiveIndividuality = 62
-    MotionChange = 63
-    PopLabelDelay = 64
-    NoTargetNoAct = 65
-    CardIndex = 66
-    CardIndividuality = 67
-    WarBoardTakeOverBuff = 68
-    ParamAddSelfIndividuality = 69
-    ParamAddOpIndividuality = 70
-    ParamAddFieldIndividuality = 71
-    ParamAddValue = 72
-    MultipleGainStar = 73
-    NoCheckIndividualityIfNotUnit = 74
-    ForcedEffectSpeedOne = 75
-    SetLimitCount = 76
-    CheckEnemyFieldSpace = 77
-    TriggeredFuncPosition = 78
-    DamageCount = 79
-    DamageRates = 80
-    OnPositions = 81
-    OffPositions = 82
-    TargetIndiv = 83
-    IncludeIgnoreIndividuality = 84
-    EvenIfWinDie = 85
-    CallSvtEffectId = 86
-    ForceAddState = 87
-    UnSubState = 88
-    ForceSubState = 89
-    IgnoreIndivUnreleaseable = 90
-    OnParty = 91
-    CounterId = 92
-    CounterLv = 93
-    CounterOc = 94
-    UseTreasureDevice = 95
-    SkillReaction = 96
-    BehaveAsFamilyBuff = 97
-    UnSubStateWhileLinkedToOthers = 98
-    NotAccompanyWhenLinkedTargetMoveState = 99
-    NotTargetSkillIdArray = 100
-    ShortTurn = 101
-    FieldIndividuality = 102
-    BGId = 103
-    BGType = 104
-    BgmId = 105
-    TakeOverFieldState = 106
-    TakeOverNextWaveBGAndBGM = 107
-    RemoveFieldBuffActorDeath = 108
-    FieldBuffGrantType = 109
-    Priority = 110
-    AddIndividualityEx = 111
-    IgnoreResistance = 112
-    GainNpTargetPassiveIndividuality = 113
-    HpReduceToRegainIndiv = 114
-    DisplayActualRecoveryHpFlag = 115
-    ShiftDeckIndex = 116
-    PopValueText = 117
-    IsLossHpPerNow = 118
-    CopyTargetFunctionType = 119
-    CopyFunctionTargetPTOnly = 120
-    IgnoreValueUp = 121
-    ApplyValueUp = 122
-    ActNoDamageBuff = 123
-    ActSelectIndex = 124
-    CopyTargetBuffType = 125
-    NotSkillCopyTargetFuncIds = 126
-    NotSkillCopyTargetIndividualities = 127
-    ClassIconAuraEffectId = 128
-    ActMasterGenderType = 129
-    IntervalTurn = 130
-    IntervalCount = 131
-    TriggeredFieldCountTarget = 132
-    TriggeredFieldCountRange = 133
-    TargetEnemyRange = 134
-    TriggeredFuncPositionSameTarget = 135
-    TriggeredFuncPositionAll = 136
-    TriggeredTargetHpRange = 137
-    TriggeredTargetHpRateRange = 138
-    ExcludeUnSubStateIndiv = 139
-    ProgressTurnOnBoard = 140
-    CheckTargetResurrectable = 141
-    CancelTransform = 142
-    UnSubStateWhenContinue = 143
-    CheckTargetHaveDefeatPoint = 144
-    NPFixedDamageValue = 145
-    IgnoreShiftSafeDamage = 146
-    ActAttackFunction = 147
-    DelayRemoveBuffExpiredOnPlayerTurn = 148
-    AllowRemoveBuff = 149
-    NotExecFunctionIfKeepAliveOnWarBoard = 150
-    SnapShotParamAddSelfIndv = 151
-    SnapShotParamAddOpIndv = 152
-    SnapShotParamAddFieldIndv = 153
-    SnapShotParamAddValue = 154
-    SnapShotParamAddMaxValue = 155
-    SnapShotParamAddMaxCount = 156
-    NotExecOnTransform = 157
-    NotRemoveOnTransform = 158
-    PriorityBgm = 159
-    BgmAllowSubPlaying = 160
-    BgPriority = 161
-    PriorityBg = 162
-    ResetPriorityBgmAtWaveStart = 163
-    ControlOtherBgmAtOverStageBgm_Priority = 164
-    ControlOtherBgmAtOverStageBgm_Target = 165
-    ExtendBuffHalfTurnInOpponentTurn = 166
-    ShortenBuffHalfTurnInOpponentTurn = 167
-    ExtendBuffHalfTurnInPartyTurn = 168
-    ShortenBuffHalfTurnInPartyTurn = 169
-    LinkageBuffGrantSuccessEvenIfOtherFailed = 170
-    DisplayNoEffectCauses = 171
-    BattlePointId = 172
-    BattlePointValue = 173
-    BattlePointUiUpdateType = 174
-    BattlePointOverwrite = 175
-    CheckOverChargeStageRange = 176
-    CheckBattlePointPhaseRange = 177
-    StartingPosition = 178
-    FriendShipAbove = 179
-    DamageRateBattlePointPhase = 180
-    ParamAddBattlePointPhaseId = 181
-    ParamAddBattlePointPhaseValue = 182
-    ShortenMaxCountEachSkill = 183
-    ChargeHpMaxBeforeBreakGaugeUp = 184
-    TargetFunctionIndividuality = 185
-    TargetBuffIndividuality = 186
-    TargetEnemyClass = 187
-    ParamAddIndividualityTargetType = 188
-    TriggeredFuncIndexAndCheckList = 189
-    FuncCheckTargetIndividualityTargetType = 190
-    FuncCheckTargetIndividualityCountHigher = 191
-    FuncCheckTargetIndividualityCountLower = 192
-    FuncCheckTargetIndividualityCountEqual = 193
-    ParamAddSelfIndividualityAndCheck = 194
-    ParamAddOpIndividualityAndCheck = 195
-    ParamAddFieldIndividualityAndCheck = 196
-    SnapShotParamAddSelfIndividualityAndCheck = 197
-    SnapShotParamAddOpIndividualityAndCheck = 198
-    SnapShotParamAddFieldIndividualityAndCheck = 199
-    EnemyCountChangeTime = 200
-    EnemyCountChangeEffectId = 201
-    EnemyCountWaitTimeAfterMessage = 202
-    WaitMessageEnd = 203
-    ContinueDisplayMessage = 204
-    StartIntervalTurn = 205
-    StartIntervalCount = 206
-    CommonReleaseId = 207
+    AndOrCheckIndividualityList = 56
+    WinBattleNotRelatedSurvivalStatus = 57
+    ForceSelfInstantDeath = 58
+    ChangeMaxBreakGauge = 59
+    ParamAddMaxValue = 60
+    ParamAddMaxCount = 61
+    LossHpChangeDamage = 62
+    IncludePassiveIndividuality = 63
+    MotionChange = 64
+    PopLabelDelay = 65
+    NoTargetNoAct = 66
+    CardIndex = 67
+    CardIndividuality = 68
+    WarBoardTakeOverBuff = 69
+    ParamAddSelfIndividuality = 70
+    ParamAddOpIndividuality = 71
+    ParamAddFieldIndividuality = 72
+    ParamAddValue = 73
+    MultipleGainStar = 74
+    NoCheckIndividualityIfNotUnit = 75
+    ForcedEffectSpeedOne = 76
+    SetLimitCount = 77
+    CheckEnemyFieldSpace = 78
+    TriggeredFuncPosition = 79
+    DamageCount = 80
+    DamageRates = 81
+    OnPositions = 82
+    OffPositions = 83
+    TargetIndiv = 84
+    IncludeIgnoreIndividuality = 85
+    EvenIfWinDie = 86
+    CallSvtEffectId = 87
+    ForceAddState = 88
+    UnSubState = 89
+    ForceSubState = 90
+    IgnoreIndivUnreleaseable = 91
+    OnParty = 92
+    CounterId = 93
+    CounterLv = 94
+    CounterOc = 95
+    UseTreasureDevice = 96
+    SkillReaction = 97
+    BehaveAsFamilyBuff = 98
+    UnSubStateWhileLinkedToOthers = 99
+    NotAccompanyWhenLinkedTargetMoveState = 100
+    NotTargetSkillIdArray = 101
+    ShortTurn = 102
+    FieldIndividuality = 103
+    BGId = 104
+    BGType = 105
+    BgmId = 106
+    TakeOverFieldState = 107
+    TakeOverNextWaveBGAndBGM = 108
+    RemoveFieldBuffActorDeath = 109
+    FieldBuffGrantType = 110
+    Priority = 111
+    AddIndividualityEx = 112
+    IgnoreResistance = 113
+    GainNpTargetPassiveIndividuality = 114
+    HpReduceToRegainIndiv = 115
+    DisplayActualRecoveryHpFlag = 116
+    ShiftDeckIndex = 117
+    PopValueText = 118
+    IsLossHpPerNow = 119
+    CopyTargetFunctionType = 120
+    CopyFunctionTargetPTOnly = 121
+    IgnoreValueUp = 122
+    ApplyValueUp = 123
+    ActNoDamageBuff = 124
+    ActSelectIndex = 125
+    CopyTargetBuffType = 126
+    NotSkillCopyTargetFuncIds = 127
+    NotSkillCopyTargetIndividualities = 128
+    ClassIconAuraEffectId = 129
+    ActMasterGenderType = 130
+    IntervalTurn = 131
+    IntervalCount = 132
+    TriggeredFieldCountTarget = 133
+    TriggeredFieldCountRange = 134
+    TargetEnemyRange = 135
+    TriggeredFuncPositionSameTarget = 136
+    TriggeredFuncPositionAll = 137
+    TriggeredTargetHpRange = 138
+    TriggeredTargetHpRateRange = 139
+    ExcludeUnSubStateIndiv = 140
+    ProgressTurnOnBoard = 141
+    CheckTargetResurrectable = 142
+    CancelTransform = 143
+    UnSubStateWhenContinue = 144
+    CheckTargetHaveDefeatPoint = 145
+    NPFixedDamageValue = 146
+    IgnoreShiftSafeDamage = 147
+    ActAttackFunction = 148
+    DelayRemoveBuffExpiredOnPlayerTurn = 149
+    AllowRemoveBuff = 150
+    NotExecFunctionIfKeepAliveOnWarBoard = 151
+    SnapShotParamAddSelfIndv = 152
+    SnapShotParamAddOpIndv = 153
+    SnapShotParamAddFieldIndv = 154
+    SnapShotParamAddValue = 155
+    SnapShotParamAddMaxValue = 156
+    SnapShotParamAddMaxCount = 157
+    NotExecOnTransform = 158
+    NotRemoveOnTransform = 159
+    PriorityBgm = 160
+    BgmAllowSubPlaying = 161
+    BgPriority = 162
+    PriorityBg = 163
+    ResetPriorityBgmAtWaveStart = 164
+    ControlOtherBgmAtOverStageBgm_Priority = 165
+    ControlOtherBgmAtOverStageBgm_Target = 166
+    ExtendBuffHalfTurnInOpponentTurn = 167
+    ShortenBuffHalfTurnInOpponentTurn = 168
+    ExtendBuffHalfTurnInPartyTurn = 169
+    ShortenBuffHalfTurnInPartyTurn = 170
+    LinkageBuffGrantSuccessEvenIfOtherFailed = 171
+    DisplayNoEffectCauses = 172
+    BattlePointId = 173
+    BattlePointValue = 174
+    BattlePointUiUpdateType = 175
+    BattlePointOverwrite = 176
+    CheckOverChargeStageRange = 177
+    CheckBattlePointPhaseRange = 178
+    StartingPosition = 179
+    FriendShipAbove = 180
+    DamageRateBattlePointPhase = 181
+    ParamAddBattlePointPhaseId = 182
+    ParamAddBattlePointPhaseValue = 183
+    ShortenMaxCountEachSkill = 184
+    ChargeHpMaxBeforeBreakGaugeUp = 185
+    TargetFunctionIndividuality = 186
+    TargetBuffIndividuality = 187
+    TargetEnemyClass = 188
+    ParamAddIndividualityTargetType = 189
+    TriggeredFuncIndexAndCheckList = 190
+    FuncCheckTargetIndividualityTargetType = 191
+    FuncCheckTargetIndividualityCountHigher = 192
+    FuncCheckTargetIndividualityCountLower = 193
+    FuncCheckTargetIndividualityCountEqual = 194
+    ParamAddSelfIndividualityAndCheck = 195
+    ParamAddOpIndividualityAndCheck = 196
+    ParamAddFieldIndividualityAndCheck = 197
+    SnapShotParamAddSelfIndividualityAndCheck = 198
+    SnapShotParamAddOpIndividualityAndCheck = 199
+    SnapShotParamAddFieldIndividualityAndCheck = 200
+    EnemyCountChangeTime = 201
+    EnemyCountChangeEffectId = 202
+    EnemyCountWaitTimeAfterMessage = 203
+    WaitMessageEnd = 204
+    ContinueDisplayMessage = 205
+    StartIntervalTurn = 206
+    StartIntervalCount = 207
+    CommonReleaseId = 208
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1998,6 +2036,7 @@ class ItemType(IntEnum):
     PURE_PRI_SHOP_RESET = 37
     EXCHANGE_SVT_COIN = 38
     REDUCE_TRADE_TIME = 39
+    EVENT_PASSIVE_SKILL_GIVEN = 40
 
 
 class NiceItemType(StrEnum):
@@ -2042,6 +2081,7 @@ class NiceItemType(StrEnum):
     purePriShopReset = "purePriShopReset"
     exchangeSvtCoin = "exchangeSvtCoin"
     reduceTradeTime = "reduceTradeTime"
+    eventPassiveSkillGiven = "eventPassiveSkillGiven"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -2084,6 +2124,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     37: NiceItemType.purePriShopReset,
     38: NiceItemType.exchangeSvtCoin,
     39: NiceItemType.reduceTradeTime,
+    40: NiceItemType.eventPassiveSkillGiven,
 }
 
 

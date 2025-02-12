@@ -463,6 +463,7 @@ class BaseVals(BaseModel):
     ShiftNpcId: Optional[int] = None
     DisplayLastFuncInvalidType: Optional[int] = None
     AndCheckIndividualityList: Optional[list[int]] = None
+    AndOrCheckIndividualityList: list[int] | None = None
     WinBattleNotRelatedSurvivalStatus: Optional[int] = None
     ForceSelfInstantDeath: Optional[int] = None
     ChangeMaxBreakGauge: Optional[int] = None

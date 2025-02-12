@@ -75,10 +75,22 @@ EXTRA_STR_NAME = {
         -1: "UNKNOWN",
     },
     "NiceEventType": {27: "FORTUNE_CAMPAIGN", 28: "GENDER_SELECTION"},
+    "NiceBuffType": {
+        20: "UP_SELFDAMAGE",
+        21: "DOWN_SELFDAMAGE",
+        214: "UP_SELFDAMAGE",
+        215: "DOWN_SELFDAMAGE",
+        67: "DOWN_COMMANSTAR",
+        68: "DOWN_COMMANDNP",
+    },
 }
 
 
 STR_NAME_OVERRIDE = {
+    "NiceFuncType": {
+        "damageNpAndOrCheckIndividuality": "damageNpAndCheckIndividuality"
+    },
+    "NiceBuffAction": {"damageDef": "selfdamage"},
     "NiceCardType": {"addattack": "extra"},
     "NiceGender": {"other": "unknown"},
     "Attribute": {"ground": "earth"},
@@ -129,9 +141,19 @@ def out_strenum(
         f'    """{nice_class_title}"""\n',
         "\n",
     ]
-    for enumstr in list(input_dict.values()) + list(
-        EXTRA_STR_NAME.get(nice_class, {}).values()
-    ):
+
+    extra_str_names = []
+    for extra_str in list(EXTRA_STR_NAME.get(nice_class, {}).values()):
+        if extra_str not in extra_str_names:
+            extra_str_names.append(extra_str)
+
+    deduped_original_list = [
+        str_name
+        for str_name in list(input_dict.values())
+        if str_name not in extra_str_names
+    ]
+
+    for enumstr in deduped_original_list + extra_str_names:
         json_name = convert_name(enumstr)
         str_name = (
             STR_NAME_OVERRIDE.get(nice_class, {})
@@ -150,7 +172,11 @@ def out_enumdict(
 ) -> list[str]:
     strenumdict_lines = [f"{dict_name}: dict[int, {nice_class}] = {{\n"]
     for enumint, enumstr in (
-        list(input_dict.items())
+        [
+            (k, v)
+            for k, v in input_dict.items()
+            if k not in EXTRA_STR_NAME.get(nice_class, {})
+        ]
         + list(EXTRA_STR_NAME.get(nice_class, {}).items())
         + list(EXTRA_ENUM_DICT.get(nice_class, {}).items())
     ):

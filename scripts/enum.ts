@@ -103,7 +103,7 @@ export enum NiceFuncType {
     SHORTEN_USER_EQUIP_SKILL = "shortenUserEquipSkill",
     QUICK_CHANGE_BG = "quickChangeBg",
     SHIFT_SERVANT = "shiftServant",
-    DAMAGE_NP_AND_CHECK_INDIVIDUALITY = "damageNpAndCheckIndividuality",
+    DAMAGE_NP_AND_OR_CHECK_INDIVIDUALITY = "damageNpAndCheckIndividuality",
     ABSORB_NPTURN = "absorbNpturn",
     OVERWRITE_DEAD_TYPE = "overwriteDeadType",
     FORCE_ALL_BUFF_NOACT = "forceAllBuffNoact",
@@ -220,8 +220,6 @@ export enum NiceBuffType {
     UP_DROPNP = "upDropnp",
     UP_CRITICALDAMAGE = "upCriticaldamage",
     DOWN_CRITICALDAMAGE = "downCriticaldamage",
-    UP_SELFDAMAGE = "upSelfdamage",
-    DOWN_SELFDAMAGE = "downSelfdamage",
     ADD_SELFDAMAGE = "addSelfdamage",
     SUB_SELFDAMAGE = "subSelfdamage",
     AVOIDANCE = "avoidance",
@@ -253,8 +251,6 @@ export enum NiceBuffType {
     UP_GAIN_HP = "upGainHp",
     DOWN_GAIN_HP = "downGainHp",
     DOWN_COMMANDATK = "downCommandatk",
-    DOWN_COMMANSTAR = "downCommanstar",
-    DOWN_COMMANDNP = "downCommandnp",
     UP_CRITICALRATE = "upCriticalrate",
     DOWN_CRITICALRATE = "downCriticalrate",
     PIERCE_INVINCIBLE = "pierceInvincible",
@@ -398,9 +394,27 @@ export enum NiceBuffType {
     COMBO_START_FUNCTION = "comboStartFunction",
     COMBO_END_FUNCTION = "comboEndFunction",
     OVERWRITE_SVT_CARD_TYPE = "overwriteSvtCardType",
+    UP_DEFENCE_DAMAGE = "upDefenceDamage",
+    DOWN_DEFENCE_DAMAGE = "downDefenceDamage",
+    UP_DEFENCE_CRITICALDAMAGE = "upDefenceCriticaldamage",
+    DOWN_DEFENCE_CRITICALDAMAGE = "downDefenceCriticaldamage",
+    UP_DEFENCE_NPDAMAGE = "upDefenceNpdamage",
+    DOWN_DEFENCE_NPDAMAGE = "downDefenceNpdamage",
+    UP_DEFENCE_COMMANDNP = "upDefenceCommandnp",
+    DOWN_COMMANDNP = "downCommandnp",
+    DOWN_DEFENCE_COMMANDNP = "downDefenceCommandnp",
+    UP_DEFENCE_COMMANDSTAR = "upDefenceCommandstar",
+    DOWN_COMMANDSTAR = "downCommandstar",
+    DOWN_DEFENCE_COMMANDSTAR = "downDefenceCommandstar",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
+    UP_SELFDAMAGE = "upSelfdamage",
+    DOWN_SELFDAMAGE = "downSelfdamage",
+    UP_SELFDAMAGE = "upSelfdamage",
+    DOWN_SELFDAMAGE = "downSelfdamage",
+    DOWN_COMMANSTAR = "downCommanstar",
+    DOWN_COMMANDNP = "downCommandnp",
 }
 
 export enum NiceBuffAction {
@@ -414,7 +428,7 @@ export enum NiceBuffAction {
     DAMAGE = "damage",
     DAMAGE_INDIVIDUALITY = "damageIndividuality",
     DAMAGE_INDIVIDUALITY_ACTIVEONLY = "damageIndividualityActiveonly",
-    SELFDAMAGE = "selfdamage",
+    DAMAGE_DEF = "selfdamage",
     CRITICAL_DAMAGE = "criticalDamage",
     NPDAMAGE = "npdamage",
     GIVEN_DAMAGE = "givenDamage",
@@ -555,6 +569,8 @@ export enum NiceBuffAction {
     FUNCTION_COMBO_START = "functionComboStart",
     FUNCTION_COMBO_END = "functionComboEnd",
     OVERWRITE_SVT_CARD_TYPE = "overwriteSvtCardType",
+    CRITICAL_DAMAGE_DEF = "criticalDamageDef",
+    NPDAMAGE_DEF = "npdamageDef",
 }
 
 export enum NiceBuffLimit {
@@ -621,6 +637,7 @@ export enum NiceDataValsType {
     ShiftNpcId = "shiftnpcid",
     DisplayLastFuncInvalidType = "displaylastfuncinvalidtype",
     AndCheckIndividualityList = "andcheckindividualitylist",
+    AndOrCheckIndividualityList = "andorcheckindividualitylist",
     WinBattleNotRelatedSurvivalStatus = "winbattlenotrelatedsurvivalstatus",
     ForceSelfInstantDeath = "forceselfinstantdeath",
     ChangeMaxBreakGauge = "changemaxbreakgauge",
@@ -821,6 +838,7 @@ export enum NiceItemType {
     PURE_PRI_SHOP_RESET = "purePriShopReset",
     EXCHANGE_SVT_COIN = "exchangeSvtCoin",
     REDUCE_TRADE_TIME = "reduceTradeTime",
+    EVENT_PASSIVE_SKILL_GIVEN = "eventPassiveSkillGiven",
 }
 
 export enum NiceGiftType {
