@@ -118,7 +118,7 @@
     "isRec": true,
     "plusAction": 0
   },
-  "SELFDAMAGE": {
+  "DAMAGE_DEF": {
     "limit": 1,
     "plusTypes": [
       20
