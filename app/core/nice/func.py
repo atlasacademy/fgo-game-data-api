@@ -81,6 +81,7 @@ LIST_2D_DATAVALS = {
     "SnapShotParamAddSelfIndividualityAndCheck",
     "SnapShotParamAddOpIndividualityAndCheck",
     "SnapShotParamAddFieldIndividualityAndCheck",
+    "AndOrCheckIndividualityList",
 }
 STRING_DATAVALS = {
     "PopValueText",
@@ -265,7 +266,12 @@ async def parse_dataVals(
                         )
                     elif array2[0] in LIST_DATAVALS:
                         try:
-                            output[array2[0]] = [int(i) for i in array2[1].split("/")]
+                            output[array2[0]] = [
+                                int(i)
+                                for i in array2[1].split(
+                                    "/" if "/" in array2[1] else "&"
+                                )
+                            ]
                         except ValueError:
                             logger.error(
                                 f"Failed to parse list datavals: {array2[1]} of {arrayi}"
@@ -273,7 +279,10 @@ async def parse_dataVals(
                     elif array2[0] in LIST_2D_DATAVALS:
                         try:
                             output[array2[0]] = [
-                                [int(i) for i in arrayi.split("/")]
+                                [
+                                    int(i)
+                                    for i in arrayi.split("/" if "/" in arrayi else "&")
+                                ]
                                 for arrayi in array2[1].split("|")
                             ]
                         except ValueError:
