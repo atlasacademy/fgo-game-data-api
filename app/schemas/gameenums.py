@@ -273,6 +273,7 @@ class FuncType(IntEnum):
     GAIN_NP_TARGET_SUM = 146
     ENEMY_COUNT_CHANGE = 147
     DISPLAY_BATTLE_MESSAGE = 148
+    GENERATE_BATTLE_SKILL_DROP = 149
 
 
 class NiceFuncType(StrEnum):
@@ -390,6 +391,7 @@ class NiceFuncType(StrEnum):
     gainNpTargetSum = "gainNpTargetSum"
     enemyCountChange = "enemyCountChange"
     displayBattleMessage = "displayBattleMessage"
+    generateBattleSkillDrop = "generateBattleSkillDrop"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -505,6 +507,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     146: NiceFuncType.gainNpTargetSum,
     147: NiceFuncType.enemyCountChange,
     148: NiceFuncType.displayBattleMessage,
+    149: NiceFuncType.generateBattleSkillDrop,
 }
 
 
@@ -827,6 +830,7 @@ class BuffType(IntEnum):
     UP_DEFENCE_COMMANDSTAR = 223
     DOWN_COMMANDSTAR = 224
     DOWN_DEFENCE_COMMANDSTAR = 225
+    WAVESTART_ANIMATION_BEFORE_FUNCTION = 226
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1041,6 +1045,7 @@ class NiceBuffType(StrEnum):
     upDefenceCommandstar = "upDefenceCommandstar"
     downCommandstar = "downCommandstar"
     downDefenceCommandstar = "downDefenceCommandstar"
+    wavestartAnimationBeforeFunction = "wavestartAnimationBeforeFunction"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1256,6 +1261,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     223: NiceBuffType.upDefenceCommandstar,
     224: NiceBuffType.downCommandstar,
     225: NiceBuffType.downDefenceCommandstar,
+    226: NiceBuffType.wavestartAnimationBeforeFunction,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1422,6 +1428,7 @@ class BuffAction(IntEnum):
     OVERWRITE_SVT_CARD_TYPE = 150
     CRITICAL_DAMAGE_DEF = 151
     NPDAMAGE_DEF = 152
+    FUNCTION_WAVESTART_ANIMATION_BEFORE = 153
 
 
 class NiceBuffAction(StrEnum):
@@ -1580,6 +1587,7 @@ class NiceBuffAction(StrEnum):
     overwriteSvtCardType = "overwriteSvtCardType"
     criticalDamageDef = "criticalDamageDef"
     npdamageDef = "npdamageDef"
+    functionWavestartAnimationBefore = "functionWavestartAnimationBefore"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1736,6 +1744,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     150: NiceBuffAction.overwriteSvtCardType,
     151: NiceBuffAction.criticalDamageDef,
     152: NiceBuffAction.npdamageDef,
+    153: NiceBuffAction.functionWavestartAnimationBefore,
 }
 
 
@@ -1970,9 +1979,13 @@ class DataValsType(IntEnum):
     EnemyCountWaitTimeAfterMessage = 203
     WaitMessageEnd = 204
     ContinueDisplayMessage = 205
-    StartIntervalTurn = 206
-    StartIntervalCount = 207
-    CommonReleaseId = 208
+    MessageStartDelayTime = 206
+    StartIntervalTurn = 207
+    StartIntervalCount = 208
+    CommonReleaseId = 209
+    ForceTurnProgressIfTimingIsOverInPartyTurn = 210
+    ForceTurnProgressIfTimingIsOverInOpponentTurn = 211
+    OverwriteFuncInvalidType = 212
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2145,6 +2158,7 @@ class GiftType(IntEnum):
     EVENT_COMMAND_ASSIST = 14
     EVENT_HEEL_PORTRAIT = 15
     BATTLE_ITEM = 16
+    PRIVILEGE = 17
 
 
 class NiceGiftType(StrEnum):
@@ -2166,6 +2180,7 @@ class NiceGiftType(StrEnum):
     eventCommandAssist = "eventCommandAssist"
     eventHeelPortrait = "eventHeelPortrait"
     battleItem = "battleItem"
+    privilege = "privilege"
 
 
 GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
@@ -2185,6 +2200,7 @@ GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
     14: NiceGiftType.eventCommandAssist,
     15: NiceGiftType.eventHeelPortrait,
     16: NiceGiftType.battleItem,
+    17: NiceGiftType.privilege,
 }
 
 
@@ -2397,6 +2413,8 @@ class CardType(IntEnum):
     BLANK = 5
     WEAK = 10
     STRENGTH = 11
+    WEAKALT1 = 21
+    WEAKALT2 = 22
     ADDATTACK2 = 104
 
 
@@ -2411,6 +2429,8 @@ class NiceCardType(StrEnum):
     blank = "blank"
     weak = "weak"
     strength = "strength"
+    weakalt1 = "weakalt1"
+    weakalt2 = "weakalt2"
     addattack2 = "addattack2"
 
 
@@ -2423,6 +2443,8 @@ CARD_TYPE_NAME: dict[int, NiceCardType] = {
     5: NiceCardType.blank,
     10: NiceCardType.weak,
     11: NiceCardType.strength,
+    21: NiceCardType.weakalt1,
+    22: NiceCardType.weakalt2,
     104: NiceCardType.addattack2,
 }
 
@@ -2666,6 +2688,10 @@ class CondType(IntEnum):
     USER_LEVEL_ABOVE = 242
     USER_LEVEL_BELOW = 243
     USER_LEVEL_EQUAL = 244
+    HIGHEST_WAVE_ABOVE = 245
+    HIGHEST_WAVE_BELOW = 246
+    PRIVILEGE_VALID = 247
+    PRIVILEGE_INVALID = 248
 
 
 class NiceCondType(StrEnum):
@@ -2909,6 +2935,10 @@ class NiceCondType(StrEnum):
     userLevelAbove = "userLevelAbove"
     userLevelBelow = "userLevelBelow"
     userLevelEqual = "userLevelEqual"
+    highestWaveAbove = "highestWaveAbove"
+    highestWaveBelow = "highestWaveBelow"
+    privilegeValid = "privilegeValid"
+    privilegeInvalid = "privilegeInvalid"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3150,6 +3180,10 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     242: NiceCondType.userLevelAbove,
     243: NiceCondType.userLevelBelow,
     244: NiceCondType.userLevelEqual,
+    245: NiceCondType.highestWaveAbove,
+    246: NiceCondType.highestWaveBelow,
+    247: NiceCondType.privilegeValid,
+    248: NiceCondType.privilegeInvalid,
 }
 
 
@@ -4653,6 +4687,7 @@ class AiActType(IntEnum):
     LOSE_END = 91
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS = 92
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS_INSTANTLY = 93
+    ALL_BATTLE_END = 94
     CHANGE_THINKING = 99
 
 
@@ -4686,6 +4721,7 @@ class NiceAiActType(StrEnum):
     battleEndNotRelatedSurvivalStatusInstantly = (
         "battleEndNotRelatedSurvivalStatusInstantly"
     )
+    allBattleEnd = "allBattleEnd"
     changeThinking = "changeThinking"
 
 
@@ -4715,6 +4751,7 @@ AI_ACT_TYPE_NAME: dict[int, NiceAiActType] = {
     91: NiceAiActType.loseEnd,
     92: NiceAiActType.battleEndNotRelatedSurvivalStatus,
     93: NiceAiActType.battleEndNotRelatedSurvivalStatusInstantly,
+    94: NiceAiActType.allBattleEnd,
     99: NiceAiActType.changeThinking,
 }
 

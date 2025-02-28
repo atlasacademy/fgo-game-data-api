@@ -360,6 +360,7 @@ class SvtClass(StrEnum):
     beastVIBoss = "beastVIBoss"
     uOlgaMarieFlare = "uOlgaMarieFlare"
     uOlgaMarieAqua = "uOlgaMarieAqua"
+    uOlgaMarieGround = "uOlgaMarieGround"
     uOlgaMarieFlareCollection = "uOlgaMarieFlareCollection"
     uOlgaMarieAquaCollection = "uOlgaMarieAquaCollection"
     beastEresh = "beastEresh"
@@ -417,6 +418,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     36: SvtClass.uOlgaMarieFlare,
     38: SvtClass.beastEresh,
     37: SvtClass.uOlgaMarieAqua,
+    39: SvtClass.uOlgaMarieGround,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -1030,6 +1032,7 @@ class Trait(StrEnum):
     buffSpecialInvinciblePierce = "buffSpecialInvinciblePierce"
     sakuraSeries = "sakuraSeries"
     buffDefenceDown = "buffDefenceDown"
+    classUOlgaMarieGround = "classUOlgaMarieGround"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1065,6 +1068,7 @@ TRAIT_NAME: dict[int, Trait] = {
     126: Trait.classBeastVIBoss,
     127: Trait.classUOlgaMarieFlare,
     129: Trait.classBeastEresh,
+    130: Trait.classUOlgaMarieGround,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,

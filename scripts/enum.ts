@@ -160,6 +160,7 @@ export enum NiceFuncType {
     GAIN_NP_TARGET_SUM = "gainNpTargetSum",
     ENEMY_COUNT_CHANGE = "enemyCountChange",
     DISPLAY_BATTLE_MESSAGE = "displayBattleMessage",
+    GENERATE_BATTLE_SKILL_DROP = "generateBattleSkillDrop",
 }
 
 export enum NiceFuncTargetType {
@@ -406,6 +407,7 @@ export enum NiceBuffType {
     UP_DEFENCE_COMMANDSTAR = "upDefenceCommandstar",
     DOWN_COMMANDSTAR = "downCommandstar",
     DOWN_DEFENCE_COMMANDSTAR = "downDefenceCommandstar",
+    WAVESTART_ANIMATION_BEFORE_FUNCTION = "wavestartAnimationBeforeFunction",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -571,6 +573,7 @@ export enum NiceBuffAction {
     OVERWRITE_SVT_CARD_TYPE = "overwriteSvtCardType",
     CRITICAL_DAMAGE_DEF = "criticalDamageDef",
     NPDAMAGE_DEF = "npdamageDef",
+    FUNCTION_WAVESTART_ANIMATION_BEFORE = "functionWavestartAnimationBefore",
 }
 
 export enum NiceBuffLimit {
@@ -787,9 +790,13 @@ export enum NiceDataValsType {
     EnemyCountWaitTimeAfterMessage = "enemycountwaittimeaftermessage",
     WaitMessageEnd = "waitmessageend",
     ContinueDisplayMessage = "continuedisplaymessage",
+    MessageStartDelayTime = "messagestartdelaytime",
     StartIntervalTurn = "startintervalturn",
     StartIntervalCount = "startintervalcount",
     CommonReleaseId = "commonreleaseid",
+    ForceTurnProgressIfTimingIsOverInPartyTurn = "forceturnprogressiftimingisoverinpartyturn",
+    ForceTurnProgressIfTimingIsOverInOpponentTurn = "forceturnprogressiftimingisoverinopponentturn",
+    OverwriteFuncInvalidType = "overwritefuncinvalidtype",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -858,6 +865,7 @@ export enum NiceGiftType {
     EVENT_COMMAND_ASSIST = "eventCommandAssist",
     EVENT_HEEL_PORTRAIT = "eventHeelPortrait",
     BATTLE_ITEM = "battleItem",
+    PRIVILEGE = "privilege",
 }
 
 export enum NiceShopType {
@@ -933,6 +941,8 @@ export enum NiceCardType {
     BLANK = "blank",
     WEAK = "weak",
     STRENGTH = "strength",
+    WEAKALT1 = "weakalt1",
+    WEAKALT2 = "weakalt2",
     ADDATTACK2 = "addattack2",
 }
 
@@ -1175,6 +1185,10 @@ export enum NiceCondType {
     USER_LEVEL_ABOVE = "userLevelAbove",
     USER_LEVEL_BELOW = "userLevelBelow",
     USER_LEVEL_EQUAL = "userLevelEqual",
+    HIGHEST_WAVE_ABOVE = "highestWaveAbove",
+    HIGHEST_WAVE_BELOW = "highestWaveBelow",
+    PRIVILEGE_VALID = "privilegeValid",
+    PRIVILEGE_INVALID = "privilegeInvalid",
 }
 
 export enum NiceVoiceCondType {
@@ -1679,6 +1693,7 @@ export enum NiceAiActType {
     LOSE_END = "loseEnd",
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS = "battleEndNotRelatedSurvivalStatus",
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS_INSTANTLY = "battleEndNotRelatedSurvivalStatusInstantly",
+    ALL_BATTLE_END = "allBattleEnd",
     CHANGE_THINKING = "changeThinking",
 }
 
