@@ -363,6 +363,7 @@ class SvtClass(StrEnum):
     uOlgaMarieGround = "uOlgaMarieGround"
     uOlgaMarieFlareCollection = "uOlgaMarieFlareCollection"
     uOlgaMarieAquaCollection = "uOlgaMarieAquaCollection"
+    uOlgaMarieGroundCollection = "uOlgaMarieGroundCollection"
     beastEresh = "beastEresh"
     grandSaber = "grandSaber"
     grandArcher = "grandArcher"
@@ -435,6 +436,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     1005: SvtClass.EXTRA2,
     9001: SvtClass.uOlgaMarieFlareCollection,
     9002: SvtClass.uOlgaMarieAquaCollection,
+    9003: SvtClass.uOlgaMarieGroundCollection,
 }
 
 
