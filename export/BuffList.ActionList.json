@@ -711,6 +711,17 @@
     "isRec": true,
     "plusAction": 0
   },
+  "FUNCTION_WAVESTART_ANIMATION_BEFORE": {
+    "limit": 0,
+    "plusTypes": [
+      226
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
   "FUNCTION_SELFTURNEND": {
     "limit": 0,
     "plusTypes": [
