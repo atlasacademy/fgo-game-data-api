@@ -6565,3 +6565,26 @@ EVENT_MISSION_COND_DETAIL_TYPE_NAME: dict[int, NiceEventMissionCondDetailType] =
     41: NiceEventMissionCondDetailType.purchaseShopNum,
     42: NiceEventMissionCondDetailType.itemUseQuestNum,
 }
+
+
+class SvtCardPositionDamageRatesSlideType(IntEnum):
+    NONE = 0
+    FRONT = 1
+    BACK = 2
+
+
+class NiceSvtCardPositionDamageRatesSlideType(StrEnum):
+    """Servant Card Position Damage Rates Slide Type"""
+
+    none = "none"
+    front = "front"
+    back = "back"
+
+
+SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME: dict[
+    int, NiceSvtCardPositionDamageRatesSlideType
+] = {
+    0: NiceSvtCardPositionDamageRatesSlideType.none,
+    1: NiceSvtCardPositionDamageRatesSlideType.front,
+    2: NiceSvtCardPositionDamageRatesSlideType.back,
+}

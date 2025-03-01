@@ -2,7 +2,10 @@ from typing import Any
 
 import orjson
 
-from ....schemas.gameenums import COMMAND_CARD_ATK_TYPE_NAME
+from ....schemas.gameenums import (
+    COMMAND_CARD_ATK_TYPE_NAME,
+    SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME,
+)
 from ....schemas.nice import NiceCardDetail
 from ....schemas.raw import MstSvtCard, MstSvtCardAdd
 from ...utils import get_traits_list
@@ -20,4 +23,12 @@ def get_nice_card(
         attackNpRate=script.get("attackNpRate"),
         defenseNpRate=script.get("defenseNpRate"),
         dropStarRate=script.get("dropStarRate"),
+        positionDamageRates=script.get("positionDamageRates"),
+        positionDamageRatesSlideType=(
+            SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME[
+                script["positionDamageRatesSlideType"]
+            ]
+            if "positionDamageRatesSlideType" in script
+            else None
+        ),
     )

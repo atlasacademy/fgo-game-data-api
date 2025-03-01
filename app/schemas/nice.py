@@ -85,6 +85,7 @@ from .gameenums import (
     NiceShopType,
     NiceSpotOverwriteType,
     NiceStatusRank,
+    NiceSvtCardPositionDamageRatesSlideType,
     NiceSvtClassSupportGroupType,
     NiceSvtDeadType,
     NiceSvtFlag,
@@ -1000,6 +1001,8 @@ class NiceCardDetail(BaseModel):
     attackNpRate: int | None = None
     defenseNpRate: int | None = None
     dropStarRate: int | None = None
+    positionDamageRates: list[int] | None = None
+    positionDamageRatesSlideType: NiceSvtCardPositionDamageRatesSlideType | None = None
 
 
 AscensionAddData = TypeVar("AscensionAddData")

@@ -2250,3 +2250,9 @@ export enum NiceEventMissionCondDetailType {
     PURCHASE_SHOP_NUM = "purchaseShopNum",
     ITEM_USE_QUEST_NUM = "itemUseQuestNum",
 }
+
+export enum NiceSvtCardPositionDamageRatesSlideType {
+    NONE = "none",
+    FRONT = "front",
+    BACK = "back",
+}

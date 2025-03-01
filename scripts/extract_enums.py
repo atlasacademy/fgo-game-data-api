@@ -724,6 +724,14 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Event Mission Cond Detail Type",
         "EVENT_MISSION_COND_DETAIL_TYPE_NAME",
     ),
+    (
+        "ServantCardAddEntity.POSITION_DAMAGE_RATES_SLIDE_TYPE",
+        "SvtCardPositionDamageRatesSlideType",
+        "NiceSvtCardPositionDamageRatesSlideType",
+        "Servant Card Position Damage Rates Slide Type",
+        "SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME",
+    ),
+    
 ]
 
 
