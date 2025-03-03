@@ -1587,6 +1587,17 @@ class MstEventPointActivity(BaseModelORJson):
     point: int
 
 
+class MstImagePartsGroup(BaseModelORJson):
+    script: dict[str, Any]
+    id: int
+    idx: int
+    typeValue: int
+    imageValue: int
+    condType: int
+    condId: int
+    condNum: int
+
+
 class MstEventAdd(BaseModelORJson):
     eventId: int
     overwriteType: int

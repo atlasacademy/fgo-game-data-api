@@ -1920,6 +1920,20 @@ mstHeelPortrait = Table(
 )
 
 
+mstImagePartsGroup = Table(
+    "mstImagePartsGroup",
+    metadata,
+    Column("script", JSONB),
+    Column("id", Integer, index=True),
+    Column("idx", Integer),
+    Column("typeValue", Integer),
+    Column("imageValue", Integer),
+    Column("condType", Integer),
+    Column("condId", Integer),
+    Column("condNum", Integer),
+)
+
+
 mstEventSvt = Table(
     "mstEventSvt",
     metadata,
@@ -2927,4 +2941,5 @@ TABLES_TO_BE_LOADED = [
     [mstFuncTypeDetail, mstBuffTypeDetail],
     [mstGacha, mstGachaStoryAdjust, mstGachaSub, viewGachaFeaturedSvt],
     [mstItemDropEfficiency],
+    [mstImagePartsGroup],
 ]
