@@ -132,6 +132,7 @@ from ..schemas.raw import (
     MstGiftAdd,
     MstHeelPortrait,
     MstIllustrator,
+    MstImagePartsGroup,
     MstItem,
     MstMap,
     MstMapGimmick,
@@ -522,6 +523,13 @@ async def get_servant_entity(
         conn, MstBattlePointPhase, battle_point_ids
     )
 
+    if "imagePartsGroupId" in svt_db.script:
+        mstImagePartsGroup = await fetch.get_all_multiple(
+            conn, MstImagePartsGroup, [int(svt_db.script["imagePartsGroupId"])]
+        )
+    else:
+        mstImagePartsGroup = []
+
     skill_ids = [
         skill.skillId for skill in await skill.get_mstSvtSkill(conn, svt_id=servant_id)
     ]
@@ -602,6 +610,7 @@ async def get_servant_entity(
         mstSvtCoin=mstSvtCoin,
         mstSvtAdd=mstSvtAdd,
         mstSvtOverwrite=mstSvtOverwrite,
+        mstImagePartsGroup=mstImagePartsGroup,
         # needed costume to get the nice limits and costume ids
         mstSvtCostume=mstSvtCostume,
         # needed this to get CharaFigure available forms

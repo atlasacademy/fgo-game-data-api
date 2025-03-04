@@ -87,6 +87,7 @@ from ...models.raw import (
     mstGiftAdd,
     mstHeelPortrait,
     mstIllustrator,
+    mstImagePartsGroup,
     mstItem,
     mstItemDropEfficiency,
     mstMap,
@@ -220,6 +221,7 @@ from ...schemas.raw import (
     MstGiftAdd,
     MstHeelPortrait,
     MstIllustrator,
+    MstImagePartsGroup,
     MstItem,
     MstItemDropEfficiency,
     MstMap,
@@ -788,6 +790,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstWarRelease,
         mstWarRelease.c.warId,
         [mstWarRelease.c.warId, mstWarRelease.c.priority],
+    ),
+    MstImagePartsGroup: (
+        mstImagePartsGroup,
+        mstImagePartsGroup.c.id,
+        [mstImagePartsGroup.c.id, mstImagePartsGroup.c.idx],
     ),
 }
 

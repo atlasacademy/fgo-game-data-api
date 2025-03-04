@@ -731,7 +731,6 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Servant Card Position Damage Rates Slide Type",
         "SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME",
     ),
-    
 ]
 
 

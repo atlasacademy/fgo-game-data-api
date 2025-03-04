@@ -947,6 +947,7 @@ class ExtraAssetsUrl(BaseModel):
     costume: Optional[dict[int, HttpUrl]] = None
     equip: Optional[dict[int, HttpUrl]] = None
     cc: Optional[dict[int, HttpUrl]] = None
+    imagePartsGroup: dict[str, HttpUrl] | None = None
 
     def set_limit_asset(
         self, limit_count: int, url: HttpUrl, costume_ids: dict[int, int]
@@ -1361,6 +1362,24 @@ class NiceLore(BaseModel):
     voices: list[NiceVoiceGroup]
 
 
+class NiceImagePartsGroupScript(BaseModel):
+    DialogSkillLv: int | None = None
+    DialogSkillId: int | None = None
+    NotEquipImage: int | None = None
+
+
+class NiceImagePartsGroup(BaseModel):
+    id: int
+    idx: int
+    script: NiceImagePartsGroupScript
+    originalScript: dict[str, Any]
+    typeValue: int
+    imageValue: int
+    condType: NiceCondType
+    condId: int
+    condNum: int
+
+
 class NiceServantScript(BaseModel):
     SkillRankUp: Optional[dict[int, list[int]]] = Field(
         None,
@@ -1375,6 +1394,7 @@ class NiceServantScript(BaseModel):
         description="Bazett's effect. Extend buff's duration from end of player turn to end of enemy turn.",
     )
     maleImage: ExtraAssets | None = None
+    imagePartsGroup: list[NiceImagePartsGroup] | None = None
 
 
 class NiceCommandCode(BaseModelORJson):

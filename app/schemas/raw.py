@@ -2264,6 +2264,7 @@ class ServantEntity(BaseModelORJson):
     mstBattlePointPhase: list[MstBattlePointPhase]
     mstItem: list[MstItem]
     mstCommonRelease: list[MstCommonRelease]
+    mstImagePartsGroup: list[MstImagePartsGroup]
     mstSvtCoin: Optional[MstSvtCoin] = None
     mstCv: Optional[MstCv] = None
     mstIllustrator: Optional[MstIllustrator] = None

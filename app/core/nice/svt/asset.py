@@ -1,3 +1,4 @@
+import itertools
 from collections import defaultdict
 
 import orjson
@@ -6,13 +7,37 @@ from pydantic import HttpUrl
 from ....config import Settings
 from ....data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES
 from ....schemas.common import Region
-from ....schemas.gameenums import SvtMultiPortraitSceneOverwriteType, SvtType
-from ....schemas.nice import AssetURL, ExtraAssets, ExtraAssetsUrl
-from ....schemas.raw import ServantEntity
+from ....schemas.gameenums import (
+    COND_TYPE_NAME,
+    SvtMultiPortraitSceneOverwriteType,
+    SvtType,
+)
+from ....schemas.nice import (
+    AssetURL,
+    ExtraAssets,
+    ExtraAssetsUrl,
+    NiceImagePartsGroup,
+    NiceImagePartsGroupScript,
+)
+from ....schemas.raw import MstImagePartsGroup, ServantEntity
 from ...utils import fmt_url
 
 
 settings = Settings()
+
+
+def get_nice_image_parts_group(image_parts: MstImagePartsGroup) -> NiceImagePartsGroup:
+    return NiceImagePartsGroup(
+        id=image_parts.id,
+        idx=image_parts.idx,
+        script=NiceImagePartsGroupScript.model_validate(image_parts.script),
+        originalScript=image_parts.script,
+        typeValue=image_parts.typeValue,
+        imageValue=image_parts.imageValue,
+        condType=COND_TYPE_NAME[image_parts.condType],
+        condId=image_parts.condId,
+        condNum=image_parts.condNum,
+    )
 
 
 def get_male_image_extraAssets(region: Region, svt_id: int) -> ExtraAssets:
@@ -96,6 +121,25 @@ def get_svt_extraAssets(
         "region": region,
         "item_id": svt_id,
     }
+
+    if raw_svt.mstImagePartsGroup:
+        all_parts_group_types = {
+            part.typeValue
+            for part in raw_svt.mstImagePartsGroup
+            if part.script.get("NotEquipImage") != 1
+        }
+
+        possible_type_values: list[list[int]] = [[] for _ in all_parts_group_types]
+        for part in raw_svt.mstImagePartsGroup:
+            if part.script.get("NotEquipImage") != 1:
+                possible_type_values[part.typeValue - 1].append(part.imageValue)
+
+        image_parts_group_ids = sorted(
+            "_".join(map(str, values))
+            for values in itertools.product(*possible_type_values)
+        )
+    else:
+        image_parts_group_ids = []
 
     if raw_svt.mstSvt.type in (
         SvtType.ENEMY_COLLECTION_DETAIL,
@@ -281,6 +325,24 @@ def get_svt_extraAssets(
         }
         faces.equip = {svt_id: fmt_url(AssetURL.face, **base_settings_id, i=0)}
         equipFace.equip = {svt_id: fmt_url(AssetURL.equipFace, **base_settings_id, i=0)}
+
+        if image_parts_group_ids:
+            charaGraph.imagePartsGroup = {
+                part: fmt_url(
+                    AssetURL.charaGraphDefault,
+                    **base_settings,
+                    item_id=f"{svt_id}_{part}",
+                )
+                for part in image_parts_group_ids
+            }
+            faces.imagePartsGroup = {
+                part: fmt_url(AssetURL.face, **base_settings_id, i=f"0_{part}")
+                for part in image_parts_group_ids
+            }
+            equipFace.imagePartsGroup = {
+                part: fmt_url(AssetURL.equipFace, **base_settings_id, i=f"0_{part}")
+                for part in image_parts_group_ids
+            }
 
         if raw_svt.mstSvtAdd and "additionExpandImage" in raw_svt.mstSvtAdd.script:
             charaGraphEx.equip = {

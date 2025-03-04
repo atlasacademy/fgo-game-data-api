@@ -48,7 +48,11 @@ from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
 from .append_passive import get_nice_svt_append_passives
 from .ascensionAdd import get_nice_ascensionAdd
-from .asset import get_male_image_extraAssets, get_svt_extraAssets
+from .asset import (
+    get_male_image_extraAssets,
+    get_nice_image_parts_group,
+    get_svt_extraAssets,
+)
 from .battle_point import get_svt_bp
 from .card import get_nice_card
 from .chara_script import get_nice_chara_script
@@ -333,6 +337,12 @@ async def get_nice_servant(
         nice_data["script"]["maleImage"] = get_male_image_extraAssets(
             region, raw_svt.mstSvt.script["maleImageId"]
         )
+    if "imagePartsGroupId" in raw_svt.mstSvt.script:
+        nice_data["script"]["imagePartsGroup"] = [
+            get_nice_image_parts_group(imagePartsGroup)
+            for imagePartsGroup in raw_svt.mstImagePartsGroup
+            if imagePartsGroup.id == raw_svt.mstSvt.script["imagePartsGroupId"]
+        ]
 
     nice_data["skills"] = [
         skill
