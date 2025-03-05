@@ -1035,6 +1035,9 @@ class Trait(StrEnum):
     sakuraSeries = "sakuraSeries"
     buffDefenceDown = "buffDefenceDown"
     classUOlgaMarieGrand = "classUOlgaMarieGrand"
+    fieldHeaven = "fieldHeaven"
+    fieldHell = "fieldHell"
+    markOfSin = "markOfSin"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1250,6 +1253,9 @@ TRAIT_NAME: dict[int, Trait] = {
     2923: Trait.hasSupereffectiveNPAgainstAlignmentEvil,
     2924: Trait.canFlyInSpace,
     2925: Trait.sakuraSeries,
+    2949: Trait.fieldHeaven,
+    2950: Trait.fieldHell,
+    2951: Trait.markOfSin,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
