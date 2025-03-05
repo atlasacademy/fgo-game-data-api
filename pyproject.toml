@@ -1,48 +1,50 @@
-[tool.poetry]
+[project]
 name = "fgo-game-data-api"
 version = "6.0.0"
 description = "Provide raw and processed FGO game data"
-authors = ["squaresmile <squaresmile@protonmail.com>"]
+authors = [{ "name" = "squaresmile", "email" = "squaresmile@protonmail.com" }]
+
+[tool.poetry]
 packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = {extras = ["standard"], version = "^0.115.6"}
-uvicorn = {extras = ["standard"], version = "^0.32.1"}
+fastapi = { extras = ["standard"], version = "^0.115.11" }
+uvicorn = { extras = ["standard"], version = "^0.34.0" }
 python-dotenv = "^1.0.1"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
-orjson = "^3.10.12"
+orjson = "^3.10.15"
 aiofiles = "^24.1.0"
-GitPython = "^3.1.43"
-SQLAlchemy = "^2.0.36"
-httpx = {extras = ["http2"], version = "^0.28.1"}
+GitPython = "^3.1.44"
+SQLAlchemy = "^2.0.38"
+httpx = { extras = ["http2"], version = "^0.28.1" }
 fastapi-cache2 = "^0.2.2"
-gunicorn = {extras = ["setproctitle"], version = "^23.0.0"}
+gunicorn = { extras = ["setproctitle"], version = "^23.0.0" }
 redis = "^5.2.1"
 hiredis = "^3.1.0"
-psycopg = "^3.2.3"
-pydantic = "^2.10.3"
+psycopg = "^3.2.5"
+pydantic = "^2.10.6"
 zstandard = "^0.23.0"
-uvicorn-worker = "^0.2.0"
-pydantic-settings = "^2.4.0"
-psutil = "^6.0.0"
+uvicorn-worker = "^0.3.0"
+pydantic-settings = "^2.8.1"
+psutil = "^7.0.0"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "^1.13.0"
-black = "^24.10.0"
-isort = "^5.13.2"
-pytest = "^8.3.4"
+mypy = "^1.15.0"
+black = "^25.1.0"
+isort = "^6.0.1"
+pytest = "^8.3.5"
 pytest-xdist = "^3.6.1"
-pytest-asyncio = "^0.24.0"
-coverage = "^7.6.9"
+pytest-asyncio = "^0.25.3"
+coverage = "^7.6.12"
 asgi-lifespan = "^2.1.0"
 fuzzywuzzy-stubs = "^0.0.1"
-types-aiofiles = "^24.1.0.20240626"
+types-aiofiles = "^24.1.0.20241221"
 types-redis = "^4.6.0.20241004"
 types-orjson = "^3.6.2"
-ruff = "^0.8.2"
+ruff = "^0.9.9"
 types-pyopenssl = "^24.1.0.20240722"
-types-psutil = "^6.1.0.20241102"
+types-psutil = "^7.0.0.20250218"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

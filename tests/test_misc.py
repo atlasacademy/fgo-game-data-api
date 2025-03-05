@@ -139,7 +139,7 @@ def test_parse_script() -> None:
 
 def test_TW_odd_voice_id() -> None:
     script_json = ScriptJsonInfo(
-        id="御主任務 2021年4月 2", face=13, delay=Decimal(0.3), text="0_A1430", form=0
+        id="御主任務 2021年4月 2", face=13, delay=Decimal("0.3"), text="0_A1430", form=0
     )
     assert script_json.get_voice_id() == "御主任務 2021年4月 2"
 

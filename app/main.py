@@ -176,7 +176,7 @@ with open(project_root / "pyproject.toml", "rb") as f:
 app = FastAPI(
     title="FGO game data API",
     description=app_description,
-    version=pyproject_toml["tool"]["poetry"]["version"],
+    version=pyproject_toml["project"]["version"],
     docs_url=None,
     openapi_tags=tags_metadata,
 )
