@@ -53,7 +53,7 @@ The current data version can be found [here](/info).
 
 API's changelog can be found [here](https://github.com/atlasacademy/fgo-game-data-api/blob/master/CHANGELOG.md).
 
-To discuss more about the API, you can go to the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
+To discuss more about the API, you can go to the [Atlas Academy Discord](https://atlasacademy.io/discord/).
 Bug reports and feature requests are welcome.
 Source code of the API is available on [GitHub](https://github.com/atlasacademy/fgo-game-data-api).
 
