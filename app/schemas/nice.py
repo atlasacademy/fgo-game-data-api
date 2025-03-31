@@ -624,6 +624,7 @@ class BaseVals(BaseModel):
     ForceTurnProgressIfTimingIsOverInPartyTurn: int | None = None
     ForceTurnProgressIfTimingIsOverInOpponentTurn: int | None = None
     OverwriteFuncInvalidType: int | None = None
+    OnlyMaxFuncGroupId: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

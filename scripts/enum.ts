@@ -797,6 +797,7 @@ export enum NiceDataValsType {
     ForceTurnProgressIfTimingIsOverInPartyTurn = "forceturnprogressiftimingisoverinpartyturn",
     ForceTurnProgressIfTimingIsOverInOpponentTurn = "forceturnprogressiftimingisoverinopponentturn",
     OverwriteFuncInvalidType = "overwritefuncinvalidtype",
+    OnlyMaxFuncGroupId = "onlymaxfuncgroupid",
 }
 
 export enum NiceClassRelationOverwriteType {

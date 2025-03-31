@@ -1986,6 +1986,7 @@ class DataValsType(IntEnum):
     ForceTurnProgressIfTimingIsOverInPartyTurn = 210
     ForceTurnProgressIfTimingIsOverInOpponentTurn = 211
     OverwriteFuncInvalidType = 212
+    OnlyMaxFuncGroupId = 213
 
 
 class ClassRelationOverwriteType(IntEnum):
