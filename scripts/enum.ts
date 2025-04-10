@@ -847,6 +847,7 @@ export enum NiceItemType {
     EXCHANGE_SVT_COIN = "exchangeSvtCoin",
     REDUCE_TRADE_TIME = "reduceTradeTime",
     EVENT_PASSIVE_SKILL_GIVEN = "eventPassiveSkillGiven",
+    NETMARBLE_CHARGE_STONE = "netmarbleChargeStone",
 }
 
 export enum NiceGiftType {

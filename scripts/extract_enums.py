@@ -83,6 +83,7 @@ EXTRA_STR_NAME = {
         67: "DOWN_COMMANSTAR",
         68: "DOWN_COMMANDNP",
     },
+    "NiceItemType": {9999: "NETMARBLE_CHARGE_STONE"},
 }
 
 
