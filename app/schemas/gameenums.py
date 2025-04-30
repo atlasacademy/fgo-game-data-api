@@ -274,6 +274,14 @@ class FuncType(IntEnum):
     ENEMY_COUNT_CHANGE = 147
     DISPLAY_BATTLE_MESSAGE = 148
     GENERATE_BATTLE_SKILL_DROP = 149
+    CHANGE_MASTER_FACE = 150
+    ENABLE_MASTER_SKILL = 151
+    ENABLE_MASTER_COMMAND_SPELL = 152
+    BATTLE_MODEL_CHANGE = 153
+    GAIN_NP_CRITICALSTAR_SUM = 154
+    ADD_BATTLE_MISSION_VALUE = 155
+    SET_BATTLE_MISSION_VALUE = 156
+    CHANGE_ENEMY_STATUS_UI_TYPE = 157
 
 
 class NiceFuncType(StrEnum):
@@ -392,6 +400,14 @@ class NiceFuncType(StrEnum):
     enemyCountChange = "enemyCountChange"
     displayBattleMessage = "displayBattleMessage"
     generateBattleSkillDrop = "generateBattleSkillDrop"
+    changeMasterFace = "changeMasterFace"
+    enableMasterSkill = "enableMasterSkill"
+    enableMasterCommandSpell = "enableMasterCommandSpell"
+    battleModelChange = "battleModelChange"
+    gainNpCriticalstarSum = "gainNpCriticalstarSum"
+    addBattleMissionValue = "addBattleMissionValue"
+    setBattleMissionValue = "setBattleMissionValue"
+    changeEnemyStatusUiType = "changeEnemyStatusUiType"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -508,6 +524,14 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     147: NiceFuncType.enemyCountChange,
     148: NiceFuncType.displayBattleMessage,
     149: NiceFuncType.generateBattleSkillDrop,
+    150: NiceFuncType.changeMasterFace,
+    151: NiceFuncType.enableMasterSkill,
+    152: NiceFuncType.enableMasterCommandSpell,
+    153: NiceFuncType.battleModelChange,
+    154: NiceFuncType.gainNpCriticalstarSum,
+    155: NiceFuncType.addBattleMissionValue,
+    156: NiceFuncType.setBattleMissionValue,
+    157: NiceFuncType.changeEnemyStatusUiType,
 }
 
 
@@ -831,6 +855,8 @@ class BuffType(IntEnum):
     DOWN_COMMANDSTAR = 224
     DOWN_DEFENCE_COMMANDSTAR = 225
     WAVESTART_ANIMATION_BEFORE_FUNCTION = 226
+    SUB_FIXED_SELFDAMAGE = 227
+    OVERWRITE_FIXED_DEFENCE_DAMAGE = 228
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1046,6 +1072,8 @@ class NiceBuffType(StrEnum):
     downCommandstar = "downCommandstar"
     downDefenceCommandstar = "downDefenceCommandstar"
     wavestartAnimationBeforeFunction = "wavestartAnimationBeforeFunction"
+    subFixedSelfdamage = "subFixedSelfdamage"
+    overwriteFixedDefenceDamage = "overwriteFixedDefenceDamage"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1262,6 +1290,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     224: NiceBuffType.downCommandstar,
     225: NiceBuffType.downDefenceCommandstar,
     226: NiceBuffType.wavestartAnimationBeforeFunction,
+    227: NiceBuffType.subFixedSelfdamage,
+    228: NiceBuffType.overwriteFixedDefenceDamage,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1429,6 +1459,8 @@ class BuffAction(IntEnum):
     CRITICAL_DAMAGE_DEF = 151
     NPDAMAGE_DEF = 152
     FUNCTION_WAVESTART_ANIMATION_BEFORE = 153
+    RECEIVE_FIXED_DAMAGE = 154
+    OVERWRITE_DAMAGE_DEF = 155
 
 
 class NiceBuffAction(StrEnum):
@@ -1588,6 +1620,8 @@ class NiceBuffAction(StrEnum):
     criticalDamageDef = "criticalDamageDef"
     npdamageDef = "npdamageDef"
     functionWavestartAnimationBefore = "functionWavestartAnimationBefore"
+    receiveFixedDamage = "receiveFixedDamage"
+    overwriteDamageDef = "overwriteDamageDef"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1745,6 +1779,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     151: NiceBuffAction.criticalDamageDef,
     152: NiceBuffAction.npdamageDef,
     153: NiceBuffAction.functionWavestartAnimationBefore,
+    154: NiceBuffAction.receiveFixedDamage,
+    155: NiceBuffAction.overwriteDamageDef,
 }
 
 
@@ -1986,7 +2022,13 @@ class DataValsType(IntEnum):
     ForceTurnProgressIfTimingIsOverInPartyTurn = 210
     ForceTurnProgressIfTimingIsOverInOpponentTurn = 211
     OverwriteFuncInvalidType = 212
-    OnlyMaxFuncGroupId = 213
+    BgmFadeTime = 213
+    KeepChangeModelAfterContinue = 214
+    DefenceDamageHigher = 215
+    SameIndivBuffActorOnField = 216
+    SyncUsedSameIndivBuffActorOnField = 217
+    OnlyMaxFuncGroupId = 218
+    UseAttack = 219
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2695,6 +2737,14 @@ class CondType(IntEnum):
     HIGHEST_WAVE_BELOW = 246
     PRIVILEGE_VALID = 247
     PRIVILEGE_INVALID = 248
+    BATTLE_ACTION_OPPONENT_INDIVIDUALITY = 249
+    NOT_BATTLE_ACTION_OPPONENT_INDIVIDUALITY = 250
+    TREASURE_DEVICE_OF_SELECTED_CARD = 251
+    BATTLE_SVT_FRIENDSHIP_ABOVE = 252
+    BATTLE_SVT_FRIENDSHIP_BELOW = 253
+    ELAPSED_TIME_AFTER_SVT_GET = 254
+    NOT_ELAPSED_TIME_AFTER_QUEST_CLEAR = 255
+    NOT_ELAPSED_TIME_AFTER_SVT_GET = 256
 
 
 class NiceCondType(StrEnum):
@@ -2942,6 +2992,14 @@ class NiceCondType(StrEnum):
     highestWaveBelow = "highestWaveBelow"
     privilegeValid = "privilegeValid"
     privilegeInvalid = "privilegeInvalid"
+    battleActionOpponentIndividuality = "battleActionOpponentIndividuality"
+    notBattleActionOpponentIndividuality = "notBattleActionOpponentIndividuality"
+    treasureDeviceOfSelectedCard = "treasureDeviceOfSelectedCard"
+    battleSvtFriendshipAbove = "battleSvtFriendshipAbove"
+    battleSvtFriendshipBelow = "battleSvtFriendshipBelow"
+    elapsedTimeAfterSvtGet = "elapsedTimeAfterSvtGet"
+    notElapsedTimeAfterQuestClear = "notElapsedTimeAfterQuestClear"
+    notElapsedTimeAfterSvtGet = "notElapsedTimeAfterSvtGet"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3187,6 +3245,14 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     246: NiceCondType.highestWaveBelow,
     247: NiceCondType.privilegeValid,
     248: NiceCondType.privilegeInvalid,
+    249: NiceCondType.battleActionOpponentIndividuality,
+    250: NiceCondType.notBattleActionOpponentIndividuality,
+    251: NiceCondType.treasureDeviceOfSelectedCard,
+    252: NiceCondType.battleSvtFriendshipAbove,
+    253: NiceCondType.battleSvtFriendshipBelow,
+    254: NiceCondType.elapsedTimeAfterSvtGet,
+    255: NiceCondType.notElapsedTimeAfterQuestClear,
+    256: NiceCondType.notElapsedTimeAfterSvtGet,
 }
 
 
@@ -3929,6 +3995,7 @@ class WarEntityFlag(IntEnum):
     CHANGE_DISP_CLOSED_MESSAGE = 16777216
     CHAPTER_SUB_ID_JAPANESE_NUMERALS_NORMAL = 33554432
     CALDEAGATE_PRIORITY_DISPLAY = 67108864
+    AREA_BOARD_SHORTCUT = 134217728
 
 
 class NiceWarFlag(StrEnum):
@@ -3960,6 +4027,7 @@ class NiceWarFlag(StrEnum):
     changeDispClosedMessage = "changeDispClosedMessage"
     chapterSubIdJapaneseNumeralsNormal = "chapterSubIdJapaneseNumeralsNormal"
     caldeagatePriorityDisplay = "caldeagatePriorityDisplay"
+    areaBoardShortcut = "areaBoardShortcut"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -3989,6 +4057,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     16777216: NiceWarFlag.changeDispClosedMessage,
     33554432: NiceWarFlag.chapterSubIdJapaneseNumeralsNormal,
     67108864: NiceWarFlag.caldeagatePriorityDisplay,
+    134217728: NiceWarFlag.areaBoardShortcut,
 }
 
 
@@ -5646,6 +5715,7 @@ class RestrictionType(IntEnum):
     UNIQUE_INDIVIDUALITY = 15
     MY_SVT_OR_SUPPORT = 16
     DATA_LOST_BATTLE_UNIQUE_SVT = 17
+    FIXED_COSTUME = 101
 
 
 class NiceRestrictionType(StrEnum):
@@ -5668,6 +5738,7 @@ class NiceRestrictionType(StrEnum):
     uniqueIndividuality = "uniqueIndividuality"
     mySvtOrSupport = "mySvtOrSupport"
     dataLostBattleUniqueSvt = "dataLostBattleUniqueSvt"
+    fixedCostume = "fixedCostume"
 
 
 RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
@@ -5688,6 +5759,7 @@ RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
     15: NiceRestrictionType.uniqueIndividuality,
     16: NiceRestrictionType.mySvtOrSupport,
     17: NiceRestrictionType.dataLostBattleUniqueSvt,
+    101: NiceRestrictionType.fixedCostume,
 }
 
 
@@ -6477,6 +6549,7 @@ class EventMissionCondDetailType(IntEnum):
     MAP_GIMMICK_COUNT = 40
     PURCHASE_SHOP_NUM = 41
     ITEM_USE_QUEST_NUM = 42
+    BATTLE_MISSION_VALUE = 43
 
 
 class NiceEventMissionCondDetailType(StrEnum):
@@ -6525,6 +6598,7 @@ class NiceEventMissionCondDetailType(StrEnum):
     mapGimmickCount = "mapGimmickCount"
     purchaseShopNum = "purchaseShopNum"
     itemUseQuestNum = "itemUseQuestNum"
+    battleMissionValue = "battleMissionValue"
 
 
 EVENT_MISSION_COND_DETAIL_TYPE_NAME: dict[int, NiceEventMissionCondDetailType] = {
@@ -6567,6 +6641,7 @@ EVENT_MISSION_COND_DETAIL_TYPE_NAME: dict[int, NiceEventMissionCondDetailType] =
     40: NiceEventMissionCondDetailType.mapGimmickCount,
     41: NiceEventMissionCondDetailType.purchaseShopNum,
     42: NiceEventMissionCondDetailType.itemUseQuestNum,
+    43: NiceEventMissionCondDetailType.battleMissionValue,
 }
 
 

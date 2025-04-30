@@ -24,7 +24,7 @@ ERROR_CODE: dict[int, ErrorDetailType] = {
 
 
 def get_error_code(
-    error_codes: Union[Iterable[int], Mapping[int, Any]]
+    error_codes: Union[Iterable[int], Mapping[int, Any]],
 ) -> dict[Union[int, str], ErrorDetailType]:
     """
     Returns detailed Error Code objects to be used by fastapi documentation

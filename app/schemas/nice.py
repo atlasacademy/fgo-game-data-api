@@ -624,7 +624,13 @@ class BaseVals(BaseModel):
     ForceTurnProgressIfTimingIsOverInPartyTurn: int | None = None
     ForceTurnProgressIfTimingIsOverInOpponentTurn: int | None = None
     OverwriteFuncInvalidType: int | None = None
+    BgmFadeTime: int | None = None
+    KeepChangeModelAfterContinue: int | None = None
+    DefenceDamageHigher: int | None = None
+    SameIndivBuffActorOnField: int | None = None
+    SyncUsedSameIndivBuffActorOnField: int | None = None
     OnlyMaxFuncGroupId: int | None = None
+    UseAttack: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

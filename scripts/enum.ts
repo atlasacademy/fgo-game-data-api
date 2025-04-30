@@ -161,6 +161,14 @@ export enum NiceFuncType {
     ENEMY_COUNT_CHANGE = "enemyCountChange",
     DISPLAY_BATTLE_MESSAGE = "displayBattleMessage",
     GENERATE_BATTLE_SKILL_DROP = "generateBattleSkillDrop",
+    CHANGE_MASTER_FACE = "changeMasterFace",
+    ENABLE_MASTER_SKILL = "enableMasterSkill",
+    ENABLE_MASTER_COMMAND_SPELL = "enableMasterCommandSpell",
+    BATTLE_MODEL_CHANGE = "battleModelChange",
+    GAIN_NP_CRITICALSTAR_SUM = "gainNpCriticalstarSum",
+    ADD_BATTLE_MISSION_VALUE = "addBattleMissionValue",
+    SET_BATTLE_MISSION_VALUE = "setBattleMissionValue",
+    CHANGE_ENEMY_STATUS_UI_TYPE = "changeEnemyStatusUiType",
 }
 
 export enum NiceFuncTargetType {
@@ -408,6 +416,8 @@ export enum NiceBuffType {
     DOWN_COMMANDSTAR = "downCommandstar",
     DOWN_DEFENCE_COMMANDSTAR = "downDefenceCommandstar",
     WAVESTART_ANIMATION_BEFORE_FUNCTION = "wavestartAnimationBeforeFunction",
+    SUB_FIXED_SELFDAMAGE = "subFixedSelfdamage",
+    OVERWRITE_FIXED_DEFENCE_DAMAGE = "overwriteFixedDefenceDamage",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -574,6 +584,8 @@ export enum NiceBuffAction {
     CRITICAL_DAMAGE_DEF = "criticalDamageDef",
     NPDAMAGE_DEF = "npdamageDef",
     FUNCTION_WAVESTART_ANIMATION_BEFORE = "functionWavestartAnimationBefore",
+    RECEIVE_FIXED_DAMAGE = "receiveFixedDamage",
+    OVERWRITE_DAMAGE_DEF = "overwriteDamageDef",
 }
 
 export enum NiceBuffLimit {
@@ -797,7 +809,13 @@ export enum NiceDataValsType {
     ForceTurnProgressIfTimingIsOverInPartyTurn = "forceturnprogressiftimingisoverinpartyturn",
     ForceTurnProgressIfTimingIsOverInOpponentTurn = "forceturnprogressiftimingisoverinopponentturn",
     OverwriteFuncInvalidType = "overwritefuncinvalidtype",
+    BgmFadeTime = "bgmfadetime",
+    KeepChangeModelAfterContinue = "keepchangemodelaftercontinue",
+    DefenceDamageHigher = "defencedamagehigher",
+    SameIndivBuffActorOnField = "sameindivbuffactoronfield",
+    SyncUsedSameIndivBuffActorOnField = "syncusedsameindivbuffactoronfield",
     OnlyMaxFuncGroupId = "onlymaxfuncgroupid",
+    UseAttack = "useattack",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1191,6 +1209,14 @@ export enum NiceCondType {
     HIGHEST_WAVE_BELOW = "highestWaveBelow",
     PRIVILEGE_VALID = "privilegeValid",
     PRIVILEGE_INVALID = "privilegeInvalid",
+    BATTLE_ACTION_OPPONENT_INDIVIDUALITY = "battleActionOpponentIndividuality",
+    NOT_BATTLE_ACTION_OPPONENT_INDIVIDUALITY = "notBattleActionOpponentIndividuality",
+    TREASURE_DEVICE_OF_SELECTED_CARD = "treasureDeviceOfSelectedCard",
+    BATTLE_SVT_FRIENDSHIP_ABOVE = "battleSvtFriendshipAbove",
+    BATTLE_SVT_FRIENDSHIP_BELOW = "battleSvtFriendshipBelow",
+    ELAPSED_TIME_AFTER_SVT_GET = "elapsedTimeAfterSvtGet",
+    NOT_ELAPSED_TIME_AFTER_QUEST_CLEAR = "notElapsedTimeAfterQuestClear",
+    NOT_ELAPSED_TIME_AFTER_SVT_GET = "notElapsedTimeAfterSvtGet",
 }
 
 export enum NiceVoiceCondType {
@@ -1452,6 +1478,7 @@ export enum NiceWarFlag {
     CHANGE_DISP_CLOSED_MESSAGE = "changeDispClosedMessage",
     CHAPTER_SUB_ID_JAPANESE_NUMERALS_NORMAL = "chapterSubIdJapaneseNumeralsNormal",
     CALDEAGATE_PRIORITY_DISPLAY = "caldeagatePriorityDisplay",
+    AREA_BOARD_SHORTCUT = "areaBoardShortcut",
 }
 
 export enum NiceWarStartType {
@@ -1987,6 +2014,7 @@ export enum NiceRestrictionType {
     UNIQUE_INDIVIDUALITY = "uniqueIndividuality",
     MY_SVT_OR_SUPPORT = "mySvtOrSupport",
     DATA_LOST_BATTLE_UNIQUE_SVT = "dataLostBattleUniqueSvt",
+    FIXED_COSTUME = "fixedCostume",
 }
 
 export enum NiceRestrictionRangeType {
@@ -2251,6 +2279,7 @@ export enum NiceEventMissionCondDetailType {
     MAP_GIMMICK_COUNT = "mapGimmickCount",
     PURCHASE_SHOP_NUM = "purchaseShopNum",
     ITEM_USE_QUEST_NUM = "itemUseQuestNum",
+    BATTLE_MISSION_VALUE = "battleMissionValue",
 }
 
 export enum NiceSvtCardPositionDamageRatesSlideType {
