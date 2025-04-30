@@ -524,7 +524,7 @@ class BaseVals(BaseModel):
     RemoveFieldBuffActorDeath: int | None = None
     FieldBuffGrantType: int | None = None
     Priority: int | None = None
-    AddIndividualityEx: int | None = None
+    AddIndividualityEx: list[int] | None = None
     IgnoreResistance: int | None = None
     GainNpTargetPassiveIndividuality: int | None = None
     HpReduceToRegainIndiv: int | None = None

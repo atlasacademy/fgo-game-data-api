@@ -72,6 +72,7 @@ LIST_DATAVALS = {
     "TargetFunctionIndividuality",
     "TargetBuffIndividuality",
     "TriggeredFuncIndexAndCheckList",
+    "AddIndividualityEx",
 }
 LIST_2D_DATAVALS = {
     "ParamAddSelfIndividualityAndCheck",
