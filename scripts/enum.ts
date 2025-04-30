@@ -963,6 +963,7 @@ export enum NiceCardType {
     STRENGTH = "strength",
     WEAKALT1 = "weakalt1",
     WEAKALT2 = "weakalt2",
+    BUSTERALT1 = "busteralt1",
     ADDATTACK2 = "addattack2",
 }
 

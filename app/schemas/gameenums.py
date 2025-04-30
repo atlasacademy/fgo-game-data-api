@@ -2460,6 +2460,7 @@ class CardType(IntEnum):
     STRENGTH = 11
     WEAKALT1 = 21
     WEAKALT2 = 22
+    BUSTERALT1 = 60
     ADDATTACK2 = 104
 
 
@@ -2476,6 +2477,7 @@ class NiceCardType(StrEnum):
     strength = "strength"
     weakalt1 = "weakalt1"
     weakalt2 = "weakalt2"
+    busteralt1 = "busteralt1"
     addattack2 = "addattack2"
 
 
@@ -2490,6 +2492,7 @@ CARD_TYPE_NAME: dict[int, NiceCardType] = {
     11: NiceCardType.strength,
     21: NiceCardType.weakalt1,
     22: NiceCardType.weakalt2,
+    60: NiceCardType.busteralt1,
     104: NiceCardType.addattack2,
 }
 

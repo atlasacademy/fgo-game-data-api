@@ -29,7 +29,9 @@ RAW_NAME_OVERRIDE = {
 }
 
 
-RAW_EXTRA_ITEMS = {"CardType": {104: "ADDATTACK2", 21: "WEAKALT1", 22: "WEAKALT2"}}
+RAW_EXTRA_ITEMS = {
+    "CardType": {104: "ADDATTACK2", 21: "WEAKALT1", 22: "WEAKALT2", 60: "BUSTERALT1"}
+}
 
 
 def enum_to_dict(cstype: list[str], raw_class_name: str) -> dict[int, str]:
