@@ -447,6 +447,7 @@ class BaseVals(BaseModel):
     EndBattle: Optional[int] = None
     LoseBattle: Optional[int] = None
     AddIndividualty: Optional[int] = None
+    AddIndividualtyList: list[int] | None = None
     AddLinkageTargetIndividualty: Optional[int] = None
     SameBuffLimitTargetIndividuality: Optional[int] = None
     SameBuffLimitNum: Optional[int] = None

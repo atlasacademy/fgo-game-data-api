@@ -119,6 +119,7 @@ async def parse_dataVals(
     prefix = "aa"
     DamageRateBattlePointPhase: list[ValDamageRateBattlePointPhase] = []
     CheckBattlePointPhaseRange: list[ValCheckBattlePointPhaseRange] = []
+    AddIndividualtyList: list[int] = []
 
     output: DataValType = {}
     if datavals != "[]":
@@ -311,6 +312,8 @@ async def parse_dataVals(
                         try:
                             text = array2[0]
                             value = int(array2[1])
+                            if text == "AddIndividualty":
+                                AddIndividualtyList.append(value)
                         except ValueError:
                             logger.error(
                                 f"Failed to parse string dataval to int: {array2[1]} of {arrayi}"
@@ -325,11 +328,16 @@ async def parse_dataVals(
             output["DamageRateBattlePointPhase"] = DamageRateBattlePointPhase
         if CheckBattlePointPhaseRange:
             output["CheckBattlePointPhaseRange"] = CheckBattlePointPhaseRange
+        if AddIndividualtyList:
+            output["AddIndividualtyList"] = AddIndividualtyList
 
         if not any(key.startswith(prefix) for key in output):
             if (
                 len([val for val in array if val])
-                != len([k for k in output if k != "DependFunc"])
+                != (
+                    len([k for k in output if k != "DependFunc"])
+                    + max(len(AddIndividualtyList) - 2, 0)
+                )
                 and functype != FuncType.NONE
             ):
                 logger.warning(
