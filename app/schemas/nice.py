@@ -1054,6 +1054,7 @@ AscensionAddEntryInt = AscensionAddEntry[int]
 AscensionAddEntryStr = AscensionAddEntry[str]
 AscensionAddEntryHttpUrl = AscensionAddEntry[HttpUrl]
 AscensionAddEntryAttribte = AscensionAddEntry[Attribute]
+AscensionAddEntryListInt = AscensionAddEntry[list[int]]
 
 
 class AscensionAdd(BaseModel):
@@ -1084,6 +1085,14 @@ class AscensionAdd(BaseModel):
     )
     overWriteTDRank: AscensionAddEntryStr = Field(..., title="NP rank changes")
     overWriteTDTypeText: AscensionAddEntryStr = Field(..., title="NP type changes")
+    overwriteAtkBase: AscensionAddEntryInt
+    overwriteAtkMax: AscensionAddEntryInt
+    overwriteClassPassive: AscensionAddEntryListInt
+    overwriteCost: AscensionAddEntryInt
+    overwriteExpType: AscensionAddEntryInt
+    overwriteHpBase: AscensionAddEntryInt
+    overwriteHpMax: AscensionAddEntryInt
+    overwriteRarity: AscensionAddEntryInt
     lvMax: AscensionAddEntryInt = Field(..., title="Max level")
     rarity: AscensionAddEntryInt
     charaGraphChange: AscensionAddEntryHttpUrl
