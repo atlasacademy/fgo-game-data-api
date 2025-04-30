@@ -545,7 +545,7 @@ class BaseVals(BaseModel):
     IntervalTurn: int | None = None
     IntervalCount: int | None = None
     TriggeredFieldCountTarget: int | None = None
-    TriggeredFieldCountRange: list[int] | None = None
+    TriggeredFieldCountRange: str | None = None
     TargetEnemyRange: list[int] | None = None
     TriggeredFuncPositionSameTarget: int | None = None
     TriggeredFuncPositionAll: int | None = None

@@ -63,7 +63,6 @@ LIST_DATAVALS = {
     "NotSkillCopyTargetFuncIds",
     "NotSkillCopyTargetIndividualities",
     "TargetEnemyRange",
-    "TriggeredFieldCountRange",
     "FieldIndividuality",
     "SnapShotParamAddSelfIndv",
     "SnapShotParamAddOpIndv",
@@ -85,6 +84,7 @@ LIST_2D_DATAVALS = {
 }
 STRING_DATAVALS = {
     "PopValueText",
+    "TriggeredFieldCountRange",
     "TriggeredTargetHpRange",
     "TriggeredTargetHpRateRange",
     "DisplayNoEffectCauses",
