@@ -6666,3 +6666,21 @@ SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME: dict[
     1: NiceSvtCardPositionDamageRatesSlideType.front,
     2: NiceSvtCardPositionDamageRatesSlideType.back,
 }
+
+
+class QuestExtensionSubType(IntEnum):
+    NONE = 0
+    SVT_COIN = 1
+
+
+class NiceQuestExtensionSubType(StrEnum):
+    """Quest Extension Sub Type"""
+
+    none = "none"
+    svtCoin = "svtCoin"
+
+
+QUEST_EXTENSION_SUB_TYPE_NAME: dict[int, NiceQuestExtensionSubType] = {
+    0: NiceQuestExtensionSubType.none,
+    1: NiceQuestExtensionSubType.svtCoin,
+}

@@ -190,6 +190,20 @@ Index(
 )
 
 
+mstSvtSkillAdd = Table(
+    "mstSvtSkillAdd",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("num", Integer),
+    Column("priority", Integer),
+    Column("condLimitCount", Integer),
+    Column("commonReleaseId", Integer),
+    Column("skillIds", ARRAY(Integer)),
+    Column("titles", ARRAY(String)),
+    Column("script", JSONB),
+)
+
+
 mstSvtPassiveSkill = Table(
     "mstSvtPassiveSkill",
     metadata,
@@ -2350,6 +2364,15 @@ mstQuestReleaseOverwrite = Table(
 )
 
 
+mstQuestExtension = Table(
+    "mstQuestExtension",
+    metadata,
+    Column("questId", Integer, index=True),
+    Column("subType", Integer),
+    Column("script", JSONB),
+)
+
+
 mstClosedMessage = Table(
     "mstClosedMessage",
     metadata,
@@ -2879,6 +2902,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuestRestriction, mstQuestRestrictionInfo, mstRestriction],
     [mstQuestPhasePresent],
     [mstQuestPhaseIndividuality],
+    [mstQuestExtension],
     [mstStage],
     [mstStageRemap],
     [mstBattleBg],
@@ -2910,7 +2934,7 @@ TABLES_TO_BE_LOADED = [
     [mstSvtScript],
     [mstSvtOverwrite],
     [mstSvtTransform],
-    [mstSvtSkill, mstSvtSkillRelease],
+    [mstSvtSkill, mstSvtSkillRelease, mstSvtSkillAdd],
     [mstSvtTreasureDevice, mstSvtTreasureDeviceRelease],
     [mstSvtVoice],
     [mstSvtVoiceRelation],

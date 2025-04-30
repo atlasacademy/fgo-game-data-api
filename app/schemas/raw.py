@@ -132,6 +132,17 @@ class MstSvtSkillRelease(BaseModelORJson):
     condGroup: int
 
 
+class MstSvtSkillAdd(BaseModelORJson):
+    svtId: int
+    num: int
+    priority: int
+    condLimitCount: int
+    commonReleaseId: int
+    skillIds: list[int]
+    titles: list[str]
+    script: dict[str, Any]
+
+
 class MstSvtTreasureDeviceRelease(MstSvtSkillRelease): ...
 
 
@@ -1964,6 +1975,12 @@ class MstQuestConsumeItem(BaseModelORJson):
     itemIds: list[int]  # [94032205, 94032206]
     nums: list[int]  # [160, 220]
     questId: int  # 94032410
+
+
+class MstQuestExtension(BaseModelORJson):
+    questId: int
+    subType: int
+    script: dict[str, Any]
 
 
 class MstClosedMessage(BaseModelORJson):

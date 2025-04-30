@@ -2287,3 +2287,8 @@ export enum NiceSvtCardPositionDamageRatesSlideType {
     FRONT = "front",
     BACK = "back",
 }
+
+export enum NiceQuestExtensionSubType {
+    NONE = "none",
+    SVT_COIN = "svtCoin",
+}
