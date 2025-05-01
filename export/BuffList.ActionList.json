@@ -207,6 +207,17 @@
     "isRec": true,
     "plusAction": 0
   },
+  "RECEIVE_FIXED_DAMAGE": {
+    "limit": 0,
+    "plusTypes": [],
+    "minusTypes": [
+      227
+    ],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
   "PIERCE_INVINCIBLE": {
     "limit": 0,
     "plusTypes": [
@@ -1775,6 +1786,17 @@
     ],
     "baseParam": 1000,
     "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_DAMAGE_DEF": {
+    "limit": 0,
+    "plusTypes": [
+      228
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
     "isRec": true,
     "plusAction": 0
   }
