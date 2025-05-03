@@ -1502,7 +1502,7 @@ class NiceServant(BaseModelORJson):
     hitsDistribution: dict[NiceCardType, list[int]] = Field(
         ...,
         title="Hits distribution",
-        description="Mapping <Card type, Hits distribution>.",
+        description="[DEPRECATED] Use the `cardDetails` field. Mapping <Card type, Hits distribution>.",
     )
     cardDetails: dict[NiceCardType, NiceCardDetail] = Field(
         ...,
@@ -1548,6 +1548,9 @@ class NiceServant(BaseModelORJson):
         title="Base EXP",
         description="Base EXP per level. "
         'Will show up as "Base EXP" when feeding the item into something else.',
+    )
+    bondGifts: dict[int, list[NiceGift]] = Field(
+        ..., title="Bond Gift", description="Gifts per level"
     )
     bondEquip: int = Field(
         0,

@@ -126,6 +126,7 @@ from ..schemas.raw import (
     MstEventTradePickup,
     MstEventVoicePlay,
     MstFriendship,
+    MstFriendshipSvt,
     MstFunc,
     MstFuncGroup,
     MstGift,
@@ -488,6 +489,7 @@ async def get_servant_entity(
     mstSvtCostume = await fetch.get_all(conn, MstSvtCostume, servant_id)
     mstSvtExp = await fetch.get_all(conn, MstSvtExp, svt_db.expType)
     mstFriendship = await fetch.get_all(conn, MstFriendship, svt_db.friendshipId)
+    mstFriendshipSvt = await fetch.get_all(conn, MstFriendshipSvt, servant_id)
     mstCombineMaterial = await fetch.get_all(
         conn, MstCombineMaterial, svt_db.combineMaterialId
     )
@@ -590,6 +592,13 @@ async def get_servant_entity(
         conn, MstCommonRelease, common_release_ids
     )
 
+    gift_ids = {friendshipSvt.giftId for friendshipSvt in mstFriendshipSvt}
+
+    gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
+    replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
+
+    gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids | replacement_gift_ids)
+
     svt_entity = ServantEntity(
         mstSvt=svt_db,
         mstSvtIndividuality=mstSvtIndividuality,
@@ -617,6 +626,9 @@ async def get_servant_entity(
         mstSvtScript=mstSvtScript,
         mstSvtExp=mstSvtExp,
         mstFriendship=mstFriendship,
+        mstFriendshipSvt=mstFriendshipSvt,
+        mstGift=gifts,
+        mstGiftAdd=gift_adds,
         mstSvtBattlePoint=mstSvtBattlePoint,
         mstBattlePoint=mstBattlePoint,
         mstBattlePointPhase=mstBattlePointPhase,

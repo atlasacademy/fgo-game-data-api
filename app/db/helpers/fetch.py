@@ -80,6 +80,7 @@ from ...models.raw import (
     mstEventTradePickup,
     mstEventVoicePlay,
     mstFriendship,
+    mstFriendshipSvt,
     mstFunc,
     mstFuncGroup,
     mstGacha,
@@ -214,6 +215,7 @@ from ...schemas.raw import (
     MstEventTradePickup,
     MstEventVoicePlay,
     MstFriendship,
+    MstFriendshipSvt,
     MstFunc,
     MstFuncGroup,
     MstGacha,
@@ -335,6 +337,11 @@ schema_table_fetch_all: dict[  # type:ignore
     MstSvtCostume: (mstSvtCostume, mstSvtCostume.c.svtId, mstSvtCostume.c.id),
     MstSvtExp: (mstSvtExp, mstSvtExp.c.type, mstSvtExp.c.lv),
     MstFriendship: (mstFriendship, mstFriendship.c.id, mstFriendship.c.rank),
+    MstFriendshipSvt: (
+        mstFriendshipSvt,
+        mstFriendshipSvt.c.svtId,
+        mstFriendshipSvt.c.rank,
+    ),
     MstSvtComment: (mstSvtComment, mstSvtComment.c.svtId, mstSvtComment.c.id),
     MstSvtCommentAdd: (
         mstSvtCommentAdd,

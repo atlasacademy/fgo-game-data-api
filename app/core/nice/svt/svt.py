@@ -43,6 +43,7 @@ from ....schemas.raw import (
 )
 from ... import raw
 from ...utils import get_flags, get_traits_list, get_translation
+from ..gift import GiftData, get_gift_map, get_nice_gifts
 from ..item import get_nice_item_amount_qp, get_nice_item_from_raw
 from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
@@ -156,6 +157,9 @@ async def get_nice_servant(
         raise HTTPException(status_code=404, detail="Svt not found")
     last_svt_limit = raw_svt.mstSvtLimit[-1]
 
+    gift_maps = get_gift_map(raw_svt.mstGift)
+    gift_data = GiftData(gift_adds=raw_svt.mstGiftAdd, gift_map=gift_maps)
+
     nice_data: dict[str, Any] = {
         "id": raw_svt.mstSvt.id,
         "collectionNo": raw_svt.mstSvt.collectionNo,
@@ -187,6 +191,12 @@ async def get_nice_servant(
             )
             if friendship.friendship != -1
         ],
+        "bondGifts": {
+            friendshipSvt.rank: get_nice_gifts(
+                region, friendshipSvt.giftId, gift_data=gift_data
+            )
+            for friendshipSvt in raw_svt.mstFriendshipSvt
+        },
         "traitAdd": [
             get_nice_svt_trait(svt_individuality)
             for svt_individuality in raw_svt.mstSvtIndividuality

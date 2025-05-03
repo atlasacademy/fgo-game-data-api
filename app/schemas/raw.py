@@ -972,6 +972,12 @@ class MstFriendship(BaseModelORJson):
     qp: int = -1  # 12000000
 
 
+class MstFriendshipSvt(BaseModelORJson):
+    svtId: int
+    rank: int
+    giftId: int
+
+
 class MstClassRelationOverwrite(BaseModelORJson):
     id: int  # 100
     atkSide: int  # 1
@@ -2287,6 +2293,9 @@ class ServantEntity(BaseModelORJson):
     mstIllustrator: Optional[MstIllustrator] = None
     mstSvtExp: list[MstSvtExp] = []
     mstFriendship: list[MstFriendship] = []
+    mstFriendshipSvt: list[MstFriendshipSvt] = []
+    mstGift: list[MstGift] = []
+    mstGiftAdd: list[MstGiftAdd] = []
     mstSvtExtra: Optional[MstSvtExtra] = None
     mstSvtComment: list[MstSvtComment] = []
     mstSvtCommentAdd: list[MstSvtCommentAdd] = []

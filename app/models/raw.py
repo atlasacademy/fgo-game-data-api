@@ -726,6 +726,15 @@ mstFriendship = Table(
 )
 
 
+mstFriendshipSvt = Table(
+    "mstFriendshipSvt",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("rank", Integer),
+    Column("giftId", Integer),
+)
+
+
 mstCombineMaterial = Table(
     "mstCombineMaterial",
     metadata,
@@ -2889,6 +2898,7 @@ TABLES_TO_BE_LOADED = [
         mstWarBoardQuest,
     ],
     [mstFriendship],
+    [mstFriendshipSvt],
     [mstGiftAdd],
     [mstIllustrator],
     [mstMasterMission],
