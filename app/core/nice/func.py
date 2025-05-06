@@ -175,6 +175,7 @@ async def parse_dataVals(
                     FuncType.EXTEND_SKILL,
                     FuncType.SHORTEN_USER_EQUIP_SKILL,
                     FuncType.EXTEND_USER_EQUIP_SKILL,
+                    FuncType.GAIN_NP_CRITICALSTAR_SUM,
                 }:
                     if i == 0:
                         text = "Rate"
