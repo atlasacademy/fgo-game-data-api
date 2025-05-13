@@ -66,6 +66,7 @@ from .schemas.raw import (
     GachaEntity,
     MstClassBoardBase,
     MstCommandCode,
+    MstConstant,
     MstCv,
     MstEnemyMaster,
     MstEquip,
@@ -409,6 +410,7 @@ class TimerData(BaseModelORJson):
     masterMissions: list[NiceMasterMission]
     shops: list[NiceShop]
     items: list[NiceItem]
+    constants: dict[str, int]
 
 
 async def dump_current_events(
@@ -418,6 +420,7 @@ async def dump_current_events(
     nice_mms: list[NiceMasterMission],
     nice_shops: list[NiceShop],
     nice_items: list[NiceItem],
+    raw_constants: list[MstConstant],
 ) -> None:  # pragma: no cover
     now = int(time.time())
 
@@ -458,6 +461,9 @@ async def dump_current_events(
         masterMissions=masterMissions,
         shops=shops,
         items=items,
+        constants={
+            raw_constant.name: raw_constant.value for raw_constant in raw_constants
+        },
     )
 
     await util.dump_orjson_object("timer_data", timer_data)
@@ -573,6 +579,8 @@ async def generate_exports(
                 nice_events = await get_nice_events_from_raw(util, mstEvents)
                 await dump_nice_events(util, nice_events)
 
+                raw_constants = await fetch.get_everything(conn, MstConstant)
+
                 await dump_current_events(
                     util,
                     nice_events,
@@ -580,6 +588,7 @@ async def generate_exports(
                     nice_mms,
                     nice_shops,
                     nice_items,
+                    raw_constants,
                 )
 
                 if region == Region.JP:
@@ -596,6 +605,7 @@ async def generate_exports(
                         nice_mms,
                         nice_shops,
                         nice_items_lang_en,
+                        raw_constants,
                     )
 
             repo_info = await get_repo_version(redis, region)
