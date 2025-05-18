@@ -435,13 +435,19 @@ async def dump_current_events(
         if is_recent(now, g.mstGacha.openedAt, g.mstGacha.closedAt, None, 14, 3)
     ]
     nice_gachas = get_all_nice_gachas(recent_gacha_entities, util.lang)
-    masterMissions = [
-        mm
-        for mm in nice_mms
-        if is_recent(now, mm.startedAt, mm.endedAt, None, 14, 0)
-        and mm.id // 100000 != 3
-        and mm.endedAt < now + 360 * SECS_PER_DAY
-    ]
+    masterMissions: list[NiceMasterMission] = []
+    for mm in nice_mms:
+        if mm.id == 10001:
+            masterMissions.append(mm)
+            continue
+        if mm.id // 100000 == 3 and mm.id < 300010:
+            continue
+        if (
+            is_recent(now, mm.startedAt, mm.endedAt, None, 14, 0)
+            and mm.endedAt < now + 360 * SECS_PER_DAY
+        ):
+            masterMissions.append(mm)
+
     shops = [
         shop
         for shop in nice_shops
