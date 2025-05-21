@@ -632,6 +632,15 @@ class BaseVals(BaseModel):
     SyncUsedSameIndivBuffActorOnField: int | None = None
     OnlyMaxFuncGroupId: int | None = None
     UseAttack: int | None = None
+    CondParamAddType: int | None = None
+    CondParamAddValue: int | None = None
+    CondParamAddMaxValue: int | None = None
+    CondParamAddTargetId: int | None = None
+    CondParamRangeType: int | None = None
+    CondParamRangeMaxCount: int | None = None
+    CondParamRangeMaxValue: int | None = None
+    CondParamRangeTargetId: int | None = None
+    ExecOnce: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

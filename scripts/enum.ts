@@ -816,6 +816,15 @@ export enum NiceDataValsType {
     SyncUsedSameIndivBuffActorOnField = "syncusedsameindivbuffactoronfield",
     OnlyMaxFuncGroupId = "onlymaxfuncgroupid",
     UseAttack = "useattack",
+    CondParamAddType = "condparamaddtype",
+    CondParamAddValue = "condparamaddvalue",
+    CondParamAddMaxValue = "condparamaddmaxvalue",
+    CondParamAddTargetId = "condparamaddtargetid",
+    CondParamRangeType = "condparamrangetype",
+    CondParamRangeMaxCount = "condparamrangemaxcount",
+    CondParamRangeMaxValue = "condparamrangemaxvalue",
+    CondParamRangeTargetId = "condparamrangetargetid",
+    ExecOnce = "execonce",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -865,6 +874,7 @@ export enum NiceItemType {
     EXCHANGE_SVT_COIN = "exchangeSvtCoin",
     REDUCE_TRADE_TIME = "reduceTradeTime",
     EVENT_PASSIVE_SKILL_GIVEN = "eventPassiveSkillGiven",
+    SHOP18_ITEM = "shop18Item",
     NETMARBLE_CHARGE_STONE = "netmarbleChargeStone",
 }
 
@@ -886,6 +896,7 @@ export enum NiceGiftType {
     EVENT_HEEL_PORTRAIT = "eventHeelPortrait",
     BATTLE_ITEM = "battleItem",
     PRIVILEGE = "privilege",
+    CLASS_SKILL = "classSkill",
 }
 
 export enum NiceShopType {
@@ -907,6 +918,7 @@ export enum NiceShopType {
     REVIVAL_ITEM = "revivalItem",
     EVENT_SVT_EQUIP = "eventSvtEquip",
     EXCHANGE_SVT_COIN = "exchangeSvtCoin",
+    SHOP18 = "shop18",
 }
 
 export enum NicePayType {
@@ -949,6 +961,7 @@ export enum NicePurchaseType {
     GIFT = "gift",
     EVENT_SVT_JOIN = "eventSvtJoin",
     ASSIST = "assist",
+    SHOP18_ITEM = "shop18Item",
     KIARA_PUNISHER_RESET = "kiaraPunisherReset",
 }
 
@@ -1218,6 +1231,9 @@ export enum NiceCondType {
     ELAPSED_TIME_AFTER_SVT_GET = "elapsedTimeAfterSvtGet",
     NOT_ELAPSED_TIME_AFTER_QUEST_CLEAR = "notElapsedTimeAfterQuestClear",
     NOT_ELAPSED_TIME_AFTER_SVT_GET = "notElapsedTimeAfterSvtGet",
+    GRAND_SVT_SET = "grandSvtSet",
+    PLAYED_MOVIE = "playedMovie",
+    NOT_PLAYED_MOVIE = "notPlayedMovie",
 }
 
 export enum NiceVoiceCondType {
@@ -2015,6 +2031,9 @@ export enum NiceRestrictionType {
     UNIQUE_INDIVIDUALITY = "uniqueIndividuality",
     MY_SVT_OR_SUPPORT = "mySvtOrSupport",
     DATA_LOST_BATTLE_UNIQUE_SVT = "dataLostBattleUniqueSvt",
+    MY_GRAND_SVT = "myGrandSvt",
+    FIXED_MY_GRAND_SVT = "fixedMyGrandSvt",
+    MY_GRAND_SVT_POSITION_MAIN = "myGrandSvtPositionMain",
     FIXED_COSTUME = "fixedCostume",
 }
 
@@ -2157,6 +2176,7 @@ export enum NiceSvtMultiPortraitType {
     NONE = "none",
     COMBINE = "combine",
     LIMIT_UP = "limitUp",
+    GRAND_SELECT = "grandSelect",
 }
 
 export enum NiceNpcFollowerEntityFlag {

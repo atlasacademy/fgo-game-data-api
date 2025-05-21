@@ -2029,6 +2029,15 @@ class DataValsType(IntEnum):
     SyncUsedSameIndivBuffActorOnField = 217
     OnlyMaxFuncGroupId = 218
     UseAttack = 219
+    CondParamAddType = 220
+    CondParamAddValue = 221
+    CondParamAddMaxValue = 222
+    CondParamAddTargetId = 223
+    CondParamRangeType = 224
+    CondParamRangeMaxCount = 225
+    CondParamRangeMaxValue = 226
+    CondParamRangeTargetId = 227
+    ExecOnce = 228
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2093,6 +2102,7 @@ class ItemType(IntEnum):
     EXCHANGE_SVT_COIN = 38
     REDUCE_TRADE_TIME = 39
     EVENT_PASSIVE_SKILL_GIVEN = 40
+    SHOP18_ITEM = 41
 
 
 class NiceItemType(StrEnum):
@@ -2138,6 +2148,7 @@ class NiceItemType(StrEnum):
     exchangeSvtCoin = "exchangeSvtCoin"
     reduceTradeTime = "reduceTradeTime"
     eventPassiveSkillGiven = "eventPassiveSkillGiven"
+    shop18Item = "shop18Item"
     netmarbleChargeStone = "netmarbleChargeStone"
 
 
@@ -2182,6 +2193,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     38: NiceItemType.exchangeSvtCoin,
     39: NiceItemType.reduceTradeTime,
     40: NiceItemType.eventPassiveSkillGiven,
+    41: NiceItemType.shop18Item,
     9999: NiceItemType.netmarbleChargeStone,
 }
 
@@ -2204,6 +2216,7 @@ class GiftType(IntEnum):
     EVENT_HEEL_PORTRAIT = 15
     BATTLE_ITEM = 16
     PRIVILEGE = 17
+    CLASS_SKILL = 18
 
 
 class NiceGiftType(StrEnum):
@@ -2226,6 +2239,7 @@ class NiceGiftType(StrEnum):
     eventHeelPortrait = "eventHeelPortrait"
     battleItem = "battleItem"
     privilege = "privilege"
+    classSkill = "classSkill"
 
 
 GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
@@ -2246,6 +2260,7 @@ GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
     15: NiceGiftType.eventHeelPortrait,
     16: NiceGiftType.battleItem,
     17: NiceGiftType.privilege,
+    18: NiceGiftType.classSkill,
 }
 
 
@@ -2268,6 +2283,7 @@ class ShopType(IntEnum):
     REVIVAL_ITEM = 15
     EVENT_SVT_EQUIP = 16
     EXCHANGE_SVT_COIN = 17
+    SHOP18 = 18
 
 
 class NiceShopType(StrEnum):
@@ -2291,6 +2307,7 @@ class NiceShopType(StrEnum):
     revivalItem = "revivalItem"
     eventSvtEquip = "eventSvtEquip"
     exchangeSvtCoin = "exchangeSvtCoin"
+    shop18 = "shop18"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -2312,6 +2329,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     15: NiceShopType.revivalItem,
     16: NiceShopType.eventSvtEquip,
     17: NiceShopType.exchangeSvtCoin,
+    18: NiceShopType.shop18,
 }
 
 
@@ -2392,6 +2410,7 @@ class PurchaseType(IntEnum):
     GIFT = 20
     EVENT_SVT_JOIN = 21
     ASSIST = 22
+    SHOP18_ITEM = 23
 
 
 class NicePurchaseType(StrEnum):
@@ -2419,6 +2438,7 @@ class NicePurchaseType(StrEnum):
     gift = "gift"
     eventSvtJoin = "eventSvtJoin"
     assist = "assist"
+    shop18Item = "shop18Item"
     kiaraPunisherReset = "kiaraPunisherReset"
 
 
@@ -2445,6 +2465,7 @@ PURCHASE_TYPE_NAME: dict[int, NicePurchaseType] = {
     20: NicePurchaseType.gift,
     21: NicePurchaseType.eventSvtJoin,
     22: NicePurchaseType.assist,
+    23: NicePurchaseType.shop18Item,
     13: NicePurchaseType.kiaraPunisherReset,
 }
 
@@ -2748,6 +2769,9 @@ class CondType(IntEnum):
     ELAPSED_TIME_AFTER_SVT_GET = 254
     NOT_ELAPSED_TIME_AFTER_QUEST_CLEAR = 255
     NOT_ELAPSED_TIME_AFTER_SVT_GET = 256
+    GRAND_SVT_SET = 258
+    PLAYED_MOVIE = 259
+    NOT_PLAYED_MOVIE = 260
 
 
 class NiceCondType(StrEnum):
@@ -3003,6 +3027,9 @@ class NiceCondType(StrEnum):
     elapsedTimeAfterSvtGet = "elapsedTimeAfterSvtGet"
     notElapsedTimeAfterQuestClear = "notElapsedTimeAfterQuestClear"
     notElapsedTimeAfterSvtGet = "notElapsedTimeAfterSvtGet"
+    grandSvtSet = "grandSvtSet"
+    playedMovie = "playedMovie"
+    notPlayedMovie = "notPlayedMovie"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3256,6 +3283,9 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     254: NiceCondType.elapsedTimeAfterSvtGet,
     255: NiceCondType.notElapsedTimeAfterQuestClear,
     256: NiceCondType.notElapsedTimeAfterSvtGet,
+    258: NiceCondType.grandSvtSet,
+    259: NiceCondType.playedMovie,
+    260: NiceCondType.notPlayedMovie,
 }
 
 
@@ -5718,6 +5748,9 @@ class RestrictionType(IntEnum):
     UNIQUE_INDIVIDUALITY = 15
     MY_SVT_OR_SUPPORT = 16
     DATA_LOST_BATTLE_UNIQUE_SVT = 17
+    MY_GRAND_SVT = 21
+    FIXED_MY_GRAND_SVT = 22
+    MY_GRAND_SVT_POSITION_MAIN = 23
     FIXED_COSTUME = 101
 
 
@@ -5741,6 +5774,9 @@ class NiceRestrictionType(StrEnum):
     uniqueIndividuality = "uniqueIndividuality"
     mySvtOrSupport = "mySvtOrSupport"
     dataLostBattleUniqueSvt = "dataLostBattleUniqueSvt"
+    myGrandSvt = "myGrandSvt"
+    fixedMyGrandSvt = "fixedMyGrandSvt"
+    myGrandSvtPositionMain = "myGrandSvtPositionMain"
     fixedCostume = "fixedCostume"
 
 
@@ -5762,6 +5798,9 @@ RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
     15: NiceRestrictionType.uniqueIndividuality,
     16: NiceRestrictionType.mySvtOrSupport,
     17: NiceRestrictionType.dataLostBattleUniqueSvt,
+    21: NiceRestrictionType.myGrandSvt,
+    22: NiceRestrictionType.fixedMyGrandSvt,
+    23: NiceRestrictionType.myGrandSvtPositionMain,
     101: NiceRestrictionType.fixedCostume,
 }
 
@@ -6226,6 +6265,7 @@ class SvtMultiPortraitSceneOverwriteType(IntEnum):
     NONE = 0
     COMBINE = 1
     LIMIT_UP = 2
+    GRAND_SELECT = 3
 
 
 class NiceSvtMultiPortraitType(StrEnum):
@@ -6234,12 +6274,14 @@ class NiceSvtMultiPortraitType(StrEnum):
     none = "none"
     combine = "combine"
     limitUp = "limitUp"
+    grandSelect = "grandSelect"
 
 
 SVT_MULTI_PORTRAIT_SCENE_TYPE_NAME: dict[int, NiceSvtMultiPortraitType] = {
     0: NiceSvtMultiPortraitType.none,
     1: NiceSvtMultiPortraitType.combine,
     2: NiceSvtMultiPortraitType.limitUp,
+    3: NiceSvtMultiPortraitType.grandSelect,
 }
 
 
