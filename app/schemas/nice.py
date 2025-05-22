@@ -2899,6 +2899,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     useEventDeckNo: int | None = None
     masterSkillDelay: int | None = None
     masterSkillDelayInfo: str | None = None
+    isUseGrandBoard: int | None = None
 
 
 class NiceRestriction(BaseModelORJson):
