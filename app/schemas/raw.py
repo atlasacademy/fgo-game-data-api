@@ -2550,6 +2550,7 @@ class MstClassBoardBase(BaseModelORJson):
     condType: int
     condTargetId: int
     condNum: int
+    parentClassBoardBaseId: int | None = None
 
 
 class MstClassBoardClass(BaseModelORJson):

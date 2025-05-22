@@ -3201,6 +3201,7 @@ class NiceClassBoard(BaseModelORJson):
     condType: NiceCondType
     condTargetId: int
     condNum: int
+    parentClassBoardBaseId: int = 0
     classes: list[NiceClassBoardClass]
     squares: list[NiceClassBoardSquare]
     lines: list[NiceClassBoardLine]
