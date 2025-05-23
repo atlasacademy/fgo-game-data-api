@@ -337,47 +337,55 @@ class SvtClass(StrEnum):
     alterEgo = "alterEgo"
     avenger = "avenger"
     demonGodPillar = "demonGodPillar"
-    moonCancer = "moonCancer"
-    foreigner = "foreigner"
-    pretender = "pretender"
-    grandCaster = "grandCaster"
+    loreGrandSaber = "loreGrandSaber"
+    loreGrandArcher = "loreGrandArcher"
+    loreGrandLancer = "loreGrandLancer"
+    loreGrandRider = "loreGrandRider"
+    loreGrandCaster = "loreGrandCaster"
+    loreGrandAssassin = "loreGrandAssassin"
+    loreGrandBerserker = "loreGrandBerserker"
     beastII = "beastII"
     ushiChaosTide = "ushiChaosTide"
     beastI = "beastI"
-    beastILost = "beastILost"
+    moonCancer = "moonCancer"
     beastIIIR = "beastIIIR"
+    foreigner = "foreigner"
     beastIIIL = "beastIIIL"
-    beastIV = "beastIV"
     beastUnknown = "beastUnknown"
-    unknown = "unknown"
-    agarthaPenth = "agarthaPenth"
-    cccFinaleEmiyaAlter = "cccFinaleEmiyaAlter"
-    salemAbby = "salemAbby"
-    uOlgaMarie = "uOlgaMarie"
+    pretender = "pretender"
+    beastIV = "beastIV"
+    beastILost = "beastILost"
     uOlgaMarieAlienGod = "uOlgaMarieAlienGod"
+    uOlgaMarie = "uOlgaMarie"
     beast = "beast"
     beastVI = "beastVI"
     beastVIBoss = "beastVIBoss"
     uOlgaMarieFlare = "uOlgaMarieFlare"
+    beastEresh = "beastEresh"
     uOlgaMarieAqua = "uOlgaMarieAqua"
     uOlgaMarieGrand = "uOlgaMarieGrand"
-    uOlgaMarieFlareCollection = "uOlgaMarieFlareCollection"
-    uOlgaMarieAquaCollection = "uOlgaMarieAquaCollection"
-    uOlgaMarieGrandCollection = "uOlgaMarieGrandCollection"
-    beastEresh = "beastEresh"
-    grandSaber = "grandSaber"
-    grandArcher = "grandArcher"
-    grandLancer = "grandLancer"
-    grandRider = "grandRider"
-    grandAssassin = "grandAssassin"
-    grandBerserker = "grandBerserker"
-    atlasUnmappedClass = "atlasUnmappedClass"
+    unknown = "unknown"
+    agarthaPenth = "agarthaPenth"
+    cccFinaleEmiyaAlter = "cccFinaleEmiyaAlter"
+    salemAbby = "salemAbby"
     OTHER = "OTHER"
     ALL = "ALL"
     EXTRA = "EXTRA"
     MIX = "MIX"
     EXTRA1 = "EXTRA1"
     EXTRA2 = "EXTRA2"
+    uOlgaMarieFlareCollection = "uOlgaMarieFlareCollection"
+    uOlgaMarieAquaCollection = "uOlgaMarieAquaCollection"
+    uOlgaMarieGrandCollection = "uOlgaMarieGrandCollection"
+    atlasUnmappedClass = "atlasUnmappedClass"
+    grandSaber = "grandSaber"
+    grandArcher = "grandArcher"
+    grandLancer = "grandLancer"
+    grandRider = "grandRider"
+    grandCaster = "grandCaster"
+    grandAssassin = "grandAssassin"
+    grandBerserker = "grandBerserker"
+
 
 
 CLASS_NAME: dict[int, SvtClass] = {
@@ -393,13 +401,13 @@ CLASS_NAME: dict[int, SvtClass] = {
     10: SvtClass.alterEgo,
     11: SvtClass.avenger,
     12: SvtClass.demonGodPillar,
-    13: SvtClass.grandSaber,
-    14: SvtClass.grandArcher,
-    15: SvtClass.grandLancer,
-    16: SvtClass.grandRider,
-    17: SvtClass.grandCaster,
-    18: SvtClass.grandAssassin,
-    19: SvtClass.grandBerserker,
+    13: SvtClass.loreGrandSaber,
+    14: SvtClass.loreGrandArcher,
+    15: SvtClass.loreGrandLancer,
+    16: SvtClass.loreGrandRider,
+    17: SvtClass.loreGrandCaster,
+    18: SvtClass.loreGrandAssassin,
+    19: SvtClass.loreGrandBerserker,
     20: SvtClass.beastII,
     21: SvtClass.ushiChaosTide,
     22: SvtClass.beastI,
@@ -437,6 +445,13 @@ CLASS_NAME: dict[int, SvtClass] = {
     9001: SvtClass.uOlgaMarieFlareCollection,
     9002: SvtClass.uOlgaMarieAquaCollection,
     9003: SvtClass.uOlgaMarieGrandCollection,
+    10001: SvtClass.grandSaber,
+    10002: SvtClass.grandArcher,
+    10003: SvtClass.grandLancer,
+    10004: SvtClass.grandRider,
+    10005: SvtClass.grandCaster,
+    10006: SvtClass.grandAssassin,
+    10007: SvtClass.grandBerserker,
 }
 
 
@@ -1038,6 +1053,12 @@ class Trait(StrEnum):
     fieldHeaven = "fieldHeaven"
     fieldHell = "fieldHell"
     markOfSin = "markOfSin"
+    quickChain = "quickChain"
+    artsChain = "artsChain"
+    busterChain = "busterChain"
+    mightyChain = "mightyChain"
+    braveChain = "braveChain"
+    chainError = "chainError"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1358,6 +1379,12 @@ TRAIT_NAME: dict[int, Trait] = {
     4100: Trait.criticalHit,
     4101: Trait.aoeNP,
     4102: Trait.stNP,
+    4104: Trait.quickChain,
+    4105: Trait.artsChain,
+    4106: Trait.busterChain,
+    4107: Trait.mightyChain,
+    4108: Trait.braveChain,
+    4109: Trait.chainError,
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
     94000015: Trait.eventSaberWars,
