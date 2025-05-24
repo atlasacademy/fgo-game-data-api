@@ -214,7 +214,7 @@ async def get_nice_class_board(
         condType=COND_TYPE_NAME[mstClassBoardBase.condType],
         condTargetId=mstClassBoardBase.condTargetId,
         condNum=mstClassBoardBase.condNum,
-        parentClassBoardBaseId=mstClassBoardBase.parentClassBoardBaseId,
+        parentClassBoardBaseId=mstClassBoardBase.parentClassBoardBaseId or 0,
         classes=[
             get_nice_class_board_class(class_board_class)
             for class_board_class in raw_class_board.mstClassBoardClass

@@ -2780,6 +2780,38 @@ mstClassBoardSquare = Table(
 )
 
 
+mstGrandGraph = Table(
+    "mstGrandGraph",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("name", String),
+    Column("nameShort", String),
+    Column("nameShortEnglish", String),
+    Column("classBoardBaseId", Integer),
+    Column("condSvtLv", Integer),
+    Column("condSkillLv", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+    Column("removeItemIds", ARRAY(Integer)),
+    Column("removeItemNums", ARRAY(Integer)),
+)
+
+
+mstGrandGraphDetail = Table(
+    "mstGrandGraphDetail",
+    metadata,
+    Column("grandGraphId", Integer, index=True),
+    Column("baseClassId", Integer),
+    Column("grandClassId", Integer),
+    Column("adjustHp", Integer),
+    Column("adjustAtk", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+)
+
+
 mstFuncDisp = Table(
     "mstFuncDisp",
     metadata,
@@ -2973,6 +3005,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventAlloutBattle],
     [mstClassBoardBase, mstClassBoardClass, mstClassBoardLine, mstFuncDisp],
     [mstClassBoardLock, mstClassBoardSquare],
+    [mstGrandGraph, mstGrandGraphDetail],
     [mstFuncTypeDetail, mstBuffTypeDetail],
     [mstGacha, mstGachaStoryAdjust, mstGachaSub, viewGachaFeaturedSvt],
     [mstItemDropEfficiency],

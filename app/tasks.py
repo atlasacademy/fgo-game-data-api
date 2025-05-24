@@ -29,6 +29,7 @@ from .core.nice.enemy_master import get_all_nice_enemy_masters
 from .core.nice.event.event import get_nice_event
 from .core.nice.event.shop import get_nice_shops_from_raw
 from .core.nice.gacha import get_all_nice_gachas
+from .core.nice.grand_graph import get_all_nice_grand_graphs
 from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
 from .core.nice.mm import get_all_nice_mms
@@ -71,6 +72,7 @@ from .schemas.raw import (
     MstEnemyMaster,
     MstEquip,
     MstEvent,
+    MstGrandGraph,
     MstIllustrator,
     MstItem,
     MstMasterMission,
@@ -248,6 +250,15 @@ async def dump_nice_class_boards(
         util.conn, util.region, boards, util.lang
     )
     await util.dump_orjson("nice_class_board", all_class_board_data)
+
+
+async def dump_nice_grand_graphs(
+    util: ExportUtil, graphs: list[MstGrandGraph]
+) -> None:  # pragma: no cover
+    all_grand_graph_data = await get_all_nice_grand_graphs(
+        util.conn, util.region, graphs, util.lang
+    )
+    await util.dump_orjson("nice_grand_graph", all_grand_graph_data)
 
 
 async def dump_nice_bgms(
@@ -535,6 +546,7 @@ async def generate_exports(
                 mstShops = await fetch.get_all(conn, MstShop, 0)
                 mstEnemyMasters = await fetch.get_everything(conn, MstEnemyMaster)
                 mstClassBoardBases = await fetch.get_everything(conn, MstClassBoardBase)
+                mstGrandGraphs = await fetch.get_everything(conn, MstGrandGraph)
 
                 asset_storage = await fetch.get_everything(conn, AssetStorageLine)
                 await util.dump_orjson("asset_storage", asset_storage)
@@ -552,6 +564,7 @@ async def generate_exports(
                 await dump_nice_shops(util, nice_shops)
                 await dump_nice_enemy_masters(util, mstEnemyMasters)
                 await dump_nice_class_boards(util, mstClassBoardBases)
+                await dump_nice_grand_graphs(util, mstGrandGraphs)
 
                 raw_gacha_entities = await get_all_gacha_entities(conn)
                 await dump_nice_gachas(util, raw_gacha_entities)

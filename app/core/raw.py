@@ -52,6 +52,7 @@ from ..schemas.raw import (
     FunctionEntity,
     FunctionEntityNoReverse,
     GachaEntity,
+    GrandGraphEntity,
     ItemEntity,
     MasterMissionEntity,
     MstBattleMasterImage,
@@ -131,6 +132,8 @@ from ..schemas.raw import (
     MstFuncGroup,
     MstGift,
     MstGiftAdd,
+    MstGrandGraph,
+    MstGrandGraphDetail,
     MstHeelPortrait,
     MstIllustrator,
     MstImagePartsGroup,
@@ -1700,6 +1703,23 @@ async def get_class_board_entity(
         mstClassBoardCommandSpell=command_spells,
         mstItem=mstItem,
         mstSkill=skill_entities,
+    )
+
+
+async def get_grand_graph_entity(
+    conn: AsyncConnection, grand_graph_id: int
+) -> GrandGraphEntity:
+    graph_db = await fetch.get_one(conn, MstGrandGraph, grand_graph_id)
+    if not graph_db:
+        raise HTTPException(status_code=404, detail="Grand Graph not found")
+
+    details = await fetch.get_all(conn, MstGrandGraphDetail, grand_graph_id)
+    items = await fetch.get_all_multiple(conn, MstItem, graph_db.removeItemIds)
+
+    return GrandGraphEntity(
+        mstGrandGraph=graph_db,
+        mstGrandGraphDetail=details,
+        mstItem=items,
     )
 
 

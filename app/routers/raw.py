@@ -22,6 +22,7 @@ from ..schemas.raw import (
     EventMissionEntity,
     FunctionEntity,
     GachaEntity,
+    GrandGraphEntity,
     ItemEntity,
     MasterMissionEntity,
     MstEventAlloutBattle,
@@ -919,6 +920,27 @@ async def get_class_board(
     async with get_db(region) as conn:
         class_board_entity = await raw.get_class_board_entity(conn, class_board_id)
         return item_response(class_board_entity)
+
+
+@router.get(
+    "/{region}/grand-graph/{grand_graph_id}",
+    summary="Get Grand Graph data",
+    response_description="Grand Graph entity",
+    response_model=GrandGraphEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_grand_graph(
+    region: Region,
+    grand_graph_id: int,
+) -> Response:
+    """
+    Get Grand Graph info from ID
+    """
+    async with get_db(region) as conn:
+        grand_graph_entity = await raw.get_grand_graph_entity(conn, grand_graph_id)
+        return item_response(grand_graph_entity)
 
 
 @router.get(

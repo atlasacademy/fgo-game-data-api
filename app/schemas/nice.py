@@ -3207,6 +3207,34 @@ class NiceClassBoard(BaseModelORJson):
     lines: list[NiceClassBoardLine]
 
 
+class NiceGrandGraphDetail(BaseModelORJson):
+    # grandGraphId: int
+    baseClassId: int
+    grandClassId: int
+    baseClass: SvtClass | str
+    grandClass: SvtClass | str
+    adjustHp: int
+    adjustAtk: int
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+
+
+class NiceGrandGraph(BaseModelORJson):
+    id: int
+    name: str
+    nameShort: str
+    nameShortEnglish: str
+    classBoardBaseId: int
+    condSvtLv: int
+    condSkillLv: int
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+    removeItems: list[NiceItemAmount]
+    details: list[NiceGrandGraphDetail]
+
+
 class NiceFuncTypeDetail(BaseModelORJson):
     funcType: NiceFuncType
     ignoreValueUp: bool

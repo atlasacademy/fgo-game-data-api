@@ -12,6 +12,7 @@ from ..core.nice import (
     enemy_master,
     gacha,
     gift,
+    grand_graph,
     item,
     mc,
     mm,
@@ -47,6 +48,7 @@ from ..schemas.nice import (
     NiceEventMission,
     NiceGacha,
     NiceGift,
+    NiceGrandGraph,
     NiceItem,
     NiceMasterMission,
     NiceMysticCode,
@@ -1087,6 +1089,26 @@ async def get_class_board(
     async with get_db(region) as conn:
         return item_response(
             await class_board.get_nice_class_board(conn, region, class_board_id, lang)
+        )
+
+
+@router.get(
+    "/{region}/grand-graph/{grand_graph_id}",
+    summary="Get Grand Graph data",
+    response_description="Nice Grand Graph Entity",
+    response_model=NiceGrandGraph,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_grand_graph(
+    region: Region,
+    grand_graph_id: int,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    async with get_db(region) as conn:
+        return item_response(
+            await grand_graph.get_nice_grand_graph(conn, region, grand_graph_id, lang)
         )
 
 

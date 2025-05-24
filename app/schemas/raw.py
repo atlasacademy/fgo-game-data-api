@@ -2607,6 +2607,32 @@ class MstClassBoardSquare(BaseModelORJson):
     priority: int
 
 
+class MstGrandGraph(BaseModelORJson):
+    id: int
+    name: str
+    nameShort: str
+    nameShortEnglish: str
+    classBoardBaseId: int
+    condSvtLv: int
+    condSkillLv: int
+    condType: int
+    condTargetId: int
+    condNum: int
+    removeItemIds: list[int]
+    removeItemNums: list[int]
+
+
+class MstGrandGraphDetail(BaseModelORJson):
+    grandGraphId: int
+    baseClassId: int
+    grandClassId: int
+    adjustHp: int
+    adjustAtk: int
+    condType: int
+    condTargetId: int
+    condNum: int
+
+
 class MstFuncDisp(BaseModelORJson):
     funcIds: list[int]
     id: int
@@ -2635,6 +2661,12 @@ class ClassBoardEntity(BaseModelORJson):
     mstItem: list[MstItem]
     mstSkill: list[SkillEntityNoReverse]
     # mstFuncDisp: list[MstFuncDisp]
+
+
+class GrandGraphEntity(BaseModelORJson):
+    mstGrandGraph: MstGrandGraph
+    mstGrandGraphDetail: list[MstGrandGraphDetail]
+    mstItem: list[MstItem]
 
 
 class GachaEntity(BaseModelORJson):

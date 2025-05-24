@@ -387,7 +387,6 @@ class SvtClass(StrEnum):
     grandBerserker = "grandBerserker"
 
 
-
 CLASS_NAME: dict[int, SvtClass] = {
     1: SvtClass.saber,
     2: SvtClass.archer,

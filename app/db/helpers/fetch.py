@@ -86,6 +86,8 @@ from ...models.raw import (
     mstGacha,
     mstGift,
     mstGiftAdd,
+    mstGrandGraph,
+    mstGrandGraphDetail,
     mstHeelPortrait,
     mstIllustrator,
     mstImagePartsGroup,
@@ -221,6 +223,8 @@ from ...schemas.raw import (
     MstGacha,
     MstGift,
     MstGiftAdd,
+    MstGrandGraph,
+    MstGrandGraphDetail,
     MstHeelPortrait,
     MstIllustrator,
     MstImagePartsGroup,
@@ -304,6 +308,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstSvtAdd: (mstSvtAdd, mstSvtAdd.c.svtId),
     MstEventDigging: (mstEventDigging, mstEventDigging.c.eventId),
     MstClassBoardBase: (mstClassBoardBase, mstClassBoardBase.c.id),
+    MstGrandGraph: (mstGrandGraph, mstGrandGraph.c.id),
     MstGacha: (mstGacha, mstGacha.c.id),
 }
 
@@ -568,6 +573,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstClassBoardSquare,
         mstClassBoardSquare.c.classBoardBaseId,
         mstClassBoardSquare.c.id,
+    ),
+    MstGrandGraphDetail: (
+        mstGrandGraphDetail,
+        mstGrandGraphDetail.c.grandGraphId,
+        mstGrandGraphDetail.c.baseClassId,
     ),
     MstHeelPortrait: (
         mstHeelPortrait,
@@ -838,6 +848,7 @@ schema_map_fetch_everything: dict[  # type:ignore
     AssetStorageLine: (AssetStorage, AssetStorage.c.path),
     MstSvt: (mstSvt, mstSvt.c.id),
     MstClassBoardBase: (mstClassBoardBase, mstClassBoardBase.c.id),
+    MstGrandGraph: (mstGrandGraph, mstGrandGraph.c.id),
     MstGacha: (mstGacha, mstGacha.c.id),
     MstConstant: (mstConstant, mstConstant.c.name),
 }
