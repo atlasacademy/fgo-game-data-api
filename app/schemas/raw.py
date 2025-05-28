@@ -2631,6 +2631,7 @@ class MstGrandGraphDetail(BaseModelORJson):
     condType: int
     condTargetId: int
     condNum: int
+    adjustIndividuality: list[int]
 
 
 class MstFuncDisp(BaseModelORJson):

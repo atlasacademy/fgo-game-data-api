@@ -2809,6 +2809,7 @@ mstGrandGraphDetail = Table(
     Column("condType", Integer),
     Column("condTargetId", Integer),
     Column("condNum", Integer),
+    Column("adjustIndividuality", ARRAY(Integer)),
 )
 
 

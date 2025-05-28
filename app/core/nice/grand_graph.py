@@ -7,6 +7,7 @@ from ...schemas.gameenums import COND_TYPE_NAME
 from ...schemas.nice import NiceGrandGraph, NiceGrandGraphDetail
 from ...schemas.raw import MstGrandGraph, MstGrandGraphDetail
 from .. import raw
+from ..utils import get_traits_list
 from .item import get_nice_item_amount, get_nice_item_from_raw
 
 
@@ -15,6 +16,7 @@ settings = Settings()
 
 def get_nice_grand_graph_detail(detail: MstGrandGraphDetail) -> NiceGrandGraphDetail:
     return NiceGrandGraphDetail(
+        grandGraphId=detail.grandGraphId,
         baseClassId=detail.baseClassId,
         grandClassId=detail.grandClassId,
         baseClass=get_class_name(detail.baseClassId),
@@ -24,6 +26,7 @@ def get_nice_grand_graph_detail(detail: MstGrandGraphDetail) -> NiceGrandGraphDe
         condType=COND_TYPE_NAME[detail.condType],
         condTargetId=detail.condTargetId,
         condNum=detail.condNum,
+        adjustIndividuality=get_traits_list(detail.adjustIndividuality),
     )
 
 

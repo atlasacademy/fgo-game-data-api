@@ -3208,7 +3208,7 @@ class NiceClassBoard(BaseModelORJson):
 
 
 class NiceGrandGraphDetail(BaseModelORJson):
-    # grandGraphId: int
+    grandGraphId: int
     baseClassId: int
     grandClassId: int
     baseClass: SvtClass | str
@@ -3218,6 +3218,7 @@ class NiceGrandGraphDetail(BaseModelORJson):
     condType: NiceCondType
     condTargetId: int
     condNum: int
+    adjustIndividuality: list[NiceTrait]
 
 
 class NiceGrandGraph(BaseModelORJson):
