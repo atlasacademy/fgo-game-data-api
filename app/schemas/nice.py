@@ -1924,6 +1924,7 @@ class NiceBgmEntity(NiceBgm):
 class NiceEventQuest(BaseModelORJson):
     questId: int
     phase: int = 0
+    isExcepted: bool = False
 
 
 class NiceEventCampaign(BaseModelORJson):
