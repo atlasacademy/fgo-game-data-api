@@ -442,6 +442,11 @@ async def get_nice_quest_phase_no_rayshift(
             for aiNpc in raw_quest.mstQuestPhase.script["aiMultiNpc"]:
                 aiNpc["npc"] = npcs.ai_npc[aiNpc["npcId"]]
 
+    if "LimitAct" in raw_quest.mstQuestPhase.script:
+        raw_quest.mstQuestPhase.script["LimitAct"] = STAGE_LIMIT_ACT_TYPE_NAME[
+            raw_quest.mstQuestPhase.script["LimitAct"]
+        ]
+
     restrictions = {
         restriction.id: restriction for restriction in raw_quest.mstRestriction
     }

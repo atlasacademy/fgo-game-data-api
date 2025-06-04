@@ -2411,6 +2411,7 @@ class PurchaseType(IntEnum):
     EVENT_SVT_JOIN = 21
     ASSIST = 22
     SHOP18_ITEM = 23
+    PARTS_SKILL = 24
 
 
 class NicePurchaseType(StrEnum):
@@ -2439,6 +2440,7 @@ class NicePurchaseType(StrEnum):
     eventSvtJoin = "eventSvtJoin"
     assist = "assist"
     shop18Item = "shop18Item"
+    partsSkill = "partsSkill"
     kiaraPunisherReset = "kiaraPunisherReset"
 
 
@@ -2466,6 +2468,7 @@ PURCHASE_TYPE_NAME: dict[int, NicePurchaseType] = {
     21: NicePurchaseType.eventSvtJoin,
     22: NicePurchaseType.assist,
     23: NicePurchaseType.shop18Item,
+    24: NicePurchaseType.partsSkill,
     13: NicePurchaseType.kiaraPunisherReset,
 }
 
@@ -2772,6 +2775,7 @@ class CondType(IntEnum):
     GRAND_SVT_SET = 258
     PLAYED_MOVIE = 259
     NOT_PLAYED_MOVIE = 260
+    NOT_SHOP_GROUP_LIMIT_NUM = 263
 
 
 class NiceCondType(StrEnum):
@@ -3030,6 +3034,7 @@ class NiceCondType(StrEnum):
     grandSvtSet = "grandSvtSet"
     playedMovie = "playedMovie"
     notPlayedMovie = "notPlayedMovie"
+    notShopGroupLimitNum = "notShopGroupLimitNum"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3286,6 +3291,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     258: NiceCondType.grandSvtSet,
     259: NiceCondType.playedMovie,
     260: NiceCondType.notPlayedMovie,
+    263: NiceCondType.notShopGroupLimitNum,
 }
 
 
@@ -3773,30 +3779,50 @@ class StatusRank(IntEnum):
     A_MINUS = 14
     A_PLUS3 = 15
     A_QUESTION = 16
+    A_B = 17
+    A_C = 18
+    A_D = 19
+    A_E = 20
     B = 21
     B_PLUS = 22
     B_PLUS2 = 23
     B_MINUS = 24
     B_PLUS3 = 25
     B_QUESTION = 26
+    B_A = 27
+    B_C = 28
+    B_D = 29
+    B_E = 30
     C = 31
     C_PLUS = 32
     C_PLUS2 = 33
     C_MINUS = 34
     C_PLUS3 = 35
     C_QUESTION = 36
+    C_A = 37
+    C_B = 38
+    C_D = 39
+    C_E = 40
     D = 41
     D_PLUS = 42
     D_PLUS2 = 43
     D_MINUS = 44
     D_PLUS3 = 45
     D_QUESTION = 46
+    D_A = 47
+    D_B = 48
+    D_C = 49
+    D_E = 50
     E = 51
     E_PLUS = 52
     E_PLUS2 = 53
     E_MINUS = 54
     E_PLUS3 = 55
     E_QUESTION = 56
+    E_A = 57
+    E_B = 58
+    E_C = 59
+    E_D = 60
     EX = 61
     QUESTION = 98
     NONE = 99
@@ -3811,30 +3837,50 @@ class NiceStatusRank(StrEnum):
     aMinus = "A-"
     aPlus3 = "A+++"
     aQuestion = "A?"
+    aB = "A(B)"
+    aC = "A(C)"
+    aD = "A(D)"
+    aE = "A(E)"
     b = "B"
     bPlus = "B+"
     bPlus2 = "B++"
     bMinus = "B-"
     bPlus3 = "B+++"
     bQuestion = "B?"
+    bA = "B(A)"
+    bC = "B(C)"
+    bD = "B(D)"
+    bE = "B(E)"
     c = "C"
     cPlus = "C+"
     cPlus2 = "C++"
     cMinus = "C-"
     cPlus3 = "C+++"
     cQuestion = "C?"
+    cA = "C(A)"
+    cB = "C(B)"
+    cD = "C(D)"
+    cE = "C(E)"
     d = "D"
     dPlus = "D+"
     dPlus2 = "D++"
     dMinus = "D-"
     dPlus3 = "D+++"
     dQuestion = "D?"
+    dA = "D(A)"
+    dB = "D(B)"
+    dC = "D(C)"
+    dE = "D(E)"
     e = "E"
     ePlus = "E+"
     ePlus2 = "E++"
     eMinus = "E-"
     ePlus3 = "E+++"
     eQuestion = "E?"
+    eA = "E(A)"
+    eB = "E(B)"
+    eC = "E(C)"
+    eD = "E(D)"
     ex = "EX"
     question = "?"
     none = "None"
@@ -3848,30 +3894,50 @@ STATUS_RANK_NAME: dict[int, NiceStatusRank] = {
     14: NiceStatusRank.aMinus,
     15: NiceStatusRank.aPlus3,
     16: NiceStatusRank.aQuestion,
+    17: NiceStatusRank.aB,
+    18: NiceStatusRank.aC,
+    19: NiceStatusRank.aD,
+    20: NiceStatusRank.aE,
     21: NiceStatusRank.b,
     22: NiceStatusRank.bPlus,
     23: NiceStatusRank.bPlus2,
     24: NiceStatusRank.bMinus,
     25: NiceStatusRank.bPlus3,
     26: NiceStatusRank.bQuestion,
+    27: NiceStatusRank.bA,
+    28: NiceStatusRank.bC,
+    29: NiceStatusRank.bD,
+    30: NiceStatusRank.bE,
     31: NiceStatusRank.c,
     32: NiceStatusRank.cPlus,
     33: NiceStatusRank.cPlus2,
     34: NiceStatusRank.cMinus,
     35: NiceStatusRank.cPlus3,
     36: NiceStatusRank.cQuestion,
+    37: NiceStatusRank.cA,
+    38: NiceStatusRank.cB,
+    39: NiceStatusRank.cD,
+    40: NiceStatusRank.cE,
     41: NiceStatusRank.d,
     42: NiceStatusRank.dPlus,
     43: NiceStatusRank.dPlus2,
     44: NiceStatusRank.dMinus,
     45: NiceStatusRank.dPlus3,
     46: NiceStatusRank.dQuestion,
+    47: NiceStatusRank.dA,
+    48: NiceStatusRank.dB,
+    49: NiceStatusRank.dC,
+    50: NiceStatusRank.dE,
     51: NiceStatusRank.e,
     52: NiceStatusRank.ePlus,
     53: NiceStatusRank.ePlus2,
     54: NiceStatusRank.eMinus,
     55: NiceStatusRank.ePlus3,
     56: NiceStatusRank.eQuestion,
+    57: NiceStatusRank.eA,
+    58: NiceStatusRank.eB,
+    59: NiceStatusRank.eC,
+    60: NiceStatusRank.eD,
     61: NiceStatusRank.ex,
     98: NiceStatusRank.question,
     99: NiceStatusRank.none,

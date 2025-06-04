@@ -2901,6 +2901,8 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     masterSkillDelay: int | None = None
     masterSkillDelayInfo: str | None = None
     isUseGrandBoard: int | None = None
+    turn: int | None = None
+    limitAct: StageLimitActType | None = None
 
 
 class NiceRestriction(BaseModelORJson):
