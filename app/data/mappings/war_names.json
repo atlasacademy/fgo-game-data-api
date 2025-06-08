@@ -26,10 +26,10 @@
   "Lostbelt No.7\n黄金樹海紀行 ナウイ・ミクトラン": "Lostbelt No.7: Golden Sea of Trees, Nahui Mictlān",
   "奏章プロローグ": "Ordeal Call Prologue",
   "オーディール・コール": "Ordeal Call",
-  "虚数羅針内界 ペーパームーン": "Inner World of the Imaginary Number Compass, Paper Moon",
-  "不可逆廃棄孔 イド": "Wastehole of the Unsalvageable, Id",
-  "新霊長後継戦 アーキタイプ・インセプション": "Succession Battle for the New Prime Species, Archetype Inception",
-  "人類裁決法廷 トリニティ・メタトロニオス": "Courtroom for Humanity's Judgement, Trinity Metatronius",
+  "奏章Ⅰ 虚数羅針内界 ペーパームーン": "Zero Compass Inner Domain, Paper Moon",
+  "奏章Ⅱ 不可逆廃棄孔 イド": "奏章Ⅱ 不可逆廃棄孔 イド",
+  "奏章Ⅲ 新霊長後継戦 アーキタイプ・インセプション": "Ordeal Call III: Succession Battle for the New Prime Species, Archetype Inception",
+  "奏章Ⅳ 人類裁決法廷 トリニティ・メタトロニオス": "奏章Ⅳ 人類裁決法廷 トリニティ・メタトロニオス",
   "強化クエスト": "Rank-Up Quest",
   "曜日クエスト": "Daily Quests",
   "幕間の物語": "Interlude",
@@ -90,6 +90,9 @@
   "スペース・ファンタズムーン　アナザー・クリスマス": "Space Phantasmoon - Another Christmas",
   "小野小町古今抄 ～雪消月のキラキラ蓮華～": "Ono-no-Komachi: Annotated Edition - The Shining Lotus of February",
   "CBC2025 彼の名はダンテ ～ホテル・デノヴォのコンシェルジュ～": "[Event] CBC 2025 The name is Dante - Concierge at Hotel Dinovo",
+  "落涙の翼": "落涙の翼",
+  "冠位戴冠戦": "冠位戴冠戦",
+  "冠位戴冠戦\nセイバー": "冠位戴冠戦\nセイバー",
   "歓楽監獄城 チェイテ": "Pleasure Prison Csejte",
   "克螺旋境界式\nオガワハイム": "Spiral Boundry\nOgawa-heim",
   "第四次異聞録 冬木": "The Fourth Revelation: Fuyuki",
@@ -141,5 +144,5 @@
   "１／Observer on Timeless Temple": "１/Observer on Timeless Temple",
   "1.5／Epic of Remnant": "1.5/Epic of Remnant",
   "２／Cosmos in the Lostbelt": "２/Cosmos in the Lostbelt",
-  "奏章／Ordeal Call": "Memorandum/Ordeal Call"
+  "奏章／Ordeal Call": "Ordeal Call"
 }
