@@ -29,6 +29,7 @@ export enum NiceSvtFlag {
     SVT_EQUIP_CAMPAIGN = "svtEquipCampaign",
     SVT_EQUIP_EVENT = "svtEquipEvent",
     SVT_EQUIP_EVENT_REWARD = "svtEquipEventReward",
+    SVT_EQUIP_RARITY_LEVEL_NUM_MISSION = "svtEquipRarityLevelNumMission",
     NORMAL = "normal",
     GOETIA = "goetia",
     MAT_DROP_RATE_UP_CE = "matDropRateUpCe",
@@ -45,6 +46,7 @@ export enum NiceSvtFlagOriginal {
     SVT_EQUIP_CAMPAIGN = "svtEquipCampaign",
     SVT_EQUIP_EVENT = "svtEquipEvent",
     SVT_EQUIP_EVENT_REWARD = "svtEquipEventReward",
+    SVT_EQUIP_RARITY_LEVEL_NUM_MISSION = "svtEquipRarityLevelNumMission",
 }
 
 export enum NiceFuncType {
@@ -205,6 +207,7 @@ export enum NiceFuncTargetType {
     ENEMY_RANGE = "enemyRange",
     HAND_COMMANDCARD_RANDOM_ONE = "handCommandcardRandomOne",
     FIELD_ALL = "fieldAll",
+    NO_TARGET = "noTarget",
 }
 
 export enum NiceBuffType {
@@ -418,6 +421,11 @@ export enum NiceBuffType {
     WAVESTART_ANIMATION_BEFORE_FUNCTION = "wavestartAnimationBeforeFunction",
     SUB_FIXED_SELFDAMAGE = "subFixedSelfdamage",
     OVERWRITE_FIXED_DEFENCE_DAMAGE = "overwriteFixedDefenceDamage",
+    EXTEND_ACTION_COUNT = "extendActionCount",
+    GUTS_BEFORE_FUNCTION = "gutsBeforeFunction",
+    OVERWRITE_BUFF_USE_RATE = "overwriteBuffUseRate",
+    UP_BUFF_USE_RATE = "upBuffUseRate",
+    DOWN_BUFF_USE_RATE = "downBuffUseRate",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -586,6 +594,10 @@ export enum NiceBuffAction {
     FUNCTION_WAVESTART_ANIMATION_BEFORE = "functionWavestartAnimationBefore",
     RECEIVE_FIXED_DAMAGE = "receiveFixedDamage",
     OVERWRITE_DAMAGE_DEF = "overwriteDamageDef",
+    CHANGE_ACT_IN_ADD_COUNT = "changeActInAddCount",
+    FUNCTION_GUTS_BEFORE = "functionGutsBefore",
+    OVERWRITE_BUFF_USE_RATE = "overwriteBuffUseRate",
+    CHANGE_BUFF_USE_RATE = "changeBuffUseRate",
 }
 
 export enum NiceBuffLimit {
@@ -825,6 +837,11 @@ export enum NiceDataValsType {
     CondParamRangeMaxValue = "condparamrangemaxvalue",
     CondParamRangeTargetId = "condparamrangetargetid",
     ExecOnce = "execonce",
+    ApplyBuffIndividuality = "applybuffindividuality",
+    ExecWhenCanNotAttack = "execwhencannotattack",
+    ExecEvenCardSelectState = "execevencardselectstate",
+    OverwriteShift = "overwriteshift",
+    IgnoreShiftWhiteFade = "ignoreshiftwhitefade",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -962,6 +979,7 @@ export enum NicePurchaseType {
     EVENT_SVT_JOIN = "eventSvtJoin",
     ASSIST = "assist",
     SHOP18_ITEM = "shop18Item",
+    PARTS_SKILL = "partsSkill",
     KIARA_PUNISHER_RESET = "kiaraPunisherReset",
 }
 
@@ -1234,6 +1252,7 @@ export enum NiceCondType {
     GRAND_SVT_SET = "grandSvtSet",
     PLAYED_MOVIE = "playedMovie",
     NOT_PLAYED_MOVIE = "notPlayedMovie",
+    NOT_SHOP_GROUP_LIMIT_NUM = "notShopGroupLimitNum",
 }
 
 export enum NiceVoiceCondType {
@@ -1399,30 +1418,50 @@ export enum NiceStatusRank {
     A_MINUS = "A-",
     A_PLUS3 = "A+++",
     A_QUESTION = "A?",
+    A_B = "A(B)",
+    A_C = "A(C)",
+    A_D = "A(D)",
+    A_E = "A(E)",
     B = "B",
     B_PLUS = "B+",
     B_PLUS2 = "B++",
     B_MINUS = "B-",
     B_PLUS3 = "B+++",
     B_QUESTION = "B?",
+    B_A = "B(A)",
+    B_C = "B(C)",
+    B_D = "B(D)",
+    B_E = "B(E)",
     C = "C",
     C_PLUS = "C+",
     C_PLUS2 = "C++",
     C_MINUS = "C-",
     C_PLUS3 = "C+++",
     C_QUESTION = "C?",
+    C_A = "C(A)",
+    C_B = "C(B)",
+    C_D = "C(D)",
+    C_E = "C(E)",
     D = "D",
     D_PLUS = "D+",
     D_PLUS2 = "D++",
     D_MINUS = "D-",
     D_PLUS3 = "D+++",
     D_QUESTION = "D?",
+    D_A = "D(A)",
+    D_B = "D(B)",
+    D_C = "D(C)",
+    D_E = "D(E)",
     E = "E",
     E_PLUS = "E+",
     E_PLUS2 = "E++",
     E_MINUS = "E-",
     E_PLUS3 = "E+++",
     E_QUESTION = "E?",
+    E_A = "E(A)",
+    E_B = "E(B)",
+    E_C = "E(C)",
+    E_D = "E(D)",
     EX = "EX",
     QUESTION = "?",
     NONE = "None",

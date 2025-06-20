@@ -84,6 +84,7 @@ class SvtFlag(IntEnum):
     SVT_EQUIP_CAMPAIGN = 256
     SVT_EQUIP_EVENT = 512
     SVT_EQUIP_EVENT_REWARD = 1024
+    SVT_EQUIP_RARITY_LEVEL_NUM_MISSION = 2048
 
 
 class NiceSvtFlag(StrEnum):
@@ -98,6 +99,7 @@ class NiceSvtFlag(StrEnum):
     svtEquipCampaign = "svtEquipCampaign"
     svtEquipEvent = "svtEquipEvent"
     svtEquipEventReward = "svtEquipEventReward"
+    svtEquipRarityLevelNumMission = "svtEquipRarityLevelNumMission"
     normal = "normal"
     goetia = "goetia"
     matDropRateUpCe = "matDropRateUpCe"
@@ -114,6 +116,7 @@ SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
     256: NiceSvtFlag.svtEquipCampaign,
     512: NiceSvtFlag.svtEquipEvent,
     1024: NiceSvtFlag.svtEquipEventReward,
+    2048: NiceSvtFlag.svtEquipRarityLevelNumMission,
     0: NiceSvtFlag.normal,
     63: NiceSvtFlag.goetia,
     64: NiceSvtFlag.matDropRateUpCe,
@@ -131,6 +134,7 @@ class SvtFlagOriginal(IntEnum):
     SVT_EQUIP_CAMPAIGN = 256
     SVT_EQUIP_EVENT = 512
     SVT_EQUIP_EVENT_REWARD = 1024
+    SVT_EQUIP_RARITY_LEVEL_NUM_MISSION = 2048
 
 
 class NiceSvtFlagOriginal(StrEnum):
@@ -145,6 +149,7 @@ class NiceSvtFlagOriginal(StrEnum):
     svtEquipCampaign = "svtEquipCampaign"
     svtEquipEvent = "svtEquipEvent"
     svtEquipEventReward = "svtEquipEventReward"
+    svtEquipRarityLevelNumMission = "svtEquipRarityLevelNumMission"
 
 
 SVT_FLAG_ORIGINAL_NAME: dict[int, NiceSvtFlagOriginal] = {
@@ -157,6 +162,7 @@ SVT_FLAG_ORIGINAL_NAME: dict[int, NiceSvtFlagOriginal] = {
     256: NiceSvtFlagOriginal.svtEquipCampaign,
     512: NiceSvtFlagOriginal.svtEquipEvent,
     1024: NiceSvtFlagOriginal.svtEquipEventReward,
+    2048: NiceSvtFlagOriginal.svtEquipRarityLevelNumMission,
 }
 
 
@@ -569,6 +575,7 @@ class FuncTargetType(IntEnum):
     ENEMY_RANGE = 30
     HAND_COMMANDCARD_RANDOM_ONE = 31
     FIELD_ALL = 32
+    NO_TARGET = 33
 
 
 class NiceFuncTargetType(StrEnum):
@@ -607,6 +614,7 @@ class NiceFuncTargetType(StrEnum):
     enemyRange = "enemyRange"
     handCommandcardRandomOne = "handCommandcardRandomOne"
     fieldAll = "fieldAll"
+    noTarget = "noTarget"
 
 
 FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
@@ -643,6 +651,7 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     30: NiceFuncTargetType.enemyRange,
     31: NiceFuncTargetType.handCommandcardRandomOne,
     32: NiceFuncTargetType.fieldAll,
+    33: NiceFuncTargetType.noTarget,
 }
 
 
@@ -857,6 +866,11 @@ class BuffType(IntEnum):
     WAVESTART_ANIMATION_BEFORE_FUNCTION = 226
     SUB_FIXED_SELFDAMAGE = 227
     OVERWRITE_FIXED_DEFENCE_DAMAGE = 228
+    EXTEND_ACTION_COUNT = 229
+    GUTS_BEFORE_FUNCTION = 230
+    OVERWRITE_BUFF_USE_RATE = 231
+    UP_BUFF_USE_RATE = 232
+    DOWN_BUFF_USE_RATE = 233
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1074,6 +1088,11 @@ class NiceBuffType(StrEnum):
     wavestartAnimationBeforeFunction = "wavestartAnimationBeforeFunction"
     subFixedSelfdamage = "subFixedSelfdamage"
     overwriteFixedDefenceDamage = "overwriteFixedDefenceDamage"
+    extendActionCount = "extendActionCount"
+    gutsBeforeFunction = "gutsBeforeFunction"
+    overwriteBuffUseRate = "overwriteBuffUseRate"
+    upBuffUseRate = "upBuffUseRate"
+    downBuffUseRate = "downBuffUseRate"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1292,6 +1311,11 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     226: NiceBuffType.wavestartAnimationBeforeFunction,
     227: NiceBuffType.subFixedSelfdamage,
     228: NiceBuffType.overwriteFixedDefenceDamage,
+    229: NiceBuffType.extendActionCount,
+    230: NiceBuffType.gutsBeforeFunction,
+    231: NiceBuffType.overwriteBuffUseRate,
+    232: NiceBuffType.upBuffUseRate,
+    233: NiceBuffType.downBuffUseRate,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1461,6 +1485,10 @@ class BuffAction(IntEnum):
     FUNCTION_WAVESTART_ANIMATION_BEFORE = 153
     RECEIVE_FIXED_DAMAGE = 154
     OVERWRITE_DAMAGE_DEF = 155
+    CHANGE_ACT_IN_ADD_COUNT = 156
+    FUNCTION_GUTS_BEFORE = 157
+    OVERWRITE_BUFF_USE_RATE = 158
+    CHANGE_BUFF_USE_RATE = 159
 
 
 class NiceBuffAction(StrEnum):
@@ -1622,6 +1650,10 @@ class NiceBuffAction(StrEnum):
     functionWavestartAnimationBefore = "functionWavestartAnimationBefore"
     receiveFixedDamage = "receiveFixedDamage"
     overwriteDamageDef = "overwriteDamageDef"
+    changeActInAddCount = "changeActInAddCount"
+    functionGutsBefore = "functionGutsBefore"
+    overwriteBuffUseRate = "overwriteBuffUseRate"
+    changeBuffUseRate = "changeBuffUseRate"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1781,6 +1813,10 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     153: NiceBuffAction.functionWavestartAnimationBefore,
     154: NiceBuffAction.receiveFixedDamage,
     155: NiceBuffAction.overwriteDamageDef,
+    156: NiceBuffAction.changeActInAddCount,
+    157: NiceBuffAction.functionGutsBefore,
+    158: NiceBuffAction.overwriteBuffUseRate,
+    159: NiceBuffAction.changeBuffUseRate,
 }
 
 
@@ -2038,6 +2074,11 @@ class DataValsType(IntEnum):
     CondParamRangeMaxValue = 226
     CondParamRangeTargetId = 227
     ExecOnce = 228
+    ApplyBuffIndividuality = 229
+    ExecWhenCanNotAttack = 230
+    ExecEvenCardSelectState = 231
+    OverwriteShift = 232
+    IgnoreShiftWhiteFade = 233
 
 
 class ClassRelationOverwriteType(IntEnum):
