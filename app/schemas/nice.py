@@ -641,6 +641,11 @@ class BaseVals(BaseModel):
     CondParamRangeMaxValue: int | None = None
     CondParamRangeTargetId: int | None = None
     ExecOnce: int | None = None
+    ApplyBuffIndividuality: list[list[int]] | None = None
+    ExecWhenCanNotAttack: int | None = None
+    ExecEvenCardSelectState: int | None = None
+    OverwriteShift: int | None = None
+    IgnoreShiftWhiteFade: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

@@ -81,6 +81,7 @@ LIST_2D_DATAVALS = {
     "SnapShotParamAddOpIndividualityAndCheck",
     "SnapShotParamAddFieldIndividualityAndCheck",
     "AndOrCheckIndividualityList",
+    "ApplyBuffIndividuality",
 }
 STRING_DATAVALS = {
     "PopValueText",
