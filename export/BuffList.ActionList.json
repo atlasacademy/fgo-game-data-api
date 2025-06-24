@@ -1799,5 +1799,51 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "CHANGE_ACT_IN_ADD_COUNT": {
+    "limit": 0,
+    "plusTypes": [
+      229
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_GUTS_BEFORE": {
+    "limit": 0,
+    "plusTypes": [
+      230
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_BUFF_USE_RATE": {
+    "limit": 3,
+    "plusTypes": [
+      231
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CHANGE_BUFF_USE_RATE": {
+    "limit": 3,
+    "plusTypes": [
+      232
+    ],
+    "minusTypes": [
+      233
+    ],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
   }
 }
