@@ -551,12 +551,14 @@ class EventPointActivityObjectType(StrEnum):
     QUEST_ID = "questId"
     SKILL_ID = "skillId"
     SHOP_ID = "shopId"
+    BOX_GACHA_ID = "boxGachaId"
 
 
 EVENT_POINT_ACTIVITY_OBJECT_NAME: dict[int, EventPointActivityObjectType] = {
     1: EventPointActivityObjectType.QUEST_ID,
     2: EventPointActivityObjectType.SKILL_ID,
     3: EventPointActivityObjectType.SHOP_ID,
+    5: EventPointActivityObjectType.BOX_GACHA_ID,
 }
 
 
