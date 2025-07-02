@@ -646,6 +646,8 @@ class BaseVals(BaseModel):
     ExecEvenCardSelectState: int | None = None
     OverwriteShift: int | None = None
     IgnoreShiftWhiteFade: int | None = None
+    BackStepTargets: list[int] | None = None
+    ReplacePositionTargets: list[int] | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

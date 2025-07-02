@@ -69,6 +69,8 @@ LIST_DATAVALS = {
     "SnapShotParamAddFieldIndv",
     "StartingPosition",
     "ShortenMaxCountEachSkill",
+    "BackStepTargets",
+    "ReplacePositionTargets",
     "TargetFunctionIndividuality",
     "TargetBuffIndividuality",
     "TriggeredFuncIndexAndCheckList",
