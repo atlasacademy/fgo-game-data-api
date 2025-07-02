@@ -288,6 +288,7 @@ class FuncType(IntEnum):
     ADD_BATTLE_MISSION_VALUE = 155
     SET_BATTLE_MISSION_VALUE = 156
     CHANGE_ENEMY_STATUS_UI_TYPE = 157
+    SWAP_FIELD_POSITION = 158
 
 
 class NiceFuncType(StrEnum):
@@ -414,6 +415,7 @@ class NiceFuncType(StrEnum):
     addBattleMissionValue = "addBattleMissionValue"
     setBattleMissionValue = "setBattleMissionValue"
     changeEnemyStatusUiType = "changeEnemyStatusUiType"
+    swapFieldPosition = "swapFieldPosition"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -538,6 +540,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     155: NiceFuncType.addBattleMissionValue,
     156: NiceFuncType.setBattleMissionValue,
     157: NiceFuncType.changeEnemyStatusUiType,
+    158: NiceFuncType.swapFieldPosition,
 }
 
 
@@ -652,6 +655,27 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     31: NiceFuncTargetType.handCommandcardRandomOne,
     32: NiceFuncTargetType.fieldAll,
     33: NiceFuncTargetType.noTarget,
+}
+
+
+class FuncApplyTargetType(IntEnum):
+    PLAYER = 1
+    ENEMY = 2
+    ALL = 3
+
+
+class NiceFuncApplyTargetType(StrEnum):
+    """Function Apply Target Type Enum"""
+
+    player = "player"
+    enemy = "enemy"
+    all = "all"
+
+
+FUNC_APPLY_TARGET_TYPE_NAME: dict[int, NiceFuncApplyTargetType] = {
+    1: NiceFuncApplyTargetType.player,
+    2: NiceFuncApplyTargetType.enemy,
+    3: NiceFuncApplyTargetType.all,
 }
 
 
@@ -2079,6 +2103,8 @@ class DataValsType(IntEnum):
     ExecEvenCardSelectState = 231
     OverwriteShift = 232
     IgnoreShiftWhiteFade = 233
+    BackStepTargets = 234
+    ReplacePositionTargets = 235
 
 
 class ClassRelationOverwriteType(IntEnum):

@@ -171,6 +171,7 @@ export enum NiceFuncType {
     ADD_BATTLE_MISSION_VALUE = "addBattleMissionValue",
     SET_BATTLE_MISSION_VALUE = "setBattleMissionValue",
     CHANGE_ENEMY_STATUS_UI_TYPE = "changeEnemyStatusUiType",
+    SWAP_FIELD_POSITION = "swapFieldPosition",
 }
 
 export enum NiceFuncTargetType {
@@ -208,6 +209,12 @@ export enum NiceFuncTargetType {
     HAND_COMMANDCARD_RANDOM_ONE = "handCommandcardRandomOne",
     FIELD_ALL = "fieldAll",
     NO_TARGET = "noTarget",
+}
+
+export enum NiceFuncApplyTargetType {
+    PLAYER = "player",
+    ENEMY = "enemy",
+    ALL = "all",
 }
 
 export enum NiceBuffType {
@@ -842,6 +849,8 @@ export enum NiceDataValsType {
     ExecEvenCardSelectState = "execevencardselectstate",
     OverwriteShift = "overwriteshift",
     IgnoreShiftWhiteFade = "ignoreshiftwhitefade",
+    BackStepTargets = "backsteptargets",
+    ReplacePositionTargets = "replacepositiontargets",
 }
 
 export enum NiceClassRelationOverwriteType {

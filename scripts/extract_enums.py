@@ -277,6 +277,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Function Target Type Enum",
         "FUNC_TARGETTYPE_NAME",
     ),
+    (
+        "Target.FunctionApplyTargetType",
+        "FuncApplyTargetType",
+        "NiceFuncApplyTargetType",
+        "Function Apply Target Type Enum",
+        "FUNC_APPLY_TARGET_TYPE_NAME",
+    ),
     ("BuffList.TYPE", "BuffType", "NiceBuffType", "Buff Type Enum", "BUFF_TYPE_NAME"),
     (
         "BuffList.ACTION",
