@@ -131,6 +131,8 @@
   "セイバークラス 獲得経験値2倍！": "セイバークラス 獲得経験値2倍！",
   "セイバークラス 強化『大成功＆極大成功』率3倍！": "セイバークラス 強化『大成功＆極大成功』率3倍！",
   "「落涙の翼」関連サーヴァント強化『大成功＆極大成功』率2倍！": "「落涙の翼」関連サーヴァント強化『大成功＆極大成功』率2倍！",
+  "バーサーカークラス 獲得経験値2倍！": "バーサーカークラス 獲得経験値2倍！",
+  "バーサーカークラス 強化『大成功＆極大成功』率3倍！": "バーサーカークラス 強化『大成功＆極大成功』率3倍！",
   "消費AP 50%DOWN": "AP Cost 1/2",
   "獲得FP2倍キャンペーン": "2X Friend Point Campaign",
   "消費AP 75%DOWN": "AP Cost 1/4",
@@ -434,7 +436,7 @@
   "螺旋証明世界 リリムハーロット\n～喝采なき薔薇～": "Spiral Proof World, Lilim Harlot - A Rose Without Ovation",
   "アドバンスドクエスト 第14弾": "Advanced Quest: Part 14",
   "風雲からくりイリヤ城\n～果心居士のささやかな野望～": "Illya's Karakuri Castle\n- Kashin Koji's Modest Ambition",
-  "ミスティックアイズ・シンフォニー\n～妖しの森と麗しの足跡～": "Mystic Eyes Symphony\n- The Enchanting Forest and Lovely Footprints",
+  "ミスティックアイズ・シンフォニー\n～妖しの森と麗しの足跡～": "Mystic Eyes Symphony - The Bewitching Forest and Beautiful Footprints",
   "アドバンスドクエスト 第15弾": "Advanced Quest: Part 15",
   "アドバンスドクエスト 第16弾": "Advanced Quest: Part 16",
   "Uオルガマリークエスト": "U-Olga Marie Quest",
@@ -470,10 +472,7 @@
   "「Fate/stay night REMASTERED」発売記念 PV": "\"Fate/stay night REMASTERED\" Release Celebration PV",
   "9周年礼装交換ショップ": "9th Anniversary Craft Essence Exchange Shop",
   "妖精双六虫籠遊戯 \nまだ見ぬ完璧なあなたへ": "Faerie Sugoroku: Insect Cage Game\nFor a Yet Unseen Perfect You",
-  "奏章Ⅰ 虚数羅針内界 ペーパームーン": "Ordeal Call I: Zero Compass Inner Domain, Paper Moon",
-  "奏章Ⅱ 不可逆廃棄孔 イド": "Ordeal Call II: Wastehole of the Unsalvageable, Id",
   "奏章Ⅲ 新霊長後継戦 アーキタイプ・インセプション": "Ordeal Call III: Succession Battle for the New Prime Species, Archetype Inception",
-  "奏章Ⅳ 人類裁決法廷 トリニティ・メタトロニオス": "Ordeal Call IV: Courtroom for Humanity's Judgement, Trinity Metatronius",
   "ぶち壊せ！ ミステリーハウス・クラフターズ \n～星の鉱員と日の出の翼～": "Break Through! Mystery House Crafters — The Star Miner and the Wings of Sunrise",
   "性別選択": "性別選択",
   "期間限定で交換した★5(SSR)サーヴァントはすべてのクエストで攻撃威力50%アップ！": "期間限定で交換した★5(SSR)サーヴァントはすべてのクエストで攻撃威力50%アップ！",
@@ -495,5 +494,8 @@
   "期間限定で第12弾で召喚可能となったイベント限定サーヴァントはすべてのクエストで攻撃威力50%アップ！": "期間限定で第12弾で召喚可能となったイベント限定サーヴァントはすべてのクエストで攻撃威力50%アップ！",
   "落涙の翼": "Wings of Lacrimation",
   "期間限定で第13弾で召喚可能となったイベント限定サーヴァントはすべてのクエストで攻撃威力50%アップ！": "期間限定で第13弾で召喚可能となったイベント限定サーヴァントはすべてのクエストで攻撃威力50%アップ！",
-  "冠位戴冠戦：Saber": "Grand Duel：Saber"
+  "冠位戴冠戦：Saber": "Grand Duel：Saber",
+  "インドラの大試練 \n～巡るブロークン・スカイ～": "インドラの大試練 \n～巡るブロークン・スカイ～",
+  "冠位戴冠戦：Berserker": "冠位戴冠戦：Berserker",
+  "「OVER THE SAME SKY」特別概念礼装交換ショップ": "「OVER THE SAME SKY」特別概念礼装交換ショップ"
 }
