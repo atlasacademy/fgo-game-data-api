@@ -490,6 +490,7 @@ async def generate_exports(
     redis: Redis,
     region_path: dict[Region, DirectoryPath],
     async_engines: dict[Region, AsyncEngine],
+    enable_webhook: bool,
 ) -> None:  # pragma: no cover
     if settings.export_all_nice:
         await export_constants(region_path)
@@ -573,23 +574,7 @@ async def generate_exports(
                 nice_items_lang_en: list[NiceItem] = []
                 if region == Region.JP:
                     await dump_basic_servants(util_en, "basic_servant", all_servants)
-                    await dump_basic_equips(util_en, all_equips)
-                    await dump_basic_ccs(util_en, mstCcs)
-                    await dump_basic_wars(util_en, mstWars)
                     await dump_basic_events(util_en, mstEvents)
-                    await dump_basic_mcs(util_en, mstEquips)
-
-                    await dump_illustrators(util_en, mstIllustrators)
-                    await dump_cvs(util_en, mstCvs)
-
-                    await dump_basic_servants(util_en, "basic_svt", all_svts)
-                    nice_items_lang_en = get_nice_items_from_raw(util_en, mstItems)
-                    await dump_nice_items(util_en, nice_items_lang_en)
-                    await dump_nice_mcs(util_en, mstEquips)
-                    await dump_nice_ccs(util_en, mstCcs)
-                    await dump_nice_bgms(util_en, bgms)
-                    await dump_nice_class_boards(util_en, mstClassBoardBases)
-                    await dump_nice_gachas(util_en, raw_gacha_entities)
 
                 await dump_svt(util, "nice_servant", all_nice_servants)
                 await dump_svt(util, "nice_equip", all_equips)
@@ -610,23 +595,6 @@ async def generate_exports(
                     raw_constants,
                 )
 
-                if region == Region.JP:
-                    await dump_nice_wars(util_en, mstWars)
-                    nice_events_lang_en = await get_nice_events_from_raw(
-                        util_en, mstEvents
-                    )
-                    await dump_nice_events(util_en, nice_events_lang_en)
-
-                    await dump_current_events(
-                        util_en,
-                        nice_events_lang_en,
-                        raw_gacha_entities,
-                        nice_mms,
-                        nice_shops,
-                        nice_items_lang_en,
-                        raw_constants,
-                    )
-
             repo_info = await get_repo_version(redis, region)
             if repo_info is None:
                 info_path = export_path / "info.json"
@@ -639,6 +607,41 @@ async def generate_exports(
             if repo_info:
                 export_info = repo_info.model_dump(mode="json") | export_info
             await dump_normal(export_path, "info", export_info)
+
+            if enable_webhook:
+                await report_webhooks(region_path, "export")
+
+            if region == Region.JP:
+                await dump_basic_equips(util_en, all_equips)
+                await dump_basic_ccs(util_en, mstCcs)
+                await dump_basic_wars(util_en, mstWars)
+                await dump_basic_mcs(util_en, mstEquips)
+
+                await dump_illustrators(util_en, mstIllustrators)
+                await dump_cvs(util_en, mstCvs)
+
+                await dump_basic_servants(util_en, "basic_svt", all_svts)
+                nice_items_lang_en = get_nice_items_from_raw(util_en, mstItems)
+                await dump_nice_items(util_en, nice_items_lang_en)
+                await dump_nice_mcs(util_en, mstEquips)
+                await dump_nice_ccs(util_en, mstCcs)
+                await dump_nice_bgms(util_en, bgms)
+                await dump_nice_class_boards(util_en, mstClassBoardBases)
+                await dump_nice_gachas(util_en, raw_gacha_entities)
+
+                await dump_nice_wars(util_en, mstWars)
+                nice_events_lang_en = await get_nice_events_from_raw(util_en, mstEvents)
+                await dump_nice_events(util_en, nice_events_lang_en)
+
+                await dump_current_events(
+                    util_en,
+                    nice_events_lang_en,
+                    raw_gacha_entities,
+                    nice_mms,
+                    nice_shops,
+                    nice_items_lang_en,
+                    raw_constants,
+                )
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
@@ -755,8 +758,9 @@ async def load_and_export(
 
     if settings.export_all_nice:
         try:
-            await generate_exports(redis, region_path, async_engines)
-            if enable_webhook:
+            enable_webhook_jp = enable_webhook and set(region_path) == {Region.JP}
+            await generate_exports(redis, region_path, async_engines, enable_webhook_jp)
+            if enable_webhook and not enable_webhook_jp:
                 await report_webhooks(region_path, "export")
         except Exception:  # noqa: BLE001
             logger.exception("Failed to export data")
