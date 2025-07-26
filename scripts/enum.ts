@@ -209,6 +209,7 @@ export enum NiceFuncTargetType {
     HAND_COMMANDCARD_RANDOM_ONE = "handCommandcardRandomOne",
     FIELD_ALL = "fieldAll",
     NO_TARGET = "noTarget",
+    FIELD_RANDOM = "fieldRandom",
 }
 
 export enum NiceFuncApplyTargetType {
@@ -851,6 +852,9 @@ export enum NiceDataValsType {
     IgnoreShiftWhiteFade = "ignoreshiftwhitefade",
     BackStepTargets = "backsteptargets",
     ReplacePositionTargets = "replacepositiontargets",
+    ApplySupportSvt = "applysupportsvt",
+    ApplyHighestValueInFieldGroup = "applyhighestvalueinfieldgroup",
+    IsClassIconChangeSaveGrand = "isclassiconchangesavegrand",
 }
 
 export enum NiceClassRelationOverwriteType {

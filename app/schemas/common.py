@@ -121,6 +121,10 @@ class BuffScript(BaseModel):
     INDIVIDUALITIE_COUNT_BELOW: int | None = None
     INDIVIDUALITIE_AND: list[NiceTrait] | None = None
     INDIVIDUALITIE_OR: list[NiceTrait] | None = None
+    ckSelfCountIndividuality: list[NiceTrait] | None = None
+    ckOpCountIndividuality: list[NiceTrait] | None = None
+    ckIndvCountAbove: int | None = None
+    ckIndvCountBelow: int | None = None
     UpBuffRateBuffIndiv: Optional[list[NiceTrait]] = None
     HP_LOWER: Optional[int] = None
     HP_HIGHER: int | None = None

@@ -129,6 +129,8 @@ def get_nice_buff_script(
         "HP_LOWER",
         "INDIVIDUALITIE_COUNT_ABOVE",
         "INDIVIDUALITIE_COUNT_BELOW",
+        "ckIndvCountAbove",
+        "ckIndvCountBelow",
         "HP_HIGHER",
         "CounterMessage",
         "avoidanceText",
@@ -152,6 +154,8 @@ def get_nice_buff_script(
     for script_item in (
         "INDIVIDUALITIE_AND",
         "INDIVIDUALITIE_OR",
+        "ckSelfCountIndividuality",
+        "ckOpCountIndividuality",
         "UpBuffRateBuffIndiv",
     ):
         if script_item in mstBuff.script:
