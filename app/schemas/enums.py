@@ -377,7 +377,7 @@ class SvtClass(StrEnum):
     uOlgaMarieFlareCollection = "uOlgaMarieFlareCollection"
     uOlgaMarieAquaCollection = "uOlgaMarieAquaCollection"
     uOlgaMarieGrandCollection = "uOlgaMarieGrandCollection"
-    uOlgaMarieStellaCollection = "uOlgaMarieStellaCollection"
+    uOlgaMarieStellarCollection = "uOlgaMarieStellarCollection"
     atlasUnmappedClass = "atlasUnmappedClass"
     grandSaber = "grandSaber"
     grandArcher = "grandArcher"
@@ -445,7 +445,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     9001: SvtClass.uOlgaMarieFlareCollection,
     9002: SvtClass.uOlgaMarieAquaCollection,
     9003: SvtClass.uOlgaMarieGrandCollection,
-    9004: SvtClass.uOlgaMarieStellaCollection,
+    9004: SvtClass.uOlgaMarieStellarCollection,
     10001: SvtClass.grandSaber,
     10002: SvtClass.grandArcher,
     10003: SvtClass.grandLancer,
