@@ -81,7 +81,7 @@
   "アサシンクラス 強化『大成功＆極大成功』率2倍！": "Assassin Class Great & Super Success x2!",
   "ライダークラス 強化『大成功＆極大成功』率2倍！": "Rider Class Great & Super Success x2!",
   "キャスタークラス 強化『大成功＆極大成功』率2倍！": "Caster Class Great & Super Success x2!",
-  "ヤラアーンドゥ 獲得経験値2倍！": "Yaraan-doo 2X EXP!",
+  "ヤラアーンドゥ 獲得経験値2倍！": "Yaraändoo 2X EXP",
   "「巡霊の祝祭 第4弾」関連サーヴァント 獲得経験値2倍！": "\"Evocation Festival: Part 4\" Related Servants 2X EXP!",
   "「巡霊の祝祭 第5弾」関連サーヴァント 獲得経験値2倍！": "\"Evocation Festival: Part 5\" Related Servants 2X EXP!",
   "交換した★4(SR)サーヴァント 獲得経験値2倍！": "Exchanged ★4 (SR) Servant 2X EXP!",
@@ -133,6 +133,8 @@
   "「落涙の翼」関連サーヴァント強化『大成功＆極大成功』率2倍！": "「落涙の翼」関連サーヴァント強化『大成功＆極大成功』率2倍！",
   "バーサーカークラス 獲得経験値2倍！": "バーサーカークラス 獲得経験値2倍！",
   "バーサーカークラス 強化『大成功＆極大成功』率3倍！": "バーサーカークラス 強化『大成功＆極大成功』率3倍！",
+  "ランサークラス 獲得経験値2倍！": "ランサークラス 獲得経験値2倍！",
+  "ランサークラス 強化『大成功＆極大成功』率3倍！": "ランサークラス 強化『大成功＆極大成功』率3倍！",
   "消費AP 50%DOWN": "AP Cost 1/2",
   "獲得FP2倍キャンペーン": "2X Friend Point Campaign",
   "消費AP 75%DOWN": "AP Cost 1/4",
@@ -442,7 +444,7 @@
   "Uオルガマリークエスト": "U-Olga Marie Quest",
   "聖杯戦線 ～白天の城、黒夜の城～": "Holy Grail Front: White Castle by Day, Black Castle by Night",
   "サーヴァント・サマー・フェスティバル2023！": "Servant Summer Festival 2023!",
-  "Fate/Grand Order ～8th Anniversary～": "Fate/Grand Order - 8th Anniversary",
+  "Fate/Grand Order ～8th Anniversary～": "Fate/Grand Order - 8th Anniversary -",
   "8周年礼装交換ショップ": "8th Anniversary Craft Essence Exchange Shop",
   "メモリアルクエスト": "Memorial Quest",
   "ワンジナ・ワールドツアー！\n～大精霊と巡る世界一周～": "Wandjina World Tour!\n- Globe-Trotting with the Great Spirit",
@@ -496,6 +498,8 @@
   "期間限定で第13弾で召喚可能となったイベント限定サーヴァントはすべてのクエストで攻撃威力50%アップ！": "期間限定で第13弾で召喚可能となったイベント限定サーヴァントはすべてのクエストで攻撃威力50%アップ！",
   "冠位戴冠戦：Saber": "Grand Duel：Saber",
   "インドラの大試練 \n～巡るブロークン・スカイ～": "インドラの大試練 \n～巡るブロークン・スカイ～",
+  "オルガマリークエスト_4": "オルガマリークエスト_4",
   "冠位戴冠戦：Berserker": "冠位戴冠戦：Berserker",
-  "「OVER THE SAME SKY」特別概念礼装交換ショップ": "「OVER THE SAME SKY」特別概念礼装交換ショップ"
+  "「OVER THE SAME SKY」特別概念礼装交換ショップ": "「OVER THE SAME SKY」特別概念礼装交換ショップ",
+  "冠位戴冠戦：Lancer": "冠位戴冠戦：Lancer"
 }
