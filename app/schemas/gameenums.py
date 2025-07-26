@@ -6868,3 +6868,30 @@ QUEST_EXTENSION_SUB_TYPE_NAME: dict[int, NiceQuestExtensionSubType] = {
     0: NiceQuestExtensionSubType.none,
     1: NiceQuestExtensionSubType.svtCoin,
 }
+
+
+class BuffConditionType(IntEnum):
+    HP_HIGHER = 0
+    HP_LOWER = 1
+    INDIVIDUALITIE = 2
+    INDIVIDUALITIE_OR = 3
+    INDIVIDUALITIE_AND = 4
+
+
+class NiceBuffConditionType(StrEnum):
+    """Condition Type for Conditional Battle Buff"""
+
+    hpHigher = "hpHigher"
+    hpLower = "hpLower"
+    individualitie = "individualitie"
+    individualitieOr = "individualitieOr"
+    individualitieAnd = "individualitieAnd"
+
+
+BUFF_CONDITION_TYPE: dict[int, NiceBuffConditionType] = {
+    0: NiceBuffConditionType.hpHigher,
+    1: NiceBuffConditionType.hpLower,
+    2: NiceBuffConditionType.individualitie,
+    3: NiceBuffConditionType.individualitieOr,
+    4: NiceBuffConditionType.individualitieAnd,
+}

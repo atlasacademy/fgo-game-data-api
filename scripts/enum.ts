@@ -2365,3 +2365,11 @@ export enum NiceQuestExtensionSubType {
     NONE = "none",
     SVT_COIN = "svtCoin",
 }
+
+export enum NiceBuffConditionType {
+    HP_HIGHER = "hpHigher",
+    HP_LOWER = "hpLower",
+    INDIVIDUALITIE = "individualitie",
+    INDIVIDUALITIE_OR = "individualitieOr",
+    INDIVIDUALITIE_AND = "individualitieAnd",
+}

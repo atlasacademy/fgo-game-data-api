@@ -768,6 +768,14 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Quest Extension Sub Type",
         "QUEST_EXTENSION_SUB_TYPE_NAME",
     ),
+    # Below is only for tracking now.
+    (
+        "BuffList.CONDITIONS",
+        "BuffConditionType",
+        "NiceBuffConditionType",
+        "Condition Type for Conditional Battle Buff",
+        "BUFF_CONDITION_TYPE",
+    )
 ]
 
 
