@@ -649,6 +649,8 @@ class BaseVals(BaseModel):
     BackStepTargets: list[int] | None = None
     ReplacePositionTargets: list[int] | None = None
     ApplySupportSvt: int | None = None
+    ApplyHighestValueInFieldGroup: int | None = None
+    IsClassIconChangeSaveGrand: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
