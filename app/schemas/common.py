@@ -18,6 +18,20 @@ class RepoInfo(BaseModelORJson):
     timestamp: int
 
 
+class RegioinAssetBundle(BaseModelORJson):
+    folderName: str
+    animalName: str
+    zooName: str
+
+
+class RegionInfo(RepoInfo):
+    serverHash: str
+    serverTimestamp: int
+    dataVer: int | None = None
+    dateVer: int | None = None
+    assetbundle: RegioinAssetBundle | None = None
+
+
 class Region(StrEnum):
     """Region Enum"""
 

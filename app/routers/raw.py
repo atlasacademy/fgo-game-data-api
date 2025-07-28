@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Query, Response
+from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from fastapi_cache.decorator import cache
 
 from ..config import Settings
@@ -6,7 +6,8 @@ from ..core import raw, search
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
 from ..redis import Redis
-from ..schemas.common import Region, ReverseDepth
+from ..redis.helpers.repo_version import get_region_version
+from ..schemas.common import Region, RegionInfo, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.raw import (
     AiCollection,
@@ -56,6 +57,23 @@ from .utils import get_error_code, item_response, list_response
 
 settings = Settings()
 router = APIRouter(prefix="/raw", tags=["raw"])
+
+
+@router.get(
+    "/{region}/info",
+    response_model=RegionInfo,
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 404]),
+)
+async def get_region_repo_info(
+    region: Region,
+    redis: Redis = Depends(get_redis),
+) -> Response:
+    region_info = await get_region_version(redis, region)
+    if region_info:
+        return item_response(region_info)
+
+    raise HTTPException(status_code=404, detail="Region repo info not found.")
 
 
 svt_expand_lore_description = """

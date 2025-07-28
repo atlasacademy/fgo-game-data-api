@@ -45,11 +45,16 @@ from .db.load import load_pydantic_to_db, update_db
 from .export.constants import export_constants
 from .models.raw import mstSvtExtra
 from .redis import Redis
-from .redis.helpers.repo_version import get_repo_version, set_repo_version
+from .redis.helpers.repo_version import (
+    get_region_version,
+    get_repo_version,
+    set_region_version,
+    set_repo_version,
+)
 from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
-from .schemas.common import Language, Region, RepoInfo
+from .schemas.common import Language, Region, RegionInfo, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
 from .schemas.gameenums import NiceItemType, SvtType
 from .schemas.nice import (
@@ -603,10 +608,11 @@ async def generate_exports(
                         orjson.loads(info_path.read_bytes())
                     )
 
-            export_info = await load_export_info(region, region_path[region])
-            if repo_info:
-                export_info = repo_info.model_dump(mode="json") | export_info
-            await dump_normal(export_path, "info", export_info)
+            export_info = await get_region_version(redis, region)
+            if export_info:
+                await dump_normal(
+                    export_path, "info", export_info.model_dump(mode="json")
+                )
 
             if enable_webhook:
                 await report_webhooks(region_path, "export")
@@ -647,7 +653,7 @@ async def generate_exports(
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
 
 
-async def load_export_info(
+async def get_region_info(
     region: Region, region_folder: DirectoryPath
 ) -> dict[str, Any]:
     export_info: dict[str, Any] = {}
@@ -683,6 +689,12 @@ async def update_master_repo_info(
                 timestamp=latest_commit.committed_date,  # pyright: ignore reportGeneralTypeIssues
             )
             await set_repo_version(redis, region, repo_info)
+
+            region_info = await get_region_info(region, region_path[region])
+            region_info = repo_info.model_dump(mode="json") | region_info
+            await set_region_version(
+                redis, region, RegionInfo.model_validate(region_info)
+            )
 
 
 async def clear_redis_cache(

@@ -81,9 +81,9 @@ def get_nice_ascensionAdd(
                     **base_settings_id,
                     suffix=strParam["changeGraphSuffix"],
                 )
-                ascensionAdd["charaGraphChange"]["ascension"][limit.limitCount] = (
-                    asset_url
-                )
+                ascensionAdd["charaGraphChange"]["ascension"][
+                    limit.limitCount
+                ] = asset_url
             if "changeIconCommonReleaseId" in strParam:
                 nice_release = [
                     get_nice_common_release(cr)

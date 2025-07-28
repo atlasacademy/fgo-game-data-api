@@ -775,7 +775,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceBuffConditionType",
         "Condition Type for Conditional Battle Buff",
         "BUFF_CONDITION_TYPE",
-    )
+    ),
 ]
 
 
