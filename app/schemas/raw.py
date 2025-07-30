@@ -1117,7 +1117,7 @@ class MstGachaStoryAdjust(BaseModelORJson):
 
 
 class MstGachaSub(BaseModelORJson):
-    script: dict[str, Any] | None = None
+    # script: dict[str, Any] | None = None
     gachaId: int
     id: int
     priority: int

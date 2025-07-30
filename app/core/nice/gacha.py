@@ -41,7 +41,8 @@ def get_nice_gacha_sub(
             for release in raw_releases
             if release.id == gacha_sub.commonReleaseId
         ],
-        script=gacha_sub.script,
+        # script=gacha_sub.script,
+        script={},
     )
 
 
