@@ -2849,6 +2849,8 @@ class CondType(IntEnum):
     PLAYED_MOVIE = 259
     NOT_PLAYED_MOVIE = 260
     NOT_SHOP_GROUP_LIMIT_NUM = 263
+    EQUIP_GET = 264
+    NOT_EQUIP_GET = 265
 
 
 class NiceCondType(StrEnum):
@@ -3108,6 +3110,8 @@ class NiceCondType(StrEnum):
     playedMovie = "playedMovie"
     notPlayedMovie = "notPlayedMovie"
     notShopGroupLimitNum = "notShopGroupLimitNum"
+    equipGet = "equipGet"
+    notEquipGet = "notEquipGet"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3365,6 +3369,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     259: NiceCondType.playedMovie,
     260: NiceCondType.notPlayedMovie,
     263: NiceCondType.notShopGroupLimitNum,
+    264: NiceCondType.equipGet,
+    265: NiceCondType.notEquipGet,
 }
 
 

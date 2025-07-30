@@ -1266,6 +1266,8 @@ export enum NiceCondType {
     PLAYED_MOVIE = "playedMovie",
     NOT_PLAYED_MOVIE = "notPlayedMovie",
     NOT_SHOP_GROUP_LIMIT_NUM = "notShopGroupLimitNum",
+    EQUIP_GET = "equipGet",
+    NOT_EQUIP_GET = "notEquipGet",
 }
 
 export enum NiceVoiceCondType {
