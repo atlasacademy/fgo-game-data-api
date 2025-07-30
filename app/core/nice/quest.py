@@ -459,7 +459,7 @@ async def get_nice_quest_phase_no_rayshift(
         ],
         "individuality": get_traits_list(raw_quest.mstQuestPhase.individuality),
         "phaseIndividuality": (
-            get_traits_list(raw_quest.mstQuestPhaseIndividuality.individuality)
+            get_traits_list(raw_quest.mstQuestPhaseIndividuality.individuality or [])
             if raw_quest.mstQuestPhaseIndividuality
             else None
         ),

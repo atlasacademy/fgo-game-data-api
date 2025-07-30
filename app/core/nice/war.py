@@ -227,7 +227,7 @@ def get_nice_war_quest_selection(
 
 def get_nice_war_release(cond: MstWarRelease) -> NiceWarRelease:
     return NiceWarRelease(
-        priority=cond.priority,
+        priority=cond.priority or 0,
         condType=COND_TYPE_NAME[cond.condType],
         condId=cond.condId,
         condNum=cond.condNum,

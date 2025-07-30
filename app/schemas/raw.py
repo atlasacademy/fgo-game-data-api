@@ -933,7 +933,7 @@ class MstSvtBattlePoint(BaseModelORJson):
 
 
 class MstBattlePoint(BaseModelORJson):
-    script: dict[str, Any] | None = None
+    # script: dict[str, Any] | None = None
     id: int
     name: str | None = None
     flag: int
@@ -1702,7 +1702,7 @@ class MstWarRelease(BaseModelORJson):
     condNum: int
     warDisplayType: int
     closedDialogMessage: str
-    priority: int
+    priority: int | None = None
 
 
 class MstEvent(BaseModelORJson):
@@ -2096,7 +2096,7 @@ class MstQuestPhasePresent(BaseModelORJson):
 class MstQuestPhaseIndividuality(BaseModelORJson):
     questId: int
     phase: int
-    individuality: list[int]
+    individuality: list[int] | None = None
 
 
 class MstRestriction(BaseModelORJson):
