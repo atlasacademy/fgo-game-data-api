@@ -740,7 +740,8 @@ async def get_mystic_code_entity(
     if not mc_db:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 
-    skill_ids = [mc.skillId for mc in await fetch.get_all(conn, MstEquipSkill, mc_id)]
+    equip_skills = await fetch.get_all(conn, MstEquipSkill, mc_id)
+    skill_ids = [mc.skillId for mc in equip_skills]
     mstSkill = await get_skill_entity_no_reverse_many(conn, skill_ids, expand)
 
     mstEquipAdd = await fetch.get_all(conn, MstEquipAdd, mc_id)
