@@ -386,6 +386,7 @@ class SvtClass(StrEnum):
     grandCaster = "grandCaster"
     grandAssassin = "grandAssassin"
     grandBerserker = "grandBerserker"
+    unBeast = "unBeast"
 
 
 CLASS_NAME: dict[int, SvtClass] = {
@@ -428,6 +429,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     38: SvtClass.beastEresh,
     37: SvtClass.uOlgaMarieAqua,
     39: SvtClass.uOlgaMarieGrand,
+    40: SvtClass.unBeast,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -1062,6 +1064,7 @@ class Trait(StrEnum):
     mightyChain = "mightyChain"
     braveChain = "braveChain"
     chainError = "chainError"
+    classBeastDraco = "classBeastDraco"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1092,12 +1095,13 @@ TRAIT_NAME: dict[int, Trait] = {
     121: Trait.classBeastIV,
     122: Trait.classBeastILost,
     123: Trait.classUOlgaMarie,
-    124: Trait.classBeast,
+    124: Trait.classBeastDraco,
     125: Trait.classBeastVI,
     126: Trait.classBeastVIBoss,
     127: Trait.classUOlgaMarieFlare,
     129: Trait.classBeastEresh,
     130: Trait.classUOlgaMarieGrand,
+    135: Trait.classBeast,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
