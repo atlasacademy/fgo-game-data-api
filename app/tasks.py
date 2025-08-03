@@ -109,7 +109,6 @@ async def dump_orjson(
 
 @dataclass
 class ExportUtil:
-    conn: AsyncConnection
     redis: Redis
     region: Region
     export_path: Path
@@ -164,9 +163,8 @@ async def get_nice_svt(
 
 
 async def dump_svt(
-    util: ExportUtil, file_name: str, svts: list[MstSvt]
+    conn: AsyncConnection, util: ExportUtil, file_name: str, svts: list[MstSvt]
 ) -> None:  # pragma: no cover
-    conn = util.conn
     region = util.region
     export_path = util.export_path
 
@@ -226,42 +224,40 @@ async def dump_nice_items(
 
 
 async def dump_nice_ccs(
-    util: ExportUtil, ccs: list[MstCommandCode]
+    conn: AsyncConnection, util: ExportUtil, ccs: list[MstCommandCode]
 ) -> None:  # pragma: no cover
-    all_cc_data = await get_all_nice_ccs(util.conn, util.region, util.lang, ccs)
+    all_cc_data = await get_all_nice_ccs(conn, util.region, util.lang, ccs)
     await util.dump_orjson("nice_command_code", all_cc_data)
 
 
 async def dump_nice_mcs(
-    util: ExportUtil, mcs: list[MstEquip]
+    conn: AsyncConnection, util: ExportUtil, mcs: list[MstEquip]
 ) -> None:  # pragma: no cover
-    all_mc_data = await get_all_nice_mcs(util.conn, util.region, util.lang, mcs)
+    all_mc_data = await get_all_nice_mcs(conn, util.region, util.lang, mcs)
     await util.dump_orjson("nice_mystic_code", all_mc_data)
 
 
 async def dump_nice_enemy_masters(
-    util: ExportUtil, mcs: list[MstEnemyMaster]
+    conn: AsyncConnection, util: ExportUtil, mcs: list[MstEnemyMaster]
 ) -> None:  # pragma: no cover
-    all_enemy_master_data = await get_all_nice_enemy_masters(
-        util.conn, util.region, mcs
-    )
+    all_enemy_master_data = await get_all_nice_enemy_masters(conn, util.region, mcs)
     await util.dump_orjson("nice_enemy_master", all_enemy_master_data)
 
 
 async def dump_nice_class_boards(
-    util: ExportUtil, boards: list[MstClassBoardBase]
+    conn: AsyncConnection, util: ExportUtil, boards: list[MstClassBoardBase]
 ) -> None:  # pragma: no cover
     all_class_board_data = await get_all_nice_class_boards(
-        util.conn, util.region, boards, util.lang
+        conn, util.region, boards, util.lang
     )
     await util.dump_orjson("nice_class_board", all_class_board_data)
 
 
 async def dump_nice_grand_graphs(
-    util: ExportUtil, graphs: list[MstGrandGraph]
+    conn: AsyncConnection, util: ExportUtil, graphs: list[MstGrandGraph]
 ) -> None:  # pragma: no cover
     all_grand_graph_data = await get_all_nice_grand_graphs(
-        util.conn, util.region, graphs, util.lang
+        conn, util.region, graphs, util.lang
     )
     await util.dump_orjson("nice_grand_graph", all_grand_graph_data)
 
@@ -278,9 +274,9 @@ async def dump_nice_gachas(util: ExportUtil, gachas: list[GachaEntity]) -> None:
 
 
 async def get_nice_mms_from_raw(
-    util: ExportUtil, mms: list[MstMasterMission]
+    conn: AsyncConnection, util: ExportUtil, mms: list[MstMasterMission]
 ) -> list[NiceMasterMission]:  # pragma: no cover
-    return await get_all_nice_mms(util.conn, util.region, mms, util.lang)
+    return await get_all_nice_mms(conn, util.region, mms, util.lang)
 
 
 async def dump_nice_mms(
@@ -290,20 +286,19 @@ async def dump_nice_mms(
 
 
 async def dump_nice_wars(
-    util: ExportUtil, wars: list[MstWar]
+    conn: AsyncConnection, util: ExportUtil, wars: list[MstWar]
 ) -> None:  # pragma: no cover
     all_war_data = [
-        await get_nice_war(util.conn, util.region, war.id, util.lang) for war in wars
+        await get_nice_war(conn, util.region, war.id, util.lang) for war in wars
     ]
     await util.dump_orjson("nice_war", all_war_data)
 
 
 async def get_nice_events_from_raw(
-    util: ExportUtil, events: list[MstEvent]
+    conn: AsyncConnection, util: ExportUtil, events: list[MstEvent]
 ) -> list[NiceEvent]:  # pragma: no cover
     return [
-        await get_nice_event(util.conn, util.region, event.id, util.lang)
-        for event in events
+        await get_nice_event(conn, util.region, event.id, util.lang) for event in events
     ]
 
 
@@ -314,9 +309,9 @@ async def dump_nice_events(
 
 
 async def util_get_nice_shops_from_raw(
-    util: ExportUtil, shops: list[MstShop]
+    conn: AsyncConnection, util: ExportUtil, shops: list[MstShop]
 ) -> list[NiceShop]:  # pragma: no cover
-    return await get_nice_shops_from_raw(util.conn, util.region, shops, util.lang)
+    return await get_nice_shops_from_raw(conn, util.region, shops, util.lang)
 
 
 async def dump_nice_shops(
@@ -502,103 +497,131 @@ async def generate_exports(
         for region in region_path:
             start_time = time.perf_counter()
             export_path = project_root / "export" / region.value
+            engine = async_engines[region]
 
-            async with async_engines[region].connect() as conn:
-                logger.info(f"Exporting {region} data …")
+            logger.info(f"Exporting {region} data …")
+            util = ExportUtil(redis, region, export_path)
 
-                util = ExportUtil(conn, redis, region, export_path)
-
+            async with engine.connect() as conn:
                 all_svts = await fetch.get_everything(conn, MstSvt)
-                all_servants = [
-                    svt for svt in all_svts if svt.collectionNo != 0 and svt.isServant()
-                ]
-                all_nice_servants = [
-                    svt
-                    for svt in all_svts
-                    if (svt.collectionNo != 0 and svt.isServant())
-                    or svt.id in EXTRA_SVT_ID_IN_NICE
-                ]
-                await dump_basic_servants(util, "basic_servant", all_servants)
 
-                all_equips = [
-                    svt for svt in all_svts if svt.collectionNo != 0 and svt.isEquip()
-                ]
-                await dump_basic_equips(util, all_equips)
+            all_servants = [
+                svt for svt in all_svts if svt.collectionNo != 0 and svt.isServant()
+            ]
+            all_nice_servants = [
+                svt
+                for svt in all_svts
+                if (svt.collectionNo != 0 and svt.isServant())
+                or svt.id in EXTRA_SVT_ID_IN_NICE
+            ]
+            await dump_basic_servants(util, "basic_servant", all_servants)
 
+            all_equips = [
+                svt for svt in all_svts if svt.collectionNo != 0 and svt.isEquip()
+            ]
+            await dump_basic_equips(util, all_equips)
+
+            async with engine.connect() as conn:
                 mstCcs = await fetch.get_everything(conn, MstCommandCode)
-                await dump_basic_ccs(util, mstCcs)
+            await dump_basic_ccs(util, mstCcs)
 
+            async with engine.connect() as conn:
                 mstWars = await fetch.get_everything(conn, MstWar)
-                await dump_basic_wars(util, mstWars)
+            await dump_basic_wars(util, mstWars)
 
+            async with engine.connect() as conn:
                 mstEvents = await fetch.get_everything(conn, MstEvent)
-                await dump_basic_events(util, mstEvents)
+            await dump_basic_events(util, mstEvents)
 
+            async with engine.connect() as conn:
                 mstEquips = await fetch.get_everything(conn, MstEquip)
-                await dump_basic_mcs(util, mstEquips)
+            await dump_basic_mcs(util, mstEquips)
 
-                await dump_normal(export_path, "nice_trait", TRAIT_NAME)
-                await dump_normal(export_path, "nice_enums", ALL_ENUMS)
+            await dump_normal(export_path, "nice_trait", TRAIT_NAME)
+            await dump_normal(export_path, "nice_enums", ALL_ENUMS)
 
+            async with engine.connect() as conn:
                 mstIllustrators = await fetch.get_everything(conn, MstIllustrator)
-                await dump_illustrators(util, mstIllustrators)
+            await dump_illustrators(util, mstIllustrators)
 
+            async with engine.connect() as conn:
                 mstCvs = await fetch.get_everything(conn, MstCv)
-                await dump_cvs(util, mstCvs)
+            await dump_cvs(util, mstCvs)
 
+            async with engine.connect() as conn:
                 bgms = await get_all_bgm_entities(conn)
+            async with engine.connect() as conn:
                 mstItems = await fetch.get_everything(conn, MstItem)
+            async with engine.connect() as conn:
                 mstMasterMissions = await fetch.get_everything(conn, MstMasterMission)
+            async with engine.connect() as conn:
                 mstShops = await fetch.get_all(conn, MstShop, 0)
+            async with engine.connect() as conn:
                 mstEnemyMasters = await fetch.get_everything(conn, MstEnemyMaster)
+            async with engine.connect() as conn:
                 mstClassBoardBases = await fetch.get_everything(conn, MstClassBoardBase)
+            async with engine.connect() as conn:
                 mstGrandGraphs = await fetch.get_everything(conn, MstGrandGraph)
 
+            async with engine.connect() as conn:
                 asset_storage = await fetch.get_everything(conn, AssetStorageLine)
-                await util.dump_orjson("asset_storage", asset_storage)
+            await util.dump_orjson("asset_storage", asset_storage)
 
-                await dump_basic_servants(util, "basic_svt", all_svts)
+            await dump_basic_servants(util, "basic_svt", all_svts)
 
-                nice_items = get_nice_items_from_raw(util, mstItems)
-                await dump_nice_items(util, nice_items)
-                await dump_nice_mcs(util, mstEquips)
-                await dump_nice_ccs(util, mstCcs)
-                nice_mms = await get_nice_mms_from_raw(util, mstMasterMissions)
-                await dump_nice_mms(util, nice_mms)
-                await dump_nice_bgms(util, bgms)
-                nice_shops = await util_get_nice_shops_from_raw(util, mstShops)
-                await dump_nice_shops(util, nice_shops)
-                await dump_nice_enemy_masters(util, mstEnemyMasters)
-                await dump_nice_class_boards(util, mstClassBoardBases)
-                await dump_nice_grand_graphs(util, mstGrandGraphs)
+            nice_items = get_nice_items_from_raw(util, mstItems)
+            await dump_nice_items(util, nice_items)
+            async with engine.connect() as conn:
+                await dump_nice_mcs(conn, util, mstEquips)
+            async with engine.connect() as conn:
+                await dump_nice_ccs(conn, util, mstCcs)
+            async with engine.connect() as conn:
+                nice_mms = await get_nice_mms_from_raw(conn, util, mstMasterMissions)
+            await dump_nice_mms(util, nice_mms)
+            await dump_nice_bgms(util, bgms)
+            async with engine.connect() as conn:
+                nice_shops = await util_get_nice_shops_from_raw(conn, util, mstShops)
+            await dump_nice_shops(util, nice_shops)
+            async with engine.connect() as conn:
+                await dump_nice_enemy_masters(conn, util, mstEnemyMasters)
+            async with engine.connect() as conn:
+                await dump_nice_class_boards(conn, util, mstClassBoardBases)
+            async with engine.connect() as conn:
+                await dump_nice_grand_graphs(conn, util, mstGrandGraphs)
 
+            async with engine.connect() as conn:
                 raw_gacha_entities = await get_all_gacha_entities(conn)
-                await dump_nice_gachas(util, raw_gacha_entities)
+            await dump_nice_gachas(util, raw_gacha_entities)
 
-                util_en = ExportUtil(conn, redis, region, export_path, Language.en)
-                nice_items_lang_en: list[NiceItem] = []
-                if region == Region.JP:
-                    await dump_basic_servants(util_en, "basic_servant", all_servants)
-                    await dump_basic_events(util_en, mstEvents)
+            util_en = ExportUtil(redis, region, export_path, Language.en)
+            nice_items_lang_en: list[NiceItem] = []
+            if region == Region.JP:
+                await dump_basic_servants(util_en, "basic_servant", all_servants)
+                await dump_basic_events(util_en, mstEvents)
 
-                await dump_svt(util, "nice_servant", all_nice_servants)
-                await dump_svt(util, "nice_equip", all_equips)
+            async with engine.connect() as conn:
+                await dump_svt(conn, util, "nice_servant", all_nice_servants)
+            async with engine.connect() as conn:
+                await dump_svt(conn, util, "nice_equip", all_equips)
 
-                await dump_nice_wars(util, mstWars)
-                nice_events = await get_nice_events_from_raw(util, mstEvents)
-                await dump_nice_events(util, nice_events)
+            async with engine.connect() as conn:
+                await dump_nice_wars(conn, util, mstWars)
+            async with engine.connect() as conn:
+                nice_events = await get_nice_events_from_raw(conn, util, mstEvents)
+            await dump_nice_events(util, nice_events)
 
+            async with engine.connect() as conn:
                 raw_constants = await fetch.get_everything(conn, MstConstant)
 
-                await dump_current_events(
-                    util,
-                    nice_events,
-                    raw_gacha_entities,
-                    nice_mms,
-                    nice_shops,
-                    nice_items,
-                    raw_constants,
-                )
+            await dump_current_events(
+                util,
+                nice_events,
+                raw_gacha_entities,
+                nice_mms,
+                nice_shops,
+                nice_items,
+                raw_constants,
+            )
 
             repo_info = await get_repo_version(redis, region)
             if repo_info is None:
@@ -629,14 +652,22 @@ async def generate_exports(
                 await dump_basic_servants(util_en, "basic_svt", all_svts)
                 nice_items_lang_en = get_nice_items_from_raw(util_en, mstItems)
                 await dump_nice_items(util_en, nice_items_lang_en)
-                await dump_nice_mcs(util_en, mstEquips)
-                await dump_nice_ccs(util_en, mstCcs)
+                async with engine.connect() as conn:
+                    await dump_nice_mcs(conn, util_en, mstEquips)
+                async with engine.connect() as conn:
+                    await dump_nice_ccs(conn, util_en, mstCcs)
                 await dump_nice_bgms(util_en, bgms)
-                await dump_nice_class_boards(util_en, mstClassBoardBases)
+                async with engine.connect() as conn:
+                    await dump_nice_class_boards(conn, util_en, mstClassBoardBases)
                 await dump_nice_gachas(util_en, raw_gacha_entities)
 
-                await dump_nice_wars(util_en, mstWars)
-                nice_events_lang_en = await get_nice_events_from_raw(util_en, mstEvents)
+                async with engine.connect() as conn:
+                    await dump_nice_wars(conn, util_en, mstWars)
+
+                async with engine.connect() as conn:
+                    nice_events_lang_en = await get_nice_events_from_raw(
+                        conn, util_en, mstEvents
+                    )
                 await dump_nice_events(util_en, nice_events_lang_en)
 
                 await dump_current_events(
@@ -690,7 +721,7 @@ async def update_master_repo_info(
             )
             await set_repo_version(redis, region, repo_info)
 
-            region_info = await get_region_info(region, region_path[region])
+            region_info = await get_region_info(region, gamedata)
             region_info = repo_info.model_dump(mode="json") | region_info
             await set_region_version(
                 redis, region, RegionInfo.model_validate(region_info)
