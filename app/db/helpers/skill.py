@@ -30,7 +30,7 @@ async def get_skillEntity(
         select(
             mstSkillLv.c.skillId,
             func.jsonb_agg(
-                aggregate_order_by(mstSkillLv.table_valued(), mstSkillLv.c.lv)  # type: ignore[no-untyped-call]
+                aggregate_order_by(mstSkillLv.table_valued(), mstSkillLv.c.lv)
             ).label(mstSkillLv.name),
         )
         .where(mstSkillLv.c.skillId.in_(skill_ids))

@@ -20,7 +20,7 @@ async def get_ai_entity(
                     [],
                 ),
                 "field" if ai_table is mstAi else "svt",
-                cast(array([]), ARRAY(Integer)),  # type: ignore[no-untyped-call]
+                cast(array([]), ARRAY(Integer)),
             )
         )
         .select_from(ai_table)
