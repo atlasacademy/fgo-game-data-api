@@ -1019,6 +1019,16 @@ class ExtraAssets(ExtraCCAssets):
     facesChange: ExtraAssetsUrl
 
 
+class SvtCardAddOverwriteRateData(BaseModel):
+    condType: str
+    condValue: int
+    damageRate: int | None = None
+    attackNpRate: int | None = None
+    defenseNpRate: int | None = None
+    dropStarRate: int | None = None
+    iconBuffId: int | None = None
+
+
 class NiceCardDetail(BaseModel):
     hitsDistribution: list[int]
     attackIndividuality: list[NiceTrait]
@@ -1029,6 +1039,7 @@ class NiceCardDetail(BaseModel):
     dropStarRate: int | None = None
     positionDamageRates: list[int] | None = None
     positionDamageRatesSlideType: NiceSvtCardPositionDamageRatesSlideType | None = None
+    overwriteRates: list[SvtCardAddOverwriteRateData] | None = None
 
 
 AscensionAddData = TypeVar("AscensionAddData")

@@ -6,7 +6,7 @@ from ....schemas.gameenums import (
     COMMAND_CARD_ATK_TYPE_NAME,
     SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME,
 )
-from ....schemas.nice import NiceCardDetail
+from ....schemas.nice import NiceCardDetail, SvtCardAddOverwriteRateData
 from ....schemas.raw import MstSvtCard, MstSvtCardAdd
 from ...utils import get_traits_list
 
@@ -29,6 +29,14 @@ def get_nice_card(
                 script["positionDamageRatesSlideType"]
             ]
             if "positionDamageRatesSlideType" in script
+            else None
+        ),
+        overwriteRates=(
+            [
+                SvtCardAddOverwriteRateData.model_validate(item)
+                for item in script["overwriteRates"]
+            ]
+            if "overwriteRates" in script
             else None
         ),
     )

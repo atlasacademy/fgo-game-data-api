@@ -933,7 +933,7 @@ class MstSvtBattlePoint(BaseModelORJson):
 
 
 class MstBattlePoint(BaseModelORJson):
-    # script: dict[str, Any] | None = None
+    script: dict[str, Any] | None = None
     id: int
     name: str | None = None
     flag: int
