@@ -23,10 +23,12 @@ def get_nice_grand_graph_detail(detail: MstGrandGraphDetail) -> NiceGrandGraphDe
         grandClass=get_class_name(detail.grandClassId),
         adjustHp=detail.adjustHp,
         adjustAtk=detail.adjustAtk,
+        closedMessage=detail.closedMessage or "",
         condType=COND_TYPE_NAME[detail.condType],
         condTargetId=detail.condTargetId,
         condNum=detail.condNum,
         adjustIndividuality=get_traits_list(detail.adjustIndividuality),
+        nameFull=detail.nameFull,
     )
 
 

@@ -23,6 +23,7 @@ def get_nice_card(
         attackNpRate=script.get("attackNpRate"),
         defenseNpRate=script.get("defenseNpRate"),
         dropStarRate=script.get("dropStarRate"),
+        forceAttackFunctionTargetAll=script.get("ForceAttackFunctionTargetAll"),
         positionDamageRates=script.get("positionDamageRates"),
         positionDamageRatesSlideType=(
             SVT_CARD_POSITION_DAMAGE_RATES_SLIDE_TYPE_NAME[

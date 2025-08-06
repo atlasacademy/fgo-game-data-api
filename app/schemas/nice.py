@@ -651,6 +651,7 @@ class BaseVals(BaseModel):
     ApplySupportSvt: int | None = None
     ApplyHighestValueInFieldGroup: int | None = None
     IsClassIconChangeSaveGrand: int | None = None
+    PriorityUpHate: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
@@ -1037,6 +1038,7 @@ class NiceCardDetail(BaseModel):
     attackNpRate: int | None = None
     defenseNpRate: int | None = None
     dropStarRate: int | None = None
+    forceAttackFunctionTargetAll: int | None = None
     positionDamageRates: list[int] | None = None
     positionDamageRatesSlideType: NiceSvtCardPositionDamageRatesSlideType | None = None
     overwriteRates: list[SvtCardAddOverwriteRateData] | None = None
@@ -3237,10 +3239,12 @@ class NiceGrandGraphDetail(BaseModelORJson):
     grandClass: SvtClass | str
     adjustHp: int
     adjustAtk: int
+    closedMessage: str
     condType: NiceCondType
     condTargetId: int
     condNum: int
     adjustIndividuality: list[NiceTrait]
+    nameFull: str | None = None
 
 
 class NiceGrandGraph(BaseModelORJson):

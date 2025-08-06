@@ -364,6 +364,7 @@ class SvtClass(StrEnum):
     beastEresh = "beastEresh"
     uOlgaMarieAqua = "uOlgaMarieAqua"
     uOlgaMarieGrand = "uOlgaMarieGrand"
+    aquaFragment = "aquaFragment"
     unknown = "unknown"
     agarthaPenth = "agarthaPenth"
     cccFinaleEmiyaAlter = "cccFinaleEmiyaAlter"
@@ -386,6 +387,17 @@ class SvtClass(StrEnum):
     grandCaster = "grandCaster"
     grandAssassin = "grandAssassin"
     grandBerserker = "grandBerserker"
+    grandShielder = "grandShielder"
+    grandRuler = "grandRuler"
+    grandAlterego = "grandAlterego"
+    grandAvenger = "grandAvenger"
+    grandMoonCancer = "grandMoonCancer"
+    grandForeigner = "grandForeigner"
+    grandPretender = "grandPretender"
+    grandUnBeastUPlanetOlgaMarie = "grandUnBeastUPlanetOlgaMarie"
+    grandUnBeastDoraco = "grandUnBeastDoraco"
+    grandUnBeastEresh = "grandUnBeastEresh"
+    grandUnBeastUOlgaMarie = "grandUnBeastUOlgaMarie"
     unBeast = "unBeast"
 
 
@@ -430,6 +442,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     37: SvtClass.uOlgaMarieAqua,
     39: SvtClass.uOlgaMarieGrand,
     40: SvtClass.unBeast,
+    96: SvtClass.aquaFragment,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -455,6 +468,17 @@ CLASS_NAME: dict[int, SvtClass] = {
     10005: SvtClass.grandCaster,
     10006: SvtClass.grandAssassin,
     10007: SvtClass.grandBerserker,
+    10008: SvtClass.grandShielder,
+    10009: SvtClass.grandRuler,
+    10010: SvtClass.grandAlterego,
+    10011: SvtClass.grandAvenger,
+    10023: SvtClass.grandMoonCancer,
+    10025: SvtClass.grandForeigner,
+    10028: SvtClass.grandPretender,
+    10031: SvtClass.grandUnBeastUPlanetOlgaMarie,
+    10033: SvtClass.grandUnBeastDoraco,
+    10038: SvtClass.grandUnBeastEresh,
+    10040: SvtClass.grandUnBeastUOlgaMarie,
 }
 
 

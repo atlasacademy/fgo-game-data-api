@@ -2806,10 +2806,12 @@ mstGrandGraphDetail = Table(
     Column("grandClassId", Integer),
     Column("adjustHp", Integer),
     Column("adjustAtk", Integer),
+    Column("closedMessage", String),
     Column("condType", Integer),
     Column("condTargetId", Integer),
     Column("condNum", Integer),
     Column("adjustIndividuality", ARRAY(Integer)),
+    Column("nameFull", String),
 )
 
 

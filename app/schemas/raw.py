@@ -2628,10 +2628,12 @@ class MstGrandGraphDetail(BaseModelORJson):
     grandClassId: int
     adjustHp: int
     adjustAtk: int
+    closedMessage: str | None = None
     condType: int
     condTargetId: int
     condNum: int
     adjustIndividuality: list[int]
+    nameFull: str | None = None
 
 
 class MstFuncDisp(BaseModelORJson):
