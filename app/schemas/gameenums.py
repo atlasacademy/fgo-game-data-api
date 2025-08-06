@@ -898,6 +898,7 @@ class BuffType(IntEnum):
     OVERWRITE_BUFF_USE_RATE = 231
     UP_BUFF_USE_RATE = 232
     DOWN_BUFF_USE_RATE = 233
+    UP_HATE_TO_GRANTED_OPPONENT = 235
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1120,6 +1121,7 @@ class NiceBuffType(StrEnum):
     overwriteBuffUseRate = "overwriteBuffUseRate"
     upBuffUseRate = "upBuffUseRate"
     downBuffUseRate = "downBuffUseRate"
+    upHateToGrantedOpponent = "upHateToGrantedOpponent"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1343,6 +1345,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     231: NiceBuffType.overwriteBuffUseRate,
     232: NiceBuffType.upBuffUseRate,
     233: NiceBuffType.downBuffUseRate,
+    235: NiceBuffType.upHateToGrantedOpponent,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1516,6 +1519,7 @@ class BuffAction(IntEnum):
     FUNCTION_GUTS_BEFORE = 157
     OVERWRITE_BUFF_USE_RATE = 158
     CHANGE_BUFF_USE_RATE = 159
+    HATE_TO_GRANTED_OPPONENT = 160
 
 
 class NiceBuffAction(StrEnum):
@@ -1681,6 +1685,7 @@ class NiceBuffAction(StrEnum):
     functionGutsBefore = "functionGutsBefore"
     overwriteBuffUseRate = "overwriteBuffUseRate"
     changeBuffUseRate = "changeBuffUseRate"
+    hateToGrantedOpponent = "hateToGrantedOpponent"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1844,6 +1849,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     157: NiceBuffAction.functionGutsBefore,
     158: NiceBuffAction.overwriteBuffUseRate,
     159: NiceBuffAction.changeBuffUseRate,
+    160: NiceBuffAction.hateToGrantedOpponent,
 }
 
 
@@ -2111,6 +2117,7 @@ class DataValsType(IntEnum):
     ApplySupportSvt = 236
     ApplyHighestValueInFieldGroup = 237
     IsClassIconChangeSaveGrand = 238
+    PriorityUpHate = 239
 
 
 class ClassRelationOverwriteType(IntEnum):
