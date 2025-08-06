@@ -1845,5 +1845,16 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
+  },
+  "HATE_TO_GRANTED_OPPONENT": {
+    "limit": 0,
+    "plusTypes": [
+      235
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
