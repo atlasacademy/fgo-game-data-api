@@ -364,6 +364,7 @@ class SvtClass(StrEnum):
     beastEresh = "beastEresh"
     uOlgaMarieAqua = "uOlgaMarieAqua"
     uOlgaMarieGrand = "uOlgaMarieGrand"
+    uOlgaMarieStellar = "uOlgaMarieStellar"
     aquaFragment = "aquaFragment"
     unknown = "unknown"
     agarthaPenth = "agarthaPenth"
@@ -394,11 +395,11 @@ class SvtClass(StrEnum):
     grandMoonCancer = "grandMoonCancer"
     grandForeigner = "grandForeigner"
     grandPretender = "grandPretender"
-    grandUnBeastUPlanetOlgaMarie = "grandUnBeastUPlanetOlgaMarie"
-    grandUnBeastDoraco = "grandUnBeastDoraco"
+    grandUnBeastUOlgaMarieAlienGod = "grandUnBeastUOlgaMarieAlienGod"
+    grandUnBeastDraco = "grandUnBeastDraco"
     grandUnBeastEresh = "grandUnBeastEresh"
     grandUnBeastUOlgaMarie = "grandUnBeastUOlgaMarie"
-    unBeast = "unBeast"
+    unBeastOlgaMarie = "unBeast"
 
 
 CLASS_NAME: dict[int, SvtClass] = {
@@ -441,7 +442,8 @@ CLASS_NAME: dict[int, SvtClass] = {
     38: SvtClass.beastEresh,
     37: SvtClass.uOlgaMarieAqua,
     39: SvtClass.uOlgaMarieGrand,
-    40: SvtClass.unBeast,
+    40: SvtClass.unBeastOlgaMarie,
+    41: SvtClass.uOlgaMarieStellar,
     96: SvtClass.aquaFragment,
     97: SvtClass.unknown,
     # 98
@@ -475,8 +477,8 @@ CLASS_NAME: dict[int, SvtClass] = {
     10023: SvtClass.grandMoonCancer,
     10025: SvtClass.grandForeigner,
     10028: SvtClass.grandPretender,
-    10031: SvtClass.grandUnBeastUPlanetOlgaMarie,
-    10033: SvtClass.grandUnBeastDoraco,
+    10031: SvtClass.grandUnBeastUOlgaMarieAlienGod,
+    10033: SvtClass.grandUnBeastDraco,
     10038: SvtClass.grandUnBeastEresh,
     10040: SvtClass.grandUnBeastUOlgaMarie,
 }
@@ -749,6 +751,24 @@ class Trait(StrEnum):
     classBeastUnknown = "classBeastUnknown"
     classPretender = "classPretender"
     classUOlgaMarie = "classUOlgaMarie"
+    classUOlgaMarieGrand = "classUOlgaMarieGrand"
+    classGrandUnBeastUOlgaMarieAlienGod = "classGrandUnBeastUOlgaMarieAlienGod"
+    classAquaFragment = "classAquaFragment"
+    classUOlgaMarieStellar = "classUOlgaMarieStellar"
+    classGrandSaber = "classGrandSaber"
+    classGrandLancer = "classGrandLancer"
+    classGrandArcher = "classGrandArcher"
+    classGrandRider = "classGrandRider"
+    classGrandAssassin = "classGrandAssassin"
+    classGrandBerserker = "classGrandBerserker"
+    classGrandShielder = "classGrandShielder"
+    classGrandRuler = "classGrandRuler"
+    classGrandAlterego = "classGrandAlterego"
+    classGrandAvenger = "classGrandAvenger"
+    classGrandMoonCancer = "classGrandMoonCancer"
+    classGrandForeigner = "classGrandForeigner"
+    classGrandPretender = "classGrandPretender"
+    classGrandUnBeast = "classGrandUnBeast"
     attributeSky = "attributeSky"
     attributeEarth = "attributeEarth"
     attributeHuman = "attributeHuman"
@@ -1078,7 +1098,6 @@ class Trait(StrEnum):
     buffSpecialInvinciblePierce = "buffSpecialInvinciblePierce"
     sakuraSeries = "sakuraSeries"
     buffDefenceDown = "buffDefenceDown"
-    classUOlgaMarieGrand = "classUOlgaMarieGrand"
     fieldHeaven = "fieldHeaven"
     fieldHell = "fieldHell"
     markOfSin = "markOfSin"
@@ -1125,7 +1144,25 @@ TRAIT_NAME: dict[int, Trait] = {
     127: Trait.classUOlgaMarieFlare,
     129: Trait.classBeastEresh,
     130: Trait.classUOlgaMarieGrand,
+    131: Trait.classUOlgaMarieStellar,
+    133: Trait.classGrandUnBeastUOlgaMarieAlienGod,
+    134: Trait.classAquaFragment,
     135: Trait.classBeast,
+    180: Trait.classGrandSaber,
+    181: Trait.classGrandLancer,
+    182: Trait.classGrandArcher,
+    183: Trait.classGrandRider,
+    184: Trait.classGrandCaster,
+    185: Trait.classGrandAssassin,
+    186: Trait.classGrandBerserker,
+    187: Trait.classGrandShielder,
+    188: Trait.classGrandRuler,
+    189: Trait.classGrandAlterego,
+    190: Trait.classGrandAvenger,
+    191: Trait.classGrandMoonCancer,
+    192: Trait.classGrandForeigner,
+    193: Trait.classGrandPretender,
+    194: Trait.classGrandUnBeast,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
