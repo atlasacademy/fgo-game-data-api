@@ -365,6 +365,7 @@ class SvtClass(StrEnum):
     uOlgaMarieAqua = "uOlgaMarieAqua"
     uOlgaMarieGrand = "uOlgaMarieGrand"
     uOlgaMarieStellar = "uOlgaMarieStellar"
+    unBeastOlgaMarie = "unBeastOlgaMarie"
     aquaFragment = "aquaFragment"
     unknown = "unknown"
     agarthaPenth = "agarthaPenth"
@@ -399,7 +400,6 @@ class SvtClass(StrEnum):
     grandUnBeastDraco = "grandUnBeastDraco"
     grandUnBeastEresh = "grandUnBeastEresh"
     grandUnBeastUOlgaMarie = "grandUnBeastUOlgaMarie"
-    unBeastOlgaMarie = "unBeast"
 
 
 CLASS_NAME: dict[int, SvtClass] = {
@@ -741,7 +741,7 @@ class Trait(StrEnum):
     classAlterEgo = "classAlterEgo"
     classAvenger = "classAvenger"
     classDemonGodPillar = "classDemonGodPillar"
-    classGrandCaster = "classGrandCaster"
+    classLoreGrandCaster = "classLoreGrandCaster"
     classBeastI = "classBeastI"
     classBeastII = "classBeastII"
     classMoonCancer = "classMoonCancer"
@@ -755,10 +755,12 @@ class Trait(StrEnum):
     classGrandUnBeastUOlgaMarieAlienGod = "classGrandUnBeastUOlgaMarieAlienGod"
     classAquaFragment = "classAquaFragment"
     classUOlgaMarieStellar = "classUOlgaMarieStellar"
+    classUnBeastOlgaMarie = "classUnBeastOlgaMarie"
     classGrandSaber = "classGrandSaber"
     classGrandLancer = "classGrandLancer"
     classGrandArcher = "classGrandArcher"
     classGrandRider = "classGrandRider"
+    classGrandCaster = "classGrandCaster"
     classGrandAssassin = "classGrandAssassin"
     classGrandBerserker = "classGrandBerserker"
     classGrandShielder = "classGrandShielder"
@@ -1126,7 +1128,7 @@ TRAIT_NAME: dict[int, Trait] = {
     109: Trait.classAlterEgo,
     110: Trait.classAvenger,
     111: Trait.classDemonGodPillar,
-    112: Trait.classGrandCaster,
+    112: Trait.classLoreGrandCaster,
     113: Trait.classBeastI,
     114: Trait.classBeastII,
     115: Trait.classMoonCancer,
@@ -1145,6 +1147,7 @@ TRAIT_NAME: dict[int, Trait] = {
     129: Trait.classBeastEresh,
     130: Trait.classUOlgaMarieGrand,
     131: Trait.classUOlgaMarieStellar,
+    132: Trait.classUnBeastOlgaMarie,
     133: Trait.classGrandUnBeastUOlgaMarieAlienGod,
     134: Trait.classAquaFragment,
     135: Trait.classBeast,
