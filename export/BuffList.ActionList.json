@@ -1856,5 +1856,16 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "REACTIVE_DAMAGE_GAIN_HP": {
+    "limit": 3,
+    "plusTypes": [
+      234
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
