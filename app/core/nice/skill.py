@@ -162,8 +162,9 @@ def get_nice_skill_entity_script(
     if not script:
         return None
 
+    out_entity_script = NiceSkillEntityScript()
     if "condBranchSkillInfo" in script:
-        script["condBranchSkillInfo"] = [
+        out_entity_script.condBranchSkillInfo = [
             CondBranchSkillInfo(
                 condType=BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME[
                     BattleBranchSkillCondBranchType[info["condType"]].value
@@ -176,7 +177,7 @@ def get_nice_skill_entity_script(
             for info in script["condBranchSkillInfo"]
         ]
 
-    return NiceSkillEntityScript.model_validate(script)
+    return out_entity_script
 
 
 async def get_nice_skill_with_svt(
