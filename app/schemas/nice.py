@@ -635,11 +635,11 @@ class BaseVals(BaseModel):
     CondParamAddType: int | None = None
     CondParamAddValue: int | None = None
     CondParamAddMaxValue: int | None = None
-    CondParamAddTargetId: int | None = None
+    CondParamAddTargetId: list[int] | None = None
     CondParamRangeType: int | None = None
     CondParamRangeMaxCount: int | None = None
     CondParamRangeMaxValue: int | None = None
-    CondParamRangeTargetId: int | None = None
+    CondParamRangeTargetId: list[int] | None = None
     ExecOnce: int | None = None
     ApplyBuffIndividuality: list[list[int]] | None = None
     ExecWhenCanNotAttack: int | None = None
