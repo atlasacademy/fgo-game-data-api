@@ -17,6 +17,8 @@ PYTHON_NAME_JSON_NAME_OVERRIDE = {
 def convert_name(name: str) -> str:
     if name in PYTHON_NAME_JSON_NAME_OVERRIDE:
         return PYTHON_NAME_JSON_NAME_OVERRIDE[name]
+    elif name and any(char.islower() for char in name) and "_" not in name:
+        return name[0].lower() + name[1:] if len(name) > 1 else name.lower()
     else:
         words = name.split("_")
         return "".join([words[0].lower()] + [w.title() for w in words[1:]])
@@ -24,6 +26,9 @@ def convert_name(name: str) -> str:
 
 RAW_NAME_OVERRIDE = {
     "BattleFieldEnvironmentDataGrantType": {
+        "None": "None_",
+    },
+    "BattleBranchSkillCondBranchType": {
         "None": "None_",
     },
 }
@@ -767,6 +772,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceQuestExtensionSubType",
         "Quest Extension Sub Type",
         "QUEST_EXTENSION_SUB_TYPE_NAME",
+    ),
+    (
+        "BattleBranchSkillInfoData.CondBranchType",
+        "BattleBranchSkillCondBranchType",
+        "NiceBattleBranchSkillCondBranchType",
+        "Battle Branch Skill Cond Branch Type",
+        "BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME",
     ),
     # Below is only for tracking now.
     (

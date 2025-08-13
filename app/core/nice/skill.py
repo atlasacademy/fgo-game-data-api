@@ -6,7 +6,12 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, SkillScriptCond
-from ...schemas.gameenums import CARD_TYPE_NAME, COND_TYPE_NAME
+from ...schemas.gameenums import (
+    BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME,
+    CARD_TYPE_NAME,
+    COND_TYPE_NAME,
+    BattleBranchSkillCondBranchType,
+)
 from ...schemas.nice import (
     AssetURL,
     CondBranchSkillInfo,
@@ -14,6 +19,7 @@ from ...schemas.nice import (
     NiceSelectAddInfoBtnCond,
     NiceSkill,
     NiceSkillAdd,
+    NiceSkillEntityScript,
     NiceSkillReverse,
     NiceSkillSvt,
     NiceSvtSkillRelease,
@@ -121,18 +127,6 @@ def get_nice_skill_script(skill_script: dict[str, Any]) -> dict[str, Any]:
                 parse_skill_script_cond(cond) for cond in button["conds"]
             ]
 
-    if "condBranchSkillInfo" in skill_script:
-        skill_script["condBranchSkillInfo"] = [
-            CondBranchSkillInfo(
-                condType=COND_TYPE_NAME[info.condType],
-                condValue=info.condValue,
-                skillId=info.skillId,
-                detailText=info.detailText,
-                iconBuffId=info.iconBuffId,
-            )
-            for info in skill_script["condBranchSkillInfo"]
-        ]
-
     return skill_script
 
 
@@ -162,6 +156,29 @@ def get_nice_select_td_info(select_info: Any) -> SelectTreasureDeviceInfo:
     )
 
 
+def get_nice_skill_entity_script(
+    script: dict[str, Any],
+) -> NiceSkillEntityScript | None:
+    if not script:
+        return None
+
+    if "condBranchSkillInfo" in script:
+        script["condBranchSkillInfo"] = [
+            CondBranchSkillInfo(
+                condType=BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME[
+                    BattleBranchSkillCondBranchType[info["condType"]].value
+                ],
+                condValue=info["condValue"],
+                skillId=info["skillId"],
+                detailText=info["detailText"],
+                iconBuffId=info["iconBuffId"],
+            )
+            for info in script["condBranchSkillInfo"]
+        ]
+
+    return NiceSkillEntityScript.model_validate(script)
+
+
 async def get_nice_skill_with_svt(
     conn: AsyncConnection,
     skillEntity: SkillEntityNoReverse,
@@ -189,6 +206,7 @@ async def get_nice_skill_with_svt(
             get_nice_skill_svt(td_svt, skillEntity.mstSvtSkillRelease)
             for td_svt in sorted_svtSkill
         ],
+        "skillEntityScript": get_nice_skill_entity_script(skillEntity.mstSkill.script),
     }
 
     if mstSvtPassiveSkills:

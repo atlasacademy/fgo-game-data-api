@@ -6899,6 +6899,29 @@ QUEST_EXTENSION_SUB_TYPE_NAME: dict[int, NiceQuestExtensionSubType] = {
 }
 
 
+class BattleBranchSkillCondBranchType(IntEnum):
+    None_ = 0
+    IsSelfTarget = 1
+    Individuality = 2
+
+
+class NiceBattleBranchSkillCondBranchType(StrEnum):
+    """Battle Branch Skill Cond Branch Type"""
+
+    none = "none"
+    isSelfTarget = "isSelfTarget"
+    individuality = "individuality"
+
+
+BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME: dict[
+    int, NiceBattleBranchSkillCondBranchType
+] = {
+    0: NiceBattleBranchSkillCondBranchType.none,
+    1: NiceBattleBranchSkillCondBranchType.isSelfTarget,
+    2: NiceBattleBranchSkillCondBranchType.individuality,
+}
+
+
 class BuffConditionType(IntEnum):
     HP_HIGHER = 0
     HP_LOWER = 1
