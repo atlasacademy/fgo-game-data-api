@@ -898,6 +898,7 @@ class BuffType(IntEnum):
     OVERWRITE_BUFF_USE_RATE = 231
     UP_BUFF_USE_RATE = 232
     DOWN_BUFF_USE_RATE = 233
+    REACTIVE_DAMAGE_GAIN_HP = 234
     UP_HATE_TO_GRANTED_OPPONENT = 235
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
@@ -1121,6 +1122,7 @@ class NiceBuffType(StrEnum):
     overwriteBuffUseRate = "overwriteBuffUseRate"
     upBuffUseRate = "upBuffUseRate"
     downBuffUseRate = "downBuffUseRate"
+    reactiveDamageGainHp = "reactiveDamageGainHp"
     upHateToGrantedOpponent = "upHateToGrantedOpponent"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
@@ -1345,6 +1347,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     231: NiceBuffType.overwriteBuffUseRate,
     232: NiceBuffType.upBuffUseRate,
     233: NiceBuffType.downBuffUseRate,
+    234: NiceBuffType.reactiveDamageGainHp,
     235: NiceBuffType.upHateToGrantedOpponent,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
@@ -1520,6 +1523,7 @@ class BuffAction(IntEnum):
     OVERWRITE_BUFF_USE_RATE = 158
     CHANGE_BUFF_USE_RATE = 159
     HATE_TO_GRANTED_OPPONENT = 160
+    REACTIVE_DAMAGE_GAIN_HP = 161
 
 
 class NiceBuffAction(StrEnum):
@@ -1686,6 +1690,7 @@ class NiceBuffAction(StrEnum):
     overwriteBuffUseRate = "overwriteBuffUseRate"
     changeBuffUseRate = "changeBuffUseRate"
     hateToGrantedOpponent = "hateToGrantedOpponent"
+    reactiveDamageGainHp = "reactiveDamageGainHp"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1850,6 +1855,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     158: NiceBuffAction.overwriteBuffUseRate,
     159: NiceBuffAction.changeBuffUseRate,
     160: NiceBuffAction.hateToGrantedOpponent,
+    161: NiceBuffAction.reactiveDamageGainHp,
 }
 
 
@@ -2117,7 +2123,8 @@ class DataValsType(IntEnum):
     ApplySupportSvt = 236
     ApplyHighestValueInFieldGroup = 237
     IsClassIconChangeSaveGrand = 238
-    PriorityUpHate = 239
+    ExecuteEffectId = 239
+    PriorityUpHate = 240
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3408,6 +3415,9 @@ class VoiceCondType(IntEnum):
     LEVEL_UP_LIMIT_COUNT = 24
     LEVEL_UP_LIMIT_COUNT_ABOVE = 25
     LEVEL_UP_LIMIT_COUNT_BELOW = 26
+    SVT_EXCEED_COUNT = 41
+    SVT_EXCEED_COUNT_ABOVE = 42
+    SVT_EXCEED_COUNT_BELOW = 43
 
 
 class NiceVoiceCondType(StrEnum):
@@ -3439,6 +3449,9 @@ class NiceVoiceCondType(StrEnum):
     levelUpLimitCount = "levelUpLimitCount"
     levelUpLimitCountAbove = "levelUpLimitCountAbove"
     levelUpLimitCountBelow = "levelUpLimitCountBelow"
+    svtExceedCount = "svtExceedCount"
+    svtExceedCountAbove = "svtExceedCountAbove"
+    svtExceedCountBelow = "svtExceedCountBelow"
     unknown27 = "unknown27"
     unknown30 = "unknown30"
     unknown32 = "unknown32"
@@ -3477,6 +3490,9 @@ VOICE_COND_NAME: dict[int, NiceVoiceCondType] = {
     24: NiceVoiceCondType.levelUpLimitCount,
     25: NiceVoiceCondType.levelUpLimitCountAbove,
     26: NiceVoiceCondType.levelUpLimitCountBelow,
+    41: NiceVoiceCondType.svtExceedCount,
+    42: NiceVoiceCondType.svtExceedCountAbove,
+    43: NiceVoiceCondType.svtExceedCountBelow,
     27: NiceVoiceCondType.unknown27,
     30: NiceVoiceCondType.unknown30,
     32: NiceVoiceCondType.unknown32,
