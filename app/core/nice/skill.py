@@ -9,6 +9,7 @@ from ...schemas.enums import SKILL_TYPE_NAME, SkillScriptCond
 from ...schemas.gameenums import CARD_TYPE_NAME, COND_TYPE_NAME
 from ...schemas.nice import (
     AssetURL,
+    CondBranchSkillInfo,
     ExtraPassive,
     NiceSelectAddInfoBtnCond,
     NiceSkill,
@@ -119,6 +120,18 @@ def get_nice_skill_script(skill_script: dict[str, Any]) -> dict[str, Any]:
             button["conds"] = [
                 parse_skill_script_cond(cond) for cond in button["conds"]
             ]
+
+    if "condBranchSkillInfo" in skill_script:
+        skill_script["condBranchSkillInfo"] = [
+            CondBranchSkillInfo(
+                condType=COND_TYPE_NAME[info.condType],
+                condValue=info.condValue,
+                skillId=info.skillId,
+                detailText=info.detailText,
+                iconBuffId=info.iconBuffId,
+            )
+            for info in skill_script["condBranchSkillInfo"]
+        ]
 
     return skill_script
 

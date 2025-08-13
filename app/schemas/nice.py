@@ -754,6 +754,14 @@ class SelectTreasureDeviceInfo(BaseModel):
     messageOnSelected: str
 
 
+class CondBranchSkillInfo(BaseModel):
+    condType: NiceCondType
+    condValue: list[int]
+    skillId: int
+    detailText: str
+    iconBuffId: int
+
+
 class NiceSkillScript(BaseModel):
     NP_HIGHER: Optional[list[int]] = None
     NP_LOWER: Optional[list[int]] = None
@@ -774,6 +782,7 @@ class NiceSkillScript(BaseModel):
     IgnoreBattlePointUp: list[list[int]] | None = None
     tdChangeByBattlePoint: list[TdChangeByBattlePoint] | None = None
     selectTreasureDeviceInfo: list[SelectTreasureDeviceInfo] | None = None
+    condBranchSkillInfo: list[CondBranchSkillInfo] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):
