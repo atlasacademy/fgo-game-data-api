@@ -55,6 +55,7 @@ def get_nice_gacha(gacha: GachaEntity, lang: Language = Language.jp) -> NiceGach
         pickupId=gacha.mstGacha.pickupId,
         drawNum1=gacha.mstGacha.drawNum1,
         drawNum2=gacha.mstGacha.drawNum2,
+        freeDrawFlag=gacha.mstGacha.freeDrawFlag,
         maxDrawNum=gacha.mstGacha.maxDrawNum,
         openedAt=gacha.mstGacha.openedAt,
         closedAt=gacha.mstGacha.closedAt,
