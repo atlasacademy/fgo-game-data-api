@@ -19,7 +19,6 @@ from ...schemas.nice import (
     NiceSelectAddInfoBtnCond,
     NiceSkill,
     NiceSkillAdd,
-    NiceSkillEntityScript,
     NiceSkillReverse,
     NiceSkillSvt,
     NiceSvtSkillRelease,
@@ -156,30 +155,6 @@ def get_nice_select_td_info(select_info: Any) -> SelectTreasureDeviceInfo:
     )
 
 
-def get_nice_skill_entity_script(
-    script: dict[str, Any],
-) -> NiceSkillEntityScript | None:
-    if not script:
-        return None
-
-    out_entity_script = NiceSkillEntityScript()
-    if "condBranchSkillInfo" in script:
-        out_entity_script.condBranchSkillInfo = [
-            CondBranchSkillInfo(
-                condType=BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME[
-                    BattleBranchSkillCondBranchType[info["condType"]].value
-                ],
-                condValue=info["condValue"],
-                skillId=info["skillId"],
-                detailText=info["detailText"],
-                iconBuffId=info["iconBuffId"],
-            )
-            for info in script["condBranchSkillInfo"]
-        ]
-
-    return out_entity_script
-
-
 async def get_nice_skill_with_svt(
     conn: AsyncConnection,
     skillEntity: SkillEntityNoReverse,
@@ -207,7 +182,6 @@ async def get_nice_skill_with_svt(
             get_nice_skill_svt(td_svt, skillEntity.mstSvtSkillRelease)
             for td_svt in sorted_svtSkill
         ],
-        "skillEntityScript": get_nice_skill_entity_script(skillEntity.mstSkill.script),
     }
 
     if mstSvtPassiveSkills:
@@ -252,6 +226,20 @@ async def get_nice_skill_with_svt(
         ]
         for scriptKey in skillEntity.mstSkillLv[0].script
     }
+
+    if "condBranchSkillInfo" in skillEntity.mstSkill.script:
+        nice_skill["script"]["condBranchSkillInfo"] = [
+            CondBranchSkillInfo(
+                condType=BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME[
+                    BattleBranchSkillCondBranchType[info["condType"]].value
+                ],
+                condValue=info["condValue"],
+                skillId=info["skillId"],
+                detailText=info["detailText"],
+                iconBuffId=info["iconBuffId"],
+            )
+            for info in skillEntity.mstSkill.script["condBranchSkillInfo"]
+        ]
 
     if "IgnoreValueUp" in skillEntity.mstSkill.script:
         nice_skill["script"]["IgnoreValueUp"] = [
