@@ -444,6 +444,7 @@ async def dump_current_events(
         g
         for g in raw_gacha_entities
         if is_recent(now, g.mstGacha.openedAt, g.mstGacha.closedAt, None, 14, 3)
+        or (g.mstGacha.openedAt < now < g.mstGacha.closedAt)
     ]
     nice_gachas = get_all_nice_gachas(recent_gacha_entities, util.lang)
     masterMissions: list[NiceMasterMission] = []
