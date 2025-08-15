@@ -728,8 +728,9 @@ class NiceSelectAddInfoBtnCond(BaseModel):
 
 
 class NiceSelectAddInfoBtn(BaseModel):
-    name: str
+    name: str | None = None
     conds: list[NiceSelectAddInfoBtnCond]
+    image: str | None = None
 
 
 class NiceSelectAddInfo(BaseModel):
