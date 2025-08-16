@@ -119,12 +119,20 @@ def parse_skill_script_cond(cond: str) -> NiceSelectAddInfoBtnCond:
     return NiceSelectAddInfoBtnCond(cond=SkillScriptCond.NONE)
 
 
-def get_nice_skill_script(skill_script: dict[str, Any]) -> dict[str, Any]:
+def get_nice_skill_script(
+    region: Region, skill_script: dict[str, Any]
+) -> dict[str, Any]:
     if SelectAddInfo := skill_script.get("SelectAddInfo"):
         for button in SelectAddInfo["btn"]:
             button["conds"] = [
                 parse_skill_script_cond(cond) for cond in button["conds"]
             ]
+            if "image" in button:
+                button["imageUrl"] = AssetURL.battleAssetUIAtlas.format(
+                    base_url=settings.asset_url,
+                    region=region,
+                    item_id=button["image"],
+                )
 
     return skill_script
 
@@ -221,7 +229,7 @@ async def get_nice_skill_with_svt(
 
     nice_skill["script"] = {
         scriptKey: [
-            get_nice_skill_script(skillLv.script)[scriptKey]
+            get_nice_skill_script(region, skillLv.script)[scriptKey]
             for skillLv in skillEntity.mstSkillLv
         ]
         for scriptKey in skillEntity.mstSkillLv[0].script

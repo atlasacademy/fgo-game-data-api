@@ -107,6 +107,9 @@ from .raw import MstSvtScriptExtendData
 
 class AssetURL:
     back = "{base_url}/{region}/Back/back{bg_id}.png"
+    battleAssetUIAtlas = (
+        "{base_url}/{region}/Battle/Common/BattleAssetUIAtlas/{item_id}.png"
+    )
     charaGraph = {
         1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
         2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
@@ -731,6 +734,7 @@ class NiceSelectAddInfoBtn(BaseModel):
     name: str | None = None
     conds: list[NiceSelectAddInfoBtnCond]
     image: str | None = None
+    imageUrl: HttpUrl | None = None
 
 
 class NiceSelectAddInfo(BaseModel):
