@@ -105,7 +105,9 @@ async def get_nice_td(
     if tdEntity.mstTreasureDeviceLv[0].script:
         for script_key in tdEntity.mstTreasureDeviceLv[0].script:
             nice_td["script"][script_key] = [
-                get_nice_skill_script(tdLv.script)[script_key] if tdLv.script else None
+                get_nice_skill_script(region, tdLv.script)[script_key]
+                if tdLv.script
+                else None
                 for tdLv in tdEntity.mstTreasureDeviceLv
             ]
     for script_key in ("tdTypeChangeIDs", "excludeTdChangeTypes"):
