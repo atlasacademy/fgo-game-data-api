@@ -8,7 +8,7 @@ authors = [{ "name" = "squaresmile", "email" = "squaresmile@protonmail.com" }]
 packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.13"
 fastapi = {extras = ["standard"], version = "^0.116.1"}
 uvicorn = {extras = ["standard"], version = "^0.35.0"}
 python-dotenv = "^1.1.1"
@@ -24,7 +24,7 @@ redis = "<6"
 hiredis = "^3.1.0"
 psycopg = "^3.2.9"
 pydantic = "^2.11.7"
-zstandard = "^0.23.0"
+zstandard = "^0.24.0"
 uvicorn-worker = "^0.3.0"
 pydantic-settings = "^2.10.1"
 psutil = "^7.0.0"
@@ -36,13 +36,13 @@ isort = "^6.0.1"
 pytest = "^8.4.1"
 pytest-xdist = "^3.8.0"
 pytest-asyncio = "^1.1.0"
-coverage = "^7.10.3"
+coverage = "^7.10.4"
 asgi-lifespan = "^2.1.0"
 fuzzywuzzy-stubs = "^0.0.1"
 types-aiofiles = "^24.1.0.20250809"
 types-redis = "^4.6.0.20241004"
 types-orjson = "^3.6.2"
-ruff = "^0.12.8"
+ruff = "^0.12.9"
 types-pyopenssl = "^24.1.0.20240722"
 types-psutil = "^7.0.0.20250801"
 
