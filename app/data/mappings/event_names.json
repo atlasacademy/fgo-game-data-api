@@ -82,7 +82,7 @@
   "ライダークラス 強化『大成功＆極大成功』率2倍！": "Rider Class Great & Super Success x2!",
   "キャスタークラス 強化『大成功＆極大成功』率2倍！": "Caster Class Great & Super Success x2!",
   "ヤラアーンドゥ 獲得経験値2倍！": "Yaraändoo 2X EXP",
-  "「巡霊の祝祭 第4弾」関連サーヴァント 獲得経験値2倍！": "\"Evocation Festival: Part 4\" Related Servants 2X EXP!",
+  "「巡霊の祝祭 第4弾」関連サーヴァント 獲得経験値2倍！": "\"Pilgrimage Festival: Part 4\" Related Servants 2X EXP!",
   "「巡霊の祝祭 第5弾」関連サーヴァント 獲得経験値2倍！": "\"Evocation Festival: Part 5\" Related Servants 2X EXP!",
   "交換した★4(SR)サーヴァント 獲得経験値2倍！": "Exchanged ★4 (SR) Servant 2X EXP!",
   "「巡霊の祝祭 第6弾」関連サーヴァント 獲得経験値2倍！": "\"Evocation Festival: Part 6\" Related Servants 2X EXP!",
@@ -137,6 +137,8 @@
   "ランサークラス 強化『大成功＆極大成功』率3倍！": "ランサークラス 強化『大成功＆極大成功』率3倍！",
   "強化『大成功＆極大成功』率4倍！": "強化『大成功＆極大成功』率4倍！",
   "エクストラクラス 獲得経験値2倍！": "エクストラクラス 獲得経験値2倍！",
+  "エクストラクラス 強化『大成功＆極大成功』率3倍！": "エクストラクラス 強化『大成功＆極大成功』率3倍！",
+  "呼延灼（バーサーカー）獲得経験値2倍！": "呼延灼（バーサーカー）獲得経験値2倍！",
   "消費AP 50%DOWN": "AP Cost 1/2",
   "獲得FP2倍キャンペーン": "2X Friend Point Campaign",
   "消費AP 75%DOWN": "AP Cost 1/4",
@@ -178,7 +180,7 @@
   "「Samurai Remnant」関連サーヴァントサポート時 獲得FP2倍！": "\"Samurai Remnant\" Related Servants Gain x2 FP as Support!",
   "「水着霊基」サーヴァント 獲得絆ポイント 30%UP": "\"Swimsuit Spirit Origin\" Servant Bond Points 30% Up",
   "期間限定 消費AP1！": "Limited Time AP Cost 1!",
-  "「巡霊の祝祭 第4弾」関連サーヴァント 獲得絆ポイント 20%UP": "\"Evocation Festival Part 4\" Related Servants Bond Points UP 20%",
+  "「巡霊の祝祭 第4弾」関連サーヴァント 獲得絆ポイント 20%UP": "\"Pilgrimage Festival: Part 4\" Related Servant Bond Points 20% Up",
   "「巡霊の祝祭 第5弾」関連サーヴァント 獲得絆ポイント 20%UP": "\"Evocation Festival Part 5\" Related Servants Bond Points UP 20%",
   "「巡霊の祝祭 第6弾」関連サーヴァント 獲得絆ポイント 20%UP": "\"Evocation Festival Part 6\" Related Servants Bond Points UP 20%",
   "特定サーヴァント 獲得絆ポイント 20%UP": "Certain Servants Bond Points UP 20%",
@@ -506,6 +508,7 @@
   "冠位戴冠戦：Lancer": "冠位戴冠戦：Lancer",
   "10周年記念メモリアルクエスト": "10周年記念メモリアルクエスト",
   "Fate/Grand Order ～10th Anniversary～": "Fate/Grand Order ～10th Anniversary～",
+  "カルデア・Ｕ－サマーアイランド \n～大統領は夏の夢を見るか？～": "カルデア・Ｕ－サマーアイランド \n～大統領は夏の夢を見るか？～",
   "10周年礼装交換ショップ〔セイバー〕": "10周年礼装交換ショップ〔セイバー〕",
   "10周年礼装交換ショップ〔アーチャー〕": "10周年礼装交換ショップ〔アーチャー〕",
   "10周年礼装交換ショップ〔ランサー〕": "10周年礼装交換ショップ〔ランサー〕",
@@ -517,5 +520,6 @@
   "10周年礼装交換ショップ〔エクストラⅡ〕": "10周年礼装交換ショップ〔エクストラⅡ〕",
   "10周年礼装交換ショップ〔全クラス〕": "10周年礼装交換ショップ〔全クラス〕",
   "「OVER THE SAME SKY」特別概念礼装交換ショップ〔JULY〕": "「OVER THE SAME SKY」特別概念礼装交換ショップ〔JULY〕",
-  "冠位戴冠戦：Extra": "冠位戴冠戦：Extra"
+  "冠位戴冠戦：Extra": "冠位戴冠戦：Extra",
+  "「OVER THE SAME SKY」特別概念礼装交換ショップ〔AUGUST〕": "「OVER THE SAME SKY」特別概念礼装交換ショップ〔AUGUST〕"
 }
