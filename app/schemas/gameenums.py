@@ -900,6 +900,8 @@ class BuffType(IntEnum):
     DOWN_BUFF_USE_RATE = 233
     REACTIVE_DAMAGE_GAIN_HP = 234
     UP_HATE_TO_GRANTED_OPPONENT = 235
+    UP_BASE_HP = 236
+    ADD_BASE_HP = 237
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1124,6 +1126,8 @@ class NiceBuffType(StrEnum):
     downBuffUseRate = "downBuffUseRate"
     reactiveDamageGainHp = "reactiveDamageGainHp"
     upHateToGrantedOpponent = "upHateToGrantedOpponent"
+    upBaseHp = "upBaseHp"
+    addBaseHp = "addBaseHp"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1349,6 +1353,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     233: NiceBuffType.downBuffUseRate,
     234: NiceBuffType.reactiveDamageGainHp,
     235: NiceBuffType.upHateToGrantedOpponent,
+    236: NiceBuffType.upBaseHp,
+    237: NiceBuffType.addBaseHp,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1524,6 +1530,8 @@ class BuffAction(IntEnum):
     CHANGE_BUFF_USE_RATE = 159
     HATE_TO_GRANTED_OPPONENT = 160
     REACTIVE_DAMAGE_GAIN_HP = 161
+    BASE_HP_RATE = 162
+    BASE_HP_VALUE = 163
 
 
 class NiceBuffAction(StrEnum):
@@ -1691,6 +1699,8 @@ class NiceBuffAction(StrEnum):
     changeBuffUseRate = "changeBuffUseRate"
     hateToGrantedOpponent = "hateToGrantedOpponent"
     reactiveDamageGainHp = "reactiveDamageGainHp"
+    baseHpRate = "baseHpRate"
+    baseHpValue = "baseHpValue"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1856,6 +1866,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     159: NiceBuffAction.changeBuffUseRate,
     160: NiceBuffAction.hateToGrantedOpponent,
     161: NiceBuffAction.reactiveDamageGainHp,
+    162: NiceBuffAction.baseHpRate,
+    163: NiceBuffAction.baseHpValue,
 }
 
 
