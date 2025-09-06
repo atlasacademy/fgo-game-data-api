@@ -12,7 +12,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "COMMAND_DEF": {
     "limit": 1,
@@ -27,7 +28,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "ATK": {
     "limit": 3,
@@ -40,7 +42,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DEFENCE": {
     "limit": 2,
@@ -53,7 +56,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DEFENCE_PIERCE": {
     "limit": 2,
@@ -64,7 +68,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SPECIALDEFENCE": {
     "limit": 3,
@@ -77,7 +82,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DAMAGE": {
     "limit": 1,
@@ -90,7 +96,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DAMAGE_INDIVIDUALITY": {
     "limit": 1,
@@ -103,7 +110,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DAMAGE_INDIVIDUALITY_ACTIVEONLY": {
     "limit": 1,
@@ -116,7 +124,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DAMAGE_DEF": {
     "limit": 2,
@@ -129,7 +138,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CRITICAL_DAMAGE": {
     "limit": 1,
@@ -142,7 +152,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "NPDAMAGE": {
     "limit": 1,
@@ -155,7 +166,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GIVEN_DAMAGE": {
     "limit": 0,
@@ -168,7 +180,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "RECEIVE_DAMAGE": {
     "limit": 0,
@@ -181,7 +194,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "RECEIVE_DAMAGE_PIERCE": {
     "limit": 0,
@@ -192,7 +206,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SPECIAL_RECEIVE_DAMAGE": {
     "limit": 0,
@@ -205,7 +220,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "RECEIVE_FIXED_DAMAGE": {
     "limit": 0,
@@ -216,7 +232,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "PIERCE_INVINCIBLE": {
     "limit": 0,
@@ -227,7 +244,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "INVINCIBLE": {
     "limit": 0,
@@ -238,7 +256,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "BREAK_AVOIDANCE": {
     "limit": 0,
@@ -249,7 +268,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "AVOIDANCE": {
     "limit": 0,
@@ -260,7 +280,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_BATTLECLASS": {
     "limit": 0,
@@ -271,7 +292,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_CLASSRELATIO_ATK": {
     "limit": 0,
@@ -282,7 +304,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_CLASSRELATIO_DEF": {
     "limit": 0,
@@ -293,7 +316,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "COMMAND_NP_ATK": {
     "limit": 3,
@@ -308,7 +332,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "COMMAND_NP_DEF": {
     "limit": 1,
@@ -323,7 +348,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DROP_NP": {
     "limit": 3,
@@ -336,7 +362,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DROP_NP_DAMAGE": {
     "limit": 3,
@@ -349,7 +376,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "COMMAND_STAR_ATK": {
     "limit": 3,
@@ -364,7 +392,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "COMMAND_STAR_DEF": {
     "limit": 1,
@@ -379,7 +408,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CRITICAL_POINT": {
     "limit": 3,
@@ -392,7 +422,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "STARWEIGHT": {
     "limit": 3,
@@ -405,7 +436,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TURNEND_NP": {
     "limit": 0,
@@ -429,7 +461,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TURNEND_HP_REGAIN": {
     "limit": 0,
@@ -440,7 +473,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TURNEND_HP_REDUCE": {
     "limit": 0,
@@ -464,7 +498,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GAIN_HP": {
     "limit": 3,
@@ -477,7 +512,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TURNVAL_NP": {
     "limit": 0,
@@ -490,7 +526,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GRANT_STATE": {
     "limit": 3,
@@ -503,7 +540,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "RESISTANCE_STATE": {
     "limit": 3,
@@ -516,7 +554,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "AVOID_STATE": {
     "limit": 0,
@@ -527,7 +566,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_ACT": {
     "limit": 0,
@@ -538,7 +578,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_SKILL": {
     "limit": 0,
@@ -549,7 +590,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_NOBLE": {
     "limit": 0,
@@ -560,7 +602,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_RECOVERY": {
     "limit": 0,
@@ -571,7 +614,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "INDIVIDUALITY_ADD": {
     "limit": 0,
@@ -582,7 +626,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "INDIVIDUALITY_SUB": {
     "limit": 0,
@@ -593,7 +638,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "HATE": {
     "limit": 0,
@@ -604,7 +650,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CRITICAL_RATE": {
     "limit": 3,
@@ -617,7 +664,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "AVOID_INSTANTDEATH": {
     "limit": 3,
@@ -628,7 +676,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "RESIST_INSTANTDEATH": {
     "limit": 3,
@@ -639,7 +688,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "NONRESIST_INSTANTDEATH": {
     "limit": 3,
@@ -650,7 +700,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "REGAIN_NP_USED_NOBLE": {
     "limit": 0,
@@ -661,7 +712,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_DEAD": {
     "limit": 0,
@@ -672,7 +724,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_GUTS": {
     "limit": 0,
@@ -683,7 +736,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "MAXHP_RATE": {
     "limit": 3,
@@ -696,7 +750,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": true
   },
   "MAXHP_VALUE": {
     "limit": 0,
@@ -709,7 +764,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": true
   },
   "FUNCTION_WAVESTART": {
     "limit": 0,
@@ -720,7 +776,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_WAVESTART_ANIMATION_BEFORE": {
     "limit": 0,
@@ -731,7 +788,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_SELFTURNEND": {
     "limit": 0,
@@ -742,7 +800,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GIVE_GAIN_HP": {
     "limit": 3,
@@ -755,7 +814,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDATTACK_AFTER": {
     "limit": 0,
@@ -766,7 +826,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_DEADATTACK": {
     "limit": 0,
@@ -777,7 +838,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_ENTRY": {
     "limit": 0,
@@ -788,7 +850,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CHAGETD": {
     "limit": 0,
@@ -799,7 +862,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GRANT_SUBSTATE": {
     "limit": 3,
@@ -812,7 +876,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TOLERANCE_SUBSTATE": {
     "limit": 3,
@@ -825,7 +890,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GRANT_INSTANTDEATH": {
     "limit": 3,
@@ -838,7 +904,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_DAMAGE": {
     "limit": 0,
@@ -849,7 +916,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_REFLECTION": {
     "limit": 0,
@@ -860,7 +928,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "MULTIATTACK": {
     "limit": 0,
@@ -871,7 +940,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GIVE_NP": {
     "limit": 1,
@@ -884,7 +954,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "RESISTANCE_DELAY_NPTURN": {
     "limit": 0,
@@ -897,7 +968,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "PIERCE_DEFENCE": {
     "limit": 0,
@@ -908,7 +980,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GUTS_HP": {
     "limit": 0,
@@ -921,7 +994,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCGAIN_NP": {
     "limit": 0,
@@ -934,7 +1008,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNC_HP_REDUCE": {
     "limit": 0,
@@ -947,7 +1022,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_NPATTACK": {
     "limit": 0,
@@ -958,7 +1034,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FIX_COMMANDCARD": {
     "limit": 0,
@@ -969,7 +1046,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_GAINNP": {
     "limit": 0,
@@ -980,7 +1058,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FIELD_INDIVIDUALITY": {
     "limit": 0,
@@ -991,7 +1070,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_ACT_COMMANDTYPE": {
     "limit": 0,
@@ -1002,7 +1082,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_ACT_COMMANDCARD": {
     "limit": 0,
@@ -1013,7 +1094,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DAMAGE_EVENT_POINT": {
     "limit": 1,
@@ -1024,7 +1106,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DAMAGE_SPECIAL": {
     "limit": 1,
@@ -1035,7 +1118,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_ATTACK_AFTER": {
     "limit": 0,
@@ -1046,7 +1130,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDCODEATTACK_BEFORE": {
     "limit": 0,
@@ -1057,7 +1142,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_NOBLE_COND_MISMATCH": {
     "limit": 0,
@@ -1068,7 +1154,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_SELECT_COMMANDCARD": {
     "limit": 0,
@@ -1079,7 +1166,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_REPLACE": {
     "limit": 0,
@@ -1090,7 +1178,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SHORTEN_USER_EQUIP_SKILL": {
     "limit": 0,
@@ -1101,7 +1190,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TD_TYPE_CHANGE": {
     "limit": 0,
@@ -1115,7 +1205,8 @@
     "baseParam": -1,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_CLASS_RELATION": {
     "limit": 0,
@@ -1126,7 +1217,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDATTACK_BEFORE": {
     "limit": 0,
@@ -1137,7 +1229,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CRITICAL_RATE_DAMAGE_TAKEN": {
     "limit": 3,
@@ -1150,7 +1243,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CRITICAL_STAR_DAMAGE_TAKEN": {
     "limit": 3,
@@ -1163,7 +1257,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SKILL_RANK_CHANGE": {
     "limit": 3,
@@ -1174,7 +1269,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "AVOIDANCE_INDIVIDUALITY": {
     "limit": 3,
@@ -1185,7 +1281,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CHANGE_COMMAND_CARD_TYPE": {
     "limit": 0,
@@ -1196,7 +1293,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SPECIAL_INVINCIBLE": {
     "limit": 0,
@@ -1207,7 +1305,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "PREVENT_DEATH_BY_DAMAGE": {
     "limit": 0,
@@ -1218,7 +1317,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDCODEATTACK_AFTER": {
     "limit": 0,
@@ -1229,7 +1329,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_ATTACK_BEFORE": {
     "limit": 0,
@@ -1240,7 +1341,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "DONOT_SKILL_SELECT": {
     "limit": 0,
@@ -1251,7 +1353,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "INVISIBLE_BATTLE_CHARA": {
     "limit": 0,
@@ -1262,7 +1365,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "BUFF_RATE": {
     "limit": 3,
@@ -1273,7 +1377,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "COUNTER_FUNCTION": {
     "limit": 0,
@@ -1284,7 +1389,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "NOT_TARGET_SKILL": {
     "limit": 0,
@@ -1295,7 +1401,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TO_FIELD_AVOID_BUFF": {
     "limit": 0,
@@ -1306,7 +1413,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TO_FIELD_SUB_INDIVIDUALITY_FIELD": {
     "limit": 0,
@@ -1317,7 +1425,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GRANT_STATE_UP_ONLY": {
     "limit": 3,
@@ -1328,7 +1437,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "TURNEND_HP_REDUCE_TO_REGAIN": {
     "limit": 3,
@@ -1339,7 +1449,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_SELFTURNSTART": {
     "limit": 0,
@@ -1350,7 +1461,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_DEAD_TYPE": {
     "limit": 0,
@@ -1361,7 +1473,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "ACTION_COUNT": {
     "limit": 0,
@@ -1374,7 +1487,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SHIFT_GUTS": {
     "limit": 0,
@@ -1386,7 +1500,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "MASTER_SKILL_VALUE_UP": {
     "limit": 3,
@@ -1397,7 +1512,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "BUFF_CONVERT": {
     "limit": 0,
@@ -1408,7 +1524,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SUB_FIELD_INDIVIDUALITY": {
     "limit": 0,
@@ -1419,7 +1536,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDCODEATTACK_BEFORE_MAIN_ONLY": {
     "limit": 0,
@@ -1430,7 +1548,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDCODEATTACK_AFTER_MAIN_ONLY": {
     "limit": 0,
@@ -1441,7 +1560,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDATTACK_BEFORE_MAIN_ONLY": {
     "limit": 0,
@@ -1452,7 +1572,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMMANDATTACK_AFTER_MAIN_ONLY": {
     "limit": 0,
@@ -1463,7 +1584,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_ATTACK_BEFORE_MAIN_ONLY": {
     "limit": 0,
@@ -1474,7 +1596,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_ATTACK_AFTER_MAIN_ONLY": {
     "limit": 0,
@@ -1485,7 +1608,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_SKILL_AFTER": {
     "limit": 0,
@@ -1496,7 +1620,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_SKILL_AFTER_MAIN_ONLY": {
     "limit": 0,
@@ -1507,7 +1632,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_TREASURE_DEVICE_AFTER": {
     "limit": 0,
@@ -1518,7 +1644,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_TREASURE_DEVICE_AFTER_MAIN_ONLY": {
     "limit": 0,
@@ -1529,7 +1656,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "PREVENT_INVISIBLE_WHEN_INSTANT_DEATH": {
     "limit": 0,
@@ -1540,7 +1668,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_SUBATTRIBUTE": {
     "limit": 0,
@@ -1551,7 +1680,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "AVOIDANCE_ATTACK_DEATH_DAMAGE": {
     "limit": 0,
@@ -1562,7 +1692,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "AVOID_FUNCTION_EXECUTE_SELF": {
     "limit": 0,
@@ -1573,7 +1704,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "GUTS": {
     "limit": 0,
@@ -1585,7 +1717,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_CONTINUE": {
     "limit": 0,
@@ -1596,7 +1729,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CHANGE_BGM": {
     "limit": 0,
@@ -1607,7 +1741,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "PIERCE_SUBDAMAGE": {
     "limit": 0,
@@ -1618,7 +1753,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_CONFIRM_COMMAND": {
     "limit": 0,
@@ -1629,7 +1765,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_SKILL_BEFORE": {
     "limit": 0,
@@ -1640,7 +1777,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_SKILL_TARGETED_BEFORE": {
     "limit": 0,
@@ -1651,7 +1789,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_FIELD_INDIVIDUALITY_CHANGED": {
     "limit": 0,
@@ -1662,7 +1801,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_TREASURE_DEVICE_BEFORE": {
     "limit": 0,
@@ -1673,7 +1813,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_STEP_IN_AFTER": {
     "limit": 0,
@@ -1684,7 +1825,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "SHORTEN_SKILL_AFTER_USE_SKILL": {
     "limit": 0,
@@ -1695,7 +1837,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "PIERCE_SPECIAL_INVINCIBLE": {
     "limit": 0,
@@ -1706,7 +1849,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTIONED_FUNCTION": {
     "limit": 0,
@@ -1717,7 +1861,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "NPDAMAGE_INDIVIDUALITY": {
     "limit": 1,
@@ -1728,7 +1873,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMBO_START": {
     "limit": 0,
@@ -1739,7 +1885,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_COMBO_END": {
     "limit": 0,
@@ -1750,7 +1897,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_SVT_CARD_TYPE": {
     "limit": 0,
@@ -1761,7 +1909,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CRITICAL_DAMAGE_DEF": {
     "limit": 2,
@@ -1774,7 +1923,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "NPDAMAGE_DEF": {
     "limit": 2,
@@ -1787,7 +1937,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_DAMAGE_DEF": {
     "limit": 0,
@@ -1798,7 +1949,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CHANGE_ACT_IN_ADD_COUNT": {
     "limit": 0,
@@ -1809,7 +1961,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "FUNCTION_GUTS_BEFORE": {
     "limit": 0,
@@ -1820,7 +1973,8 @@
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "OVERWRITE_BUFF_USE_RATE": {
     "limit": 3,
@@ -1831,7 +1985,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "CHANGE_BUFF_USE_RATE": {
     "limit": 3,
@@ -1844,7 +1999,8 @@
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "HATE_TO_GRANTED_OPPONENT": {
     "limit": 0,
@@ -1855,7 +2011,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
   },
   "REACTIVE_DAMAGE_GAIN_HP": {
     "limit": 3,
@@ -1866,6 +2023,31 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
-    "plusAction": 0
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "BASE_HP_RATE": {
+    "limit": 0,
+    "plusTypes": [
+      236
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": true
+  },
+  "BASE_HP_VALUE": {
+    "limit": 0,
+    "plusTypes": [
+      237
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": true
   }
 }
