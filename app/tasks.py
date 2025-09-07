@@ -416,6 +416,8 @@ def is_recent(
 
 class TimerData(BaseModelORJson):
     updatedAt: int
+    hash: str | None
+    timestamp: int | None
     events: list[NiceEvent]
     gachas: list[NiceGacha]
     masterMissions: list[NiceMasterMission]
@@ -426,6 +428,7 @@ class TimerData(BaseModelORJson):
 
 async def dump_current_events(
     util: ExportUtil,
+    repo_info: RepoInfo | None,
     nice_events: list[NiceEvent],
     raw_gacha_entities: list[GachaEntity],
     nice_mms: list[NiceMasterMission],
@@ -474,6 +477,8 @@ async def dump_current_events(
 
     timer_data = TimerData(
         updatedAt=now,
+        hash=repo_info.hash if repo_info else None,
+        timestamp=repo_info.timestamp if repo_info else None,
         events=events,
         gachas=nice_gachas,
         masterMissions=masterMissions,
@@ -614,16 +619,6 @@ async def generate_exports(
             async with engine.connect() as conn:
                 raw_constants = await fetch.get_everything(conn, MstConstant)
 
-            await dump_current_events(
-                util,
-                nice_events,
-                raw_gacha_entities,
-                nice_mms,
-                nice_shops,
-                nice_items,
-                raw_constants,
-            )
-
             repo_info = await get_repo_version(redis, region)
             if repo_info is None:
                 info_path = export_path / "info.json"
@@ -637,6 +632,17 @@ async def generate_exports(
                 await dump_normal(
                     export_path, "info", export_info.model_dump(mode="json")
                 )
+
+            await dump_current_events(
+                util,
+                repo_info,
+                nice_events,
+                raw_gacha_entities,
+                nice_mms,
+                nice_shops,
+                nice_items,
+                raw_constants,
+            )
 
             if enable_webhook:
                 await report_webhooks(region_path, "export")
@@ -673,6 +679,7 @@ async def generate_exports(
 
                 await dump_current_events(
                     util_en,
+                    repo_info,
                     nice_events_lang_en,
                     raw_gacha_entities,
                     nice_mms,
