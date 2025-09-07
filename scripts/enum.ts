@@ -2394,3 +2394,15 @@ export enum NiceBuffConditionType {
     INDIVIDUALITIE_OR = "individualitieOr",
     INDIVIDUALITIE_AND = "individualitieAnd",
 }
+
+export enum NiceBuffConditionTargetType {
+    NONE = "none",
+    PT_ALL = "ptAll",
+    ENEMY_ALL = "enemyAll",
+    FIELD_ALL = "fieldAll",
+    PT_FULL = "ptFull",
+    ENEMY_FULL = "enemyFull",
+    PT_OTHER_ALL = "ptOtherAll",
+    PT_OTHER_FULL = "ptOtherFull",
+    FIELD_OTHER_ALL = "fieldOtherAll",
+}

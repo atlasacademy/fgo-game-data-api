@@ -788,6 +788,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Condition Type for Conditional Battle Buff",
         "BUFF_CONDITION_TYPE",
     ),
+    (
+        "BuffList.ConditionTargetType",
+        "BuffConditionTargetType",
+        "NiceBuffConditionTargetType",
+        "Buff Condition Target Type",
+        "BUFF_CONDITION_TARGET_TYPE",
+    ),
 ]
 
 

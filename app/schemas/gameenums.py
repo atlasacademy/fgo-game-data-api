@@ -6959,3 +6959,42 @@ BUFF_CONDITION_TYPE: dict[int, NiceBuffConditionType] = {
     3: NiceBuffConditionType.individualitieOr,
     4: NiceBuffConditionType.individualitieAnd,
 }
+
+
+class BuffConditionTargetType(IntEnum):
+    NONE = 0
+    PT_ALL = 1
+    ENEMY_ALL = 2
+    FIELD_ALL = 3
+    PT_FULL = 4
+    ENEMY_FULL = 5
+    PT_OTHER_ALL = 6
+    PT_OTHER_FULL = 7
+    FIELD_OTHER_ALL = 8
+
+
+class NiceBuffConditionTargetType(StrEnum):
+    """Buff Condition Target Type"""
+
+    none = "none"
+    ptAll = "ptAll"
+    enemyAll = "enemyAll"
+    fieldAll = "fieldAll"
+    ptFull = "ptFull"
+    enemyFull = "enemyFull"
+    ptOtherAll = "ptOtherAll"
+    ptOtherFull = "ptOtherFull"
+    fieldOtherAll = "fieldOtherAll"
+
+
+BUFF_CONDITION_TARGET_TYPE: dict[int, NiceBuffConditionTargetType] = {
+    0: NiceBuffConditionTargetType.none,
+    1: NiceBuffConditionTargetType.ptAll,
+    2: NiceBuffConditionTargetType.enemyAll,
+    3: NiceBuffConditionTargetType.fieldAll,
+    4: NiceBuffConditionTargetType.ptFull,
+    5: NiceBuffConditionTargetType.enemyFull,
+    6: NiceBuffConditionTargetType.ptOtherAll,
+    7: NiceBuffConditionTargetType.ptOtherFull,
+    8: NiceBuffConditionTargetType.fieldOtherAll,
+}
