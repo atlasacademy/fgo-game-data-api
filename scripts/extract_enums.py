@@ -95,10 +95,6 @@ EXTRA_STR_NAME = {
 
 
 STR_NAME_OVERRIDE = {
-    "NiceFuncType": {
-        "damageNpAndOrCheckIndividuality": "damageNpAndCheckIndividuality"
-    },
-    "NiceBuffAction": {"damageDef": "selfdamage"},
     "NiceCardType": {"addattack": "extra"},
     "NiceGender": {"other": "unknown"},
     "Attribute": {"ground": "earth"},
