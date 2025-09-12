@@ -1018,7 +1018,7 @@ export enum NiceCardType {
     WEAKALT1 = "weakalt1",
     WEAKALT2 = "weakalt2",
     BUSTERALT1 = "busteralt1",
-    ADDATTACK2 = "addattack2",
+    EXTRA2 = "extra2",
 }
 
 export enum NiceCondType {
