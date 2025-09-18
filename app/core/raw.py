@@ -141,6 +141,7 @@ from ..schemas.raw import (
     MstMap,
     MstMapGimmick,
     MstMasterMission,
+    MstQuestDateRange,
     MstShop,
     MstShopRelease,
     MstShopScript,
@@ -1730,3 +1731,10 @@ async def get_gacha_entity(conn: AsyncConnection, gacha_id: int) -> GachaEntity:
         raise HTTPException(status_code=404, detail="Banner not found")
 
     return gacha_entity
+
+
+async def get_quest_date_range(
+    conn: AsyncConnection, range_id: int
+) -> list[MstQuestDateRange]:
+    ranges = await fetch.get_all(conn, MstQuestDateRange, range_id)
+    return ranges

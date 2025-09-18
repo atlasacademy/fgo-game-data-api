@@ -97,6 +97,7 @@ from ...models.raw import (
     mstMapGimmick,
     mstMasterMission,
     mstQuest,
+    mstQuestDateRange,
     mstShop,
     mstShopRelease,
     mstShopScript,
@@ -234,6 +235,7 @@ from ...schemas.raw import (
     MstMapGimmick,
     MstMasterMission,
     MstQuest,
+    MstQuestDateRange,
     MstShop,
     MstShopRelease,
     MstShopScript,
@@ -604,6 +606,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventSvt,
         mstEventSvt.c.eventId,
         mstEventSvt.c.svtId,
+    ),
+    MstQuestDateRange: (
+        mstQuestDateRange,
+        mstQuestDateRange.c.id,
+        mstQuestDateRange.c.idx,
     ),
 }
 

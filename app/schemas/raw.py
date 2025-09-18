@@ -1983,6 +1983,13 @@ class MstQuestConsumeItem(BaseModelORJson):
     questId: int  # 94032410
 
 
+class MstQuestDateRange(BaseModelORJson):
+    id: int
+    idx: int
+    openedAt: int
+    closedAt: int
+
+
 class MstQuestExtension(BaseModelORJson):
     questId: int
     subType: int

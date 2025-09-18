@@ -2373,6 +2373,16 @@ mstQuestReleaseOverwrite = Table(
 )
 
 
+mstQuestDateRange = Table(
+    "mstQuestDateRange",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("idx", Integer),
+    Column("openedAt", Integer),
+    Column("closedAt", Integer),
+)
+
+
 mstQuestExtension = Table(
     "mstQuestExtension",
     metadata,
@@ -2948,6 +2958,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuestRestriction, mstQuestRestrictionInfo, mstRestriction],
     [mstQuestPhasePresent],
     [mstQuestPhaseIndividuality],
+    [mstQuestDateRange],
     [mstQuestExtension],
     [mstStage],
     [mstStageRemap],

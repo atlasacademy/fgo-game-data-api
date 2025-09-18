@@ -27,6 +27,7 @@ from ..schemas.raw import (
     ItemEntity,
     MasterMissionEntity,
     MstEventAlloutBattle,
+    MstQuestDateRange,
     MstSvtScript,
     MysticCodeEntity,
     QuestEntity,
@@ -980,3 +981,24 @@ async def get_gacha(
     async with get_db(region) as conn:
         gacha_entity = await raw.get_gacha_entity(conn, gacha_id)
         return item_response(gacha_entity)
+
+
+@router.get(
+    "/{region}/quest-date-range/{range_id}",
+    summary="Get Quest Date Range data",
+    response_description="Quest Date Range entity",
+    response_model=list[MstQuestDateRange],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_quest_date_range(
+    region: Region,
+    range_id: int,
+) -> Response:
+    """
+    Get Quest Date Range info from ID
+    """
+    async with get_db(region) as conn:
+        ranges = await raw.get_quest_date_range(conn, range_id)
+        return list_response(ranges)
