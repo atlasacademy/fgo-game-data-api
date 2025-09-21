@@ -951,7 +951,7 @@ async def find_shop(
     lang: Language = Depends(language_parameter),
 ) -> Response:
     async with get_db(search_param.region) as conn:
-        matches = await search.search_shop(conn, search_param, limit=10000)
+        matches = await search.search_shop(conn, search_param)
         return list_response(
             await get_nice_shops_from_raw(conn, search_param.region, matches, lang)
         )

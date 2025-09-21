@@ -524,6 +524,7 @@ class ShopSearchQueryParams:
     type: list[NiceShopType] = Query([])
     payType: list[NicePayType] = Query([])
     purchaseType: list[NicePurchaseType] = Query([])
+    limit: int = Query(10000, le=10000)
 
     def hasSearchParams(self) -> bool:
         return any(

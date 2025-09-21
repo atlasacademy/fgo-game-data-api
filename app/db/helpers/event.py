@@ -72,6 +72,7 @@ async def get_shop_search(
     shop_type_ints: Iterable[int] | None = None,
     pay_type_ints: Iterable[int] | None = None,
     purchase_type_ints: Iterable[int] | None = None,
+    limit: int = 100,
 ) -> list[MstShop]:
     from_clause: Join | Table = mstShop
     where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
@@ -86,7 +87,11 @@ async def get_shop_search(
         where_clause.append(mstShop.c.purchaseType.in_(purchase_type_ints))
 
     shop_search_stmt = (
-        select(mstShop).distinct().select_from(from_clause).where(and_(*where_clause))
+        select(mstShop)
+        .distinct()
+        .select_from(from_clause)
+        .where(and_(*where_clause))
+        .limit(limit)
     )
 
     return [

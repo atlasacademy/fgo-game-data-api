@@ -808,7 +808,7 @@ async def find_shop(
     search_param: ShopSearchQueryParams = Depends(ShopSearchQueryParams),
 ) -> Response:
     async with get_db(search_param.region) as conn:
-        matches = await search.search_shop(conn, search_param, limit=10000)
+        matches = await search.search_shop(conn, search_param)
         return list_response(await raw.get_shop_entities(conn, matches))
 
 
