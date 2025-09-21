@@ -45,6 +45,7 @@ from .gameenums import (
     NiceFuncType,
     NiceGender,
     NicePayType,
+    NicePurchaseType,
     NiceQuestFlag,
     NiceQuestType,
     NiceShopType,
@@ -572,6 +573,10 @@ SHOP_TYPE_NAME_REVERSE: dict[NiceShopType, int] = {
 }
 
 PAY_TYPE_NAME_REVERSE: dict[NicePayType, int] = {v: k for k, v in PAY_TYPE_NAME.items()}
+
+PURCHASE_TYPE_NAME_REVERSE: dict[NicePurchaseType, int] = {
+    v: k for k, v in PURCHASE_TYPE_NAME.items()
+}
 
 
 ### EventPointActivity.objectType ###

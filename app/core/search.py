@@ -30,6 +30,7 @@ from ..schemas.enums import (
     ITEM_BG_TYPE_REVERSE,
     ITEM_TYPE_REVERSE,
     PAY_TYPE_NAME_REVERSE,
+    PURCHASE_TYPE_NAME_REVERSE,
     QUEST_FLAG_REVERSE,
     QUEST_TYPE_REVERSE,
     SHOP_TYPE_NAME_REVERSE,
@@ -499,12 +500,17 @@ async def search_shop(
     pay_type_ints = {
         PAY_TYPE_NAME_REVERSE[pay_type] for pay_type in search_param.payType
     }
+    purchase_type_ints = {
+        PURCHASE_TYPE_NAME_REVERSE[purchase_type]
+        for purchase_type in search_param.purchaseType
+    }
 
     matches = await get_shop_search(
         conn,
         event_ids=search_param.eventId,
         shop_type_ints=shop_type_ints,
         pay_type_ints=pay_type_ints,
+        purchase_type_ints=purchase_type_ints,
     )
 
     if search_param.name:
