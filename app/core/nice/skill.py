@@ -8,7 +8,6 @@ from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, SkillScriptCond
 from ...schemas.gameenums import (
     BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME,
-    CARD_TYPE_NAME,
     COND_TYPE_NAME,
     BattleBranchSkillCondBranchType,
 )
@@ -153,7 +152,7 @@ def get_nice_select_td_info(select_info: Any) -> SelectTreasureDeviceInfo:
         treasureDevices=[
             SelectTreasureDeviceInfoTreasureDevice(
                 id=td["id"],
-                type=CARD_TYPE_NAME[td["type"]],
+                type=str(td["type"]),
                 message=td["message"],
             )
             for td in select_info["treasureDevices"]

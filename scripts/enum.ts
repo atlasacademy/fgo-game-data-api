@@ -1013,7 +1013,7 @@ export enum NiceCardType {
     ARTS = "arts",
     BUSTER = "buster",
     QUICK = "quick",
-    ADDATTACK = "extra",
+    ADDATTACK = "addattack",
     BLANK = "blank",
     WEAK = "weak",
     STRENGTH = "strength",

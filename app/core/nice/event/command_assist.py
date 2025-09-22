@@ -1,6 +1,5 @@
 from ....config import Settings
 from ....schemas.common import Region
-from ....schemas.gameenums import CARD_TYPE_NAME
 from ....schemas.nice import AssetURL, NiceEventCommandAssist, NiceSkill
 from ....schemas.raw import MstCommonRelease, MstEventCommandAssist
 from ...utils import fmt_url
@@ -21,7 +20,7 @@ def get_nice_command_assist(
         priority=command_assist.priority,
         lv=command_assist.lv,
         name=command_assist.name,
-        assistCard=CARD_TYPE_NAME[command_assist.assistCardId],
+        assistCard=str(command_assist.assistCardId),
         image=fmt_url(
             AssetURL.event,
             base_url=settings.asset_url,

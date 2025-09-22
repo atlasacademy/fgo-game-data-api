@@ -20,7 +20,6 @@ from ..schemas.gameenums import (
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,
-    CARD_TYPE_NAME,
     GIFT_TYPE_NAME,
     SERVANT_FRAME_TYPE_NAME,
     AiCond,
@@ -93,12 +92,12 @@ def get_nice_card_data(raw_data: Any) -> Any:
         ]
         card.pop("id")
         card.pop("num")
-        if card_id in CARD_TYPE_NAME:
-            card_name = CARD_TYPE_NAME[card_id]
-            if card_name in out_data:
-                out_data[card_name][card_index] = card
-            else:
-                out_data[card_name] = {card_index: card}
+
+        card_name = str(card_id)
+        if card_name in out_data:
+            out_data[card_name][card_index] = card
+        else:
+            out_data[card_name] = {card_index: card}
     return out_data
 
 

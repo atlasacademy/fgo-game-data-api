@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.gameenums import CARD_TYPE_NAME, NiceTdEffectFlag
+from ...schemas.gameenums import NiceTdEffectFlag
 from ...schemas.nice import AssetURL, NiceTd, NiceTdSvt, TdChangeByBattlePoint
 from ...schemas.raw import (
     MstSvtTreasureDevice,
@@ -38,7 +38,7 @@ def get_nice_td_svt(
         condLv=td_svt.condLv,
         condFriendshipRank=td_svt.condFriendshipRank,
         motion=td_svt.motion,
-        card=CARD_TYPE_NAME[td_svt.cardId],
+        card=str(td_svt.cardId),
         releaseConditions=[
             get_nice_skill_release(release)
             for release in td_releases
@@ -185,7 +185,7 @@ async def get_nice_td(
             "priority": 0,
             "condQuestId": 0,
             "condQuestPhase": 0,
-            "card": CARD_TYPE_NAME[5],
+            "card": "5",
             "npDistribution": [],
             "releaseConditions": [],
         }
@@ -218,7 +218,7 @@ async def get_nice_td(
             "priority": chosen_svt.priority,
             "condQuestId": chosen_svt.condQuestId,
             "condQuestPhase": chosen_svt.condQuestPhase,
-            "card": CARD_TYPE_NAME[chosen_svt.cardId],
+            "card": str(chosen_svt.cardId),
             "npDistribution": chosen_svt.damage,
             "releaseConditions": [
                 get_nice_skill_release(release)

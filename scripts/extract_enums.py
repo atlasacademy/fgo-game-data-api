@@ -96,7 +96,6 @@ EXTRA_STR_NAME = {
 
 
 STR_NAME_OVERRIDE = {
-    "NiceCardType": {"addattack": "extra"},
     "NiceGender": {"other": "unknown"},
     "Attribute": {"ground": "earth"},
     "NiceStatusRank": {
@@ -180,11 +179,17 @@ def out_strenum(
 
     for enumstr in deduped_original_list + extra_str_names:
         json_name = convert_name(enumstr)
-        str_name = (
-            STR_NAME_OVERRIDE.get(nice_class, {})
-            .get(json_name, json_name)
-            .removesuffix("_")
-        )
+
+        if nice_class == "NiceCardType":
+            input_dict_reverse = {v: k for k, v in input_dict.items()}
+            str_name = str(input_dict_reverse[enumstr])
+        else:
+            str_name = (
+                STR_NAME_OVERRIDE.get(nice_class, {})
+                .get(json_name, json_name)
+                .removesuffix("_")
+            )
+
         strenum_lines.append(f'    {json_name} = "{str_name}"\n')
     return strenum_lines
 
