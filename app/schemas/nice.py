@@ -48,7 +48,6 @@ from .gameenums import (
     NiceBattleFieldEnvironmentGrantType,
     NiceBattlePointFlag,
     NiceBuffType,
-    NiceCardType,
     NiceClassBoardSkillType,
     NiceClassBoardSquareFlag,
     NiceCombineAdjustTarget,
@@ -750,7 +749,7 @@ class TdChangeByBattlePoint(BaseModel):
 
 class SelectTreasureDeviceInfoTreasureDevice(BaseModel):
     id: int
-    type: NiceCardType
+    type: str
     message: str
 
 
@@ -891,7 +890,7 @@ class NiceTdSvt(BaseModelORJson):
     condLv: int = 0
     condFriendshipRank: int = 0
     motion: int
-    card: NiceCardType
+    card: str
     releaseConditions: list[NiceSvtSkillRelease] = []
 
 
@@ -899,7 +898,7 @@ class NiceTd(BaseModelORJson):
     id: int
     num: int
     npNum: int
-    card: NiceCardType
+    card: str
     name: str
     originalName: str
     ruby: str
@@ -1544,13 +1543,13 @@ class NiceServant(BaseModelORJson):
     instantDeathChance: int = Field(
         ..., title="Instant death chance", description="Instant death chance."
     )
-    cards: list[NiceCardType] = Field(..., title="Card deck", description="Card deck.")
-    hitsDistribution: dict[NiceCardType, list[int]] = Field(
+    cards: list[str] = Field(..., title="Card deck", description="Card deck.")
+    hitsDistribution: dict[str, list[int]] = Field(
         ...,
         title="Hits distribution",
         description="[DEPRECATED] Use the `cardDetails` field. Mapping <Card type, Hits distribution>.",
     )
-    cardDetails: dict[NiceCardType, NiceCardDetail] = Field(
+    cardDetails: dict[str, NiceCardDetail] = Field(
         ...,
         title="Card detail",
         description="Mapping <Card type, Card detail>, containing attack traits.",
@@ -2320,7 +2319,7 @@ class NiceEventCommandAssist(BaseModelORJson):
     priority: int
     lv: int
     name: str
-    assistCard: NiceCardType
+    assistCard: str
     image: HttpUrl
     skill: NiceSkill
     skillLv: int

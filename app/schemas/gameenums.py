@@ -2590,18 +2590,18 @@ class CardType(IntEnum):
 class NiceCardType(StrEnum):
     """Card Type Enum"""
 
-    none = "none"
-    arts = "arts"
-    buster = "buster"
-    quick = "quick"
-    addattack = "extra"
-    blank = "blank"
-    weak = "weak"
-    strength = "strength"
-    weakalt1 = "weakalt1"
-    weakalt2 = "weakalt2"
-    busteralt1 = "busteralt1"
-    extra2 = "extra2"
+    none = "0"
+    arts = "1"
+    buster = "2"
+    quick = "3"
+    addattack = "4"
+    blank = "5"
+    weak = "10"
+    strength = "11"
+    weakalt1 = "21"
+    weakalt2 = "22"
+    busteralt1 = "60"
+    extra2 = "104"
 
 
 CARD_TYPE_NAME: dict[int, NiceCardType] = {

@@ -17,7 +17,6 @@ from .enums import (
 from .gameenums import (
     Attribute,
     NiceBuffType,
-    NiceCardType,
     NiceCombineAdjustTarget,
     NiceEventType,
     NiceFuncTargetType,
@@ -253,7 +252,7 @@ class SkillSearchParams:
 class TdSearchParams:
     region: Region
     name: Optional[str] = Query(None, max_length=999)
-    card: Optional[list[NiceCardType]] = Query(None)
+    card: Optional[list[str]] = Query(None)
     individuality: list[Union[Trait, int]] = Query([])
     hits: Optional[list[int]] = Query(None)
     strengthStatus: Optional[list[int]] = Query(None)

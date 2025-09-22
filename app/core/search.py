@@ -19,7 +19,6 @@ from ..schemas.common import Language, Region
 from ..schemas.enums import (
     ATTRIBUTE_NAME_REVERSE,
     BUFF_TYPE_NAME_REVERSE,
-    CARD_TYPE_NAME_REVERSE,
     CLASS_NAME_REVERSE,
     COMBINE_ADJUST_TARGET_REVERSE,
     EVENT_TYPE_REVERSE,
@@ -301,9 +300,7 @@ async def search_td(
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     card_ints = (
-        {CARD_TYPE_NAME_REVERSE[td_card] for td_card in search_param.card}
-        if search_param.card
-        else None
+        {int(td_card) for td_card in search_param.card} if search_param.card else None
     )
     individuality = reverse_traits(search_param.individuality)
 

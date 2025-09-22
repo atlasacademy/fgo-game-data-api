@@ -16,7 +16,6 @@ from ....schemas.enums import (
 )
 from ....schemas.gameenums import (
     ATTRIBUTE_NAME,
-    CARD_TYPE_NAME,
     COND_TYPE_NAME,
     GENDER_TYPE_NAME,
     SVT_FLAG_NAME,
@@ -181,7 +180,7 @@ async def get_nice_servant(
         "traits": get_traits_list(sorted(raw_svt.mstSvt.individuality)),
         "starAbsorb": last_svt_limit.criticalWeight,
         "rarity": last_svt_limit.rarity,
-        "cards": [CARD_TYPE_NAME[card_id] for card_id in raw_svt.mstSvt.cardIds],
+        "cards": [str(card_id) for card_id in raw_svt.mstSvt.cardIds],
         "charaScripts": [get_nice_chara_script(s) for s in raw_svt.mstSvtScript],
         "battlePoints": get_svt_bp(raw_svt.mstBattlePoint, raw_svt.mstBattlePointPhase),
         "bondGrowth": [
@@ -269,15 +268,12 @@ async def get_nice_servant(
     ]
 
     nice_data["hitsDistribution"] = {
-        CARD_TYPE_NAME[svt_card.cardId]: svt_card.normalDamage
-        for svt_card in raw_svt.mstSvtCard
+        str(svt_card.cardId): svt_card.normalDamage for svt_card in raw_svt.mstSvtCard
     }
 
     card_add_map = {card_add.cardId: card_add for card_add in raw_svt.mstSvtCardAdd}
     nice_data["cardDetails"] = {
-        CARD_TYPE_NAME[svt_card.cardId]: get_nice_card(
-            svt_card, card_add_map.get(svt_card.cardId)
-        )
+        str(svt_card.cardId): get_nice_card(svt_card, card_add_map.get(svt_card.cardId))
         for svt_card in raw_svt.mstSvtCard
     }
 
