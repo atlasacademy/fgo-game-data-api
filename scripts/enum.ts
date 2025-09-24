@@ -172,6 +172,7 @@ export enum NiceFuncType {
     SET_BATTLE_MISSION_VALUE = "setBattleMissionValue",
     CHANGE_ENEMY_STATUS_UI_TYPE = "changeEnemyStatusUiType",
     SWAP_FIELD_POSITION = "swapFieldPosition",
+    SET_DISPLAY_DIRECT_BATTLE_MESSAGE_IN_FSM = "setDisplayDirectBattleMessageInFsm",
 }
 
 export enum NiceFuncTargetType {
@@ -914,7 +915,7 @@ export enum NiceItemType {
     EXCHANGE_SVT_COIN = "exchangeSvtCoin",
     REDUCE_TRADE_TIME = "reduceTradeTime",
     EVENT_PASSIVE_SKILL_GIVEN = "eventPassiveSkillGiven",
-    SHOP18_ITEM = "shop18Item",
+    CLASS_BOARD_RESET_ITEM = "classBoardResetItem",
     NETMARBLE_CHARGE_STONE = "netmarbleChargeStone",
 }
 
@@ -958,7 +959,7 @@ export enum NiceShopType {
     REVIVAL_ITEM = "revivalItem",
     EVENT_SVT_EQUIP = "eventSvtEquip",
     EXCHANGE_SVT_COIN = "exchangeSvtCoin",
-    SHOP18 = "shop18",
+    CLASS_BOARD_RESET = "classBoardReset",
 }
 
 export enum NicePayType {
@@ -1001,7 +1002,7 @@ export enum NicePurchaseType {
     GIFT = "gift",
     EVENT_SVT_JOIN = "eventSvtJoin",
     ASSIST = "assist",
-    SHOP18_ITEM = "shop18Item",
+    CLASS_BOARD_RESET_ITEM = "classBoardResetItem",
     PARTS_SKILL = "partsSkill",
     KIARA_PUNISHER_RESET = "kiaraPunisherReset",
 }
@@ -1798,6 +1799,7 @@ export enum NiceAiActType {
     SKILL_ID = "skillId",
     SKILL_ID_CHECKBUFF = "skillIdCheckbuff",
     RESURRECTION = "resurrection",
+    BATTLE_SCRIPT = "battleScript",
     PLAY_MOTION = "playMotion",
     MESSAGE = "message",
     MESSAGE_GROUP = "messageGroup",
@@ -1828,6 +1830,7 @@ export enum NiceAiActTarget {
 export enum NiceAiActNum {
     NOMAL = "nomal",
     ANYTIME = "anytime",
+    REACTION_PLAYER_COMBO_END = "reactionPlayerComboEnd",
     REACTION_PLYAER_SKILL = "reactionPlyaerSkill",
     REACTION_ENEMYTURN_START = "reactionEnemyturnStart",
     REACTION_ENEMYTURN_END = "reactionEnemyturnEnd",
@@ -1839,14 +1842,16 @@ export enum NiceAiActNum {
     USENP_TARGET = "usenpTarget",
     REACTION_TURNSTART = "reactionTurnstart",
     REACTION_PLAYERACTIONSTART = "reactionPlayeractionstart",
-    REACTION_ENTRY_UNIT = "reactionEntryUnit",
+    REACTION_ENTRY_ANY_UNIT = "reactionEntryAnyUnit",
     REACTION_BEFORE_RESURRECTION = "reactionBeforeResurrection",
     REACTION_BEFORE_DEAD = "reactionBeforeDead",
     SHIFT_SERVANT_AFTER = "shiftServantAfter",
     REACTION_BEFORE_MOVE_WAVE = "reactionBeforeMoveWave",
     SHIFT_SERVANT_BEFORE = "shiftServantBefore",
+    REACTION_PLAYER_COMBO_END_PRIORITY = "reactionPlayerComboEndPriority",
     REACTION_ENEMY_TURN_START_PRIORITY = "reactionEnemyTurnStartPriority",
     REACTION_ENEMY_TURN_END_PRIORITY = "reactionEnemyTurnEndPriority",
+    REACTION_ENTRY_ANY_UNIT_PRIORITY = "reactionEntryAnyUnitPriority",
     SHIFT_SERVANT_BEFORE_PRIORITY = "shiftServantBeforePriority",
     UNKNOWN = "unknown",
 }

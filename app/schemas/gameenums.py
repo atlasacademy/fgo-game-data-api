@@ -289,6 +289,7 @@ class FuncType(IntEnum):
     SET_BATTLE_MISSION_VALUE = 156
     CHANGE_ENEMY_STATUS_UI_TYPE = 157
     SWAP_FIELD_POSITION = 158
+    SET_DISPLAY_DIRECT_BATTLE_MESSAGE_IN_FSM = 159
 
 
 class NiceFuncType(StrEnum):
@@ -416,6 +417,7 @@ class NiceFuncType(StrEnum):
     setBattleMissionValue = "setBattleMissionValue"
     changeEnemyStatusUiType = "changeEnemyStatusUiType"
     swapFieldPosition = "swapFieldPosition"
+    setDisplayDirectBattleMessageInFsm = "setDisplayDirectBattleMessageInFsm"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -541,6 +543,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     156: NiceFuncType.setBattleMissionValue,
     157: NiceFuncType.changeEnemyStatusUiType,
     158: NiceFuncType.swapFieldPosition,
+    159: NiceFuncType.setDisplayDirectBattleMessageInFsm,
 }
 
 
@@ -2201,7 +2204,7 @@ class ItemType(IntEnum):
     EXCHANGE_SVT_COIN = 38
     REDUCE_TRADE_TIME = 39
     EVENT_PASSIVE_SKILL_GIVEN = 40
-    SHOP18_ITEM = 41
+    CLASS_BOARD_RESET_ITEM = 41
 
 
 class NiceItemType(StrEnum):
@@ -2247,7 +2250,7 @@ class NiceItemType(StrEnum):
     exchangeSvtCoin = "exchangeSvtCoin"
     reduceTradeTime = "reduceTradeTime"
     eventPassiveSkillGiven = "eventPassiveSkillGiven"
-    shop18Item = "shop18Item"
+    classBoardResetItem = "classBoardResetItem"
     netmarbleChargeStone = "netmarbleChargeStone"
 
 
@@ -2292,7 +2295,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     38: NiceItemType.exchangeSvtCoin,
     39: NiceItemType.reduceTradeTime,
     40: NiceItemType.eventPassiveSkillGiven,
-    41: NiceItemType.shop18Item,
+    41: NiceItemType.classBoardResetItem,
     9999: NiceItemType.netmarbleChargeStone,
 }
 
@@ -2382,7 +2385,7 @@ class ShopType(IntEnum):
     REVIVAL_ITEM = 15
     EVENT_SVT_EQUIP = 16
     EXCHANGE_SVT_COIN = 17
-    SHOP18 = 18
+    CLASS_BOARD_RESET = 18
 
 
 class NiceShopType(StrEnum):
@@ -2406,7 +2409,7 @@ class NiceShopType(StrEnum):
     revivalItem = "revivalItem"
     eventSvtEquip = "eventSvtEquip"
     exchangeSvtCoin = "exchangeSvtCoin"
-    shop18 = "shop18"
+    classBoardReset = "classBoardReset"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -2428,7 +2431,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     15: NiceShopType.revivalItem,
     16: NiceShopType.eventSvtEquip,
     17: NiceShopType.exchangeSvtCoin,
-    18: NiceShopType.shop18,
+    18: NiceShopType.classBoardReset,
 }
 
 
@@ -2509,7 +2512,7 @@ class PurchaseType(IntEnum):
     GIFT = 20
     EVENT_SVT_JOIN = 21
     ASSIST = 22
-    SHOP18_ITEM = 23
+    CLASS_BOARD_RESET_ITEM = 23
     PARTS_SKILL = 24
 
 
@@ -2538,7 +2541,7 @@ class NicePurchaseType(StrEnum):
     gift = "gift"
     eventSvtJoin = "eventSvtJoin"
     assist = "assist"
-    shop18Item = "shop18Item"
+    classBoardResetItem = "classBoardResetItem"
     partsSkill = "partsSkill"
     kiaraPunisherReset = "kiaraPunisherReset"
 
@@ -2566,7 +2569,7 @@ PURCHASE_TYPE_NAME: dict[int, NicePurchaseType] = {
     20: NicePurchaseType.gift,
     21: NicePurchaseType.eventSvtJoin,
     22: NicePurchaseType.assist,
-    23: NicePurchaseType.shop18Item,
+    23: NicePurchaseType.classBoardResetItem,
     24: NicePurchaseType.partsSkill,
     13: NicePurchaseType.kiaraPunisherReset,
 }
@@ -4964,6 +4967,7 @@ class AiActType(IntEnum):
     SKILL_ID = 40
     SKILL_ID_CHECKBUFF = 41
     RESURRECTION = 42
+    BATTLE_SCRIPT = 50
     PLAY_MOTION = 71
     MESSAGE = 72
     MESSAGE_GROUP = 73
@@ -4996,6 +5000,7 @@ class NiceAiActType(StrEnum):
     skillId = "skillId"
     skillIdCheckbuff = "skillIdCheckbuff"
     resurrection = "resurrection"
+    battleScript = "battleScript"
     playMotion = "playMotion"
     message = "message"
     messageGroup = "messageGroup"
@@ -5028,6 +5033,7 @@ AI_ACT_TYPE_NAME: dict[int, NiceAiActType] = {
     40: NiceAiActType.skillId,
     41: NiceAiActType.skillIdCheckbuff,
     42: NiceAiActType.resurrection,
+    50: NiceAiActType.battleScript,
     71: NiceAiActType.playMotion,
     72: NiceAiActType.message,
     73: NiceAiActType.messageGroup,
@@ -5092,6 +5098,7 @@ AI_ACT_TARGET_NAME: dict[int, NiceAiActTarget] = {
 class AiActNum(IntEnum):
     NOMAL = 0
     ANYTIME = -1
+    REACTION_PLAYER_COMBO_END = -2
     REACTION_PLYAER_SKILL = -3
     REACTION_ENEMYTURN_START = -4
     REACTION_ENEMYTURN_END = -5
@@ -5103,14 +5110,16 @@ class AiActNum(IntEnum):
     USENP_TARGET = -11
     REACTION_TURNSTART = -12
     REACTION_PLAYERACTIONSTART = -13
-    REACTION_ENTRY_UNIT = -14
+    REACTION_ENTRY_ANY_UNIT = -14
     REACTION_BEFORE_RESURRECTION = -15
     REACTION_BEFORE_DEAD = -16
     SHIFT_SERVANT_AFTER = -17
     REACTION_BEFORE_MOVE_WAVE = -18
     SHIFT_SERVANT_BEFORE = -19
+    REACTION_PLAYER_COMBO_END_PRIORITY = -201
     REACTION_ENEMY_TURN_START_PRIORITY = -401
     REACTION_ENEMY_TURN_END_PRIORITY = -501
+    REACTION_ENTRY_ANY_UNIT_PRIORITY = -1401
     SHIFT_SERVANT_BEFORE_PRIORITY = -1901
 
 
@@ -5119,6 +5128,7 @@ class NiceAiActNum(StrEnum):
 
     nomal = "nomal"
     anytime = "anytime"
+    reactionPlayerComboEnd = "reactionPlayerComboEnd"
     reactionPlyaerSkill = "reactionPlyaerSkill"
     reactionEnemyturnStart = "reactionEnemyturnStart"
     reactionEnemyturnEnd = "reactionEnemyturnEnd"
@@ -5130,14 +5140,16 @@ class NiceAiActNum(StrEnum):
     usenpTarget = "usenpTarget"
     reactionTurnstart = "reactionTurnstart"
     reactionPlayeractionstart = "reactionPlayeractionstart"
-    reactionEntryUnit = "reactionEntryUnit"
+    reactionEntryAnyUnit = "reactionEntryAnyUnit"
     reactionBeforeResurrection = "reactionBeforeResurrection"
     reactionBeforeDead = "reactionBeforeDead"
     shiftServantAfter = "shiftServantAfter"
     reactionBeforeMoveWave = "reactionBeforeMoveWave"
     shiftServantBefore = "shiftServantBefore"
+    reactionPlayerComboEndPriority = "reactionPlayerComboEndPriority"
     reactionEnemyTurnStartPriority = "reactionEnemyTurnStartPriority"
     reactionEnemyTurnEndPriority = "reactionEnemyTurnEndPriority"
+    reactionEntryAnyUnitPriority = "reactionEntryAnyUnitPriority"
     shiftServantBeforePriority = "shiftServantBeforePriority"
     unknown = "unknown"
 
@@ -5145,6 +5157,7 @@ class NiceAiActNum(StrEnum):
 AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     0: NiceAiActNum.nomal,
     -1: NiceAiActNum.anytime,
+    -2: NiceAiActNum.reactionPlayerComboEnd,
     -3: NiceAiActNum.reactionPlyaerSkill,
     -4: NiceAiActNum.reactionEnemyturnStart,
     -5: NiceAiActNum.reactionEnemyturnEnd,
@@ -5156,14 +5169,16 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -11: NiceAiActNum.usenpTarget,
     -12: NiceAiActNum.reactionTurnstart,
     -13: NiceAiActNum.reactionPlayeractionstart,
-    -14: NiceAiActNum.reactionEntryUnit,
+    -14: NiceAiActNum.reactionEntryAnyUnit,
     -15: NiceAiActNum.reactionBeforeResurrection,
     -16: NiceAiActNum.reactionBeforeDead,
     -17: NiceAiActNum.shiftServantAfter,
     -18: NiceAiActNum.reactionBeforeMoveWave,
     -19: NiceAiActNum.shiftServantBefore,
+    -201: NiceAiActNum.reactionPlayerComboEndPriority,
     -401: NiceAiActNum.reactionEnemyTurnStartPriority,
     -501: NiceAiActNum.reactionEnemyTurnEndPriority,
+    -1401: NiceAiActNum.reactionEntryAnyUnitPriority,
     -1901: NiceAiActNum.shiftServantBeforePriority,
     -9999: NiceAiActNum.unknown,
 }
