@@ -91,6 +91,7 @@ EXTRA_STR_NAME = {
         68: "DOWN_COMMANDNP",
     },
     "NiceItemType": {9999: "NETMARBLE_CHARGE_STONE"},
+    "NiceCombineAdjustTarget": {37: "EQUIP_EXP"},
 }
 
 

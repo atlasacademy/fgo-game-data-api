@@ -5772,6 +5772,7 @@ class NiceCombineAdjustTarget(StrEnum):
     exchangeSvt = "exchangeSvt"
     questItemFirstTime = "questItemFirstTime"
     questUseRewardAddItem = "questUseRewardAddItem"
+    equipExp = "equipExp"
 
 
 COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
@@ -5811,6 +5812,7 @@ COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
     34: NiceCombineAdjustTarget.exchangeSvt,
     35: NiceCombineAdjustTarget.questItemFirstTime,
     36: NiceCombineAdjustTarget.questUseRewardAddItem,
+    37: NiceCombineAdjustTarget.equipExp,
 }
 
 
