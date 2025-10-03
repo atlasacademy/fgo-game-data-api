@@ -309,7 +309,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "DATA_VALS_TYPE_NAME",
     ),
     (
-        "ClassRelationOverwriteEntity",
+        "ClassRelationOverwriteEntity.TYPE",
         "ClassRelationOverwriteType",
         "NiceClassRelationOverwriteType",
         "Class Relation Overwrite Type Enum",
@@ -792,6 +792,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Buff Condition Target Type",
         "BUFF_CONDITION_TARGET_TYPE",
     ),
+    (
+        "QuestAfterAction.COMMAND",
+        "QuestAfterActionCommand",
+        "NiceQuestAfterActionCommand",
+        "Quest After Action Command",
+        "QUEST_AFTER_ACTION_COMMAND",
+    ),
 ]
 
 
@@ -813,7 +820,7 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
     for line in lines:
         if not in_recording_mode:
             for signature in cs_signatures:
-                if line.startswith(signature):
+                if line.strip() == signature:
                     in_recording_signature = cs_signatures[signature]
                     print(f"Found {in_recording_signature}")
                     enum_lines = []

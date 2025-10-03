@@ -7015,3 +7015,231 @@ BUFF_CONDITION_TARGET_TYPE: dict[int, NiceBuffConditionTargetType] = {
     7: NiceBuffConditionTargetType.ptOtherFull,
     8: NiceBuffConditionTargetType.fieldOtherAll,
 }
+
+
+class QuestAfterActionCommand(IntEnum):
+    NONE = 0
+    SPOT_HIDE = 100
+    SPOT_GRAY = 101
+    SPOT_DISP = 102
+    SPOT_CHANGE = 103
+    SPOT_ANIM = 104
+    SPOT_HIDE_QUICK = 110
+    SPOT_GRAY_QUICK = 111
+    SPOT_DISP_QUICK = 112
+    SPOT_CHANGE_QUICK = 113
+    SPOT_ANIM_QUICK = 114
+    ROAD_HIDE = 200
+    ROAD_GRAY = 201
+    ROAD_DISP = 202
+    ROAD_HIDE_QUICK = 203
+    ROAD_GRAY_QUICK = 204
+    ROAD_DISP_QUICK = 205
+    CAM_MV_SPOT = 300
+    CAM_MV_ROAD = 301
+    CAM_MV_GIMMICK = 302
+    CAM_MV_COORD = 303
+    CAM_ZOOM = 304
+    CAM_MV_ZOOM_SPOT = 305
+    CAM_MV_ZOOM_ROAD = 306
+    CAM_MV_ZOOM_GIMMICK = 307
+    CAM_MV_ZOOM_COORD = 308
+    CAM_3D_MV_LAYER = 350
+    CAM_3D_MV_COORD = 351
+    CAM_3D_MV_ZOOM_COORD = 352
+    GIMMICK_HIDE = 400
+    GIMMICK_DISP = 401
+    GIMMICK_HIDE_QUICK = 402
+    GIMMICK_DISP_QUICK = 403
+    GIMMICK_MV_COORD = 404
+    GIMMICK_DISP_WITH_FADE = 405
+    GIMMICK_TWEEN_COLOR = 406
+    GIMMICK_SET_COLOR = 407
+    GIMMICK_DISP_UPDATE = 408
+    GIMMICK_DISP_PILE_UP = 409
+    GIMMICK_MV_SPOT = 410
+    GIMMICK_MV_GIMMICK = 411
+    GIMMICK_MV_ROAD = 412
+    QUEST_FOCUS = 500
+    QUEST_UNFOCUS = 501
+    PLAYER_FOCUS = 510
+    AFTER_FADE_IN = 520
+    QUEST_START = 530
+    MAP_CHANGE = 540
+    START_MAP_CHANGE = 550
+    TITLE_INFO_CONTROL = 560
+    MESSAGE_WINDOW = 600
+    MESSAGE_WINDOW_MST = 601
+    MESSAGE_OTHER_WINDOW = 602
+    MESSAGE_OTHER_WINDOW_MST = 603
+    MESSAGE_OTHER_WINDOW_BOOST_SUPPORT = 604
+    EVENT_REWARD = 700
+    WHITE_EARTH_TRANS = 701
+    TRANSITION_TO_FOLDER = 702
+    CLASS_SCORE = 703
+    PLAY_VOICE = 800
+    PLAY_SE = 801
+    BGM_STOP = 850
+    BGM_PLAY = 851
+    WAIT = 900
+    BLANK_EARTH_OBJECT_HIDE = 1000
+    BLANK_EARTH_OBJECT_DISP = 1001
+    BLANK_EARTH_OBJECT_ANIM = 1002
+    BLANK_EARTH_OBJECT_HIDE_QUICK = 1010
+    BLANK_EARTH_OBJECT_DISP_QUICK = 1011
+    BLANK_EARTH_OBJECT_ANIM_QUICK = 1012
+    EVENT_EFFECT_PLAY = 1100
+    CHANGE_DISP_STATE_QUEST_BOARD = 1200
+
+
+class NiceQuestAfterActionCommand(StrEnum):
+    """Quest After Action Command"""
+
+    none = "none"
+    spotHide = "spotHide"
+    spotGray = "spotGray"
+    spotDisp = "spotDisp"
+    spotChange = "spotChange"
+    spotAnim = "spotAnim"
+    spotHideQuick = "spotHideQuick"
+    spotGrayQuick = "spotGrayQuick"
+    spotDispQuick = "spotDispQuick"
+    spotChangeQuick = "spotChangeQuick"
+    spotAnimQuick = "spotAnimQuick"
+    roadHide = "roadHide"
+    roadGray = "roadGray"
+    roadDisp = "roadDisp"
+    roadHideQuick = "roadHideQuick"
+    roadGrayQuick = "roadGrayQuick"
+    roadDispQuick = "roadDispQuick"
+    camMvSpot = "camMvSpot"
+    camMvRoad = "camMvRoad"
+    camMvGimmick = "camMvGimmick"
+    camMvCoord = "camMvCoord"
+    camZoom = "camZoom"
+    camMvZoomSpot = "camMvZoomSpot"
+    camMvZoomRoad = "camMvZoomRoad"
+    camMvZoomGimmick = "camMvZoomGimmick"
+    camMvZoomCoord = "camMvZoomCoord"
+    cam3DMvLayer = "cam3DMvLayer"
+    cam3DMvCoord = "cam3DMvCoord"
+    cam3DMvZoomCoord = "cam3DMvZoomCoord"
+    gimmickHide = "gimmickHide"
+    gimmickDisp = "gimmickDisp"
+    gimmickHideQuick = "gimmickHideQuick"
+    gimmickDispQuick = "gimmickDispQuick"
+    gimmickMvCoord = "gimmickMvCoord"
+    gimmickDispWithFade = "gimmickDispWithFade"
+    gimmickTweenColor = "gimmickTweenColor"
+    gimmickSetColor = "gimmickSetColor"
+    gimmickDispUpdate = "gimmickDispUpdate"
+    gimmickDispPileUp = "gimmickDispPileUp"
+    gimmickMvSpot = "gimmickMvSpot"
+    gimmickMvGimmick = "gimmickMvGimmick"
+    gimmickMvRoad = "gimmickMvRoad"
+    questFocus = "questFocus"
+    questUnfocus = "questUnfocus"
+    playerFocus = "playerFocus"
+    afterFadeIn = "afterFadeIn"
+    questStart = "questStart"
+    mapChange = "mapChange"
+    startMapChange = "startMapChange"
+    titleInfoControl = "titleInfoControl"
+    messageWindow = "messageWindow"
+    messageWindowMst = "messageWindowMst"
+    messageOtherWindow = "messageOtherWindow"
+    messageOtherWindowMst = "messageOtherWindowMst"
+    messageOtherWindowBoostSupport = "messageOtherWindowBoostSupport"
+    eventReward = "eventReward"
+    whiteEarthTrans = "whiteEarthTrans"
+    transitionToFolder = "transitionToFolder"
+    classScore = "classScore"
+    playVoice = "playVoice"
+    playSe = "playSe"
+    bgmStop = "bgmStop"
+    bgmPlay = "bgmPlay"
+    wait = "wait"
+    blankEarthObjectHide = "blankEarthObjectHide"
+    blankEarthObjectDisp = "blankEarthObjectDisp"
+    blankEarthObjectAnim = "blankEarthObjectAnim"
+    blankEarthObjectHideQuick = "blankEarthObjectHideQuick"
+    blankEarthObjectDispQuick = "blankEarthObjectDispQuick"
+    blankEarthObjectAnimQuick = "blankEarthObjectAnimQuick"
+    eventEffectPlay = "eventEffectPlay"
+    changeDispStateQuestBoard = "changeDispStateQuestBoard"
+
+
+QUEST_AFTER_ACTION_COMMAND: dict[int, NiceQuestAfterActionCommand] = {
+    0: NiceQuestAfterActionCommand.none,
+    100: NiceQuestAfterActionCommand.spotHide,
+    101: NiceQuestAfterActionCommand.spotGray,
+    102: NiceQuestAfterActionCommand.spotDisp,
+    103: NiceQuestAfterActionCommand.spotChange,
+    104: NiceQuestAfterActionCommand.spotAnim,
+    110: NiceQuestAfterActionCommand.spotHideQuick,
+    111: NiceQuestAfterActionCommand.spotGrayQuick,
+    112: NiceQuestAfterActionCommand.spotDispQuick,
+    113: NiceQuestAfterActionCommand.spotChangeQuick,
+    114: NiceQuestAfterActionCommand.spotAnimQuick,
+    200: NiceQuestAfterActionCommand.roadHide,
+    201: NiceQuestAfterActionCommand.roadGray,
+    202: NiceQuestAfterActionCommand.roadDisp,
+    203: NiceQuestAfterActionCommand.roadHideQuick,
+    204: NiceQuestAfterActionCommand.roadGrayQuick,
+    205: NiceQuestAfterActionCommand.roadDispQuick,
+    300: NiceQuestAfterActionCommand.camMvSpot,
+    301: NiceQuestAfterActionCommand.camMvRoad,
+    302: NiceQuestAfterActionCommand.camMvGimmick,
+    303: NiceQuestAfterActionCommand.camMvCoord,
+    304: NiceQuestAfterActionCommand.camZoom,
+    305: NiceQuestAfterActionCommand.camMvZoomSpot,
+    306: NiceQuestAfterActionCommand.camMvZoomRoad,
+    307: NiceQuestAfterActionCommand.camMvZoomGimmick,
+    308: NiceQuestAfterActionCommand.camMvZoomCoord,
+    350: NiceQuestAfterActionCommand.cam3DMvLayer,
+    351: NiceQuestAfterActionCommand.cam3DMvCoord,
+    352: NiceQuestAfterActionCommand.cam3DMvZoomCoord,
+    400: NiceQuestAfterActionCommand.gimmickHide,
+    401: NiceQuestAfterActionCommand.gimmickDisp,
+    402: NiceQuestAfterActionCommand.gimmickHideQuick,
+    403: NiceQuestAfterActionCommand.gimmickDispQuick,
+    404: NiceQuestAfterActionCommand.gimmickMvCoord,
+    405: NiceQuestAfterActionCommand.gimmickDispWithFade,
+    406: NiceQuestAfterActionCommand.gimmickTweenColor,
+    407: NiceQuestAfterActionCommand.gimmickSetColor,
+    408: NiceQuestAfterActionCommand.gimmickDispUpdate,
+    409: NiceQuestAfterActionCommand.gimmickDispPileUp,
+    410: NiceQuestAfterActionCommand.gimmickMvSpot,
+    411: NiceQuestAfterActionCommand.gimmickMvGimmick,
+    412: NiceQuestAfterActionCommand.gimmickMvRoad,
+    500: NiceQuestAfterActionCommand.questFocus,
+    501: NiceQuestAfterActionCommand.questUnfocus,
+    510: NiceQuestAfterActionCommand.playerFocus,
+    520: NiceQuestAfterActionCommand.afterFadeIn,
+    530: NiceQuestAfterActionCommand.questStart,
+    540: NiceQuestAfterActionCommand.mapChange,
+    550: NiceQuestAfterActionCommand.startMapChange,
+    560: NiceQuestAfterActionCommand.titleInfoControl,
+    600: NiceQuestAfterActionCommand.messageWindow,
+    601: NiceQuestAfterActionCommand.messageWindowMst,
+    602: NiceQuestAfterActionCommand.messageOtherWindow,
+    603: NiceQuestAfterActionCommand.messageOtherWindowMst,
+    604: NiceQuestAfterActionCommand.messageOtherWindowBoostSupport,
+    700: NiceQuestAfterActionCommand.eventReward,
+    701: NiceQuestAfterActionCommand.whiteEarthTrans,
+    702: NiceQuestAfterActionCommand.transitionToFolder,
+    703: NiceQuestAfterActionCommand.classScore,
+    800: NiceQuestAfterActionCommand.playVoice,
+    801: NiceQuestAfterActionCommand.playSe,
+    850: NiceQuestAfterActionCommand.bgmStop,
+    851: NiceQuestAfterActionCommand.bgmPlay,
+    900: NiceQuestAfterActionCommand.wait,
+    1000: NiceQuestAfterActionCommand.blankEarthObjectHide,
+    1001: NiceQuestAfterActionCommand.blankEarthObjectDisp,
+    1002: NiceQuestAfterActionCommand.blankEarthObjectAnim,
+    1010: NiceQuestAfterActionCommand.blankEarthObjectHideQuick,
+    1011: NiceQuestAfterActionCommand.blankEarthObjectDispQuick,
+    1012: NiceQuestAfterActionCommand.blankEarthObjectAnimQuick,
+    1100: NiceQuestAfterActionCommand.eventEffectPlay,
+    1200: NiceQuestAfterActionCommand.changeDispStateQuestBoard,
+}
