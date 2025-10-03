@@ -366,7 +366,7 @@ async def get_basic_skill(
     if not mstSkill:
         mstSkill = await pydantic_object.fetch_id(redis, region, MstSkill, skill_id)
     if not mstSkill:
-        raise HTTPException(status_code=404, detail="Skill not found")
+        raise HTTPException(status_code=404, detail=f"Skill not found: {skill_id}")
     basic_skill = BasicSkillReverse(
         id=mstSkill.id,
         name=get_translation(lang, mstSkill.name),

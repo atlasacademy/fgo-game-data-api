@@ -316,7 +316,7 @@ async def get_skill_entity_no_reverse_many(
                     skillLv.expandedFuncId = None
         return skill_entities
     else:
-        raise HTTPException(status_code=404, detail="Skill not found")
+        raise HTTPException(status_code=404, detail=f"Skills not found: {skill_ids}")
 
 
 async def get_skill_entity_no_reverse(
