@@ -2921,6 +2921,11 @@ class NiceQuestPhaseOverwriteEquipSkills(BaseModelORJson):
     skills: list[NiceQuestPhaseOverwriteEquipSkill]
 
 
+class NiceQuestPhaseFixedMasterEquip(BaseModelORJson):
+    equipId: int
+    defaultLv: int | None = None
+
+
 class NiceQuestPhaseExtraDetail(BaseModelORJson):
     questSelect: list[int] | None = None
     singleForceSvtId: int | None = None
@@ -2940,6 +2945,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     isUseGrandBoard: int | None = None
     turn: int | None = None
     LimitAct: StageLimitActType | None = None
+    fixedMasterEquip: NiceQuestPhaseFixedMasterEquip | None = None
 
 
 class NiceRestriction(BaseModelORJson):
