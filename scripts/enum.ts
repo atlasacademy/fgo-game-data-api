@@ -866,6 +866,7 @@ export enum NiceDataValsType {
     IsClassIconChangeSaveGrand = "isClassIconChangeSaveGrand",
     ExecuteEffectId = "executeEffectId",
     PriorityUpHate = "priorityUpHate",
+    JudgeUseEveryTime = "judgeUseEveryTime",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -2297,6 +2298,7 @@ export enum NiceItemTransitionType {
     SUMMON = "summon",
     REVIVAL_ITEM = "revivalItem",
     BLANK_EARTH_SCENARIO = "blankEarthScenario",
+    LOGIN_BONUS = "loginBonus",
 }
 
 export enum NiceItemTransitionTargetValue {

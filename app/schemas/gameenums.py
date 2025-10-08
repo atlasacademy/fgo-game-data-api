@@ -2140,6 +2140,7 @@ class DataValsType(IntEnum):
     IsClassIconChangeSaveGrand = 238
     ExecuteEffectId = 239
     PriorityUpHate = 240
+    JudgeUseEveryTime = 241
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -6588,6 +6589,7 @@ class ItemTransitionType(IntEnum):
     SUMMON = 16
     REVIVAL_ITEM = 17
     BLANK_EARTH_SCENARIO = 18
+    LOGIN_BONUS = 19
 
 
 class NiceItemTransitionType(StrEnum):
@@ -6612,6 +6614,7 @@ class NiceItemTransitionType(StrEnum):
     summon = "summon"
     revivalItem = "revivalItem"
     blankEarthScenario = "blankEarthScenario"
+    loginBonus = "loginBonus"
 
 
 ITEM_TRANSITION_TYPE_NAME: dict[int, NiceItemTransitionType] = {
@@ -6634,6 +6637,7 @@ ITEM_TRANSITION_TYPE_NAME: dict[int, NiceItemTransitionType] = {
     16: NiceItemTransitionType.summon,
     17: NiceItemTransitionType.revivalItem,
     18: NiceItemTransitionType.blankEarthScenario,
+    19: NiceItemTransitionType.loginBonus,
 }
 
 

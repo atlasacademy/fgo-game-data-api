@@ -657,6 +657,7 @@ class BaseVals(BaseModel):
     IsClassIconChangeSaveGrand: int | None = None
     ExecuteEffectId: int | None = None
     PriorityUpHate: int | None = None
+    JudgeUseEveryTime: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
