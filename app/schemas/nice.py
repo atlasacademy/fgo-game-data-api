@@ -657,6 +657,22 @@ class BaseVals(BaseModel):
     ExecuteEffectId: int | None = None
     PriorityUpHate: int | None = None
     JudgeUseEveryTime: int | None = None
+    IgnoreDeathRate: int | None = None
+    SubstituteRate: int | None = None
+    SubstituteResist: int | None = None
+    UseSvtResistRate: int | None = None
+    UseBuffResistRate: int | None = None
+    SubstituteSkillId: int | None = None
+    SubstituteSkillLv: int | None = None
+    ResistSkillId: int | None = None
+    ResistSkillLv: int | None = None
+    SubstitutePopupText: str | None = None
+    SubstitutePopupIconId: int | None = None
+    ResistPopupText: str | None = None
+    ResistPopupIconId: int | None = None
+    SubstituteEffectList: list[int] | None = None
+    ResistEffectList: list[int] | None = None
+    EnablePassiveBuffConvert: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
