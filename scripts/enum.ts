@@ -439,6 +439,8 @@ export enum NiceBuffType {
     UP_HATE_TO_GRANTED_OPPONENT = "upHateToGrantedOpponent",
     UP_BASE_HP = "upBaseHp",
     ADD_BASE_HP = "addBaseHp",
+    SUBSTITUTE_INSTANT_DEATH = "substituteInstantDeath",
+    SUBSTITUTE_ADD_STATE = "substituteAddState",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -615,6 +617,8 @@ export enum NiceBuffAction {
     REACTIVE_DAMAGE_GAIN_HP = "reactiveDamageGainHp",
     BASE_HP_RATE = "baseHpRate",
     BASE_HP_VALUE = "baseHpValue",
+    SUBSTITUTE_INSTANT_DEATH = "substituteInstantDeath",
+    SUBSTITUTE_ADD_STATE = "substituteAddState",
 }
 
 export enum NiceBuffLimit {
@@ -867,6 +871,22 @@ export enum NiceDataValsType {
     ExecuteEffectId = "executeEffectId",
     PriorityUpHate = "priorityUpHate",
     JudgeUseEveryTime = "judgeUseEveryTime",
+    IgnoreDeathRate = "ignoreDeathRate",
+    SubstituteRate = "substituteRate",
+    SubstituteResist = "substituteResist",
+    UseSvtResistRate = "useSvtResistRate",
+    UseBuffResistRate = "useBuffResistRate",
+    SubstituteSkillId = "substituteSkillId",
+    SubstituteSkillLv = "substituteSkillLv",
+    ResistSkillId = "resistSkillId",
+    ResistSkillLv = "resistSkillLv",
+    SubstitutePopupText = "substitutePopupText",
+    SubstitutePopupIconId = "substitutePopupIconId",
+    ResistPopupText = "resistPopupText",
+    ResistPopupIconId = "resistPopupIconId",
+    SubstituteEffectList = "substituteEffectList",
+    ResistEffectList = "resistEffectList",
+    EnablePassiveBuffConvert = "enablePassiveBuffConvert",
 }
 
 export enum NiceClassRelationOverwriteType {

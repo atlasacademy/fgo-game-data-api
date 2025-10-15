@@ -905,6 +905,8 @@ class BuffType(IntEnum):
     UP_HATE_TO_GRANTED_OPPONENT = 235
     UP_BASE_HP = 236
     ADD_BASE_HP = 237
+    SUBSTITUTE_INSTANT_DEATH = 238
+    SUBSTITUTE_ADD_STATE = 239
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1131,6 +1133,8 @@ class NiceBuffType(StrEnum):
     upHateToGrantedOpponent = "upHateToGrantedOpponent"
     upBaseHp = "upBaseHp"
     addBaseHp = "addBaseHp"
+    substituteInstantDeath = "substituteInstantDeath"
+    substituteAddState = "substituteAddState"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1358,6 +1362,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     235: NiceBuffType.upHateToGrantedOpponent,
     236: NiceBuffType.upBaseHp,
     237: NiceBuffType.addBaseHp,
+    238: NiceBuffType.substituteInstantDeath,
+    239: NiceBuffType.substituteAddState,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1535,6 +1541,8 @@ class BuffAction(IntEnum):
     REACTIVE_DAMAGE_GAIN_HP = 161
     BASE_HP_RATE = 162
     BASE_HP_VALUE = 163
+    SUBSTITUTE_INSTANT_DEATH = 164
+    SUBSTITUTE_ADD_STATE = 165
 
 
 class NiceBuffAction(StrEnum):
@@ -1704,6 +1712,8 @@ class NiceBuffAction(StrEnum):
     reactiveDamageGainHp = "reactiveDamageGainHp"
     baseHpRate = "baseHpRate"
     baseHpValue = "baseHpValue"
+    substituteInstantDeath = "substituteInstantDeath"
+    substituteAddState = "substituteAddState"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1871,6 +1881,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     161: NiceBuffAction.reactiveDamageGainHp,
     162: NiceBuffAction.baseHpRate,
     163: NiceBuffAction.baseHpValue,
+    164: NiceBuffAction.substituteInstantDeath,
+    165: NiceBuffAction.substituteAddState,
 }
 
 
@@ -2141,6 +2153,22 @@ class DataValsType(IntEnum):
     ExecuteEffectId = 239
     PriorityUpHate = 240
     JudgeUseEveryTime = 241
+    IgnoreDeathRate = 242
+    SubstituteRate = 243
+    SubstituteResist = 244
+    UseSvtResistRate = 245
+    UseBuffResistRate = 246
+    SubstituteSkillId = 247
+    SubstituteSkillLv = 248
+    ResistSkillId = 249
+    ResistSkillLv = 250
+    SubstitutePopupText = 251
+    SubstitutePopupIconId = 252
+    ResistPopupText = 253
+    ResistPopupIconId = 254
+    SubstituteEffectList = 255
+    ResistEffectList = 256
+    EnablePassiveBuffConvert = 257
 
 
 class ClassRelationOverwriteType(IntEnum):
