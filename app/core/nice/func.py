@@ -76,6 +76,8 @@ LIST_DATAVALS = {
     "TriggeredFuncIndexAndCheckList",
     "CondParamAddTargetId",
     "CondParamRangeTargetId",
+    "SubstituteEffectList",
+    "ResistEffectList",
 }
 LIST_2D_DATAVALS = {
     "ParamAddSelfIndividualityAndCheck",
@@ -93,6 +95,8 @@ STRING_DATAVALS = {
     "TriggeredTargetHpRange",
     "TriggeredTargetHpRateRange",
     "DisplayNoEffectCauses",
+    "SubstitutePopupText",
+    "ResistPopupText",
 }
 STRING_LIST_DATAVALS = {"ApplyValueUp", "CheckOverChargeStageRange"}
 
