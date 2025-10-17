@@ -2049,5 +2049,29 @@
     "isRec": true,
     "plusAction": 0,
     "isChangeMaxHp": true
+  },
+  "SUBSTITUTE_INSTANT_DEATH": {
+    "limit": 0,
+    "plusTypes": [
+      238
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "SUBSTITUTE_ADD_STATE": {
+    "limit": 0,
+    "plusTypes": [
+      239
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
   }
 }
