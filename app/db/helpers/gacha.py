@@ -4,6 +4,7 @@ from sqlalchemy.sql import func, select
 from ...models.raw import (
     mstCommonRelease,
     mstGacha,
+    mstGachaRelease,
     mstGachaStoryAdjust,
     mstGachaSub,
     viewGachaFeaturedSvt,
@@ -22,6 +23,7 @@ SELECT_GACHA_ENTITY = select(
         mstGachaStoryAdjust, mstGacha.c.id == mstGachaStoryAdjust.c.gachaId
     )
     .outerjoin(mstGachaSub, mstGacha.c.id == mstGachaSub.c.gachaId)
+    .outerjoin(mstGachaRelease, mstGacha.c.id == mstGachaRelease.c.gachaId)
     .outerjoin(mstCommonRelease, mstGachaSub.c.commonReleaseId == mstCommonRelease.c.id)
     .outerjoin(viewGachaFeaturedSvt, mstGacha.c.id == viewGachaFeaturedSvt.c.gachaId)
 )

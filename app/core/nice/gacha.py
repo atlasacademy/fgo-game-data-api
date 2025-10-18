@@ -2,10 +2,11 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...schemas.common import Language
 from ...schemas.gameenums import COND_TYPE_NAME, GACHA_FLAG_NAME, PAY_TYPE_NAME
-from ...schemas.nice import GachaStoryAdjust, NiceGacha, NiceGachaSub
+from ...schemas.nice import GachaStoryAdjust, NiceGacha, NiceGachaRelease, NiceGachaSub
 from ...schemas.raw import (
     GachaEntity,
     MstCommonRelease,
+    MstGachaRelease,
     MstGachaStoryAdjust,
     MstGachaSub,
 )
@@ -45,6 +46,14 @@ def get_nice_gacha_sub(
     )
 
 
+def get_nice_gacha_release(gacha_release: MstGachaRelease) -> NiceGachaRelease:
+    return NiceGachaRelease(
+        type=COND_TYPE_NAME[gacha_release.type],
+        targetId=gacha_release.targetId,
+        value=gacha_release.value,
+    )
+
+
 def get_nice_gacha(gacha: GachaEntity, lang: Language = Language.jp) -> NiceGacha:
     return NiceGacha(
         id=gacha.mstGacha.id,
@@ -71,6 +80,9 @@ def get_nice_gacha(gacha: GachaEntity, lang: Language = Language.jp) -> NiceGach
         featuredSvtIds=(
             gacha.viewGachaFeaturedSvt[0].svtIds if gacha.viewGachaFeaturedSvt else []
         ),
+        releaseConditions=[
+            get_nice_gacha_release(release) for release in gacha.mstGachaRelease
+        ],
     )
 
 

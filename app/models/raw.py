@@ -1294,6 +1294,17 @@ mstGachaSub = Table(
     Column("commonReleaseId", Integer),
 )
 
+
+mstGachaRelease = Table(
+    "mstGachaRelease",
+    metadata,
+    Column("gachaId", Integer, index=True),
+    Column("type", Integer),
+    Column("targetId", Integer),
+    Column("value", Integer),
+)
+
+
 viewGachaFeaturedSvt = Table(
     "viewGachaFeaturedSvt",
     metadata,
@@ -3020,7 +3031,7 @@ TABLES_TO_BE_LOADED = [
     [mstClassBoardLock, mstClassBoardSquare],
     [mstGrandGraph, mstGrandGraphDetail],
     [mstFuncTypeDetail, mstBuffTypeDetail],
-    [mstGacha, mstGachaStoryAdjust, mstGachaSub, viewGachaFeaturedSvt],
+    [mstGacha, mstGachaStoryAdjust, mstGachaSub, mstGachaRelease, viewGachaFeaturedSvt],
     [mstItemDropEfficiency],
     [mstImagePartsGroup],
 ]

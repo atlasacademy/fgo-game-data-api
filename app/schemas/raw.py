@@ -1128,6 +1128,13 @@ class MstGachaSub(BaseModelORJson):
     commonReleaseId: int
 
 
+class MstGachaRelease(BaseModelORJson):
+    gachaId: int
+    type: int
+    targetId: int
+    value: int
+
+
 class ViewGachaFeaturedSvt(BaseModelORJson):
     gachaId: int
     svtIds: list[int]
@@ -2683,6 +2690,7 @@ class GachaEntity(BaseModelORJson):
     mstGacha: MstGacha
     mstGachaStoryAdjust: list[MstGachaStoryAdjust]
     mstGachaSub: list[MstGachaSub]
+    mstGachaRelease: list[MstGachaRelease]
     viewGachaFeaturedSvt: list[ViewGachaFeaturedSvt]
     mstCommonRelease: list[MstCommonRelease]
 
