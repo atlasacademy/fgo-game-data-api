@@ -450,7 +450,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
-    "plusAction": 71
+    "plusAction": 71,
+    "isChangeMaxHp": false
   },
   "TURNEND_STAR": {
     "limit": 0,
@@ -485,7 +486,8 @@
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
-    "plusAction": 72
+    "plusAction": 72,
+    "isChangeMaxHp": false
   },
   "FUNC_HP_REDUCE_VALUE": {
     "limit": 0,
@@ -2002,25 +2004,25 @@
     "plusAction": 0,
     "isChangeMaxHp": false
   },
-  "HATE_TO_GRANTED_OPPONENT": {
-    "limit": 0,
-    "plusTypes": [
-      235
-    ],
-    "minusTypes": [],
-    "baseParam": 0,
-    "baseValue": 0,
-    "isRec": true,
-    "plusAction": 0,
-    "isChangeMaxHp": false
-  },
   "REACTIVE_DAMAGE_GAIN_HP": {
     "limit": 3,
     "plusTypes": [
       234
     ],
     "minusTypes": [],
-    "baseParam": 0,
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "HATE_TO_GRANTED_OPPONENT": {
+    "limit": 0,
+    "plusTypes": [
+      235
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
@@ -2056,7 +2058,7 @@
       238
     ],
     "minusTypes": [],
-    "baseParam": 0,
+    "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
@@ -2068,7 +2070,7 @@
       239
     ],
     "minusTypes": [],
-    "baseParam": 0,
+    "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
