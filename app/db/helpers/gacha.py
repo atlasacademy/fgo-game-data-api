@@ -16,6 +16,7 @@ SELECT_GACHA_ENTITY = select(
     func.to_jsonb(mstGacha.table_valued()).label(mstGacha.name),
     sql_jsonb_agg(mstGachaStoryAdjust),
     sql_jsonb_agg(mstGachaSub),
+    sql_jsonb_agg(mstGachaRelease),
     sql_jsonb_agg(mstCommonRelease),
     sql_jsonb_agg(viewGachaFeaturedSvt),
 ).select_from(
