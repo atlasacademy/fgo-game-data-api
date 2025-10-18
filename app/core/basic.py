@@ -47,6 +47,7 @@ from ..schemas.enums import (
 )
 from ..schemas.gameenums import (
     ATTRIBUTE_NAME,
+    BUFF_CONDITION_TARGET_TYPE,
     BUFF_CONVERT_LIMIT_TYPE_NAME,
     BUFF_CONVERT_TYPE_NAME,
     BUFF_TYPE_NAME,
@@ -203,6 +204,19 @@ def get_nice_buff_script(
             "script": convert["script"],
             "effectId": convert["effectId"],
         }
+
+    if "condBuffValue" in mstBuff.script:
+        script["condBuffValue"] = [
+            {
+                "buffType": BUFF_TYPE_NAME[cond["buffType"]],
+                "condValue": cond["condValue"],
+                "buffIndividualities": get_traits_list(cond["buffIndividualitie"]),
+                "valueCondTargetType": BUFF_CONDITION_TARGET_TYPE[
+                    cond["valueCondTargetType"]
+                ],
+            }
+            for cond in mstBuff.script["condBuffValue"]
+        ]
 
     return script
 

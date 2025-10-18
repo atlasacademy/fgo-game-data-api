@@ -6,6 +6,7 @@ from pydantic import BaseModel, HttpUrl
 from .base import BaseModelORJson
 from .enums import SvtClass, Trait
 from .gameenums import (
+    NiceBuffConditionTargetType,
     NiceBuffConvertLimitType,
     NiceBuffConvertType,
     NiceBuffType,
@@ -124,6 +125,18 @@ class BuffConvert(BaseModel):
     effectId: int
 
 
+class CondBuffValue(BaseModel):
+    """Conditional Buff Value
+
+    Defines a condition for a buff based on another buff's value
+    """
+
+    buffType: NiceBuffType
+    condValue: str
+    buffIndividualities: list[NiceTrait]
+    valueCondTargetType: NiceBuffConditionTargetType
+
+
 class BuffScript(BaseModel):
     checkIndvType: Optional[int] = None
     CheckOpponentBuffTypes: Optional[list[NiceBuffType]] = None
@@ -156,6 +169,7 @@ class BuffScript(BaseModel):
     fromCommandSpell: int | None = None
     fromMasterEquip: int | None = None
     NotPierceIndividuality: list[list[NiceTrait]] | None = None
+    condBuffValue: list[CondBuffValue] | None = None
 
 
 class ScriptLink(BaseModelORJson):
