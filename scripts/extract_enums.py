@@ -803,6 +803,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Quest After Action Command",
         "QUEST_AFTER_ACTION_COMMAND",
     ),
+    (
+        "UserServantEntity.StatusFlag",
+        "UserSvtStatusFlag",
+        "NiceUserSvtStatusFlag",
+        "User Servant Status Flag",
+        "USER_SVT_STATUS_FLAG",
+    ),
 ]
 
 

@@ -2509,3 +2509,16 @@ export enum NiceQuestAfterActionCommand {
     EVENT_EFFECT_PLAY = "eventEffectPlay",
     CHANGE_DISP_STATE_QUEST_BOARD = "changeDispStateQuestBoard",
 }
+
+export enum NiceUserSvtStatusFlag {
+    LOCK = "lock",
+    EVENT_JOIN = "eventJoin",
+    WITHDRAWAL = "withdrawal",
+    APRIL_FOOL_CANCEL = "aprilFoolCancel",
+    CHOICE = "choice",
+    NO_PERIOD = "noPeriod",
+    COND_JOIN = "condJoin",
+    STATUS_MAX = "statusMax",
+    UseLevelExceedItemHeroine = "useLevelExceedItemHeroine",
+    UseFriendshipExceedItemHeroine = "useFriendshipExceedItemHeroine",
+}

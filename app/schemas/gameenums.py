@@ -7275,3 +7275,45 @@ QUEST_AFTER_ACTION_COMMAND: dict[int, NiceQuestAfterActionCommand] = {
     1100: NiceQuestAfterActionCommand.eventEffectPlay,
     1200: NiceQuestAfterActionCommand.changeDispStateQuestBoard,
 }
+
+
+class UserSvtStatusFlag(IntEnum):
+    LOCK = 1
+    EVENT_JOIN = 2
+    WITHDRAWAL = 4
+    APRIL_FOOL_CANCEL = 8
+    CHOICE = 16
+    NO_PERIOD = 32
+    COND_JOIN = 64
+    STATUS_MAX = 128
+    UseLevelExceedItemHeroine = 256
+    UseFriendshipExceedItemHeroine = 512
+
+
+class NiceUserSvtStatusFlag(StrEnum):
+    """User Servant Status Flag"""
+
+    lock = "lock"
+    eventJoin = "eventJoin"
+    withdrawal = "withdrawal"
+    aprilFoolCancel = "aprilFoolCancel"
+    choice = "choice"
+    noPeriod = "noPeriod"
+    condJoin = "condJoin"
+    statusMax = "statusMax"
+    useLevelExceedItemHeroine = "useLevelExceedItemHeroine"
+    useFriendshipExceedItemHeroine = "useFriendshipExceedItemHeroine"
+
+
+USER_SVT_STATUS_FLAG: dict[int, NiceUserSvtStatusFlag] = {
+    1: NiceUserSvtStatusFlag.lock,
+    2: NiceUserSvtStatusFlag.eventJoin,
+    4: NiceUserSvtStatusFlag.withdrawal,
+    8: NiceUserSvtStatusFlag.aprilFoolCancel,
+    16: NiceUserSvtStatusFlag.choice,
+    32: NiceUserSvtStatusFlag.noPeriod,
+    64: NiceUserSvtStatusFlag.condJoin,
+    128: NiceUserSvtStatusFlag.statusMax,
+    256: NiceUserSvtStatusFlag.useLevelExceedItemHeroine,
+    512: NiceUserSvtStatusFlag.useFriendshipExceedItemHeroine,
+}
