@@ -133,8 +133,11 @@ class CondBuffValue(BaseModel):
 
     buffType: NiceBuffType
     condValue: str
+    buffCheckIndvType: int | None = None
     buffIndividualities: list[NiceTrait]
     valueCondTargetType: NiceBuffConditionTargetType
+    filterActivePassive: int | None = None
+    filterSubStateEnable: int | None = None
 
 
 class BuffScript(BaseModel):

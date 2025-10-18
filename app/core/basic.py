@@ -205,16 +205,20 @@ def get_nice_buff_script(
         }
 
     if "condBuffValue" in mstBuff.script:
+        condBuffValues: list[dict[str, Any]] = mstBuff.script["condBuffValue"]
         script["condBuffValue"] = [
             {
                 "buffType": BUFF_TYPE_NAME[cond["buffType"]],
                 "condValue": cond["condValue"],
+                "buffCheckIndvType": cond.get("buffCheckIndvType"),
                 "buffIndividualities": get_traits_list(cond["buffIndividualitie"]),
                 "valueCondTargetType": BUFF_CONDITION_TARGET_TYPE[
                     cond["valueCondTargetType"]
                 ],
+                "filterActivePassive": cond.get("filterActivePassive"),
+                "filterSubStateEnable": cond.get("filterSubStateEnable"),
             }
-            for cond in mstBuff.script["condBuffValue"]
+            for cond in condBuffValues
         ]
 
     return script
