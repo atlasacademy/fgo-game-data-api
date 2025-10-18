@@ -70,7 +70,6 @@ from ...schemas.raw import (
 )
 from .utils import fetch_one, sql_jsonb_agg
 
-
 QUEST_WITH_WAR_SELECT = select(
     mstQuest,
     mstWar.c.id.label("warId"),

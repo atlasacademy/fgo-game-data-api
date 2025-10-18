@@ -23,7 +23,6 @@ from app.schemas.gameenums import (
     BuffAction,
 )
 
-
 CONSTANT_INCLUDE = {
     "ATTACK_RATE",
     "ATTACK_RATE_RANDOM_MAX",

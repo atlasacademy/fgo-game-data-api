@@ -55,7 +55,6 @@ from .gameenums import (
     SvtType,
 )
 
-
 ### Servant Type ###
 
 

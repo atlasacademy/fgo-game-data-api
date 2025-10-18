@@ -36,7 +36,6 @@ from .func import get_nice_function
 from .item import get_nice_item_amount, get_nice_item_from_raw
 from .skill import get_nice_skill_from_raw
 
-
 settings = Settings()
 
 

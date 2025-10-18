@@ -5,7 +5,6 @@ from ....schemas.gameenums import COND_TYPE_NAME
 from ....schemas.nice import AssetURL, NiceHeelPortrait
 from ....schemas.raw import MstHeelPortrait
 
-
 settings = Settings()
 
 

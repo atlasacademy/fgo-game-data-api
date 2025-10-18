@@ -5,7 +5,6 @@ from ....schemas.raw import MstCommonRelease, MstEventCommandAssist
 from ...utils import fmt_url
 from ..common_release import get_nice_common_release
 
-
 settings = Settings()
 
 

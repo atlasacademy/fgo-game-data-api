@@ -14,7 +14,6 @@ from sqlalchemy.sql import cast, func
 
 from .base import metadata
 
-
 mstConstant = Table(
     "mstConstant",
     metadata,

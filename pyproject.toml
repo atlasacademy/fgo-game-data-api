@@ -9,15 +9,15 @@ packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.13"
-fastapi = {extras = ["standard"], version = "^0.118.0"}
-uvicorn = {extras = ["standard"], version = "^0.37.0"}
+fastapi = { extras = ["standard"], version = "^0.118.0" }
+uvicorn = { extras = ["standard"], version = "^0.37.0" }
 python-dotenv = "^1.1.1"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
 orjson = "^3.11.3"
 aiofiles = "^24.1.0"
 GitPython = "^3.1.45"
 SQLAlchemy = "^2.0.43"
-httpx = {extras = ["http2"], version = "^0.28.1"}
+httpx = { extras = ["http2"], version = "^0.28.1" }
 fastapi-cache2 = "^0.2.2"
 gunicorn = { extras = ["setproctitle"], version = "^23.0.0" }
 redis = "<6"
@@ -31,8 +31,6 @@ psutil = "^7.1.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.18.2"
-black = "^25.9.0"
-isort = "^6.1.0"
 pytest = "^8.4.2"
 pytest-xdist = "^3.8.0"
 pytest-asyncio = "^1.2.0"
@@ -48,16 +46,6 @@ types-psutil = "^7.0.0.20251001"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-
-[tool.isort]
-line_length = 88
-profile = "black"
-known_third_party = "orjson"
-lines_after_imports = 2
-extra_standard_library = ["tomllib"]
-
-[tool.black]
-target-version = ['py310']
 
 [tool.mypy]
 plugins = "pydantic.mypy, sqlalchemy.ext.mypy.plugin"
@@ -101,6 +89,7 @@ select = [
     "PLE",
     "PLR",
     "RUF",
+    "I",
 ]
 ignore = [
     "E501",
@@ -116,6 +105,7 @@ ignore = [
     "RUF001",
     "RUF003",
 ]
+fixable = ["I"]
 
 [tool.ruff.lint.per-file-ignores]
 "app/schemas/basic.py" = ["RUF012"]

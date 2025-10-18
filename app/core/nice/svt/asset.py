@@ -22,7 +22,6 @@ from ....schemas.nice import (
 from ....schemas.raw import MstImagePartsGroup, ServantEntity
 from ...utils import fmt_url
 
-
 settings = Settings()
 
 
@@ -417,9 +416,9 @@ def get_svt_extraAssets(
             battleCharaId = costume_ids[multiPortrait.limitCount]
             multi_dict[multiPortrait.idx]["costume"][battleCharaId] = asset_url
         else:
-            multi_dict[multiPortrait.idx]["ascension"][
-                multiPortrait.limitCount + 1
-            ] = asset_url
+            multi_dict[multiPortrait.idx]["ascension"][multiPortrait.limitCount + 1] = (
+                asset_url
+            )
 
     image.story = {
         i: fmt_url(AssetURL.image, **base_settings, image=image)

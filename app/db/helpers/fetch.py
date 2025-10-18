@@ -282,7 +282,6 @@ from ...schemas.raw import (
 )
 from .utils import fetch_one
 
-
 schema_map_fetch_one: dict[  # type:ignore
     Type[BaseModelORJson], tuple[Table, ColumnElement]
 ] = {

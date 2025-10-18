@@ -11,7 +11,6 @@ from ...models.raw import (
 from ...schemas.raw import GachaEntity
 from .utils import sql_jsonb_agg
 
-
 SELECT_GACHA_ENTITY = select(
     func.to_jsonb(mstGacha.table_valued()).label(mstGacha.name),
     sql_jsonb_agg(mstGachaStoryAdjust),

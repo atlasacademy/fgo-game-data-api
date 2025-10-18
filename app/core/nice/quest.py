@@ -91,7 +91,6 @@ from .gift import GiftData, get_gift_map, get_nice_gifts
 from .item import get_nice_item_amount, get_nice_item_from_raw
 from .stage_cutin import get_quest_stage_cutins
 
-
 settings = Settings()
 
 

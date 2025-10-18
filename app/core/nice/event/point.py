@@ -14,7 +14,6 @@ from ....schemas.nice import (
 from ....schemas.raw import MstEventPointActivity, MstEventPointBuff, MstEventPointGroup
 from ...utils import fmt_url
 
-
 settings = Settings()
 
 

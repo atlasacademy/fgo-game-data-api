@@ -23,7 +23,6 @@ from uvicorn.logging import DefaultFormatter
 
 from .schemas.common import Region, RepoInfo
 
-
 project_root = Path(__file__).resolve().parents[1]
 
 

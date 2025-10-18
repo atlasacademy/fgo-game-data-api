@@ -2,11 +2,11 @@ import hashlib
 import json
 import pickle
 import time
-import tomllib
 from math import ceil
 from typing import Any, Awaitable, Callable, Optional
 
 import orjson
+import tomllib
 import uvicorn
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,7 +26,6 @@ from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo
 from .zstd import zstd_compress, zstd_decompress
-
 
 settings = Settings()
 

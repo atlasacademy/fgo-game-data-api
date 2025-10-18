@@ -19,7 +19,6 @@ from ..nice.gift import GiftData, get_gift_map, get_nice_gifts
 from ..raw import get_item_entity
 from ..utils import fmt_url, get_traits_list, get_translation
 
-
 settings = Settings()
 
 

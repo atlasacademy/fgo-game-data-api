@@ -17,7 +17,6 @@ from ..utils import get_np_name, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
 from .skill import get_nice_skill_release, get_nice_skill_script
 
-
 settings = Settings()
 
 

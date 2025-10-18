@@ -4,7 +4,6 @@ from ...config import Settings
 from ...schemas.common import Region, RegionInfo, RepoInfo
 from .. import Redis
 
-
 settings = Settings()
 
 

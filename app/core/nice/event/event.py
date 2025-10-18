@@ -51,7 +51,6 @@ from .treasure_box import get_nice_treasure_box
 from .voice_play import get_nice_event_voice_play
 from .warboard import get_nice_war_board
 
-
 settings = Settings()
 
 

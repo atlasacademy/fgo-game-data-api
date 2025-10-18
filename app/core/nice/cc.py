@@ -17,7 +17,6 @@ from .. import raw
 from ..utils import fmt_url, get_translation
 from .skill import get_nice_skill_with_svt
 
-
 settings = Settings()
 
 

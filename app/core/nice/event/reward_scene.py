@@ -14,7 +14,6 @@ from ....schemas.nice import (
 from ....schemas.raw import MstEventRewardScene, MstSvtLimitAdd
 from ...utils import fmt_url, get_flags
 
-
 settings = Settings()
 
 

@@ -3,7 +3,6 @@ from sqlalchemy.dialects.postgresql import JSONB
 
 from .base import metadata
 
-
 rayshiftQuest = Table(
     "rayshiftQuest",
     metadata,

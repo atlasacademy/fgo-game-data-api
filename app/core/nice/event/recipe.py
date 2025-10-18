@@ -11,7 +11,6 @@ from ...utils import fmt_url
 from ..common_release import get_nice_common_release
 from ..gift import GiftData, get_nice_common_consume, get_nice_gifts
 
-
 settings = Settings()
 
 

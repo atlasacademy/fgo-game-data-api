@@ -49,7 +49,6 @@ from ..schemas.raw import (
     MstWar,
 )
 
-
 PydanticModel = TypeVar("PydanticModel", bound=BaseModelORJson)
 
 

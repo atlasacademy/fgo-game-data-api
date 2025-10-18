@@ -7,7 +7,6 @@ from enum import IntEnum
 from pathlib import Path
 from typing import Any, Callable, Union
 
-
 MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
 CONFIG_JSON_PATH = Path(__file__).resolve().parents[1] / "config.json"
 TRANSLATIONS: dict[str, str] = {}
@@ -269,7 +268,7 @@ def get_svt_voice_names(mstSvtVoice: Any) -> dict[str, str]:
     for voice in mstSvtVoice:
         for script in voice["scriptJson"]:
             first_script_id = script["infos"][0]["id"]
-            script_id = f'{voice["id"]}_{voice["voicePrefix"]}_{voice["type"]}_{first_script_id}'
+            script_id = f"{voice['id']}_{voice['voicePrefix']}_{voice['type']}_{first_script_id}"
             overwriteName = (
                 script["overwriteName"] if script["overwriteName"] is not None else ""
             )

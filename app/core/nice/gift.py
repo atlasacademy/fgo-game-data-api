@@ -21,7 +21,6 @@ from ...schemas.nice import (
 from ...schemas.raw import MstCommonConsume, MstGift, MstGiftAdd
 from ..utils import fmt_url
 
-
 settings = Settings()
 
 

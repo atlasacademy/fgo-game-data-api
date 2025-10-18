@@ -23,7 +23,6 @@ from .. import raw
 from ..utils import fmt_url
 from .common_release import get_nice_common_releases
 
-
 settings = Settings()
 
 

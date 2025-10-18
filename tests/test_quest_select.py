@@ -1,7 +1,6 @@
 import pytest
 from httpx import AsyncClient
 
-
 test_cases_dict: dict[str, tuple[str, str | None, tuple[str] | tuple[str, str]]] = {
     "94040902": (
         "NA/quest/94040902/1",

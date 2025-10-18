@@ -3,7 +3,6 @@ from pathlib import Path
 
 import orjson
 
-
 file_path = Path(__file__)
 MAPPING_PATH = file_path.parent / "mappings"
 

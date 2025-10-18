@@ -8,7 +8,6 @@ from app.schemas.raw import MstEventMissionCondition, MstEventMissionConditionDe
 
 from .utils import get_response_data, test_gamedata
 
-
 DATA_FOLDER = "test_data_raw"
 
 

@@ -24,7 +24,6 @@ from . import Redis
 from .helpers.pydantic_object import pydantic_obj_redis_table
 from .helpers.reverse import RedisReverse
 
-
 settings = Settings()
 REDIS_DATA_PREFIX = f"{settings.redis_prefix}:data"
 

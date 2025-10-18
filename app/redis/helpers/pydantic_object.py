@@ -16,7 +16,6 @@ from ...schemas.raw import (
 from ...zstd import zstd_decompress
 from .. import Redis
 
-
 settings = Settings()
 
 

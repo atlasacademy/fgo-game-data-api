@@ -4,7 +4,6 @@ from ....schemas.nice import AssetURL, NiceEventMural
 from ....schemas.raw import MstEventMural
 from ...utils import fmt_url
 
-
 settings = Settings()
 
 

@@ -8,7 +8,6 @@ from ...schemas.raw import BuffEntityNoReverse
 from ..basic import get_nice_buff_script
 from ..utils import get_traits_list, get_translation
 
-
 settings = Settings()
 
 

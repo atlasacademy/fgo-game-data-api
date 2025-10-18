@@ -95,7 +95,6 @@ from .utils import (
     get_translation,
 )
 
-
 settings = Settings()
 
 

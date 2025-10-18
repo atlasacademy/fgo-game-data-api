@@ -5,7 +5,6 @@ from ....schemas.raw import MstEventTower, MstEventTowerReward
 from ...utils import fmt_url
 from ..gift import GiftData, get_nice_gifts
 
-
 settings = Settings()
 
 

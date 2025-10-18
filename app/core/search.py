@@ -67,7 +67,6 @@ from ..schemas.search import (
 )
 from .utils import get_np_name, get_translation
 
-
 INSUFFICIENT_QUERY = (
     "Insufficient query. Please check the docs for the required parameters."
 )

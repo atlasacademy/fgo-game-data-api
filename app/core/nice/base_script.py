@@ -6,7 +6,6 @@ from ...schemas.base import HttpUrlAdapter
 from ...schemas.common import Region, ScriptLink
 from ...schemas.nice import AssetURL
 
-
 settings = Settings()
 
 

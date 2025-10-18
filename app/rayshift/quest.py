@@ -23,7 +23,6 @@ from ..schemas.rayshift import (
     QuestResponse,
 )
 
-
 settings = Settings()
 
 NO_API_KEY = settings.rayshift_api_key.get_secret_value() == ""

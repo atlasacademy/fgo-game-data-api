@@ -21,7 +21,6 @@ from ..schemas.raw import (
 )
 from .utils import load_master_data
 
-
 VALENTINE_NAME = {
     Region.NA: "Valentine",
     Region.JP: "バレンタイン",

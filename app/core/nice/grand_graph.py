@@ -10,7 +10,6 @@ from .. import raw
 from ..utils import get_traits_list
 from .item import get_nice_item_amount, get_nice_item_from_raw
 
-
 settings = Settings()
 
 

@@ -55,7 +55,6 @@ from .base_script import get_script_url
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest_with_war_spot
 
-
 settings = Settings()
 
 

@@ -2,7 +2,6 @@ import re
 
 from ..schemas.common import Region
 
-
 brackets_regex = re.compile(r"[\[].*?[\]]")
 ruby_regex = re.compile(r"[\[]#(.*?):(.*?)?[\]]")
 ruby_emphasis_regex = re.compile(r"\[#(.*?)\]")

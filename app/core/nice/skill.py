@@ -37,7 +37,6 @@ from ..utils import get_traits_list, get_translation, strip_formatting_brackets
 from .common_release import get_nice_common_release
 from .func import get_nice_function
 
-
 settings = Settings()
 
 

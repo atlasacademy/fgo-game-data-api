@@ -9,7 +9,6 @@ from app.schemas.common import Region
 
 from .utils import get_response_data
 
-
 test_cases_dict: dict[str, tuple[str, str]] = {
     "servant_NA_collectionNo": ("NA/servant/76", "NA_Mordred"),
     "servant_NA_id": ("NA/servant/100900", "NA_Mordred"),

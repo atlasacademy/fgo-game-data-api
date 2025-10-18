@@ -11,7 +11,6 @@ from ....schemas.raw import ServantEntity
 from ...utils import fmt_url, get_np_name, get_traits_list, get_translation
 from ..common_release import get_nice_common_release
 
-
 settings = Settings()
 
 
@@ -81,9 +80,9 @@ def get_nice_ascensionAdd(
                     **base_settings_id,
                     suffix=strParam["changeGraphSuffix"],
                 )
-                ascensionAdd["charaGraphChange"]["ascension"][
-                    limit.limitCount
-                ] = asset_url
+                ascensionAdd["charaGraphChange"]["ascension"][limit.limitCount] = (
+                    asset_url
+                )
             if "changeIconCommonReleaseId" in strParam:
                 nice_release = [
                     get_nice_common_release(cr)

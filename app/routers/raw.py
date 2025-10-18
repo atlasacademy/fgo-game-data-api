@@ -55,7 +55,6 @@ from ..schemas.search import (
 from .deps import get_db, get_redis
 from .utils import get_error_code, item_response, list_response
 
-
 settings = Settings()
 router = APIRouter(prefix="/raw", tags=["raw"])
 

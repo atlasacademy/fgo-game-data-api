@@ -6,7 +6,6 @@ from httpx import AsyncClient
 from app.config import Settings
 from app.main import app
 
-
 file_path = Path(__file__).resolve().parents[1]
 settings = Settings()
 

@@ -17,7 +17,6 @@ from app.rayshift.quest import get_multiple_quests
 from app.schemas.common import Region
 from app.schemas.rayshift import QuestList
 
-
 settings = Settings()
 
 doesnt_have_rayshift_api_key = settings.rayshift_api_key.get_secret_value() == ""

@@ -8,7 +8,6 @@ from ..raw import get_script_entity
 from .base_script import get_script_url
 from .quest import get_nice_quest
 
-
 settings = Settings()
 
 

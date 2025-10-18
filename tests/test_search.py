@@ -1,7 +1,6 @@
 import pytest
 from httpx import AsyncClient, Response
 
-
 RAW_MAIN_ITEM = {
     "servant": "mstSvt",
     "equip": "mstSvt",

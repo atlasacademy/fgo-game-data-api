@@ -2,7 +2,6 @@ import argparse
 
 from black import FileMode, format_str
 
-
 PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "UPPER": "upper_",
     "LOWER": "lower_",

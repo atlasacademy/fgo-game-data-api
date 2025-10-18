@@ -13,7 +13,6 @@ from app.config import Settings
 from app.main import app
 from app.schemas.common import Region
 
-
 settings = Settings()
 
 

@@ -43,7 +43,6 @@ from .skill import get_nice_skill_from_raw
 from .svt.svt import get_nice_servant
 from .td import get_nice_td
 
-
 settings = Settings()
 
 

@@ -4,7 +4,6 @@ from uvicorn.logging import TRACE_LOG_LEVEL
 
 from ..config import Settings, logger
 
-
 settings = Settings()
 
 

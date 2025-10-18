@@ -40,7 +40,6 @@ from ....schemas.raw import (
 from ...utils import fmt_url
 from ..base_script import get_script_url
 
-
 settings = Settings()
 
 

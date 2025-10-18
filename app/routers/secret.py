@@ -11,7 +11,6 @@ from ..tasks import pull_and_update
 from .deps import get_redis
 from .utils import pretty_print_response
 
-
 settings = Settings()
 
 

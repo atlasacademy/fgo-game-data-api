@@ -8,7 +8,6 @@ from ...schemas.nice import EnemyDrop, NiceStage, QuestEnemy
 from ...zstd import zstd_compress, zstd_decompress
 from .. import Redis
 
-
 settings = Settings()
 
 

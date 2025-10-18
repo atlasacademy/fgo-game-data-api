@@ -87,7 +87,6 @@ from .schemas.raw import (
     ServantEntity,
 )
 
-
 settings = Settings()
 
 

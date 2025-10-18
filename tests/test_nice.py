@@ -15,7 +15,6 @@ from app.schemas.raw import MstSvtVoice, MstVoice
 
 from .utils import clear_drop_data, get_response_data, test_gamedata
 
-
 test_cases_dict: dict[str, tuple[str, str]] = {
     "servant_NA_collectionNo": ("NA/servant/105", "NA_Billy"),
     "servant_NA_id": ("NA/servant/201000", "NA_Billy"),

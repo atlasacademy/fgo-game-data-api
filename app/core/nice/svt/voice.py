@@ -30,7 +30,6 @@ from ....schemas.raw import (
 from ...utils import get_voice_name, nullable_to_string
 from ..base_script import get_nice_script_link
 
-
 settings = Settings()
 
 

@@ -10,7 +10,6 @@ from ..schemas.base import HttpUrlAdapter
 from ..schemas.common import Language, NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
 
-
 TValue = TypeVar("TValue")
 TLookup = TypeVar("TLookup")
 

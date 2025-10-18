@@ -14,7 +14,6 @@ from ..utils import fmt_url, get_translation
 from .event.shop import get_nice_shop
 from .item import get_nice_item_from_raw
 
-
 settings = Settings()
 
 

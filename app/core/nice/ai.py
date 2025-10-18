@@ -18,7 +18,6 @@ from ..utils import get_traits_list
 from .skill import get_nice_skill_from_id
 from .td import get_nice_td_from_id
 
-
 settings = Settings()
 
 

@@ -12,7 +12,6 @@ from ....schemas.nice import (
 )
 from ....schemas.raw import MstEventBulletinBoard, MstEventBulletinBoardRelease
 
-
 settings = Settings()
 
 

@@ -20,7 +20,6 @@ from ...utils import fmt_url
 from ..gift import GiftData, get_nice_gifts
 from .utils import get_voice_lines
 
-
 settings = Settings()
 
 
