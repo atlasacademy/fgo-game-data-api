@@ -1980,10 +1980,22 @@ class NiceEventQuest(BaseModelORJson):
     isExcepted: bool = False
 
 
+class NiceEventCampaignScript(BaseModelORJson):
+    # isNotDispEntryCondMessage: int | None = None
+    # OnlyMaxFuncGroupId: int | None = None
+    # showBoardMessageOnWarGroupId: int | None = None
+    addPassiveIconOrganization: str | None = None
+    addPassiveContentOrganization: str | None = None
+    addPassiveContentDetail: str | None = None
+    addPassiveDescriptionDetail: str | None = None
+    addPassiveSkillId: int | None = None
+
+
 class NiceEventCampaign(BaseModelORJson):
     targetIds: list[int]
     warIds: list[int]
     warGroupIds: list[int]
+    script: NiceEventCampaignScript
     target: NiceCombineAdjustTarget
     idx: int
     value: int

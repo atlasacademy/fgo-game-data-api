@@ -1675,6 +1675,7 @@ mstEventCampaign = Table(
     Column("targetIds", ARRAY(Integer)),
     Column("warIds", ARRAY(Integer)),
     Column("warGroupIds", ARRAY(Integer)),
+    Column("script", JSONB),
     Column("eventId", Integer, index=True),
     Column("target", Integer),
     Column("idx", Integer),

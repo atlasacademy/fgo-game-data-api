@@ -1434,6 +1434,7 @@ class MstEventCampaign(BaseModelORJson):
     targetIds: list[int]
     warIds: list[int]
     warGroupIds: list[int] | None = None
+    script: dict[str, Any] | None = None
     eventId: int
     target: int
     idx: int
