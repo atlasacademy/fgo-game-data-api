@@ -2073,7 +2073,6 @@ export enum NiceCombineAdjustTarget {
     QUEST_USE_REWARD_ADD_ITEM = "questUseRewardAddItem",
     QUEST_EQUIP_EXP = "questEquipExp",
     QUEST_PASSIVE_SKILL = "questPassiveSkill",
-    EQUIP_EXP = "equipExp",
 }
 
 export enum NiceEventCombineCalc {
