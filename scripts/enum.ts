@@ -2071,6 +2071,8 @@ export enum NiceCombineAdjustTarget {
     EXCHANGE_SVT = "exchangeSvt",
     QUEST_ITEM_FIRST_TIME = "questItemFirstTime",
     QUEST_USE_REWARD_ADD_ITEM = "questUseRewardAddItem",
+    QUEST_EQUIP_EXP = "questEquipExp",
+    QUEST_PASSIVE_SKILL = "questPassiveSkill",
     EQUIP_EXP = "equipExp",
 }
 
@@ -2078,6 +2080,7 @@ export enum NiceEventCombineCalc {
     ADDITION = "addition",
     MULTIPLICATION = "multiplication",
     FIXED_VALUE = "fixedValue",
+    NONE = "none",
 }
 
 export enum NiceEventWorkType {
