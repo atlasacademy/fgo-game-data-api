@@ -300,6 +300,7 @@ async def get_nice_support_servants(
                 lang=lang,
             )
             for aiNpcId in aiNpcIds
+            if any(npc_svt.id == aiNpcId for npc_svt in npcSvtFollower)
         }
     else:
         ai_npc = {}

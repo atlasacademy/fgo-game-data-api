@@ -2931,7 +2931,8 @@ class SupportServant(BaseModelORJson):
 
 
 class NiceQuestPhaseAiNpc(BaseModelORJson):
-    npc: NpcServant
+    npcId: int
+    npc: NpcServant | None
     detail: QuestEnemy | None = None
     aiIds: list[int]
 

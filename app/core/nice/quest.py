@@ -434,12 +434,12 @@ async def get_nice_quest_phase_no_rayshift(
         )
         support_servants = npcs.support_servants
         if "aiNpc" in raw_quest.mstQuestPhase.script and npcs.ai_npc is not None:
-            raw_quest.mstQuestPhase.script["aiNpc"]["npc"] = npcs.ai_npc[
-                raw_quest.mstQuestPhase.script["aiNpc"]["npcId"]
-            ]
+            raw_quest.mstQuestPhase.script["aiNpc"]["npc"] = npcs.ai_npc.get(
+                raw_quest.mstQuestPhase.script["aiNpc"]["npcId"], None
+            )
         if "aiMultiNpc" in raw_quest.mstQuestPhase.script:
             for aiNpc in raw_quest.mstQuestPhase.script["aiMultiNpc"]:
-                aiNpc["npc"] = npcs.ai_npc[aiNpc["npcId"]]
+                aiNpc["npc"] = npcs.ai_npc.get(aiNpc["npcId"], None)
 
     if "LimitAct" in raw_quest.mstQuestPhase.script:
         raw_quest.mstQuestPhase.script["LimitAct"] = STAGE_LIMIT_ACT_TYPE_NAME[
@@ -570,11 +570,11 @@ async def get_nice_quest_phase(
         if ai_npcs is not None:
             if db_data.nice.extraDetail.aiNpc is not None:
                 db_data.nice.extraDetail.aiNpc.detail = ai_npcs[
-                    db_data.nice.extraDetail.aiNpc.npc.npcId
+                    db_data.nice.extraDetail.aiNpc.npcId
                 ]
             if db_data.nice.extraDetail.aiMultiNpc is not None:
                 for aiNpc in db_data.nice.extraDetail.aiMultiNpc:
-                    aiNpc.detail = ai_npcs[aiNpc.npc.npcId]
+                    aiNpc.detail = ai_npcs[aiNpc.npcId]
 
     def set_follower_data(followers: dict[int, QuestEnemy] | None) -> None:
         if followers is not None:
