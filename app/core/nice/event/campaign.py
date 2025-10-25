@@ -2,7 +2,7 @@ from ....schemas.gameenums import (
     COMBINE_ADJUST_TARGET_TYPE_NAME,
     EVENT_COMBINE_CALC_TYPE_NAME,
 )
-from ....schemas.nice import NiceEventCampaign, NiceEventQuest
+from ....schemas.nice import NiceEventCampaign, NiceEventCampaignScript, NiceEventQuest
 from ....schemas.raw import MstEventCampaign, MstEventQuest
 
 
@@ -16,6 +16,7 @@ def get_nice_campaign(campaign: MstEventCampaign) -> NiceEventCampaign:
         value=campaign.value,
         calcType=EVENT_COMBINE_CALC_TYPE_NAME[campaign.calcType],
         entryCondMessage=campaign.entryCondMessage,
+        script=NiceEventCampaignScript.model_validate(campaign.script),
     )
 
 
