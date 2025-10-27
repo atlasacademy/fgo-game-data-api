@@ -16,7 +16,9 @@ def get_nice_campaign(campaign: MstEventCampaign) -> NiceEventCampaign:
         value=campaign.value,
         calcType=EVENT_COMBINE_CALC_TYPE_NAME[campaign.calcType],
         entryCondMessage=campaign.entryCondMessage,
-        script=NiceEventCampaignScript.model_validate(campaign.script),
+        script=NiceEventCampaignScript.model_validate(
+            campaign.script if campaign.script else {}
+        ),
     )
 
 

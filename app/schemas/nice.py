@@ -1982,7 +1982,7 @@ class NiceEventQuest(BaseModelORJson):
 
 class NiceEventCampaignScript(BaseModelORJson):
     # isNotDispEntryCondMessage: int | None = None
-    # OnlyMaxFuncGroupId: int | None = None
+    OnlyMaxFuncGroupId: int | None = None
     # showBoardMessageOnWarGroupId: int | None = None
     addPassiveIconOrganization: str | None = None
     addPassiveContentOrganization: str | None = None
