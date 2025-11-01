@@ -2909,6 +2909,8 @@ class CondType(IntEnum):
     NOT_SHOP_GROUP_LIMIT_NUM = 263
     EQUIP_GET = 264
     NOT_EQUIP_GET = 265
+    SVT_GET_BEFORE_DATE = 266
+    SVT_GET_AFTER_DATE = 267
 
 
 class NiceCondType(StrEnum):
@@ -3170,6 +3172,8 @@ class NiceCondType(StrEnum):
     notShopGroupLimitNum = "notShopGroupLimitNum"
     equipGet = "equipGet"
     notEquipGet = "notEquipGet"
+    svtGetBeforeDate = "svtGetBeforeDate"
+    svtGetAfterDate = "svtGetAfterDate"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3429,6 +3433,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     263: NiceCondType.notShopGroupLimitNum,
     264: NiceCondType.equipGet,
     265: NiceCondType.notEquipGet,
+    266: NiceCondType.svtGetBeforeDate,
+    267: NiceCondType.svtGetAfterDate,
 }
 
 
