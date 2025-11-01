@@ -63,8 +63,10 @@ from .schemas.nice import (
     NiceGacha,
     NiceItem,
     NiceMasterMission,
+    NiceQuest,
     NiceServant,
     NiceShop,
+    NiceWar,
 )
 from .schemas.raw import (
     AssetStorageLine,
@@ -284,13 +286,16 @@ async def dump_nice_mms(
     await util.dump_orjson("nice_master_mission", all_mm_data)
 
 
-async def dump_nice_wars(
+async def get_nice_wars_from_raw(
     conn: AsyncConnection, util: ExportUtil, wars: list[MstWar]
+) -> list[NiceWar]:  # pragma: no cover
+    return [await get_nice_war(conn, util.region, war.id, util.lang) for war in wars]
+
+
+async def dump_nice_wars(
+    util: ExportUtil, wars: list[NiceWar]
 ) -> None:  # pragma: no cover
-    all_war_data = [
-        await get_nice_war(conn, util.region, war.id, util.lang) for war in wars
-    ]
-    await util.dump_orjson("nice_war", all_war_data)
+    await util.dump_orjson("nice_war", wars)
 
 
 async def get_nice_events_from_raw(
@@ -418,6 +423,7 @@ class TimerData(BaseModelORJson):
     hash: str | None
     timestamp: int | None
     events: list[NiceEvent]
+    quests: list[NiceQuest]
     gachas: list[NiceGacha]
     masterMissions: list[NiceMasterMission]
     shops: list[NiceShop]
@@ -429,6 +435,7 @@ async def dump_current_events(
     util: ExportUtil,
     repo_info: RepoInfo | None,
     nice_events: list[NiceEvent],
+    nice_wars: list[NiceWar],
     raw_gacha_entities: list[GachaEntity],
     nice_mms: list[NiceMasterMission],
     nice_shops: list[NiceShop],
@@ -451,6 +458,7 @@ async def dump_current_events(
     nice_gachas = get_all_nice_gachas(recent_gacha_entities, util.lang)
     masterMissions: list[NiceMasterMission] = []
     for mm in nice_mms:
+        mm.quests = []
         if mm.id == 10001:
             masterMissions.append(mm)
             continue
@@ -474,11 +482,20 @@ async def dump_current_events(
         and is_recent(now, item.startedAt, item.endedAt, None, 14, 0)
     ]
 
+    chaldea_gate_war = next(war for war in nice_wars if war.id == 9999)
+    quests = [
+        quest
+        for spot in chaldea_gate_war.spots
+        for quest in spot.quests
+        if is_recent(now, quest.openedAt, quest.closedAt, None, 14, 0)
+    ]
+
     timer_data = TimerData(
         updatedAt=now,
         hash=repo_info.hash if repo_info else None,
         timestamp=repo_info.timestamp if repo_info else None,
         events=events,
+        quests=quests,
         gachas=nice_gachas,
         masterMissions=masterMissions,
         shops=shops,
@@ -610,7 +627,11 @@ async def generate_exports(
                 await dump_svt(conn, util, "nice_equip", all_equips)
 
             async with engine.connect() as conn:
-                await dump_nice_wars(conn, util, mstWars)
+                nice_wars = [
+                    await get_nice_war(conn, util.region, war.id, util.lang)
+                    for war in mstWars
+                ]
+            await dump_nice_wars(util, nice_wars)
             async with engine.connect() as conn:
                 nice_events = await get_nice_events_from_raw(conn, util, mstEvents)
             await dump_nice_events(util, nice_events)
@@ -636,6 +657,7 @@ async def generate_exports(
                 util,
                 repo_info,
                 nice_events,
+                nice_wars,
                 raw_gacha_entities,
                 nice_mms,
                 nice_shops,
@@ -668,7 +690,10 @@ async def generate_exports(
                 await dump_nice_gachas(util_en, raw_gacha_entities)
 
                 async with engine.connect() as conn:
-                    await dump_nice_wars(conn, util_en, mstWars)
+                    nice_wars_lang_en = await get_nice_wars_from_raw(
+                        conn, util_en, mstWars
+                    )
+                await dump_nice_wars(util_en, nice_wars)
 
                 async with engine.connect() as conn:
                     nice_events_lang_en = await get_nice_events_from_raw(
@@ -680,6 +705,7 @@ async def generate_exports(
                     util_en,
                     repo_info,
                     nice_events_lang_en,
+                    nice_wars_lang_en,
                     raw_gacha_entities,
                     nice_mms,
                     nice_shops,
