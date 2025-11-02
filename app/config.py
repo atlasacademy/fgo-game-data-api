@@ -3,6 +3,8 @@ from logging.handlers import HTTPHandler
 from pathlib import Path
 from typing import Any, Optional, Type
 
+import anyio
+import httpx
 from git import Repo
 from pydantic import (
     DirectoryPath,
@@ -32,6 +34,20 @@ class CustomHttpHandler(HTTPHandler):
             "username": "API",
             "content": f"API Exception\n\n```\n{self.format(record)}\n```",
         }
+
+    async def _send(self, payload):
+        try:
+            async with httpx.AsyncClient(timeout=5.0) as client:
+                await client.post(self.url, json=payload)
+        except Exception as e:
+            logging.getLogger("fgoapi.webhook").warning(f"Webhook send failed: {e}")
+
+    def emit(self, record):
+        payload = self.mapLogRecord(record)
+        try:
+            anyio.from_thread.run(self._send, payload)
+        except RuntimeError:
+            anyio.run(self._send, payload)
 
 
 uvicorn_logger = logging.getLogger("uvicorn.access")
