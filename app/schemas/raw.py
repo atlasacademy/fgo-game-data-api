@@ -1635,6 +1635,23 @@ class MstEventAdd(BaseModelORJson):
     endedAt: int
 
 
+class MstEventDetail(BaseModelORJson):
+    eventId: int
+    flag: int
+    pointImageId: int
+    rewardButtonImageId: int
+    eventGaugeType: int
+    condQuestId: int
+    condQuestPhase: int
+    condMessage: str
+    shopCondQuestId: int
+    shopCondQuestPhase: int
+    shopCondMessage: str
+    entryCondMessage: str
+    tutorialImageIds: list[str]
+    script: dict[str, Any]
+
+
 class MstEventSvt(BaseModelORJson):
     script: dict[str, Any]
     eventId: int
@@ -2430,6 +2447,7 @@ class BgmEntity(BaseModelORJson):
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstEventAdd: list[MstEventAdd]
+    mstEventDetail: MstEventDetail | None
     mstWar: list[MstWar]
     mstEventRewardScene: list[MstEventRewardScene]
     mstEventVoicePlay: list[MstEventVoicePlay]

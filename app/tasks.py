@@ -482,10 +482,11 @@ async def dump_current_events(
         and is_recent(now, item.startedAt, item.endedAt, None, 14, 0)
     ]
 
-    chaldea_gate_war = next(war for war in nice_wars if war.id == 9999)
     quests = [
         quest
-        for spot in chaldea_gate_war.spots
+        for war in nice_wars
+        if war.eventId == 0 and war.id != 1002
+        for spot in war.spots
         for quest in spot.quests
         if is_recent(now, quest.openedAt, quest.closedAt, None, 14, 0)
     ]

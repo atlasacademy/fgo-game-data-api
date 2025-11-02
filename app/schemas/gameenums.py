@@ -3924,6 +3924,75 @@ Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
 }
 
 
+class QuestGroupType(IntEnum):
+    NONE = 0
+    EVENT_QUEST = 1
+    QUEST_RELEASE = 2
+    EVENT_POINT_QUEST = 3
+    EVENT_POINT_GROUP_QUEST = 4
+    EVENT_RACE_QUEST = 5
+    EVENT_RACE_GROUP_QUEST = 6
+    MISSION_GROUP_QUEST = 7
+    EVENT_TOWER = 8
+    EVENT_TOWER_FLOOR = 9
+    HIGHLIGHT_QUEST = 10
+    EVENT_DAILY_POINT = 11
+    EVENT_ACTIVITY_POINT_GAUGE = 12
+    INTERLUDE = 13
+    EVENT_BATTLE_LINE = 14
+    BATTLE_GROUP = 15
+    SHARE_QUEST_INFO = 16
+    ALLOUT_BATTLE_QUEST = 17
+    EVENT_FORTIFICATION = 18
+
+
+class NiceQuestGroupType(StrEnum):
+    """Quest Group Type"""
+
+    none = "none"
+    eventQuest = "eventQuest"
+    questRelease = "questRelease"
+    eventPointQuest = "eventPointQuest"
+    eventPointGroupQuest = "eventPointGroupQuest"
+    eventRaceQuest = "eventRaceQuest"
+    eventRaceGroupQuest = "eventRaceGroupQuest"
+    missionGroupQuest = "missionGroupQuest"
+    eventTower = "eventTower"
+    eventTowerFloor = "eventTowerFloor"
+    highlightQuest = "highlightQuest"
+    eventDailyPoint = "eventDailyPoint"
+    eventActivityPointGauge = "eventActivityPointGauge"
+    interlude = "interlude"
+    eventBattleLine = "eventBattleLine"
+    battleGroup = "battleGroup"
+    shareQuestInfo = "shareQuestInfo"
+    alloutBattleQuest = "alloutBattleQuest"
+    eventFortification = "eventFortification"
+
+
+Quest_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
+    0: NiceQuestGroupType.none,
+    1: NiceQuestGroupType.eventQuest,
+    2: NiceQuestGroupType.questRelease,
+    3: NiceQuestGroupType.eventPointQuest,
+    4: NiceQuestGroupType.eventPointGroupQuest,
+    5: NiceQuestGroupType.eventRaceQuest,
+    6: NiceQuestGroupType.eventRaceGroupQuest,
+    7: NiceQuestGroupType.missionGroupQuest,
+    8: NiceQuestGroupType.eventTower,
+    9: NiceQuestGroupType.eventTowerFloor,
+    10: NiceQuestGroupType.highlightQuest,
+    11: NiceQuestGroupType.eventDailyPoint,
+    12: NiceQuestGroupType.eventActivityPointGauge,
+    13: NiceQuestGroupType.interlude,
+    14: NiceQuestGroupType.eventBattleLine,
+    15: NiceQuestGroupType.battleGroup,
+    16: NiceQuestGroupType.shareQuestInfo,
+    17: NiceQuestGroupType.alloutBattleQuest,
+    18: NiceQuestGroupType.eventFortification,
+}
+
+
 class StatusRank(IntEnum):
     A = 11
     A_PLUS = 12
@@ -4189,6 +4258,159 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     27: NiceEventType.fortuneCampaign,
     28: NiceEventType.genderSelection,
     21: NiceEventType.comebackCampaign,
+}
+
+
+class EventFlag(IntEnum):
+    TYPE_POINT = 1
+    TYPE_EXCHANGE_SHOP = 2
+    TYPE_BOX_GACHA = 4
+    TYPE_RANKING = 8
+    TYPE_BONUS_SKILL = 16
+    TYPE_MISSION = 32
+    TYPE_RAID = 64
+    TYPE_EVENT_SHOP = 128
+    MATERIAL_ADD_QUEST_GROUP = 256
+    MATERIAL_ADD_EVENT_END = 512
+    SUPER_BOSS = 1024
+    RAID_DEFEAT_COUNT = 2048
+    BP = 4096
+    NO_MATERIAL_BANNER = 8192
+    EVENT_POINT = 16384
+    EVENT_GROUP_POINT = 32768
+    EVENT_VOICE_PLAY = 65536
+    DAILY_MISSION = 131072
+    EVENT_GROUP_RANKING = 262144
+    EVENT_TOWER = 524288
+    EVENT_FATIGUE = 1048576
+    NO_DISP_ARROW = 2097152
+    FORCED_ADJUSTMENT_DIALOG = 4194304
+    SHIFT_HELP_INFO = 8388608
+    CLOSE_PURCHASE_SHOP = 16777216
+    TIME_STATUS_RECORD = 33554432
+    USE_EVENT_SUPPORT_DECK = 67108864
+    EVENT_DAIRY_POINT = 134217728
+    EVENT_ACTIVITY_POINT = 268435456
+    EVENT_ONLY_EQUIP = 536870912
+    MAP_SWITCH_BUTTON_TOP = 1073741824
+    EVENT_REVIVAL = 2147483648
+    EVENT_CONQUEST = 4294967296
+    EVENT_POINT_BY_QP = 8589934592
+    ALL_USERS_BOX_GACHA_COUNT = 17179869184
+    NOT_DISPLAY_BONUS_ON_SUPPORT_SET = 34359738368
+    FRIEND_POINT_BOOST_ITEM = 68719476736
+    EVENT_BOARD_GAME = 137438953472
+    NOT_DISPLAY_DA_VINCI = 274877906944
+    IS_MAIN_INTERLUDE = 549755813888
+    QUEST_COOLTIME = 2199023255552
+    EVENT_PANEL = 4398046511104
+    EVENT_ASSIST = 8796093022208
+    TREASURE_BOX = 17592186044416
+    HIDE_AFTER_PURCHASE = 35184372088832
+    ALLOUT_BATTLE = 70368744177664
+    SPOT_COOLTIME = 140737488355328
+
+
+class NiceEventFlag(StrEnum):
+    """Event Flag Enum"""
+
+    typePoint = "typePoint"
+    typeExchangeShop = "typeExchangeShop"
+    typeBoxGacha = "typeBoxGacha"
+    typeRanking = "typeRanking"
+    typeBonusSkill = "typeBonusSkill"
+    typeMission = "typeMission"
+    typeRaid = "typeRaid"
+    typeEventShop = "typeEventShop"
+    materialAddQuestGroup = "materialAddQuestGroup"
+    materialAddEventEnd = "materialAddEventEnd"
+    superBoss = "superBoss"
+    raidDefeatCount = "raidDefeatCount"
+    bp = "bp"
+    noMaterialBanner = "noMaterialBanner"
+    eventPoint = "eventPoint"
+    eventGroupPoint = "eventGroupPoint"
+    eventVoicePlay = "eventVoicePlay"
+    dailyMission = "dailyMission"
+    eventGroupRanking = "eventGroupRanking"
+    eventTower = "eventTower"
+    eventFatigue = "eventFatigue"
+    noDispArrow = "noDispArrow"
+    forcedAdjustmentDialog = "forcedAdjustmentDialog"
+    shiftHelpInfo = "shiftHelpInfo"
+    closePurchaseShop = "closePurchaseShop"
+    timeStatusRecord = "timeStatusRecord"
+    useEventSupportDeck = "useEventSupportDeck"
+    eventDairyPoint = "eventDairyPoint"
+    eventActivityPoint = "eventActivityPoint"
+    eventOnlyEquip = "eventOnlyEquip"
+    mapSwitchButtonTop = "mapSwitchButtonTop"
+    eventRevival = "eventRevival"
+    eventConquest = "eventConquest"
+    eventPointByQp = "eventPointByQp"
+    allUsersBoxGachaCount = "allUsersBoxGachaCount"
+    notDisplayBonusOnSupportSet = "notDisplayBonusOnSupportSet"
+    friendPointBoostItem = "friendPointBoostItem"
+    eventBoardGame = "eventBoardGame"
+    notDisplayDaVinci = "notDisplayDaVinci"
+    isMainInterlude = "isMainInterlude"
+    questCooltime = "questCooltime"
+    eventPanel = "eventPanel"
+    eventAssist = "eventAssist"
+    treasureBox = "treasureBox"
+    hideAfterPurchase = "hideAfterPurchase"
+    alloutBattle = "alloutBattle"
+    spotCooltime = "spotCooltime"
+
+
+EVENT_FLAG_NAME: dict[int, NiceEventFlag] = {
+    1: NiceEventFlag.typePoint,
+    2: NiceEventFlag.typeExchangeShop,
+    4: NiceEventFlag.typeBoxGacha,
+    8: NiceEventFlag.typeRanking,
+    16: NiceEventFlag.typeBonusSkill,
+    32: NiceEventFlag.typeMission,
+    64: NiceEventFlag.typeRaid,
+    128: NiceEventFlag.typeEventShop,
+    256: NiceEventFlag.materialAddQuestGroup,
+    512: NiceEventFlag.materialAddEventEnd,
+    1024: NiceEventFlag.superBoss,
+    2048: NiceEventFlag.raidDefeatCount,
+    4096: NiceEventFlag.bp,
+    8192: NiceEventFlag.noMaterialBanner,
+    16384: NiceEventFlag.eventPoint,
+    32768: NiceEventFlag.eventGroupPoint,
+    65536: NiceEventFlag.eventVoicePlay,
+    131072: NiceEventFlag.dailyMission,
+    262144: NiceEventFlag.eventGroupRanking,
+    524288: NiceEventFlag.eventTower,
+    1048576: NiceEventFlag.eventFatigue,
+    2097152: NiceEventFlag.noDispArrow,
+    4194304: NiceEventFlag.forcedAdjustmentDialog,
+    8388608: NiceEventFlag.shiftHelpInfo,
+    16777216: NiceEventFlag.closePurchaseShop,
+    33554432: NiceEventFlag.timeStatusRecord,
+    67108864: NiceEventFlag.useEventSupportDeck,
+    134217728: NiceEventFlag.eventDairyPoint,
+    268435456: NiceEventFlag.eventActivityPoint,
+    536870912: NiceEventFlag.eventOnlyEquip,
+    1073741824: NiceEventFlag.mapSwitchButtonTop,
+    2147483648: NiceEventFlag.eventRevival,
+    4294967296: NiceEventFlag.eventConquest,
+    8589934592: NiceEventFlag.eventPointByQp,
+    17179869184: NiceEventFlag.allUsersBoxGachaCount,
+    34359738368: NiceEventFlag.notDisplayBonusOnSupportSet,
+    68719476736: NiceEventFlag.friendPointBoostItem,
+    137438953472: NiceEventFlag.eventBoardGame,
+    274877906944: NiceEventFlag.notDisplayDaVinci,
+    549755813888: NiceEventFlag.isMainInterlude,
+    2199023255552: NiceEventFlag.questCooltime,
+    4398046511104: NiceEventFlag.eventPanel,
+    8796093022208: NiceEventFlag.eventAssist,
+    17592186044416: NiceEventFlag.treasureBox,
+    35184372088832: NiceEventFlag.hideAfterPurchase,
+    70368744177664: NiceEventFlag.alloutBattle,
+    140737488355328: NiceEventFlag.spotCooltime,
 }
 
 

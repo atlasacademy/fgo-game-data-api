@@ -1359,6 +1359,24 @@ mstEventAdd = Table(
     Column("endedAt", Integer),
 )
 
+mstEventDetail = Table(
+    "mstEventDetail",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("flag", Integer),
+    Column("pointImageId", Integer),
+    Column("rewardButtonImageId", Integer),
+    Column("eventGaugeType", Integer),
+    Column("condQuestId", Integer),
+    Column("condQuestPhase", Integer),
+    Column("condMessage", String),
+    Column("shopCondQuestId", Integer),
+    Column("shopCondQuestPhase", Integer),
+    Column("shopCondMessage", String),
+    Column("entryCondMessage", String),
+    Column("tutorialImageIds", ARRAY(String)),
+    Column("script", JSONB),
+)
 
 mstEventReward = Table(
     "mstEventReward",
@@ -2934,6 +2952,7 @@ TABLES_TO_BE_LOADED = [
     [mstEnemyMaster, mstEnemyMasterBattle],
     [mstBattleMasterImage],
     [mstEventAdd],
+    [mstEventDetail],
     [
         mstEventMission,
         mstEventMissionCondition,

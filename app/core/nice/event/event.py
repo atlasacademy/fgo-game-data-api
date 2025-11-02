@@ -6,6 +6,7 @@ from ....config import Settings
 from ....schemas.common import Language, Region
 from ....schemas.gameenums import (
     COND_TYPE_NAME,
+    EVENT_FLAG_NAME,
     EVENT_OVERWRITE_TYPE_NAME,
     EVENT_TYPE_NAME,
     EventOverwriteType,
@@ -17,13 +18,14 @@ from ....schemas.nice import (
     NiceEvent,
     NiceEventAdd,
     NiceEventCooltime,
+    NiceEventDetail,
     NiceSkill,
     NiceVoiceCond,
     NiceVoiceGroup,
 )
-from ....schemas.raw import MstEventAdd
+from ....schemas.raw import MstEventAdd, MstEventDetail
 from ... import raw
-from ...utils import fmt_url, get_translation
+from ...utils import fmt_url, get_flags, get_translation
 from ..bgm import get_nice_bgm_entity_from_raw
 from ..gift import GiftData, get_gift_map
 from ..item import get_nice_item_from_raw
@@ -94,6 +96,20 @@ def get_nice_event_add(region: Region, mst_event_add: MstEventAdd) -> NiceEventA
         targetId=mst_event_add.targetId,
         startedAt=mst_event_add.startedAt,
         endedAt=mst_event_add.endedAt,
+    )
+
+
+def get_nice_event_detail(detail: MstEventDetail) -> NiceEventDetail:
+    return NiceEventDetail(
+        flags=get_flags(detail.flag, EVENT_FLAG_NAME),
+        pointImageId=detail.pointImageId,
+        condQuestId=detail.condQuestId,
+        condQuestPhase=detail.condQuestPhase,
+        condMessage=detail.condMessage,
+        shopCondQuestId=detail.shopCondQuestId,
+        shopCondQuestPhase=detail.shopCondQuestPhase,
+        shopCondMessage=detail.shopCondMessage,
+        entryCondMessage=detail.entryCondMessage,
     )
 
 
@@ -232,6 +248,11 @@ async def get_nice_event(
         eventAdds=[
             get_nice_event_add(region, event_add) for event_add in raw_event.mstEventAdd
         ],
+        eventDetail=(
+            get_nice_event_detail(raw_event.mstEventDetail)
+            if raw_event.mstEventDetail
+            else None
+        ),
         svts=[
             get_nice_event_svt(event_svt, raw_event.mstCommonRelease)
             for event_svt in raw_event.mstEventSvt

@@ -99,6 +99,7 @@ from ..schemas.raw import (
     MstEventCampaign,
     MstEventCommandAssist,
     MstEventCooltimeReward,
+    MstEventDetail,
     MstEventDigging,
     MstEventDiggingBlock,
     MstEventDiggingReward,
@@ -1302,6 +1303,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     return EventEntity(
         mstEvent=mstEvent,
         mstEventAdd=await fetch.get_all(conn, MstEventAdd, event_id),
+        mstEventDetail=await fetch.get_one(conn, MstEventDetail, event_id),
         mstWar=await event.get_event_wars(conn, event_id),
         mstEventRewardScene=reward_scenes,
         mstEventVoicePlay=voice_plays,

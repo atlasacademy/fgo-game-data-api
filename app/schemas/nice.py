@@ -56,6 +56,7 @@ from .gameenums import (
     NiceCondType,
     NiceConsumeType,
     NiceEventCombineCalc,
+    NiceEventFlag,
     NiceEventFortificationSvtType,
     NiceEventOverwriteType,
     NiceEventRewardSceneFlag,
@@ -2386,6 +2387,22 @@ class NiceEventAdd(BaseModelORJson):
     endedAt: int
 
 
+class NiceEventDetail(BaseModelORJson):
+    flags: list[NiceEventFlag]
+    pointImageId: int
+    # rewardButtonImageId: int
+    # eventGaugeType: int
+    condQuestId: int
+    condQuestPhase: int
+    condMessage: str
+    shopCondQuestId: int
+    shopCondQuestPhase: int
+    shopCondMessage: str
+    entryCondMessage: str
+    # tutorialImageIds: list[str]
+    # script: dict[str, Any]
+
+
 class NiceEventSvtScript(BaseModelORJson):
     addGetMessage: str | None = None
     addMessageReleaseConditions: list[NiceCommonRelease] | None = None
@@ -2457,6 +2474,7 @@ class NiceEvent(BaseModelORJson):
     materialOpenedAt: int
     warIds: list[int]
     eventAdds: list[NiceEventAdd]
+    eventDetail: NiceEventDetail | None = None
     svts: list[NiceEventSvt]
     shop: list[NiceShop]
     rewards: list[NiceEventReward]

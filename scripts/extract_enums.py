@@ -386,6 +386,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Quest_FLAG_NAME",
     ),
     (
+        "QuestGroupType.Type",
+        "QuestGroupType",
+        "NiceQuestGroupType",
+        "Quest Group Type",
+        "Quest_GROUP_TYPE_NAME",
+    ),
+    (
         "StatusRank.Kind",
         "StatusRank",
         "NiceStatusRank",
@@ -398,6 +405,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceEventType",
         "Event Type Enum",
         "EVENT_TYPE_NAME",
+    ),
+    (
+        "EventDetailEntity.Flag",
+        "EventFlag",
+        "NiceEventFlag",
+        "Event Flag Enum",
+        "EVENT_FLAG_NAME",
     ),
     (
         "EventAddEntity.OverwriteType",
