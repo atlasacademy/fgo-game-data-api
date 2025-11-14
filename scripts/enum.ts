@@ -173,6 +173,8 @@ export enum NiceFuncType {
     CHANGE_ENEMY_STATUS_UI_TYPE = "changeEnemyStatusUiType",
     SWAP_FIELD_POSITION = "swapFieldPosition",
     SET_DISPLAY_DIRECT_BATTLE_MESSAGE_IN_FSM = "setDisplayDirectBattleMessageInFsm",
+    ADD_STATE_TO_FIELD = "addStateToField",
+    ADD_STATE_SHORT_TO_FIELD = "addStateShortToField",
 }
 
 export enum NiceFuncTargetType {
@@ -441,6 +443,8 @@ export enum NiceBuffType {
     ADD_BASE_HP = "addBaseHp",
     SUBSTITUTE_INSTANT_DEATH = "substituteInstantDeath",
     SUBSTITUTE_ADD_STATE = "substituteAddState",
+    OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = "otherTreasureDevicePreBeforeFunction",
+    ATTACK_PHASE_START_FUNCTION = "attackPhaseStartFunction",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -619,6 +623,8 @@ export enum NiceBuffAction {
     BASE_HP_VALUE = "baseHpValue",
     SUBSTITUTE_INSTANT_DEATH = "substituteInstantDeath",
     SUBSTITUTE_ADD_STATE = "substituteAddState",
+    FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = "functionOtherTreasureDevicePreBefore",
+    FUNCTION_ATTACK_PHASE_START = "functionAttackPhaseStart",
 }
 
 export enum NiceBuffLimit {
@@ -887,6 +893,7 @@ export enum NiceDataValsType {
     SubstituteEffectList = "substituteEffectList",
     ResistEffectList = "resistEffectList",
     EnablePassiveBuffConvert = "enablePassiveBuffConvert",
+    FieldBuffApplyTarget = "fieldBuffApplyTarget",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -2597,4 +2604,11 @@ export enum NiceUserSvtStatusFlag {
     STATUS_MAX = "statusMax",
     UseLevelExceedItemHeroine = "useLevelExceedItemHeroine",
     UseFriendshipExceedItemHeroine = "useFriendshipExceedItemHeroine",
+}
+
+export enum NiceFieldBuffApplyTargetType {
+    None_ = "none",
+    Player = "player",
+    Enemy = "enemy",
+    All = "all",
 }

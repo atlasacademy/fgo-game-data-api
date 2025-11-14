@@ -30,6 +30,9 @@ RAW_NAME_OVERRIDE = {
     "BattleBranchSkillCondBranchType": {
         "None": "None_",
     },
+    "FieldBuffApplyTargetType": {
+        "None": "None_",
+    },
 }
 
 
@@ -822,6 +825,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceUserSvtStatusFlag",
         "User Servant Status Flag",
         "USER_SVT_STATUS_FLAG",
+    ),
+    (
+        "BattleBuffData.BuffData.FieldBuffApplyTargetType",
+        "FieldBuffApplyTargetType",
+        "NiceFieldBuffApplyTargetType",
+        "Field Buff Apply Target Type",
+        "FIELD_BUFF_APPLY_TARGET_TYPE",
     ),
 ]
 

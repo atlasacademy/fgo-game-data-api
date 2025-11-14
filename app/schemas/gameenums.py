@@ -290,6 +290,8 @@ class FuncType(IntEnum):
     CHANGE_ENEMY_STATUS_UI_TYPE = 157
     SWAP_FIELD_POSITION = 158
     SET_DISPLAY_DIRECT_BATTLE_MESSAGE_IN_FSM = 159
+    ADD_STATE_TO_FIELD = 160
+    ADD_STATE_SHORT_TO_FIELD = 161
 
 
 class NiceFuncType(StrEnum):
@@ -418,6 +420,8 @@ class NiceFuncType(StrEnum):
     changeEnemyStatusUiType = "changeEnemyStatusUiType"
     swapFieldPosition = "swapFieldPosition"
     setDisplayDirectBattleMessageInFsm = "setDisplayDirectBattleMessageInFsm"
+    addStateToField = "addStateToField"
+    addStateShortToField = "addStateShortToField"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -544,6 +548,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     157: NiceFuncType.changeEnemyStatusUiType,
     158: NiceFuncType.swapFieldPosition,
     159: NiceFuncType.setDisplayDirectBattleMessageInFsm,
+    160: NiceFuncType.addStateToField,
+    161: NiceFuncType.addStateShortToField,
 }
 
 
@@ -907,6 +913,8 @@ class BuffType(IntEnum):
     ADD_BASE_HP = 237
     SUBSTITUTE_INSTANT_DEATH = 238
     SUBSTITUTE_ADD_STATE = 239
+    OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = 240
+    ATTACK_PHASE_START_FUNCTION = 241
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1135,6 +1143,8 @@ class NiceBuffType(StrEnum):
     addBaseHp = "addBaseHp"
     substituteInstantDeath = "substituteInstantDeath"
     substituteAddState = "substituteAddState"
+    otherTreasureDevicePreBeforeFunction = "otherTreasureDevicePreBeforeFunction"
+    attackPhaseStartFunction = "attackPhaseStartFunction"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1364,6 +1374,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     237: NiceBuffType.addBaseHp,
     238: NiceBuffType.substituteInstantDeath,
     239: NiceBuffType.substituteAddState,
+    240: NiceBuffType.otherTreasureDevicePreBeforeFunction,
+    241: NiceBuffType.attackPhaseStartFunction,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1543,6 +1555,8 @@ class BuffAction(IntEnum):
     BASE_HP_VALUE = 163
     SUBSTITUTE_INSTANT_DEATH = 164
     SUBSTITUTE_ADD_STATE = 165
+    FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = 166
+    FUNCTION_ATTACK_PHASE_START = 167
 
 
 class NiceBuffAction(StrEnum):
@@ -1714,6 +1728,8 @@ class NiceBuffAction(StrEnum):
     baseHpValue = "baseHpValue"
     substituteInstantDeath = "substituteInstantDeath"
     substituteAddState = "substituteAddState"
+    functionOtherTreasureDevicePreBefore = "functionOtherTreasureDevicePreBefore"
+    functionAttackPhaseStart = "functionAttackPhaseStart"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1883,6 +1899,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     163: NiceBuffAction.baseHpValue,
     164: NiceBuffAction.substituteInstantDeath,
     165: NiceBuffAction.substituteAddState,
+    166: NiceBuffAction.functionOtherTreasureDevicePreBefore,
+    167: NiceBuffAction.functionAttackPhaseStart,
 }
 
 
@@ -2169,6 +2187,7 @@ class DataValsType(IntEnum):
     SubstituteEffectList = 255
     ResistEffectList = 256
     EnablePassiveBuffConvert = 257
+    FieldBuffApplyTarget = 258
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -7551,4 +7570,28 @@ USER_SVT_STATUS_FLAG: dict[int, NiceUserSvtStatusFlag] = {
     128: NiceUserSvtStatusFlag.statusMax,
     256: NiceUserSvtStatusFlag.useLevelExceedItemHeroine,
     512: NiceUserSvtStatusFlag.useFriendshipExceedItemHeroine,
+}
+
+
+class FieldBuffApplyTargetType(IntEnum):
+    None_ = 0
+    Player = 1
+    Enemy = 2
+    All = 3
+
+
+class NiceFieldBuffApplyTargetType(StrEnum):
+    """Field Buff Apply Target Type"""
+
+    none = "none"
+    player = "player"
+    enemy = "enemy"
+    all = "all"
+
+
+FIELD_BUFF_APPLY_TARGET_TYPE: dict[int, NiceFieldBuffApplyTargetType] = {
+    0: NiceFieldBuffApplyTargetType.none,
+    1: NiceFieldBuffApplyTargetType.player,
+    2: NiceFieldBuffApplyTargetType.enemy,
+    3: NiceFieldBuffApplyTargetType.all,
 }
