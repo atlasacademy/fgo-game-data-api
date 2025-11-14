@@ -2075,5 +2075,29 @@
     "isRec": true,
     "plusAction": 0,
     "isChangeMaxHp": false
+  },
+  "FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE": {
+    "limit": 0,
+    "plusTypes": [
+      240
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "FUNCTION_ATTACK_PHASE_START": {
+    "limit": 0,
+    "plusTypes": [
+      241
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
   }
 }
