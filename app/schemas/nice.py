@@ -674,6 +674,7 @@ class BaseVals(BaseModel):
     SubstituteEffectList: list[int] | None = None
     ResistEffectList: list[int] | None = None
     EnablePassiveBuffConvert: int | None = None
+    FieldBuffApplyTarget: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
