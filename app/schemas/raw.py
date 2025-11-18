@@ -1541,6 +1541,7 @@ class MstEventTradeGoods(BaseModelORJson):
     voiceData: dict[str, Any]
     id: int
     eventId: int
+    boardType: int | None = None
     name: str
     goodsIconId: int
     giftId: int

@@ -2175,6 +2175,11 @@ export enum NiceEventFortificationSvtType {
     NONE = "none",
 }
 
+export enum NiceEventTradeGoodsBoardType {
+    TRADE = "trade",
+    CRAFT = "craft",
+}
+
 export enum NiceSvtClassSupportGroupType {
     ALL = "all",
     SABER = "saber",

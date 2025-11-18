@@ -574,6 +574,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "EVENT_FORTIFICATION_SVT_TYPE_NAME",
     ),
     (
+        "EventTradeGoodsEntity.TradeGoodsBoardType",
+        "EventTradeGoodsBoardType",
+        "NiceEventTradeGoodsBoardType",
+        "Event Trade Goods Board Type",
+        "EVENT_TRADE_GOODS_BOARD_TYPE",
+    ),
+    (
         "ServantClassEntity.SupportGroupType",
         "ServantClassSupportGroupType",
         "NiceSvtClassSupportGroupType",

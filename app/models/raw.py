@@ -1806,6 +1806,7 @@ mstEventTradeGoods = Table(
     Column("voiceData", JSONB),
     Column("id", Integer, primary_key=True),
     Column("eventId", Integer, index=True),
+    Column("boardType", Integer),
     Column("name", String),
     Column("goodsIconId", Integer),
     Column("giftId", Integer),

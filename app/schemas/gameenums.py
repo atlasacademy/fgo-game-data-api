@@ -6162,6 +6162,24 @@ EVENT_FORTIFICATION_SVT_TYPE_NAME: dict[int, NiceEventFortificationSvtType] = {
 }
 
 
+class EventTradeGoodsBoardType(IntEnum):
+    TRADE = 0
+    CRAFT = 1
+
+
+class NiceEventTradeGoodsBoardType(StrEnum):
+    """Event Trade Goods Board Type"""
+
+    trade = "trade"
+    craft = "craft"
+
+
+EVENT_TRADE_GOODS_BOARD_TYPE: dict[int, NiceEventTradeGoodsBoardType] = {
+    0: NiceEventTradeGoodsBoardType.trade,
+    1: NiceEventTradeGoodsBoardType.craft,
+}
+
+
 class ServantClassSupportGroupType(IntEnum):
     ALL = 0
     SABER = 1

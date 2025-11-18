@@ -1,7 +1,11 @@
 from ....config import Settings
 from ....schemas.common import Region
 from ....schemas.enums import NiceItemBGType
-from ....schemas.gameenums import NiceItemType
+from ....schemas.gameenums import (
+    EVENT_TRADE_GOODS_BOARD_TYPE,
+    NiceEventTradeGoodsBoardType,
+    NiceItemType,
+)
 from ....schemas.nice import (
     AssetURL,
     NiceEventTradeGoods,
@@ -65,6 +69,9 @@ def get_nice_trade_goods(
 
     return NiceEventTradeGoods(
         id=trade.id,
+        boardType=EVENT_TRADE_GOODS_BOARD_TYPE[trade.boardType]
+        if trade.boardType is not None
+        else NiceEventTradeGoodsBoardType.trade,
         name=trade.name,
         goodsIcon=fmt_url(
             AssetURL.eventUi,
