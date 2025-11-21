@@ -3037,7 +3037,6 @@ TABLES_TO_BE_LOADED = [
     [mstEventFortification, mstEventFortificationDetail, mstEventFortificationSvt],
     [mstEventTradeGoods, mstEventTradePickup],
     [mstEventSvt],
-    [mstEventDetail],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

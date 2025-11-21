@@ -731,6 +731,7 @@ class MstItem(BaseModelORJson):
     eventId: int = 0  # 0,
     eventGroupId: int = 0  # 0,
     isPresent: bool = False
+    maxNum: int = 0
     id: int  # 6505,
     name: str  # "Void's Dust",
     detail: str  # "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",

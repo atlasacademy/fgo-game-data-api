@@ -228,6 +228,12 @@ class NiceItemSelect(BaseModelORJson):
     requireNum: int
     detail: str
 
+class NiceItemScript(BaseModelORJson):
+    eventId: int | None = None
+    eventGroupId: int | None = None
+    maxNum: int | None = None
+    validClassIds: list[int] | None = None
+
 
 class NiceItem(BaseModelORJson):
     id: int
@@ -247,6 +253,7 @@ class NiceItem(BaseModelORJson):
     startedAt: int
     endedAt: int
     itemSelects: list[NiceItemSelect]
+    script: NiceItemScript
 
 
 class NiceItemAmount(BaseModel):

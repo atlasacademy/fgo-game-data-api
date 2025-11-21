@@ -11,6 +11,7 @@ from ...schemas.nice import (
     AssetURL,
     NiceItem,
     NiceItemAmount,
+    NiceItemScript,
     NiceItemSelect,
     NiceLvlUpMaterial,
 )
@@ -81,6 +82,7 @@ def get_nice_item_from_raw(
             get_nice_item_select_from_raw(region, item_select, gift_data)
             for item_select in raw_item.mstItemSelect
         ],
+        script=NiceItemScript.model_validate(raw_item.script),
     )
 
 
