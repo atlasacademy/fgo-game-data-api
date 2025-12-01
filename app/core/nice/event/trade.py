@@ -11,6 +11,7 @@ from ....schemas.nice import (
     NiceEventTradeGoods,
     NiceEventTradePickup,
     NiceItem,
+    NiceItemScript,
 )
 from ....schemas.raw import (
     MstCommonConsume,
@@ -65,6 +66,7 @@ def get_nice_trade_goods(
         startedAt=0,
         endedAt=0,
         itemSelects=[],
+        script=NiceItemScript(),
     )
 
     return NiceEventTradeGoods(
