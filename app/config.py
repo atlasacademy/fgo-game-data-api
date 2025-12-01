@@ -1,9 +1,9 @@
+import asyncio
 import logging
 from logging.handlers import HTTPHandler
 from pathlib import Path
 from typing import Any, Optional, Type
 
-import anyio
 import httpx
 from git import Repo
 from pydantic import (
@@ -45,9 +45,14 @@ class CustomHttpHandler(HTTPHandler):
     def emit(self, record):
         payload = self.mapLogRecord(record)
         try:
-            anyio.from_thread.run(self._send, payload)
+            loop = asyncio.get_running_loop()
         except RuntimeError:
-            anyio.run(self._send, payload)
+            loop = None
+
+        if loop:
+            loop.create_task(self._send(payload))
+        else:
+            asyncio.run(self._send(payload))
 
 
 uvicorn_logger = logging.getLogger("uvicorn.access")
