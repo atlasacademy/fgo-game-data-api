@@ -220,6 +220,7 @@ mstSvtPassiveSkill = Table(
     Column("commonReleaseId", Integer),
     Column("startedAt", Integer),
     Column("endedAt", Integer),
+    Column("script", JSONB),
 )
 
 
@@ -1023,6 +1024,7 @@ mstItem = Table(
     Column("eventId", Integer, default=0),
     Column("eventGroupId", Integer, default=0),
     Column("isPresent", Boolean),
+    Column("maxNum", Integer),
     Column("id", Integer, primary_key=True),
     Column("name", String),
     Column("detail", String),
@@ -1991,6 +1993,7 @@ mstEventSvt = Table(
     "mstEventSvt",
     metadata,
     Column("script", JSONB),
+    # Column("svtStatusTypeOn", ARRAY(?)),
     Column("eventId", Integer),
     Column("svtId", Integer),
     Column("type", Integer),
@@ -2511,10 +2514,12 @@ mstQuestRestriction = Table(
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
     Column("restrictionId", Integer),
+    Column("priority", Integer),
     Column("frequencyType", Integer),
     Column("dialogMessage", String),
     Column("noticeMessage", String),
     Column("title", String),
+    Column("script", JSONB),
 )
 
 mstQuestRestrictionInfo = Table(

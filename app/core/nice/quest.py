@@ -167,6 +167,7 @@ def get_nice_quest_restriction(
             targetVals=restriction.targetVals,
             targetVals2=restriction.targetVals2 if restriction.targetVals2 else [],
         ),
+        priority=quest_restriction.priority,
         frequencyType=FREQUENCY_TYPE_NAME[quest_restriction.frequencyType],
         dialogMessage=quest_restriction.dialogMessage,
         noticeMessage=quest_restriction.noticeMessage,

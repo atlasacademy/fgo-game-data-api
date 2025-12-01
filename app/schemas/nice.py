@@ -743,6 +743,11 @@ class NiceFunction(NiceBaseFunction):
     )
 
 
+class SvtPassiveSkillScript(BaseModel):
+    condIndividuality: list[int] | None = None
+    otherValidEventId: int | None = None
+
+
 class ExtraPassive(BaseModel):
     num: int
     priority: int
@@ -756,6 +761,7 @@ class ExtraPassive(BaseModel):
     releaseConditions: list[NiceCommonRelease] = []
     startedAt: int
     endedAt: int
+    script: SvtPassiveSkillScript
 
 
 class NiceSelectAddInfoBtnCond(BaseModel):
@@ -3023,10 +3029,12 @@ class NiceRestriction(BaseModelORJson):
 
 class NiceQuestPhaseRestriction(BaseModelORJson):
     restriction: NiceRestriction
+    priority: int
     frequencyType: NiceFrequencyType
     dialogMessage: str
     noticeMessage: str
     title: str
+    # script:
 
 
 class NiceQuestPhase(NiceQuest):

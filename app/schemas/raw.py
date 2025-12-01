@@ -161,6 +161,7 @@ class MstSvtPassiveSkill(BaseModelORJson):
     commonReleaseId: Optional[int] = None
     startedAt: int
     endedAt: int
+    script: dict[str, Any] | None = None
 
 
 class SkillLvScript(BaseModelORJson):
@@ -1656,6 +1657,7 @@ class MstEventDetail(BaseModelORJson):
 
 class MstEventSvt(BaseModelORJson):
     script: dict[str, Any]
+    # svtStatusTypeOn: list | None = None
     eventId: int
     svtId: int
     type: int
@@ -2102,10 +2104,12 @@ class MstQuestRestriction(BaseModelORJson):
     questId: int
     phase: int
     restrictionId: int
+    priority: int = 0
     frequencyType: int
     dialogMessage: str
     noticeMessage: str
     title: str
+    script: dict[str, Any] | None = None
 
 
 class MstQuestRestrictionInfo(BaseModelORJson):

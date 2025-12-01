@@ -2099,5 +2099,17 @@
     "isRec": true,
     "plusAction": 0,
     "isChangeMaxHp": false
+  },
+  "FUNCTION_TREASURE_DEVICE_POST_AFTER": {
+    "limit": 0,
+    "plusTypes": [
+      242
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
   }
 }

@@ -23,6 +23,7 @@ from ...schemas.nice import (
     NiceSvtSkillRelease,
     SelectTreasureDeviceInfo,
     SelectTreasureDeviceInfoTreasureDevice,
+    SvtPassiveSkillScript,
 )
 from ...schemas.raw import (
     MstCommonRelease,
@@ -84,6 +85,7 @@ def get_extra_passive(
         ],
         startedAt=svt_passive.startedAt,
         endedAt=svt_passive.endedAt,
+        script=SvtPassiveSkillScript.model_validate(svt_passive.script or {}),
     )
 
 
