@@ -33,6 +33,9 @@ RAW_NAME_OVERRIDE = {
     "FieldBuffApplyTargetType": {
         "None": "None_",
     },
+    "FuncTriggerActorTargetFlag": {
+        "None": "None_",
+    }
 }
 
 
@@ -803,6 +806,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceBattleBranchSkillCondBranchType",
         "Battle Branch Skill Cond Branch Type",
         "BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME",
+    ),
+    (
+        "Target.FunctionTriggerActorTargetFlag",
+        "FuncTriggerActorTargetFlag",
+        "NiceFuncTriggerActorTargetFlag",
+        "Function Trigger Actor Target Flag",
+        "FUNC_TRIGGER_ACTOR_TARGET_FLAG_NAME",
     ),
     # Below is only for tracking now.
     (

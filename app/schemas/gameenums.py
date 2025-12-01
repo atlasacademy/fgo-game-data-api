@@ -292,6 +292,8 @@ class FuncType(IntEnum):
     SET_DISPLAY_DIRECT_BATTLE_MESSAGE_IN_FSM = 159
     ADD_STATE_TO_FIELD = 160
     ADD_STATE_SHORT_TO_FIELD = 161
+    GAIN_NP_FROM_OTHER_USED_NP_VALUE = 162
+    HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = 163
 
 
 class NiceFuncType(StrEnum):
@@ -422,6 +424,8 @@ class NiceFuncType(StrEnum):
     setDisplayDirectBattleMessageInFsm = "setDisplayDirectBattleMessageInFsm"
     addStateToField = "addStateToField"
     addStateShortToField = "addStateShortToField"
+    gainNpFromOtherUsedNpValue = "gainNpFromOtherUsedNpValue"
+    hastenNpturnFromOtherUsedNpturn = "hastenNpturnFromOtherUsedNpturn"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -550,6 +554,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     159: NiceFuncType.setDisplayDirectBattleMessageInFsm,
     160: NiceFuncType.addStateToField,
     161: NiceFuncType.addStateShortToField,
+    162: NiceFuncType.gainNpFromOtherUsedNpValue,
+    163: NiceFuncType.hastenNpturnFromOtherUsedNpturn,
 }
 
 
@@ -915,6 +921,7 @@ class BuffType(IntEnum):
     SUBSTITUTE_ADD_STATE = 239
     OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = 240
     ATTACK_PHASE_START_FUNCTION = 241
+    TREASURE_DEVICE_POST_AFTER_FUNCTION = 242
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1145,6 +1152,7 @@ class NiceBuffType(StrEnum):
     substituteAddState = "substituteAddState"
     otherTreasureDevicePreBeforeFunction = "otherTreasureDevicePreBeforeFunction"
     attackPhaseStartFunction = "attackPhaseStartFunction"
+    treasureDevicePostAfterFunction = "treasureDevicePostAfterFunction"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1376,6 +1384,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     239: NiceBuffType.substituteAddState,
     240: NiceBuffType.otherTreasureDevicePreBeforeFunction,
     241: NiceBuffType.attackPhaseStartFunction,
+    242: NiceBuffType.treasureDevicePostAfterFunction,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1557,6 +1566,7 @@ class BuffAction(IntEnum):
     SUBSTITUTE_ADD_STATE = 165
     FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = 166
     FUNCTION_ATTACK_PHASE_START = 167
+    FUNCTION_TREASURE_DEVICE_POST_AFTER = 168
 
 
 class NiceBuffAction(StrEnum):
@@ -1730,6 +1740,7 @@ class NiceBuffAction(StrEnum):
     substituteAddState = "substituteAddState"
     functionOtherTreasureDevicePreBefore = "functionOtherTreasureDevicePreBefore"
     functionAttackPhaseStart = "functionAttackPhaseStart"
+    functionTreasureDevicePostAfter = "functionTreasureDevicePostAfter"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1901,6 +1912,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     165: NiceBuffAction.substituteAddState,
     166: NiceBuffAction.functionOtherTreasureDevicePreBefore,
     167: NiceBuffAction.functionAttackPhaseStart,
+    168: NiceBuffAction.functionTreasureDevicePostAfter,
 }
 
 
@@ -2188,6 +2200,11 @@ class DataValsType(IntEnum):
     ResistEffectList = 256
     EnablePassiveBuffConvert = 257
     FieldBuffApplyTarget = 258
+    MaxGainNp = 259
+    MaxHastenNpTurn = 260
+    FunctionTriggerActorTargetFlag = 261
+    IsTurnProgressWithoutGrantActor = 262
+    IsFuncCheckFieldIndividuality = 263
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -6249,6 +6266,7 @@ class RestrictionType(IntEnum):
     MY_GRAND_SVT = 21
     FIXED_MY_GRAND_SVT = 22
     MY_GRAND_SVT_POSITION_MAIN = 23
+    MY_GRAND_SVT_OR_SUPPORT_GRAND_SVT = 24
     FIXED_COSTUME = 101
 
 
@@ -6275,6 +6293,7 @@ class NiceRestrictionType(StrEnum):
     myGrandSvt = "myGrandSvt"
     fixedMyGrandSvt = "fixedMyGrandSvt"
     myGrandSvtPositionMain = "myGrandSvtPositionMain"
+    myGrandSvtOrSupportGrandSvt = "myGrandSvtOrSupportGrandSvt"
     fixedCostume = "fixedCostume"
 
 
@@ -6299,6 +6318,7 @@ RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
     21: NiceRestrictionType.myGrandSvt,
     22: NiceRestrictionType.fixedMyGrandSvt,
     23: NiceRestrictionType.myGrandSvtPositionMain,
+    24: NiceRestrictionType.myGrandSvtOrSupportGrandSvt,
     101: NiceRestrictionType.fixedCostume,
 }
 
@@ -7255,6 +7275,36 @@ BATTLE_BRANCH_SKILL_COND_BRANCH_TYPE_NAME: dict[
 }
 
 
+class FuncTriggerActorTargetFlag(IntEnum):
+    None_ = 0
+    Self = 1
+    PartyOther = 2
+    Opponents = 4
+    PartyOtherAll = 8
+    OpponentsAll = 16
+
+
+class NiceFuncTriggerActorTargetFlag(StrEnum):
+    """Function Trigger Actor Target Flag"""
+
+    none = "none"
+    self = "self"
+    partyOther = "partyOther"
+    opponents = "opponents"
+    partyOtherAll = "partyOtherAll"
+    opponentsAll = "opponentsAll"
+
+
+FUNC_TRIGGER_ACTOR_TARGET_FLAG_NAME: dict[int, NiceFuncTriggerActorTargetFlag] = {
+    0: NiceFuncTriggerActorTargetFlag.none,
+    1: NiceFuncTriggerActorTargetFlag.self,
+    2: NiceFuncTriggerActorTargetFlag.partyOther,
+    4: NiceFuncTriggerActorTargetFlag.opponents,
+    8: NiceFuncTriggerActorTargetFlag.partyOtherAll,
+    16: NiceFuncTriggerActorTargetFlag.opponentsAll,
+}
+
+
 class BuffConditionType(IntEnum):
     HP_HIGHER = 0
     HP_LOWER = 1
@@ -7560,6 +7610,9 @@ class UserSvtStatusFlag(IntEnum):
     STATUS_MAX = 128
     UseLevelExceedItemHeroine = 256
     UseFriendshipExceedItemHeroine = 512
+    IsNotSale = 1024
+    IsNotCombineResource = 2048
+    IsNotSendStorage = 4096
 
 
 class NiceUserSvtStatusFlag(StrEnum):
@@ -7575,6 +7628,9 @@ class NiceUserSvtStatusFlag(StrEnum):
     statusMax = "statusMax"
     useLevelExceedItemHeroine = "useLevelExceedItemHeroine"
     useFriendshipExceedItemHeroine = "useFriendshipExceedItemHeroine"
+    isNotSale = "isNotSale"
+    isNotCombineResource = "isNotCombineResource"
+    isNotSendStorage = "isNotSendStorage"
 
 
 USER_SVT_STATUS_FLAG: dict[int, NiceUserSvtStatusFlag] = {
@@ -7588,6 +7644,9 @@ USER_SVT_STATUS_FLAG: dict[int, NiceUserSvtStatusFlag] = {
     128: NiceUserSvtStatusFlag.statusMax,
     256: NiceUserSvtStatusFlag.useLevelExceedItemHeroine,
     512: NiceUserSvtStatusFlag.useFriendshipExceedItemHeroine,
+    1024: NiceUserSvtStatusFlag.isNotSale,
+    2048: NiceUserSvtStatusFlag.isNotCombineResource,
+    4096: NiceUserSvtStatusFlag.isNotSendStorage,
 }
 
 

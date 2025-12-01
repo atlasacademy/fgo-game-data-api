@@ -175,6 +175,8 @@ export enum NiceFuncType {
     SET_DISPLAY_DIRECT_BATTLE_MESSAGE_IN_FSM = "setDisplayDirectBattleMessageInFsm",
     ADD_STATE_TO_FIELD = "addStateToField",
     ADD_STATE_SHORT_TO_FIELD = "addStateShortToField",
+    GAIN_NP_FROM_OTHER_USED_NP_VALUE = "gainNpFromOtherUsedNpValue",
+    HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = "hastenNpturnFromOtherUsedNpturn",
 }
 
 export enum NiceFuncTargetType {
@@ -445,6 +447,7 @@ export enum NiceBuffType {
     SUBSTITUTE_ADD_STATE = "substituteAddState",
     OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = "otherTreasureDevicePreBeforeFunction",
     ATTACK_PHASE_START_FUNCTION = "attackPhaseStartFunction",
+    TREASURE_DEVICE_POST_AFTER_FUNCTION = "treasureDevicePostAfterFunction",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -625,6 +628,7 @@ export enum NiceBuffAction {
     SUBSTITUTE_ADD_STATE = "substituteAddState",
     FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = "functionOtherTreasureDevicePreBefore",
     FUNCTION_ATTACK_PHASE_START = "functionAttackPhaseStart",
+    FUNCTION_TREASURE_DEVICE_POST_AFTER = "functionTreasureDevicePostAfter",
 }
 
 export enum NiceBuffLimit {
@@ -894,6 +898,11 @@ export enum NiceDataValsType {
     ResistEffectList = "resistEffectList",
     EnablePassiveBuffConvert = "enablePassiveBuffConvert",
     FieldBuffApplyTarget = "fieldBuffApplyTarget",
+    MaxGainNp = "maxGainNp",
+    MaxHastenNpTurn = "maxHastenNpTurn",
+    FunctionTriggerActorTargetFlag = "functionTriggerActorTargetFlag",
+    IsTurnProgressWithoutGrantActor = "isTurnProgressWithoutGrantActor",
+    IsFuncCheckFieldIndividuality = "isFuncCheckFieldIndividuality",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -2216,6 +2225,7 @@ export enum NiceRestrictionType {
     MY_GRAND_SVT = "myGrandSvt",
     FIXED_MY_GRAND_SVT = "fixedMyGrandSvt",
     MY_GRAND_SVT_POSITION_MAIN = "myGrandSvtPositionMain",
+    MY_GRAND_SVT_OR_SUPPORT_GRAND_SVT = "myGrandSvtOrSupportGrandSvt",
     FIXED_COSTUME = "fixedCostume",
 }
 
@@ -2503,6 +2513,15 @@ export enum NiceBattleBranchSkillCondBranchType {
     Individuality = "individuality",
 }
 
+export enum NiceFuncTriggerActorTargetFlag {
+    None_ = "none",
+    Self = "self",
+    PartyOther = "partyOther",
+    Opponents = "opponents",
+    PartyOtherAll = "partyOtherAll",
+    OpponentsAll = "opponentsAll",
+}
+
 export enum NiceBuffConditionType {
     HP_HIGHER = "hpHigher",
     HP_LOWER = "hpLower",
@@ -2609,6 +2628,9 @@ export enum NiceUserSvtStatusFlag {
     STATUS_MAX = "statusMax",
     UseLevelExceedItemHeroine = "useLevelExceedItemHeroine",
     UseFriendshipExceedItemHeroine = "useFriendshipExceedItemHeroine",
+    IsNotSale = "isNotSale",
+    IsNotCombineResource = "isNotCombineResource",
+    IsNotSendStorage = "isNotSendStorage",
 }
 
 export enum NiceFieldBuffApplyTargetType {

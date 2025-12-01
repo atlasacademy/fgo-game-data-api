@@ -683,6 +683,12 @@ class BaseVals(BaseModel):
     ResistEffectList: list[int] | None = None
     EnablePassiveBuffConvert: int | None = None
     FieldBuffApplyTarget: int | None = None
+    MaxGainNp: int | None = None
+    MaxHastenNpTurn: int | None = None
+    FunctionTriggerActorTargetFlag: int | None = None
+    IsTurnProgressWithoutGrantActor: int | None = None
+    IsFuncCheckFieldIndividuality: int | None = None
+
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
