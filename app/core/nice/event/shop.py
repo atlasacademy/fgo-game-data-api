@@ -24,6 +24,7 @@ from ....schemas.nice import (
     NiceGift,
     NiceItem,
     NiceItemAmount,
+    NiceItemScript,
     NiceItemSet,
     NiceShop,
     NiceShopRelease,
@@ -119,6 +120,7 @@ def get_nice_shop(
                 startedAt=0,
                 endedAt=0,
                 itemSelects=[],
+                script=NiceItemScript(),
             ),
             amount=0,
         )

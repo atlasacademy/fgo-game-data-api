@@ -228,6 +228,7 @@ class NiceItemSelect(BaseModelORJson):
     requireNum: int
     detail: str
 
+
 class NiceItemScript(BaseModelORJson):
     eventId: int | None = None
     eventGroupId: int | None = None

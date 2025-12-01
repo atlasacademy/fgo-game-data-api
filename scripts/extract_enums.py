@@ -35,7 +35,7 @@ RAW_NAME_OVERRIDE = {
     },
     "FuncTriggerActorTargetFlag": {
         "None": "None_",
-    }
+    },
 }
 
 
