@@ -161,6 +161,8 @@ async def parse_dataVals(
                     FuncType.ADD_STATE,
                     FuncType.ADD_STATE_SHORT,
                     FuncType.ADD_FIELD_CHANGE_TO_FIELD,
+                    FuncType.ADD_STATE_TO_FIELD,
+                    FuncType.ADD_STATE_SHORT_TO_FIELD,
                 }:
                     if i == 0:
                         text = "Rate"
