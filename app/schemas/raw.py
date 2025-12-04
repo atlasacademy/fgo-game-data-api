@@ -2104,7 +2104,7 @@ class MstQuestRestriction(BaseModelORJson):
     questId: int
     phase: int
     restrictionId: int
-    priority: int = 0
+    priority: int | None = None
     frequencyType: int
     dialogMessage: str
     noticeMessage: str
