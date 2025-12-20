@@ -986,7 +986,7 @@
     "isChangeMaxHp": false
   },
   "GUTS_HP": {
-    "limit": 0,
+    "limit": 3,
     "plusTypes": [
       122
     ],
@@ -2104,6 +2104,66 @@
     "limit": 0,
     "plusTypes": [
       242
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "ACTION_169": {
+    "limit": 0,
+    "plusTypes": [
+      243
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "ACTION_170": {
+    "limit": 0,
+    "plusTypes": [
+      244
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "ACTION_171": {
+    "limit": 0,
+    "plusTypes": [
+      245
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "LIMIT_MAX_NP": {
+    "limit": 0,
+    "plusTypes": [
+      246
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "LIMIT_MIN_NP": {
+    "limit": 0,
+    "plusTypes": [
+      247
     ],
     "minusTypes": [],
     "baseParam": 1000,

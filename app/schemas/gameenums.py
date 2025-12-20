@@ -294,6 +294,8 @@ class FuncType(IntEnum):
     ADD_STATE_SHORT_TO_FIELD = 161
     GAIN_NP_FROM_OTHER_USED_NP_VALUE = 162
     HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = 163
+    DAMAGE_FUNC_TYPE_164 = 164
+    DAMAGE_FUNC_TYPE_165 = 165
 
 
 class NiceFuncType(StrEnum):
@@ -426,6 +428,8 @@ class NiceFuncType(StrEnum):
     addStateShortToField = "addStateShortToField"
     gainNpFromOtherUsedNpValue = "gainNpFromOtherUsedNpValue"
     hastenNpturnFromOtherUsedNpturn = "hastenNpturnFromOtherUsedNpturn"
+    damageFuncType164 = "damageFuncType164"
+    damageFuncType165 = "damageFuncType165"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -556,6 +560,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     161: NiceFuncType.addStateShortToField,
     162: NiceFuncType.gainNpFromOtherUsedNpValue,
     163: NiceFuncType.hastenNpturnFromOtherUsedNpturn,
+    164: NiceFuncType.damageFuncType164,
+    165: NiceFuncType.damageFuncType165,
 }
 
 
@@ -922,6 +928,11 @@ class BuffType(IntEnum):
     OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = 240
     ATTACK_PHASE_START_FUNCTION = 241
     TREASURE_DEVICE_POST_AFTER_FUNCTION = 242
+    BUFF_243 = 243
+    BUFF_244 = 244
+    BUFF_245 = 245
+    LIMIT_MAX_NP = 246
+    LIMIT_MIN_NP = 247
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1153,6 +1164,11 @@ class NiceBuffType(StrEnum):
     otherTreasureDevicePreBeforeFunction = "otherTreasureDevicePreBeforeFunction"
     attackPhaseStartFunction = "attackPhaseStartFunction"
     treasureDevicePostAfterFunction = "treasureDevicePostAfterFunction"
+    buff243 = "buff243"
+    buff244 = "buff244"
+    buff245 = "buff245"
+    limitMaxNp = "limitMaxNp"
+    limitMinNp = "limitMinNp"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1385,6 +1401,11 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     240: NiceBuffType.otherTreasureDevicePreBeforeFunction,
     241: NiceBuffType.attackPhaseStartFunction,
     242: NiceBuffType.treasureDevicePostAfterFunction,
+    243: NiceBuffType.buff243,
+    244: NiceBuffType.buff244,
+    245: NiceBuffType.buff245,
+    246: NiceBuffType.limitMaxNp,
+    247: NiceBuffType.limitMinNp,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1567,6 +1588,11 @@ class BuffAction(IntEnum):
     FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = 166
     FUNCTION_ATTACK_PHASE_START = 167
     FUNCTION_TREASURE_DEVICE_POST_AFTER = 168
+    ACTION_169 = 169
+    ACTION_170 = 170
+    ACTION_171 = 171
+    LIMIT_MAX_NP = 172
+    LIMIT_MIN_NP = 173
 
 
 class NiceBuffAction(StrEnum):
@@ -1741,6 +1767,11 @@ class NiceBuffAction(StrEnum):
     functionOtherTreasureDevicePreBefore = "functionOtherTreasureDevicePreBefore"
     functionAttackPhaseStart = "functionAttackPhaseStart"
     functionTreasureDevicePostAfter = "functionTreasureDevicePostAfter"
+    action169 = "action169"
+    action170 = "action170"
+    action171 = "action171"
+    limitMaxNp = "limitMaxNp"
+    limitMinNp = "limitMinNp"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1913,6 +1944,11 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     166: NiceBuffAction.functionOtherTreasureDevicePreBefore,
     167: NiceBuffAction.functionAttackPhaseStart,
     168: NiceBuffAction.functionTreasureDevicePostAfter,
+    169: NiceBuffAction.action169,
+    170: NiceBuffAction.action170,
+    171: NiceBuffAction.action171,
+    172: NiceBuffAction.limitMaxNp,
+    173: NiceBuffAction.limitMinNp,
 }
 
 
@@ -2205,6 +2241,9 @@ class DataValsType(IntEnum):
     FunctionTriggerActorTargetFlag = 261
     IsTurnProgressWithoutGrantActor = 262
     IsFuncCheckFieldIndividuality = 263
+    IgnoreTargetFuncResult = 264
+    ExecuteWhenHideText = 265
+    SkipCheckAlive = 266
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2947,6 +2986,7 @@ class CondType(IntEnum):
     NOT_EQUIP_GET = 265
     SVT_GET_BEFORE_DATE = 266
     SVT_GET_AFTER_DATE = 267
+    NOT_QUEST_AVAILABLE = 268
 
 
 class NiceCondType(StrEnum):
@@ -3210,6 +3250,7 @@ class NiceCondType(StrEnum):
     notEquipGet = "notEquipGet"
     svtGetBeforeDate = "svtGetBeforeDate"
     svtGetAfterDate = "svtGetAfterDate"
+    notQuestAvailable = "notQuestAvailable"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3471,6 +3512,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     265: NiceCondType.notEquipGet,
     266: NiceCondType.svtGetBeforeDate,
     267: NiceCondType.svtGetAfterDate,
+    268: NiceCondType.notQuestAvailable,
 }
 
 
@@ -4851,6 +4893,7 @@ class AiCond(IntEnum):
     COUNT_AVAILABLE_MASTER_SKILL_LOWER = 218
     COUNT_AVAILABLE_MASTER_SKILL_EQUAL = 219
     COMMON_RELEASE_ID = 220
+    EXIST_REMAIN_CHARGE_TURN_MASTER_SKILL = 221
 
 
 class NiceAiCond(StrEnum):
@@ -5055,6 +5098,7 @@ class NiceAiCond(StrEnum):
     countAvailableMasterSkillLower = "countAvailableMasterSkillLower"
     countAvailableMasterSkillEqual = "countAvailableMasterSkillEqual"
     commonReleaseId = "commonReleaseId"
+    existRemainChargeTurnMasterSkill = "existRemainChargeTurnMasterSkill"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -5239,6 +5283,7 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     218: NiceAiCond.countAvailableMasterSkillLower,
     219: NiceAiCond.countAvailableMasterSkillEqual,
     220: NiceAiCond.commonReleaseId,
+    221: NiceAiCond.existRemainChargeTurnMasterSkill,
 }
 
 
@@ -5264,12 +5309,17 @@ class AiActType(IntEnum):
     PLAY_MOTION = 71
     MESSAGE = 72
     MESSAGE_GROUP = 73
+    OVERWRITE_FIELD_MOTION = 74
+    OVERWRITE_ADD_UNIQUE_CAMERA = 75
     NOBLE_PHANTASM = 80
     BATTLE_END = 90
     LOSE_END = 91
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS = 92
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS_INSTANTLY = 93
     ALL_BATTLE_END = 94
+    LOAD_MOVIE = 95
+    PLAY_MOVIE = 96
+    WAIT_FINISH_MOVIE = 97
     CHANGE_THINKING = 99
 
 
@@ -5297,6 +5347,8 @@ class NiceAiActType(StrEnum):
     playMotion = "playMotion"
     message = "message"
     messageGroup = "messageGroup"
+    overwriteFieldMotion = "overwriteFieldMotion"
+    overwriteAddUniqueCamera = "overwriteAddUniqueCamera"
     noblePhantasm = "noblePhantasm"
     battleEnd = "battleEnd"
     loseEnd = "loseEnd"
@@ -5305,6 +5357,9 @@ class NiceAiActType(StrEnum):
         "battleEndNotRelatedSurvivalStatusInstantly"
     )
     allBattleEnd = "allBattleEnd"
+    loadMovie = "loadMovie"
+    playMovie = "playMovie"
+    waitFinishMovie = "waitFinishMovie"
     changeThinking = "changeThinking"
 
 
@@ -5330,12 +5385,17 @@ AI_ACT_TYPE_NAME: dict[int, NiceAiActType] = {
     71: NiceAiActType.playMotion,
     72: NiceAiActType.message,
     73: NiceAiActType.messageGroup,
+    74: NiceAiActType.overwriteFieldMotion,
+    75: NiceAiActType.overwriteAddUniqueCamera,
     80: NiceAiActType.noblePhantasm,
     90: NiceAiActType.battleEnd,
     91: NiceAiActType.loseEnd,
     92: NiceAiActType.battleEndNotRelatedSurvivalStatus,
     93: NiceAiActType.battleEndNotRelatedSurvivalStatusInstantly,
     94: NiceAiActType.allBattleEnd,
+    95: NiceAiActType.loadMovie,
+    96: NiceAiActType.playMovie,
+    97: NiceAiActType.waitFinishMovie,
     99: NiceAiActType.changeThinking,
 }
 
@@ -5786,6 +5846,7 @@ class AiCondParameter(IntEnum):
     COUNT_AVAILABLE_PLAYER_SKILL = 47
     COUNT_AVAILABLE_MASTER_SKILL = 48
     COMMON_RELEASE_ID = 49
+    EXIST_REMAIN_CHARGE_TURN_MASTER_SKILL = 50
 
 
 class NiceAiCondParameter(StrEnum):
@@ -5841,6 +5902,7 @@ class NiceAiCondParameter(StrEnum):
     countAvailablePlayerSkill = "countAvailablePlayerSkill"
     countAvailableMasterSkill = "countAvailableMasterSkill"
     commonReleaseId = "commonReleaseId"
+    existRemainChargeTurnMasterSkill = "existRemainChargeTurnMasterSkill"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -5894,6 +5956,7 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     47: NiceAiCondParameter.countAvailablePlayerSkill,
     48: NiceAiCondParameter.countAvailableMasterSkill,
     49: NiceAiCondParameter.commonReleaseId,
+    50: NiceAiCondParameter.existRemainChargeTurnMasterSkill,
 }
 
 
@@ -6267,6 +6330,7 @@ class RestrictionType(IntEnum):
     FIXED_MY_GRAND_SVT = 22
     MY_GRAND_SVT_POSITION_MAIN = 23
     MY_GRAND_SVT_OR_SUPPORT_GRAND_SVT = 24
+    ACTIVE_GRAND_BOARD = 25
     FIXED_COSTUME = 101
 
 
@@ -6294,6 +6358,7 @@ class NiceRestrictionType(StrEnum):
     fixedMyGrandSvt = "fixedMyGrandSvt"
     myGrandSvtPositionMain = "myGrandSvtPositionMain"
     myGrandSvtOrSupportGrandSvt = "myGrandSvtOrSupportGrandSvt"
+    activeGrandBoard = "activeGrandBoard"
     fixedCostume = "fixedCostume"
 
 
@@ -6319,6 +6384,7 @@ RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
     22: NiceRestrictionType.fixedMyGrandSvt,
     23: NiceRestrictionType.myGrandSvtPositionMain,
     24: NiceRestrictionType.myGrandSvtOrSupportGrandSvt,
+    25: NiceRestrictionType.activeGrandBoard,
     101: NiceRestrictionType.fixedCostume,
 }
 
@@ -7444,6 +7510,11 @@ class QuestAfterActionCommand(IntEnum):
     BLANK_EARTH_OBJECT_ANIM_QUICK = 1012
     EVENT_EFFECT_PLAY = 1100
     CHANGE_DISP_STATE_QUEST_BOARD = 1200
+    EVENT_UI_DISABLE = 1300
+    EVENT_UI_ENABLE = 1301
+    RAID_UI_DISABLE = 1310
+    RAID_UI_ENABLE = 1311
+    RAID_UI_DISABLE_QUICK = 1312
 
 
 class NiceQuestAfterActionCommand(StrEnum):
@@ -7521,6 +7592,11 @@ class NiceQuestAfterActionCommand(StrEnum):
     blankEarthObjectAnimQuick = "blankEarthObjectAnimQuick"
     eventEffectPlay = "eventEffectPlay"
     changeDispStateQuestBoard = "changeDispStateQuestBoard"
+    eventUiDisable = "eventUiDisable"
+    eventUiEnable = "eventUiEnable"
+    raidUiDisable = "raidUiDisable"
+    raidUiEnable = "raidUiEnable"
+    raidUiDisableQuick = "raidUiDisableQuick"
 
 
 QUEST_AFTER_ACTION_COMMAND: dict[int, NiceQuestAfterActionCommand] = {
@@ -7596,6 +7672,11 @@ QUEST_AFTER_ACTION_COMMAND: dict[int, NiceQuestAfterActionCommand] = {
     1012: NiceQuestAfterActionCommand.blankEarthObjectAnimQuick,
     1100: NiceQuestAfterActionCommand.eventEffectPlay,
     1200: NiceQuestAfterActionCommand.changeDispStateQuestBoard,
+    1300: NiceQuestAfterActionCommand.eventUiDisable,
+    1301: NiceQuestAfterActionCommand.eventUiEnable,
+    1310: NiceQuestAfterActionCommand.raidUiDisable,
+    1311: NiceQuestAfterActionCommand.raidUiEnable,
+    1312: NiceQuestAfterActionCommand.raidUiDisableQuick,
 }
 
 

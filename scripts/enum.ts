@@ -177,6 +177,8 @@ export enum NiceFuncType {
     ADD_STATE_SHORT_TO_FIELD = "addStateShortToField",
     GAIN_NP_FROM_OTHER_USED_NP_VALUE = "gainNpFromOtherUsedNpValue",
     HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = "hastenNpturnFromOtherUsedNpturn",
+    DAMAGE_FUNC_TYPE_164 = "damageFuncType164",
+    DAMAGE_FUNC_TYPE_165 = "damageFuncType165",
 }
 
 export enum NiceFuncTargetType {
@@ -448,6 +450,11 @@ export enum NiceBuffType {
     OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = "otherTreasureDevicePreBeforeFunction",
     ATTACK_PHASE_START_FUNCTION = "attackPhaseStartFunction",
     TREASURE_DEVICE_POST_AFTER_FUNCTION = "treasureDevicePostAfterFunction",
+    BUFF_243 = "buff243",
+    BUFF_244 = "buff244",
+    BUFF_245 = "buff245",
+    LIMIT_MAX_NP = "limitMaxNp",
+    LIMIT_MIN_NP = "limitMinNp",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -629,6 +636,11 @@ export enum NiceBuffAction {
     FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = "functionOtherTreasureDevicePreBefore",
     FUNCTION_ATTACK_PHASE_START = "functionAttackPhaseStart",
     FUNCTION_TREASURE_DEVICE_POST_AFTER = "functionTreasureDevicePostAfter",
+    ACTION_169 = "action169",
+    ACTION_170 = "action170",
+    ACTION_171 = "action171",
+    LIMIT_MAX_NP = "limitMaxNp",
+    LIMIT_MIN_NP = "limitMinNp",
 }
 
 export enum NiceBuffLimit {
@@ -903,6 +915,9 @@ export enum NiceDataValsType {
     FunctionTriggerActorTargetFlag = "functionTriggerActorTargetFlag",
     IsTurnProgressWithoutGrantActor = "isTurnProgressWithoutGrantActor",
     IsFuncCheckFieldIndividuality = "isFuncCheckFieldIndividuality",
+    IgnoreTargetFuncResult = "ignoreTargetFuncResult",
+    ExecuteWhenHideText = "executeWhenHideText",
+    SkipCheckAlive = "skipCheckAlive",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1318,6 +1333,7 @@ export enum NiceCondType {
     NOT_EQUIP_GET = "notEquipGet",
     SVT_GET_BEFORE_DATE = "svtGetBeforeDate",
     SVT_GET_AFTER_DATE = "svtGetAfterDate",
+    NOT_QUEST_AVAILABLE = "notQuestAvailable",
 }
 
 export enum NiceVoiceCondType {
@@ -1890,6 +1906,7 @@ export enum NiceAiCond {
     COUNT_AVAILABLE_MASTER_SKILL_LOWER = "countAvailableMasterSkillLower",
     COUNT_AVAILABLE_MASTER_SKILL_EQUAL = "countAvailableMasterSkillEqual",
     COMMON_RELEASE_ID = "commonReleaseId",
+    EXIST_REMAIN_CHARGE_TURN_MASTER_SKILL = "existRemainChargeTurnMasterSkill",
 }
 
 export enum NiceAiActType {
@@ -1914,12 +1931,17 @@ export enum NiceAiActType {
     PLAY_MOTION = "playMotion",
     MESSAGE = "message",
     MESSAGE_GROUP = "messageGroup",
+    OVERWRITE_FIELD_MOTION = "overwriteFieldMotion",
+    OVERWRITE_ADD_UNIQUE_CAMERA = "overwriteAddUniqueCamera",
     NOBLE_PHANTASM = "noblePhantasm",
     BATTLE_END = "battleEnd",
     LOSE_END = "loseEnd",
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS = "battleEndNotRelatedSurvivalStatus",
     BATTLE_END_NOT_RELATED_SURVIVAL_STATUS_INSTANTLY = "battleEndNotRelatedSurvivalStatusInstantly",
     ALL_BATTLE_END = "allBattleEnd",
+    LOAD_MOVIE = "loadMovie",
+    PLAY_MOVIE = "playMovie",
+    WAIT_FINISH_MOVIE = "waitFinishMovie",
     CHANGE_THINKING = "changeThinking",
 }
 
@@ -2095,6 +2117,7 @@ export enum NiceAiCondParameter {
     COUNT_AVAILABLE_PLAYER_SKILL = "countAvailablePlayerSkill",
     COUNT_AVAILABLE_MASTER_SKILL = "countAvailableMasterSkill",
     COMMON_RELEASE_ID = "commonReleaseId",
+    EXIST_REMAIN_CHARGE_TURN_MASTER_SKILL = "existRemainChargeTurnMasterSkill",
 }
 
 export enum NiceAiCondRefine {
@@ -2226,6 +2249,7 @@ export enum NiceRestrictionType {
     FIXED_MY_GRAND_SVT = "fixedMyGrandSvt",
     MY_GRAND_SVT_POSITION_MAIN = "myGrandSvtPositionMain",
     MY_GRAND_SVT_OR_SUPPORT_GRAND_SVT = "myGrandSvtOrSupportGrandSvt",
+    ACTIVE_GRAND_BOARD = "activeGrandBoard",
     FIXED_COSTUME = "fixedCostume",
 }
 
@@ -2615,6 +2639,11 @@ export enum NiceQuestAfterActionCommand {
     BLANK_EARTH_OBJECT_ANIM_QUICK = "blankEarthObjectAnimQuick",
     EVENT_EFFECT_PLAY = "eventEffectPlay",
     CHANGE_DISP_STATE_QUEST_BOARD = "changeDispStateQuestBoard",
+    EVENT_UI_DISABLE = "eventUiDisable",
+    EVENT_UI_ENABLE = "eventUiEnable",
+    RAID_UI_DISABLE = "raidUiDisable",
+    RAID_UI_ENABLE = "raidUiEnable",
+    RAID_UI_DISABLE_QUICK = "raidUiDisableQuick",
 }
 
 export enum NiceUserSvtStatusFlag {
