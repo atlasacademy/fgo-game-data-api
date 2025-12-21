@@ -355,6 +355,7 @@ async def get_nice_war(
             if raw_war.mstWar.id < 10000 and (
                 raw_war.mstWar.flag & WarEntityFlag.NOTICE_BOARD != 0
                 or (last_war_id and raw_war.mstWar.id > last_war_id.value)
+                or raw_war.mstWar.id in (409,)
             ):
                 banner_template = "questboard_cap_closed_{:>03}"
             else:

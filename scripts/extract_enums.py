@@ -10,6 +10,7 @@ PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "SET": "set_",
     "NAME": "name_",
     "JOIN": "join_",
+    "FIND": "find_",
 }
 
 
@@ -820,35 +821,42 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "BuffConditionType",
         "NiceBuffConditionType",
         "Condition Type for Conditional Battle Buff",
-        "BUFF_CONDITION_TYPE",
+        "BUFF_CONDITION_TYPE_NAME",
     ),
     (
         "BuffList.ConditionTargetType",
         "BuffConditionTargetType",
         "NiceBuffConditionTargetType",
         "Buff Condition Target Type",
-        "BUFF_CONDITION_TARGET_TYPE",
+        "BUFF_CONDITION_TARGET_TYPE_NAME",
     ),
     (
         "QuestAfterAction.COMMAND",
         "QuestAfterActionCommand",
         "NiceQuestAfterActionCommand",
         "Quest After Action Command",
-        "QUEST_AFTER_ACTION_COMMAND",
+        "QUEST_AFTER_ACTION_COMMAND_NAME",
     ),
     (
         "UserServantEntity.StatusFlag",
         "UserSvtStatusFlag",
         "NiceUserSvtStatusFlag",
         "User Servant Status Flag",
-        "USER_SVT_STATUS_FLAG",
+        "USER_SVT_STATUS_FLAG_NAME",
     ),
     (
         "BattleBuffData.BuffData.FieldBuffApplyTargetType",
         "FieldBuffApplyTargetType",
         "NiceFieldBuffApplyTargetType",
         "Field Buff Apply Target Type",
-        "FIELD_BUFF_APPLY_TARGET_TYPE",
+        "FIELD_BUFF_APPLY_TARGET_TYPE_NAME",
+    ),
+    (
+        "CollectionStatus.Kind",
+        "SvtCollectionStatus",
+        "NiceSvtCollectionStatus",
+        "Servant Collection Status",
+        "SVT_COLLECTION_STATUS_NAME",
     ),
 ]
 

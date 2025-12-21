@@ -689,6 +689,9 @@ class BaseVals(BaseModel):
     FunctionTriggerActorTargetFlag: int | None = None
     IsTurnProgressWithoutGrantActor: int | None = None
     IsFuncCheckFieldIndividuality: int | None = None
+    IgnoreTargetFuncResult: int | None = None
+    ExecuteWhenHideText: int | None = None
+    SkipCheckAlive: int | None = None
 
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
@@ -3016,6 +3019,8 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     turn: int | None = None
     LimitAct: StageLimitActType | None = None
     fixedMasterEquip: NiceQuestPhaseFixedMasterEquip | None = None
+    isInfinityCost: int | None = None
+    # overwriteSvtTreasureDeviceLv: dict[int, int] | None = None
 
 
 class NiceRestriction(BaseModelORJson):

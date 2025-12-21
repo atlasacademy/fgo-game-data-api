@@ -2668,3 +2668,18 @@ export enum NiceFieldBuffApplyTargetType {
     Enemy = "enemy",
     All = "all",
 }
+
+export enum NiceSvtCollectionStatus {
+    NOT_GET = "notGet",
+    FIND = "find",
+    GET = "get",
+    ENEMY_COLLECTION_DETAIL = "enemyCollectionDetail",
+    HIDE = "hide",
+    NPC = "npc",
+    SECRET = "secret",
+    DATA_LOST = "dataLost",
+    LINK_LOST = "linkLost",
+    LINK_BAD = "linkBad",
+    LINK_CLOSE = "linkClose",
+    COLLECTION_STATUS_6 = "collectionStatus6",
+}

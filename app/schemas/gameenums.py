@@ -7389,7 +7389,7 @@ class NiceBuffConditionType(StrEnum):
     individualitieAnd = "individualitieAnd"
 
 
-BUFF_CONDITION_TYPE: dict[int, NiceBuffConditionType] = {
+BUFF_CONDITION_TYPE_NAME: dict[int, NiceBuffConditionType] = {
     0: NiceBuffConditionType.hpHigher,
     1: NiceBuffConditionType.hpLower,
     2: NiceBuffConditionType.individualitie,
@@ -7424,7 +7424,7 @@ class NiceBuffConditionTargetType(StrEnum):
     fieldOtherAll = "fieldOtherAll"
 
 
-BUFF_CONDITION_TARGET_TYPE: dict[int, NiceBuffConditionTargetType] = {
+BUFF_CONDITION_TARGET_TYPE_NAME: dict[int, NiceBuffConditionTargetType] = {
     0: NiceBuffConditionTargetType.none,
     1: NiceBuffConditionTargetType.ptAll,
     2: NiceBuffConditionTargetType.enemyAll,
@@ -7599,7 +7599,7 @@ class NiceQuestAfterActionCommand(StrEnum):
     raidUiDisableQuick = "raidUiDisableQuick"
 
 
-QUEST_AFTER_ACTION_COMMAND: dict[int, NiceQuestAfterActionCommand] = {
+QUEST_AFTER_ACTION_COMMAND_NAME: dict[int, NiceQuestAfterActionCommand] = {
     0: NiceQuestAfterActionCommand.none,
     100: NiceQuestAfterActionCommand.spotHide,
     101: NiceQuestAfterActionCommand.spotGray,
@@ -7714,7 +7714,7 @@ class NiceUserSvtStatusFlag(StrEnum):
     isNotSendStorage = "isNotSendStorage"
 
 
-USER_SVT_STATUS_FLAG: dict[int, NiceUserSvtStatusFlag] = {
+USER_SVT_STATUS_FLAG_NAME: dict[int, NiceUserSvtStatusFlag] = {
     1: NiceUserSvtStatusFlag.lock,
     2: NiceUserSvtStatusFlag.eventJoin,
     4: NiceUserSvtStatusFlag.withdrawal,
@@ -7747,9 +7747,57 @@ class NiceFieldBuffApplyTargetType(StrEnum):
     all = "all"
 
 
-FIELD_BUFF_APPLY_TARGET_TYPE: dict[int, NiceFieldBuffApplyTargetType] = {
+FIELD_BUFF_APPLY_TARGET_TYPE_NAME: dict[int, NiceFieldBuffApplyTargetType] = {
     0: NiceFieldBuffApplyTargetType.none,
     1: NiceFieldBuffApplyTargetType.player,
     2: NiceFieldBuffApplyTargetType.enemy,
     3: NiceFieldBuffApplyTargetType.all,
+}
+
+
+class SvtCollectionStatus(IntEnum):
+    NOT_GET = 0
+    FIND = 1
+    GET = 2
+    ENEMY_COLLECTION_DETAIL = 3
+    HIDE = 4
+    NPC = 5
+    SECRET = 6
+    DATA_LOST = 7
+    LINK_LOST = 8
+    LINK_BAD = 9
+    LINK_CLOSE = 10
+    COLLECTION_STATUS_6 = 11
+
+
+class NiceSvtCollectionStatus(StrEnum):
+    """Servant Collection Status"""
+
+    notGet = "notGet"
+    find_ = "find"
+    get = "get"
+    enemyCollectionDetail = "enemyCollectionDetail"
+    hide = "hide"
+    npc = "npc"
+    secret = "secret"
+    dataLost = "dataLost"
+    linkLost = "linkLost"
+    linkBad = "linkBad"
+    linkClose = "linkClose"
+    collectionStatus6 = "collectionStatus6"
+
+
+SVT_COLLECTION_STATUS_NAME: dict[int, NiceSvtCollectionStatus] = {
+    0: NiceSvtCollectionStatus.notGet,
+    1: NiceSvtCollectionStatus.find_,
+    2: NiceSvtCollectionStatus.get,
+    3: NiceSvtCollectionStatus.enemyCollectionDetail,
+    4: NiceSvtCollectionStatus.hide,
+    5: NiceSvtCollectionStatus.npc,
+    6: NiceSvtCollectionStatus.secret,
+    7: NiceSvtCollectionStatus.dataLost,
+    8: NiceSvtCollectionStatus.linkLost,
+    9: NiceSvtCollectionStatus.linkBad,
+    10: NiceSvtCollectionStatus.linkClose,
+    11: NiceSvtCollectionStatus.collectionStatus6,
 }
