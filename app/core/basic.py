@@ -47,7 +47,7 @@ from ..schemas.enums import (
 )
 from ..schemas.gameenums import (
     ATTRIBUTE_NAME,
-    BUFF_CONDITION_TARGET_TYPE,
+    BUFF_CONDITION_TARGET_TYPE_NAME,
     BUFF_CONVERT_LIMIT_TYPE_NAME,
     BUFF_CONVERT_TYPE_NAME,
     BUFF_TYPE_NAME,
@@ -212,7 +212,7 @@ def get_nice_buff_script(
                 "condValue": cond["condValue"],
                 "buffCheckIndvType": cond.get("buffCheckIndvType"),
                 "buffIndividualities": get_traits_list(cond["buffIndividualitie"]),
-                "valueCondTargetType": BUFF_CONDITION_TARGET_TYPE[
+                "valueCondTargetType": BUFF_CONDITION_TARGET_TYPE_NAME[
                     cond["valueCondTargetType"]
                 ],
                 "filterActivePassive": cond.get("filterActivePassive"),

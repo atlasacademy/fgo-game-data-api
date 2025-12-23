@@ -1,5 +1,6 @@
 from typing import Optional
 
+from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
@@ -181,6 +182,8 @@ async def get_nice_skill_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceSkillReverse:
     raw_skill = await raw.get_skill_entity_no_reverse(conn, skill_id, expand=True)
+    if raw_skill is None:
+        raise HTTPException(status_code=404, detail=f"Skill not found: {skill_id}")
     nice_skill = await get_nice_skill_from_raw(
         conn, region, raw_skill, NiceSkillReverse, lang
     )

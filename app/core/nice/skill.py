@@ -404,8 +404,12 @@ async def get_nice_skill_from_id(
     skill_id: int,
     nice_skill_type: Type[T],
     lang: Language,
-) -> T:
-    raw_skill = await get_skill_entity_no_reverse(conn, skill_id, expand=True)
+) -> T | None:
+    raw_skill = await get_skill_entity_no_reverse(
+        conn, skill_id, expand=True, error_if_not_found=False
+    )
+    if not raw_skill:
+        return None
     return await get_nice_skill_from_raw(conn, region, raw_skill, nice_skill_type, lang)
 
 

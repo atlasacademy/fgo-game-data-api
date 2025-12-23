@@ -305,7 +305,10 @@ async def get_func_entity(
 
 
 async def get_skill_entity_no_reverse_many(
-    conn: AsyncConnection, skill_ids: Iterable[int], expand: bool = False
+    conn: AsyncConnection,
+    skill_ids: Iterable[int],
+    expand: bool = False,
+    error_if_not_found: bool = True,
 ) -> list[SkillEntityNoReverse]:
     if not skill_ids:
         return []
@@ -316,14 +319,25 @@ async def get_skill_entity_no_reverse_many(
                 for skillLv in skill_entity.mstSkillLv:
                     skillLv.expandedFuncId = None
         return skill_entities
-    else:
+    elif error_if_not_found:
         raise HTTPException(status_code=404, detail=f"Skills not found: {skill_ids}")
+    else:
+        return []
 
 
 async def get_skill_entity_no_reverse(
-    conn: AsyncConnection, skill_id: int, expand: bool = False
-) -> SkillEntityNoReverse:
-    return (await get_skill_entity_no_reverse_many(conn, [skill_id], expand))[0]
+    conn: AsyncConnection,
+    skill_id: int,
+    expand: bool = False,
+    error_if_not_found: bool = True,
+) -> SkillEntityNoReverse | None:
+    raw_skills = await get_skill_entity_no_reverse_many(
+        conn, [skill_id], expand, error_if_not_found
+    )
+    if raw_skills:
+        return raw_skills[0]
+    else:
+        return None
 
 
 async def get_skill_entity(
