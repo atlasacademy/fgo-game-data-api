@@ -4656,6 +4656,7 @@ class WarOverwriteType(IntEnum):
     COMMAND_SPELL_ICON = 20
     MASTER_FACE_ICON = 21
     PRIORITY = 22
+    RECOMMEND_SUPPORT_HEADER_IMG_ID = 23
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -4683,6 +4684,7 @@ class NiceWarOverwriteType(StrEnum):
     commandSpellIcon = "commandSpellIcon"
     masterFaceIcon = "masterFaceIcon"
     priority = "priority"
+    recommendSupportHeaderImgId = "recommendSupportHeaderImgId"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -4708,6 +4710,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     20: NiceWarOverwriteType.commandSpellIcon,
     21: NiceWarOverwriteType.masterFaceIcon,
     22: NiceWarOverwriteType.priority,
+    23: NiceWarOverwriteType.recommendSupportHeaderImgId,
 }
 
 
