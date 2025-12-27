@@ -361,6 +361,7 @@ class SvtClass(StrEnum):
     beast = "beast"
     beastVI = "beastVI"
     beastVIBoss = "beastVIBoss"
+    beastVII = "beastVII"
     uOlgaMarieFlare = "uOlgaMarieFlare"
     beastEresh = "beastEresh"
     uOlgaMarieAqua = "uOlgaMarieAqua"
@@ -445,6 +446,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     39: SvtClass.uOlgaMarieGrand,
     40: SvtClass.unBeastOlgaMarie,
     41: SvtClass.uOlgaMarieStellar,
+    43: SvtClass.beastVII,
     96: SvtClass.aquaFragment,
     97: SvtClass.unknown,
     # 98
