@@ -1645,6 +1645,11 @@ class NiceServant(BaseModelORJson):
         title="Bond CE",
         description="Bond CE ID (not collectionNo). Defaults to 0 if the svt doesn't have a bond CE.",
     )
+    bondEquips: list[int] = Field(
+        [],
+        title="Bond CEs",
+        description="Bond CE IDs (not collectionNo). Mash has two bond CEs.",
+    )
     valentineEquip: list[int] = Field(
         [], title="Valentine CE", description="Valentine CE ID (not collectionNo)."
     )

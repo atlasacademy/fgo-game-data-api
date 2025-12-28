@@ -467,6 +467,7 @@ mstSvtExtra = Table(
     Column("mstSvt", JSONB),
     Column("zeroLimitOverwriteName", String),
     Column("bondEquip", Integer),
+    Column("bondEquips", ARRAY(Integer)),
     Column("bondEquipOwner", Integer),
     Column("valentineEquip", ARRAY(Integer)),
     Column("valentineScript", JSONB),

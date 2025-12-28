@@ -213,6 +213,7 @@ async def get_nice_servant(
 
     if raw_svt.mstSvtExtra:
         nice_data["bondEquip"] = raw_svt.mstSvtExtra.bondEquip
+        nice_data["bondEquips"] = raw_svt.mstSvtExtra.bondEquips
         nice_data["valentineEquip"] = raw_svt.mstSvtExtra.valentineEquip
         nice_data["valentineScript"] = raw_svt.mstSvtExtra.valentineScript
         nice_data["bondEquipOwner"] = raw_svt.mstSvtExtra.bondEquipOwner
@@ -224,6 +225,7 @@ async def get_nice_servant(
         }
     else:
         nice_data["bondEquip"] = 0
+        nice_data["bondEquips"] = []
         nice_data["valentineEquip"] = []
         nice_data["valentineScript"] = []
         nice_data["bondEquipOwner"] = None

@@ -455,6 +455,7 @@ class MstSvtExtra(BaseModelORJson):
     mstSvt: MstSvt
     zeroLimitOverwriteName: Optional[str] = None
     bondEquip: int
+    bondEquips: list[int]
     bondEquipOwner: Optional[int] = None
     valentineEquip: list[int]
     valentineScript: list[NiceValentineScript]

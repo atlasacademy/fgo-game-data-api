@@ -75,7 +75,8 @@ def get_extra_svt_data(
 
     # Bond CE has servant's ID in skill's actIndividuality
     # to bind the CE effect to the servant
-    bondEquip: dict[int, int] = {}
+    bondEquipOwner: dict[int, int] = {}
+    bondEquip: dict[int, list[int]] = defaultdict(list)
     for mstSvt in mstSvts:
         if mstSvt.type == SvtType.SERVANT_EQUIP and mstSvt.id in mstSvtSkillSvtId:
             actIndividualities = set()
@@ -87,13 +88,9 @@ def get_extra_svt_data(
                 individualities = actIndividualities.pop()
                 for individuality in individualities:
                     if individuality in mstSvtId:
-                        bondEquip[individuality] = mstSvt.id
-
-    bondEquipOwner = {
-        equip_id: svt_id
-        for svt_id, equip_id in bondEquip.items()
-        if mstSvtId[svt_id].collectionNo != 0
-    }
+                        bondEquip[individuality].append(mstSvt.id)
+                        if mstSvtId[individuality].collectionNo != 0:
+                            bondEquipOwner[mstSvt.id] = individuality
 
     valentineEquip: dict[int, list[int]] = defaultdict(list)
     valentineScript: dict[int, list[NiceValentineScript]] = defaultdict(list)
@@ -182,7 +179,8 @@ def get_extra_svt_data(
             svtId=svt_id,
             mstSvt=mstSvtId[svt_id],
             zeroLimitOverwriteName=zeroLimitOverwriteName.get(svt_id),
-            bondEquip=bondEquip.get(svt_id, 0),
+            bondEquip=bondEquip[svt_id][0] if bondEquip.get(svt_id) else 0,
+            bondEquips=bondEquip.get(svt_id, []),
             bondEquipOwner=bondEquipOwner.get(svt_id),
             valentineEquip=valentineEquip.get(svt_id, []),
             valentineScript=valentineScript.get(svt_id, []),
