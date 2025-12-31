@@ -11,6 +11,7 @@ from sqlalchemy.engine import Connection, Engine
 from sqlalchemy.sql import text
 
 from ..config import logger
+from ..core.nice.func import ADD_BUFF_FUNCTIONS
 from ..data.bgm import get_bgms
 from ..data.buff import get_buff_with_classrelation
 from ..data.event import get_event_with_warIds
@@ -40,7 +41,7 @@ from ..models.rayshift import rayshiftQuest, rayshiftQuestHash
 from ..schemas.base import BaseModelORJson
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
-from ..schemas.gameenums import BuffType, FuncType
+from ..schemas.gameenums import BuffType
 from ..schemas.raw import AssetStorageLine, get_subtitle_svtId
 from ..schemas.rayshift import QuestDetail, QuestList
 from .engine import engines
@@ -213,11 +214,7 @@ def load_skill_td_lv(
                 ):
                     if func_id in mstFuncId:
                         func = mstFuncId[func_id]
-                        if (
-                            func["funcType"]
-                            in [FuncType.ADD_STATE, FuncType.ADD_STATE_SHORT]
-                            and func["vals"]
-                        ):
+                        if func["funcType"] in ADD_BUFF_FUNCTIONS and func["vals"]:
                             buff_id = func["vals"][0]
                             if buff_id in mstBuffId:
                                 buff = mstBuffId[buff_id]

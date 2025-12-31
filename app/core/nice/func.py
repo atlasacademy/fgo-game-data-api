@@ -28,6 +28,13 @@ def remove_brackets(val_string: str) -> str:
     return val_string.removeprefix("[").removesuffix("]")
 
 
+ADD_BUFF_FUNCTIONS = {
+    FuncType.ADD_STATE,
+    FuncType.ADD_STATE_SHORT,
+    FuncType.ADD_FIELD_CHANGE_TO_FIELD,
+    FuncType.ADD_STATE_TO_FIELD,
+    FuncType.ADD_STATE_SHORT_TO_FIELD,
+}
 EVENT_DROP_FUNCTIONS = {
     FuncType.EVENT_POINT_UP,
     FuncType.EVENT_POINT_RATE_UP,
@@ -157,13 +164,7 @@ async def parse_dataVals(
                         text = "Target"
                     elif i == 3:
                         text = "Correction"
-                elif functype in {
-                    FuncType.ADD_STATE,
-                    FuncType.ADD_STATE_SHORT,
-                    FuncType.ADD_FIELD_CHANGE_TO_FIELD,
-                    FuncType.ADD_STATE_TO_FIELD,
-                    FuncType.ADD_STATE_SHORT_TO_FIELD,
-                }:
+                elif functype in ADD_BUFF_FUNCTIONS:
                     if i == 0:
                         text = "Rate"
                     elif i == 1:
