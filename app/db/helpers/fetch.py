@@ -99,6 +99,7 @@ from ...models.raw import (
     mstMasterMission,
     mstQuest,
     mstQuestDateRange,
+    mstQuestReleaseOverwrite,
     mstShop,
     mstShopRelease,
     mstShopScript,
@@ -238,6 +239,7 @@ from ...schemas.raw import (
     MstMasterMission,
     MstQuest,
     MstQuestDateRange,
+    MstQuestReleaseOverwrite,
     MstShop,
     MstShopRelease,
     MstShopScript,
@@ -532,6 +534,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventCampaign,
         mstEventCampaign.c.eventId,
         mstEventCampaign.c.idx,
+    ),
+    MstQuestReleaseOverwrite: (
+        mstQuestReleaseOverwrite,
+        mstQuestReleaseOverwrite.c.eventId,
+        mstQuestReleaseOverwrite.c.questId,
     ),
     MstSvtMultiPortrait: (
         mstSvtMultiPortrait,

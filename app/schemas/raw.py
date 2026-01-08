@@ -2492,6 +2492,8 @@ class EventEntity(BaseModelORJson):
     mstEventTradePickup: list[MstEventTradePickup]
     mstEventCampaign: list[MstEventCampaign]
     mstEventQuest: list[MstEventQuest]
+    mstQuestReleaseOverwrite: list[MstQuestReleaseOverwrite]
+    mstClosedMessage: list[MstClosedMessage]
     mstEventBulletinBoard: list[MstEventBulletinBoard]
     mstEventBulletinBoardRelease: list[MstEventBulletinBoardRelease]
     mstEventRecipe: list[MstEventRecipe]

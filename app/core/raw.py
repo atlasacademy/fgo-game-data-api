@@ -143,6 +143,7 @@ from ..schemas.raw import (
     MstMapGimmick,
     MstMasterMission,
     MstQuestDateRange,
+    MstQuestReleaseOverwrite,
     MstShop,
     MstShopRelease,
     MstShopScript,
@@ -1314,6 +1315,16 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     }
     mstBgm = [await get_bgm_entity(conn, bgm_id) for bgm_id in bgm_ids]
 
+    quest_release_overwrites = await fetch.get_all(
+        conn, MstQuestReleaseOverwrite, event_id
+    )
+    closed_msg_ids = {
+        release.closedMessageId
+        for release in quest_release_overwrites
+        if release.closedMessageId != 0
+    }
+    closed_msgs = await fetch.get_all_multiple(conn, MstClosedMessage, closed_msg_ids)
+
     return EventEntity(
         mstEvent=mstEvent,
         mstEventAdd=await fetch.get_all(conn, MstEventAdd, event_id),
@@ -1361,6 +1372,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventCampaign=await fetch.get_all_multiple(
             conn, MstEventCampaign, [event_id]
         ),
+        mstQuestReleaseOverwrite=quest_release_overwrites,
+        mstClosedMessage=closed_msgs,
         mstEventBulletinBoard=bulletins,
         mstEventBulletinBoardRelease=bulletin_releases,
         mstEventRecipe=recipes,

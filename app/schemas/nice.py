@@ -2011,6 +2011,20 @@ class NiceEventQuest(BaseModelORJson):
     isExcepted: bool = False
 
 
+class NiceQuestReleaseOverwrite(BaseModelORJson):
+    questId: int
+    priority: int
+    # imagePriority: int
+    condType: NiceCondType
+    condId: int
+    condNum: int
+    closedMessage: str
+    overlayClosedMessage: str
+    eventId: int
+    startedAt: int
+    endedAt: int
+
+
 class NiceEventCampaignScript(BaseModelORJson):
     # isNotDispEntryCondMessage: int | None = None
     OnlyMaxFuncGroupId: int | None = None
@@ -2528,6 +2542,7 @@ class NiceEvent(BaseModelORJson):
     tradeGoods: list[NiceEventTradeGoods]
     campaigns: list[NiceEventCampaign]
     campaignQuests: list[NiceEventQuest]
+    questReleaseOverwrites: list[NiceQuestReleaseOverwrite]
     commandAssists: list[NiceEventCommandAssist]
     heelPortraits: list[NiceHeelPortrait]
     murals: list[NiceEventMural]
@@ -2565,19 +2580,6 @@ class NiceQuestRelease(BaseModelORJson):
     targetId: int
     value: int
     closedMessage: str
-
-
-class NiceQuestReleaseOverwrite(BaseModelORJson):
-    priority: int
-    # imagePriority: int
-    condType: NiceCondType
-    condId: int
-    condNum: int
-    closedMessage: str
-    overlayClosedMessage: str
-    eventId: int
-    startedAt: int
-    endedAt: int
 
 
 class NiceQuestPhaseScript(BaseModelORJson):

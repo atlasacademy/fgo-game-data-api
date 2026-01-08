@@ -127,6 +127,7 @@ def get_nice_quest_release_overwrite(
         None,
     )
     return NiceQuestReleaseOverwrite(
+        questId=raw_release_overwrite.questId,
         priority=raw_release_overwrite.priority,
         condType=COND_TYPE_NAME[raw_release_overwrite.condType],
         condId=raw_release_overwrite.condId,

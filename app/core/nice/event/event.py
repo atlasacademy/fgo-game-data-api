@@ -29,6 +29,7 @@ from ...utils import fmt_url, get_flags, get_translation
 from ..bgm import get_nice_bgm_entity_from_raw
 from ..gift import GiftData, get_gift_map
 from ..item import get_nice_item_from_raw
+from ..quest import get_nice_quest_release_overwrite
 from ..skill import get_nice_skill_from_raw
 from ..svt.voice import get_nice_voice_group
 from .bulletin_board import get_nice_bulletin_board
@@ -411,6 +412,10 @@ async def get_nice_event(
         ],
         campaignQuests=[
             get_nice_event_quest(quest) for quest in raw_event.mstEventQuest
+        ],
+        questReleaseOverwrites=[
+            get_nice_quest_release_overwrite(release, raw_event.mstClosedMessage)
+            for release in raw_event.mstQuestReleaseOverwrite
         ],
         commandAssists=[
             get_nice_command_assist(
