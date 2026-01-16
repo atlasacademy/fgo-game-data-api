@@ -15,12 +15,14 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi_cache import Coder, FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
+from loguru import logger
 from redis.asyncio import Redis as AsyncRedis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from .config import Settings, get_app_info, logger, project_root
+from .config import Settings, get_app_info, project_root
 from .core.info import get_all_repo_info
 from .db.engine import async_engines, engines
+from .logging import init_logging
 from .redis import Redis
 from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
@@ -28,6 +30,8 @@ from .schemas.common import Region, RepoInfo
 from .zstd import zstd_compress, zstd_decompress
 
 settings = Settings()
+
+init_logging(settings.error_webhooks)
 
 
 app_short_description = "Provide raw and nicely bundled FGO game data."

@@ -5,12 +5,12 @@ from typing import Any, Optional, Sequence, Union
 
 import orjson
 import sqlalchemy
+from loguru import logger
 from pydantic import DirectoryPath
 from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
 from sqlalchemy.sql import text
 
-from ..config import logger
 from ..core.nice.func import ADD_BUFF_FUNCTIONS
 from ..data.bgm import get_bgms
 from ..data.buff import get_buff_with_classrelation

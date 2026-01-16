@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from fastapi_cache.decorator import cache
+from loguru import logger
 
-from ..config import Settings, logger
+from ..config import Settings
 from ..core import search
 from ..core.nice import (
     ai,

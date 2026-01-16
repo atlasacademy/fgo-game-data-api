@@ -1,10 +1,6 @@
-import asyncio
-import logging
-from logging.handlers import HTTPHandler
 from pathlib import Path
 from typing import Any, Optional, Type
 
-import httpx
 from git import Repo
 from pydantic import (
     DirectoryPath,
@@ -21,46 +17,10 @@ from pydantic_settings import (
     JsonConfigSettingsSource,
     PydanticBaseSettingsSource,
 )
-from uvicorn.logging import DefaultFormatter
 
 from .schemas.common import Region, RepoInfo
 
 project_root = Path(__file__).resolve().parents[1]
-
-
-class CustomHttpHandler(HTTPHandler):
-    def mapLogRecord(self, record: logging.LogRecord) -> dict[str, str]:
-        return {
-            "username": "API",
-            "content": f"API Exception\n\n```\n{self.format(record)}\n```",
-        }
-
-    async def _send(self, payload):
-        try:
-            async with httpx.AsyncClient(timeout=5.0) as client:
-                await client.post(self.url, json=payload)
-        except Exception as e:
-            logging.getLogger("fgoapi.webhook").warning(f"Webhook send failed: {e}")
-
-    def emit(self, record):
-        payload = self.mapLogRecord(record)
-        try:
-            loop = asyncio.get_running_loop()
-        except RuntimeError:
-            loop = None
-
-        if loop:
-            loop.create_task(self._send(payload))
-        else:
-            asyncio.run(self._send(payload))
-
-
-uvicorn_logger = logging.getLogger("uvicorn.access")
-logger = logging.getLogger("fgoapi")
-console_handler = logging.StreamHandler()
-console_handler.setFormatter(DefaultFormatter("%(levelprefix)s %(name)s: %(message)s"))
-logger.addHandler(console_handler)
-logger.setLevel(uvicorn_logger.level)
 
 
 class RegionSettings(BaseModel):
@@ -115,17 +75,6 @@ class Settings(BaseSettings):
         )
 
 
-settings = Settings()
-
-for url in settings.error_webhooks:
-    if url.host:
-        http_handler = CustomHttpHandler(
-            url.host, url.path if url.path else "", method="POST", secure=True
-        )
-        http_handler.setLevel(logging.ERROR)
-        logger.addHandler(http_handler)
-
-
 def get_repo_info(loc: Path) -> RepoInfo:
     repo = Repo(loc)
     latest_commit = repo.commit()
@@ -139,7 +88,7 @@ def get_app_info() -> RepoInfo:
     return get_repo_info(project_root)
 
 
-def get_instance_info() -> dict[str, Any]:
+def get_instance_info(settings: Settings) -> dict[str, Any]:
     app_info = get_app_info()
     return {
         "app_version": app_info.model_dump(mode="json"),

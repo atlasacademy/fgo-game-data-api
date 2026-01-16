@@ -4,9 +4,10 @@ from pathlib import Path
 from typing import Any, Callable, NamedTuple, Union
 
 import aiofiles
+from loguru import logger
 from pydantic import DirectoryPath
 
-from ..config import logger, project_root
+from ..config import project_root
 from ..core.utils import get_nice_trait, get_traits_list
 from ..schemas.common import Region
 from ..schemas.enums import CLASS_NAME, TRAIT_NAME, Trait, get_class_name

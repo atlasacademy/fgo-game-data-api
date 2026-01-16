@@ -30,7 +30,7 @@ async def get_secret_info(redis: Redis) -> dict[str, Any]:
         data_repo_version={
             k.value: v.model_dump(mode="json") for k, v in all_repo_info.items()
         },
-        **get_instance_info(),
+        **get_instance_info(settings),
     )
     return response_data
 

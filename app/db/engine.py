@@ -1,8 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import create_async_engine
-from uvicorn.logging import TRACE_LOG_LEVEL
 
-from ..config import Settings, logger
+from ..config import Settings
 
 settings = Settings()
 
@@ -20,7 +19,6 @@ engines = {
 async_engines = {
     region: create_async_engine(
         str(region_data.postgresdsn).replace("postgresql", "postgresql+psycopg"),
-        echo=logger.isEnabledFor(TRACE_LOG_LEVEL),
         pool_size=settings.db_pool_size,
         max_overflow=settings.db_max_overflow,
         pool_pre_ping=True,

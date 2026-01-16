@@ -3,9 +3,10 @@ from dataclasses import dataclass
 from typing import Any, Callable
 
 import orjson
+from loguru import logger
 from pydantic import DirectoryPath
 
-from ..config import Settings, logger
+from ..config import Settings
 from ..data.buff import get_buff_with_classrelation
 from ..data.reverse import (
     get_active_skill_to_svt,

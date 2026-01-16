@@ -4,10 +4,11 @@ from typing import Optional, Union
 import httpx
 from fastapi import HTTPException
 from httpx import Client
+from loguru import logger
 from pydantic import ValidationError
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from ..config import Settings, logger
+from ..config import Settings
 from ..db.helpers.rayshift import (
     get_rayshift_quest_db,
     insert_rayshift_quest_db,

@@ -4,9 +4,10 @@ from dataclasses import dataclass
 from typing import Any, Callable, Generator, Iterable, Optional, Sequence
 
 from fastapi import HTTPException
+from loguru import logger
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from ..config import Settings, logger
+from ..config import Settings
 from ..db.helpers import fetch, quest
 from ..redis import Redis
 from ..redis.helpers import pydantic_object

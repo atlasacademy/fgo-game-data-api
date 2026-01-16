@@ -2,10 +2,11 @@ import re
 from typing import Any, Optional
 
 from fastapi import HTTPException
+from loguru import logger
 from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from ...config import Settings, logger
+from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.enums import FUNC_APPLYTARGET_NAME, FUNC_VALS_NOT_BUFF
 from ...schemas.gameenums import FUNC_TARGETTYPE_NAME, FUNC_TYPE_NAME, FuncType
@@ -379,6 +380,8 @@ async def parse_dataVals(
             output["AddCount"] = output[prefix_1]
         elif output[prefix_0] == 2:
             output["RateCount"] = output[prefix_1]
+
+    await logger.complete()
 
     return output
 

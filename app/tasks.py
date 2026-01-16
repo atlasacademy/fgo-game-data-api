@@ -10,10 +10,11 @@ import orjson
 import psutil
 from fastapi.concurrency import run_in_threadpool
 from git import Repo
+from loguru import logger
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
-from .config import EXTRA_SVT_ID_IN_NICE, Settings, get_app_info, logger, project_root
+from .config import EXTRA_SVT_ID_IN_NICE, Settings, get_app_info, project_root
 from .core.basic import (
     get_all_basic_ccs,
     get_all_basic_equips,
@@ -845,6 +846,8 @@ async def load_and_export(
     if settings.clear_redis_cache:
         await clear_redis_cache(redis, region_path, clear_heavy_quests=True)
 
+    await logger.complete()
+
 
 def update_data_repo(
     region_path: dict[Region, DirectoryPath],
@@ -873,6 +876,8 @@ async def report_webhooks(
                 )
             except Exception:  # noqa: BLE001
                 logger.exception(f"Failed to report webhook {index}")
+
+    await logger.complete()
 
 
 async def pull_and_update(
