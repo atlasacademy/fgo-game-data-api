@@ -1334,6 +1334,7 @@ export enum NiceCondType {
     SVT_GET_BEFORE_DATE = "svtGetBeforeDate",
     SVT_GET_AFTER_DATE = "svtGetAfterDate",
     NOT_QUEST_AVAILABLE = "notQuestAvailable",
+    NOT_IMAGE_PARTS_GROUP = "notImagePartsGroup",
 }
 
 export enum NiceVoiceCondType {
@@ -1723,6 +1724,8 @@ export enum NiceWarOverwriteType {
     MASTER_FACE_ICON = "masterFaceIcon",
     PRIORITY = "priority",
     RECOMMEND_SUPPORT_HEADER_IMG_ID = "recommendSupportHeaderImgId",
+    BG_OBJECT = "bgObject",
+    RECOMMEND_SUPPORT_PARENT_WAR = "recommendSupportParentWar",
 }
 
 export enum NiceAiCond {
@@ -2035,6 +2038,10 @@ export enum NiceSvtFrameType {
     GOLD_RED_GREAT = "goldRedGreat",
     GOLD_BLACK = "goldBlack",
     GOLD_BLACK_GREAT = "goldBlackGreat",
+    HIDE = "hide",
+    BLANK = "blank",
+    SUPPORT = "support",
+    SUPPORT_ONLY = "supportOnly",
 }
 
 export enum NiceCommonConsumeType {

@@ -37,6 +37,7 @@ RAW_NAME_OVERRIDE = {
     "FuncTriggerActorTargetFlag": {
         "None": "None_",
     },
+    "SvtFrameType": {"DEFAULT": "SILVER"},
 }
 
 
@@ -494,7 +495,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
     ),
     ("BgmEntity.Flag", "BgmFlag", "NiceBgmFlag", "Bgm Flag", "BGM_FLAG_NAME"),
     (
-        "ServantExceedEntity.FRAMETYPE",
+        "AtlasManager.FrameType",
         "SvtFrameType",
         "NiceSvtFrameType",
         "Servant Frame Type",

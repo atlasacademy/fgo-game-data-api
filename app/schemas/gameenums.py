@@ -2987,6 +2987,7 @@ class CondType(IntEnum):
     SVT_GET_BEFORE_DATE = 266
     SVT_GET_AFTER_DATE = 267
     NOT_QUEST_AVAILABLE = 268
+    NOT_IMAGE_PARTS_GROUP = 269
 
 
 class NiceCondType(StrEnum):
@@ -3251,6 +3252,7 @@ class NiceCondType(StrEnum):
     svtGetBeforeDate = "svtGetBeforeDate"
     svtGetAfterDate = "svtGetAfterDate"
     notQuestAvailable = "notQuestAvailable"
+    notImagePartsGroup = "notImagePartsGroup"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3513,6 +3515,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     266: NiceCondType.svtGetBeforeDate,
     267: NiceCondType.svtGetAfterDate,
     268: NiceCondType.notQuestAvailable,
+    269: NiceCondType.notImagePartsGroup,
 }
 
 
@@ -4657,6 +4660,8 @@ class WarOverwriteType(IntEnum):
     MASTER_FACE_ICON = 21
     PRIORITY = 22
     RECOMMEND_SUPPORT_HEADER_IMG_ID = 23
+    BG_OBJECT = 24
+    RECOMMEND_SUPPORT_PARENT_WAR = 25
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -4685,6 +4690,8 @@ class NiceWarOverwriteType(StrEnum):
     masterFaceIcon = "masterFaceIcon"
     priority = "priority"
     recommendSupportHeaderImgId = "recommendSupportHeaderImgId"
+    bgObject = "bgObject"
+    recommendSupportParentWar = "recommendSupportParentWar"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -4711,6 +4718,8 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     21: NiceWarOverwriteType.masterFaceIcon,
     22: NiceWarOverwriteType.priority,
     23: NiceWarOverwriteType.recommendSupportHeaderImgId,
+    24: NiceWarOverwriteType.bgObject,
+    25: NiceWarOverwriteType.recommendSupportParentWar,
 }
 
 
@@ -5672,6 +5681,10 @@ class SvtFrameType(IntEnum):
     GOLD_RED_GREAT = 5
     GOLD_BLACK = 6
     GOLD_BLACK_GREAT = 7
+    HIDE = 8
+    BLANK = 9
+    SUPPORT = 10
+    SUPPORT_ONLY = 11
 
 
 class NiceSvtFrameType(StrEnum):
@@ -5685,6 +5698,10 @@ class NiceSvtFrameType(StrEnum):
     goldRedGreat = "goldRedGreat"
     goldBlack = "goldBlack"
     goldBlackGreat = "goldBlackGreat"
+    hide = "hide"
+    blank = "blank"
+    support = "support"
+    supportOnly = "supportOnly"
 
 
 SERVANT_FRAME_TYPE_NAME: dict[int, NiceSvtFrameType] = {
@@ -5696,6 +5713,10 @@ SERVANT_FRAME_TYPE_NAME: dict[int, NiceSvtFrameType] = {
     5: NiceSvtFrameType.goldRedGreat,
     6: NiceSvtFrameType.goldBlack,
     7: NiceSvtFrameType.goldBlackGreat,
+    8: NiceSvtFrameType.hide,
+    9: NiceSvtFrameType.blank,
+    10: NiceSvtFrameType.support,
+    11: NiceSvtFrameType.supportOnly,
 }
 
 
