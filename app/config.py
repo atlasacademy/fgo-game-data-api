@@ -97,4 +97,4 @@ def get_instance_info(settings: Settings) -> dict[str, Any]:
     }
 
 
-EXTRA_SVT_ID_IN_NICE = (600710, 2501500)
+EXTRA_SVT_ID_IN_NICE = (600710, 2501500, 1002100)
