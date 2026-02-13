@@ -445,6 +445,8 @@ class BaseVals(BaseModel):
     RatioHPHigh: Optional[int] = None
     RatioHPLow: Optional[int] = None
     SetPassiveFrame: Optional[int] = None
+    SetPlayerSideBg: int | None = None
+    SetEnemySideBg: int | None = None
     ProcPassive: Optional[int] = None
     ProcActive: Optional[int] = None
     HideParam: Optional[int] = None
@@ -692,7 +694,7 @@ class BaseVals(BaseModel):
     IgnoreTargetFuncResult: int | None = None
     ExecuteWhenHideText: int | None = None
     SkipCheckAlive: int | None = None
-
+    CallServantPosition: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None

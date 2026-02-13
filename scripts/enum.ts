@@ -674,6 +674,8 @@ export enum NiceDataValsType {
     RatioHPHigh = "ratioHPHigh",
     RatioHPLow = "ratioHPLow",
     SetPassiveFrame = "setPassiveFrame",
+    SetPlayerSideBg = "setPlayerSideBg",
+    SetEnemySideBg = "setEnemySideBg",
     ProcPassive = "procPassive",
     ProcActive = "procActive",
     HideParam = "hideParam",
@@ -918,6 +920,7 @@ export enum NiceDataValsType {
     IgnoreTargetFuncResult = "ignoreTargetFuncResult",
     ExecuteWhenHideText = "executeWhenHideText",
     SkipCheckAlive = "skipCheckAlive",
+    CallServantPosition = "callServantPosition",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1335,6 +1338,10 @@ export enum NiceCondType {
     SVT_GET_AFTER_DATE = "svtGetAfterDate",
     NOT_QUEST_AVAILABLE = "notQuestAvailable",
     NOT_IMAGE_PARTS_GROUP = "notImagePartsGroup",
+    USE_EVENT_PASSIVE_SKILL_GIVEN_ITEM = "useEventPassiveSkillGivenItem",
+    NOT_USE_EVENT_PASSIVE_SKILL_GIVEN_ITEM = "notUseEventPassiveSkillGivenItem",
+    SELF_INDIVIDUALITY = "selfIndividuality",
+    NOT_SELF_INDIVIDUALITY = "notSelfIndividuality",
 }
 
 export enum NiceVoiceCondType {
