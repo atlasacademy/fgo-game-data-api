@@ -450,9 +450,9 @@ export enum NiceBuffType {
     OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = "otherTreasureDevicePreBeforeFunction",
     ATTACK_PHASE_START_FUNCTION = "attackPhaseStartFunction",
     TREASURE_DEVICE_POST_AFTER_FUNCTION = "treasureDevicePostAfterFunction",
-    BUFF_243 = "buff243",
-    BUFF_244 = "buff244",
-    BUFF_245 = "buff245",
+    MULTI_DEAD_FUNCTION = "multiDeadFunction",
+    MULTI_GUTS_FUNCTION = "multiGutsFunction",
+    MULTI_GUTS_BEFORE_FUNCTION = "multiGutsBeforeFunction",
     LIMIT_MAX_NP = "limitMaxNp",
     LIMIT_MIN_NP = "limitMinNp",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
@@ -636,9 +636,9 @@ export enum NiceBuffAction {
     FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = "functionOtherTreasureDevicePreBefore",
     FUNCTION_ATTACK_PHASE_START = "functionAttackPhaseStart",
     FUNCTION_TREASURE_DEVICE_POST_AFTER = "functionTreasureDevicePostAfter",
-    ACTION_169 = "action169",
-    ACTION_170 = "action170",
-    ACTION_171 = "action171",
+    FUNCTION_MULTI_DEAD = "functionMultiDead",
+    FUNCTION_MULTI_GUTS = "functionMultiGuts",
+    FUNCTION_MULTI_GUTS_BEFORE = "functionMultiGutsBefore",
     LIMIT_MAX_NP = "limitMaxNp",
     LIMIT_MIN_NP = "limitMinNp",
 }
@@ -921,6 +921,8 @@ export enum NiceDataValsType {
     ExecuteWhenHideText = "executeWhenHideText",
     SkipCheckAlive = "skipCheckAlive",
     CallServantPosition = "callServantPosition",
+    NotActIfAlreadyAvoidStateBuff = "notActIfAlreadyAvoidStateBuff",
+    AvoidFieldBuff = "avoidFieldBuff",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1342,6 +1344,12 @@ export enum NiceCondType {
     NOT_USE_EVENT_PASSIVE_SKILL_GIVEN_ITEM = "notUseEventPassiveSkillGivenItem",
     SELF_INDIVIDUALITY = "selfIndividuality",
     NOT_SELF_INDIVIDUALITY = "notSelfIndividuality",
+    BATTLE_VALUE_ABOVE = "battleValueAbove",
+    BATTLE_VALUE_BELOW = "battleValueBelow",
+    BATTLE_VALUE_EQUAL = "battleValueEqual",
+    BATTLE_VALUE_NOT_EQUAL = "battleValueNotEqual",
+    BATTLE_POINT_EQUAL = "battlePointEqual",
+    BATTLE_POINT_NOT_EQUAL = "battlePointNotEqual",
 }
 
 export enum NiceVoiceCondType {
@@ -1733,6 +1741,7 @@ export enum NiceWarOverwriteType {
     RECOMMEND_SUPPORT_HEADER_IMG_ID = "recommendSupportHeaderImgId",
     BG_OBJECT = "bgObject",
     RECOMMEND_SUPPORT_PARENT_WAR = "recommendSupportParentWar",
+    FOLDER_HEADER_ID = "folderHeaderId",
 }
 
 export enum NiceAiCond {

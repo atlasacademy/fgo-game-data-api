@@ -928,9 +928,9 @@ class BuffType(IntEnum):
     OTHER_TREASURE_DEVICE_PRE_BEFORE_FUNCTION = 240
     ATTACK_PHASE_START_FUNCTION = 241
     TREASURE_DEVICE_POST_AFTER_FUNCTION = 242
-    BUFF_243 = 243
-    BUFF_244 = 244
-    BUFF_245 = 245
+    MULTI_DEAD_FUNCTION = 243
+    MULTI_GUTS_FUNCTION = 244
+    MULTI_GUTS_BEFORE_FUNCTION = 245
     LIMIT_MAX_NP = 246
     LIMIT_MIN_NP = 247
     TO_FIELD_CHANGE_FIELD = 10001
@@ -1164,9 +1164,9 @@ class NiceBuffType(StrEnum):
     otherTreasureDevicePreBeforeFunction = "otherTreasureDevicePreBeforeFunction"
     attackPhaseStartFunction = "attackPhaseStartFunction"
     treasureDevicePostAfterFunction = "treasureDevicePostAfterFunction"
-    buff243 = "buff243"
-    buff244 = "buff244"
-    buff245 = "buff245"
+    multiDeadFunction = "multiDeadFunction"
+    multiGutsFunction = "multiGutsFunction"
+    multiGutsBeforeFunction = "multiGutsBeforeFunction"
     limitMaxNp = "limitMaxNp"
     limitMinNp = "limitMinNp"
     toFieldChangeField = "toFieldChangeField"
@@ -1401,9 +1401,9 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     240: NiceBuffType.otherTreasureDevicePreBeforeFunction,
     241: NiceBuffType.attackPhaseStartFunction,
     242: NiceBuffType.treasureDevicePostAfterFunction,
-    243: NiceBuffType.buff243,
-    244: NiceBuffType.buff244,
-    245: NiceBuffType.buff245,
+    243: NiceBuffType.multiDeadFunction,
+    244: NiceBuffType.multiGutsFunction,
+    245: NiceBuffType.multiGutsBeforeFunction,
     246: NiceBuffType.limitMaxNp,
     247: NiceBuffType.limitMinNp,
     10001: NiceBuffType.toFieldChangeField,
@@ -1588,9 +1588,9 @@ class BuffAction(IntEnum):
     FUNCTION_OTHER_TREASURE_DEVICE_PRE_BEFORE = 166
     FUNCTION_ATTACK_PHASE_START = 167
     FUNCTION_TREASURE_DEVICE_POST_AFTER = 168
-    ACTION_169 = 169
-    ACTION_170 = 170
-    ACTION_171 = 171
+    FUNCTION_MULTI_DEAD = 169
+    FUNCTION_MULTI_GUTS = 170
+    FUNCTION_MULTI_GUTS_BEFORE = 171
     LIMIT_MAX_NP = 172
     LIMIT_MIN_NP = 173
 
@@ -1767,9 +1767,9 @@ class NiceBuffAction(StrEnum):
     functionOtherTreasureDevicePreBefore = "functionOtherTreasureDevicePreBefore"
     functionAttackPhaseStart = "functionAttackPhaseStart"
     functionTreasureDevicePostAfter = "functionTreasureDevicePostAfter"
-    action169 = "action169"
-    action170 = "action170"
-    action171 = "action171"
+    functionMultiDead = "functionMultiDead"
+    functionMultiGuts = "functionMultiGuts"
+    functionMultiGutsBefore = "functionMultiGutsBefore"
     limitMaxNp = "limitMaxNp"
     limitMinNp = "limitMinNp"
 
@@ -1944,9 +1944,9 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     166: NiceBuffAction.functionOtherTreasureDevicePreBefore,
     167: NiceBuffAction.functionAttackPhaseStart,
     168: NiceBuffAction.functionTreasureDevicePostAfter,
-    169: NiceBuffAction.action169,
-    170: NiceBuffAction.action170,
-    171: NiceBuffAction.action171,
+    169: NiceBuffAction.functionMultiDead,
+    170: NiceBuffAction.functionMultiGuts,
+    171: NiceBuffAction.functionMultiGutsBefore,
     172: NiceBuffAction.limitMaxNp,
     173: NiceBuffAction.limitMinNp,
 }
@@ -2247,6 +2247,8 @@ class DataValsType(IntEnum):
     ExecuteWhenHideText = 267
     SkipCheckAlive = 268
     CallServantPosition = 269
+    NotActIfAlreadyAvoidStateBuff = 270
+    AvoidFieldBuff = 271
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2995,6 +2997,12 @@ class CondType(IntEnum):
     NOT_USE_EVENT_PASSIVE_SKILL_GIVEN_ITEM = 271
     SELF_INDIVIDUALITY = 272
     NOT_SELF_INDIVIDUALITY = 273
+    BATTLE_VALUE_ABOVE = 274
+    BATTLE_VALUE_BELOW = 275
+    BATTLE_VALUE_EQUAL = 276
+    BATTLE_VALUE_NOT_EQUAL = 277
+    BATTLE_POINT_EQUAL = 278
+    BATTLE_POINT_NOT_EQUAL = 279
 
 
 class NiceCondType(StrEnum):
@@ -3264,6 +3272,12 @@ class NiceCondType(StrEnum):
     notUseEventPassiveSkillGivenItem = "notUseEventPassiveSkillGivenItem"
     selfIndividuality = "selfIndividuality"
     notSelfIndividuality = "notSelfIndividuality"
+    battleValueAbove = "battleValueAbove"
+    battleValueBelow = "battleValueBelow"
+    battleValueEqual = "battleValueEqual"
+    battleValueNotEqual = "battleValueNotEqual"
+    battlePointEqual = "battlePointEqual"
+    battlePointNotEqual = "battlePointNotEqual"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3531,6 +3545,12 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     271: NiceCondType.notUseEventPassiveSkillGivenItem,
     272: NiceCondType.selfIndividuality,
     273: NiceCondType.notSelfIndividuality,
+    274: NiceCondType.battleValueAbove,
+    275: NiceCondType.battleValueBelow,
+    276: NiceCondType.battleValueEqual,
+    277: NiceCondType.battleValueNotEqual,
+    278: NiceCondType.battlePointEqual,
+    279: NiceCondType.battlePointNotEqual,
 }
 
 
@@ -4677,6 +4697,7 @@ class WarOverwriteType(IntEnum):
     RECOMMEND_SUPPORT_HEADER_IMG_ID = 23
     BG_OBJECT = 24
     RECOMMEND_SUPPORT_PARENT_WAR = 25
+    FOLDER_HEADER_ID = 26
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -4707,6 +4728,7 @@ class NiceWarOverwriteType(StrEnum):
     recommendSupportHeaderImgId = "recommendSupportHeaderImgId"
     bgObject = "bgObject"
     recommendSupportParentWar = "recommendSupportParentWar"
+    folderHeaderId = "folderHeaderId"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -4735,6 +4757,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     23: NiceWarOverwriteType.recommendSupportHeaderImgId,
     24: NiceWarOverwriteType.bgObject,
     25: NiceWarOverwriteType.recommendSupportParentWar,
+    26: NiceWarOverwriteType.folderHeaderId,
 }
 
 
