@@ -695,6 +695,8 @@ class BaseVals(BaseModel):
     ExecuteWhenHideText: int | None = None
     SkipCheckAlive: int | None = None
     CallServantPosition: int | None = None
+    NotActIfAlreadyAvoidStateBuff: int | None = None
+    AvoidFieldBuff: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None

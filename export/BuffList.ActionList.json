@@ -2112,7 +2112,7 @@
     "plusAction": 0,
     "isChangeMaxHp": false
   },
-  "ACTION_169": {
+  "FUNCTION_MULTI_DEAD": {
     "limit": 0,
     "plusTypes": [
       243
@@ -2124,7 +2124,7 @@
     "plusAction": 0,
     "isChangeMaxHp": false
   },
-  "ACTION_170": {
+  "FUNCTION_MULTI_GUTS": {
     "limit": 0,
     "plusTypes": [
       244
@@ -2136,7 +2136,7 @@
     "plusAction": 0,
     "isChangeMaxHp": false
   },
-  "ACTION_171": {
+  "FUNCTION_MULTI_GUTS_BEFORE": {
     "limit": 0,
     "plusTypes": [
       245
