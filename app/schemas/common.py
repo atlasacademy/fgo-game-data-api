@@ -19,7 +19,7 @@ class RepoInfo(BaseModelORJson):
     timestamp: int
 
 
-class RegioinAssetBundle(BaseModelORJson):
+class RegionAssetBundle(BaseModelORJson):
     folderName: str
     animalName: str
     zooName: str
@@ -30,7 +30,7 @@ class RegionInfo(RepoInfo):
     serverTimestamp: int
     dataVer: int | None = None
     dateVer: int | None = None
-    assetbundle: RegioinAssetBundle | None = None
+    assetbundle: RegionAssetBundle | None = None
 
 
 class Region(StrEnum):
