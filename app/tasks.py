@@ -729,16 +729,19 @@ async def get_region_info(
         "serverTimestamp": app_info.timestamp,
     }
 
-    if region in (Region.JP, Region.NA, Region.KR):
-        with open(region_folder / "gamedatatop.json", "rb") as fp:
-            gametop = orjson.loads(fp.read())
-            response: dict[str, Any] = gametop["response"][0]["success"]
+    with open(region_folder / "gamedatatop.json", "rb") as fp:
+        gametop = orjson.loads(fp.read())
+        response: dict[str, Any] = gametop["response"][0]["success"]
+        if region in (Region.CN, Region.TW):
+            export_info |= {"dataVer": response["version"]}
+        else:
             export_info |= {
                 "dataVer": response["dataVer"],
                 "dateVer": response["dateVer"],
             }
-        with open(region_folder / "metadata" / "assetbundle.json") as fp:
-            export_info["assetbundle"] = orjson.loads(fp.read())
+        if region in (Region.JP, Region.NA, Region.KR):
+            with open(region_folder / "metadata" / "assetbundle.json") as fp:
+                export_info["assetbundle"] = orjson.loads(fp.read())
 
     return export_info
 
