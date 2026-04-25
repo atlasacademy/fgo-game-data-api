@@ -2480,7 +2480,6 @@ mstQuestPhase = Table(
     Column("isNpcOnly", Boolean),
     Column("battleBgId", Integer, index=True),
     Column("battleBgType", Integer),
-    Column("qp", Integer),
     Column("playerExp", Integer),
     Column("friendshipExp", Integer),
     Column("giftId", Integer, default=0),

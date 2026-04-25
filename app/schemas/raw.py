@@ -951,7 +951,7 @@ class MstBattlePointPhase(BaseModelORJson):
 
 
 def get_subtitle_svtId(sub_id: str) -> int:
-    svt = sub_id.split("_")[0]
+    svt = sub_id.split("_", 1)[0]
     try:
         return int(svt)
     except ValueError:
@@ -1976,7 +1976,6 @@ class MstQuestWithPhase(MstQuestWithWar):
     isNpcOnly: bool  # true,
     battleBgId: int  # 13400,
     battleBgType: int  # 0,
-    qp: int | None  # 1900,
     playerExp: int  # 550,
     friendshipExp: int  # 165
     phaseGiftId: Optional[int] = None
@@ -2060,7 +2059,7 @@ class MstQuestPhase(BaseModelORJson):
     isNpcOnly: bool  # true,
     battleBgId: int  # 13400,
     battleBgType: int  # 0,
-    qp: int | None = None  # 1900,
+    qp: int | None = Field(None, description="Deprecated")  # 1900,
     playerExp: int  # 550,
     friendshipExp: int  # 165
     giftId: int = 0

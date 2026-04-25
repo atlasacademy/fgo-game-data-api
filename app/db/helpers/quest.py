@@ -122,7 +122,6 @@ MSTQUEST_WITH_PHASE_SELECT = select(
     mstQuestPhase.c.isNpcOnly,
     mstQuestPhase.c.battleBgId,
     mstQuestPhase.c.battleBgType,
-    mstQuestPhase.c.qp,
     mstQuestPhase.c.playerExp,
     mstQuestPhase.c.friendshipExp,
     mstQuestPhase.c.giftId.label("phaseGiftId"),

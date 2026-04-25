@@ -3059,7 +3059,7 @@ class NiceQuestPhase(NiceQuest):
     className: list[SvtClass | str]
     individuality: list[NiceTrait]
     phaseIndividuality: list[NiceTrait] | None
-    qp: int
+    qp: int = Field(0, description="Deprecated")
     exp: int
     bond: int
     isNpcOnly: bool

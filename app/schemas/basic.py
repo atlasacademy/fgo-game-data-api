@@ -208,7 +208,7 @@ class BasicQuest(BaseModelORJson):
 class BasicQuestPhase(BasicQuest):
     phase: int
     individuality: list[NiceTrait]
-    qp: int
+    qp: int = Field(0, description="Deprecated")
     exp: int
     bond: int
     battleBgId: int
