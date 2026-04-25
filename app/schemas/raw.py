@@ -809,7 +809,7 @@ class MstSvtCostume(BaseModelORJson):
     iconId: Optional[int] = None
     openedAt: int  # 1579683600,
     endedAt: int  # 1893596399
-    script: Optional[str] = None
+    # script: Optional[str] = None
 
 
 class MstVoice(BaseModelORJson):

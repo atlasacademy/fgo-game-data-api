@@ -701,7 +701,7 @@ mstSvtCostume = Table(
     Column("iconId", Integer),
     Column("openedAt", Integer),
     Column("endedAt", Integer),
-    Column("script", String),
+    # Column("script", String),
 )
 
 
@@ -3016,7 +3016,6 @@ TABLES_TO_BE_LOADED = [
     [mstSvtCoin],
     [mstSvtComment],
     [mstSvtCommentAdd],
-    [mstSvtCostume],
     [mstSvtExp],
     [mstSvtGroup],
     [mstSvtIndividuality],
