@@ -330,26 +330,29 @@ async def get_nice_servant(
             "item": item_map[raw_svt.mstSvtCoin.itemId],
         }
 
-    nice_data["script"] = {}
+    nice_svt_script = nice_data["script"] = {}
     if "SkillRankUp" in raw_svt.mstSvt.script:
-        nice_data["script"]["SkillRankUp"] = {
+        nice_svt_script["SkillRankUp"] = {
             rank_up_script[0]: rank_up_script[1:]
             for rank_up_script in orjson.loads(raw_svt.mstSvt.script["SkillRankUp"])
         }
     if "svtBuffTurnExtend" in raw_svt.mstSvt.script:
-        nice_data["script"]["svtBuffTurnExtend"] = (
+        nice_svt_script["svtBuffTurnExtend"] = (
             raw_svt.mstSvt.script["svtBuffTurnExtend"] == 1
         )
     if "maleImageId" in raw_svt.mstSvt.script:
-        nice_data["script"]["maleImage"] = get_male_image_extraAssets(
+        nice_svt_script["maleImage"] = get_male_image_extraAssets(
             region, raw_svt.mstSvt.script["maleImageId"]
         )
     if "imagePartsGroupId" in raw_svt.mstSvt.script:
-        nice_data["script"]["imagePartsGroup"] = [
+        nice_svt_script["imagePartsGroup"] = [
             get_nice_image_parts_group(imagePartsGroup)
             for imagePartsGroup in raw_svt.mstImagePartsGroup
             if imagePartsGroup.id == raw_svt.mstSvt.script["imagePartsGroupId"]
         ]
+    for key in ("saveTransform", "saveTransformDefault"):
+        if key in raw_svt.mstSvt.script:
+            nice_svt_script[key] = raw_svt.mstSvt.script[key]
 
     nice_data["skills"] = [
         skill

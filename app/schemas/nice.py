@@ -1505,6 +1505,8 @@ class NiceServantScript(BaseModel):
     )
     maleImage: ExtraAssets | None = None
     imagePartsGroup: list[NiceImagePartsGroup] | None = None
+    saveTransform: int | None = None
+    saveTransformDefault: int | None = None
 
 
 class NiceCommandCode(BaseModelORJson):
