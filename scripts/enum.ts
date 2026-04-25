@@ -923,6 +923,7 @@ export enum NiceDataValsType {
     CallServantPosition = "callServantPosition",
     NotActIfAlreadyAvoidStateBuff = "notActIfAlreadyAvoidStateBuff",
     AvoidFieldBuff = "avoidFieldBuff",
+    UseUserSpecifiedLimitCount = "useUserSpecifiedLimitCount",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1350,6 +1351,12 @@ export enum NiceCondType {
     BATTLE_VALUE_NOT_EQUAL = "battleValueNotEqual",
     BATTLE_POINT_EQUAL = "battlePointEqual",
     BATTLE_POINT_NOT_EQUAL = "battlePointNotEqual",
+    BATTLE_ENTRY_PLAYER_TOTAL_COUNT_ABOVE = "battleEntryPlayerTotalCountAbove",
+    BATTLE_ENTRY_PLAYER_TOTAL_COUNT_BELOW = "battleEntryPlayerTotalCountBelow",
+    BATTLE_ENTRY_PLAYER_TOTAL_COUNT_EQUAL = "battleEntryPlayerTotalCountEqual",
+    BATTLE_ENTRY_ENEMY_TOTAL_COUNT_ABOVE = "battleEntryEnemyTotalCountAbove",
+    BATTLE_ENTRY_ENEMY_TOTAL_COUNT_BELOW = "battleEntryEnemyTotalCountBelow",
+    BATTLE_ENTRY_ENEMY_TOTAL_COUNT_EQUAL = "battleEntryEnemyTotalCountEqual",
 }
 
 export enum NiceVoiceCondType {
@@ -1677,6 +1684,7 @@ export enum NiceEventOverwriteType {
     NAME = "name",
     BANNER = "banner",
     NOTICE_BANNER = "noticeBanner",
+    EVENT_LOGO = "eventLogo",
 }
 
 export enum NiceWarFlag {
@@ -2417,6 +2425,7 @@ export enum NiceSvtMultiPortraitType {
     COMBINE = "combine",
     LIMIT_UP = "limitUp",
     GRAND_SELECT = "grandSelect",
+    GRAND_BOARD = "grandBoard",
 }
 
 export enum NiceNpcFollowerEntityFlag {
@@ -2608,6 +2617,9 @@ export enum NiceQuestAfterActionCommand {
     ROAD_HIDE_QUICK = "roadHideQuick",
     ROAD_GRAY_QUICK = "roadGrayQuick",
     ROAD_DISP_QUICK = "roadDispQuick",
+    ROAD_HIDE_FADE = "roadHideFade",
+    ROAD_GRAY_FADE = "roadGrayFade",
+    ROAD_DISP_FADE = "roadDispFade",
     CAM_MV_SPOT = "camMvSpot",
     CAM_MV_ROAD = "camMvRoad",
     CAM_MV_GIMMICK = "camMvGimmick",

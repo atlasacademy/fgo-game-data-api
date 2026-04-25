@@ -697,6 +697,7 @@ class BaseVals(BaseModel):
     CallServantPosition: int | None = None
     NotActIfAlreadyAvoidStateBuff: int | None = None
     AvoidFieldBuff: int | None = None
+    UseUserSpecifiedLimitCount: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None

@@ -2249,6 +2249,7 @@ class DataValsType(IntEnum):
     CallServantPosition = 269
     NotActIfAlreadyAvoidStateBuff = 270
     AvoidFieldBuff = 271
+    UseUserSpecifiedLimitCount = 272
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3003,6 +3004,12 @@ class CondType(IntEnum):
     BATTLE_VALUE_NOT_EQUAL = 277
     BATTLE_POINT_EQUAL = 278
     BATTLE_POINT_NOT_EQUAL = 279
+    BATTLE_ENTRY_PLAYER_TOTAL_COUNT_ABOVE = 280
+    BATTLE_ENTRY_PLAYER_TOTAL_COUNT_BELOW = 281
+    BATTLE_ENTRY_PLAYER_TOTAL_COUNT_EQUAL = 282
+    BATTLE_ENTRY_ENEMY_TOTAL_COUNT_ABOVE = 283
+    BATTLE_ENTRY_ENEMY_TOTAL_COUNT_BELOW = 284
+    BATTLE_ENTRY_ENEMY_TOTAL_COUNT_EQUAL = 285
 
 
 class NiceCondType(StrEnum):
@@ -3278,6 +3285,12 @@ class NiceCondType(StrEnum):
     battleValueNotEqual = "battleValueNotEqual"
     battlePointEqual = "battlePointEqual"
     battlePointNotEqual = "battlePointNotEqual"
+    battleEntryPlayerTotalCountAbove = "battleEntryPlayerTotalCountAbove"
+    battleEntryPlayerTotalCountBelow = "battleEntryPlayerTotalCountBelow"
+    battleEntryPlayerTotalCountEqual = "battleEntryPlayerTotalCountEqual"
+    battleEntryEnemyTotalCountAbove = "battleEntryEnemyTotalCountAbove"
+    battleEntryEnemyTotalCountBelow = "battleEntryEnemyTotalCountBelow"
+    battleEntryEnemyTotalCountEqual = "battleEntryEnemyTotalCountEqual"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3551,6 +3564,12 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     277: NiceCondType.battleValueNotEqual,
     278: NiceCondType.battlePointEqual,
     279: NiceCondType.battlePointNotEqual,
+    280: NiceCondType.battleEntryPlayerTotalCountAbove,
+    281: NiceCondType.battleEntryPlayerTotalCountBelow,
+    282: NiceCondType.battleEntryPlayerTotalCountEqual,
+    283: NiceCondType.battleEntryEnemyTotalCountAbove,
+    284: NiceCondType.battleEntryEnemyTotalCountBelow,
+    285: NiceCondType.battleEntryEnemyTotalCountEqual,
 }
 
 
@@ -4536,6 +4555,7 @@ class EventOverwriteType(IntEnum):
     NAME = 3
     BANNER = 4
     NOTICE_BANNER = 5
+    EVENT_LOGO = 12
 
 
 class NiceEventOverwriteType(StrEnum):
@@ -4546,6 +4566,7 @@ class NiceEventOverwriteType(StrEnum):
     name_ = "name"
     banner = "banner"
     noticeBanner = "noticeBanner"
+    eventLogo = "eventLogo"
 
 
 EVENT_OVERWRITE_TYPE_NAME: dict[int, NiceEventOverwriteType] = {
@@ -4554,6 +4575,7 @@ EVENT_OVERWRITE_TYPE_NAME: dict[int, NiceEventOverwriteType] = {
     3: NiceEventOverwriteType.name_,
     4: NiceEventOverwriteType.banner,
     5: NiceEventOverwriteType.noticeBanner,
+    12: NiceEventOverwriteType.eventLogo,
 }
 
 
@@ -6912,6 +6934,7 @@ class SvtMultiPortraitSceneOverwriteType(IntEnum):
     COMBINE = 1
     LIMIT_UP = 2
     GRAND_SELECT = 3
+    GRAND_BOARD = 4
 
 
 class NiceSvtMultiPortraitType(StrEnum):
@@ -6921,6 +6944,7 @@ class NiceSvtMultiPortraitType(StrEnum):
     combine = "combine"
     limitUp = "limitUp"
     grandSelect = "grandSelect"
+    grandBoard = "grandBoard"
 
 
 SVT_MULTI_PORTRAIT_SCENE_TYPE_NAME: dict[int, NiceSvtMultiPortraitType] = {
@@ -6928,6 +6952,7 @@ SVT_MULTI_PORTRAIT_SCENE_TYPE_NAME: dict[int, NiceSvtMultiPortraitType] = {
     1: NiceSvtMultiPortraitType.combine,
     2: NiceSvtMultiPortraitType.limitUp,
     3: NiceSvtMultiPortraitType.grandSelect,
+    4: NiceSvtMultiPortraitType.grandBoard,
 }
 
 
@@ -7517,6 +7542,9 @@ class QuestAfterActionCommand(IntEnum):
     ROAD_HIDE_QUICK = 203
     ROAD_GRAY_QUICK = 204
     ROAD_DISP_QUICK = 205
+    ROAD_HIDE_FADE = 206
+    ROAD_GRAY_FADE = 207
+    ROAD_DISP_FADE = 208
     CAM_MV_SPOT = 300
     CAM_MV_ROAD = 301
     CAM_MV_GIMMICK = 302
@@ -7599,6 +7627,9 @@ class NiceQuestAfterActionCommand(StrEnum):
     roadHideQuick = "roadHideQuick"
     roadGrayQuick = "roadGrayQuick"
     roadDispQuick = "roadDispQuick"
+    roadHideFade = "roadHideFade"
+    roadGrayFade = "roadGrayFade"
+    roadDispFade = "roadDispFade"
     camMvSpot = "camMvSpot"
     camMvRoad = "camMvRoad"
     camMvGimmick = "camMvGimmick"
@@ -7679,6 +7710,9 @@ QUEST_AFTER_ACTION_COMMAND_NAME: dict[int, NiceQuestAfterActionCommand] = {
     203: NiceQuestAfterActionCommand.roadHideQuick,
     204: NiceQuestAfterActionCommand.roadGrayQuick,
     205: NiceQuestAfterActionCommand.roadDispQuick,
+    206: NiceQuestAfterActionCommand.roadHideFade,
+    207: NiceQuestAfterActionCommand.roadGrayFade,
+    208: NiceQuestAfterActionCommand.roadDispFade,
     300: NiceQuestAfterActionCommand.camMvSpot,
     301: NiceQuestAfterActionCommand.camMvRoad,
     302: NiceQuestAfterActionCommand.camMvGimmick,
