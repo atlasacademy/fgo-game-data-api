@@ -2059,7 +2059,7 @@ class MstQuestPhase(BaseModelORJson):
     isNpcOnly: bool  # true,
     battleBgId: int  # 13400,
     battleBgType: int  # 0,
-    qp: int | None = Field(None, description="Deprecated")  # 1900,
+    qp: int | None = None  # deprecated  # 1900,
     playerExp: int  # 550,
     friendshipExp: int  # 165
     giftId: int = 0
