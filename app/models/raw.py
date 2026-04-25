@@ -3017,6 +3017,7 @@ TABLES_TO_BE_LOADED = [
     [mstSvtComment],
     [mstSvtCommentAdd],
     [mstSvtExp],
+    [mstSvtCostume],
     [mstSvtGroup],
     [mstSvtIndividuality],
     [mstSvtLimit],
