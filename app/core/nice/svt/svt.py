@@ -350,7 +350,7 @@ async def get_nice_servant(
             for imagePartsGroup in raw_svt.mstImagePartsGroup
             if imagePartsGroup.id == raw_svt.mstSvt.script["imagePartsGroupId"]
         ]
-    for key in ("saveTransform", "saveTransformDefault"):
+    for key in ("transformInfo",):
         if key in raw_svt.mstSvt.script:
             nice_svt_script[key] = raw_svt.mstSvt.script[key]
 

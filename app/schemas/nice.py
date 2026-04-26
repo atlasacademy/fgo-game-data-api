@@ -1490,6 +1490,17 @@ class NiceImagePartsGroup(BaseModel):
     condNum: int
 
 
+class ServantTransformInfo(BaseModel):
+    saveTransform: int | None = None
+    saveTransformDefault: int | None = None
+    # condSpriteColor: str | None = None
+    # condLabelColor: str | None = None
+    # condLabelTitle: str | None = None
+    # isNotSkillChange: int | None = None
+    # isNotClassSkillChange: int | None = None
+    # isNotProfileParameterChange: int | None = None
+
+
 class NiceServantScript(BaseModel):
     SkillRankUp: Optional[dict[int, list[int]]] = Field(
         None,
@@ -1505,8 +1516,7 @@ class NiceServantScript(BaseModel):
     )
     maleImage: ExtraAssets | None = None
     imagePartsGroup: list[NiceImagePartsGroup] | None = None
-    saveTransform: int | None = None
-    saveTransformDefault: int | None = None
+    transformInfo: ServantTransformInfo | None = None
 
 
 class NiceCommandCode(BaseModelORJson):
