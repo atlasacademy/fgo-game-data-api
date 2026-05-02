@@ -146,19 +146,19 @@ class AssetURL:
     )
     charaFigureForm = "{base_url}/{region}/CharaFigure/Form/{form_id}/{svtScript_id}/{svtScript_id}_merged.png"
     narrowFigure = {
-        1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png",
-        2: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@1.png",
-        3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@2.png",
-        4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}_2@0.png",
+        1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@0.png",
+        2: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@1.png",
+        3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@2.png",
+        4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}_2@0.png",
     }
     narrowFigureChange = {
         0: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@0.png",
         1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@1.png",
         3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@2.png",
-        4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}_2{suffix}@0.png",
+        4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}_2@0.png",
     }
     image = "{base_url}/{region}/Image/{image}/{image}.png"
-    narrowFigureDefault = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png"
+    narrowFigureDefault = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@0.png"
     skillIcon = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
     buffIcon = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
     items = "{base_url}/{region}/Items/{item_id}.png"

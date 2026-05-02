@@ -203,7 +203,7 @@ def get_svt_extraAssets(
             for i in range(3)
         }
         narrowFigure.ascension = {
-            i: fmt_url(AssetURL.narrowFigure[i], **base_settings_id)
+            i: fmt_url(AssetURL.narrowFigure[i], **base_settings_id, suffix="")
             for i in range(1, 5)
         }
         if use_group_icon:
@@ -214,7 +214,8 @@ def get_svt_extraAssets(
             narrowFigure.transformGroup = (narrowFigure.transformGroup or {}) | {
                 i: fmt_url(
                     AssetURL.narrowFigure[i],
-                    **(base_settings_id | {"item_id": f"{svt_id}_group"}),
+                    **base_settings_id,
+                    suffix="_group",
                 )
                 for i in range(1, 5)
             }
@@ -246,7 +247,10 @@ def get_svt_extraAssets(
             }
             narrowFigure.costume = {
                 costume_id: fmt_url(
-                    AssetURL.narrowFigureDefault, **base_settings, item_id=costume_id
+                    AssetURL.narrowFigureDefault,
+                    **base_settings,
+                    item_id=costume_id,
+                    suffix="",
                 )
                 for costume_id in costume_ids.values()
             }
@@ -269,7 +273,7 @@ def get_svt_extraAssets(
                     costume_id: fmt_url(
                         AssetURL.narrowFigureDefault,
                         **base_settings,
-                        item_id=f"{costume_id}_group",
+                        suffix="_group",
                     )
                     for costume_id in costume_ids.values()
                 }
