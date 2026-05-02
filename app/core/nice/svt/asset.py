@@ -140,6 +140,12 @@ def get_svt_extraAssets(
     else:
         image_parts_group_ids = []
 
+    use_group_icon = (
+        "transformInfo" in raw_svt.mstSvt.script
+        and "saveTransform" in raw_svt.mstSvt.script["transformInfo"]
+        and raw_svt.mstSvt.script["transformInfo"]["saveTransform"]
+    )
+
     if raw_svt.mstSvt.type in (
         SvtType.ENEMY_COLLECTION_DETAIL,
         SvtType.COMBINE_MATERIAL,
@@ -200,6 +206,18 @@ def get_svt_extraAssets(
             i: fmt_url(AssetURL.narrowFigure[i], **base_settings_id)
             for i in range(1, 5)
         }
+        if use_group_icon:
+            faces.transformGroup = (faces.transformGroup or {}) | {
+                (i + 1): fmt_url(AssetURL.face, **base_settings_id, i=f"{i}_group")
+                for i in range(4)
+            }
+            narrowFigure.transformGroup = (narrowFigure.transformGroup or {}) | {
+                i: fmt_url(
+                    AssetURL.narrowFigure[i],
+                    **(base_settings_id | {"item_id": f"{svt_id}_group"}),
+                )
+                for i in range(1, 5)
+            }
 
         if costume_ids:
             charaGraph.costume = {
@@ -240,6 +258,21 @@ def get_svt_extraAssets(
                 costume_id: fmt_url(AssetURL.commands, **base_settings_id, i=limit)
                 for limit, costume_id in costume_ids.items()
             }
+            if use_group_icon:
+                faces.transformGroup = (faces.transformGroup or {}) | {
+                    costume_id: fmt_url(
+                        AssetURL.face, **base_settings, item_id=costume_id, i="0_group"
+                    )
+                    for costume_id in costume_ids.values()
+                }
+                narrowFigure.transformGroup = (narrowFigure.transformGroup or {}) | {
+                    costume_id: fmt_url(
+                        AssetURL.narrowFigureDefault,
+                        **base_settings,
+                        item_id=f"{costume_id}_group",
+                    )
+                    for costume_id in costume_ids.values()
+                }
 
         for svt_limit in raw_svt.mstSvtLimit:
             if svt_limit.strParam != "":

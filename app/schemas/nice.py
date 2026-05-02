@@ -1037,6 +1037,7 @@ class ExtraAssetsUrl(BaseModel):
     equip: Optional[dict[int, HttpUrl]] = None
     cc: Optional[dict[int, HttpUrl]] = None
     imagePartsGroup: dict[str, HttpUrl] | None = None
+    transformGroup: dict[int, HttpUrl] | None = None
 
     def set_limit_asset(
         self, limit_count: int, url: HttpUrl, costume_ids: dict[int, int]
