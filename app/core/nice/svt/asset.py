@@ -273,6 +273,7 @@ def get_svt_extraAssets(
                     costume_id: fmt_url(
                         AssetURL.narrowFigureDefault,
                         **base_settings,
+                        item_id=costume_id,
                         suffix="_group",
                     )
                     for costume_id in costume_ids.values()
