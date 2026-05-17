@@ -1685,6 +1685,7 @@ export enum NiceEventOverwriteType {
     BANNER = "banner",
     NOTICE_BANNER = "noticeBanner",
     EVENT_LOGO = "eventLogo",
+    MATERIAL_FOLDER_NAME = "materialFolderName",
 }
 
 export enum NiceWarFlag {
@@ -1750,6 +1751,9 @@ export enum NiceWarOverwriteType {
     BG_OBJECT = "bgObject",
     RECOMMEND_SUPPORT_PARENT_WAR = "recommendSupportParentWar",
     FOLDER_HEADER_ID = "folderHeaderId",
+    MATERIAL_FOLDER_NAME = "materialFolderName",
+    MATERIAL_HEADER_IMG_ID = "materialHeaderImgId",
+    MATERIAL_GALLERY_HEADER_IMG_ID = "materialGalleryHeaderImgId",
 }
 
 export enum NiceAiCond {

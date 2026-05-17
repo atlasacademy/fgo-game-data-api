@@ -4556,6 +4556,7 @@ class EventOverwriteType(IntEnum):
     BANNER = 4
     NOTICE_BANNER = 5
     EVENT_LOGO = 12
+    MATERIAL_FOLDER_NAME = 13
 
 
 class NiceEventOverwriteType(StrEnum):
@@ -4567,6 +4568,7 @@ class NiceEventOverwriteType(StrEnum):
     banner = "banner"
     noticeBanner = "noticeBanner"
     eventLogo = "eventLogo"
+    materialFolderName = "materialFolderName"
 
 
 EVENT_OVERWRITE_TYPE_NAME: dict[int, NiceEventOverwriteType] = {
@@ -4576,6 +4578,7 @@ EVENT_OVERWRITE_TYPE_NAME: dict[int, NiceEventOverwriteType] = {
     4: NiceEventOverwriteType.banner,
     5: NiceEventOverwriteType.noticeBanner,
     12: NiceEventOverwriteType.eventLogo,
+    13: NiceEventOverwriteType.materialFolderName,
 }
 
 
@@ -4720,6 +4723,9 @@ class WarOverwriteType(IntEnum):
     BG_OBJECT = 24
     RECOMMEND_SUPPORT_PARENT_WAR = 25
     FOLDER_HEADER_ID = 26
+    MATERIAL_FOLDER_NAME = 28
+    MATERIAL_HEADER_IMG_ID = 29
+    MATERIAL_GALLERY_HEADER_IMG_ID = 30
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -4751,6 +4757,9 @@ class NiceWarOverwriteType(StrEnum):
     bgObject = "bgObject"
     recommendSupportParentWar = "recommendSupportParentWar"
     folderHeaderId = "folderHeaderId"
+    materialFolderName = "materialFolderName"
+    materialHeaderImgId = "materialHeaderImgId"
+    materialGalleryHeaderImgId = "materialGalleryHeaderImgId"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -4780,6 +4789,9 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     24: NiceWarOverwriteType.bgObject,
     25: NiceWarOverwriteType.recommendSupportParentWar,
     26: NiceWarOverwriteType.folderHeaderId,
+    28: NiceWarOverwriteType.materialFolderName,
+    29: NiceWarOverwriteType.materialHeaderImgId,
+    30: NiceWarOverwriteType.materialGalleryHeaderImgId,
 }
 
 
