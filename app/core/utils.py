@@ -52,8 +52,8 @@ def get_np_name(td_name: str, td_ruby: str, language: Language) -> str:
     if language == Language.jp:
         return td_name
 
-    to_translate = td_ruby if td_ruby not in ("", "-") else td_name
-    translation = get_translation(language, to_translate)
+    to_translate = td_ruby if td_ruby.strip() not in ("", "-") else td_name
+    translation = get_translation(language, to_translate.strip())
 
     if to_translate == translation:
         return td_name
