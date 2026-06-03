@@ -607,6 +607,11 @@ async def get_servant_entity(
                     common_release_ids.add(strParam[field_name])
         except orjson.JSONDecodeError:  # pragma: no cover
             pass
+    if mstSvtAdd and "overwriteClassImageId" in mstSvtAdd.script:
+        overwrite_infos: list[list[int]] = mstSvtAdd.script["overwriteClassImageId"]
+        for overwrite_info in overwrite_infos:
+            if len(overwrite_info) > 1:
+                common_release_ids.add(overwrite_info[1])
 
     mstCommonRelease = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids

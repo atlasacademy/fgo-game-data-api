@@ -809,7 +809,7 @@ class MstSvtCostume(BaseModelORJson):
     iconId: Optional[int] = None
     openedAt: int  # 1579683600,
     endedAt: int  # 1893596399
-    # script: Optional[str] = None
+    script: dict[str, Any] | None = None
 
 
 class MstVoice(BaseModelORJson):
@@ -1733,6 +1733,7 @@ class MstWarRelease(BaseModelORJson):
     warDisplayType: int
     closedDialogMessage: str
     priority: int | None = None
+    script: dict[str, Any] | None = None
 
 
 class MstEvent(BaseModelORJson):
@@ -1777,6 +1778,7 @@ class MstWar(BaseModelORJson):
     headerImageId: int  # 1000
     priority: int  # 9046
     parentWarId: int  # 0
+    materialPriority: int = 0
     materialParentWarId: int = 0  # 0
     parentBlankEarthSpotId: int = 0
     flag: int  # 32

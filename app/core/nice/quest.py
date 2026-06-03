@@ -447,6 +447,14 @@ async def get_nice_quest_phase_no_rayshift(
         raw_quest.mstQuestPhase.script["LimitAct"] = STAGE_LIMIT_ACT_TYPE_NAME[
             raw_quest.mstQuestPhase.script["LimitAct"]
         ]
+    if "battleFinishMovie" in raw_quest.mstQuestPhase.script:
+        movie_name: str = raw_quest.mstQuestPhase.script["battleFinishMovie"]
+        raw_quest.mstQuestPhase.script["battleFinishMovie"] = fmt_url(
+            AssetURL.movie,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=movie_name.removesuffix(".usm"),
+        )
 
     restrictions = {
         restriction.id: restriction for restriction in raw_quest.mstRestriction

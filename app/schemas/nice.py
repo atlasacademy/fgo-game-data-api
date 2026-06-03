@@ -1503,6 +1503,12 @@ class ServantTransformInfo(BaseModel):
     # isNotProfileParameterChange: int | None = None
 
 
+class OverwriteSvtClassImageId(BaseModel):
+    imageId: int
+    # image: HttpUrl
+    releaseConditions: list[NiceCommonRelease] = []
+
+
 class NiceServantScript(BaseModel):
     SkillRankUp: Optional[dict[int, list[int]]] = Field(
         None,
@@ -1519,6 +1525,7 @@ class NiceServantScript(BaseModel):
     maleImage: ExtraAssets | None = None
     imagePartsGroup: list[NiceImagePartsGroup] | None = None
     transformInfo: ServantTransformInfo | None = None
+    overwriteClassImageId: list[OverwriteSvtClassImageId] | None = None
 
 
 class NiceCommandCode(BaseModelORJson):
@@ -3047,6 +3054,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     fixedMasterEquip: NiceQuestPhaseFixedMasterEquip | None = None
     isInfinityCost: int | None = None
     # overwriteSvtTreasureDeviceLv: dict[int, int] | None = None
+    battleFinishMovie: HttpUrl | None = None
 
 
 class NiceRestriction(BaseModelORJson):
@@ -3237,6 +3245,7 @@ class NiceWar(BaseModelORJson):
     headerImage: Optional[HttpUrl] = None
     priority: int
     parentWarId: int
+    materialPriority: int
     materialParentWarId: int
     parentBlankEarthSpotId: int
     emptyMessage: str

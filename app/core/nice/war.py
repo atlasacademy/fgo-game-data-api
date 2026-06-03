@@ -448,6 +448,7 @@ async def get_nice_war(
         ),
         priority=raw_war.mstWar.priority,
         parentWarId=raw_war.mstWar.parentWarId,
+        materialPriority=raw_war.mstWar.materialPriority,
         materialParentWarId=raw_war.mstWar.materialParentWarId,
         parentBlankEarthSpotId=raw_war.mstWar.parentBlankEarthSpotId,
         emptyMessage=raw_war.mstWar.emptyMessage,

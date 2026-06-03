@@ -701,7 +701,7 @@ mstSvtCostume = Table(
     Column("iconId", Integer),
     Column("openedAt", Integer),
     Column("endedAt", Integer),
-    # Column("script", String),
+    Column("script", JSONB),
 )
 
 
@@ -2117,6 +2117,7 @@ mstWarRelease = Table(
     Column("warDisplayType", Integer),
     Column("closedDialogMessage", String),
     Column("priority", Integer),
+    Column("script", JSONB),
 )
 
 
@@ -2135,6 +2136,7 @@ mstWar = Table(
     Column("headerImageId", Integer),
     Column("priority", Integer),
     Column("parentWarId", Integer),
+    Column("materialPriority", Integer),
     Column("materialParentWarId", Integer, default=0),
     Column("parentBlankEarthSpotId", Integer, default=0),
     Column("flag", Integer),

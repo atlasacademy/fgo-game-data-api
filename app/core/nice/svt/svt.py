@@ -29,6 +29,7 @@ from ....schemas.nice import (
     NiceLoreCommentAdd,
     NiceServantChange,
     NiceServantLimitImage,
+    OverwriteSvtClassImageId,
 )
 from ....schemas.raw import (
     BAD_COMBINE_SVT_LIMIT,
@@ -42,6 +43,7 @@ from ....schemas.raw import (
 )
 from ... import raw
 from ...utils import get_flags, get_traits_list, get_translation
+from ..common_release import get_nice_common_releases
 from ..gift import GiftData, get_gift_map, get_nice_gifts
 from ..item import get_nice_item_amount_qp, get_nice_item_from_raw
 from ..skill import get_nice_skill_with_svt
@@ -353,6 +355,22 @@ async def get_nice_servant(
     for key in ("transformInfo",):
         if key in raw_svt.mstSvt.script:
             nice_svt_script[key] = raw_svt.mstSvt.script[key]
+
+    if raw_svt.mstSvtAdd and "overwriteClassImageId" in raw_svt.mstSvtAdd.script:
+        nice_svt_script["overwriteClassImageId"] = []
+        for overwrite_info in raw_svt.mstSvtAdd.script["overwriteClassImageId"]:
+            overwrite_info: list[int]
+            if not overwrite_info:
+                continue
+            image_id = overwrite_info[0]
+            releases = (
+                get_nice_common_releases(raw_svt.mstCommonRelease, overwrite_info[1])
+                if len(overwrite_info) > 1
+                else []
+            )
+            nice_svt_script["overwriteClassImageId"].append(
+                OverwriteSvtClassImageId(imageId=image_id, releaseConditions=releases)
+            )
 
     nice_data["skills"] = [
         skill
