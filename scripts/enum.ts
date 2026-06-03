@@ -217,6 +217,7 @@ export enum NiceFuncTargetType {
     FIELD_ALL = "fieldAll",
     NO_TARGET = "noTarget",
     FIELD_RANDOM = "fieldRandom",
+    PLAYER_ATTACK_PRESELECT_TARGET_PT_ONE = "playerAttackPreselectTargetPtOne",
 }
 
 export enum NiceFuncApplyTargetType {
@@ -743,6 +744,7 @@ export enum NiceDataValsType {
     CallSvtEffectId = "callSvtEffectId",
     ForceAddState = "forceAddState",
     UnSubState = "unSubState",
+    IsStun2WaitMode = "isStun2WaitMode",
     ForceSubState = "forceSubState",
     IgnoreIndivUnreleaseable = "ignoreIndivUnreleaseable",
     OnParty = "onParty",
@@ -1751,6 +1753,7 @@ export enum NiceWarOverwriteType {
     BG_OBJECT = "bgObject",
     RECOMMEND_SUPPORT_PARENT_WAR = "recommendSupportParentWar",
     FOLDER_HEADER_ID = "folderHeaderId",
+    MATERIAL_PRIORITY = "materialPriority",
     MATERIAL_FOLDER_NAME = "materialFolderName",
     MATERIAL_HEADER_IMG_ID = "materialHeaderImgId",
     MATERIAL_GALLERY_HEADER_IMG_ID = "materialGalleryHeaderImgId",

@@ -514,6 +514,7 @@ class BaseVals(BaseModel):
     CallSvtEffectId: Optional[int] = None
     ForceAddState: Optional[int] = None
     UnSubState: Optional[int] = None
+    IsStun2WaitMode: int | None = None
     ForceSubState: Optional[int] = None
     IgnoreIndivUnreleaseable: Optional[int] = None
     OnParty: Optional[int] = None
