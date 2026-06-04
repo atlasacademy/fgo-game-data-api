@@ -32,6 +32,7 @@ async def get_nice_ai_act(
         type=AI_ACT_TYPE_NAME[mstAiAct.type],
         target=AI_ACT_TARGET_NAME[mstAiAct.target],
         targetIndividuality=get_traits_list(mstAiAct.targetIndividuality),
+        script=mstAiAct.script,
     )
     if mstAiAct.type == AiActType.NOBLE_PHANTASM and len(mstAiAct.skillVals) >= 2:
         nice_ai_act.noblePhantasmId = mstAiAct.skillVals[0]

@@ -3289,6 +3289,7 @@ class NiceAiAct(BaseModelORJson):
     noblePhantasmLv: Optional[int] = None
     noblePhantasmOc: Optional[int] = None
     noblePhantasm: Optional[NiceTd] = None
+    script: dict[str, Any]
 
 
 class NiceAi(BaseModelORJson):
