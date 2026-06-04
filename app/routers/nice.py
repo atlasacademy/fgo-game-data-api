@@ -34,6 +34,7 @@ from ..redis import Redis
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.nice import (
+    NiceAiAct,
     NiceAiCollection,
     NiceBaseFunctionReverse,
     NiceBattleMasterImage,
@@ -911,6 +912,28 @@ async def get_ai_field(
         ai_entity = await ai.get_nice_ai_collection(
             conn, region, ai_id, field=field_flag, lang=lang
         )
+        return item_response(ai_entity)
+
+
+@router.get(
+    "/{region}/ai-act/{ai_act_id}",
+    summary="Get AI Act data",
+    response_description="Nice AI Act Entity",
+    response_model=NiceAiAct,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_ai_act(
+    region: Region,
+    ai_act_id: int,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    """
+    Get the nice AI Act data from the given AI Act ID
+    """
+    async with get_db(region) as conn:
+        ai_entity = await ai.get_nice_ai_act_from_id(conn, region, ai_act_id, lang)
         return item_response(ai_entity)
 
 

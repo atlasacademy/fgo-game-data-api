@@ -7,6 +7,7 @@ from sqlalchemy.sql import ColumnElement, select
 
 from ...models.raw import (
     AssetStorage,
+    mstAiAct,
     mstBattleMasterImage,
     mstBattleMessage,
     mstBattleMessageGroup,
@@ -148,6 +149,7 @@ from ...models.raw import (
 from ...schemas.base import BaseModelORJson
 from ...schemas.raw import (
     AssetStorageLine,
+    MstAiAct,
     MstBattleMasterImage,
     MstBattleMessage,
     MstBattleMessageGroup,
@@ -318,6 +320,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstClassBoardBase: (mstClassBoardBase, mstClassBoardBase.c.id),
     MstGrandGraph: (mstGrandGraph, mstGrandGraph.c.id),
     MstGacha: (mstGacha, mstGacha.c.id),
+    MstAiAct: (mstAiAct, mstAiAct.c.id),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)

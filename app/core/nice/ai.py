@@ -1,6 +1,8 @@
+from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
+from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.enums import AI_TIMING_NAME, AiTiming
 from ...schemas.gameenums import (
@@ -50,6 +52,18 @@ async def get_nice_ai_act(
             conn, region, mstAiAct.skillVals[0], NiceSkill, lang
         )
     return nice_ai_act
+
+
+async def get_nice_ai_act_from_id(
+    conn: AsyncConnection,
+    region: Region,
+    ai_act_id: int,
+    lang: Language = Language.jp,
+) -> NiceAiAct:
+    mst_ai_act = await fetch.get_one(conn, MstAiAct, ai_act_id)
+    if not mst_ai_act:
+        raise HTTPException(status_code=404, detail="AiAct not found")
+    return await get_nice_ai_act(conn, region, mst_ai_act, lang)
 
 
 async def get_nice_ai(
