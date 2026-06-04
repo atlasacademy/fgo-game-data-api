@@ -7916,3 +7916,153 @@ SVT_COLLECTION_STATUS_NAME: dict[int, NiceSvtCollectionStatus] = {
     10: NiceSvtCollectionStatus.linkClose,
     11: NiceSvtCollectionStatus.collectionStatus6,
 }
+
+
+class UserStatusFlagKind(IntEnum):
+    COMBINE_MATERIAL_C = 0
+    COMBINE_MATERIAL_UC = 1
+    COMBINE_MATERIAL_R = 2
+    STATUS_UP_C = 3
+    STATUS_UP_UC = 4
+    STATUS_UP_R = 5
+    SVT_EQUIP_C = 6
+    SVT_EQUIP_UC = 7
+    SVT_EQUIP_R = 8
+    COSTUME_DISPLAY_SETTING = 9
+    FIRST_NP_SPEED = 10
+    FIX_MAIN_SUPPORT_DECK = 11
+    FIX_EVENT_SUPPORT_DECK = 12
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_C = 13
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_UC = 14
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_R = 15
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_SR = 16
+    RANDOM_LIMIT_COUNT = 17
+    RANDOM_LIMIT_COUNT_SUPPORT = 18
+    SVT_LIMIT_SPOILER_PROTECTION = 19
+    SVT_LIMIT_DISPLAY_SETTING = 20
+    BIRTHDAY_SETTING = 21
+    ISSUED_DELETE_PASSWORD = 22
+    DELETED = 23
+    SUPPORT_LIMIT_COUNT_TO_DISP_LIMIT_COUNT = 28
+
+
+class NiceUserStatusFlagKind(StrEnum):
+    """User Status Flag Kind"""
+
+    combineMaterialC = "combineMaterialC"
+    combineMaterialUc = "combineMaterialUc"
+    combineMaterialR = "combineMaterialR"
+    statusUpC = "statusUpC"
+    statusUpUc = "statusUpUc"
+    statusUpR = "statusUpR"
+    svtEquipC = "svtEquipC"
+    svtEquipUc = "svtEquipUc"
+    svtEquipR = "svtEquipR"
+    costumeDisplaySetting = "costumeDisplaySetting"
+    firstNpSpeed = "firstNpSpeed"
+    fixMainSupportDeck = "fixMainSupportDeck"
+    fixEventSupportDeck = "fixEventSupportDeck"
+    questDropAutoselCombineMaterialC = "questDropAutoselCombineMaterialC"
+    questDropAutoselCombineMaterialUc = "questDropAutoselCombineMaterialUc"
+    questDropAutoselCombineMaterialR = "questDropAutoselCombineMaterialR"
+    questDropAutoselCombineMaterialSr = "questDropAutoselCombineMaterialSr"
+    randomLimitCount = "randomLimitCount"
+    randomLimitCountSupport = "randomLimitCountSupport"
+    svtLimitSpoilerProtection = "svtLimitSpoilerProtection"
+    svtLimitDisplaySetting = "svtLimitDisplaySetting"
+    birthdaySetting = "birthdaySetting"
+    issuedDeletePassword = "issuedDeletePassword"
+    deleted = "deleted"
+    supportLimitCountToDispLimitCount = "supportLimitCountToDispLimitCount"
+
+
+USER_STATUS_FLAG_KIND_NAME: dict[int, NiceUserStatusFlagKind] = {
+    0: NiceUserStatusFlagKind.combineMaterialC,
+    1: NiceUserStatusFlagKind.combineMaterialUc,
+    2: NiceUserStatusFlagKind.combineMaterialR,
+    3: NiceUserStatusFlagKind.statusUpC,
+    4: NiceUserStatusFlagKind.statusUpUc,
+    5: NiceUserStatusFlagKind.statusUpR,
+    6: NiceUserStatusFlagKind.svtEquipC,
+    7: NiceUserStatusFlagKind.svtEquipUc,
+    8: NiceUserStatusFlagKind.svtEquipR,
+    9: NiceUserStatusFlagKind.costumeDisplaySetting,
+    10: NiceUserStatusFlagKind.firstNpSpeed,
+    11: NiceUserStatusFlagKind.fixMainSupportDeck,
+    12: NiceUserStatusFlagKind.fixEventSupportDeck,
+    13: NiceUserStatusFlagKind.questDropAutoselCombineMaterialC,
+    14: NiceUserStatusFlagKind.questDropAutoselCombineMaterialUc,
+    15: NiceUserStatusFlagKind.questDropAutoselCombineMaterialR,
+    16: NiceUserStatusFlagKind.questDropAutoselCombineMaterialSr,
+    17: NiceUserStatusFlagKind.randomLimitCount,
+    18: NiceUserStatusFlagKind.randomLimitCountSupport,
+    19: NiceUserStatusFlagKind.svtLimitSpoilerProtection,
+    20: NiceUserStatusFlagKind.svtLimitDisplaySetting,
+    21: NiceUserStatusFlagKind.birthdaySetting,
+    22: NiceUserStatusFlagKind.issuedDeletePassword,
+    23: NiceUserStatusFlagKind.deleted,
+    28: NiceUserStatusFlagKind.supportLimitCountToDispLimitCount,
+}
+
+
+class BattleScriptActionType(IntEnum):
+    AiAct = 1
+    Wait = 2
+    CutIn = 3
+    MoveCamera = 4
+    Message = 5
+    PlayVoice = 6
+    NormalSpeed = 7
+    ResumeSpeed = 8
+
+
+class NiceBattleScriptActionType(StrEnum):
+    """Battle Script Action Type"""
+
+    aiAct = "aiAct"
+    wait = "wait"
+    cutIn = "cutIn"
+    moveCamera = "moveCamera"
+    message = "message"
+    playVoice = "playVoice"
+    normalSpeed = "normalSpeed"
+    resumeSpeed = "resumeSpeed"
+
+
+BATTLE_SCRIPT_ACTION_TYPE_NAME: dict[int, NiceBattleScriptActionType] = {
+    1: NiceBattleScriptActionType.aiAct,
+    2: NiceBattleScriptActionType.wait,
+    3: NiceBattleScriptActionType.cutIn,
+    4: NiceBattleScriptActionType.moveCamera,
+    5: NiceBattleScriptActionType.message,
+    6: NiceBattleScriptActionType.playVoice,
+    7: NiceBattleScriptActionType.normalSpeed,
+    8: NiceBattleScriptActionType.resumeSpeed,
+}
+
+
+class BattleScriptActionActorType(IntEnum):
+    None_ = 0
+    Field = 1
+    Enemy = 2
+    Player = 3
+    Npc = 4
+
+
+class NiceBattleScriptActionActorType(StrEnum):
+    """Battle Script Action Actor Type"""
+
+    none = "none"
+    field = "field"
+    enemy = "enemy"
+    player = "player"
+    npc = "npc"
+
+
+BATTLE_SCRIPT_ACTION_ACTOR_TYPE_NAME: dict[int, NiceBattleScriptActionActorType] = {
+    0: NiceBattleScriptActionActorType.none,
+    1: NiceBattleScriptActionActorType.field,
+    2: NiceBattleScriptActionActorType.enemy,
+    3: NiceBattleScriptActionActorType.player,
+    4: NiceBattleScriptActionActorType.npc,
+}

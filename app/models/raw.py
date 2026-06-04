@@ -2461,6 +2461,17 @@ mstBattleMessageGroup = Table(
 )
 
 
+mstBattleScript = Table(
+    "mstBattleScript",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("playOrder", Integer),
+    Column("idx", Integer),
+    Column("battleScriptAction", Integer),
+    Column("script", JSONB),
+)
+
+
 mstQuestConsumeItem = Table(
     "mstQuestConsumeItem",
     metadata,
@@ -2946,6 +2957,7 @@ TABLES_TO_BE_LOADED = [
     [mstClassRelationOverwrite, mstBuffConvert],
     [mstClosedMessage],
     [mstBattleMessage, mstBattleMessageGroup],
+    [mstBattleScript],
     [mstCombineAppendPassiveSkill],
     [mstCombineCostume],
     [mstCombineLimit],

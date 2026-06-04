@@ -47,6 +47,7 @@ from .gameenums import (
     NiceBattleBranchSkillCondBranchType,
     NiceBattleFieldEnvironmentGrantType,
     NiceBattlePointFlag,
+    NiceBattleScriptActionType,
     NiceBuffType,
     NiceClassBoardSkillType,
     NiceClassBoardSquareFlag,
@@ -158,7 +159,9 @@ class AssetURL:
         4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}_2@0.png",
     }
     image = "{base_url}/{region}/Image/{image}/{image}.png"
-    narrowFigureDefault = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@0.png"
+    narrowFigureDefault = (
+        "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@0.png"
+    )
     skillIcon = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
     buffIcon = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
     items = "{base_url}/{region}/Items/{item_id}.png"
@@ -2923,6 +2926,14 @@ class NiceBattleMessageGroup(BaseModelORJson):
     groupId: int
     probability: int
     messages: list[NiceBattleMessage]
+
+
+class NiceBattleScript(BaseModelORJson):
+    id: int
+    playOrder: int
+    idx: int
+    battleScriptAction: NiceBattleScriptActionType
+    script: dict[str, Any]
 
 
 class NiceQuestHint(BaseModelORJson):

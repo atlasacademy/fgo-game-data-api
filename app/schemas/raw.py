@@ -2051,6 +2051,15 @@ class MstBattleMessageGroup(BaseModelORJson):
     probability: int
 
 
+
+class MstBattleScript(BaseModelORJson):
+    id: int
+    playOrder: int
+    idx: int
+    battleScriptAction: int
+    script: dict[str, Any]
+
+
 class MstQuestPhase(BaseModelORJson):
     classIds: list[int]  # [7],
     individuality: list[int]  # [2038, 2039, 94000046],
@@ -2289,6 +2298,11 @@ class BattleMessageGroupEntity(BaseModelORJson):
     mstBattleMessageGroup: list[MstBattleMessageGroup]
     mstBattleMessage: list[MstBattleMessage]
     mstCommonRelease: list[MstCommonRelease]
+
+
+
+class BattleScriptEntity(BaseModelORJson):
+    mstBattleScript: list[MstBattleScript]
 
 
 class Master(BaseModelORJson):

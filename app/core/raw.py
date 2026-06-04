@@ -41,6 +41,7 @@ from ..schemas.raw import (
     BattleMasterImageEntity,
     BattleMessageEntity,
     BattleMessageGroupEntity,
+    BattleScriptEntity,
     BgmEntity,
     BuffEntity,
     BuffEntityNoReverse,
@@ -60,6 +61,7 @@ from ..schemas.raw import (
     MstBattleMessageGroup,
     MstBattlePoint,
     MstBattlePointPhase,
+    MstBattleScript,
     MstBgm,
     MstBgmRelease,
     MstBlankEarthSpot,
@@ -858,6 +860,18 @@ async def get_battle_message_group_entity(
         mstBattleMessageGroup=mstBattleMessageGroup,
         mstBattleMessage=messages,
         mstCommonRelease=common_releases,
+    )
+
+
+async def get_battle_script_entity(
+    conn: AsyncConnection, script_id: int
+) -> BattleScriptEntity:
+    mstBattleScript = await fetch.get_all_multiple(conn, MstBattleScript, [script_id])
+    if not mstBattleScript:
+        raise HTTPException(status_code=404, detail="Battle Script not found")
+
+    return BattleScriptEntity(
+        mstBattleScript=mstBattleScript,
     )
 
 

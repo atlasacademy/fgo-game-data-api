@@ -2726,3 +2726,50 @@ export enum NiceSvtCollectionStatus {
     LINK_CLOSE = "linkClose",
     COLLECTION_STATUS_6 = "collectionStatus6",
 }
+
+export enum NiceUserStatusFlagKind {
+    COMBINE_MATERIAL_C = "combineMaterialC",
+    COMBINE_MATERIAL_UC = "combineMaterialUc",
+    COMBINE_MATERIAL_R = "combineMaterialR",
+    STATUS_UP_C = "statusUpC",
+    STATUS_UP_UC = "statusUpUc",
+    STATUS_UP_R = "statusUpR",
+    SVT_EQUIP_C = "svtEquipC",
+    SVT_EQUIP_UC = "svtEquipUc",
+    SVT_EQUIP_R = "svtEquipR",
+    COSTUME_DISPLAY_SETTING = "costumeDisplaySetting",
+    FIRST_NP_SPEED = "firstNpSpeed",
+    FIX_MAIN_SUPPORT_DECK = "fixMainSupportDeck",
+    FIX_EVENT_SUPPORT_DECK = "fixEventSupportDeck",
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_C = "questDropAutoselCombineMaterialC",
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_UC = "questDropAutoselCombineMaterialUc",
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_R = "questDropAutoselCombineMaterialR",
+    QUEST_DROP_AUTOSEL_COMBINE_MATERIAL_SR = "questDropAutoselCombineMaterialSr",
+    RANDOM_LIMIT_COUNT = "randomLimitCount",
+    RANDOM_LIMIT_COUNT_SUPPORT = "randomLimitCountSupport",
+    SVT_LIMIT_SPOILER_PROTECTION = "svtLimitSpoilerProtection",
+    SVT_LIMIT_DISPLAY_SETTING = "svtLimitDisplaySetting",
+    BIRTHDAY_SETTING = "birthdaySetting",
+    ISSUED_DELETE_PASSWORD = "issuedDeletePassword",
+    DELETED = "deleted",
+    SUPPORT_LIMIT_COUNT_TO_DISP_LIMIT_COUNT = "supportLimitCountToDispLimitCount",
+}
+
+export enum NiceBattleScriptActionType {
+    AiAct = "aiAct",
+    Wait = "wait",
+    CutIn = "cutIn",
+    MoveCamera = "moveCamera",
+    Message = "message",
+    PlayVoice = "playVoice",
+    NormalSpeed = "normalSpeed",
+    ResumeSpeed = "resumeSpeed",
+}
+
+export enum NiceBattleScriptActionActorType {
+    None_ = "none",
+    Field = "field",
+    Enemy = "enemy",
+    Player = "player",
+    Npc = "npc",
+}

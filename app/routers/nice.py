@@ -7,6 +7,7 @@ from ..core import search
 from ..core.nice import (
     ai,
     battle_message,
+    battle_script,
     bgm,
     cc,
     class_board,
@@ -38,6 +39,7 @@ from ..schemas.nice import (
     NiceBattleMasterImage,
     NiceBattleMessage,
     NiceBattleMessageGroup,
+    NiceBattleScript,
     NiceBgmEntity,
     NiceBuffReverse,
     NiceClassBoard,
@@ -1069,6 +1071,25 @@ async def get_battle_message_group(
     async with get_db(region) as conn:
         return list_response(
             await battle_message.get_nice_battle_message_groups(conn, group_id)
+        )
+
+
+@router.get(
+    "/{region}/battle-script/{script_id}",
+    summary="Get Battle Script data",
+    response_description="Nice Battle Script Entity",
+    response_model=list[NiceBattleScript],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_script(
+    region: Region,
+    script_id: int,
+) -> Response:
+    async with get_db(region) as conn:
+        return list_response(
+            await battle_script.get_nice_battle_scripts(conn, script_id)
         )
 
 

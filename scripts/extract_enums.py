@@ -31,6 +31,9 @@ RAW_NAME_OVERRIDE = {
     "BattleBranchSkillCondBranchType": {
         "None": "None_",
     },
+    "BattleScriptActionActorType": {
+        "None": "None_",
+    },
     "FieldBuffApplyTargetType": {
         "None": "None_",
     },
@@ -859,6 +862,27 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Servant Collection Status",
         "SVT_COLLECTION_STATUS_NAME",
     ),
+    (
+        "UserStatusFlag.Kind",
+        "UserStatusFlagKind",
+        "NiceUserStatusFlagKind",
+        "User Status Flag Kind",
+        "USER_STATUS_FLAG_KIND_NAME",
+    ),
+    (
+        "BattleScriptAction.Type",
+        "BattleScriptActionType",
+        "NiceBattleScriptActionType",
+        "Battle Script Action Type",
+        "BATTLE_SCRIPT_ACTION_TYPE_NAME",
+    ),
+    (
+        "BattleScriptAction.ActorType",
+        "BattleScriptActionActorType",
+        "NiceBattleScriptActionActorType",
+        "Battle Script Action Actor Type",
+        "BATTLE_SCRIPT_ACTION_ACTOR_TYPE_NAME",
+    ),
 ]
 
 
@@ -879,9 +903,9 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
 
     for line in lines:
         if not in_recording_mode:
-            for signature in cs_signatures:
+            for signature, _in_recording_signature in cs_signatures.items():
                 if line.strip() == signature:
-                    in_recording_signature = cs_signatures[signature]
+                    in_recording_signature = _in_recording_signature
                     print(f"Found {in_recording_signature}")
                     enum_lines = []
                     in_recording_mode = True
