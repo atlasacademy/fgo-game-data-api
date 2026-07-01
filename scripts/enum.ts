@@ -926,6 +926,7 @@ export enum NiceDataValsType {
     NotActIfAlreadyAvoidStateBuff = "notActIfAlreadyAvoidStateBuff",
     AvoidFieldBuff = "avoidFieldBuff",
     UseUserSpecifiedLimitCount = "useUserSpecifiedLimitCount",
+    ParamAddOpCheckDead = "paramAddOpCheckDead",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1359,6 +1360,9 @@ export enum NiceCondType {
     BATTLE_ENTRY_ENEMY_TOTAL_COUNT_ABOVE = "battleEntryEnemyTotalCountAbove",
     BATTLE_ENTRY_ENEMY_TOTAL_COUNT_BELOW = "battleEntryEnemyTotalCountBelow",
     BATTLE_ENTRY_ENEMY_TOTAL_COUNT_EQUAL = "battleEntryEnemyTotalCountEqual",
+    JOB_MAX_LEVEL_NUM_ABOVE = "jobMaxLevelNumAbove",
+    JOB_MAX_LEVEL_NUM_BELOW = "jobMaxLevelNumBelow",
+    JOB_MAX_LEVEL_NUM_EQUAL = "jobMaxLevelNumEqual",
 }
 
 export enum NiceVoiceCondType {
@@ -1968,6 +1972,7 @@ export enum NiceAiActType {
     MESSAGE_GROUP = "messageGroup",
     OVERWRITE_FIELD_MOTION = "overwriteFieldMotion",
     OVERWRITE_ADD_UNIQUE_CAMERA = "overwriteAddUniqueCamera",
+    GIMMICK_SKILL = "gimmickSkill",
     NOBLE_PHANTASM = "noblePhantasm",
     BATTLE_END = "battleEnd",
     LOSE_END = "loseEnd",

@@ -702,6 +702,7 @@ class BaseVals(BaseModel):
     NotActIfAlreadyAvoidStateBuff: int | None = None
     AvoidFieldBuff: int | None = None
     UseUserSpecifiedLimitCount: int | None = None
+    ParamAddOpCheckDead: int | None = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None

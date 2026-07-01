@@ -2254,6 +2254,7 @@ class DataValsType(IntEnum):
     NotActIfAlreadyAvoidStateBuff = 271
     AvoidFieldBuff = 272
     UseUserSpecifiedLimitCount = 273
+    ParamAddOpCheckDead = 274
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3014,6 +3015,9 @@ class CondType(IntEnum):
     BATTLE_ENTRY_ENEMY_TOTAL_COUNT_ABOVE = 283
     BATTLE_ENTRY_ENEMY_TOTAL_COUNT_BELOW = 284
     BATTLE_ENTRY_ENEMY_TOTAL_COUNT_EQUAL = 285
+    JOB_MAX_LEVEL_NUM_ABOVE = 286
+    JOB_MAX_LEVEL_NUM_BELOW = 287
+    JOB_MAX_LEVEL_NUM_EQUAL = 288
 
 
 class NiceCondType(StrEnum):
@@ -3295,6 +3299,9 @@ class NiceCondType(StrEnum):
     battleEntryEnemyTotalCountAbove = "battleEntryEnemyTotalCountAbove"
     battleEntryEnemyTotalCountBelow = "battleEntryEnemyTotalCountBelow"
     battleEntryEnemyTotalCountEqual = "battleEntryEnemyTotalCountEqual"
+    jobMaxLevelNumAbove = "jobMaxLevelNumAbove"
+    jobMaxLevelNumBelow = "jobMaxLevelNumBelow"
+    jobMaxLevelNumEqual = "jobMaxLevelNumEqual"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3574,6 +3581,9 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     283: NiceCondType.battleEntryEnemyTotalCountAbove,
     284: NiceCondType.battleEntryEnemyTotalCountBelow,
     285: NiceCondType.battleEntryEnemyTotalCountEqual,
+    286: NiceCondType.jobMaxLevelNumAbove,
+    287: NiceCondType.jobMaxLevelNumBelow,
+    288: NiceCondType.jobMaxLevelNumEqual,
 }
 
 
@@ -5402,6 +5412,7 @@ class AiActType(IntEnum):
     MESSAGE_GROUP = 73
     OVERWRITE_FIELD_MOTION = 74
     OVERWRITE_ADD_UNIQUE_CAMERA = 75
+    GIMMICK_SKILL = 76
     NOBLE_PHANTASM = 80
     BATTLE_END = 90
     LOSE_END = 91
@@ -5440,6 +5451,7 @@ class NiceAiActType(StrEnum):
     messageGroup = "messageGroup"
     overwriteFieldMotion = "overwriteFieldMotion"
     overwriteAddUniqueCamera = "overwriteAddUniqueCamera"
+    gimmickSkill = "gimmickSkill"
     noblePhantasm = "noblePhantasm"
     battleEnd = "battleEnd"
     loseEnd = "loseEnd"
@@ -5478,6 +5490,7 @@ AI_ACT_TYPE_NAME: dict[int, NiceAiActType] = {
     73: NiceAiActType.messageGroup,
     74: NiceAiActType.overwriteFieldMotion,
     75: NiceAiActType.overwriteAddUniqueCamera,
+    76: NiceAiActType.gimmickSkill,
     80: NiceAiActType.noblePhantasm,
     90: NiceAiActType.battleEnd,
     91: NiceAiActType.loseEnd,
