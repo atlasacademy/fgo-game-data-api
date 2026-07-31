@@ -296,6 +296,7 @@ class FuncType(IntEnum):
     HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = 163
     DAMAGE_FUNC_TYPE_164 = 164
     DAMAGE_FUNC_TYPE_165 = 165
+    SET_BATTLE_MISSION_VALUE_AS_MAX = 168
 
 
 class NiceFuncType(StrEnum):
@@ -430,6 +431,7 @@ class NiceFuncType(StrEnum):
     hastenNpturnFromOtherUsedNpturn = "hastenNpturnFromOtherUsedNpturn"
     damageFuncType164 = "damageFuncType164"
     damageFuncType165 = "damageFuncType165"
+    setBattleMissionValueAsMax = "setBattleMissionValueAsMax"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -562,6 +564,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     163: NiceFuncType.hastenNpturnFromOtherUsedNpturn,
     164: NiceFuncType.damageFuncType164,
     165: NiceFuncType.damageFuncType165,
+    168: NiceFuncType.setBattleMissionValueAsMax,
 }
 
 
@@ -936,6 +939,7 @@ class BuffType(IntEnum):
     MULTI_GUTS_BEFORE_FUNCTION = 245
     LIMIT_MAX_NP = 246
     LIMIT_MIN_NP = 247
+    LAST_SELFTURNPROGRESS_FUNCTION = 248
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1172,6 +1176,7 @@ class NiceBuffType(StrEnum):
     multiGutsBeforeFunction = "multiGutsBeforeFunction"
     limitMaxNp = "limitMaxNp"
     limitMinNp = "limitMinNp"
+    lastSelfturnprogressFunction = "lastSelfturnprogressFunction"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1409,6 +1414,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     245: NiceBuffType.multiGutsBeforeFunction,
     246: NiceBuffType.limitMaxNp,
     247: NiceBuffType.limitMinNp,
+    248: NiceBuffType.lastSelfturnprogressFunction,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -2255,6 +2261,9 @@ class DataValsType(IntEnum):
     AvoidFieldBuff = 272
     UseUserSpecifiedLimitCount = 273
     ParamAddOpCheckDead = 274
+    ResultAggregateGroupId = 275
+    SelfTurnProgressGroup = 276
+    EnemyCountWaitTimeAfterEffect = 277
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2501,6 +2510,8 @@ class ShopType(IntEnum):
     EVENT_SVT_EQUIP = 16
     EXCHANGE_SVT_COIN = 17
     CLASS_BOARD_RESET = 18
+    EX_ROOM_SHOP = 19
+    EX_ROOM_SHOP_DAILY = 20
 
 
 class NiceShopType(StrEnum):
@@ -2525,6 +2536,8 @@ class NiceShopType(StrEnum):
     eventSvtEquip = "eventSvtEquip"
     exchangeSvtCoin = "exchangeSvtCoin"
     classBoardReset = "classBoardReset"
+    exRoomShop = "exRoomShop"
+    exRoomShopDaily = "exRoomShopDaily"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -2547,6 +2560,8 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     16: NiceShopType.eventSvtEquip,
     17: NiceShopType.exchangeSvtCoin,
     18: NiceShopType.classBoardReset,
+    19: NiceShopType.exRoomShop,
+    20: NiceShopType.exRoomShopDaily,
 }
 
 
@@ -3018,6 +3033,8 @@ class CondType(IntEnum):
     JOB_MAX_LEVEL_NUM_ABOVE = 286
     JOB_MAX_LEVEL_NUM_BELOW = 287
     JOB_MAX_LEVEL_NUM_EQUAL = 288
+    SVT_HP_REACH_NUM = 289
+    SVT_ATK_REACH_NUM = 290
 
 
 class NiceCondType(StrEnum):
@@ -3302,6 +3319,8 @@ class NiceCondType(StrEnum):
     jobMaxLevelNumAbove = "jobMaxLevelNumAbove"
     jobMaxLevelNumBelow = "jobMaxLevelNumBelow"
     jobMaxLevelNumEqual = "jobMaxLevelNumEqual"
+    svtHpReachNum = "svtHpReachNum"
+    svtAtkReachNum = "svtAtkReachNum"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3584,6 +3603,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     286: NiceCondType.jobMaxLevelNumAbove,
     287: NiceCondType.jobMaxLevelNumBelow,
     288: NiceCondType.jobMaxLevelNumEqual,
+    289: NiceCondType.svtHpReachNum,
+    290: NiceCondType.svtAtkReachNum,
 }
 
 
@@ -5650,7 +5671,7 @@ class MissionType(IntEnum):
     LIMITED = 5
     COMPLETE = 6
     RANDOM = 7
-    SERVANT = 8
+    EX_ROOM = 8
 
 
 class NiceMissionType(StrEnum):
@@ -5664,7 +5685,7 @@ class NiceMissionType(StrEnum):
     limited = "limited"
     complete = "complete"
     random = "random"
-    servant = "servant"
+    exRoom = "exRoom"
 
 
 MISSION_TYPE_NAME: dict[int, NiceMissionType] = {
@@ -5676,7 +5697,7 @@ MISSION_TYPE_NAME: dict[int, NiceMissionType] = {
     5: NiceMissionType.limited,
     6: NiceMissionType.complete,
     7: NiceMissionType.random,
-    8: NiceMissionType.servant,
+    8: NiceMissionType.exRoom,
 }
 
 
@@ -7095,6 +7116,9 @@ class ItemTransitionType(IntEnum):
     REVIVAL_ITEM = 17
     BLANK_EARTH_SCENARIO = 18
     LOGIN_BONUS = 19
+    EX_ROOM_QUEST = 20
+    EX_ROOM_MISSION = 21
+    EX_ROOM_SHOP = 22
 
 
 class NiceItemTransitionType(StrEnum):
@@ -7120,6 +7144,9 @@ class NiceItemTransitionType(StrEnum):
     revivalItem = "revivalItem"
     blankEarthScenario = "blankEarthScenario"
     loginBonus = "loginBonus"
+    exRoomQuest = "exRoomQuest"
+    exRoomMission = "exRoomMission"
+    exRoomShop = "exRoomShop"
 
 
 ITEM_TRANSITION_TYPE_NAME: dict[int, NiceItemTransitionType] = {
@@ -7143,6 +7170,9 @@ ITEM_TRANSITION_TYPE_NAME: dict[int, NiceItemTransitionType] = {
     17: NiceItemTransitionType.revivalItem,
     18: NiceItemTransitionType.blankEarthScenario,
     19: NiceItemTransitionType.loginBonus,
+    20: NiceItemTransitionType.exRoomQuest,
+    21: NiceItemTransitionType.exRoomMission,
+    22: NiceItemTransitionType.exRoomShop,
 }
 
 
@@ -7301,6 +7331,26 @@ class EventMissionCondDetailType(IntEnum):
     PURCHASE_SHOP_NUM = 41
     ITEM_USE_QUEST_NUM = 42
     BATTLE_MISSION_VALUE = 43
+    MAP_GIMMICK_COUNT_ONCE = 44
+    QUEST_CLEAR_TURN_NUM_BELOW = 45
+    QUEST_CLEAR_TURN_NUM_ABOVE = 46
+    QUEST_CLEAR_WITH_SVT_INDIVIDUALITY_ONLY = 47
+    QUEST_CLEAR_WITH_MY_DECK_SVT_NUM_EQUAL = 48
+    QUEST_CLEAR_WITH_MY_DECK_SVT_NUM_ABOVE = 49
+    QUEST_CLEAR_WITH_MY_DECK_SVT_NUM_BELOW = 50
+    QUEST_CLEAR_WITH_SVT_RARITY_EQUAL = 51
+    QUEST_CLEAR_WITH_SVT_RARITY_ABOVE = 52
+    QUEST_CLEAR_WITH_SVT_RARITY_BELOW = 53
+    QUEST_CLEAR_WITH_TOTAL_COST_ABOVE = 54
+    QUEST_CLEAR_WITH_TOTAL_COST_BELOW = 55
+    QUEST_CLEAR_WITH_TREASURE_DEVICE_TYPE_SVT_ONLY = 56
+    QUEST_CLEAR_WITH_SVT_FRIENDSHIP_RANK_ABOVE = 57
+    QUEST_CLEAR_WITH_SVT_INDIVIDUALITY_NUM_ABOVE_ONLY_STARTING_MEMBER = 58
+    QUEST_CLEAR_WITH_SVT_RARITY_EQUAL_NUM_ABOVE_ONLY_STARTING_MEMBER = 59
+    QUEST_CLEAR_WITH_SVT_RARITY_ABOVE_NUM_ABOVE_ONLY_STARTING_MEMBER = 60
+    QUEST_CLEAR_WITH_SVT_RARITY_BELOW_NUM_ABOVE_ONLY_STARTING_MEMBER = 61
+    QUEST_CLEAR_WITH_SVT_FRIENDSHIP_RANK_ABOVE_NUM_ABOVE_ONLY_STARTING_MEMBER = 62
+    QUEST_CLEAR_WITH_EQUIP = 63
 
 
 class NiceEventMissionCondDetailType(StrEnum):
@@ -7350,6 +7400,36 @@ class NiceEventMissionCondDetailType(StrEnum):
     purchaseShopNum = "purchaseShopNum"
     itemUseQuestNum = "itemUseQuestNum"
     battleMissionValue = "battleMissionValue"
+    mapGimmickCountOnce = "mapGimmickCountOnce"
+    questClearTurnNumBelow = "questClearTurnNumBelow"
+    questClearTurnNumAbove = "questClearTurnNumAbove"
+    questClearWithSvtIndividualityOnly = "questClearWithSvtIndividualityOnly"
+    questClearWithMyDeckSvtNumEqual = "questClearWithMyDeckSvtNumEqual"
+    questClearWithMyDeckSvtNumAbove = "questClearWithMyDeckSvtNumAbove"
+    questClearWithMyDeckSvtNumBelow = "questClearWithMyDeckSvtNumBelow"
+    questClearWithSvtRarityEqual = "questClearWithSvtRarityEqual"
+    questClearWithSvtRarityAbove = "questClearWithSvtRarityAbove"
+    questClearWithSvtRarityBelow = "questClearWithSvtRarityBelow"
+    questClearWithTotalCostAbove = "questClearWithTotalCostAbove"
+    questClearWithTotalCostBelow = "questClearWithTotalCostBelow"
+    questClearWithTreasureDeviceTypeSvtOnly = "questClearWithTreasureDeviceTypeSvtOnly"
+    questClearWithSvtFriendshipRankAbove = "questClearWithSvtFriendshipRankAbove"
+    questClearWithSvtIndividualityNumAboveOnlyStartingMember = (
+        "questClearWithSvtIndividualityNumAboveOnlyStartingMember"
+    )
+    questClearWithSvtRarityEqualNumAboveOnlyStartingMember = (
+        "questClearWithSvtRarityEqualNumAboveOnlyStartingMember"
+    )
+    questClearWithSvtRarityAboveNumAboveOnlyStartingMember = (
+        "questClearWithSvtRarityAboveNumAboveOnlyStartingMember"
+    )
+    questClearWithSvtRarityBelowNumAboveOnlyStartingMember = (
+        "questClearWithSvtRarityBelowNumAboveOnlyStartingMember"
+    )
+    questClearWithSvtFriendshipRankAboveNumAboveOnlyStartingMember = (
+        "questClearWithSvtFriendshipRankAboveNumAboveOnlyStartingMember"
+    )
+    questClearWithEquip = "questClearWithEquip"
 
 
 EVENT_MISSION_COND_DETAIL_TYPE_NAME: dict[int, NiceEventMissionCondDetailType] = {
@@ -7393,6 +7473,26 @@ EVENT_MISSION_COND_DETAIL_TYPE_NAME: dict[int, NiceEventMissionCondDetailType] =
     41: NiceEventMissionCondDetailType.purchaseShopNum,
     42: NiceEventMissionCondDetailType.itemUseQuestNum,
     43: NiceEventMissionCondDetailType.battleMissionValue,
+    44: NiceEventMissionCondDetailType.mapGimmickCountOnce,
+    45: NiceEventMissionCondDetailType.questClearTurnNumBelow,
+    46: NiceEventMissionCondDetailType.questClearTurnNumAbove,
+    47: NiceEventMissionCondDetailType.questClearWithSvtIndividualityOnly,
+    48: NiceEventMissionCondDetailType.questClearWithMyDeckSvtNumEqual,
+    49: NiceEventMissionCondDetailType.questClearWithMyDeckSvtNumAbove,
+    50: NiceEventMissionCondDetailType.questClearWithMyDeckSvtNumBelow,
+    51: NiceEventMissionCondDetailType.questClearWithSvtRarityEqual,
+    52: NiceEventMissionCondDetailType.questClearWithSvtRarityAbove,
+    53: NiceEventMissionCondDetailType.questClearWithSvtRarityBelow,
+    54: NiceEventMissionCondDetailType.questClearWithTotalCostAbove,
+    55: NiceEventMissionCondDetailType.questClearWithTotalCostBelow,
+    56: NiceEventMissionCondDetailType.questClearWithTreasureDeviceTypeSvtOnly,
+    57: NiceEventMissionCondDetailType.questClearWithSvtFriendshipRankAbove,
+    58: NiceEventMissionCondDetailType.questClearWithSvtIndividualityNumAboveOnlyStartingMember,
+    59: NiceEventMissionCondDetailType.questClearWithSvtRarityEqualNumAboveOnlyStartingMember,
+    60: NiceEventMissionCondDetailType.questClearWithSvtRarityAboveNumAboveOnlyStartingMember,
+    61: NiceEventMissionCondDetailType.questClearWithSvtRarityBelowNumAboveOnlyStartingMember,
+    62: NiceEventMissionCondDetailType.questClearWithSvtFriendshipRankAboveNumAboveOnlyStartingMember,
+    63: NiceEventMissionCondDetailType.questClearWithEquip,
 }
 
 

@@ -179,6 +179,7 @@ export enum NiceFuncType {
     HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = "hastenNpturnFromOtherUsedNpturn",
     DAMAGE_FUNC_TYPE_164 = "damageFuncType164",
     DAMAGE_FUNC_TYPE_165 = "damageFuncType165",
+    SET_BATTLE_MISSION_VALUE_AS_MAX = "setBattleMissionValueAsMax",
 }
 
 export enum NiceFuncTargetType {
@@ -456,6 +457,7 @@ export enum NiceBuffType {
     MULTI_GUTS_BEFORE_FUNCTION = "multiGutsBeforeFunction",
     LIMIT_MAX_NP = "limitMaxNp",
     LIMIT_MIN_NP = "limitMinNp",
+    LAST_SELFTURNPROGRESS_FUNCTION = "lastSelfturnprogressFunction",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -927,6 +929,9 @@ export enum NiceDataValsType {
     AvoidFieldBuff = "avoidFieldBuff",
     UseUserSpecifiedLimitCount = "useUserSpecifiedLimitCount",
     ParamAddOpCheckDead = "paramAddOpCheckDead",
+    ResultAggregateGroupId = "resultAggregateGroupId",
+    SelfTurnProgressGroup = "selfTurnProgressGroup",
+    EnemyCountWaitTimeAfterEffect = "enemyCountWaitTimeAfterEffect",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1021,6 +1026,8 @@ export enum NiceShopType {
     EVENT_SVT_EQUIP = "eventSvtEquip",
     EXCHANGE_SVT_COIN = "exchangeSvtCoin",
     CLASS_BOARD_RESET = "classBoardReset",
+    EX_ROOM_SHOP = "exRoomShop",
+    EX_ROOM_SHOP_DAILY = "exRoomShopDaily",
 }
 
 export enum NicePayType {
@@ -1363,6 +1370,8 @@ export enum NiceCondType {
     JOB_MAX_LEVEL_NUM_ABOVE = "jobMaxLevelNumAbove",
     JOB_MAX_LEVEL_NUM_BELOW = "jobMaxLevelNumBelow",
     JOB_MAX_LEVEL_NUM_EQUAL = "jobMaxLevelNumEqual",
+    SVT_HP_REACH_NUM = "svtHpReachNum",
+    SVT_ATK_REACH_NUM = "svtAtkReachNum",
 }
 
 export enum NiceVoiceCondType {
@@ -2038,7 +2047,7 @@ export enum NiceMissionType {
     LIMITED = "limited",
     COMPLETE = "complete",
     RANDOM = "random",
-    SERVANT = "servant",
+    EX_ROOM = "exRoom",
 }
 
 export enum NiceMissionRewardType {
@@ -2486,6 +2495,9 @@ export enum NiceItemTransitionType {
     REVIVAL_ITEM = "revivalItem",
     BLANK_EARTH_SCENARIO = "blankEarthScenario",
     LOGIN_BONUS = "loginBonus",
+    EX_ROOM_QUEST = "exRoomQuest",
+    EX_ROOM_MISSION = "exRoomMission",
+    EX_ROOM_SHOP = "exRoomShop",
 }
 
 export enum NiceItemTransitionTargetValue {
@@ -2563,6 +2575,26 @@ export enum NiceEventMissionCondDetailType {
     PURCHASE_SHOP_NUM = "purchaseShopNum",
     ITEM_USE_QUEST_NUM = "itemUseQuestNum",
     BATTLE_MISSION_VALUE = "battleMissionValue",
+    MAP_GIMMICK_COUNT_ONCE = "mapGimmickCountOnce",
+    QUEST_CLEAR_TURN_NUM_BELOW = "questClearTurnNumBelow",
+    QUEST_CLEAR_TURN_NUM_ABOVE = "questClearTurnNumAbove",
+    QUEST_CLEAR_WITH_SVT_INDIVIDUALITY_ONLY = "questClearWithSvtIndividualityOnly",
+    QUEST_CLEAR_WITH_MY_DECK_SVT_NUM_EQUAL = "questClearWithMyDeckSvtNumEqual",
+    QUEST_CLEAR_WITH_MY_DECK_SVT_NUM_ABOVE = "questClearWithMyDeckSvtNumAbove",
+    QUEST_CLEAR_WITH_MY_DECK_SVT_NUM_BELOW = "questClearWithMyDeckSvtNumBelow",
+    QUEST_CLEAR_WITH_SVT_RARITY_EQUAL = "questClearWithSvtRarityEqual",
+    QUEST_CLEAR_WITH_SVT_RARITY_ABOVE = "questClearWithSvtRarityAbove",
+    QUEST_CLEAR_WITH_SVT_RARITY_BELOW = "questClearWithSvtRarityBelow",
+    QUEST_CLEAR_WITH_TOTAL_COST_ABOVE = "questClearWithTotalCostAbove",
+    QUEST_CLEAR_WITH_TOTAL_COST_BELOW = "questClearWithTotalCostBelow",
+    QUEST_CLEAR_WITH_TREASURE_DEVICE_TYPE_SVT_ONLY = "questClearWithTreasureDeviceTypeSvtOnly",
+    QUEST_CLEAR_WITH_SVT_FRIENDSHIP_RANK_ABOVE = "questClearWithSvtFriendshipRankAbove",
+    QUEST_CLEAR_WITH_SVT_INDIVIDUALITY_NUM_ABOVE_ONLY_STARTING_MEMBER = "questClearWithSvtIndividualityNumAboveOnlyStartingMember",
+    QUEST_CLEAR_WITH_SVT_RARITY_EQUAL_NUM_ABOVE_ONLY_STARTING_MEMBER = "questClearWithSvtRarityEqualNumAboveOnlyStartingMember",
+    QUEST_CLEAR_WITH_SVT_RARITY_ABOVE_NUM_ABOVE_ONLY_STARTING_MEMBER = "questClearWithSvtRarityAboveNumAboveOnlyStartingMember",
+    QUEST_CLEAR_WITH_SVT_RARITY_BELOW_NUM_ABOVE_ONLY_STARTING_MEMBER = "questClearWithSvtRarityBelowNumAboveOnlyStartingMember",
+    QUEST_CLEAR_WITH_SVT_FRIENDSHIP_RANK_ABOVE_NUM_ABOVE_ONLY_STARTING_MEMBER = "questClearWithSvtFriendshipRankAboveNumAboveOnlyStartingMember",
+    QUEST_CLEAR_WITH_EQUIP = "questClearWithEquip",
 }
 
 export enum NiceSvtCardPositionDamageRatesSlideType {
