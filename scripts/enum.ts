@@ -2778,3 +2778,29 @@ export enum NiceBattleScriptActionActorType {
     Player = "player",
     Npc = "npc",
 }
+
+export enum NiceUserQuestStatusFlag {
+    RESET = "reset",
+    RESET_REWARD = "resetReward",
+    PURCHASED_RARE_PRI = "purchasedRarePri",
+    CHALLENGED_NEWEST_PHASE = "challengedNewestPhase",
+    BATTLE_RESULT_WIN = "battleResultWin",
+    BATTLE_RESULT_LOSE = "battleResultLose",
+    LATEST_RESULT_WIN = "latestResultWin",
+    LATEST_RESULT_LOSE = "latestResultLose",
+    NOT_GET_QUEST_CLEAR_GIFT = "notGetQuestClearGift",
+}
+
+export enum NiceEventStatusType {
+    NONE = "none",
+    PURCHASED_RARE_PRI = "purchasedRarePri",
+    STRICT_CAMPAIGN_END = "strictCampaignEnd",
+    IS_COMEBACK_TARGET_USER = "isComebackTargetUser",
+    BATTLE_LINE_LOSE = "battleLineLose",
+    BATTLE_LINE_RESULT_END = "battleLineResultEnd",
+    BATTLE_LINE_RESULT_WIN = "battleLineResultWin",
+    USE_EVENT_ITEM = "useEventItem",
+    VIEW_OPENING_MOVIE = "viewOpeningMovie",
+    RAID_PARTICIPATE = "raidParticipate",
+    GET_ITEM_FROM_BOX_GACHA = "getItemFromBoxGacha",
+}

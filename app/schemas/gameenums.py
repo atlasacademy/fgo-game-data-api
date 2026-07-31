@@ -8079,3 +8079,87 @@ BATTLE_SCRIPT_ACTION_ACTOR_TYPE_NAME: dict[int, NiceBattleScriptActionActorType]
     3: NiceBattleScriptActionActorType.player,
     4: NiceBattleScriptActionActorType.npc,
 }
+
+
+class UserQuestStatusFlag(IntEnum):
+    RESET = 2
+    RESET_REWARD = 4
+    PURCHASED_RARE_PRI = 8
+    CHALLENGED_NEWEST_PHASE = 16
+    BATTLE_RESULT_WIN = 32
+    BATTLE_RESULT_LOSE = 64
+    LATEST_RESULT_WIN = 128
+    LATEST_RESULT_LOSE = 256
+    NOT_GET_QUEST_CLEAR_GIFT = 512
+
+
+class NiceUserQuestStatusFlag(StrEnum):
+    """User Quest Status Flag"""
+
+    reset = "reset"
+    resetReward = "resetReward"
+    purchasedRarePri = "purchasedRarePri"
+    challengedNewestPhase = "challengedNewestPhase"
+    battleResultWin = "battleResultWin"
+    battleResultLose = "battleResultLose"
+    latestResultWin = "latestResultWin"
+    latestResultLose = "latestResultLose"
+    notGetQuestClearGift = "notGetQuestClearGift"
+
+
+USER_QUEST_STATUS_FLAG_NAME: dict[int, NiceUserQuestStatusFlag] = {
+    2: NiceUserQuestStatusFlag.reset,
+    4: NiceUserQuestStatusFlag.resetReward,
+    8: NiceUserQuestStatusFlag.purchasedRarePri,
+    16: NiceUserQuestStatusFlag.challengedNewestPhase,
+    32: NiceUserQuestStatusFlag.battleResultWin,
+    64: NiceUserQuestStatusFlag.battleResultLose,
+    128: NiceUserQuestStatusFlag.latestResultWin,
+    256: NiceUserQuestStatusFlag.latestResultLose,
+    512: NiceUserQuestStatusFlag.notGetQuestClearGift,
+}
+
+
+class EventStatusType(IntEnum):
+    NONE = 0
+    PURCHASED_RARE_PRI = 1
+    STRICT_CAMPAIGN_END = 2
+    IS_COMEBACK_TARGET_USER = 3
+    BATTLE_LINE_LOSE = 4
+    BATTLE_LINE_RESULT_END = 5
+    BATTLE_LINE_RESULT_WIN = 6
+    USE_EVENT_ITEM = 7
+    VIEW_OPENING_MOVIE = 8
+    RAID_PARTICIPATE = 9
+    GET_ITEM_FROM_BOX_GACHA = 10
+
+
+class NiceEventStatusType(StrEnum):
+    """Event Status Type"""
+
+    none = "none"
+    purchasedRarePri = "purchasedRarePri"
+    strictCampaignEnd = "strictCampaignEnd"
+    isComebackTargetUser = "isComebackTargetUser"
+    battleLineLose = "battleLineLose"
+    battleLineResultEnd = "battleLineResultEnd"
+    battleLineResultWin = "battleLineResultWin"
+    useEventItem = "useEventItem"
+    viewOpeningMovie = "viewOpeningMovie"
+    raidParticipate = "raidParticipate"
+    getItemFromBoxGacha = "getItemFromBoxGacha"
+
+
+EVENT_STATUS_TYPE_NAME: dict[int, NiceEventStatusType] = {
+    0: NiceEventStatusType.none,
+    1: NiceEventStatusType.purchasedRarePri,
+    2: NiceEventStatusType.strictCampaignEnd,
+    3: NiceEventStatusType.isComebackTargetUser,
+    4: NiceEventStatusType.battleLineLose,
+    5: NiceEventStatusType.battleLineResultEnd,
+    6: NiceEventStatusType.battleLineResultWin,
+    7: NiceEventStatusType.useEventItem,
+    8: NiceEventStatusType.viewOpeningMovie,
+    9: NiceEventStatusType.raidParticipate,
+    10: NiceEventStatusType.getItemFromBoxGacha,
+}

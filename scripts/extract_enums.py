@@ -883,6 +883,20 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Battle Script Action Actor Type",
         "BATTLE_SCRIPT_ACTION_ACTOR_TYPE_NAME",
     ),
+    (
+        "UserQuestEntity.StatusFlag",
+        "UserQuestStatusFlag",
+        "NiceUserQuestStatusFlag",
+        "User Quest Status Flag",
+        "USER_QUEST_STATUS_FLAG_NAME",
+    ),
+    (
+        "EventStatus.Type",
+        "EventStatusType",
+        "NiceEventStatusType",
+        "Event Status Type",
+        "EVENT_STATUS_TYPE_NAME",
+    ),
 ]
 
 
