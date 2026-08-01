@@ -17,6 +17,7 @@ from ....schemas.nice import (
     NiceVoiceGroup,
     NiceVoiceLine,
     NiceVoicePlayCond,
+    NiceVoiceSubtitle,
 )
 from ....schemas.raw import (
     GlobalNewMstSubtitle,
@@ -47,6 +48,18 @@ def get_voice_url(region: Region, svt_id: int, voice_type: int, voice_id: str) -
     return AssetURL.audio.format(
         base_url=settings.asset_url, region=region, folder=folder, id=voice_id
     )
+
+
+def get_voice_scripts(voice: MstSvtVoice) -> list[ScriptJson]:
+    """Scripts of a voice group that turn into a voice line."""
+    return [
+        script for script in voice.scriptJson if script is not None and script.infos
+    ]
+
+
+def get_script_subtitle_id(svt_id: int, script: ScriptJson) -> str:
+    """mstSubtitle key of a voice line: the svt id and the id of its first info."""
+    return f"{svt_id}_{script.infos[0].id}"
 
 
 def get_nice_play_cond(playCond: MstVoicePlayCond) -> NiceVoicePlayCond:
@@ -123,7 +136,7 @@ def get_nice_voice_line(
             and play_cond.voiceId == voice_id
             and play_cond.voicePrefix in (-1, voice_prefix)
         ],
-        subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
+        subtitle=subtitle_ids.get(get_script_subtitle_id(svt_id, script), ""),
     )
 
     if script.summonScript is not None and script.summonScript != "":
@@ -168,8 +181,7 @@ def get_nice_voice_group(
                 mstSvtGroups,
                 lang,
             )
-            for script in voice.scriptJson
-            if script is not None and script.infos
+            for script in get_voice_scripts(voice)
         ],
     )
 
@@ -204,3 +216,46 @@ def get_nice_voice(
         )
         for voice in voice_data.mstSvtVoice
     ]
+
+
+def get_nice_subtitles(
+    region: Region, voice_data: RequiredVoiceData
+) -> list[NiceVoiceSubtitle]:
+    """Subtitles that don't belong to any voice line.
+
+    Story enemies usually have no mstVoice or mstSvtVoice rows at all,
+    so their battle dialogue is only present in mstSubtitle
+    and would otherwise never show up in the nice data.
+    """
+    voice_line_ids = {
+        get_script_subtitle_id(voice.id, script)
+        for voice in voice_data.mstSvtVoice
+        for script in get_voice_scripts(voice)
+    }
+
+    subtitles: list[NiceVoiceSubtitle] = []
+    for subtitle in voice_data.mstSubtitle:
+        if subtitle.id in voice_line_ids or "_" not in subtitle.id:
+            continue
+
+        svt_id = subtitle.get_svtId()
+        if svt_id == -1:
+            continue
+
+        subtitles.append(
+            NiceVoiceSubtitle(
+                id=subtitle.id,
+                serif=subtitle.serif,
+                # A subtitle doesn't say what voice type it is
+                # and battle and treasureDevice lines both use B### ids
+                # so the folder can't be derived from the id.
+                audioAsset=get_voice_url(
+                    region,
+                    svt_id,
+                    SvtVoiceType.BATTLE,
+                    subtitle.id.split("_", 1)[1],
+                ),
+            )
+        )
+
+    return subtitles

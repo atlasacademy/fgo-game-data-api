@@ -1,3 +1,4 @@
+from dataclasses import dataclass, field
 from decimal import Decimal
 
 import orjson
@@ -6,15 +7,25 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from app.core.nice.func import parse_dataVals
+from app.core.nice.svt.voice import get_nice_subtitles
 from app.core.utils import get_voice_name
 from app.data.custom_mappings import Translation
 from app.data.script import get_script_path, get_script_text_only, remove_brackets
 from app.db.load import get_SkillID_from_sval, get_Value_from_sval
 from app.routers.utils import list_string_exclude
 from app.schemas.common import Language, Region, ReverseDepth
-from app.schemas.gameenums import FuncType
+from app.schemas.gameenums import FuncType, SvtVoiceType
 from app.schemas.nice import NiceServant
-from app.schemas.raw import ScriptJsonInfo, get_subtitle_svtId
+from app.schemas.raw import (
+    GlobalNewMstSubtitle,
+    MstSvtGroup,
+    MstSvtVoice,
+    MstVoice,
+    MstVoicePlayCond,
+    ScriptJson,
+    ScriptJsonInfo,
+    get_subtitle_svtId,
+)
 
 from .utils import get_response_data, get_text_data
 
@@ -155,3 +166,149 @@ def test_get_SkillID_from_sval() -> None:
         )
         == 961313
     )
+
+
+@dataclass
+class VoiceData:
+    """Stand-in for the voice fields of SvtEntity, see RequiredVoiceData."""
+
+    mstSvtVoice: list[MstSvtVoice] = field(default_factory=list)
+    mstVoice: list[MstVoice] = field(default_factory=list)
+    mstVoicePlayCond: list[MstVoicePlayCond] = field(default_factory=list)
+    mstSvtGroup: list[MstSvtGroup] = field(default_factory=list)
+    mstSubtitle: list[GlobalNewMstSubtitle] = field(default_factory=list)
+
+
+def make_svt_voice(svt_id: int, *voice_ids: str) -> MstSvtVoice:
+    """Voice group with one voice line per voice id."""
+    return MstSvtVoice(
+        id=svt_id,
+        voicePrefix=0,
+        type=SvtVoiceType.BATTLE,
+        scriptJson=[
+            ScriptJson(
+                infos=[ScriptJsonInfo(id=voice_id, face=0, delay=Decimal("0.0"))]
+            )
+            for voice_id in voice_ids
+        ],
+    )
+
+
+def make_subtitles(*subtitle_ids: str) -> list[GlobalNewMstSubtitle]:
+    return [
+        GlobalNewMstSubtitle(id=subtitle_id, serif=f"serif {subtitle_id}")
+        for subtitle_id in subtitle_ids
+    ]
+
+
+def test_nice_subtitles_all_matched() -> None:
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010", "0_B020")],
+        mstSubtitle=make_subtitles("100100_0_B010", "100100_0_B020"),
+    )
+    assert get_nice_subtitles(Region.NA, voice_data) == []
+
+
+def test_nice_subtitles_none_matched() -> None:
+    voice_data = VoiceData(mstSubtitle=make_subtitles("9944030_0_B010"))
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert [subtitle.id for subtitle in subtitles] == ["9944030_0_B010"]
+    assert subtitles[0].serif == "serif 9944030_0_B010"
+    assert subtitles[0].audioAsset.endswith("/Servants_9944030/0_B010.mp3")
+
+
+def test_nice_subtitles_mixed_keeps_order() -> None:
+    voice_data = VoiceData(
+        mstSvtVoice=[
+            make_svt_voice(100100, "0_B010"),
+            make_svt_voice(100100, "0_B030"),
+        ],
+        mstSubtitle=make_subtitles(
+            "100100_0_B010",
+            "100100_0_B020",
+            "100100_0_B030",
+            "100100_0_B040",
+        ),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert [subtitle.id for subtitle in subtitles] == [
+        "100100_0_B020",
+        "100100_0_B040",
+    ]
+
+
+def test_nice_subtitles_other_svt_voice_line_doesnt_match() -> None:
+    """The svt id is part of the key: same voice id under another svt isn't a match."""
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010")],
+        mstSubtitle=make_subtitles("9944030_0_B010"),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert [subtitle.id for subtitle in subtitles] == ["9944030_0_B010"]
+
+
+def test_nice_subtitles_only_first_info_matches() -> None:
+    """A voice line consumes the subtitle of its first info only, like the nice voice line."""
+    voice_data = VoiceData(
+        mstSvtVoice=[
+            MstSvtVoice(
+                id=100100,
+                voicePrefix=0,
+                type=SvtVoiceType.BATTLE,
+                scriptJson=[
+                    ScriptJson(
+                        infos=[
+                            ScriptJsonInfo(id="0_B010", face=0, delay=Decimal("0.0")),
+                            ScriptJsonInfo(id="0_B011", face=0, delay=Decimal("0.0")),
+                        ]
+                    )
+                ],
+            )
+        ],
+        mstSubtitle=make_subtitles("100100_0_B010", "100100_0_B011"),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert [subtitle.id for subtitle in subtitles] == ["100100_0_B011"]
+
+
+def test_nice_subtitles_skips_empty_scripts() -> None:
+    """A None script or one with no infos makes no voice line, so it consumes nothing."""
+    voice_data = VoiceData(
+        mstSvtVoice=[
+            MstSvtVoice(
+                id=100100,
+                voicePrefix=0,
+                type=SvtVoiceType.BATTLE,
+                scriptJson=[None, ScriptJson(infos=[])],
+            )
+        ],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert [subtitle.id for subtitle in subtitles] == ["100100_0_B010"]
+
+
+def test_nice_subtitles_skips_malformed_ids() -> None:
+    voice_data = VoiceData(
+        mstSubtitle=make_subtitles(
+            "PLAINDEMO_99100001", "9944030", "9944030_0_B010", "_0_B020"
+        )
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert [subtitle.id for subtitle in subtitles] == ["9944030_0_B010"]
+
+
+def test_nice_subtitles_empty_table() -> None:
+    assert get_nice_subtitles(Region.JP, VoiceData()) == []
