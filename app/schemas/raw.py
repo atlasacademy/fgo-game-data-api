@@ -1856,6 +1856,7 @@ class MstMapGimmick(BaseModelORJson):
 
 class MstSpot(BaseModelORJson):
     joinSpotIds: list[int] = []  # []
+    script: dict[str, Any] | None = None
     id: int  # 10001
     warId: int  # 100
     mapId: int  # 100

@@ -2204,6 +2204,7 @@ mstSpot = Table(
     "mstSpot",
     metadata,
     Column("joinSpotIds", ARRAY(Integer), default=[]),
+    Column("script", JSONB),
     Column("id", Integer, primary_key=True),
     Column("warId", Integer, index=True),
     Column("mapId", Integer),
