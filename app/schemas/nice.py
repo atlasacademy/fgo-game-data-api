@@ -821,8 +821,8 @@ class CondBranchSkillInfo(BaseModel):
     condType: NiceBattleBranchSkillCondBranchType
     condValue: list[int]
     skillId: int
-    detailText: str
-    iconBuffId: int
+    detailText: str | None = None
+    iconBuffId: int | None = None
 
 
 class NiceSkillScript(BaseModel):
