@@ -243,8 +243,8 @@ async def get_nice_skill_with_svt(
                 ],
                 condValue=info["condValue"],
                 skillId=info["skillId"],
-                detailText=info["detailText"],
-                iconBuffId=info["iconBuffId"],
+                detailText=info.get("detailText"),
+                iconBuffId=info.get("iconBuffId"),
             )
             for info in skillEntity.mstSkill.script["condBranchSkillInfo"]
         ]
