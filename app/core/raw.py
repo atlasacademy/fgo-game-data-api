@@ -53,6 +53,7 @@ from ..schemas.raw import (
     FunctionEntity,
     FunctionEntityNoReverse,
     GachaEntity,
+    GlobalNewMstSubtitle,
     GrandGraphEntity,
     ItemEntity,
     MasterMissionEntity,
@@ -461,7 +462,9 @@ async def get_event_allout(
 
 
 async def get_voice_from_svtVoice(
-    conn: AsyncConnection, mstSvtVoices: list[MstSvtVoice]
+    conn: AsyncConnection,
+    mstSvtVoices: list[MstSvtVoice],
+    mstSubtitles: Iterable[GlobalNewMstSubtitle] = (),
 ) -> list[MstVoice]:
     base_voice_ids = {
         info.get_voice_id()
@@ -469,6 +472,11 @@ async def get_voice_from_svtVoice(
         for script_json in svt_voice.scriptJson
         if script_json is not None
         for info in script_json.infos
+    }
+    # A subtitle that matches no voice line contributes no id above, but mstVoice
+    # is what tells get_nice_subtitles which folder its audio lives in.
+    base_voice_ids |= {
+        voice_id for subtitle in mstSubtitles if (voice_id := subtitle.get_voice_id())
     }
     return await fetch.get_all_multiple(conn, MstVoice, base_voice_ids)
 
@@ -739,7 +747,9 @@ async def get_servant_entity(
         mstSubtitle = await svt.get_mstSubtitle(conn, voice_ids)
         mstVoicePlayCond = await svt.get_mstVoicePlayCond(conn, voice_ids)
 
-        svt_entity.mstVoice = await get_voice_from_svtVoice(conn, mstSvtVoice)
+        svt_entity.mstVoice = await get_voice_from_svtVoice(
+            conn, mstSvtVoice, mstSubtitle
+        )
 
         svt_entity.mstSvtGroup = await get_voice_group_from_svtVoice(conn, mstSvtVoice)
 
@@ -1170,9 +1180,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     )
 
     mstSvtVoice = await svt.get_mstSvtVoice(conn, voice_ids)
-    mstVoice = await get_voice_from_svtVoice(conn, mstSvtVoice)
-    mstSvtGroup = await get_voice_group_from_svtVoice(conn, mstSvtVoice)
     mstSubtitle = await svt.get_mstSubtitle(conn, voice_ids)
+    mstVoice = await get_voice_from_svtVoice(conn, mstSvtVoice, mstSubtitle)
+    mstSvtGroup = await get_voice_group_from_svtVoice(conn, mstSvtVoice)
     mstVoicePlayCond = await svt.get_mstVoicePlayCond(conn, voice_ids)
     mstSvtExtra = await fetch.get_all_multiple(conn, MstSvtExtra, voice_ids)
 

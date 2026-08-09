@@ -1484,11 +1484,11 @@ class NiceVoiceSubtitle(BaseModel):
         ...,
         title="Subtitle mp3 URL",
         description="Subtitle mp3 URL. "
-        "A subtitle row doesn't say which voice type it belongs to "
-        "and both `battle` and `treasureDevice` lines use `B###` IDs, "
-        "so the URL is always built with the `battle` folder. "
-        "It can be wrong for an orphaned noble phantasm line "
-        "of an otherwise fully voiced servant.",
+        "The folder comes from the voice type `mstVoice` records for this "
+        "subtitle's voice ID, falling back to `battle` for an ID that has "
+        "no `mstVoice` row. "
+        "Some rows are leftovers whose audio was removed from the game, "
+        "so a URL is not a promise that the file exists.",
     )
 
 

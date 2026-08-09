@@ -409,6 +409,7 @@ class TestServantSpecial:
         assert subtitles
         assert all(subtitle["id"].startswith("9944030_") for subtitle in subtitles)
         assert all(subtitle["serif"] for subtitle in subtitles)
+        # Story enemy dialogue is all battle lines, so it stays under Servants_
         assert all(
             subtitle["audioAsset"].endswith(
                 f"/Servants_9944030/{subtitle['id'].split('_', 1)[1]}.mp3"
@@ -428,6 +429,15 @@ class TestServantSpecial:
         assert [subtitle["id"] for subtitle in profile["subtitles"]] == [
             "100100_0_B060",
             "100100_0_B070",
+        ]
+        # B060 and B070 are treasureDevice ids, so the folder follows the type
+        # mstVoice gives them instead of defaulting to Servants_
+        assert [
+            subtitle["audioAsset"].rsplit("/Audio/", 1)[1]
+            for subtitle in profile["subtitles"]
+        ] == [
+            "NoblePhantasm_100100/0_B060.mp3",
+            "NoblePhantasm_100100/0_B070.mp3",
         ]
 
     async def test_subtitles_voice_lines_unchanged(self, client: AsyncClient) -> None:

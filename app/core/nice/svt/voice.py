@@ -227,11 +227,16 @@ def get_nice_subtitles(
     so their battle dialogue is only present in mstSubtitle
     and would otherwise never show up in the nice data.
     """
+    # Only NA and KR ship subtitle data, so everywhere else there is nothing to match
+    if not voice_data.mstSubtitle:
+        return []
+
     voice_line_ids = {
         get_script_subtitle_id(voice.id, script)
         for voice in voice_data.mstSvtVoice
         for script in get_voice_scripts(voice)
     }
+    mstVoices = {voice.id: voice for voice in voice_data.mstVoice}
 
     subtitles: list[NiceVoiceSubtitle] = []
     for subtitle in voice_data.mstSubtitle:
@@ -242,17 +247,21 @@ def get_nice_subtitles(
         if svt_id == -1:
             continue
 
+        # An orphan has no voice group, so there's no mstSvtVoice.type to read,
+        # but mstVoice keys on the voice id and carries the same type:
+        # B010 is battle while B050 is treasureDevice, so the letter alone
+        # would be ambiguous where the whole id isn't.
+        mstVoice = mstVoices.get(subtitle.get_voice_id())
+        voice_type = mstVoice.svtVoiceType if mstVoice else SvtVoiceType.BATTLE
+
         subtitles.append(
             NiceVoiceSubtitle(
                 id=subtitle.id,
                 serif=subtitle.serif,
-                # A subtitle doesn't say what voice type it is
-                # and battle and treasureDevice lines both use B### ids
-                # so the folder can't be derived from the id.
                 audioAsset=get_voice_url(
                     region,
                     svt_id,
-                    SvtVoiceType.BATTLE,
+                    voice_type,
                     subtitle.id.split("_", 1)[1],
                 ),
             )

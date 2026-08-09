@@ -15,7 +15,7 @@ from app.db.load import get_SkillID_from_sval, get_Value_from_sval
 from app.routers.utils import list_string_exclude
 from app.schemas.common import Language, Region, ReverseDepth
 from app.schemas.gameenums import FuncType, SvtVoiceType
-from app.schemas.nice import NiceServant
+from app.schemas.nice import NiceServant, NiceVoiceSubtitle
 from app.schemas.raw import (
     GlobalNewMstSubtitle,
     MstSvtGroup,
@@ -33,6 +33,17 @@ from .utils import get_response_data, get_text_data
 def test_subtitle_svtId() -> None:
     assert get_subtitle_svtId("PLAINDEMO_99100001") == -1
     assert get_subtitle_svtId("9934820_0_B160") == 9934820
+
+
+def test_subtitle_voice_id() -> None:
+    def voice_id(subtitle_id: str) -> str:
+        return GlobalNewMstSubtitle(id=subtitle_id, serif="").get_voice_id()
+
+    assert voice_id("1100200_11_B050") == "B050"
+    # The mstVoice key of a xxx1/xxx2 line is xxx0, same as for a voice line info
+    assert voice_id("100100_0_B011") == "B010"
+    assert voice_id("100100_B050") == "B050"
+    assert voice_id("9944030") == ""
 
 
 @pytest.mark.asyncio
@@ -201,6 +212,26 @@ def make_subtitles(*subtitle_ids: str) -> list[GlobalNewMstSubtitle]:
     ]
 
 
+def make_voice(voice_id: str, svtVoiceType: SvtVoiceType) -> MstVoice:
+    return MstVoice(
+        id=voice_id,
+        priority=0,
+        svtVoiceType=svtVoiceType,
+        name=f"name {voice_id}",
+        nameDefault="???",
+        condType=0,
+        condValue=0,
+        voicePlayedValue=0,
+        firstPlayPriority=0,
+        closedType=1,
+        flag=0,
+    )
+
+
+def subtitle_asset_paths(subtitles: list[NiceVoiceSubtitle]) -> list[str]:
+    return [subtitle.audioAsset.rsplit("/Audio/", 1)[1] for subtitle in subtitles]
+
+
 def test_nice_subtitles_all_matched() -> None:
     voice_data = VoiceData(
         mstSvtVoice=[make_svt_voice(100100, "0_B010", "0_B020")],
@@ -312,3 +343,49 @@ def test_nice_subtitles_skips_malformed_ids() -> None:
 
 def test_nice_subtitles_empty_table() -> None:
     assert get_nice_subtitles(Region.JP, VoiceData()) == []
+
+
+def test_nice_subtitles_folder_comes_from_mstVoice() -> None:
+    """The letter is ambiguous, the whole voice id isn't.
+
+    B010 is a battle line and B050 a noble phantasm one, and their audio sits in
+    different folders. An orphan has no voice group to read mstSvtVoice.type off,
+    but mstVoice carries the same type keyed by the voice id.
+    """
+    voice_data = VoiceData(
+        mstVoice=[
+            make_voice("B010", SvtVoiceType.BATTLE),
+            make_voice("B050", SvtVoiceType.TREASURE_DEVICE),
+            make_voice("H190", SvtVoiceType.HOME),
+        ],
+        mstSubtitle=make_subtitles("100100_0_B010", "100100_11_B050", "100100_0_H190"),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert subtitle_asset_paths(subtitles) == [
+        "Servants_100100/0_B010.mp3",
+        "NoblePhantasm_100100/11_B050.mp3",
+        "ChrVoice_100100/0_H190.mp3",
+    ]
+
+
+def test_nice_subtitles_folder_falls_back_to_battle() -> None:
+    """Some subtitle ids have no mstVoice row at all, so there is nothing to read."""
+    voice_data = VoiceData(mstSubtitle=make_subtitles("1700100_0_B280"))
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert subtitle_asset_paths(subtitles) == ["Servants_1700100/0_B280.mp3"]
+
+
+def test_nice_subtitles_folder_uses_base_voice_id() -> None:
+    """mstVoice is keyed by the xxx0 id, but the file keeps the id the subtitle has."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B051"),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data)
+
+    assert subtitle_asset_paths(subtitles) == ["NoblePhantasm_100100/11_B051.mp3"]
