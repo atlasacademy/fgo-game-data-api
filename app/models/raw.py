@@ -903,7 +903,7 @@ mstSvtBattlePoint = Table(
     metadata,
     Column("svtId", Integer, index=True),
     Column("battlePointId", Integer),
-    Column("individuality", ARRAY(ARRAY(Integer))),
+    Column("individuality", JSONB),
 )
 
 
