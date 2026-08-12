@@ -424,6 +424,11 @@ class ValDamageRateBattlePointPhase(BaseModel):
     value: int
 
 
+class ValTriggeredTargetBattlePointRateRange(BaseModel):
+    battlePointId: int
+    range: list[str]
+
+
 class BaseVals(BaseModel):
     Rate: Optional[int] = None
     Turn: Optional[int] = None
@@ -707,7 +712,9 @@ class BaseVals(BaseModel):
     ResultAggregateGroupId: int | None = None
     SelfTurnProgressGroup: int | None = None
     EnemyCountWaitTimeAfterEffect: int | None = None
-    TriggeredTargetBattlePointRateRange: str | None = None
+    TriggeredTargetBattlePointRateRange: (
+        list[ValTriggeredTargetBattlePointRateRange] | None
+    ) = None
     OnlyAvailableSkill: int | None = None
     UserEquipSkillMaxTargetNum: int | None = None
     ShowMasterPopupDuringNoblePhantasm: int | None = None

@@ -16,6 +16,7 @@ from ...schemas.nice import (
     NiceFuncGroup,
     ValCheckBattlePointPhaseRange,
     ValDamageRateBattlePointPhase,
+    ValTriggeredTargetBattlePointRateRange,
 )
 from ...schemas.raw import FunctionEntityNoReverse, MstFunc, MstFuncGroup
 from ..raw import get_func_entity_no_reverse
@@ -117,7 +118,8 @@ DataValType = dict[
     | list[str]
     | dict[str, Any]
     | list[ValDamageRateBattlePointPhase]
-    | list[ValCheckBattlePointPhaseRange],
+    | list[ValCheckBattlePointPhaseRange]
+    | list[ValTriggeredTargetBattlePointRateRange],
 ]
 
 
@@ -135,6 +137,9 @@ async def parse_dataVals(
     prefix = "aa"
     DamageRateBattlePointPhase: list[ValDamageRateBattlePointPhase] = []
     CheckBattlePointPhaseRange: list[ValCheckBattlePointPhaseRange] = []
+    TriggeredTargetBattlePointRateRange: list[
+        ValTriggeredTargetBattlePointRateRange
+    ] = []
     AddIndividualtyList: list[int] = []
 
     output: DataValType = {}
@@ -321,6 +326,13 @@ async def parse_dataVals(
                                 range=array2[1].split("/"),
                             )
                         )
+                    elif array2[0].startswith("TriggeredTargetBattlePointRateRange"):
+                        TriggeredTargetBattlePointRateRange.append(
+                            ValTriggeredTargetBattlePointRateRange(
+                                battlePointId=int(array2[0].split("_")[1]),
+                                range=array2[1].split("/"),
+                            )
+                        )
                     else:
                         try:
                             text = array2[0]
@@ -341,6 +353,10 @@ async def parse_dataVals(
             output["DamageRateBattlePointPhase"] = DamageRateBattlePointPhase
         if CheckBattlePointPhaseRange:
             output["CheckBattlePointPhaseRange"] = CheckBattlePointPhaseRange
+        if TriggeredTargetBattlePointRateRange:
+            output["TriggeredTargetBattlePointRateRange"] = (
+                TriggeredTargetBattlePointRateRange
+            )
         if AddIndividualtyList:
             output["AddIndividualtyList"] = AddIndividualtyList
 
