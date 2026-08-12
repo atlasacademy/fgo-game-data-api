@@ -933,6 +933,7 @@ class MstSvtOverwrite(BaseModelORJson):
 class MstSvtBattlePoint(BaseModelORJson):
     svtId: int
     battlePointId: int
+    individuality: list[list[int]] | None = None
 
 
 class MstBattlePoint(BaseModelORJson):
@@ -1605,6 +1606,7 @@ class MstEventMural(BaseModelORJson):
     num: int
     condQuestId: int
     condQuestPhase: int
+    flag: int | None = None
 
 
 class MstEventPointActivity(BaseModelORJson):

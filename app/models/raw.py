@@ -903,6 +903,7 @@ mstSvtBattlePoint = Table(
     metadata,
     Column("svtId", Integer, index=True),
     Column("battlePointId", Integer),
+    Column("individuality", ARRAY(ARRAY(Integer))),
 )
 
 
@@ -1947,6 +1948,7 @@ mstEventMural = Table(
     Column("num", Integer),
     Column("condQuestId", Integer),
     Column("condQuestPhase", Integer),
+    Column("flag", Integer),
 )
 
 
