@@ -663,6 +663,7 @@ class BaseVals(BaseModel):
     ApplyBuffIndividuality: list[list[int]] | None = None
     ExecWhenCanNotAttack: int | None = None
     ExecEvenCardSelectState: int | None = None
+    IgnoredCheckBuffType: int | None = None
     OverwriteShift: int | None = None
     IgnoreShiftWhiteFade: int | None = None
     BackStepTargets: list[int] | None = None
@@ -706,6 +707,11 @@ class BaseVals(BaseModel):
     ResultAggregateGroupId: int | None = None
     SelfTurnProgressGroup: int | None = None
     EnemyCountWaitTimeAfterEffect: int | None = None
+    TriggeredTargetBattlePointRateRange: str | None = None
+    OnlyAvailableSkill: int | None = None
+    UserEquipSkillMaxTargetNum: int | None = None
+    ShowMasterPopupDuringNoblePhantasm: int | None = None
+    TypeIndividualityEachFunc: int | None = None
 
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None

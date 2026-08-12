@@ -179,7 +179,10 @@ export enum NiceFuncType {
     HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = "hastenNpturnFromOtherUsedNpturn",
     DAMAGE_FUNC_TYPE_164 = "damageFuncType164",
     DAMAGE_FUNC_TYPE_165 = "damageFuncType165",
+    SUB_BATTLE_POINT = "subBattlePoint",
     SET_BATTLE_MISSION_VALUE_AS_MAX = "setBattleMissionValueAsMax",
+    ADD_STATE_FUNC_TYPE_169 = "addStateFuncType169",
+    ADD_STATE_FUNC_TYPE_170 = "addStateFuncType170",
 }
 
 export enum NiceFuncTargetType {
@@ -458,6 +461,9 @@ export enum NiceBuffType {
     LIMIT_MAX_NP = "limitMaxNp",
     LIMIT_MIN_NP = "limitMinNp",
     LAST_SELFTURNPROGRESS_FUNCTION = "lastSelfturnprogressFunction",
+    ADD_MAX_BATTLE_POINT = "addMaxBattlePoint",
+    SUB_MAX_BATTLE_POINT = "subMaxBattlePoint",
+    SELFTURNPROGRESS_FUNCTION = "selfturnprogressFunction",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -644,6 +650,8 @@ export enum NiceBuffAction {
     FUNCTION_MULTI_GUTS_BEFORE = "functionMultiGutsBefore",
     LIMIT_MAX_NP = "limitMaxNp",
     LIMIT_MIN_NP = "limitMinNp",
+    MAX_BATTLE_POINT = "maxBattlePoint",
+    FUNCTION_SELFTURNPROGRESS = "functionSelfturnprogress",
 }
 
 export enum NiceBuffLimit {
@@ -889,6 +897,7 @@ export enum NiceDataValsType {
     ApplyBuffIndividuality = "applyBuffIndividuality",
     ExecWhenCanNotAttack = "execWhenCanNotAttack",
     ExecEvenCardSelectState = "execEvenCardSelectState",
+    IgnoredCheckBuffType = "ignoredCheckBuffType",
     OverwriteShift = "overwriteShift",
     IgnoreShiftWhiteFade = "ignoreShiftWhiteFade",
     BackStepTargets = "backStepTargets",
@@ -932,6 +941,11 @@ export enum NiceDataValsType {
     ResultAggregateGroupId = "resultAggregateGroupId",
     SelfTurnProgressGroup = "selfTurnProgressGroup",
     EnemyCountWaitTimeAfterEffect = "enemyCountWaitTimeAfterEffect",
+    TriggeredTargetBattlePointRateRange = "triggeredTargetBattlePointRateRange",
+    OnlyAvailableSkill = "onlyAvailableSkill",
+    UserEquipSkillMaxTargetNum = "userEquipSkillMaxTargetNum",
+    ShowMasterPopupDuringNoblePhantasm = "showMasterPopupDuringNoblePhantasm",
+    TypeIndividualityEachFunc = "typeIndividualityEachFunc",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1372,6 +1386,7 @@ export enum NiceCondType {
     JOB_MAX_LEVEL_NUM_EQUAL = "jobMaxLevelNumEqual",
     SVT_HP_REACH_NUM = "svtHpReachNum",
     SVT_ATK_REACH_NUM = "svtAtkReachNum",
+    FAVORITE_SVT_ID_EQUAL = "favoriteSvtIdEqual",
 }
 
 export enum NiceVoiceCondType {
@@ -2472,6 +2487,7 @@ export enum NiceBattlePointFlag {
     HIDE_UI_GAUGE_ALL_TIME = "hideUiGaugeAllTime",
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT = "hideUiGaugeWhenCantAddPoint",
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT_AND_FOLLOWER_SUPPORT = "hideUiGaugeWhenCantAddPointAndFollowerSupport",
+    BATTLE_POINT_CHECK_AS_PERCENTAGE = "battlePointCheckAsPercentage",
 }
 
 export enum NiceItemTransitionType {
@@ -2641,6 +2657,7 @@ export enum NiceBuffConditionTargetType {
     PT_OTHER_ALL = "ptOtherAll",
     PT_OTHER_FULL = "ptOtherFull",
     FIELD_OTHER_ALL = "fieldOtherAll",
+    RELATIVE_POSITION_PT = "relativePositionPt",
 }
 
 export enum NiceQuestAfterActionCommand {

@@ -296,7 +296,10 @@ class FuncType(IntEnum):
     HASTEN_NPTURN_FROM_OTHER_USED_NPTURN = 163
     DAMAGE_FUNC_TYPE_164 = 164
     DAMAGE_FUNC_TYPE_165 = 165
+    SUB_BATTLE_POINT = 166
     SET_BATTLE_MISSION_VALUE_AS_MAX = 168
+    ADD_STATE_FUNC_TYPE_169 = 169
+    ADD_STATE_FUNC_TYPE_170 = 170
 
 
 class NiceFuncType(StrEnum):
@@ -431,7 +434,10 @@ class NiceFuncType(StrEnum):
     hastenNpturnFromOtherUsedNpturn = "hastenNpturnFromOtherUsedNpturn"
     damageFuncType164 = "damageFuncType164"
     damageFuncType165 = "damageFuncType165"
+    subBattlePoint = "subBattlePoint"
     setBattleMissionValueAsMax = "setBattleMissionValueAsMax"
+    addStateFuncType169 = "addStateFuncType169"
+    addStateFuncType170 = "addStateFuncType170"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -564,7 +570,10 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     163: NiceFuncType.hastenNpturnFromOtherUsedNpturn,
     164: NiceFuncType.damageFuncType164,
     165: NiceFuncType.damageFuncType165,
+    166: NiceFuncType.subBattlePoint,
     168: NiceFuncType.setBattleMissionValueAsMax,
+    169: NiceFuncType.addStateFuncType169,
+    170: NiceFuncType.addStateFuncType170,
 }
 
 
@@ -940,6 +949,9 @@ class BuffType(IntEnum):
     LIMIT_MAX_NP = 246
     LIMIT_MIN_NP = 247
     LAST_SELFTURNPROGRESS_FUNCTION = 248
+    ADD_MAX_BATTLE_POINT = 249
+    SUB_MAX_BATTLE_POINT = 250
+    SELFTURNPROGRESS_FUNCTION = 251
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -1177,6 +1189,9 @@ class NiceBuffType(StrEnum):
     limitMaxNp = "limitMaxNp"
     limitMinNp = "limitMinNp"
     lastSelfturnprogressFunction = "lastSelfturnprogressFunction"
+    addMaxBattlePoint = "addMaxBattlePoint"
+    subMaxBattlePoint = "subMaxBattlePoint"
+    selfturnprogressFunction = "selfturnprogressFunction"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1415,6 +1430,9 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     246: NiceBuffType.limitMaxNp,
     247: NiceBuffType.limitMinNp,
     248: NiceBuffType.lastSelfturnprogressFunction,
+    249: NiceBuffType.addMaxBattlePoint,
+    250: NiceBuffType.subMaxBattlePoint,
+    251: NiceBuffType.selfturnprogressFunction,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1602,6 +1620,8 @@ class BuffAction(IntEnum):
     FUNCTION_MULTI_GUTS_BEFORE = 171
     LIMIT_MAX_NP = 172
     LIMIT_MIN_NP = 173
+    MAX_BATTLE_POINT = 174
+    FUNCTION_SELFTURNPROGRESS = 175
 
 
 class NiceBuffAction(StrEnum):
@@ -1781,6 +1801,8 @@ class NiceBuffAction(StrEnum):
     functionMultiGutsBefore = "functionMultiGutsBefore"
     limitMaxNp = "limitMaxNp"
     limitMinNp = "limitMinNp"
+    maxBattlePoint = "maxBattlePoint"
+    functionSelfturnprogress = "functionSelfturnprogress"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1958,6 +1980,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     171: NiceBuffAction.functionMultiGutsBefore,
     172: NiceBuffAction.limitMaxNp,
     173: NiceBuffAction.limitMinNp,
+    174: NiceBuffAction.maxBattlePoint,
+    175: NiceBuffAction.functionSelfturnprogress,
 }
 
 
@@ -2221,49 +2245,55 @@ class DataValsType(IntEnum):
     ApplyBuffIndividuality = 232
     ExecWhenCanNotAttack = 233
     ExecEvenCardSelectState = 234
-    OverwriteShift = 235
-    IgnoreShiftWhiteFade = 236
-    BackStepTargets = 237
-    ReplacePositionTargets = 238
-    ApplySupportSvt = 239
-    ApplyHighestValueInFieldGroup = 240
-    IsClassIconChangeSaveGrand = 241
-    ExecuteEffectId = 242
-    PriorityUpHate = 243
-    JudgeUseEveryTime = 244
-    IgnoreDeathRate = 245
-    SubstituteRate = 246
-    SubstituteResist = 247
-    UseSvtResistRate = 248
-    UseBuffResistRate = 249
-    SubstituteSkillId = 250
-    SubstituteSkillLv = 251
-    ResistSkillId = 252
-    ResistSkillLv = 253
-    SubstitutePopupText = 254
-    SubstitutePopupIconId = 255
-    ResistPopupText = 256
-    ResistPopupIconId = 257
-    SubstituteEffectList = 258
-    ResistEffectList = 259
-    EnablePassiveBuffConvert = 260
-    FieldBuffApplyTarget = 261
-    MaxGainNp = 262
-    MaxHastenNpTurn = 263
-    FunctionTriggerActorTargetFlag = 264
-    IsTurnProgressWithoutGrantActor = 265
-    IsFuncCheckFieldIndividuality = 266
-    IgnoreTargetFuncResult = 267
-    ExecuteWhenHideText = 268
-    SkipCheckAlive = 269
-    CallServantPosition = 270
-    NotActIfAlreadyAvoidStateBuff = 271
-    AvoidFieldBuff = 272
-    UseUserSpecifiedLimitCount = 273
-    ParamAddOpCheckDead = 274
-    ResultAggregateGroupId = 275
-    SelfTurnProgressGroup = 276
-    EnemyCountWaitTimeAfterEffect = 277
+    IgnoredCheckBuffType = 235
+    OverwriteShift = 236
+    IgnoreShiftWhiteFade = 237
+    BackStepTargets = 238
+    ReplacePositionTargets = 239
+    ApplySupportSvt = 240
+    ApplyHighestValueInFieldGroup = 241
+    IsClassIconChangeSaveGrand = 242
+    ExecuteEffectId = 243
+    PriorityUpHate = 244
+    JudgeUseEveryTime = 245
+    IgnoreDeathRate = 246
+    SubstituteRate = 247
+    SubstituteResist = 248
+    UseSvtResistRate = 249
+    UseBuffResistRate = 250
+    SubstituteSkillId = 251
+    SubstituteSkillLv = 252
+    ResistSkillId = 253
+    ResistSkillLv = 254
+    SubstitutePopupText = 255
+    SubstitutePopupIconId = 256
+    ResistPopupText = 257
+    ResistPopupIconId = 258
+    SubstituteEffectList = 259
+    ResistEffectList = 260
+    EnablePassiveBuffConvert = 261
+    FieldBuffApplyTarget = 262
+    MaxGainNp = 263
+    MaxHastenNpTurn = 264
+    FunctionTriggerActorTargetFlag = 265
+    IsTurnProgressWithoutGrantActor = 266
+    IsFuncCheckFieldIndividuality = 267
+    IgnoreTargetFuncResult = 268
+    ExecuteWhenHideText = 269
+    SkipCheckAlive = 270
+    CallServantPosition = 271
+    NotActIfAlreadyAvoidStateBuff = 272
+    AvoidFieldBuff = 273
+    UseUserSpecifiedLimitCount = 274
+    ParamAddOpCheckDead = 275
+    ResultAggregateGroupId = 276
+    SelfTurnProgressGroup = 277
+    EnemyCountWaitTimeAfterEffect = 278
+    TriggeredTargetBattlePointRateRange = 279
+    OnlyAvailableSkill = 280
+    UserEquipSkillMaxTargetNum = 281
+    ShowMasterPopupDuringNoblePhantasm = 282
+    TypeIndividualityEachFunc = 283
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3035,6 +3065,7 @@ class CondType(IntEnum):
     JOB_MAX_LEVEL_NUM_EQUAL = 288
     SVT_HP_REACH_NUM = 289
     SVT_ATK_REACH_NUM = 290
+    FAVORITE_SVT_ID_EQUAL = 291
 
 
 class NiceCondType(StrEnum):
@@ -3321,6 +3352,7 @@ class NiceCondType(StrEnum):
     jobMaxLevelNumEqual = "jobMaxLevelNumEqual"
     svtHpReachNum = "svtHpReachNum"
     svtAtkReachNum = "svtAtkReachNum"
+    favoriteSvtIdEqual = "favoriteSvtIdEqual"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3605,6 +3637,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     288: NiceCondType.jobMaxLevelNumEqual,
     289: NiceCondType.svtHpReachNum,
     290: NiceCondType.svtAtkReachNum,
+    291: NiceCondType.favoriteSvtIdEqual,
 }
 
 
@@ -7072,6 +7105,7 @@ class BattlePointFlag(IntEnum):
     HIDE_UI_GAUGE_ALL_TIME = 2
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT = 4
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT_AND_FOLLOWER_SUPPORT = 8
+    BATTLE_POINT_CHECK_AS_PERCENTAGE = 16
 
 
 class NiceBattlePointFlag(StrEnum):
@@ -7084,6 +7118,7 @@ class NiceBattlePointFlag(StrEnum):
     hideUiGaugeWhenCantAddPointAndFollowerSupport = (
         "hideUiGaugeWhenCantAddPointAndFollowerSupport"
     )
+    battlePointCheckAsPercentage = "battlePointCheckAsPercentage"
 
 
 BATTLE_POINT_FLAG_NAME: dict[int, NiceBattlePointFlag] = {
@@ -7092,6 +7127,7 @@ BATTLE_POINT_FLAG_NAME: dict[int, NiceBattlePointFlag] = {
     2: NiceBattlePointFlag.hideUiGaugeAllTime,
     4: NiceBattlePointFlag.hideUiGaugeWhenCantAddPoint,
     8: NiceBattlePointFlag.hideUiGaugeWhenCantAddPointAndFollowerSupport,
+    16: NiceBattlePointFlag.battlePointCheckAsPercentage,
 }
 
 
@@ -7627,6 +7663,7 @@ class BuffConditionTargetType(IntEnum):
     PT_OTHER_ALL = 6
     PT_OTHER_FULL = 7
     FIELD_OTHER_ALL = 8
+    RELATIVE_POSITION_PT = 9
 
 
 class NiceBuffConditionTargetType(StrEnum):
@@ -7641,6 +7678,7 @@ class NiceBuffConditionTargetType(StrEnum):
     ptOtherAll = "ptOtherAll"
     ptOtherFull = "ptOtherFull"
     fieldOtherAll = "fieldOtherAll"
+    relativePositionPt = "relativePositionPt"
 
 
 BUFF_CONDITION_TARGET_TYPE_NAME: dict[int, NiceBuffConditionTargetType] = {
@@ -7653,6 +7691,7 @@ BUFF_CONDITION_TARGET_TYPE_NAME: dict[int, NiceBuffConditionTargetType] = {
     6: NiceBuffConditionTargetType.ptOtherAll,
     7: NiceBuffConditionTargetType.ptOtherFull,
     8: NiceBuffConditionTargetType.fieldOtherAll,
+    9: NiceBuffConditionTargetType.relativePositionPt,
 }
 
 
