@@ -321,6 +321,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstGrandGraph: (mstGrandGraph, mstGrandGraph.c.id),
     MstGacha: (mstGacha, mstGacha.c.id),
     MstAiAct: (mstAiAct, mstAiAct.c.id),
+    MstBattlePoint: (mstBattlePoint, mstBattlePoint.c.id),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
@@ -877,6 +878,7 @@ schema_map_fetch_everything: dict[  # type:ignore
     MstGrandGraph: (mstGrandGraph, mstGrandGraph.c.id),
     MstGacha: (mstGacha, mstGacha.c.id),
     MstConstant: (mstConstant, mstConstant.c.name),
+    MstBattlePoint: (mstBattlePoint, mstBattlePoint.c.id),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

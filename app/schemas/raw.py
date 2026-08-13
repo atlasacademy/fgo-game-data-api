@@ -518,8 +518,8 @@ class MstSvtScriptExtendDataCond(BaseModelORJson):
 
 
 class MstSvtScriptExtendData(BaseModelORJson):
-    faceSize: None | int = None
-    faceSizeRect: None | list[int] = None
+    faceSize: int | None = None
+    faceSizeRect: list[int] | None = None
     combineResultMultipleForm: Optional[int] = None
     myroomForm: Optional[int] = None
     conds: Optional[list[MstSvtScriptExtendDataCond]] = None
@@ -931,7 +931,7 @@ class MstSvtOverwrite(BaseModelORJson):
 
 
 class MstSvtBattlePoint(BaseModelORJson):
-    svtId: int
+    svtId: int  # -1
     battlePointId: int
     individuality: list[list[int]] | None = None
 
@@ -949,6 +949,12 @@ class MstBattlePointPhase(BaseModelORJson):
     value: int
     name: str
     effectId: int
+
+
+class BattlePointEntity(BaseModelORJson):
+    mstBattlePoint: MstBattlePoint
+    mstBattlePointPhase: list[MstBattlePointPhase]
+    mstSvtBattlePoint: list[MstSvtBattlePoint]
 
 
 def get_subtitle_svtId(sub_id: str) -> int:
@@ -2054,7 +2060,6 @@ class MstBattleMessageGroup(BaseModelORJson):
     probability: int
 
 
-
 class MstBattleScript(BaseModelORJson):
     id: int
     playOrder: int
@@ -2301,7 +2306,6 @@ class BattleMessageGroupEntity(BaseModelORJson):
     mstBattleMessageGroup: list[MstBattleMessageGroup]
     mstBattleMessage: list[MstBattleMessage]
     mstCommonRelease: list[MstCommonRelease]
-
 
 
 class BattleScriptEntity(BaseModelORJson):

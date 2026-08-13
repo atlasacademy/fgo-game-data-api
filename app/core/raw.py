@@ -41,6 +41,7 @@ from ..schemas.raw import (
     BattleMasterImageEntity,
     BattleMessageEntity,
     BattleMessageGroupEntity,
+    BattlePointEntity,
     BattleScriptEntity,
     BgmEntity,
     BuffEntity,
@@ -872,6 +873,24 @@ async def get_battle_script_entity(
 
     return BattleScriptEntity(
         mstBattleScript=mstBattleScript,
+    )
+
+
+async def get_battle_point_entity(
+    conn: AsyncConnection, bp_id: int
+) -> BattlePointEntity:
+    mstBattlePoint = await fetch.get_one(conn, MstBattlePoint, bp_id)
+    if not mstBattlePoint:
+        raise HTTPException(status_code=404, detail="Battle Point not found")
+
+    return BattlePointEntity(
+        mstBattlePoint=mstBattlePoint,
+        mstBattlePointPhase=await fetch.get_all_multiple(
+            conn, MstBattlePointPhase, [bp_id]
+        ),
+        mstSvtBattlePoint=await fetch.get_all_multiple(
+            conn, MstSvtBattlePoint, [bp_id]
+        ),
     )
 
 

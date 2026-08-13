@@ -1342,10 +1342,29 @@ class NiceBattlePointPhase(BaseModelORJson):
     effectId: int
 
 
+class NiceSvtBattlePoint(BaseModelORJson):
+    svtId: int  # -1
+    individuality: list[list[NiceTrait]] | None = None
+
+
+class BattlePointScriptMaxChange(BaseModelORJson):
+    individuality: list[NiceTrait] | None = None
+    value: int | None = None
+
+
+class NiceBattlePointScript(BaseModelORJson):
+    maxChange: list[BattlePointScriptMaxChange] | None = None
+    maxLimit: int | None = None
+    defaultMax: int | None = None
+
+
 class NiceBattlePoint(BaseModelORJson):
     id: int
+    name: str | None = None
     flags: list[NiceBattlePointFlag]
     phases: list[NiceBattlePointPhase]
+    svts: list[NiceSvtBattlePoint]
+    script: NiceBattlePointScript
 
 
 class NiceSvtScript(BaseModelORJson):

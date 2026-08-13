@@ -43,6 +43,7 @@ from ....schemas.raw import (
 )
 from ... import raw
 from ...utils import get_flags, get_traits_list, get_translation
+from ..battle_point import get_svt_bps
 from ..common_release import get_nice_common_releases
 from ..gift import GiftData, get_gift_map, get_nice_gifts
 from ..item import get_nice_item_amount_qp, get_nice_item_from_raw
@@ -55,7 +56,6 @@ from .asset import (
     get_nice_image_parts_group,
     get_svt_extraAssets,
 )
-from .battle_point import get_svt_bp
 from .card import get_nice_card
 from .chara_script import get_nice_chara_script
 from .individuality import get_nice_svt_trait
@@ -183,7 +183,11 @@ async def get_nice_servant(
         "rarity": last_svt_limit.rarity,
         "cards": [str(card_id) for card_id in raw_svt.mstSvt.cardIds],
         "charaScripts": [get_nice_chara_script(s) for s in raw_svt.mstSvtScript],
-        "battlePoints": get_svt_bp(raw_svt.mstBattlePoint, raw_svt.mstBattlePointPhase),
+        "battlePoints": get_svt_bps(
+            raw_svt.mstBattlePoint,
+            raw_svt.mstBattlePointPhase,
+            raw_svt.mstSvtBattlePoint,
+        ),
         "bondGrowth": [
             friendship.friendship
             for friendship in sorted(
