@@ -718,7 +718,7 @@ class BaseVals(BaseModel):
     OnlyAvailableSkill: int | None = None
     UserEquipSkillMaxTargetNum: int | None = None
     ShowMasterPopupDuringNoblePhantasm: int | None = None
-    TypeIndividualityEachFunc: int | None = None
+    TypeIndividualityEachFunc: list[list[int]] | None = None
 
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
