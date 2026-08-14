@@ -627,6 +627,16 @@ schema_table_fetch_all: dict[  # type:ignore
         mstQuestDateRange.c.id,
         mstQuestDateRange.c.idx,
     ),
+    MstSvtBattlePoint: (
+        mstSvtBattlePoint,
+        mstSvtBattlePoint.c.battlePointId,
+        mstSvtBattlePoint.c.svtId
+    ),
+    MstBattlePointPhase: (
+        mstBattlePointPhase,
+        mstBattlePointPhase.c.battlePointId,
+        mstBattlePointPhase.c.phase
+    )
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)

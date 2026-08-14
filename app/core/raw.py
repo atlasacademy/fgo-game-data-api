@@ -885,12 +885,8 @@ async def get_battle_point_entity(
 
     return BattlePointEntity(
         mstBattlePoint=mstBattlePoint,
-        mstBattlePointPhase=await fetch.get_all_multiple(
-            conn, MstBattlePointPhase, [bp_id]
-        ),
-        mstSvtBattlePoint=await fetch.get_all_multiple(
-            conn, MstSvtBattlePoint, [bp_id]
-        ),
+        mstBattlePointPhase=await fetch.get_all(conn, MstBattlePointPhase, bp_id),
+        mstSvtBattlePoint=await fetch.get_all(conn, MstSvtBattlePoint, bp_id),
     )
 
 
