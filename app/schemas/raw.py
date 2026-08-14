@@ -220,6 +220,11 @@ class MstSkillGroupOverwrite(BaseModelORJson):
     expandedFuncId: Optional[list[FunctionEntityNoReverse]] = None
 
 
+class MstSkillIndividuality(BaseModelORJson):
+    individuality: list[int]
+    skillId: int
+
+
 class SkillEntityNoReverse(BaseModelORJson):
     mstSkill: MstSkill
     mstSkillDetail: list[MstSkillDetail]
@@ -230,6 +235,7 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillLv: list[MstSkillLv]
     mstSkillGroup: list[MstSkillGroup]
     mstSkillGroupOverwrite: list[MstSkillGroupOverwrite]
+    mstSkillIndividuality: MstSkillIndividuality | None = None
     aiIds: Optional[dict[AiType, list[int]]] = None
 
 

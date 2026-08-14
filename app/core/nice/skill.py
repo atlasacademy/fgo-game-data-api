@@ -182,6 +182,11 @@ async def get_nice_skill_with_svt(
         "originalName": skillEntity.mstSkill.name,
         "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
+        "individuality": get_traits_list(
+            skillEntity.mstSkillIndividuality.individuality
+        )
+        if skillEntity.mstSkillIndividuality
+        else None,
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
         "skillAdd": get_nice_skill_add(
             skillEntity.mstSkillAdd, skillEntity.mstCommonRelease, lang

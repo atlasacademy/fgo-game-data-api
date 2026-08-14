@@ -927,6 +927,7 @@ class NiceSkill(BaseModelORJson):
     condLimitCount: int = 0
     icon: Optional[HttpUrl] = None
     coolDown: list[int]
+    individuality: list[NiceTrait] | None = None
     actIndividuality: list[NiceTrait]
     script: NiceSkillScript
     extraPassive: list[ExtraPassive]

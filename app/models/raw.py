@@ -283,6 +283,14 @@ mstSkillGroupOverwrite = Table(
 )
 
 
+mstSkillIndividuality = Table(
+    "mstSkillIndividuality",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("skillId", Integer, primary_key=True),
+)
+
+
 mstTreasureDevice = Table(
     "mstTreasureDevice",
     metadata,
@@ -3024,7 +3032,14 @@ TABLES_TO_BE_LOADED = [
     [mstQuestPhase],
     [mstSetItem],
     [mstShop, mstShopRelease, mstShopScript],
-    [mstSkill, mstSkillAdd, mstSkillDetail, mstSkillGroup],
+    [
+        mstSkill,
+        mstSkillAdd,
+        mstSkillDetail,
+        mstSkillGroup,
+        mstSkillGroupOverwrite,
+        mstSkillIndividuality,
+    ],
     [mstSvtAdd],
     [mstSvtAppendPassiveSkill, mstSvtAppendPassiveSkillUnlock],
     [mstSvtCard, mstSvtCardAdd],
