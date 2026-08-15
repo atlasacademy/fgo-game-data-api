@@ -23,6 +23,7 @@ from .core.basic import (
     get_all_basic_servants,
     get_all_basic_wars,
 )
+from .core.nice.battle_point import get_all_nice_battle_points
 from .core.nice.bgm import get_all_nice_bgms
 from .core.nice.cc import get_all_nice_ccs
 from .core.nice.class_board import get_all_nice_class_boards
@@ -59,6 +60,7 @@ from .schemas.common import Language, Region, RegionInfo, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
 from .schemas.gameenums import NiceItemType, SvtType
 from .schemas.nice import (
+    NiceBattlePoint,
     NiceEquip,
     NiceEvent,
     NiceGacha,
@@ -73,6 +75,7 @@ from .schemas.raw import (
     AssetStorageLine,
     BgmEntity,
     GachaEntity,
+    MstBattlePoint,
     MstClassBoardBase,
     MstCommandCode,
     MstConstant,
@@ -323,6 +326,12 @@ async def dump_nice_shops(
     util: ExportUtil, all_shop_data: list[NiceShop]
 ) -> None:  # pragma: no cover
     await util.dump_orjson("nice_shop", all_shop_data)
+
+
+async def dump_nice_battle_points(
+    util: ExportUtil, all_bp_data: list[NiceBattlePoint]
+) -> None:  # pragma: no cover
+    await util.dump_orjson("nice_battle_point", all_bp_data)
 
 
 async def dump_illustrators(
@@ -586,6 +595,8 @@ async def generate_exports(
                 mstClassBoardBases = await fetch.get_everything(conn, MstClassBoardBase)
             async with engine.connect() as conn:
                 mstGrandGraphs = await fetch.get_everything(conn, MstGrandGraph)
+            async with engine.connect() as conn:
+                mstBattlePoints = await fetch.get_everything(conn, MstBattlePoint)
 
             async with engine.connect() as conn:
                 asset_storage = await fetch.get_everything(conn, AssetStorageLine)
@@ -616,6 +627,12 @@ async def generate_exports(
             async with engine.connect() as conn:
                 raw_gacha_entities = await get_all_gacha_entities(conn)
             await dump_nice_gachas(util, raw_gacha_entities)
+
+            async with engine.connect() as conn:
+                nice_battle_points = await get_all_nice_battle_points(
+                    conn, mstBattlePoints
+                )
+            await dump_nice_battle_points(util, nice_battle_points)
 
             util_en = ExportUtil(redis, region, export_path, Language.en)
             nice_items_lang_en: list[NiceItem] = []

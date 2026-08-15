@@ -424,6 +424,11 @@ class ValDamageRateBattlePointPhase(BaseModel):
     value: int
 
 
+class ValTriggeredTargetBattlePointRateRange(BaseModel):
+    battlePointId: int
+    range: list[str]
+
+
 class BaseVals(BaseModel):
     Rate: Optional[int] = None
     Turn: Optional[int] = None
@@ -663,6 +668,7 @@ class BaseVals(BaseModel):
     ApplyBuffIndividuality: list[list[int]] | None = None
     ExecWhenCanNotAttack: int | None = None
     ExecEvenCardSelectState: int | None = None
+    IgnoredCheckBuffType: int | None = None
     OverwriteShift: int | None = None
     IgnoreShiftWhiteFade: int | None = None
     BackStepTargets: list[int] | None = None
@@ -706,6 +712,13 @@ class BaseVals(BaseModel):
     ResultAggregateGroupId: int | None = None
     SelfTurnProgressGroup: int | None = None
     EnemyCountWaitTimeAfterEffect: int | None = None
+    TriggeredTargetBattlePointRateRange: (
+        list[ValTriggeredTargetBattlePointRateRange] | None
+    ) = None
+    OnlyAvailableSkill: int | None = None
+    UserEquipSkillMaxTargetNum: int | None = None
+    ShowMasterPopupDuringNoblePhantasm: int | None = None
+    TypeIndividualityEachFunc: list[list[int]] | None = None
 
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
@@ -914,6 +927,7 @@ class NiceSkill(BaseModelORJson):
     condLimitCount: int = 0
     icon: Optional[HttpUrl] = None
     coolDown: list[int]
+    individuality: list[NiceTrait] | None = None
     actIndividuality: list[NiceTrait]
     script: NiceSkillScript
     extraPassive: list[ExtraPassive]
@@ -1329,10 +1343,29 @@ class NiceBattlePointPhase(BaseModelORJson):
     effectId: int
 
 
+class NiceSvtBattlePoint(BaseModelORJson):
+    svtId: int  # -1
+    individuality: list[list[NiceTrait]] | None = None
+
+
+class BattlePointScriptMaxChange(BaseModelORJson):
+    individuality: list[NiceTrait] | None = None
+    value: int | None = None
+
+
+class NiceBattlePointScript(BaseModelORJson):
+    maxChange: list[BattlePointScriptMaxChange] | None = None
+    maxLimit: int | None = None
+    defaultMax: int | None = None
+
+
 class NiceBattlePoint(BaseModelORJson):
     id: int
+    name: str | None = None
     flags: list[NiceBattlePointFlag]
     phases: list[NiceBattlePointPhase]
+    svts: list[NiceSvtBattlePoint]
+    script: NiceBattlePointScript
 
 
 class NiceSvtScript(BaseModelORJson):

@@ -7,6 +7,7 @@ from ..core import search
 from ..core.nice import (
     ai,
     battle_message,
+    battle_point,
     battle_script,
     bgm,
     cc,
@@ -40,6 +41,7 @@ from ..schemas.nice import (
     NiceBattleMasterImage,
     NiceBattleMessage,
     NiceBattleMessageGroup,
+    NiceBattlePoint,
     NiceBattleScript,
     NiceBgmEntity,
     NiceBuffReverse,
@@ -1114,6 +1116,23 @@ async def get_battle_script(
         return list_response(
             await battle_script.get_nice_battle_scripts(conn, script_id)
         )
+
+
+@router.get(
+    "/{region}/battle-point/{bp_id}",
+    summary="Get Battle Point data",
+    response_description="Nice Battle Point Entity",
+    response_model=list[NiceBattlePoint],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_point(
+    region: Region,
+    bp_id: int,
+) -> Response:
+    async with get_db(region) as conn:
+        return item_response(await battle_point.get_nice_battle_point(conn, bp_id))
 
 
 @router.get(

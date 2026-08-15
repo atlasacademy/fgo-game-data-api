@@ -15,6 +15,7 @@ from ...models.raw import (
     mstSkillDetail,
     mstSkillGroup,
     mstSkillGroupOverwrite,
+    mstSkillIndividuality,
     mstSkillLv,
     mstSvtSkill,
     mstSvtSkillRelease,
@@ -92,6 +93,9 @@ async def get_skillEntity(
                 mstSkillDetail.c.id == mstSkillGroupOverwrite.c.skillDetailId,
             ),
         )
+        .outerjoin(
+            mstSkillIndividuality, mstSkillIndividuality.c.skillId == mstSkill.c.id
+        )
     )
 
     SELECT_SKILL_ENTITY = [
@@ -103,6 +107,9 @@ async def get_skillEntity(
         sql_jsonb_agg(mstSkillGroup),
         sql_jsonb_agg(mstSkillGroupOverwrite),
         sql_jsonb_agg(mstSvtSkillRelease),
+        func.to_jsonb(mstSkillIndividuality.table_valued()).label(
+            mstSkillIndividuality.name
+        ),
         mstSkillLvJson.c.mstSkillLv,
         aiIds.c.aiIds,
     ]
@@ -111,7 +118,12 @@ async def get_skillEntity(
         select(*SELECT_SKILL_ENTITY)
         .select_from(JOINED_SKILL_TABLES)
         .where(mstSkill.c.id.in_(skill_ids))
-        .group_by(mstSkill.c.id, mstSkillLvJson.c.mstSkillLv, aiIds.c.aiIds)
+        .group_by(
+            mstSkill.c.id,
+            mstSkillLvJson.c.mstSkillLv,
+            aiIds.c.aiIds,
+            mstSkillIndividuality.table_valued(),
+        )
     )
 
     try:

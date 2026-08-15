@@ -283,6 +283,14 @@ mstSkillGroupOverwrite = Table(
 )
 
 
+mstSkillIndividuality = Table(
+    "mstSkillIndividuality",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("skillId", Integer, primary_key=True),
+)
+
+
 mstTreasureDevice = Table(
     "mstTreasureDevice",
     metadata,
@@ -903,6 +911,7 @@ mstSvtBattlePoint = Table(
     metadata,
     Column("svtId", Integer, index=True),
     Column("battlePointId", Integer),
+    Column("individuality", JSONB),
 )
 
 
@@ -1947,6 +1956,7 @@ mstEventMural = Table(
     Column("num", Integer),
     Column("condQuestId", Integer),
     Column("condQuestPhase", Integer),
+    Column("flag", Integer),
 )
 
 
@@ -3022,7 +3032,14 @@ TABLES_TO_BE_LOADED = [
     [mstQuestPhase],
     [mstSetItem],
     [mstShop, mstShopRelease, mstShopScript],
-    [mstSkill, mstSkillAdd, mstSkillDetail, mstSkillGroup],
+    [
+        mstSkill,
+        mstSkillAdd,
+        mstSkillDetail,
+        mstSkillGroup,
+        mstSkillGroupOverwrite,
+        mstSkillIndividuality,
+    ],
     [mstSvtAdd],
     [mstSvtAppendPassiveSkill, mstSvtAppendPassiveSkillUnlock],
     [mstSvtCard, mstSvtCardAdd],

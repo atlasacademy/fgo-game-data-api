@@ -220,6 +220,11 @@ class MstSkillGroupOverwrite(BaseModelORJson):
     expandedFuncId: Optional[list[FunctionEntityNoReverse]] = None
 
 
+class MstSkillIndividuality(BaseModelORJson):
+    individuality: list[int]
+    skillId: int
+
+
 class SkillEntityNoReverse(BaseModelORJson):
     mstSkill: MstSkill
     mstSkillDetail: list[MstSkillDetail]
@@ -230,6 +235,7 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillLv: list[MstSkillLv]
     mstSkillGroup: list[MstSkillGroup]
     mstSkillGroupOverwrite: list[MstSkillGroupOverwrite]
+    mstSkillIndividuality: MstSkillIndividuality | None = None
     aiIds: Optional[dict[AiType, list[int]]] = None
 
 
@@ -518,8 +524,8 @@ class MstSvtScriptExtendDataCond(BaseModelORJson):
 
 
 class MstSvtScriptExtendData(BaseModelORJson):
-    faceSize: None | int = None
-    faceSizeRect: None | list[int] = None
+    faceSize: int | None = None
+    faceSizeRect: list[int] | None = None
     combineResultMultipleForm: Optional[int] = None
     myroomForm: Optional[int] = None
     conds: Optional[list[MstSvtScriptExtendDataCond]] = None
@@ -936,8 +942,9 @@ class MstSvtOverwrite(BaseModelORJson):
 
 
 class MstSvtBattlePoint(BaseModelORJson):
-    svtId: int
+    svtId: int  # -1
     battlePointId: int
+    individuality: list[list[int]] | None = None
 
 
 class MstBattlePoint(BaseModelORJson):
@@ -953,6 +960,12 @@ class MstBattlePointPhase(BaseModelORJson):
     value: int
     name: str
     effectId: int
+
+
+class BattlePointEntity(BaseModelORJson):
+    mstBattlePoint: MstBattlePoint
+    mstBattlePointPhase: list[MstBattlePointPhase]
+    mstSvtBattlePoint: list[MstSvtBattlePoint]
 
 
 def get_subtitle_svtId(sub_id: str) -> int:
@@ -1615,6 +1628,7 @@ class MstEventMural(BaseModelORJson):
     num: int
     condQuestId: int
     condQuestPhase: int
+    flag: int | None = None
 
 
 class MstEventPointActivity(BaseModelORJson):
@@ -2062,7 +2076,6 @@ class MstBattleMessageGroup(BaseModelORJson):
     probability: int
 
 
-
 class MstBattleScript(BaseModelORJson):
     id: int
     playOrder: int
@@ -2309,7 +2322,6 @@ class BattleMessageGroupEntity(BaseModelORJson):
     mstBattleMessageGroup: list[MstBattleMessageGroup]
     mstBattleMessage: list[MstBattleMessage]
     mstCommonRelease: list[MstCommonRelease]
-
 
 
 class BattleScriptEntity(BaseModelORJson):

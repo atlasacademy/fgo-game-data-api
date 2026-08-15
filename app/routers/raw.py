@@ -14,6 +14,7 @@ from ..schemas.raw import (
     BattleMasterImageEntity,
     BattleMessageEntity,
     BattleMessageGroupEntity,
+    BattlePointEntity,
     BattleScriptEntity,
     BgmEntity,
     BuffEntity,
@@ -939,6 +940,28 @@ async def get_battle_script(
     async with get_db(region) as conn:
         battle_script_entity = await raw.get_battle_script_entity(conn, script_id)
         return item_response(battle_script_entity)
+
+
+
+@router.get(
+    "/{region}/battle-point/{bp_id}",
+    summary="Get Battle Point data",
+    response_description="Battle Point entity",
+    response_model=BattlePointEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_battle_point(
+    region: Region,
+    bp_id: int,
+) -> Response:
+    """
+    Get Battle Point info from ID
+    """
+    async with get_db(region) as conn:
+        battle_point_entity = await raw.get_battle_point_entity(conn, bp_id)
+        return item_response(battle_point_entity)
 
 
 @router.get(
