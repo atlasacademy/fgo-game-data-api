@@ -2171,5 +2171,31 @@
     "isRec": true,
     "plusAction": 0,
     "isChangeMaxHp": false
+  },
+  "MAX_BATTLE_POINT": {
+    "limit": 0,
+    "plusTypes": [
+      249
+    ],
+    "minusTypes": [
+      250
+    ],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
+  },
+  "FUNCTION_SELFTURNPROGRESS": {
+    "limit": 0,
+    "plusTypes": [
+      251
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "isChangeMaxHp": false
   }
 }
