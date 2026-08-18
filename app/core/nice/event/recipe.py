@@ -37,10 +37,10 @@ def get_nice_recipe(
     return NiceEventRecipe(
         id=recipe.id,
         icon=fmt_url(
-            AssetURL.items,
+            AssetURL.eventUi,
             base_url=settings.asset_url,
             region=region,
-            item_id=recipe.iconId,
+            event=f"Prefabs/{recipe.eventId}/icon_{recipe.iconId}",
         ),
         name=recipe.name,
         maxNum=recipe.maxNum,
