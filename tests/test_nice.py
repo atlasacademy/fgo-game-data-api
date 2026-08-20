@@ -396,6 +396,76 @@ class TestServantSpecial:
             }
         ]
 
+    async def test_subtitles_story_enemy_without_voice_lines(
+        self, client: AsyncClient
+    ) -> None:
+        """svt 9944030 has subtitles but no voice records at all."""
+        response = await client.get("/nice/NA/svt/9944030?lore=true")
+        assert response.status_code == 200
+        profile = response.json()["profile"]
+        # No voice records, so every subtitle it has is unreachable through voices
+        assert profile["voices"] == []
+        subtitles = profile["subtitles"]
+        assert subtitles
+        assert all(subtitle["id"].startswith("9944030_") for subtitle in subtitles)
+        assert all(subtitle["serif"] for subtitle in subtitles)
+        # Story enemy dialogue is all battle lines, so it stays under Servants_
+        assert all(
+            subtitle["audioAsset"].endswith(
+                f"/Servants_9944030/{subtitle['id'].split('_', 1)[1]}.mp3"
+            )
+            for subtitle in subtitles
+        )
+
+    async def test_subtitles_servant_leftover_np_lines(
+        self, client: AsyncClient
+    ) -> None:
+        """Altria has two subtitles left over from replaced noble phantasm lines."""
+        response = await client.get("/nice/NA/servant/100100?lore=true")
+        assert response.status_code == 200
+        profile = response.json()["profile"]
+        # Leftovers from noble phantasm lines that were replaced, so these two
+        # don't move around as new voice lines are added.
+        assert [subtitle["id"] for subtitle in profile["subtitles"]] == [
+            "100100_0_B060",
+            "100100_0_B070",
+        ]
+        # B060 and B070 are treasureDevice ids, so the folder follows the type
+        # mstVoice gives them instead of defaulting to Servants_
+        assert [
+            subtitle["audioAsset"].rsplit("/Audio/", 1)[1]
+            for subtitle in profile["subtitles"]
+        ] == [
+            "NoblePhantasm_100100/0_B060.mp3",
+            "NoblePhantasm_100100/0_B070.mp3",
+        ]
+
+    async def test_subtitles_voice_lines_unchanged(self, client: AsyncClient) -> None:
+        """The orphan lookup must not steal subtitles from the voice lines."""
+        response = await client.get("/nice/NA/servant/100100?lore=true")
+        assert response.status_code == 200
+        profile = response.json()["profile"]
+        voice_lines = [
+            voice_line
+            for voice_group in profile["voices"]
+            for voice_line in voice_group["voiceLines"]
+        ]
+        assert voice_lines
+        assert all(voice_line["subtitle"] for voice_line in voice_lines)
+        # A subtitle belongs to a voice line or to the orphan list, never to both
+        voice_line_texts = {voice_line["subtitle"] for voice_line in voice_lines}
+        assert not voice_line_texts & {
+            subtitle["serif"] for subtitle in profile["subtitles"]
+        }
+
+    async def test_subtitles_empty_without_subtitle_data(
+        self, client: AsyncClient
+    ) -> None:
+        """JP ships no globalNewMstSubtitle.json, so there's nothing to report."""
+        response = await client.get("/nice/JP/svt/9941330?lore=true")
+        assert response.status_code == 200
+        assert response.json()["profile"]["subtitles"] == []
+
     async def test_script_svt_SkillRankUp(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/servant/285")
         assert response.status_code == 200

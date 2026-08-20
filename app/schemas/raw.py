@@ -832,6 +832,15 @@ class MstVoice(BaseModelORJson):
     flag: int  # 0
 
 
+def get_base_voice_id(info_id: str) -> str:
+    """mstVoice key of a voice id: "11_B050" -> "B050"."""
+    # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
+    splitted = info_id.split("_")  # TW has lines with odd ids: 御主任務 2021年4月 2
+    if len(splitted) >= 2:
+        return splitted[1][:-1] + "0"
+    return info_id
+
+
 class ScriptJsonInfo(BaseModelORJson):
     id: str  # "0_S010"
     face: int  # 0
@@ -843,11 +852,7 @@ class ScriptJsonInfo(BaseModelORJson):
     multiForm: Optional[list[int]] = None
 
     def get_voice_id(self) -> str:
-        # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
-        splitted = self.id.split("_")  # TW has lines with odd ids: 御主任務 2021年4月 2
-        if len(splitted) >= 2:
-            return self.id.split("_")[1][:-1] + "0"
-        return self.id
+        return get_base_voice_id(self.id)
 
 
 class ScriptJsonCond(BaseModelORJson):
@@ -977,6 +982,11 @@ class GlobalNewMstSubtitle(BaseModelORJson):
 
     def get_svtId(self) -> int:
         return get_subtitle_svtId(self.id)
+
+    def get_voice_id(self) -> str:
+        """mstVoice key of this subtitle's line, "" if the id has no voice part."""
+        _, _, voice_part = self.id.partition("_")
+        return get_base_voice_id(voice_part) if voice_part else ""
 
 
 class MstFriendship(BaseModelORJson):

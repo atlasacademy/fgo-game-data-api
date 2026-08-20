@@ -1479,7 +1479,9 @@ class NiceVoiceLine(BaseModelORJson):
     subtitle: str = Field(
         ...,
         title="Voice line subtitles",
-        description="English subtitle for the voice line, only applicable to NA data.",
+        description="Subtitle for the voice line, in the language of the region "
+        "it's from. Empty for regions that don't ship subtitle data: "
+        "only NA and KR do.",
     )
     conds: list[NiceVoiceCond] = Field(
         ...,
@@ -1502,6 +1504,27 @@ class NiceVoiceGroup(BaseModel):
     voiceLines: list[NiceVoiceLine]
 
 
+class NiceVoiceSubtitle(BaseModel):
+    id: str = Field(
+        ..., title="Subtitle ID", description="Subtitle ID, `{svtId}_{voiceId}`."
+    )
+    serif: str = Field(
+        ...,
+        title="Subtitle text",
+        description="Subtitle text, in the language of the region it's from.",
+    )
+    audioAsset: str = Field(
+        ...,
+        title="Subtitle mp3 URL",
+        description="Subtitle mp3 URL. "
+        "The folder comes from the voice type `mstVoice` records for this "
+        "subtitle's voice ID, falling back to `battle` for an ID that has "
+        "no `mstVoice` row. "
+        "Some rows are leftovers whose audio was removed from the game, "
+        "so a URL is not a promise that the file exists.",
+    )
+
+
 class NiceLore(BaseModel):
     cv: str
     illustrator: str
@@ -1513,6 +1536,15 @@ class NiceLore(BaseModel):
     )
     comments: list[NiceLoreComment]
     voices: list[NiceVoiceGroup]
+    subtitles: list[NiceVoiceSubtitle] = Field(
+        default=[],
+        title="Subtitles without a voice line",
+        description="Subtitles that don't match any voice line above. "
+        "Story enemies often have subtitled battle dialogue "
+        "but no voice set records, which makes the subtitles "
+        "unreachable through `voices`. Empty for regions that don't ship "
+        "subtitle data: only NA and KR do.",
+    )
 
 
 class NiceImagePartsGroupScript(BaseModel):

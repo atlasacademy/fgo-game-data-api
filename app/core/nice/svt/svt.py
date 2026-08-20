@@ -61,7 +61,7 @@ from .chara_script import get_nice_chara_script
 from .individuality import get_nice_svt_trait
 from .limit import get_nice_status_rank, get_nice_svt_limit
 from .overwrite import get_nice_svt_overwrite
-from .voice import get_nice_voice
+from .voice import get_nice_subtitles, get_nice_voice
 
 settings = Settings()
 
@@ -462,6 +462,7 @@ async def get_nice_servant(
                 for svt_comment in raw_svt.mstSvtComment
             ],
             "voices": get_nice_voice(region, raw_svt, costume_ids, lang),
+            "subtitles": get_nice_subtitles(region, raw_svt),
             "stats": {
                 "strength": get_nice_status_rank(last_svt_limit.power),
                 "endurance": get_nice_status_rank(last_svt_limit.defense),

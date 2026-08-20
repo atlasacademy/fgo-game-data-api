@@ -8222,6 +8222,33 @@
           }
         ]
       }
+    ],
+    "subtitles": [
+      {
+        "id": "1100200_0_H1800",
+        "serif": "The remnant of me that used to dwell deep within you has vanished. \nI can no longer protect you. At least, not like before.\nBe that as it may...\nI am still here. \nWe will be together—I as your flame and your might. \nThat's right...until we go beyond your love and hate.",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H1800.mp3"
+      },
+      {
+        "id": "1100200_0_T010",
+        "serif": "Wait and hope.",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_T010.mp3"
+      },
+      {
+        "id": "1100200_0_T020",
+        "serif": "The stars in heaven see all. Where you go, their light will be with you.",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_T020.mp3"
+      },
+      {
+        "id": "1100200_0_T030",
+        "serif": "It's been a long journey for us both...my accomplice.",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_T030.mp3"
+      },
+      {
+        "id": "1100200_11_B050",
+        "serif": "[id 1100200_11_B050]I follow a path beyond love and hate!\n[id 1100200_11_B051,1100200_11_B052]Enfer Château d'If!",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/NoblePhantasm_1100200/11_B050.mp3"
+      }
     ]
   }
 }
