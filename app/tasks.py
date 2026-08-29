@@ -433,6 +433,7 @@ class TimerData(BaseModelORJson):
     hash: str | None
     timestamp: int | None
     events: list[NiceEvent]
+    wars: list[NiceWar]
     quests: list[NiceQuest]
     gachas: list[NiceGacha]
     masterMissions: list[NiceMasterMission]
@@ -459,6 +460,10 @@ async def dump_current_events(
         for event in nice_events
         if is_recent(now, event.startedAt, event.endedAt, event.finishedAt, 14, 3)
     ]
+    war_ids = {
+        war_id for event in events for war_id in event.warIds if 2000 < war_id < 10000
+    }
+    wars = [war for war in nice_wars if war.id in war_ids]
     recent_gacha_entities = [
         g
         for g in raw_gacha_entities
@@ -506,6 +511,7 @@ async def dump_current_events(
         hash=repo_info.hash if repo_info else None,
         timestamp=repo_info.timestamp if repo_info else None,
         events=events,
+        wars=wars,
         quests=quests,
         gachas=nice_gachas,
         masterMissions=masterMissions,
