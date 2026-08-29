@@ -946,6 +946,7 @@ export enum NiceDataValsType {
     UserEquipSkillMaxTargetNum = "userEquipSkillMaxTargetNum",
     ShowMasterPopupDuringNoblePhantasm = "showMasterPopupDuringNoblePhantasm",
     TypeIndividualityEachFunc = "typeIndividualityEachFunc",
+    NotRemoveOnShift = "notRemoveOnShift",
 }
 
 export enum NiceClassRelationOverwriteType {

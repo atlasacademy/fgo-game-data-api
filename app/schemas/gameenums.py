@@ -2294,6 +2294,7 @@ class DataValsType(IntEnum):
     UserEquipSkillMaxTargetNum = 281
     ShowMasterPopupDuringNoblePhantasm = 282
     TypeIndividualityEachFunc = 283
+    NotRemoveOnShift = 284
 
 
 class ClassRelationOverwriteType(IntEnum):
