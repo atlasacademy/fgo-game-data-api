@@ -4174,7 +4174,7 @@ class NiceQuestGroupType(StrEnum):
     eventFortification = "eventFortification"
 
 
-Quest_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
+QUEST_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
     0: NiceQuestGroupType.none,
     1: NiceQuestGroupType.eventQuest,
     2: NiceQuestGroupType.questRelease,

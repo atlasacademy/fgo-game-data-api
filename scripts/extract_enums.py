@@ -401,7 +401,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "QuestGroupType",
         "NiceQuestGroupType",
         "Quest Group Type",
-        "Quest_GROUP_TYPE_NAME",
+        "QUEST_GROUP_TYPE_NAME",
     ),
     (
         "StatusRank.Kind",
