@@ -2052,6 +2052,12 @@ class MstQuestExtension(BaseModelORJson):
     script: dict[str, Any]
 
 
+class MstQuestGroup(BaseModelORJson):
+    questId: int
+    type: int
+    groupId: int
+
+
 class MstClosedMessage(BaseModelORJson):
     id: int
     message: str
@@ -2445,6 +2451,7 @@ class QuestEntity(BaseModelORJson):
     mstQuestConsumeItem: list[MstQuestConsumeItem]
     mstQuestRelease: list[MstQuestRelease]
     mstQuestReleaseOverwrite: list[MstQuestReleaseOverwrite]
+    mstQuestGroup: list[MstQuestGroup]
     mstClosedMessage: list[MstClosedMessage]
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]

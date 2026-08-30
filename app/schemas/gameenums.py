@@ -2294,6 +2294,7 @@ class DataValsType(IntEnum):
     UserEquipSkillMaxTargetNum = 281
     ShowMasterPopupDuringNoblePhantasm = 282
     TypeIndividualityEachFunc = 283
+    NotRemoveOnShift = 284
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -4171,9 +4172,10 @@ class NiceQuestGroupType(StrEnum):
     shareQuestInfo = "shareQuestInfo"
     alloutBattleQuest = "alloutBattleQuest"
     eventFortification = "eventFortification"
+    unknown19 = "unknown19"
 
 
-Quest_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
+QUEST_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
     0: NiceQuestGroupType.none,
     1: NiceQuestGroupType.eventQuest,
     2: NiceQuestGroupType.questRelease,
@@ -4193,6 +4195,7 @@ Quest_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
     16: NiceQuestGroupType.shareQuestInfo,
     17: NiceQuestGroupType.alloutBattleQuest,
     18: NiceQuestGroupType.eventFortification,
+    19: NiceQuestGroupType.unknown19,
 }
 
 

@@ -34,6 +34,7 @@ from ...models.raw import (
     mstMap,
     mstQuest,
     mstQuestConsumeItem,
+    mstQuestGroup,
     mstQuestHint,
     mstQuestMessage,
     mstQuestPhase,
@@ -471,6 +472,7 @@ JOINED_QUEST_ENTITY_TABLES = (
         ),
     )
     .outerjoin(scripts_cte, mstQuest.c.id == scripts_cte.c.questId)
+    .outerjoin(mstQuestGroup, mstQuestGroup.c.questId == mstQuest.c.id)
     .outerjoin(mstQuestPhasePresent, mstQuestPhasePresent.c.questId == mstQuest.c.id)
     .outerjoin(mstGiftAddAlias, mstGiftAddAlias.c.giftId == mstQuest.c.giftId)
     .outerjoin(
@@ -513,6 +515,7 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstItem),
     sql_jsonb_agg(mstGiftAlias, "mstGift"),
     sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
+    sql_jsonb_agg(mstQuestGroup),
     sql_jsonb_agg(mstQuestPhasePresent),
     func.to_jsonb(
         func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)  # type: ignore[no-untyped-call]
@@ -639,6 +642,10 @@ async def get_quest_phase_entity(
             mstRestriction.c.id == mstQuestRestriction.c.restrictionId,
         )
         .outerjoin(
+            mstQuestGroup,
+            mstQuest.c.id == mstQuestGroup.c.questId,
+        )
+        .outerjoin(
             mstQuestPhasePresent,
             and_(
                 mstQuest.c.id == mstQuestPhasePresent.c.questId,
@@ -758,6 +765,7 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
         sql_jsonb_agg(mstQuestPhase, "mstQuestPhaseList"),
+        sql_jsonb_agg(mstQuestGroup),
         sql_jsonb_agg(mstQuestPhasePresent),
         phases_select,
         phasesWithEnemies_select,
@@ -816,7 +824,7 @@ async def get_quest_phase_entity(
             else:
                 svt_follower = []
 
-            return QuestPhaseEntity(npcSvtFollower=svt_follower, **quest_phase._mapping)
+            return QuestPhaseEntity(npcSvtFollower=svt_follower, **quest_phase._mapping)  # pyright: ignore[reportArgumentType]
     except DBAPIError:
         pass
 

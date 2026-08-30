@@ -10,6 +10,11 @@ settings = Settings()
 def get_nice_mural(
     region: Region, event_id: int, mural: MstEventMural
 ) -> NiceEventMural:
+    # next mural event needs check again
+    if event_id == 80614:
+        fn_prefix = "img_pics_"
+    else:
+        fn_prefix = "img_pic_"
     return NiceEventMural(
         id=mural.id,
         message=mural.message,
@@ -18,7 +23,7 @@ def get_nice_mural(
                 AssetURL.eventUi,
                 base_url=settings.asset_url,
                 region=region,
-                event=f"Prefabs/{event_id}/img_pic_{imageId:03d}",
+                event=f"Prefabs/{event_id}/{fn_prefix}{imageId:03d}",
             )
             for imageId in mural.imageIds
         ],

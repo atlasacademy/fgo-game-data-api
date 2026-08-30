@@ -81,6 +81,7 @@ from .gameenums import (
     NicePurchaseType,
     NiceQuestAfterClearType,
     NiceQuestFlag,
+    NiceQuestGroupType,
     NiceQuestType,
     NiceRestrictionRangeType,
     NiceRestrictionType,
@@ -719,6 +720,7 @@ class BaseVals(BaseModel):
     UserEquipSkillMaxTargetNum: int | None = None
     ShowMasterPopupDuringNoblePhantasm: int | None = None
     TypeIndividualityEachFunc: list[list[int]] | None = None
+    NotRemoveOnShift: int | None = None
 
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
@@ -2696,6 +2698,11 @@ class NiceQuestPhasePresent(BaseModelORJson):
     originalScript: dict[str, Any]
 
 
+class NiceQuestGroup(BaseModelORJson):
+    type: NiceQuestGroupType
+    groupId: int
+
+
 class NiceQuest(BaseModelORJson):
     id: int
     name: str
@@ -2716,6 +2723,7 @@ class NiceQuest(BaseModelORJson):
     chapterSubStr: str
     giftIcon: HttpUrl | None = None
     gifts: list[NiceGift]
+    groups: list[NiceQuestGroup]
     releaseConditions: list[NiceQuestRelease]
     releaseOverwrites: list[NiceQuestReleaseOverwrite]
     presents: list[NiceQuestPhasePresent]

@@ -32,6 +32,7 @@ from ...schemas.gameenums import (
     FREQUENCY_TYPE_NAME,
     QUEST_AFTER_CLEAR_NAME,
     QUEST_CONSUME_TYPE_NAME,
+    QUEST_GROUP_TYPE_NAME,
     QUEST_TYPE_NAME,
     RESTRICTION_RANGE_TYPE_NAME,
     RESTRICTION_TYPE_NAME,
@@ -46,6 +47,7 @@ from ...schemas.nice import (
     NiceBattleBg,
     NiceBgm,
     NiceQuest,
+    NiceQuestGroup,
     NiceQuestHint,
     NiceQuestMessage,
     NiceQuestPhase,
@@ -66,6 +68,7 @@ from ...schemas.raw import (
     MstBgm,
     MstBlankEarthSpot,
     MstClosedMessage,
+    MstQuestGroup,
     MstQuestHint,
     MstQuestMessage,
     MstQuestPhasePresent,
@@ -173,6 +176,12 @@ def get_nice_quest_restriction(
         dialogMessage=quest_restriction.dialogMessage,
         noticeMessage=quest_restriction.noticeMessage,
         title=quest_restriction.title,
+    )
+
+
+def get_nice_quest_group(quest_group: MstQuestGroup) -> NiceQuestGroup:
+    return NiceQuestGroup(
+        type=QUEST_GROUP_TYPE_NAME[quest_group.type], groupId=quest_group.groupId
     )
 
 
@@ -338,6 +347,9 @@ def get_nice_quest_with_war_spot(
             else None
         ),
         "gifts": get_nice_gifts(region, raw_quest.mstQuest.giftId, gift_data),
+        "groups": [
+            get_nice_quest_group(quest_group) for quest_group in raw_quest.mstQuestGroup
+        ],
         "releaseConditions": [
             get_nice_quest_release(release, raw_quest.mstClosedMessage)
             for release in raw_quest.mstQuestRelease

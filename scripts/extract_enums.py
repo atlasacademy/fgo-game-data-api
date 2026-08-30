@@ -101,6 +101,7 @@ EXTRA_STR_NAME = {
         68: "DOWN_COMMANDNP",
     },
     "NiceItemType": {9999: "NETMARBLE_CHARGE_STONE"},
+    "NiceQuestGroupType": {19: "UNKNOWN_19"}
 }
 
 
@@ -401,7 +402,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "QuestGroupType",
         "NiceQuestGroupType",
         "Quest Group Type",
-        "Quest_GROUP_TYPE_NAME",
+        "QUEST_GROUP_TYPE_NAME",
     ),
     (
         "StatusRank.Kind",

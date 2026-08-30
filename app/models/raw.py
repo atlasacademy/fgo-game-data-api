@@ -2439,6 +2439,15 @@ mstQuestExtension = Table(
 )
 
 
+mstQuestGroup = Table(
+    "mstQuestGroup",
+    metadata,
+    Column("questId", Integer, index=True),
+    Column("type", Integer),
+    Column("groupId", Integer),
+)
+
+
 mstClosedMessage = Table(
     "mstClosedMessage",
     metadata,
@@ -3021,6 +3030,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuestPhaseIndividuality],
     [mstQuestDateRange],
     [mstQuestExtension],
+    [mstQuestGroup],
     [mstStage],
     [mstStageRemap],
     [mstBattleBg],
