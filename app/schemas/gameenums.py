@@ -4172,6 +4172,7 @@ class NiceQuestGroupType(StrEnum):
     shareQuestInfo = "shareQuestInfo"
     alloutBattleQuest = "alloutBattleQuest"
     eventFortification = "eventFortification"
+    unknown19 = "unknown19"
 
 
 QUEST_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
@@ -4194,6 +4195,7 @@ QUEST_GROUP_TYPE_NAME: dict[int, NiceQuestGroupType] = {
     16: NiceQuestGroupType.shareQuestInfo,
     17: NiceQuestGroupType.alloutBattleQuest,
     18: NiceQuestGroupType.eventFortification,
+    19: NiceQuestGroupType.unknown19,
 }
 
 

@@ -1569,6 +1569,7 @@ export enum NiceQuestGroupType {
     SHARE_QUEST_INFO = "shareQuestInfo",
     ALLOUT_BATTLE_QUEST = "alloutBattleQuest",
     EVENT_FORTIFICATION = "eventFortification",
+    UNKNOWN_19 = "unknown19",
 }
 
 export enum NiceStatusRank {
