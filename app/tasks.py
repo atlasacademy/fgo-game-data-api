@@ -58,7 +58,7 @@ from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RegionInfo, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
-from .schemas.gameenums import NiceItemType, SvtType
+from .schemas.gameenums import NiceItemType, NiceQuestGroupType, SvtType
 from .schemas.nice import (
     NiceBattlePoint,
     NiceEquip,
@@ -496,15 +496,34 @@ async def dump_current_events(
         if item.type in (NiceItemType.continueItem, NiceItemType.friendshipUpItem)
         and is_recent(now, item.startedAt, item.endedAt, None, 14, 0)
     ]
+    event_ids = {event.id for event in events}
 
-    quests = [
-        quest
+    quest_map = {
+        quest.id: quest
+        for war in nice_wars
+        for spot in war.spots
+        for quest in spot.quests
+    }
+
+    quest_ids = {
+        quest.id
+        for quest in quest_map.values()
+        if any(
+            group.type == NiceQuestGroupType.eventQuest and group.groupId in event_ids
+            for group in quest.groups
+        )
+    } | {
+        quest.id
         for war in nice_wars
         if war.eventId == 0 and war.id != 1002
         for spot in war.spots
         for quest in spot.quests
         if is_recent(now, quest.openedAt, quest.closedAt, None, 14, 0)
-    ]
+    }
+    quest_ids.difference_update(
+        {quest.id for war in wars for spot in war.spots for quest in spot.quests}
+    )
+    quests = [quest_map[quest_id] for quest_id in quest_ids]
 
     timer_data = TimerData(
         updatedAt=now,
