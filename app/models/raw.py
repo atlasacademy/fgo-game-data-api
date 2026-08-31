@@ -2968,6 +2968,19 @@ AssetStorage = Table(
     Column("fileName", String),
 )
 
+AssetManifest = Table(
+    "AssetManifest",
+    metadata,
+    Column("manifestId", String, primary_key=True),
+    Column("fileName", String, primary_key=True),
+    Column("sourceUrl", String),
+    Column("size", BigInteger),
+    Column("uploadTimestamp", BigInteger),
+    Column("contentType", String),
+    Column("contentSHA1", String),
+    Column("contentMD5", String),
+)
+
 TABLES_TO_BE_LOADED = [
     [mstAiAct],
     [mstAi],
