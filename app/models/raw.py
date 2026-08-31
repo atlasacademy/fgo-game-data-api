@@ -2981,6 +2981,12 @@ AssetManifest = Table(
     Column("contentMD5", String),
 )
 
+Index(
+    "ix_AssetManifest_fileName_prefix",
+    AssetManifest.c.fileName,
+    postgresql_ops={"fileName": "text_pattern_ops"},
+)
+
 TABLES_TO_BE_LOADED = [
     [mstAiAct],
     [mstAi],

@@ -43,10 +43,28 @@ def test_fetch_asset_manifest() -> None:
     assert manifest == [
         {
             "manifestId": "Audio",
-            "sourceUrl": "https://example.com/GameData/JP/Audio/manifest.json",
+            "sourceUrl": "https://example.com/GameData/JP/Audio/BGM/bgm_001.mp3",
             **make_manifest_item(),
         }
     ]
+
+
+def test_fetch_asset_manifest_encodes_file_url() -> None:
+    def handler(_request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json=[make_manifest_item(fileName="Voice Lines/file #1.mp3")],
+        )
+
+    source = AssetManifestSource("Audio", "Audio/manifest.json")
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        manifest = fetch_asset_manifest(
+            client, Region.NA, "https://static.atlasacademy.io", source
+        )
+
+    assert manifest[0]["sourceUrl"] == (
+        "https://static.atlasacademy.io/NA/Audio/Voice%20Lines/file%20%231.mp3"
+    )
 
 
 def test_fetch_asset_manifests_combines_sources() -> None:
@@ -109,6 +127,16 @@ def test_asset_manifest_table_schema() -> None:
         "manifestId",
         "fileName",
     ]
+
+    prefix_index = next(
+        index
+        for index in AssetManifest.indexes
+        if index.name == "ix_AssetManifest_fileName_prefix"
+    )
+    assert [column.name for column in prefix_index.columns] == ["fileName"]
+    assert prefix_index.dialect_options["postgresql"]["ops"] == {
+        "fileName": "text_pattern_ops"
+    }
 
 
 def test_asset_manifest_load_replaces_previous_data() -> None:

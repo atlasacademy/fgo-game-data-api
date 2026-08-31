@@ -2,6 +2,7 @@ import hashlib
 import time
 from collections import defaultdict
 from typing import Any, NamedTuple, Optional, Sequence, Union
+from urllib.parse import quote
 
 import httpx
 import orjson
@@ -489,6 +490,11 @@ def fetch_asset_manifest(
     source: AssetManifestSource,
 ) -> list[dict[str, Any]]:
     manifest_url = f"{asset_url.rstrip('/')}/{region.value}/{source.path.lstrip('/')}"
+    manifest_folder = source.path.rpartition("/")[0].strip("/")
+    source_base_url = f"{asset_url.rstrip('/')}/{region.value}"
+    if manifest_folder:
+        source_base_url = f"{source_base_url}/{manifest_folder}"
+
     response = client.get(manifest_url)
     response.raise_for_status()
 
@@ -512,10 +518,16 @@ def fetch_asset_manifest(
                 f"{', '.join(missing_columns)}"
             )
 
+        file_name = item["fileName"]
+        if not isinstance(file_name, str):
+            raise ValueError(
+                f"Asset manifest item {index} at {manifest_url} has a non-string fileName"
+            )
+
         manifest.append(
             {
                 "manifestId": source.manifest_id,
-                "sourceUrl": manifest_url,
+                "sourceUrl": f"{source_base_url}/{quote(file_name, safe='/')}",
                 **{column: item[column] for column in ASSET_MANIFEST_FILE_COLUMNS},
             }
         )
