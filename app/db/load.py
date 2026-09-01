@@ -1,8 +1,10 @@
 import hashlib
 import time
 from collections import defaultdict
-from typing import Any, Optional, Sequence, Union
+from typing import Any, NamedTuple, Optional, Sequence, Union
+from urllib.parse import quote
 
+import httpx
 import orjson
 import sqlalchemy
 from loguru import logger
@@ -11,6 +13,7 @@ from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
 from sqlalchemy.sql import text
 
+from ..config import Settings
 from ..core.nice.func import ADD_BUFF_FUNCTIONS
 from ..data.bgm import get_bgms
 from ..data.buff import get_buff_with_classrelation
@@ -20,6 +23,7 @@ from ..data.item import get_item_with_use
 from ..data.script import get_script_path, get_script_text_only
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
+    AssetManifest,
     AssetStorage,
     ScriptFileList,
     mstBgm,
@@ -52,6 +56,25 @@ from .helpers.rayshift import (
     insert_rayshift_quest_hash_db_sync,
     insert_rayshift_quest_list,
 )
+
+settings = Settings()
+
+ASSET_MANIFEST_FILE_COLUMNS = (
+    "fileName",
+    "size",
+    "uploadTimestamp",
+    "contentType",
+    "contentSHA1",
+    "contentMD5",
+)
+
+
+class AssetManifestSource(NamedTuple):
+    manifest_id: str
+    path: str
+
+
+ASSET_MANIFEST_SOURCES = (AssetManifestSource("Audio", "Audio/manifest.json"),)
 
 
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
@@ -460,6 +483,70 @@ def load_asset_storage(
     load_pydantic_to_db(conn, asset_lines, AssetStorage)
 
 
+def fetch_asset_manifest(
+    client: httpx.Client,
+    region: Region,
+    asset_url: str,
+    source: AssetManifestSource,
+) -> list[dict[str, Any]]:
+    manifest_url = f"{asset_url.rstrip('/')}/{region.value}/{source.path.lstrip('/')}"
+    manifest_folder = source.path.rpartition("/")[0].strip("/")
+    source_base_url = f"{asset_url.rstrip('/')}/{region.value}"
+    if manifest_folder:
+        source_base_url = f"{source_base_url}/{manifest_folder}"
+
+    response = client.get(manifest_url)
+    response.raise_for_status()
+
+    data: Any = response.json()
+    if not isinstance(data, list):
+        raise ValueError(f"Audio manifest at {manifest_url} is not a list")
+
+    manifest: list[dict[str, Any]] = []
+    for index, item in enumerate(data):
+        if not isinstance(item, dict):
+            raise ValueError(
+                f"Audio manifest item {index} at {manifest_url} is not an object"
+            )
+
+        missing_columns = [
+            column for column in ASSET_MANIFEST_FILE_COLUMNS if column not in item
+        ]
+        if missing_columns:
+            raise ValueError(
+                f"Audio manifest item {index} at {manifest_url} is missing: "
+                f"{', '.join(missing_columns)}"
+            )
+
+        file_name = item["fileName"]
+        if not isinstance(file_name, str):
+            raise ValueError(
+                f"Asset manifest item {index} at {manifest_url} has a non-string fileName"
+            )
+
+        manifest.append(
+            {
+                "manifestId": source.manifest_id,
+                "sourceUrl": f"{source_base_url}/{quote(file_name, safe='/')}",
+                **{column: item[column] for column in ASSET_MANIFEST_FILE_COLUMNS},
+            }
+        )
+
+    return manifest
+
+
+def fetch_asset_manifests(
+    client: httpx.Client,
+    region: Region,
+    asset_url: str,
+    sources: Sequence[AssetManifestSource] = ASSET_MANIFEST_SOURCES,
+) -> list[dict[str, Any]]:
+    manifests: list[dict[str, Any]] = []
+    for source in sources:
+        manifests.extend(fetch_asset_manifest(client, region, asset_url, source))
+    return manifests
+
+
 def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no cover
     logger.info("Loading db …")
     start_loading_time = time.perf_counter()
@@ -515,6 +602,14 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
             logger.info("Updating AssetStorage and bgms …")
             load_asset_storage(conn, asset_lines)
             load_bgm(conn, repo_folder, asset_lines)
+
+        logger.info("Fetching asset manifests …")
+        with httpx.Client(follow_redirects=True, timeout=60.0) as client:
+            asset_manifests = fetch_asset_manifests(client, region, settings.asset_url)
+
+        with engine.begin() as conn:
+            logger.info("Updating AssetManifest …")
+            insert_db(conn, AssetManifest, asset_manifests)
 
         logger.info("Updating script list …")
         load_script_list(engine, region, repo_folder)

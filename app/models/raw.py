@@ -2968,6 +2968,25 @@ AssetStorage = Table(
     Column("fileName", String),
 )
 
+AssetManifest = Table(
+    "AssetManifest",
+    metadata,
+    Column("manifestId", String, primary_key=True),
+    Column("fileName", String, primary_key=True),
+    Column("sourceUrl", String),
+    Column("size", BigInteger),
+    Column("uploadTimestamp", BigInteger),
+    Column("contentType", String),
+    Column("contentSHA1", String),
+    Column("contentMD5", String),
+)
+
+Index(
+    "ix_AssetManifest_fileName_prefix",
+    AssetManifest.c.fileName,
+    postgresql_ops={"fileName": "text_pattern_ops"},
+)
+
 TABLES_TO_BE_LOADED = [
     [mstAiAct],
     [mstAi],
