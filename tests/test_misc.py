@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 from decimal import Decimal
+from typing import Any, NamedTuple, cast
 
 import orjson
 import pytest
@@ -7,10 +8,15 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from app.core.nice.func import parse_dataVals
-from app.core.nice.svt.voice import get_nice_subtitles
+from app.core.nice.svt.voice import (
+    get_nice_subtitles,
+    get_subtitle_audio_candidates,
+    get_subtitle_audio_urls,
+)
 from app.core.utils import get_voice_name
 from app.data.custom_mappings import Translation
 from app.data.script import get_script_path, get_script_text_only, remove_brackets
+from app.db.helpers import asset
 from app.db.load import get_SkillID_from_sval, get_Value_from_sval
 from app.routers.utils import list_string_exclude
 from app.schemas.common import Language, Region, ReverseDepth
@@ -389,3 +395,195 @@ def test_nice_subtitles_folder_uses_base_voice_id() -> None:
     subtitles = get_nice_subtitles(Region.NA, voice_data)
 
     assert subtitle_asset_paths(subtitles) == ["NoblePhantasm_100100/11_B051.mp3"]
+
+
+MANIFEST_BASE = "https://manifest.example/NA/Audio"
+
+
+def manifest(*file_names: str) -> dict[str, str]:
+    """What get_audio_urls returns: manifest fileName -> the URL stored with it."""
+    return {file_name: f"{MANIFEST_BASE}/{file_name}" for file_name in file_names}
+
+
+def test_nice_subtitles_audio_url_comes_from_the_manifest() -> None:
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B010", SvtVoiceType.BATTLE)],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+
+    subtitles = get_nice_subtitles(
+        Region.NA, voice_data, manifest("Servants_100100/0_B010.mp3")
+    )
+
+    assert subtitles[0].audioAsset == f"{MANIFEST_BASE}/Servants_100100/0_B010.mp3"
+
+
+def test_nice_subtitles_audio_folder_repaired_by_the_manifest() -> None:
+    """9941740_0_B050: mstVoice says treasureDevice, the file ships under Servants_."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("9941740_0_B050"),
+    )
+
+    subtitles = get_nice_subtitles(
+        Region.NA, voice_data, manifest("Servants_9941740/0_B050.mp3")
+    )
+
+    assert subtitles[0].audioAsset == f"{MANIFEST_BASE}/Servants_9941740/0_B050.mp3"
+
+
+def test_nice_subtitles_audio_prefers_the_mstVoice_folder() -> None:
+    """Both folders ship the file, so the voice type breaks the tie."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B050"),
+    )
+
+    subtitles = get_nice_subtitles(
+        Region.NA,
+        voice_data,
+        manifest("Servants_100100/11_B050.mp3", "NoblePhantasm_100100/11_B050.mp3"),
+    )
+
+    assert (
+        subtitles[0].audioAsset == f"{MANIFEST_BASE}/NoblePhantasm_100100/11_B050.mp3"
+    )
+
+
+def test_nice_subtitles_no_audio_when_the_manifest_has_none() -> None:
+    """Dantes 0_H1800 is a leftover: its audio 404s under every folder."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("H1800", SvtVoiceType.HOME)],
+        mstSubtitle=make_subtitles("1100200_0_H1800"),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data, manifest())
+
+    assert subtitles[0].id == "1100200_0_H1800"
+    assert subtitles[0].serif == "serif 1100200_0_H1800"
+    assert subtitles[0].audioAsset is None
+
+
+def test_nice_subtitles_audio_unverified_without_a_manifest() -> None:
+    """No manifest data: the guessed URL, exactly as before the manifest existed."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B050"),
+    )
+
+    subtitles = get_nice_subtitles(Region.NA, voice_data, None)
+
+    assert subtitle_asset_paths(subtitles) == ["NoblePhantasm_100100/11_B050.mp3"]
+
+
+def test_subtitle_audio_candidates_lists_every_folder() -> None:
+    """One name per folder, the one mstVoice points at first."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B050"),
+    )
+
+    assert get_subtitle_audio_candidates(voice_data) == [
+        "NoblePhantasm_100100/11_B050.mp3",
+        "Servants_100100/11_B050.mp3",
+        "ChrVoice_100100/11_B050.mp3",
+    ]
+
+
+def test_subtitle_audio_candidates_skips_matched_subtitles() -> None:
+    """Only orphans are looked up: a matched row is voiced by its voice line."""
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010")],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+
+    assert get_subtitle_audio_candidates(voice_data) == []
+
+
+async def test_get_audio_urls_without_names_makes_no_query() -> None:
+    """Nothing to verify, no round trip: the connection is never touched."""
+
+    class ExplodingConnection:
+        async def execute(self, *_args: Any, **_kwargs: Any) -> Any:
+            raise AssertionError("queried the db for an empty name list")
+
+    conn = cast(AsyncConnection, ExplodingConnection())
+
+    assert await asset.get_audio_urls(conn, []) == {}
+
+
+class ManifestRow(NamedTuple):
+    fileName: str
+    sourceUrl: str
+
+
+class CountingConnection:
+    """Stands in for AsyncConnection, answering every query with the same rows."""
+
+    def __init__(self, *rows: ManifestRow) -> None:
+        self.rows = list(rows)
+        self.queries = 0
+
+    async def execute(self, *_args: Any, **_kwargs: Any) -> Any:
+        self.queries += 1
+        return self
+
+    def __iter__(self) -> Any:
+        return iter(self.rows)
+
+    def fetchone(self) -> Any:
+        return self.rows[0] if self.rows else None
+
+
+async def test_subtitle_audio_urls_asks_the_manifest_once() -> None:
+    """A loaded manifest answers in one query: no existence check on the happy path."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B050"),
+    )
+    conn = CountingConnection(
+        ManifestRow(
+            "NoblePhantasm_100100/11_B050.mp3",
+            f"{MANIFEST_BASE}/NoblePhantasm_100100/11_B050.mp3",
+        )
+    )
+
+    audio_urls = await get_subtitle_audio_urls(
+        cast(AsyncConnection, conn), Region.NA, voice_data
+    )
+
+    assert audio_urls == {
+        "NoblePhantasm_100100/11_B050.mp3": (
+            f"{MANIFEST_BASE}/NoblePhantasm_100100/11_B050.mp3"
+        )
+    }
+    assert conn.queries == 1
+
+
+async def test_subtitle_audio_urls_falls_back_when_the_manifest_is_empty() -> None:
+    """No rows at all means the manifest isn't loaded, not that the audio is gone."""
+    voice_data = VoiceData(mstSubtitle=make_subtitles("100100_11_B050"))
+    conn = CountingConnection()
+
+    # TW so a loaded-manifest test elsewhere can't memoise this region as present
+    audio_urls = await get_subtitle_audio_urls(
+        cast(AsyncConnection, conn), Region.TW, voice_data
+    )
+
+    assert audio_urls is None
+    assert conn.queries == 2  # the lookup, then the "is it loaded at all" check
+
+
+async def test_subtitle_audio_urls_skips_the_db_without_orphans() -> None:
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010")],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+    conn = CountingConnection()
+
+    audio_urls = await get_subtitle_audio_urls(
+        cast(AsyncConnection, conn), Region.NA, voice_data
+    )
+
+    assert audio_urls is None
+    assert conn.queries == 0

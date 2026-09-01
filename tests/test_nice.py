@@ -7,7 +7,7 @@ from app.core.nice.enemy import get_enemy_script
 from app.core.nice.svt.voice import get_nice_voice_line
 from app.data.shop import get_shop_cost_item_id
 from app.data.utils import load_master_data
-from app.db.helpers import event
+from app.db.helpers import asset, event
 from app.schemas.base import HttpUrlAdapter
 from app.schemas.common import Language, Region
 from app.schemas.nice import ExtraAssetsUrl
@@ -430,15 +430,32 @@ class TestServantSpecial:
             "100100_0_B060",
             "100100_0_B070",
         ]
-        # B060 and B070 are treasureDevice ids, so the folder follows the type
-        # mstVoice gives them instead of defaulting to Servants_
-        assert [
-            subtitle["audioAsset"].rsplit("/Audio/", 1)[1]
-            for subtitle in profile["subtitles"]
-        ] == [
-            "NoblePhantasm_100100/0_B060.mp3",
-            "NoblePhantasm_100100/0_B070.mp3",
-        ]
+        # The replaced lines took their audio with them, and the asset manifest
+        # lists no file for either under any folder, so neither gets a URL
+        assert all("audioAsset" not in subtitle for subtitle in profile["subtitles"])
+
+    async def test_subtitles_audio_folder_from_manifest(
+        self, client: AsyncClient
+    ) -> None:
+        """Dantes' orphans live in two folders, and one has no audio left."""
+        response = await client.get("/nice/NA/servant/1100200?lore=true")
+        assert response.status_code == 200
+        subtitles = response.json()["profile"]["subtitles"]
+
+        assert {
+            subtitle["id"]: (
+                subtitle["audioAsset"].rsplit("/Audio/", 1)[1]
+                if "audioAsset" in subtitle
+                else None
+            )
+            for subtitle in subtitles
+        } == {
+            "1100200_0_H1800": None,
+            "1100200_0_T010": "ChrVoice_1100200/0_T010.mp3",
+            "1100200_0_T020": "ChrVoice_1100200/0_T020.mp3",
+            "1100200_0_T030": "ChrVoice_1100200/0_T030.mp3",
+            "1100200_11_B050": "NoblePhantasm_1100200/11_B050.mp3",
+        }
 
     async def test_subtitles_voice_lines_unchanged(self, client: AsyncClient) -> None:
         """The orphan lookup must not steal subtitles from the voice lines."""
@@ -805,6 +822,25 @@ class TestServantSpecial:
                 assert "transform" in decks
             else:
                 assert "transform" not in decks
+
+
+@pytest.mark.asyncio
+async def test_audio_manifest_lookup(na_db_conn: AsyncConnection) -> None:
+    """The manifest hands back the URL it stored for the files it lists."""
+    audio_urls = await asset.get_audio_urls(
+        na_db_conn, ["ChrVoice_1100200/0_T010.mp3", "ChrVoice_1100200/0_H1800.mp3"]
+    )
+
+    assert audio_urls["ChrVoice_1100200/0_T010.mp3"].endswith(
+        "/NA/Audio/ChrVoice_1100200/0_T010.mp3"
+    )
+    # audio that was removed from the game isn't in the manifest
+    assert "ChrVoice_1100200/0_H1800.mp3" not in audio_urls
+
+
+@pytest.mark.asyncio
+async def test_audio_manifest_loaded(na_db_conn: AsyncConnection) -> None:
+    assert await asset.audio_manifest_loaded(na_db_conn, Region.NA) is True
 
 
 @pytest.mark.asyncio

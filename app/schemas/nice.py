@@ -1515,15 +1515,14 @@ class NiceVoiceSubtitle(BaseModel):
         title="Subtitle text",
         description="Subtitle text, in the language of the region it's from.",
     )
-    audioAsset: str = Field(
-        ...,
+    audioAsset: Optional[str] = Field(
+        None,
         title="Subtitle mp3 URL",
-        description="Subtitle mp3 URL. "
-        "The folder comes from the voice type `mstVoice` records for this "
-        "subtitle's voice ID, falling back to `battle` for an ID that has "
-        "no `mstVoice` row. "
-        "Some rows are leftovers whose audio was removed from the game, "
-        "so a URL is not a promise that the file exists.",
+        description="Subtitle mp3 URL, taken from the audio asset manifest. "
+        "Absent when the manifest lists no audio file for this subtitle: "
+        "some rows are leftovers whose audio was removed from the game. "
+        "The manifest is refreshed when the game data is loaded, "
+        "so this reflects the asset server as of the last data update.",
     )
 
 
