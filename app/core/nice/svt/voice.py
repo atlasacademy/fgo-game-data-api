@@ -239,21 +239,12 @@ def get_nice_voice(
 
 
 def pick_audio_asset(
-    region: Region,
     svt_id: int,
     voice_type: int,
     voice_id: str,
-    audio_urls: Optional[Mapping[str, str]],
+    audio_urls: Mapping[str, str],
 ) -> Optional[str]:
-    """The manifest's URL for a voice line, None when it lists no audio for it.
-
-    audio_urls is None when the manifest can't answer — no rows loaded for the
-    region — and the folder is then guessed from the voice type as it was
-    before the manifest existed.
-    """
-    if audio_urls is None:
-        return get_voice_url(region, svt_id, voice_type, voice_id)
-
+    """The manifest's URL for a voice line, None when it lists no audio for it."""
     for candidate in get_audio_candidates(svt_id, voice_type, voice_id):
         if candidate in audio_urls:
             return audio_urls[candidate]
@@ -327,29 +318,19 @@ def get_subtitle_audio_candidates(voice_data: RequiredVoiceData) -> list[str]:
 
 
 async def get_subtitle_audio_urls(
-    conn: AsyncConnection, region: Region, voice_data: RequiredVoiceData
-) -> Optional[dict[str, str]]:
-    """Manifest URLs for this svt's orphan subtitles, None when unverifiable.
+    conn: AsyncConnection, voice_data: RequiredVoiceData
+) -> dict[str, str]:
+    """Manifest URLs for this svt's orphan subtitles.
 
-    An empty result is ambiguous: most svts with orphans have some whose audio
-    was removed, but a database that never loaded the manifest looks the same.
-    Only then is the manifest itself checked.
+    An empty result means the manifest lists no audio for any of them, which is
+    the ordinary answer for leftover rows whose files were removed from the
+    game. get_audio_urls skips the query when there is nothing to look up.
     """
-    candidates = get_subtitle_audio_candidates(voice_data)
-    if not candidates:
-        return None
-
-    audio_urls = await asset.get_audio_urls(conn, candidates)
-    if not audio_urls and not await asset.audio_manifest_loaded(conn, region):
-        return None
-
-    return audio_urls
+    return await asset.get_audio_urls(conn, get_subtitle_audio_candidates(voice_data))
 
 
 def get_nice_subtitles(
-    region: Region,
-    voice_data: RequiredVoiceData,
-    audio_urls: Optional[Mapping[str, str]] = None,
+    voice_data: RequiredVoiceData, audio_urls: Mapping[str, str]
 ) -> list[NiceVoiceSubtitle]:
     """Nice models for the subtitles that no voice line covers."""
     return [
@@ -357,11 +338,7 @@ def get_nice_subtitles(
             id=orphan.subtitle.id,
             serif=orphan.subtitle.serif,
             audioAsset=pick_audio_asset(
-                region,
-                orphan.svt_id,
-                orphan.voice_type,
-                orphan.voice_id,
-                audio_urls,
+                orphan.svt_id, orphan.voice_type, orphan.voice_id, audio_urls
             ),
         )
         for orphan in iter_orphan_subtitles(voice_data)

@@ -839,11 +839,6 @@ async def test_audio_manifest_lookup(na_db_conn: AsyncConnection) -> None:
 
 
 @pytest.mark.asyncio
-async def test_audio_manifest_loaded(na_db_conn: AsyncConnection) -> None:
-    assert await asset.audio_manifest_loaded(na_db_conn, Region.NA) is True
-
-
-@pytest.mark.asyncio
 async def test_shop_itemIds_0(na_db_conn: AsyncConnection) -> None:
     assert get_shop_cost_item_id(await event.get_mstShop_by_id(na_db_conn, 1)) == 4
     assert (
