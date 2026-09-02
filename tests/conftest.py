@@ -5,7 +5,7 @@ from typing import AsyncGenerator, Generator
 
 import pytest
 from asgi_lifespan import LifespanManager
-from httpx import AsyncClient
+from httpx import ASGITransport, AsyncClient
 from redis.asyncio import Redis
 from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
 
@@ -34,7 +34,9 @@ def event_loop() -> Generator[AbstractEventLoop, None, None]:
 @pytest.fixture(scope="session")
 async def client() -> AsyncGenerator[AsyncClient, None]:
     async with LifespanManager(app, startup_timeout=60):
-        async with AsyncClient(app=app, base_url="http://test") as ac:
+        async with AsyncClient(
+            transport=ASGITransport(app=app), base_url="http://test"
+        ) as ac:
             yield ac
 
 

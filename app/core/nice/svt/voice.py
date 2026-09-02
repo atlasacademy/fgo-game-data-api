@@ -1,7 +1,10 @@
-from typing import Protocol
+from typing import Iterator, Mapping, NamedTuple, Optional, Protocol
+
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
 from ....data.custom_mappings import Translation
+from ....db.helpers import asset
 from ....schemas.common import Language, Region
 from ....schemas.gameenums import (
     COND_TYPE_NAME,
@@ -17,6 +20,7 @@ from ....schemas.nice import (
     NiceVoiceGroup,
     NiceVoiceLine,
     NiceVoicePlayCond,
+    NiceVoiceSubtitle,
 )
 from ....schemas.raw import (
     GlobalNewMstSubtitle,
@@ -33,6 +37,9 @@ from ..base_script import get_nice_script_link
 settings = Settings()
 
 
+AUDIO_FOLDER_PREFIXES = ("Servants_", "NoblePhantasm_", "ChrVoice_")
+
+
 def get_voice_folder(voice_type: int) -> str:
     if voice_type == SvtVoiceType.BATTLE:
         return "Servants_"
@@ -47,6 +54,32 @@ def get_voice_url(region: Region, svt_id: int, voice_type: int, voice_id: str) -
     return AssetURL.audio.format(
         base_url=settings.asset_url, region=region, folder=folder, id=voice_id
     )
+
+
+def get_audio_candidates(svt_id: int, voice_type: int, voice_id: str) -> list[str]:
+    """Asset manifest file names a voice line could have, the typed folder first.
+
+    The manifest says which files exist but not which line they belong to,
+    so the folder mstVoice points at is tried before the other two.
+    """
+    preferred = f"{get_voice_folder(voice_type)}{svt_id}/{voice_id}.mp3"
+    return [preferred] + [
+        name
+        for prefix in AUDIO_FOLDER_PREFIXES
+        if (name := f"{prefix}{svt_id}/{voice_id}.mp3") != preferred
+    ]
+
+
+def get_voice_scripts(voice: MstSvtVoice) -> list[ScriptJson]:
+    """Scripts of a voice group that turn into a voice line."""
+    return [
+        script for script in voice.scriptJson if script is not None and script.infos
+    ]
+
+
+def get_script_subtitle_id(svt_id: int, script: ScriptJson) -> str:
+    """mstSubtitle key of a voice line: the svt id and the id of its first info."""
+    return f"{svt_id}_{script.infos[0].id}"
 
 
 def get_nice_play_cond(playCond: MstVoicePlayCond) -> NiceVoicePlayCond:
@@ -123,7 +156,7 @@ def get_nice_voice_line(
             and play_cond.voiceId == voice_id
             and play_cond.voicePrefix in (-1, voice_prefix)
         ],
-        subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
+        subtitle=subtitle_ids.get(get_script_subtitle_id(svt_id, script), ""),
     )
 
     if script.summonScript is not None and script.summonScript != "":
@@ -168,8 +201,7 @@ def get_nice_voice_group(
                 mstSvtGroups,
                 lang,
             )
-            for script in voice.scriptJson
-            if script is not None and script.infos
+            for script in get_voice_scripts(voice)
         ],
     )
 
@@ -203,4 +235,111 @@ def get_nice_voice(
             lang,
         )
         for voice in voice_data.mstSvtVoice
+    ]
+
+
+def pick_audio_asset(
+    svt_id: int,
+    voice_type: int,
+    voice_id: str,
+    audio_urls: Mapping[str, str],
+) -> Optional[str]:
+    """The manifest's URL for a voice line, None when it lists no audio for it."""
+    for candidate in get_audio_candidates(svt_id, voice_type, voice_id):
+        if candidate in audio_urls:
+            return audio_urls[candidate]
+
+    return None
+
+
+class OrphanSubtitle(NamedTuple):
+    """A subtitle with no voice line, and what names its audio file could have."""
+
+    subtitle: GlobalNewMstSubtitle
+    svt_id: int
+    voice_type: int
+    voice_id: str
+
+
+def iter_orphan_subtitles(
+    voice_data: RequiredVoiceData,
+) -> Iterator[OrphanSubtitle]:
+    """Subtitles that don't belong to any voice line.
+
+    Story enemies usually have no mstVoice or mstSvtVoice rows at all,
+    so their battle dialogue is only present in mstSubtitle
+    and would otherwise never show up in the nice data.
+
+    Both the audio lookup and the nice models walk this,
+    so the orphan rule can't drift between them.
+    """
+    # Only NA and KR ship subtitle data, so everywhere else there is nothing to match
+    if not voice_data.mstSubtitle:
+        return
+
+    voice_line_ids = {
+        get_script_subtitle_id(voice.id, script)
+        for voice in voice_data.mstSvtVoice
+        for script in get_voice_scripts(voice)
+    }
+    mstVoices = {voice.id: voice for voice in voice_data.mstVoice}
+
+    for subtitle in voice_data.mstSubtitle:
+        if subtitle.id in voice_line_ids or "_" not in subtitle.id:
+            continue
+
+        svt_id = subtitle.get_svtId()
+        if svt_id == -1:
+            continue
+
+        # An orphan has no voice group, so there's no mstSvtVoice.type to read,
+        # but mstVoice keys on the voice id and carries the same type:
+        # B010 is battle while B050 is treasureDevice, so the letter alone
+        # would be ambiguous where the whole id isn't.
+        mstVoice = mstVoices.get(subtitle.get_voice_id())
+
+        yield OrphanSubtitle(
+            subtitle=subtitle,
+            svt_id=svt_id,
+            voice_type=mstVoice.svtVoiceType if mstVoice else SvtVoiceType.BATTLE,
+            voice_id=subtitle.id.split("_", 1)[1],
+        )
+
+
+def get_subtitle_audio_candidates(voice_data: RequiredVoiceData) -> list[str]:
+    """Every manifest file name this svt's orphan subtitles could point at."""
+    return [
+        candidate
+        for orphan in iter_orphan_subtitles(voice_data)
+        for candidate in get_audio_candidates(
+            orphan.svt_id, orphan.voice_type, orphan.voice_id
+        )
+    ]
+
+
+async def get_subtitle_audio_urls(
+    conn: AsyncConnection, voice_data: RequiredVoiceData
+) -> dict[str, str]:
+    """Manifest URLs for this svt's orphan subtitles.
+
+    An empty result means the manifest lists no audio for any of them, which is
+    the ordinary answer for leftover rows whose files were removed from the
+    game. get_audio_urls skips the query when there is nothing to look up.
+    """
+    return await asset.get_audio_urls(conn, get_subtitle_audio_candidates(voice_data))
+
+
+def get_nice_subtitles(
+    voice_data: RequiredVoiceData, audio_urls: Mapping[str, str]
+) -> list[NiceVoiceSubtitle]:
+    """Nice models for the subtitles that no voice line covers."""
+    return [
+        NiceVoiceSubtitle(
+            id=orphan.subtitle.id,
+            serif=orphan.subtitle.serif,
+            audioAsset=pick_audio_asset(
+                orphan.svt_id, orphan.voice_type, orphan.voice_id, audio_urls
+            ),
+        )
+        for orphan in iter_orphan_subtitles(voice_data)
     ]
