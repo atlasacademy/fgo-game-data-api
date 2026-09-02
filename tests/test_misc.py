@@ -235,15 +235,16 @@ def make_voice(voice_id: str, svtVoiceType: SvtVoiceType) -> MstVoice:
 
 
 def subtitle_asset_paths(subtitles: list[NiceVoiceSubtitle]) -> list[str]:
-    return [subtitle.audioAsset.rsplit("/Audio/", 1)[1] for subtitle in subtitles]
-
-
-MANIFEST_BASE = "https://manifest.example/NA/Audio"
+    paths = []
+    for subtitle in subtitles:
+        assert subtitle.audioAsset is not None
+        paths.append(subtitle.audioAsset.rsplit("/Audio/", 1)[1])
+    return paths
 
 
 def manifest(*file_names: str) -> dict[str, str]:
     """What get_audio_urls returns: manifest fileName -> the URL stored with it."""
-    return {file_name: f"{MANIFEST_BASE}/{file_name}" for file_name in file_names}
+    return {file_name: f"/Audio/{file_name}" for file_name in file_names}
 
 
 def test_nice_subtitles_all_matched() -> None:
@@ -261,7 +262,7 @@ def test_nice_subtitles_none_matched() -> None:
 
     assert [subtitle.id for subtitle in subtitles] == ["9944030_0_B010"]
     assert subtitles[0].serif == "serif 9944030_0_B010"
-    assert subtitles[0].audioAsset.endswith("/Servants_9944030/0_B010.mp3")
+    assert subtitle_asset_paths(subtitles) == ["Servants_9944030/0_B010.mp3"]
 
 
 def test_nice_subtitles_mixed_keeps_order() -> None:
@@ -429,7 +430,7 @@ def test_nice_subtitles_audio_url_comes_from_the_manifest() -> None:
 
     subtitles = get_nice_subtitles(voice_data, manifest("Servants_100100/0_B010.mp3"))
 
-    assert subtitles[0].audioAsset == f"{MANIFEST_BASE}/Servants_100100/0_B010.mp3"
+    assert subtitle_asset_paths(subtitles) == ["Servants_100100/0_B010.mp3"]
 
 
 def test_nice_subtitles_audio_folder_repaired_by_the_manifest() -> None:
@@ -441,7 +442,7 @@ def test_nice_subtitles_audio_folder_repaired_by_the_manifest() -> None:
 
     subtitles = get_nice_subtitles(voice_data, manifest("Servants_9941740/0_B050.mp3"))
 
-    assert subtitles[0].audioAsset == f"{MANIFEST_BASE}/Servants_9941740/0_B050.mp3"
+    assert subtitle_asset_paths(subtitles) == ["Servants_9941740/0_B050.mp3"]
 
 
 def test_nice_subtitles_audio_prefers_the_mstVoice_folder() -> None:
@@ -456,9 +457,7 @@ def test_nice_subtitles_audio_prefers_the_mstVoice_folder() -> None:
         manifest("Servants_100100/11_B050.mp3", "NoblePhantasm_100100/11_B050.mp3"),
     )
 
-    assert (
-        subtitles[0].audioAsset == f"{MANIFEST_BASE}/NoblePhantasm_100100/11_B050.mp3"
-    )
+    assert subtitle_asset_paths(subtitles) == ["NoblePhantasm_100100/11_B050.mp3"]
 
 
 def test_nice_subtitles_no_audio_when_the_manifest_has_none() -> None:
@@ -537,20 +536,14 @@ async def test_subtitle_audio_urls_asks_the_manifest_once() -> None:
         mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
         mstSubtitle=make_subtitles("100100_11_B050"),
     )
+    expected = manifest("NoblePhantasm_100100/11_B050.mp3")
     conn = CountingConnection(
-        ManifestRow(
-            "NoblePhantasm_100100/11_B050.mp3",
-            f"{MANIFEST_BASE}/NoblePhantasm_100100/11_B050.mp3",
-        )
+        *(ManifestRow(file_name, url) for file_name, url in expected.items())
     )
 
     audio_urls = await get_subtitle_audio_urls(cast(AsyncConnection, conn), voice_data)
 
-    assert audio_urls == {
-        "NoblePhantasm_100100/11_B050.mp3": (
-            f"{MANIFEST_BASE}/NoblePhantasm_100100/11_B050.mp3"
-        )
-    }
+    assert audio_urls == expected
     assert conn.queries == 1
 
 
