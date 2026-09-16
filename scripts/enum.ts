@@ -181,8 +181,8 @@ export enum NiceFuncType {
     DAMAGE_FUNC_TYPE_165 = "damageFuncType165",
     SUB_BATTLE_POINT = "subBattlePoint",
     SET_BATTLE_MISSION_VALUE_AS_MAX = "setBattleMissionValueAsMax",
-    ADD_STATE_FUNC_TYPE_169 = "addStateFuncType169",
-    ADD_STATE_FUNC_TYPE_170 = "addStateFuncType170",
+    ADD_STATE_USER_EQUIP_SKILL_AVAILABLE = "addStateUserEquipSkillAvailable",
+    ADD_STATE_SHORT_USER_EQUIP_SKILL_AVAILABLE = "addStateShortUserEquipSkillAvailable",
 }
 
 export enum NiceFuncTargetType {
@@ -947,6 +947,7 @@ export enum NiceDataValsType {
     ShowMasterPopupDuringNoblePhantasm = "showMasterPopupDuringNoblePhantasm",
     TypeIndividualityEachFunc = "typeIndividualityEachFunc",
     NotRemoveOnShift = "notRemoveOnShift",
+    ExecuteForEachTargetFuncExecution = "executeForEachTargetFuncExecution",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1388,6 +1389,8 @@ export enum NiceCondType {
     SVT_HP_REACH_NUM = "svtHpReachNum",
     SVT_ATK_REACH_NUM = "svtAtkReachNum",
     FAVORITE_SVT_ID_EQUAL = "favoriteSvtIdEqual",
+    EVENT_BALLOT_SUBMITTED = "eventBallotSubmitted",
+    EVENT_BALLOT_NOT_SUBMITTED = "eventBallotNotSubmitted",
 }
 
 export enum NiceVoiceCondType {
@@ -1787,6 +1790,7 @@ export enum NiceWarOverwriteType {
     MATERIAL_FOLDER_NAME = "materialFolderName",
     MATERIAL_HEADER_IMG_ID = "materialHeaderImgId",
     MATERIAL_GALLERY_HEADER_IMG_ID = "materialGalleryHeaderImgId",
+    STAND_FIGURE_VISIBLE = "standFigureVisible",
 }
 
 export enum NiceAiCond {
@@ -2490,6 +2494,7 @@ export enum NiceBattlePointFlag {
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT = "hideUiGaugeWhenCantAddPoint",
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT_AND_FOLLOWER_SUPPORT = "hideUiGaugeWhenCantAddPointAndFollowerSupport",
     BATTLE_POINT_CHECK_AS_PERCENTAGE = "battlePointCheckAsPercentage",
+    RESET_VALUE_ON_CONTINUE = "resetValueOnContinue",
 }
 
 export enum NiceItemTransitionType {
