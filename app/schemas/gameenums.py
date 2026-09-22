@@ -298,8 +298,8 @@ class FuncType(IntEnum):
     DAMAGE_FUNC_TYPE_165 = 165
     SUB_BATTLE_POINT = 166
     SET_BATTLE_MISSION_VALUE_AS_MAX = 168
-    ADD_STATE_FUNC_TYPE_169 = 169
-    ADD_STATE_FUNC_TYPE_170 = 170
+    ADD_STATE_USER_EQUIP_SKILL_AVAILABLE = 169
+    ADD_STATE_SHORT_USER_EQUIP_SKILL_AVAILABLE = 170
 
 
 class NiceFuncType(StrEnum):
@@ -436,8 +436,8 @@ class NiceFuncType(StrEnum):
     damageFuncType165 = "damageFuncType165"
     subBattlePoint = "subBattlePoint"
     setBattleMissionValueAsMax = "setBattleMissionValueAsMax"
-    addStateFuncType169 = "addStateFuncType169"
-    addStateFuncType170 = "addStateFuncType170"
+    addStateUserEquipSkillAvailable = "addStateUserEquipSkillAvailable"
+    addStateShortUserEquipSkillAvailable = "addStateShortUserEquipSkillAvailable"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -572,8 +572,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     165: NiceFuncType.damageFuncType165,
     166: NiceFuncType.subBattlePoint,
     168: NiceFuncType.setBattleMissionValueAsMax,
-    169: NiceFuncType.addStateFuncType169,
-    170: NiceFuncType.addStateFuncType170,
+    169: NiceFuncType.addStateUserEquipSkillAvailable,
+    170: NiceFuncType.addStateShortUserEquipSkillAvailable,
 }
 
 
@@ -2295,6 +2295,7 @@ class DataValsType(IntEnum):
     ShowMasterPopupDuringNoblePhantasm = 282
     TypeIndividualityEachFunc = 283
     NotRemoveOnShift = 284
+    ExecuteForEachTargetFuncExecution = 285
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3067,6 +3068,8 @@ class CondType(IntEnum):
     SVT_HP_REACH_NUM = 289
     SVT_ATK_REACH_NUM = 290
     FAVORITE_SVT_ID_EQUAL = 291
+    EVENT_BALLOT_SUBMITTED = 292
+    EVENT_BALLOT_NOT_SUBMITTED = 293
 
 
 class NiceCondType(StrEnum):
@@ -3354,6 +3357,8 @@ class NiceCondType(StrEnum):
     svtHpReachNum = "svtHpReachNum"
     svtAtkReachNum = "svtAtkReachNum"
     favoriteSvtIdEqual = "favoriteSvtIdEqual"
+    eventBallotSubmitted = "eventBallotSubmitted"
+    eventBallotNotSubmitted = "eventBallotNotSubmitted"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3639,6 +3644,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     289: NiceCondType.svtHpReachNum,
     290: NiceCondType.svtAtkReachNum,
     291: NiceCondType.favoriteSvtIdEqual,
+    292: NiceCondType.eventBallotSubmitted,
+    293: NiceCondType.eventBallotNotSubmitted,
 }
 
 
@@ -4798,6 +4805,7 @@ class WarOverwriteType(IntEnum):
     MATERIAL_FOLDER_NAME = 28
     MATERIAL_HEADER_IMG_ID = 29
     MATERIAL_GALLERY_HEADER_IMG_ID = 30
+    STAND_FIGURE_VISIBLE = 31
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -4833,6 +4841,7 @@ class NiceWarOverwriteType(StrEnum):
     materialFolderName = "materialFolderName"
     materialHeaderImgId = "materialHeaderImgId"
     materialGalleryHeaderImgId = "materialGalleryHeaderImgId"
+    standFigureVisible = "standFigureVisible"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -4866,6 +4875,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     28: NiceWarOverwriteType.materialFolderName,
     29: NiceWarOverwriteType.materialHeaderImgId,
     30: NiceWarOverwriteType.materialGalleryHeaderImgId,
+    31: NiceWarOverwriteType.standFigureVisible,
 }
 
 
@@ -7109,6 +7119,7 @@ class BattlePointFlag(IntEnum):
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT = 4
     HIDE_UI_GAUGE_WHEN_CANT_ADD_POINT_AND_FOLLOWER_SUPPORT = 8
     BATTLE_POINT_CHECK_AS_PERCENTAGE = 16
+    RESET_VALUE_ON_CONTINUE = 32
 
 
 class NiceBattlePointFlag(StrEnum):
@@ -7122,6 +7133,7 @@ class NiceBattlePointFlag(StrEnum):
         "hideUiGaugeWhenCantAddPointAndFollowerSupport"
     )
     battlePointCheckAsPercentage = "battlePointCheckAsPercentage"
+    resetValueOnContinue = "resetValueOnContinue"
 
 
 BATTLE_POINT_FLAG_NAME: dict[int, NiceBattlePointFlag] = {
@@ -7131,6 +7143,7 @@ BATTLE_POINT_FLAG_NAME: dict[int, NiceBattlePointFlag] = {
     4: NiceBattlePointFlag.hideUiGaugeWhenCantAddPoint,
     8: NiceBattlePointFlag.hideUiGaugeWhenCantAddPointAndFollowerSupport,
     16: NiceBattlePointFlag.battlePointCheckAsPercentage,
+    32: NiceBattlePointFlag.resetValueOnContinue,
 }
 
 

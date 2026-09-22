@@ -721,6 +721,7 @@ class BaseVals(BaseModel):
     ShowMasterPopupDuringNoblePhantasm: int | None = None
     TypeIndividualityEachFunc: list[list[int]] | None = None
     NotRemoveOnShift: int | None = None
+    ExecuteForEachTargetFuncExecution: int | None = None
 
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
@@ -3143,6 +3144,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     isInfinityCost: int | None = None
     # overwriteSvtTreasureDeviceLv: dict[int, int] | None = None
     battleFinishMovie: HttpUrl | None = None
+    eventDeckIndex: int | None = None  # support init deck index
 
 
 class NiceRestriction(BaseModelORJson):
