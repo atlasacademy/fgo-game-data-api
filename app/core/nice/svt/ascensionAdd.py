@@ -6,7 +6,12 @@ from pydantic import HttpUrl
 from ....config import Settings
 from ....schemas.common import Language, NiceTrait, Region
 from ....schemas.gameenums import ATTRIBUTE_NAME, SvtAttribute
-from ....schemas.nice import AscensionAdd, AssetURL, NiceCommonRelease
+from ....schemas.nice import (
+    AscensionAdd,
+    AssetURL,
+    NiceCommonRelease,
+    OverwriteValue,
+)
 from ....schemas.raw import ServantEntity
 from ...utils import fmt_url, get_np_name, get_traits_list, get_translation
 from ..common_release import get_nice_common_release
@@ -33,6 +38,8 @@ def get_nice_ascensionAdd(
         "overWriteTDFileName": "overWriteTDFileName",
         "overWriteTDRank": "overWriteTDRank",
         "overWriteTDTypeText": "overWriteTDTypeText",
+        "overwriteSkillName": "overwriteSkillName",
+        "overwriteSvtDetailName": "overwriteSvtDetailName",
         "overwriteAtkBase": "overwriteAtkBase",
         "overwriteAtkMax": "overwriteAtkMax",
         "overwriteClassPassive": "overwriteClassPassive",
@@ -47,7 +54,15 @@ def get_nice_ascensionAdd(
         str,
         dict[
             str,
-            dict[int, list[NiceCommonRelease] | list[NiceTrait] | int | str | HttpUrl],
+            dict[
+                int,
+                list[NiceCommonRelease]
+                | list[NiceTrait]
+                | list[OverwriteValue]
+                | int
+                | str
+                | HttpUrl,
+            ],
         ],
     ] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
@@ -143,6 +158,11 @@ def get_nice_ascensionAdd(
                         item_id=raw_svt.mstSvt.id,
                         file_name=add_data,
                     )
+                elif dst_field == "overwriteSkillName":
+                    add_data = [
+                        OverwriteValue(id=skill_id, value=skill_name)
+                        for skill_id, skill_name in add_data
+                    ]
                 elif region == Region.JP:
                     if dst_field in (
                         "overWriteServantName",

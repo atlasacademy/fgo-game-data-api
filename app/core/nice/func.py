@@ -242,10 +242,7 @@ async def parse_dataVals(
                 }:
                     if i == 0:
                         text = "AddCount"
-                elif functype in {
-                    FuncType.ADD_BATTLE_POINT,
-                    FuncType.SUB_BATTLE_POINT
-                }:
+                elif functype in {FuncType.ADD_BATTLE_POINT, FuncType.SUB_BATTLE_POINT}:
                     if i == 0:
                         text = "Rate"
                     elif i == 1:

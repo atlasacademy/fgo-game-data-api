@@ -1171,11 +1171,17 @@ class AscensionAddEntryCommonRelease(BaseModel):
     )
 
 
+class OverwriteValue(BaseModel):
+    id: int
+    value: str
+
+
 AscensionAddEntryInt = AscensionAddEntry[int]
 AscensionAddEntryStr = AscensionAddEntry[str]
 AscensionAddEntryHttpUrl = AscensionAddEntry[HttpUrl]
 AscensionAddEntryAttribte = AscensionAddEntry[Attribute]
 AscensionAddEntryListInt = AscensionAddEntry[list[int]]
+AscensionAddEntryListOverwriteValue = AscensionAddEntry[list[OverwriteValue]]
 
 
 class AscensionAdd(BaseModel):
@@ -1206,6 +1212,10 @@ class AscensionAdd(BaseModel):
     )
     overWriteTDRank: AscensionAddEntryStr = Field(..., title="NP rank changes")
     overWriteTDTypeText: AscensionAddEntryStr = Field(..., title="NP type changes")
+    overwriteSkillName: AscensionAddEntryListOverwriteValue = Field(
+        ..., title="Skill name changes"
+    )
+    overwriteSvtDetailName: AscensionAddEntryStr
     overwriteAtkBase: AscensionAddEntryInt
     overwriteAtkMax: AscensionAddEntryInt
     overwriteClassPassive: AscensionAddEntryListInt
