@@ -50,6 +50,7 @@ List of configuration variables for the main app. You can make a `config.json` f
 - `DOCUMENTATION_ALL_NICE`: default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
 - `GITHUB_WEBHOOK_SECRET`: default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not created.
 - `GITHUB_WEBHOOK_GIT_PULL`: default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
+- `SKIP_SCRIPT_FULLTEXT`: default to `False`. If set to `True`, the app will skip loading `ScriptFileList` from the game data and skip creating the pgroonga fulltext indexes (`ix_ScriptFileList_raw`, `ix_ScriptFileList_text` and `ix_mstSvtComment_comment`). Useful in debug setups that do not need script or servant comment fulltext search, or do not have the pgroonga extension installed.
 
 </details>
 <details>

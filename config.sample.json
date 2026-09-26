@@ -31,6 +31,7 @@
   "db_max_overflow": 10,
   "write_postgres_data": true,
   "write_redis_data": true,
+  "skip_script_fulltext": false,
   "asset_url": "https://assets.atlasacademy.io/GameData",
   "openapi_url": "https://api.atlasacademy.io",
   "export_all_nice": false,

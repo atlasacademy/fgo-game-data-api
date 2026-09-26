@@ -333,6 +333,10 @@ def load_gift(
 def load_script_list(
     engine: Engine, region: Region, repo_folder: DirectoryPath
 ) -> None:  # pragma: no cover
+    if settings.skip_script_fulltext:
+        logger.info("Skipping ScriptFileList loading.")
+        return
+
     script_list_file = (
         repo_folder
         / "ScriptActionEncrypt"

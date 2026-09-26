@@ -40,6 +40,7 @@ class Settings(BaseSettings):
     db_max_overflow: int = 10
     write_postgres_data: bool = True
     write_redis_data: bool = True
+    skip_script_fulltext: bool = False
     asset_url: str = "https://assets.atlasacademy.io/GameData"
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False

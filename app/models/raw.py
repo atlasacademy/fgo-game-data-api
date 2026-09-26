@@ -12,7 +12,10 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB, TEXT
 from sqlalchemy.sql import cast, func
 
+from ..config import Settings
 from .base import metadata
+
+settings = Settings()
 
 mstConstant = Table(
     "mstConstant",
@@ -792,7 +795,12 @@ mstSvtComment = Table(
     Column("condValues", ARRAY(Integer)),
 )
 
-Index("ix_mstSvtComment_comment", mstSvtComment.c.comment, postgresql_using="pgroonga")
+if not settings.skip_script_fulltext:
+    Index(
+        "ix_mstSvtComment_comment",
+        mstSvtComment.c.comment,
+        postgresql_using="pgroonga",
+    )
 
 
 mstSvtCommentAdd = Table(
@@ -2950,11 +2958,17 @@ ScriptFileList = Table(
     Column("textScript", TEXT),
 )
 
-Index("ix_ScriptFileList_raw", ScriptFileList.c.rawScript, postgresql_using="pgroonga")
-
-Index(
-    "ix_ScriptFileList_text", ScriptFileList.c.textScript, postgresql_using="pgroonga"
-)
+if not settings.skip_script_fulltext:
+    Index(
+        "ix_ScriptFileList_raw",
+        ScriptFileList.c.rawScript,
+        postgresql_using="pgroonga",
+    )
+    Index(
+        "ix_ScriptFileList_text",
+        ScriptFileList.c.textScript,
+        postgresql_using="pgroonga",
+    )
 
 AssetStorage = Table(
     "AssetStorage",
