@@ -76,6 +76,9 @@ module = ["fastapi_cache.*"]
 no_implicit_reexport = false
 ignore_missing_imports = true
 
+[tool.ruff]
+target-version = "py313"
+
 [tool.ruff.lint]
 select = [
     "F",
@@ -118,5 +121,5 @@ fixable = ["I"]
 "app/config.py" = ["RUF012"]
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
