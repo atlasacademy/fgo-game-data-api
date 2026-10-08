@@ -2469,6 +2469,7 @@ class QuestPhaseEntity(QuestEntity):
     mstQuestRestriction: list[MstQuestRestriction]
     mstQuestRestrictionInfo: list[MstQuestRestrictionInfo]
     mstRestriction: list[MstRestriction]
+    mstCommonRelease: list[MstCommonRelease] = []
     mstQuestHint: list[MstQuestHint] = []
 
 

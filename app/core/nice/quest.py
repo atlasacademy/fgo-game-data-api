@@ -53,6 +53,7 @@ from ...schemas.nice import (
     NiceQuestPhase,
     NiceQuestPhasePresent,
     NiceQuestPhaseRestriction,
+    NiceQuestPhaseRestrictionScript,
     NiceQuestPhaseScript,
     NiceQuestRelease,
     NiceQuestReleaseOverwrite,
@@ -68,6 +69,7 @@ from ...schemas.raw import (
     MstBgm,
     MstBlankEarthSpot,
     MstClosedMessage,
+    MstCommonRelease,
     MstQuestGroup,
     MstQuestHint,
     MstQuestMessage,
@@ -88,6 +90,7 @@ from ..rayshift import get_quest_enemy_hash
 from ..utils import fmt_url, get_flags, get_nice_trait, get_traits_list, get_translation
 from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
+from .common_release import get_nice_common_release
 from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies, get_war_board_enemies
 from .follower import get_nice_support_servants
 from .gift import GiftData, get_gift_map, get_nice_gifts
@@ -159,8 +162,29 @@ def get_nice_quest_hints(hint: MstQuestHint) -> NiceQuestHint:
     )
 
 
+def get_nice_quest_restriction_script(
+    quest_restriction: MstQuestRestriction,
+    common_releases: list[MstCommonRelease],
+) -> NiceQuestPhaseRestrictionScript:
+    raw_script = quest_restriction.script or {}
+
+    return NiceQuestPhaseRestrictionScript(
+        releaseConditions=(
+            [
+                get_nice_common_release(release)
+                for release in common_releases
+                if release.id == raw_script["commonReleaseId"]
+            ]
+            if "commonReleaseId" in raw_script
+            else None
+        )
+    )
+
+
 def get_nice_quest_restriction(
-    quest_restriction: MstQuestRestriction, restriction: MstRestriction
+    quest_restriction: MstQuestRestriction,
+    restriction: MstRestriction,
+    common_releases: list[MstCommonRelease],
 ) -> NiceQuestPhaseRestriction:
     return NiceQuestPhaseRestriction(
         restriction=NiceRestriction(
@@ -176,6 +200,7 @@ def get_nice_quest_restriction(
         dialogMessage=quest_restriction.dialogMessage,
         noticeMessage=quest_restriction.noticeMessage,
         title=quest_restriction.title,
+        script=get_nice_quest_restriction_script(quest_restriction, common_releases),
     )
 
 
@@ -515,7 +540,9 @@ async def get_nice_quest_phase_no_rayshift(
         ],
         "restrictions": [
             get_nice_quest_restriction(
-                quest_restriction, restrictions[quest_restriction.restrictionId]
+                quest_restriction,
+                restrictions[quest_restriction.restrictionId],
+                raw_quest.mstCommonRelease,
             )
             for quest_restriction in raw_quest.mstQuestRestriction
         ],

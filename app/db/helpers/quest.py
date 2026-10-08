@@ -28,6 +28,7 @@ from ...models.raw import (
     mstBattleBg,
     mstBgm,
     mstClosedMessage,
+    mstCommonRelease,
     mstGift,
     mstGiftAdd,
     mstItem,
@@ -642,6 +643,11 @@ async def get_quest_phase_entity(
             mstRestriction.c.id == mstQuestRestriction.c.restrictionId,
         )
         .outerjoin(
+            mstCommonRelease,
+            mstCommonRelease.c.id
+            == cast(mstQuestRestriction.c.script["commonReleaseId"], Integer),
+        )
+        .outerjoin(
             mstQuestGroup,
             mstQuest.c.id == mstQuestGroup.c.questId,
         )
@@ -788,6 +794,7 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstQuestRestriction),
         sql_jsonb_agg(mstQuestRestrictionInfo),
         sql_jsonb_agg(mstRestriction),
+        sql_jsonb_agg(mstCommonRelease),
     ]
 
     sql_stmt = (

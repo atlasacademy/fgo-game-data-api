@@ -3135,6 +3135,10 @@ class NiceRestriction(BaseModelORJson):
     targetVals2: list[int]
 
 
+class NiceQuestPhaseRestrictionScript(BaseModelORJson):
+    releaseConditions: list[NiceCommonRelease] | None = None
+
+
 class NiceQuestPhaseRestriction(BaseModelORJson):
     restriction: NiceRestriction
     priority: int
@@ -3142,7 +3146,7 @@ class NiceQuestPhaseRestriction(BaseModelORJson):
     dialogMessage: str
     noticeMessage: str
     title: str
-    # script:
+    script: NiceQuestPhaseRestrictionScript
 
 
 class NiceQuestPhase(NiceQuest):
