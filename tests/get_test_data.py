@@ -5,7 +5,7 @@ import platform
 import aiofiles
 import orjson
 from asgi_lifespan import LifespanManager
-from httpx import AsyncClient
+from httpx import ASGITransport, AsyncClient
 
 from app.main import app
 
@@ -42,7 +42,7 @@ async def main(
 
     async with (
         LifespanManager(app, startup_timeout=60),
-        AsyncClient(app=app, base_url="http://test") as ac,
+        AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac,
     ):
         for to_download, query_data, endpoint, folder in (
             (get_raw, test_raw_data, "raw", "test_data_raw"),

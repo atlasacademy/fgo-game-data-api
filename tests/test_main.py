@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import pytest
-from httpx import AsyncClient
+from httpx import ASGITransport, AsyncClient
 
 from app.config import Settings
 from app.main import app
@@ -13,7 +13,9 @@ settings = Settings()
 @pytest.mark.asyncio
 class TestMain:
     async def test_home_redirect(self) -> None:
-        async with AsyncClient(app=app, base_url="http://test") as ac:
+        async with AsyncClient(
+            transport=ASGITransport(app=app), base_url="http://test"
+        ) as ac:
             response = await ac.get("/", follow_redirects=False)
         assert response.status_code == 307
         assert response.headers["Location"] == "/rapidoc"
