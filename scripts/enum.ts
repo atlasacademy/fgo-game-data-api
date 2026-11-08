@@ -2860,3 +2860,26 @@ export enum NiceEventStatusType {
     RAID_PARTICIPATE = "raidParticipate",
     GET_ITEM_FROM_BOX_GACHA = "getItemFromBoxGacha",
 }
+
+export enum NiceOpeningMovieFlag {
+    DISPLAY_SEEK_BAR = "displaySeekBar",
+}
+
+export enum NiceOpeningMovieMaterialPosType {
+    NONE = "none",
+    MAIN_RECORD_TOP = "mainRecordTop",
+    STORY_BOTTOM = "storyBottom",
+    QUEST_SCRIPT = "questScript",
+}
+
+export enum NiceOpeningMovieTiming {
+    ALL = "all",
+    TITLE = "title",
+    TERMINAL_NOTICE_AFTER = "terminalNoticeAfter",
+    BLANK_EARTH_ACTION_END = "blankEarthActionEnd",
+    BLANK_EARTH_SPOT_OPEN = "blankEarthSpotOpen",
+    AREA_BOARD_TAP = "areaBoardTap",
+    GRAND_QUEST_CLASS_SELECT_SETUP = "grandQuestClassSelectSetup",
+    MOVIE_TIMING_20251220 = "movieTiming20251220",
+    TITLE_LOGIN_AFTER = "titleLoginAfter",
+}

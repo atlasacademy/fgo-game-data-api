@@ -8318,3 +8318,81 @@ EVENT_STATUS_TYPE_NAME: dict[int, NiceEventStatusType] = {
     9: NiceEventStatusType.raidParticipate,
     10: NiceEventStatusType.getItemFromBoxGacha,
 }
+
+
+class OpeningMovieFlag(IntEnum):
+    DISPLAY_SEEK_BAR = 1
+
+
+class NiceOpeningMovieFlag(StrEnum):
+    """Opening Movie Flag"""
+
+    displaySeekBar = "displaySeekBar"
+
+
+OPENING_MOVIE_FLAG_NAME: dict[int, NiceOpeningMovieFlag] = {
+    1: NiceOpeningMovieFlag.displaySeekBar,
+}
+
+
+class OpeningMovieMaterialPosType(IntEnum):
+    NONE = 0
+    MAIN_RECORD_TOP = 1
+    STORY_BOTTOM = 2
+    QUEST_SCRIPT = 3
+
+
+class NiceOpeningMovieMaterialPosType(StrEnum):
+    """Opening Movie Material Position Type"""
+
+    none = "none"
+    mainRecordTop = "mainRecordTop"
+    storyBottom = "storyBottom"
+    questScript = "questScript"
+
+
+OPENING_MOVIE_MATERIAL_POS_TYPE_NAME: dict[int, NiceOpeningMovieMaterialPosType] = {
+    0: NiceOpeningMovieMaterialPosType.none,
+    1: NiceOpeningMovieMaterialPosType.mainRecordTop,
+    2: NiceOpeningMovieMaterialPosType.storyBottom,
+    3: NiceOpeningMovieMaterialPosType.questScript,
+}
+
+
+class OpeningMovieTiming(IntEnum):
+    ALL = 0
+    TITLE = 1
+    TERMINAL_NOTICE_AFTER = 2
+    BLANK_EARTH_ACTION_END = 3
+    BLANK_EARTH_SPOT_OPEN = 4
+    AREA_BOARD_TAP = 5
+    GRAND_QUEST_CLASS_SELECT_SETUP = 6
+    MOVIE_TIMING_20251220 = 7
+    TITLE_LOGIN_AFTER = 8
+
+
+class NiceOpeningMovieTiming(StrEnum):
+    """Opening Movie Timing"""
+
+    all = "all"
+    title = "title"
+    terminalNoticeAfter = "terminalNoticeAfter"
+    blankEarthActionEnd = "blankEarthActionEnd"
+    blankEarthSpotOpen = "blankEarthSpotOpen"
+    areaBoardTap = "areaBoardTap"
+    grandQuestClassSelectSetup = "grandQuestClassSelectSetup"
+    movieTiming20251220 = "movieTiming20251220"
+    titleLoginAfter = "titleLoginAfter"
+
+
+OPENING_MOVIE_TIMING_NAME: dict[int, NiceOpeningMovieTiming] = {
+    0: NiceOpeningMovieTiming.all,
+    1: NiceOpeningMovieTiming.title,
+    2: NiceOpeningMovieTiming.terminalNoticeAfter,
+    3: NiceOpeningMovieTiming.blankEarthActionEnd,
+    4: NiceOpeningMovieTiming.blankEarthSpotOpen,
+    5: NiceOpeningMovieTiming.areaBoardTap,
+    6: NiceOpeningMovieTiming.grandQuestClassSelectSetup,
+    7: NiceOpeningMovieTiming.movieTiming20251220,
+    8: NiceOpeningMovieTiming.titleLoginAfter,
+}

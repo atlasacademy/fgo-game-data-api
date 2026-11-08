@@ -1621,6 +1621,23 @@ class MstEventMural(BaseModelORJson):
     flag: int | None = None
 
 
+class MstOpeningMovie(BaseModelORJson):
+    script: dict[str, Any]
+    id: int
+    priority: int
+    name: str
+    movieName: str
+    commonReleaseId: int
+    materialCommonReleaseId: int
+    materialPosType: int
+    materialPosValue: int
+    eventId: int = 0
+    moviePlayTime: int = 0
+    flag: int
+    startedAt: int
+    endedAt: int
+
+
 class MstEventPointActivity(BaseModelORJson):
     eventId: int
     groupId: int

@@ -99,6 +99,7 @@ from ...models.raw import (
     mstMap,
     mstMapGimmick,
     mstMasterMission,
+    mstOpeningMovie,
     mstQuest,
     mstQuestDateRange,
     mstQuestReleaseOverwrite,
@@ -241,6 +242,7 @@ from ...schemas.raw import (
     MstMap,
     MstMapGimmick,
     MstMasterMission,
+    MstOpeningMovie,
     MstQuest,
     MstQuestDateRange,
     MstQuestReleaseOverwrite,
@@ -322,6 +324,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstGacha: (mstGacha, mstGacha.c.id),
     MstAiAct: (mstAiAct, mstAiAct.c.id),
     MstBattlePoint: (mstBattlePoint, mstBattlePoint.c.id),
+    MstOpeningMovie: (mstOpeningMovie, mstOpeningMovie.c.id),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
@@ -889,6 +892,7 @@ schema_map_fetch_everything: dict[  # type:ignore
     MstGacha: (mstGacha, mstGacha.c.id),
     MstConstant: (mstConstant, mstConstant.c.name),
     MstBattlePoint: (mstBattlePoint, mstBattlePoint.c.id),
+    MstOpeningMovie: (mstOpeningMovie, mstOpeningMovie.c.id),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

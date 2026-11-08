@@ -29,6 +29,7 @@ from ..schemas.raw import (
     ItemEntity,
     MasterMissionEntity,
     MstEventAlloutBattle,
+    MstOpeningMovie,
     MstQuestDateRange,
     MstSvtScript,
     MysticCodeEntity,
@@ -666,6 +667,23 @@ async def get_event(region: Region, event_id: int) -> Response:
     """
     async with get_db(region) as conn:
         return item_response(await raw.get_event_entity(conn, event_id))
+
+
+@router.get(
+    "/{region}/opening-movie/{movie_id}",
+    summary="Get opening movie data",
+    response_description="Opening Movie Entity",
+    response_model=MstOpeningMovie,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_opening_movie(region: Region, movie_id: int) -> Response:
+    """
+    Get the opening movie data from the given opening movie ID
+    """
+    async with get_db(region) as conn:
+        return item_response(await raw.get_opening_movie(conn, movie_id))
 
 
 @router.get(

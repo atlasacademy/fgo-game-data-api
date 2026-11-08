@@ -898,6 +898,27 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Event Status Type",
         "EVENT_STATUS_TYPE_NAME",
     ),
+    (
+        "OpeningMovieEntity.Flag",
+        "OpeningMovieFlag",
+        "NiceOpeningMovieFlag",
+        "Opening Movie Flag",
+        "OPENING_MOVIE_FLAG_NAME",
+    ),
+    (
+        "OpeningMovieEntity.MaterialPosType",
+        "OpeningMovieMaterialPosType",
+        "NiceOpeningMovieMaterialPosType",
+        "Opening Movie Material Position Type",
+        "OPENING_MOVIE_MATERIAL_POS_TYPE_NAME",
+    ),
+    (
+        "OpeningMovieMaster.Timing",
+        "OpeningMovieTiming",
+        "NiceOpeningMovieTiming",
+        "Opening Movie Timing",
+        "OPENING_MOVIE_TIMING_NAME",
+    ),
 ]
 
 

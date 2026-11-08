@@ -1980,6 +1980,26 @@ mstEventPointActivity = Table(
 )
 
 
+mstOpeningMovie = Table(
+    "mstOpeningMovie",
+    metadata,
+    Column("script", JSONB),
+    Column("id", Integer),
+    Column("priority", Integer),
+    Column("name", String),
+    Column("movieName", String),
+    Column("commonReleaseId", Integer),
+    Column("materialCommonReleaseId", Integer),
+    Column("materialPosType", Integer),
+    Column("materialPosValue", Integer),
+    Column("eventId", Integer, index=True, server_default=text("0")),
+    Column("moviePlayTime", Integer, server_default=text("0")),
+    Column("flag", BigInteger),
+    Column("startedAt", BigInteger),
+    Column("endedAt", BigInteger),
+)
+
+
 mstHeelPortrait = Table(
     "mstHeelPortrait",
     metadata,
@@ -3039,6 +3059,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventCommandAssist],
     [mstHeelPortrait],
     [mstEventMural],
+    [mstOpeningMovie],
     [
         mstWarBoard,
         mstWarBoardStage,

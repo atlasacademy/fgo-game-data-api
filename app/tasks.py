@@ -36,6 +36,7 @@ from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
 from .core.nice.mm import get_all_nice_mms
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
+from .core.nice.opening_movie import get_nice_opening_movies
 from .core.nice.war import get_nice_war
 from .core.raw import get_all_bgm_entities, get_servant_entity
 from .core.utils import get_translation
@@ -66,6 +67,7 @@ from .schemas.nice import (
     NiceGacha,
     NiceItem,
     NiceMasterMission,
+    NiceOpeningMovie,
     NiceQuest,
     NiceServant,
     NiceShop,
@@ -314,6 +316,12 @@ async def dump_nice_events(
     util: ExportUtil, all_event_data: list[NiceEvent]
 ) -> None:  # pragma: no cover
     await util.dump_orjson("nice_event", all_event_data)
+
+
+async def dump_nice_opening_movies(
+    util: ExportUtil, all_movie_data: list[NiceOpeningMovie]
+) -> None:  # pragma: no cover
+    await util.dump_orjson("nice_opening_movie", all_movie_data)
 
 
 async def util_get_nice_shops_from_raw(
@@ -679,6 +687,10 @@ async def generate_exports(
             async with engine.connect() as conn:
                 nice_events = await get_nice_events_from_raw(conn, util, mstEvents)
             await dump_nice_events(util, nice_events)
+
+            async with engine.connect() as conn:
+                nice_opening_movies = await get_nice_opening_movies(conn, util.region)
+            await dump_nice_opening_movies(util, nice_opening_movies)
 
             async with engine.connect() as conn:
                 raw_constants = await fetch.get_everything(conn, MstConstant)

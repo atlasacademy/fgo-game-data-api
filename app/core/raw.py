@@ -145,6 +145,7 @@ from ..schemas.raw import (
     MstMap,
     MstMapGimmick,
     MstMasterMission,
+    MstOpeningMovie,
     MstQuestDateRange,
     MstQuestReleaseOverwrite,
     MstShop,
@@ -1722,6 +1723,19 @@ async def get_common_releases(
 ) -> list[MstCommonRelease]:
     releases = await fetch.get_all_multiple(conn, MstCommonRelease, release_ids)
     return releases
+
+
+async def get_opening_movies(conn: AsyncConnection) -> list[MstOpeningMovie]:
+    return await fetch.get_everything(conn, MstOpeningMovie)
+
+
+async def get_opening_movie(
+    conn: AsyncConnection, movie_id: int
+) -> MstOpeningMovie:
+    movie = await fetch.get_one(conn, MstOpeningMovie, movie_id)
+    if not movie:
+        raise HTTPException(status_code=404, detail="Opening movie not found")
+    return movie
 
 
 async def get_class_board_entity(

@@ -20,6 +20,7 @@ from ..core.nice import (
     mc,
     mm,
     nice,
+    opening_movie,
     quest,
     script,
     war,
@@ -58,6 +59,7 @@ from ..schemas.nice import (
     NiceItem,
     NiceMasterMission,
     NiceMysticCode,
+    NiceOpeningMovie,
     NiceQuest,
     NiceQuestPhase,
     NiceScript,
@@ -773,6 +775,25 @@ async def get_event(
     """
     async with get_db(region) as conn:
         return item_response(await get_nice_event(conn, region, event_id, lang))
+
+
+@router.get(
+    "/{region}/opening-movie/{movie_id}",
+    summary="Get opening movie data",
+    response_description="Nice Opening Movie Entity",
+    response_model=NiceOpeningMovie,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+@cache()
+async def get_opening_movie(region: Region, movie_id: int) -> Response:
+    """
+    Get the nice opening movie data from the given opening movie ID
+    """
+    async with get_db(region) as conn:
+        return item_response(
+            await opening_movie.get_nice_opening_movie_from_id(conn, region, movie_id)
+        )
 
 
 @router.get(
