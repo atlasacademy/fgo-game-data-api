@@ -8,8 +8,8 @@ from ...schemas.gameenums import (
     OPENING_MOVIE_TIMING_NAME,
 )
 from ...schemas.nice import AssetURL, NiceOpeningMovie, NiceOpeningMovieScript
-from ...schemas.raw import MstCommonRelease, MstOpeningMovie
-from ..raw import get_common_releases, get_opening_movie, get_opening_movies
+from ...schemas.raw import OpeningMovieEntity
+from ..raw import get_all_opening_movie_entities, get_opening_movie_entity
 from ..utils import fmt_url, get_flags
 from .common_release import get_nice_common_releases
 
@@ -18,9 +18,10 @@ settings = Settings()
 
 def get_nice_opening_movie(
     region: Region,
-    movie: MstOpeningMovie,
-    raw_releases: list[MstCommonRelease],
+    movie_entity: OpeningMovieEntity,
 ) -> NiceOpeningMovie:
+    movie = movie_entity.mstOpeningMovie
+    raw_releases = movie_entity.mstCommonRelease
     script = movie.script
     return NiceOpeningMovie(
         id=movie.id,
@@ -63,19 +64,14 @@ def get_nice_opening_movie(
 async def get_nice_opening_movie_from_id(
     conn: AsyncConnection, region: Region, movie_id: int
 ) -> NiceOpeningMovie:
-    movie = await get_opening_movie(conn, movie_id)
-    raw_releases = await get_common_releases(
-        conn, {movie.commonReleaseId, movie.materialCommonReleaseId}
-    )
-    return get_nice_opening_movie(region, movie, raw_releases)
+    movie_entity = await get_opening_movie_entity(conn, movie_id)
+    return get_nice_opening_movie(region, movie_entity)
 
 
 async def get_nice_opening_movies(
     conn: AsyncConnection, region: Region
 ) -> list[NiceOpeningMovie]:
-    movies = await get_opening_movies(conn)
-    release_ids = {movie.commonReleaseId for movie in movies} | {
-        movie.materialCommonReleaseId for movie in movies
-    }
-    raw_releases = await get_common_releases(conn, release_ids)
-    return [get_nice_opening_movie(region, movie, raw_releases) for movie in movies]
+    movie_entities = await get_all_opening_movie_entities(conn)
+    return [
+        get_nice_opening_movie(region, movie_entity) for movie_entity in movie_entities
+    ]

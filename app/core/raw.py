@@ -193,6 +193,7 @@ from ..schemas.raw import (
     MstWarQuestSelection,
     MstWarRelease,
     MysticCodeEntity,
+    OpeningMovieEntity,
     QuestEntity,
     QuestPhaseEntity,
     ReversedBuff,
@@ -1725,17 +1726,40 @@ async def get_common_releases(
     return releases
 
 
-async def get_opening_movies(conn: AsyncConnection) -> list[MstOpeningMovie]:
-    return await fetch.get_everything(conn, MstOpeningMovie)
-
-
-async def get_opening_movie(
+async def get_opening_movie_entity(
     conn: AsyncConnection, movie_id: int
-) -> MstOpeningMovie:
+) -> OpeningMovieEntity:
     movie = await fetch.get_one(conn, MstOpeningMovie, movie_id)
     if not movie:
         raise HTTPException(status_code=404, detail="Opening movie not found")
-    return movie
+
+    mstCommonRelease = await get_common_releases(
+        conn, {movie.commonReleaseId, movie.materialCommonReleaseId}
+    )
+    return OpeningMovieEntity(mstOpeningMovie=movie, mstCommonRelease=mstCommonRelease)
+
+
+async def get_all_opening_movie_entities(
+    conn: AsyncConnection,
+) -> list[OpeningMovieEntity]:  # pragma: no cover
+    movies = await fetch.get_everything(conn, MstOpeningMovie)
+
+    release_ids = {movie.commonReleaseId for movie in movies} | {
+        movie.materialCommonReleaseId for movie in movies
+    }
+    mstCommonReleases = await get_common_releases(conn, release_ids)
+
+    return [
+        OpeningMovieEntity(
+            mstOpeningMovie=movie,
+            mstCommonRelease=[
+                release
+                for release in mstCommonReleases
+                if release.id in {movie.commonReleaseId, movie.materialCommonReleaseId}
+            ],
+        )
+        for movie in movies
+    ]
 
 
 async def get_class_board_entity(

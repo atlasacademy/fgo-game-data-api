@@ -2504,6 +2504,11 @@ class BgmEntity(BaseModelORJson):
     mstItem: MstItem | None = None
 
 
+class OpeningMovieEntity(BaseModelORJson):
+    mstOpeningMovie: MstOpeningMovie
+    mstCommonRelease: list[MstCommonRelease]
+
+
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstEventAdd: list[MstEventAdd]
