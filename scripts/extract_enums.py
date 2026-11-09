@@ -11,6 +11,7 @@ PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "NAME": "name_",
     "JOIN": "join_",
     "FIND": "find_",
+    "TITLE": "title_",
 }
 
 

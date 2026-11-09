@@ -297,8 +297,7 @@ class NiceOpeningMovie(BaseModelORJson):
     id: int
     priority: int
     name: str
-    movieName: str
-    url: HttpUrl
+    movie: HttpUrl
     eventId: int
     materialPosType: NiceOpeningMovieMaterialPosType
     materialPosValue: int

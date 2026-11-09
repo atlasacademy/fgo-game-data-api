@@ -8375,7 +8375,7 @@ class NiceOpeningMovieTiming(StrEnum):
     """Opening Movie Timing"""
 
     all = "all"
-    title = "title"
+    title_ = "title"
     terminalNoticeAfter = "terminalNoticeAfter"
     blankEarthActionEnd = "blankEarthActionEnd"
     blankEarthSpotOpen = "blankEarthSpotOpen"
@@ -8387,7 +8387,7 @@ class NiceOpeningMovieTiming(StrEnum):
 
 OPENING_MOVIE_TIMING_NAME: dict[int, NiceOpeningMovieTiming] = {
     0: NiceOpeningMovieTiming.all,
-    1: NiceOpeningMovieTiming.title,
+    1: NiceOpeningMovieTiming.title_,
     2: NiceOpeningMovieTiming.terminalNoticeAfter,
     3: NiceOpeningMovieTiming.blankEarthActionEnd,
     4: NiceOpeningMovieTiming.blankEarthSpotOpen,

@@ -27,8 +27,7 @@ def get_nice_opening_movie(
         id=movie.id,
         priority=movie.priority,
         name=movie.name,
-        movieName=movie.movieName,
-        url=fmt_url(
+        movie=fmt_url(
             AssetURL.movie,
             base_url=settings.asset_url,
             region=region,
