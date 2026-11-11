@@ -2190,112 +2190,114 @@ class DataValsType(IntEnum):
     BattlePointValue = 177
     BattlePointUiUpdateType = 178
     BattlePointOverwrite = 179
-    CheckOverChargeStageRange = 180
-    CheckBattlePointPhaseRange = 181
-    StartingPosition = 182
-    FriendShipAbove = 183
-    DamageRateBattlePointPhase = 184
-    ParamAddBattlePointPhaseId = 185
-    ParamAddBattlePointPhaseValue = 186
-    ShortenMaxCountEachSkill = 187
-    ChargeHpMaxBeforeBreakGaugeUp = 188
-    TargetFunctionIndividuality = 189
-    TargetBuffIndividuality = 190
-    TargetEnemyClass = 191
-    ParamAddIndividualityTargetType = 192
-    TriggeredFuncIndexAndCheckList = 193
-    FuncCheckTargetIndividualityTargetType = 194
-    FuncCheckTargetIndividualityCountHigher = 195
-    FuncCheckTargetIndividualityCountLower = 196
-    FuncCheckTargetIndividualityCountEqual = 197
-    ParamAddSelfIndividualityAndCheck = 198
-    ParamAddOpIndividualityAndCheck = 199
-    ParamAddFieldIndividualityAndCheck = 200
-    SnapShotParamAddSelfIndividualityAndCheck = 201
-    SnapShotParamAddOpIndividualityAndCheck = 202
-    SnapShotParamAddFieldIndividualityAndCheck = 203
-    EnemyCountChangeTime = 204
-    EnemyCountChangeEffectId = 205
-    EnemyCountWaitTimeAfterMessage = 206
-    WaitMessageEnd = 207
-    ContinueDisplayMessage = 208
-    MessageStartDelayTime = 209
-    StartIntervalTurn = 210
-    StartIntervalCount = 211
-    CommonReleaseId = 212
-    ForceTurnProgressIfTimingIsOverInPartyTurn = 213
-    ForceTurnProgressIfTimingIsOverInOpponentTurn = 214
-    OverwriteFuncInvalidType = 215
-    BgmFadeTime = 216
-    KeepChangeModelAfterContinue = 217
-    DefenceDamageHigher = 218
-    SameIndivBuffActorOnField = 219
-    SyncUsedSameIndivBuffActorOnField = 220
-    OnlyMaxFuncGroupId = 221
-    UseAttack = 222
-    CondParamAddType = 223
-    CondParamAddValue = 224
-    CondParamAddMaxValue = 225
-    CondParamAddTargetId = 226
-    CondParamRangeType = 227
-    CondParamRangeMaxCount = 228
-    CondParamRangeMaxValue = 229
-    CondParamRangeTargetId = 230
-    ExecOnce = 231
-    ApplyBuffIndividuality = 232
-    ExecWhenCanNotAttack = 233
-    ExecEvenCardSelectState = 234
-    IgnoredCheckBuffType = 235
-    OverwriteShift = 236
-    IgnoreShiftWhiteFade = 237
-    BackStepTargets = 238
-    ReplacePositionTargets = 239
-    ApplySupportSvt = 240
-    ApplyHighestValueInFieldGroup = 241
-    IsClassIconChangeSaveGrand = 242
-    ExecuteEffectId = 243
-    PriorityUpHate = 244
-    JudgeUseEveryTime = 245
-    IgnoreDeathRate = 246
-    SubstituteRate = 247
-    SubstituteResist = 248
-    UseSvtResistRate = 249
-    UseBuffResistRate = 250
-    SubstituteSkillId = 251
-    SubstituteSkillLv = 252
-    ResistSkillId = 253
-    ResistSkillLv = 254
-    SubstitutePopupText = 255
-    SubstitutePopupIconId = 256
-    ResistPopupText = 257
-    ResistPopupIconId = 258
-    SubstituteEffectList = 259
-    ResistEffectList = 260
-    EnablePassiveBuffConvert = 261
-    FieldBuffApplyTarget = 262
-    MaxGainNp = 263
-    MaxHastenNpTurn = 264
-    FunctionTriggerActorTargetFlag = 265
-    IsTurnProgressWithoutGrantActor = 266
-    IsFuncCheckFieldIndividuality = 267
-    IgnoreTargetFuncResult = 268
-    ExecuteWhenHideText = 269
-    SkipCheckAlive = 270
-    CallServantPosition = 271
-    NotActIfAlreadyAvoidStateBuff = 272
-    AvoidFieldBuff = 273
-    UseUserSpecifiedLimitCount = 274
-    ParamAddOpCheckDead = 275
-    ResultAggregateGroupId = 276
-    SelfTurnProgressGroup = 277
-    EnemyCountWaitTimeAfterEffect = 278
-    TriggeredTargetBattlePointRateRange = 279
-    OnlyAvailableSkill = 280
-    UserEquipSkillMaxTargetNum = 281
-    ShowMasterPopupDuringNoblePhantasm = 282
-    TypeIndividualityEachFunc = 283
-    NotRemoveOnShift = 284
-    ExecuteForEachTargetFuncExecution = 285
+    BattlePointUIUpdateOnTactical = 180
+    CheckOverChargeStageRange = 181
+    CheckBattlePointPhaseRange = 182
+    StartingPosition = 183
+    FriendShipAbove = 184
+    DamageRateBattlePointPhase = 185
+    ParamAddBattlePointPhaseId = 186
+    ParamAddBattlePointPhaseValue = 187
+    ShortenMaxCountEachSkill = 188
+    ChargeHpMaxBeforeBreakGaugeUp = 189
+    TargetFunctionIndividuality = 190
+    TargetBuffIndividuality = 191
+    TargetEnemyClass = 192
+    ParamAddIndividualityTargetType = 193
+    TriggeredFuncIndexAndCheckList = 194
+    FuncCheckTargetIndividualityTargetType = 195
+    FuncCheckTargetIndividualityCountHigher = 196
+    FuncCheckTargetIndividualityCountLower = 197
+    FuncCheckTargetIndividualityCountEqual = 198
+    ParamAddSelfIndividualityAndCheck = 199
+    ParamAddOpIndividualityAndCheck = 200
+    ParamAddFieldIndividualityAndCheck = 201
+    SnapShotParamAddSelfIndividualityAndCheck = 202
+    SnapShotParamAddOpIndividualityAndCheck = 203
+    SnapShotParamAddFieldIndividualityAndCheck = 204
+    EnemyCountChangeTime = 205
+    EnemyCountChangeEffectId = 206
+    EnemyCountWaitTimeAfterMessage = 207
+    WaitMessageEnd = 208
+    ContinueDisplayMessage = 209
+    MessageStartDelayTime = 210
+    StartIntervalTurn = 211
+    StartIntervalCount = 212
+    CommonReleaseId = 213
+    ForceTurnProgressIfTimingIsOverInPartyTurn = 214
+    ForceTurnProgressIfTimingIsOverInOpponentTurn = 215
+    OverwriteFuncInvalidType = 216
+    BgmFadeTime = 217
+    KeepChangeModelAfterContinue = 218
+    DefenceDamageHigher = 219
+    SameIndivBuffActorOnField = 220
+    SyncUsedSameIndivBuffActorOnField = 221
+    OnlyMaxFuncGroupId = 222
+    UseAttack = 223
+    CondParamAddType = 224
+    CondParamAddValue = 225
+    CondParamAddMaxValue = 226
+    CondParamAddTargetId = 227
+    CondParamRangeType = 228
+    CondParamRangeMaxCount = 229
+    CondParamRangeMaxValue = 230
+    CondParamRangeTargetId = 231
+    ExecOnce = 232
+    ApplyBuffIndividuality = 233
+    ExecWhenCanNotAttack = 234
+    ExecEvenCardSelectState = 235
+    IgnoredCheckBuffType = 236
+    OverwriteShift = 237
+    IgnoreShiftWhiteFade = 238
+    BackStepTargets = 239
+    ReplacePositionTargets = 240
+    ApplySupportSvt = 241
+    ApplyPlayerSvt = 242
+    ApplyHighestValueInFieldGroup = 243
+    IsClassIconChangeSaveGrand = 244
+    ExecuteEffectId = 245
+    PriorityUpHate = 246
+    JudgeUseEveryTime = 247
+    IgnoreDeathRate = 248
+    SubstituteRate = 249
+    SubstituteResist = 250
+    UseSvtResistRate = 251
+    UseBuffResistRate = 252
+    SubstituteSkillId = 253
+    SubstituteSkillLv = 254
+    ResistSkillId = 255
+    ResistSkillLv = 256
+    SubstitutePopupText = 257
+    SubstitutePopupIconId = 258
+    ResistPopupText = 259
+    ResistPopupIconId = 260
+    SubstituteEffectList = 261
+    ResistEffectList = 262
+    EnablePassiveBuffConvert = 263
+    FieldBuffApplyTarget = 264
+    MaxGainNp = 265
+    MaxHastenNpTurn = 266
+    FunctionTriggerActorTargetFlag = 267
+    IsTurnProgressWithoutGrantActor = 268
+    IsFuncCheckFieldIndividuality = 269
+    IgnoreTargetFuncResult = 270
+    ExecuteWhenHideText = 271
+    SkipCheckAlive = 272
+    CallServantPosition = 273
+    NotActIfAlreadyAvoidStateBuff = 274
+    AvoidFieldBuff = 275
+    UseUserSpecifiedLimitCount = 276
+    ParamAddOpCheckDead = 277
+    ResultAggregateGroupId = 278
+    SelfTurnProgressGroup = 279
+    EnemyCountWaitTimeAfterEffect = 280
+    TriggeredTargetBattlePointRateRange = 281
+    OnlyAvailableSkill = 282
+    UserEquipSkillMaxTargetNum = 283
+    ShowMasterPopupDuringNoblePhantasm = 284
+    TypeIndividualityEachFunc = 285
+    NotRemoveOnShift = 286
+    ExecuteForEachTargetFuncExecution = 287
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3070,6 +3072,7 @@ class CondType(IntEnum):
     FAVORITE_SVT_ID_EQUAL = 291
     EVENT_BALLOT_SUBMITTED = 292
     EVENT_BALLOT_NOT_SUBMITTED = 293
+    SVT_OFFICIALLY_JOIN = 294
 
 
 class NiceCondType(StrEnum):
@@ -3359,6 +3362,7 @@ class NiceCondType(StrEnum):
     favoriteSvtIdEqual = "favoriteSvtIdEqual"
     eventBallotSubmitted = "eventBallotSubmitted"
     eventBallotNotSubmitted = "eventBallotNotSubmitted"
+    svtOfficiallyJoin = "svtOfficiallyJoin"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -3646,6 +3650,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     291: NiceCondType.favoriteSvtIdEqual,
     292: NiceCondType.eventBallotSubmitted,
     293: NiceCondType.eventBallotNotSubmitted,
+    294: NiceCondType.svtOfficiallyJoin,
 }
 
 
@@ -4806,6 +4811,7 @@ class WarOverwriteType(IntEnum):
     MATERIAL_HEADER_IMG_ID = 29
     MATERIAL_GALLERY_HEADER_IMG_ID = 30
     STAND_FIGURE_VISIBLE = 31
+    CHAPTER_NEXT_ICON_POS = 32
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -4842,6 +4848,7 @@ class NiceWarOverwriteType(StrEnum):
     materialHeaderImgId = "materialHeaderImgId"
     materialGalleryHeaderImgId = "materialGalleryHeaderImgId"
     standFigureVisible = "standFigureVisible"
+    chapterNextIconPos = "chapterNextIconPos"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -4876,6 +4883,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     29: NiceWarOverwriteType.materialHeaderImgId,
     30: NiceWarOverwriteType.materialGalleryHeaderImgId,
     31: NiceWarOverwriteType.standFigureVisible,
+    32: NiceWarOverwriteType.chapterNextIconPos,
 }
 
 
@@ -6977,6 +6985,7 @@ class SvtDeadType(IntEnum):
     ENERGY = 5
     CRYSTAL = 6
     EXPLOSION = 7
+    MELT = 8
 
 
 class NiceSvtDeadType(StrEnum):
@@ -6990,6 +6999,7 @@ class NiceSvtDeadType(StrEnum):
     energy = "energy"
     crystal = "crystal"
     explosion = "explosion"
+    melt = "melt"
 
 
 SVT_DEAD_TYPE_NAME: dict[int, NiceSvtDeadType] = {
@@ -7001,6 +7011,7 @@ SVT_DEAD_TYPE_NAME: dict[int, NiceSvtDeadType] = {
     5: NiceSvtDeadType.energy,
     6: NiceSvtDeadType.crystal,
     7: NiceSvtDeadType.explosion,
+    8: NiceSvtDeadType.melt,
 }
 
 

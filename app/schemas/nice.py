@@ -644,6 +644,7 @@ class BaseVals(BaseModel):
     BattlePointValue: int | None = None
     BattlePointUiUpdateType: int | None = None
     BattlePointOverwrite: int | None = None
+    BattlePointUIUpdateOnTactical: int | None = None
     CheckOverChargeStageRange: list[str] | None = None
     CheckBattlePointPhaseRange: list[ValCheckBattlePointPhaseRange] | None = None
     StartingPosition: list[int] | None = None
