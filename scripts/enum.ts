@@ -842,6 +842,7 @@ export enum NiceDataValsType {
     BattlePointValue = "battlePointValue",
     BattlePointUiUpdateType = "battlePointUiUpdateType",
     BattlePointOverwrite = "battlePointOverwrite",
+    BattlePointUIUpdateOnTactical = "battlePointUIUpdateOnTactical",
     CheckOverChargeStageRange = "checkOverChargeStageRange",
     CheckBattlePointPhaseRange = "checkBattlePointPhaseRange",
     StartingPosition = "startingPosition",
@@ -903,6 +904,7 @@ export enum NiceDataValsType {
     BackStepTargets = "backStepTargets",
     ReplacePositionTargets = "replacePositionTargets",
     ApplySupportSvt = "applySupportSvt",
+    ApplyPlayerSvt = "applyPlayerSvt",
     ApplyHighestValueInFieldGroup = "applyHighestValueInFieldGroup",
     IsClassIconChangeSaveGrand = "isClassIconChangeSaveGrand",
     ExecuteEffectId = "executeEffectId",
@@ -1391,6 +1393,7 @@ export enum NiceCondType {
     FAVORITE_SVT_ID_EQUAL = "favoriteSvtIdEqual",
     EVENT_BALLOT_SUBMITTED = "eventBallotSubmitted",
     EVENT_BALLOT_NOT_SUBMITTED = "eventBallotNotSubmitted",
+    SVT_OFFICIALLY_JOIN = "svtOfficiallyJoin",
 }
 
 export enum NiceVoiceCondType {
@@ -1791,6 +1794,7 @@ export enum NiceWarOverwriteType {
     MATERIAL_HEADER_IMG_ID = "materialHeaderImgId",
     MATERIAL_GALLERY_HEADER_IMG_ID = "materialGalleryHeaderImgId",
     STAND_FIGURE_VISIBLE = "standFigureVisible",
+    CHAPTER_NEXT_ICON_POS = "chapterNextIconPos",
 }
 
 export enum NiceAiCond {
@@ -2453,6 +2457,7 @@ export enum NiceSvtDeadType {
     ENERGY = "energy",
     CRYSTAL = "crystal",
     EXPLOSION = "explosion",
+    MELT = "melt",
 }
 
 export enum NiceAiAllocationSvtFlag {

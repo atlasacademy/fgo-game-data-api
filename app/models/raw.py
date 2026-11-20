@@ -1220,6 +1220,13 @@ mstShop = Table(
     Column("closedAt", BigInteger),
 )
 
+mstShopGroup = Table(
+    "mstShopGroup",
+    metadata,
+    Column("shopId", Integer, primary_key=True),
+    Column("groupId", Integer, primary_key=True, index=True),
+)
+
 mstShopRelease = Table(
     "mstShopRelease",
     metadata,
@@ -3095,7 +3102,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuest],
     [mstQuestPhase],
     [mstSetItem],
-    [mstShop, mstShopRelease, mstShopScript],
+    [mstShop, mstShopGroup, mstShopRelease, mstShopScript],
     [
         mstSkill,
         mstSkillAdd,

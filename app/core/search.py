@@ -503,6 +503,7 @@ async def search_shop(
     matches = await get_shop_search(
         conn,
         event_ids=search_param.eventId,
+        group_ids=search_param.groupId,
         shop_type_ints=shop_type_ints,
         pay_type_ints=pay_type_ints,
         purchase_type_ints=purchase_type_ints,

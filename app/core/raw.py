@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import Any, Iterable, Optional
 
 import orjson
@@ -149,6 +150,7 @@ from ..schemas.raw import (
     MstQuestDateRange,
     MstQuestReleaseOverwrite,
     MstShop,
+    MstShopGroup,
     MstShopRelease,
     MstShopScript,
     MstSpot,
@@ -1602,13 +1604,15 @@ async def get_all_bgm_entities(
 async def get_shop_entities(
     conn: AsyncConnection, shops: list[MstShop]
 ) -> list[ShopEntity]:
-    shop_scripts = await fetch.get_all_multiple(
-        conn, MstShopScript, [shop.id for shop in shops]
-    )
+    shop_ids = [shop.id for shop in shops]
+    shop_groups = await fetch.get_all_multiple(conn, MstShopGroup, shop_ids)
+    shop_group_map: dict[int, list[MstShopGroup]] = defaultdict(list)
+    for group in shop_groups:
+        shop_group_map[group.shopId].append(group)
+
+    shop_scripts = await fetch.get_all_multiple(conn, MstShopScript, shop_ids)
     shop_script_map = {script.shopId: script for script in shop_scripts}
-    shop_releases = await fetch.get_all_multiple(
-        conn, MstShopRelease, [shop.id for shop in shops]
-    )
+    shop_releases = await fetch.get_all_multiple(conn, MstShopRelease, shop_ids)
 
     item_ids = {get_shop_cost_item_id(shop) for shop in shops}
     common_consume_ids = {
@@ -1678,6 +1682,7 @@ async def get_shop_entities(
         entities.append(
             ShopEntity(
                 mstShop=shop,
+                mstShopGroup=shop_group_map.get(shop.id, []),
                 mstSetItem=set_items,
                 mstShopRelease=[
                     release for release in shop_releases if release.shopId == shop.id

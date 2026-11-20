@@ -1062,6 +1062,11 @@ class MstShop(BaseModelORJson):
     closedAt: int  # 1530676799
 
 
+class MstShopGroup(BaseModelORJson):
+    shopId: int
+    groupId: int
+
+
 class MstShopScript(BaseModelORJson):
     ignoreEventIds: list[int]
     shopId: int
@@ -2599,6 +2604,7 @@ class WarEntity(BaseModelORJson):
 
 class ShopEntity(BaseModelORJson):
     mstShop: MstShop
+    mstShopGroup: list[MstShopGroup]
     mstSetItem: list[MstSetItem]
     mstShopRelease: list[MstShopRelease]
     mstShopScript: MstShopScript | None = None

@@ -12,6 +12,7 @@ from ...models.raw import (
     mstEventCampaign,
     mstEventTowerReward,
     mstShop,
+    mstShopGroup,
     mstWar,
 )
 from ...schemas.raw import (
@@ -69,6 +70,7 @@ async def get_mstBoxGachaBase(
 async def get_shop_search(
     conn: AsyncConnection,
     event_ids: Iterable[int] | None = None,
+    group_ids: Iterable[int] | None = None,
     shop_type_ints: Iterable[int] | None = None,
     pay_type_ints: Iterable[int] | None = None,
     purchase_type_ints: Iterable[int] | None = None,
@@ -79,6 +81,15 @@ async def get_shop_search(
 
     if event_ids:
         where_clause.append(mstShop.c.eventId.in_(event_ids))
+    if group_ids:
+        where_clause.append(
+            select(mstShopGroup.c.shopId)
+            .where(
+                mstShopGroup.c.shopId == mstShop.c.id,
+                mstShopGroup.c.groupId.in_(group_ids),
+            )
+            .exists()
+        )
     if shop_type_ints:
         where_clause.append(mstShop.c.shopType.in_(shop_type_ints))
     if pay_type_ints:

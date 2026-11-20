@@ -104,6 +104,7 @@ from ...models.raw import (
     mstQuestDateRange,
     mstQuestReleaseOverwrite,
     mstShop,
+    mstShopGroup,
     mstShopRelease,
     mstShopScript,
     mstSpot,
@@ -247,6 +248,7 @@ from ...schemas.raw import (
     MstQuestDateRange,
     MstQuestReleaseOverwrite,
     MstShop,
+    MstShopGroup,
     MstShopRelease,
     MstShopScript,
     MstSpot,
@@ -700,6 +702,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     ),
     MstGiftAdd: (mstGiftAdd, mstGiftAdd.c.giftId, [mstGiftAdd.c.giftId]),
     MstShopScript: (mstShopScript, mstShopScript.c.shopId, [mstShopScript.c.shopId]),
+    MstShopGroup: (
+        mstShopGroup,
+        mstShopGroup.c.shopId,
+        [mstShopGroup.c.shopId, mstShopGroup.c.groupId],
+    ),
     MstShopRelease: (
         mstShopRelease,
         mstShopRelease.c.shopId,

@@ -520,6 +520,7 @@ class ShopSearchQueryParams:
     region: Region
     name: Optional[str] = Query(None, max_length=999)
     eventId: list[int] = Query([])
+    groupId: list[int] = Query([])
     type: list[NiceShopType] = Query([])
     payType: list[NicePayType] = Query([])
     purchaseType: list[NicePurchaseType] = Query([])
@@ -530,6 +531,7 @@ class ShopSearchQueryParams:
             [
                 self.name,
                 self.eventId,
+                self.groupId,
                 self.type,
                 self.payType,
                 self.purchaseType,
