@@ -1,4 +1,6 @@
+from dataclasses import dataclass, field
 from decimal import Decimal
+from typing import Any, NamedTuple, cast
 
 import orjson
 import pytest
@@ -6,15 +8,30 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from app.core.nice.func import parse_dataVals
+from app.core.nice.svt.voice import (
+    get_nice_subtitles,
+    get_subtitle_audio_candidates,
+    get_subtitle_audio_urls,
+)
 from app.core.utils import get_voice_name
 from app.data.custom_mappings import Translation
 from app.data.script import get_script_path, get_script_text_only, remove_brackets
+from app.db.helpers import asset
 from app.db.load import get_SkillID_from_sval, get_Value_from_sval
 from app.routers.utils import list_string_exclude
 from app.schemas.common import Language, Region, ReverseDepth
-from app.schemas.gameenums import FuncType
-from app.schemas.nice import NiceServant
-from app.schemas.raw import ScriptJsonInfo, get_subtitle_svtId
+from app.schemas.gameenums import FuncType, SvtVoiceType
+from app.schemas.nice import NiceServant, NiceVoiceSubtitle
+from app.schemas.raw import (
+    GlobalNewMstSubtitle,
+    MstSvtGroup,
+    MstSvtVoice,
+    MstVoice,
+    MstVoicePlayCond,
+    ScriptJson,
+    ScriptJsonInfo,
+    get_subtitle_svtId,
+)
 
 from .utils import get_response_data, get_text_data
 
@@ -22,6 +39,17 @@ from .utils import get_response_data, get_text_data
 def test_subtitle_svtId() -> None:
     assert get_subtitle_svtId("PLAINDEMO_99100001") == -1
     assert get_subtitle_svtId("9934820_0_B160") == 9934820
+
+
+def test_subtitle_voice_id() -> None:
+    def voice_id(subtitle_id: str) -> str:
+        return GlobalNewMstSubtitle(id=subtitle_id, serif="").get_voice_id()
+
+    assert voice_id("1100200_11_B050") == "B050"
+    # The mstVoice key of a xxx1/xxx2 line is xxx0, same as for a voice line info
+    assert voice_id("100100_0_B011") == "B010"
+    assert voice_id("100100_B050") == "B050"
+    assert voice_id("9944030") == ""
 
 
 @pytest.mark.asyncio
@@ -155,3 +183,390 @@ def test_get_SkillID_from_sval() -> None:
         )
         == 961313
     )
+
+
+@dataclass
+class VoiceData:
+    """Stand-in for the voice fields of SvtEntity, see RequiredVoiceData."""
+
+    mstSvtVoice: list[MstSvtVoice] = field(default_factory=list)
+    mstVoice: list[MstVoice] = field(default_factory=list)
+    mstVoicePlayCond: list[MstVoicePlayCond] = field(default_factory=list)
+    mstSvtGroup: list[MstSvtGroup] = field(default_factory=list)
+    mstSubtitle: list[GlobalNewMstSubtitle] = field(default_factory=list)
+
+
+def make_svt_voice(svt_id: int, *voice_ids: str) -> MstSvtVoice:
+    """Voice group with one voice line per voice id."""
+    return MstSvtVoice(
+        id=svt_id,
+        voicePrefix=0,
+        type=SvtVoiceType.BATTLE,
+        scriptJson=[
+            ScriptJson(
+                infos=[ScriptJsonInfo(id=voice_id, face=0, delay=Decimal("0.0"))]
+            )
+            for voice_id in voice_ids
+        ],
+    )
+
+
+def make_subtitles(*subtitle_ids: str) -> list[GlobalNewMstSubtitle]:
+    return [
+        GlobalNewMstSubtitle(id=subtitle_id, serif=f"serif {subtitle_id}")
+        for subtitle_id in subtitle_ids
+    ]
+
+
+def make_voice(voice_id: str, svtVoiceType: SvtVoiceType) -> MstVoice:
+    return MstVoice(
+        id=voice_id,
+        priority=0,
+        svtVoiceType=svtVoiceType,
+        name=f"name {voice_id}",
+        nameDefault="???",
+        condType=0,
+        condValue=0,
+        voicePlayedValue=0,
+        firstPlayPriority=0,
+        closedType=1,
+        flag=0,
+    )
+
+
+def subtitle_asset_paths(subtitles: list[NiceVoiceSubtitle]) -> list[str]:
+    paths = []
+    for subtitle in subtitles:
+        assert subtitle.audioAsset is not None
+        paths.append(subtitle.audioAsset.rsplit("/Audio/", 1)[1])
+    return paths
+
+
+def manifest(*file_names: str) -> dict[str, str]:
+    """What get_audio_urls returns: manifest fileName -> the URL stored with it."""
+    return {file_name: f"/Audio/{file_name}" for file_name in file_names}
+
+
+def test_nice_subtitles_all_matched() -> None:
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010", "0_B020")],
+        mstSubtitle=make_subtitles("100100_0_B010", "100100_0_B020"),
+    )
+    assert get_nice_subtitles(voice_data, {}) == []
+
+
+def test_nice_subtitles_none_matched() -> None:
+    voice_data = VoiceData(mstSubtitle=make_subtitles("9944030_0_B010"))
+
+    subtitles = get_nice_subtitles(voice_data, manifest("Servants_9944030/0_B010.mp3"))
+
+    assert [subtitle.id for subtitle in subtitles] == ["9944030_0_B010"]
+    assert subtitles[0].serif == "serif 9944030_0_B010"
+    assert subtitle_asset_paths(subtitles) == ["Servants_9944030/0_B010.mp3"]
+
+
+def test_nice_subtitles_mixed_keeps_order() -> None:
+    voice_data = VoiceData(
+        mstSvtVoice=[
+            make_svt_voice(100100, "0_B010"),
+            make_svt_voice(100100, "0_B030"),
+        ],
+        mstSubtitle=make_subtitles(
+            "100100_0_B010",
+            "100100_0_B020",
+            "100100_0_B030",
+            "100100_0_B040",
+        ),
+    )
+
+    subtitles = get_nice_subtitles(voice_data, {})
+
+    assert [subtitle.id for subtitle in subtitles] == [
+        "100100_0_B020",
+        "100100_0_B040",
+    ]
+
+
+def test_nice_subtitles_other_svt_voice_line_doesnt_match() -> None:
+    """The svt id is part of the key: same voice id under another svt isn't a match."""
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010")],
+        mstSubtitle=make_subtitles("9944030_0_B010"),
+    )
+
+    subtitles = get_nice_subtitles(voice_data, {})
+
+    assert [subtitle.id for subtitle in subtitles] == ["9944030_0_B010"]
+
+
+def test_nice_subtitles_only_first_info_matches() -> None:
+    """A voice line consumes the subtitle of its first info only, like the nice voice line."""
+    voice_data = VoiceData(
+        mstSvtVoice=[
+            MstSvtVoice(
+                id=100100,
+                voicePrefix=0,
+                type=SvtVoiceType.BATTLE,
+                scriptJson=[
+                    ScriptJson(
+                        infos=[
+                            ScriptJsonInfo(id="0_B010", face=0, delay=Decimal("0.0")),
+                            ScriptJsonInfo(id="0_B011", face=0, delay=Decimal("0.0")),
+                        ]
+                    )
+                ],
+            )
+        ],
+        mstSubtitle=make_subtitles("100100_0_B010", "100100_0_B011"),
+    )
+
+    subtitles = get_nice_subtitles(voice_data, {})
+
+    assert [subtitle.id for subtitle in subtitles] == ["100100_0_B011"]
+
+
+def test_nice_subtitles_skips_empty_scripts() -> None:
+    """A None script or one with no infos makes no voice line, so it consumes nothing."""
+    voice_data = VoiceData(
+        mstSvtVoice=[
+            MstSvtVoice(
+                id=100100,
+                voicePrefix=0,
+                type=SvtVoiceType.BATTLE,
+                scriptJson=[None, ScriptJson(infos=[])],
+            )
+        ],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+
+    subtitles = get_nice_subtitles(voice_data, {})
+
+    assert [subtitle.id for subtitle in subtitles] == ["100100_0_B010"]
+
+
+def test_nice_subtitles_skips_malformed_ids() -> None:
+    voice_data = VoiceData(
+        mstSubtitle=make_subtitles(
+            "PLAINDEMO_99100001", "9944030", "9944030_0_B010", "_0_B020"
+        )
+    )
+
+    subtitles = get_nice_subtitles(voice_data, {})
+
+    assert [subtitle.id for subtitle in subtitles] == ["9944030_0_B010"]
+
+
+def test_nice_subtitles_empty_table() -> None:
+    assert get_nice_subtitles(VoiceData(), {}) == []
+
+
+def test_nice_subtitles_folder_comes_from_mstVoice() -> None:
+    """The letter is ambiguous, the whole voice id isn't.
+
+    B010 is a battle line and B050 a noble phantasm one, and their audio sits in
+    different folders. An orphan has no voice group to read mstSvtVoice.type off,
+    but mstVoice carries the same type keyed by the voice id.
+    """
+    voice_data = VoiceData(
+        mstVoice=[
+            make_voice("B010", SvtVoiceType.BATTLE),
+            make_voice("B050", SvtVoiceType.TREASURE_DEVICE),
+            make_voice("H190", SvtVoiceType.HOME),
+        ],
+        mstSubtitle=make_subtitles("100100_0_B010", "100100_11_B050", "100100_0_H190"),
+    )
+
+    # every folder ships the file, so only the voice type decides which one wins
+    subtitles = get_nice_subtitles(
+        voice_data,
+        manifest(
+            *(
+                f"{prefix}100100/{voice_id}.mp3"
+                for prefix in ("Servants_", "NoblePhantasm_", "ChrVoice_")
+                for voice_id in ("0_B010", "11_B050", "0_H190")
+            )
+        ),
+    )
+
+    assert subtitle_asset_paths(subtitles) == [
+        "Servants_100100/0_B010.mp3",
+        "NoblePhantasm_100100/11_B050.mp3",
+        "ChrVoice_100100/0_H190.mp3",
+    ]
+
+
+def test_nice_subtitles_folder_falls_back_to_battle() -> None:
+    """Some subtitle ids have no mstVoice row at all, so there is nothing to read."""
+    voice_data = VoiceData(mstSubtitle=make_subtitles("1700100_0_B280"))
+
+    subtitles = get_nice_subtitles(
+        voice_data,
+        manifest("Servants_1700100/0_B280.mp3", "ChrVoice_1700100/0_B280.mp3"),
+    )
+
+    assert subtitle_asset_paths(subtitles) == ["Servants_1700100/0_B280.mp3"]
+
+
+def test_nice_subtitles_folder_uses_base_voice_id() -> None:
+    """mstVoice is keyed by the xxx0 id, but the file keeps the id the subtitle has."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B051"),
+    )
+
+    subtitles = get_nice_subtitles(
+        voice_data,
+        manifest("NoblePhantasm_100100/11_B051.mp3", "Servants_100100/11_B051.mp3"),
+    )
+
+    assert subtitle_asset_paths(subtitles) == ["NoblePhantasm_100100/11_B051.mp3"]
+
+
+def test_nice_subtitles_audio_url_comes_from_the_manifest() -> None:
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B010", SvtVoiceType.BATTLE)],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+
+    subtitles = get_nice_subtitles(voice_data, manifest("Servants_100100/0_B010.mp3"))
+
+    assert subtitle_asset_paths(subtitles) == ["Servants_100100/0_B010.mp3"]
+
+
+def test_nice_subtitles_audio_folder_repaired_by_the_manifest() -> None:
+    """9941740_0_B050: mstVoice says treasureDevice, the file ships under Servants_."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("9941740_0_B050"),
+    )
+
+    subtitles = get_nice_subtitles(voice_data, manifest("Servants_9941740/0_B050.mp3"))
+
+    assert subtitle_asset_paths(subtitles) == ["Servants_9941740/0_B050.mp3"]
+
+
+def test_nice_subtitles_audio_prefers_the_mstVoice_folder() -> None:
+    """Both folders ship the file, so the voice type breaks the tie."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B050"),
+    )
+
+    subtitles = get_nice_subtitles(
+        voice_data,
+        manifest("Servants_100100/11_B050.mp3", "NoblePhantasm_100100/11_B050.mp3"),
+    )
+
+    assert subtitle_asset_paths(subtitles) == ["NoblePhantasm_100100/11_B050.mp3"]
+
+
+def test_nice_subtitles_no_audio_when_the_manifest_has_none() -> None:
+    """Dantes 0_H1800 is a leftover: its audio 404s under every folder."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("H1800", SvtVoiceType.HOME)],
+        mstSubtitle=make_subtitles("1100200_0_H1800"),
+    )
+
+    subtitles = get_nice_subtitles(voice_data, manifest())
+
+    assert subtitles[0].id == "1100200_0_H1800"
+    assert subtitles[0].serif == "serif 1100200_0_H1800"
+    assert subtitles[0].audioAsset is None
+
+
+def test_subtitle_audio_candidates_lists_every_folder() -> None:
+    """One name per folder, the one mstVoice points at first."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B050"),
+    )
+
+    assert get_subtitle_audio_candidates(voice_data) == [
+        "NoblePhantasm_100100/11_B050.mp3",
+        "Servants_100100/11_B050.mp3",
+        "ChrVoice_100100/11_B050.mp3",
+    ]
+
+
+def test_subtitle_audio_candidates_skips_matched_subtitles() -> None:
+    """Only orphans are looked up: a matched row is voiced by its voice line."""
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010")],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+
+    assert get_subtitle_audio_candidates(voice_data) == []
+
+
+async def test_get_audio_urls_without_names_makes_no_query() -> None:
+    """Nothing to verify, no round trip: the connection is never touched."""
+
+    class ExplodingConnection:
+        async def execute(self, *_args: Any, **_kwargs: Any) -> Any:
+            raise AssertionError("queried the db for an empty name list")
+
+    conn = cast(AsyncConnection, ExplodingConnection())
+
+    assert await asset.get_audio_urls(conn, []) == {}
+
+
+class ManifestRow(NamedTuple):
+    fileName: str
+    sourceUrl: str
+
+
+class CountingConnection:
+    """Stands in for AsyncConnection, answering every query with the same rows."""
+
+    def __init__(self, *rows: ManifestRow) -> None:
+        self.rows = list(rows)
+        self.queries = 0
+
+    async def execute(self, *_args: Any, **_kwargs: Any) -> Any:
+        self.queries += 1
+        return self
+
+    def __iter__(self) -> Any:
+        return iter(self.rows)
+
+
+async def test_subtitle_audio_urls_asks_the_manifest_once() -> None:
+    """One lookup answers the whole svt: there is no second query to make."""
+    voice_data = VoiceData(
+        mstVoice=[make_voice("B050", SvtVoiceType.TREASURE_DEVICE)],
+        mstSubtitle=make_subtitles("100100_11_B050"),
+    )
+    expected = manifest("NoblePhantasm_100100/11_B050.mp3")
+    conn = CountingConnection(
+        *(ManifestRow(file_name, url) for file_name, url in expected.items())
+    )
+
+    audio_urls = await get_subtitle_audio_urls(cast(AsyncConnection, conn), voice_data)
+
+    assert audio_urls == expected
+    assert conn.queries == 1
+
+
+async def test_subtitle_audio_urls_empty_manifest_means_no_audio() -> None:
+    """No rows means the audio is gone, and it costs the one lookup to find out."""
+    voice_data = VoiceData(mstSubtitle=make_subtitles("100100_11_B050"))
+    conn = CountingConnection()
+
+    audio_urls = await get_subtitle_audio_urls(cast(AsyncConnection, conn), voice_data)
+
+    assert audio_urls == {}
+    assert conn.queries == 1
+    assert get_nice_subtitles(voice_data, audio_urls)[0].audioAsset is None
+
+
+async def test_subtitle_audio_urls_skips_the_db_without_orphans() -> None:
+    voice_data = VoiceData(
+        mstSvtVoice=[make_svt_voice(100100, "0_B010")],
+        mstSubtitle=make_subtitles("100100_0_B010"),
+    )
+    conn = CountingConnection()
+
+    audio_urls = await get_subtitle_audio_urls(cast(AsyncConnection, conn), voice_data)
+
+    assert audio_urls == {}
+    assert conn.queries == 0

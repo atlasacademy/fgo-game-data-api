@@ -7,7 +7,7 @@ from app.core.nice.enemy import get_enemy_script
 from app.core.nice.svt.voice import get_nice_voice_line
 from app.data.shop import get_shop_cost_item_id
 from app.data.utils import load_master_data
-from app.db.helpers import event
+from app.db.helpers import asset, event
 from app.schemas.base import HttpUrlAdapter
 from app.schemas.common import Language, Region
 from app.schemas.nice import ExtraAssetsUrl
@@ -396,6 +396,93 @@ class TestServantSpecial:
             }
         ]
 
+    async def test_subtitles_story_enemy_without_voice_lines(
+        self, client: AsyncClient
+    ) -> None:
+        """svt 9944030 has subtitles but no voice records at all."""
+        response = await client.get("/nice/NA/svt/9944030?lore=true")
+        assert response.status_code == 200
+        profile = response.json()["profile"]
+        # No voice records, so every subtitle it has is unreachable through voices
+        assert profile["voices"] == []
+        subtitles = profile["subtitles"]
+        assert subtitles
+        assert all(subtitle["id"].startswith("9944030_") for subtitle in subtitles)
+        assert all(subtitle["serif"] for subtitle in subtitles)
+        # Story enemy dialogue is all battle lines, so it stays under Servants_
+        assert all(
+            subtitle["audioAsset"].endswith(
+                f"/Servants_9944030/{subtitle['id'].split('_', 1)[1]}.mp3"
+            )
+            for subtitle in subtitles
+        )
+
+    async def test_subtitles_servant_leftover_np_lines(
+        self, client: AsyncClient
+    ) -> None:
+        """Altria has two subtitles left over from replaced noble phantasm lines."""
+        response = await client.get("/nice/NA/servant/100100?lore=true")
+        assert response.status_code == 200
+        profile = response.json()["profile"]
+        # Leftovers from noble phantasm lines that were replaced, so these two
+        # don't move around as new voice lines are added.
+        assert [subtitle["id"] for subtitle in profile["subtitles"]] == [
+            "100100_0_B060",
+            "100100_0_B070",
+        ]
+        # The replaced lines took their audio with them, and the asset manifest
+        # lists no file for either under any folder, so neither gets a URL
+        assert all("audioAsset" not in subtitle for subtitle in profile["subtitles"])
+
+    async def test_subtitles_audio_folder_from_manifest(
+        self, client: AsyncClient
+    ) -> None:
+        """Dantes' orphans live in two folders, and one has no audio left."""
+        response = await client.get("/nice/NA/servant/1100200?lore=true")
+        assert response.status_code == 200
+        subtitles = response.json()["profile"]["subtitles"]
+
+        assert {
+            subtitle["id"]: (
+                subtitle["audioAsset"].rsplit("/Audio/", 1)[1]
+                if "audioAsset" in subtitle
+                else None
+            )
+            for subtitle in subtitles
+        } == {
+            "1100200_0_H1800": None,
+            "1100200_0_T010": "ChrVoice_1100200/0_T010.mp3",
+            "1100200_0_T020": "ChrVoice_1100200/0_T020.mp3",
+            "1100200_0_T030": "ChrVoice_1100200/0_T030.mp3",
+            "1100200_11_B050": "NoblePhantasm_1100200/11_B050.mp3",
+        }
+
+    async def test_subtitles_voice_lines_unchanged(self, client: AsyncClient) -> None:
+        """The orphan lookup must not steal subtitles from the voice lines."""
+        response = await client.get("/nice/NA/servant/100100?lore=true")
+        assert response.status_code == 200
+        profile = response.json()["profile"]
+        voice_lines = [
+            voice_line
+            for voice_group in profile["voices"]
+            for voice_line in voice_group["voiceLines"]
+        ]
+        assert voice_lines
+        assert all(voice_line["subtitle"] for voice_line in voice_lines)
+        # A subtitle belongs to a voice line or to the orphan list, never to both
+        voice_line_texts = {voice_line["subtitle"] for voice_line in voice_lines}
+        assert not voice_line_texts & {
+            subtitle["serif"] for subtitle in profile["subtitles"]
+        }
+
+    async def test_subtitles_empty_without_subtitle_data(
+        self, client: AsyncClient
+    ) -> None:
+        """JP ships no globalNewMstSubtitle.json, so there's nothing to report."""
+        response = await client.get("/nice/JP/svt/9941330?lore=true")
+        assert response.status_code == 200
+        assert response.json()["profile"]["subtitles"] == []
+
     async def test_script_svt_SkillRankUp(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/servant/285")
         assert response.status_code == 200
@@ -735,6 +822,20 @@ class TestServantSpecial:
                 assert "transform" in decks
             else:
                 assert "transform" not in decks
+
+
+@pytest.mark.asyncio
+async def test_audio_manifest_lookup(na_db_conn: AsyncConnection) -> None:
+    """The manifest hands back the URL it stored for the files it lists."""
+    audio_urls = await asset.get_audio_urls(
+        na_db_conn, ["ChrVoice_1100200/0_T010.mp3", "ChrVoice_1100200/0_H1800.mp3"]
+    )
+
+    assert audio_urls["ChrVoice_1100200/0_T010.mp3"].endswith(
+        "/NA/Audio/ChrVoice_1100200/0_T010.mp3"
+    )
+    # audio that was removed from the game isn't in the manifest
+    assert "ChrVoice_1100200/0_H1800.mp3" not in audio_urls
 
 
 @pytest.mark.asyncio

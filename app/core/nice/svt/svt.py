@@ -61,7 +61,7 @@ from .chara_script import get_nice_chara_script
 from .individuality import get_nice_svt_trait
 from .limit import get_nice_status_rank, get_nice_svt_limit
 from .overwrite import get_nice_svt_overwrite
-from .voice import get_nice_voice
+from .voice import get_nice_subtitles, get_nice_voice, get_subtitle_audio_urls
 
 settings = Settings()
 
@@ -445,6 +445,7 @@ async def get_nice_servant(
     ]
 
     if lore:
+        subtitle_audio_urls = await get_subtitle_audio_urls(conn, raw_svt)
         nice_data["profile"] = {
             "cv": get_translation(lang, raw_svt.mstCv.name if raw_svt.mstCv else ""),
             "illustrator": get_translation(
@@ -462,6 +463,7 @@ async def get_nice_servant(
                 for svt_comment in raw_svt.mstSvtComment
             ],
             "voices": get_nice_voice(region, raw_svt, costume_ids, lang),
+            "subtitles": get_nice_subtitles(raw_svt, subtitle_audio_urls),
             "stats": {
                 "strength": get_nice_status_rank(last_svt_limit.power),
                 "endurance": get_nice_status_rank(last_svt_limit.defense),
