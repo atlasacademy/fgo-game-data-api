@@ -3133,6 +3133,7 @@ class NiceQuestPhaseFixedMasterEquip(BaseModelORJson):
 
 class NiceQuestPhaseExtraDetail(BaseModelORJson):
     questSelect: list[int] | None = None
+    phaseRouteSelect: int | None = None
     singleForceSvtId: int | None = None
     hintTitle: str | None = None
     hintMessage: str | None = None
@@ -3149,12 +3150,16 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     masterSkillDelayInfo: str | None = None
     isUseGrandBoard: int | None = None
     isUseGrandBoardInitPos: list[int] | None = None
+    ignoreSyncEquipGrand: int | None = None
     turn: int | None = None
     LimitAct: StageLimitActType | None = None
     fixedMasterEquip: NiceQuestPhaseFixedMasterEquip | None = None
     isInfinityCost: int | None = None
     # overwriteSvtTreasureDeviceLv: dict[int, int] | None = None
     battleFinishMovie: HttpUrl | None = None
+    movieFolder: str | None = None
+    maleMovieFolder: str | None = None
+    femaleMovieFolder: str | None = None
     eventDeckIndex: int | None = None  # support init deck index
 
 
