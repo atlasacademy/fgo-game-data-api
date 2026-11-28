@@ -339,7 +339,10 @@ async def parse_dataVals(
                     else:
                         try:
                             text = array2[0]
-                            value = int(array2[1])
+                            # Empty value (e.g. ForceAddState:) mirrors the
+                            # client's parse-failure default 0. Some flags are
+                            # presence-checked only, so 0 doesn't mean off.
+                            value = int(array2[1]) if array2[1] else 0
                             if text == "AddIndividualty":
                                 AddIndividualtyList.append(value)
                         except ValueError:
